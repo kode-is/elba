@@ -164,7 +164,7 @@ outline of the live HTML on 2026-09-13):
   If Hlynur wants the search box back it is a small client-side filter, noted
   in the handover.
 - *404*: header, the live page's copy, no footer and no call-to-action, as on
-  the live site.
+  the live site; any unknown path renders the same way.
 
 The scrape's per-route `blocks` are the authority on section order and
 content; the template list above is a guide, not a substitute.
