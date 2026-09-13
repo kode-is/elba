@@ -64,7 +64,8 @@ const ALLOWED_EXTRA = [
   // marquee (Task 6) contain no separate bullet block, so live renders its
   // separator as a non-text glyph (background image/icon) instead.
   exact("•"),
-  // The four stat-counter values (lib/stats.ts, docs/handover.md "Stats"):
+  // The four stat-counter values (lib/stats.ts, docs/handover.md "Still
+  // needs you or Hlynur" #11):
   // Framer's own count-up animation on live reproducibly settles 2 short of
   // the value baked into our data (see the IGNORE_MISSING["/"] comment
   // above), so our target values show up as local-only text.

@@ -27,9 +27,10 @@ every route's visible text against the live site; at the end of Task 11 all
    ships a `Search…` field, a `Previous / Page X of Y / Next` pager and a CSV
    export; `components/SpecTable.tsx` renders every row instead. Say the word
    and a client-side filter is a small addition.
-5. **Placeholder team avatar.** Nine of the ten team members share the same
-   silhouette placeholder on live (`lib/team.ts`); real portraits can drop
-   straight into `public/images/om-oss/` and the same `team` array.
+5. **Placeholder team avatar.** All nine team members share the same
+   silhouette placeholder (`/images/om-oss/06-ccdd026b.png`) on live
+   (`lib/team.ts`); real portraits can drop straight into
+   `public/images/om-oss/` and the same `team` array.
 6. **The favicon SVG is a JPEG in an SVG wrapper.** `app/icon.svg` is a
    1280×1280 `<image>` element holding a base64 JPEG (117 KB), which is what
    the brand kit provided. A real vector mark would be smaller and sharper —
@@ -53,6 +54,16 @@ every route's visible text against the live site; at the end of Task 11 all
    they are rendered with `alt=""` (decorative). Anything that carries real
    meaning for a screen reader needs a written alt — the images on
    `/produkter/*` and the article photos are the ones worth doing first.
+   A handful of the alt texts live *does* carry are leftovers from Skralli
+   (the Icelandic site this Framer template was cloned from) or its own
+   stock-photo template, copied verbatim since we never touch scraped copy:
+   `Snjókeðjur, Hlífi- & festibúnaður` (Icelandic — `app/(site)/produkter/page.tsx`,
+   `components/ServiceCards.tsx`), `Aðstaða` on both `/om-oss` photos
+   (`app/(site)/om-oss/page.tsx`), and the English `Kitchen installation`,
+   `Bedroom work`, `Interior work` and `Discover` (`app/(site)/anlegg/page.tsx`,
+   `app/(site)/industri/page.tsx`, `app/(site)/artikler/page.tsx`) — none of
+   them describe the photo they're on. Same class of issue as the rest of
+   this item; Hlynur to supply real Norwegian alt texts for all of it.
 9. **Vercel production + DNS.** The project has never been deployed: create
    the Vercel project from this repo, set the three env vars above, then
    point `elba.no` / `www.elba.no` at it. `lib/seo.ts` and `app/sitemap.ts`
@@ -61,6 +72,12 @@ every route's visible text against the live site; at the end of Task 11 all
     has the honeypot field (`website`) — nothing stops a scripted flood of
     submissions. A Vercel Firewall rate-limit rule or a per-IP throttle in
     `submitContact` is the suggested follow-up once the form is live.
+11. **Confirm the stat-counter numbers.** The four home/`om-oss` counters
+    (`lib/stats.ts`: 184 / 14 / 10984 / 5984) were read off live's own
+    count-up animation once it visibly settled; live's server-rendered HTML
+    itself bakes in a lower baseline (180 / 10 / 10980 / 5980) before that
+    animation runs. Please confirm 184/14/10984/5984 are the numbers you
+    actually want shown, not just where the animation happened to land.
 
 ---
 
@@ -68,7 +85,7 @@ every route's visible text against the live site; at the end of Task 11 all
 
 1. **`Senda!` → `Send`.** Live's contact button still carries the Icelandic
    template's label; ours says `Send` (`components/home/ContactSection.tsx`,
-   `app/kontakt-oss/page.tsx`). This is the one place our visible text
+   `app/(site)/kontakt-oss/page.tsx`). This is the one place our visible text
    deliberately differs from live, and `scripts/verify.mjs` allows it.
 2. **Footer "Artikler" link.** Live points that footer link at
    `/kontakt-oss`; ours points at `/artikler` (`lib/site.ts`, commented at
@@ -80,7 +97,7 @@ every route's visible text against the live site; at the end of Task 11 all
 4. **U+200B product URLs and the table widget.** Two live product URLs carry
    a leading zero-width space (`/produkter/​skottgjennomføring`,
    `/produkter/​lynfittings`). We serve the clean slugs and redirect the
-   U+200B form (`app/produkter/[slug]/page.tsx`). The Framer table widget's
+   U+200B form (`app/(site)/produkter/[slug]/page.tsx`). The Framer table widget's
    own chrome (`Search…`, `Previous`, `Page X of Y`, `Next`, CSV export) is
    not reproduced — `scripts/verify.mjs` carries a `WIDGET_CHROME` ignore
    list for it.
@@ -167,6 +184,12 @@ commits; what is left:
   feature badges are brand red on live today (70×70, 10px radius, white
   glyph) — an earlier note about a cream badge on "Økt sikkerhet" does not
   hold against the live page.
+- **Checked and not a difference: `/404` (and any unknown path) has no
+  footer, same as live.** Every real page route lives under `app/(site)/`,
+  whose own layout renders the footer; `app/not-found.tsx` sits outside that
+  group at the app root, so it (and every unmatched URL) renders through
+  `app/layout.tsx` alone — header and content, no footer — matching live's
+  own Framer 404 template.
 
 ---
 
@@ -239,7 +262,7 @@ Real send pending `RESEND_API_KEY` / `EMAIL_FROM` / `CONTACT_TO` — no `.env.lo
 - **`Faq` component restyled:** `components/Faq.tsx` was built in Task 6 speculatively (single seamless card, divide-y rows, "+"-icon on the left) but had no live consumer yet. `/anlegg` is its first real usage, and `docs/reference/anlegg.desktop.jpg` shows each question as its own separate rounded white card with a right-aligned chevron — so the component was restyled to match (still one row per `<FaqRow>`, same accordion/DOM contract `scripts/lib/accordion.mjs` needs).
 - **`components/artikler/ArticleCard.tsx` redesigned:** switched from the horizontal image-left/text-right card (tuned for the home page's narrow sidebar list) to a vertical image-top/cream-footer grid card, matching `/artikler`'s own reference screenshots. Home's `components/home/ArticlesSection.tsx` still imports this same component and now renders the new vertical shape inside its sidebar column instead of the old horizontal one — visually different from Task 6's original build, but text content is unchanged (home's own `npm run verify -- /` still passes).
 - **`/produkter` "Vi leverer" pills:** no icons. `docs/reference/produkter.desktop.jpg` shows plain white rounded-full pills (heading text only), and `docs/scrape/inline-svg.json`'s `/produkter` entry has no per-item icon set — matches the brief's fallback instruction.
-- **`/produkter` U+200B:** the live `Skottgjennomføring`/`Lynfittings` product links carry a leading zero-width space (U+200B) in both their link text and their `href` slug. Stripped in `app/produkter/page.tsx`'s data (clean text, clean `/produkter/<slug>` hrefs matching `lib/routes.ts`), and `scripts/verify.mjs`'s `norm()` now also strips U+200B before comparing live vs. local text so the two sides read as equal.
+- **`/produkter` U+200B:** the live `Skottgjennomføring`/`Lynfittings` product links carry a leading zero-width space (U+200B) in both their link text and their `href` slug. Stripped in `app/(site)/produkter/page.tsx`'s data (clean text, clean `/produkter/<slug>` hrefs matching `lib/routes.ts`), and `scripts/verify.mjs`'s `norm()` now also strips U+200B before comparing live vs. local text so the two sides read as equal.
 - **`/produkter` card order:** `components/produkter/ProductLinkList.tsx` renders the eleven product cards as a CSS `columns-3` masonry (to match each card's own image aspect ratio, unlike a row-locked CSS grid). The live page's three visible screenshot rows are actually a column-major read of the same DOM order (col 1 = items 1-4, col 2 = items 5-8, col 3 = items 9-11); a plain `columns-3` container reproduces that shape but its browser height-balancing heuristic doesn't always assign the exact same item to the exact same column as the live page. All eleven cards are present and in scrape order in the DOM either way — this is a minor, cosmetic per-column assignment difference only.
 - **Shared components added/changed:** `components/ServiceCards.tsx` (service-card grid, shared by home + `/tjenester`), `components/FeatureTileGrid.tsx` + `components/PhotoCollage.tsx` + `components/TextureDivider.tsx` + `components/CheckList.tsx` + `components/IconCardGrid.tsx` (shared by `/anlegg` + `/industri`), `components/icons.tsx` (hand-drawn glyphs not present in the scrape, same rationale as `components/home/AdvisorySection.tsx`'s `CalendarIcon`/`ClockIcon`).
 
@@ -255,7 +278,7 @@ Real send pending `RESEND_API_KEY` / `EMAIL_FROM` / `CONTACT_TO` — no `.env.lo
 - **`— Skralli` → `— Elba` in every `<title>`:** all five `docs/scrape/artikler__*.json` carry the live page's real `<title>`, which ends in `— Skralli` (Skralli is Elba's Icelandic co-owner's own company, and elba.no's Framer site was seemingly cloned from skralli.is without updating this one string). `scripts/gen-artikler.mjs` rewrites it to `— Elba`; `tests/artikler.test.ts` locks this in. The body copy itself does say "Skralli" where it's actually about the acquisition (nytt-eierskap) — that's real content, left untouched.
 - **No visible publish date:** none of the five live article pages show a date — Framer's own `<time>` element renders empty on all of them, and no scrape block anywhere matches a date pattern. `Article.date` is typed `date?: string` but the generator never sets it and no template renders a date line.
 - **Two H1s, kept:** every article's DOM has a second `<h1>` right after the breadcrumb (`Article.subtitle`) — on nytt-design it's verbatim identical to the title H1; on the other four it's a distinct sentence. Rendered either way (as its own `<h1>`, matching live).
-- **Body reading column is narrower than the standard `Container`:** measured against `docs/reference/artikler__nytt-eierskap.desktop.jpg` and `artikler__velge-system.desktop.jpg` at 1440px — both start their breadcrumb and body text at x≈241px, i.e. a 960px column centered inside the 1240px content band. `app/artikler/[slug]/page.tsx` wraps breadcrumb + body in `mx-auto max-w-[960px]` to match.
+- **Body reading column is narrower than the standard `Container`:** measured against `docs/reference/artikler__nytt-eierskap.desktop.jpg` and `artikler__velge-system.desktop.jpg` at 1440px — both start their breadcrumb and body text at x≈241px, i.e. a 960px column centered inside the 1240px content band. `app/(site)/artikler/[slug]/page.tsx` wraps breadcrumb + body in `mx-auto max-w-[var(--container-narrow)]` (960px) to match.
 - **nytt-eierskap's scrape glues three pull-quotes' closing quote mark directly onto their attribution** with no space (e.g. `…selskapene."sier Villi…`) — confirmed against a fresh live capture that the real page has a space there. `scripts/gen-artikler.mjs`'s `splitGluedQuote()` fixes this; one of the three instead glues on a "- Ronny, daglig leder" byline, which live renders as its own line, so that one splits into two `text` blocks instead of just gaining a space.
 - **Bullet lists and whole-block bold come from `npm run scrape-formatting`:** `nytt-design` (list=4, bold=1), `passiv-og-aktiv-overvaaking` (list=14, bold=1), `hvorfor-smoresystem-industri` (list=15, bold=0) and `velge-system` (list=31, bold=8) carry real annotations; `nytt-eierskap` has none (no `<ul>`/`<strong>` on live at all). Re-running `scrape-formatting` after any `scrape` re-run is required — a `scrape.mjs` re-run regenerates the article JSON and drops the annotations.
 - **Residual gap: inline (mid-sentence) bold and italic.** `scrape-formatting.mjs` only annotates a text block `bold: true` when the *entire* block's text matches a live `<strong>`/`<b>`; a `<strong>` around part of a sentence stays plain, since `ArticleBlock.text.bold` is a whole-block boolean, not inline spans. The same limit is why live's italic lede sentence renders upright here. Pull-quotes, which *are* whole blocks, now carry live's italic grey treatment (Task 11).
