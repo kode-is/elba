@@ -86,6 +86,13 @@ files and write local `lib/*.ts` data. Re-running `npm run scrape` rewrites the
 page JSON, so re-run `npm run scrape-formatting` after it or the articles lose
 their bullet-list and bold annotations.
 
+## Fonts
+
+`assets/fonts/Satoshi-Medium.woff2` and `Satoshi-Bold.woff2` are downloaded
+from [Fontshare](https://www.fontshare.com/fonts/satoshi) under its free
+licence and are used only for the home/`om-oss` stat counters (`app/fonts.ts`);
+Figtree and Inter come from `next/font/google` instead.
+
 ## Routes
 
 `scripts/routes.mjs` (and its TypeScript mirror `lib/routes.ts`, kept identical

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }) 
 // probe: the quote paragraphs sit in a 960px column at x=240): both start
 // their breadcrumb and body text at x ≈ 241px, i.e. a 960px column centered
 // inside the 1240px content band, not at the band's own left edge (x=100).
-const READING_COLUMN = "mx-auto max-w-[960px]";
+const READING_COLUMN = "mx-auto max-w-[var(--container-narrow)]";
 
 export default async function ArticlePage({ params }: { params: Promise<Params> }) {
   const a = articleBySlug((await params).slug);

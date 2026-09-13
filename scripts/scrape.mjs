@@ -36,7 +36,7 @@ async function download(url, routeDir, idx) {
   let result;
   try {
     result = { local: await fetchAndSave(clean, routeDir, idx) };
-  } catch (firstErr) {
+  } catch {
     await sleep(2000);
     try {
       result = { local: await fetchAndSave(clean, routeDir, idx) };

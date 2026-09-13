@@ -88,7 +88,10 @@ export function ServicesMenu({ href, text }: ServicesMenuProps) {
         aria-controls={panelId}
         aria-label={`Vis ${text}-meny`}
         onFocus={openMenu}
-        onClick={openMenu}
+        onClick={() => {
+          clearCloseTimer();
+          setOpen((o) => !o);
+        }}
         className="flex h-4 w-4 items-center justify-center text-white"
       >
         <svg viewBox="0 0 12 8" fill="none" className="h-2.5 w-2.5" aria-hidden="true">

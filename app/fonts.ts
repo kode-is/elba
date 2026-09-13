@@ -25,8 +25,8 @@ export const inter = Inter({
 });
 
 // Satoshi isn't on Google Fonts — Fontshare's free-for-commercial-use woff2
-// files are downloaded once into assets/fonts/ (see README.md) and served
-// the same self-hosted way via next/font/local.
+// files are downloaded once into assets/fonts/ (see README.md's "Fonts"
+// section) and served the same self-hosted way via next/font/local.
 export const satoshi = localFont({
   variable: "--font-satoshi",
   display: "swap",

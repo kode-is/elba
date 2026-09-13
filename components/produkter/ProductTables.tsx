@@ -46,7 +46,7 @@ export function ProductTables({ tables }: { tables: ProductTable[] }) {
                       alt={image.alt}
                       width={image.width}
                       height={image.height}
-                      sizes="(min-width: 768px) 320px, 50vw"
+                      sizes="(min-width: 768px) 600px, 50vw"
                       className="h-auto w-full object-contain"
                     />
                   </div>

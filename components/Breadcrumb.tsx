@@ -45,24 +45,9 @@ function ChevronIcon({ className }: { className?: string }) {
 
 type BreadcrumbProps = {
   items: BreadcrumbItem[];
-  /**
-   * "plain": the standard trail — house icon + `›`-style separators in
-   * brand red, rendered as a plain block above the hero (see
-   * docs/reference/kontakt-oss.desktop.jpg, below the hero). Used by every
-   * elba.no inner page.
-   * "hero": a hero-edge breadcrumb (design.dc.html board 1c) — white-on-dark,
-   * rendered inside PageHero's bottom bar instead of a plain white block
-   * above the hero. Not used by any current elba.no route; kept for a future
-   * page that needs its hero to carry the trail.
-   */
-  variant?: "plain" | "hero";
 };
 
-export function Breadcrumb({ items, variant = "plain" }: BreadcrumbProps) {
-  if (variant === "hero") {
-    return <HeroBreadcrumb items={items} />;
-  }
-
+export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
     <nav aria-label="Brødsmulesti" className="font-ui text-eyebrow font-medium">
       <ol className="flex flex-wrap items-center gap-2 text-brand">
@@ -82,58 +67,6 @@ export function Breadcrumb({ items, variant = "plain" }: BreadcrumbProps) {
                 </Link>
               ) : (
                 <span>{item.text}</span>
-              )}
-            </li>
-          );
-        })}
-      </ol>
-    </nav>
-  );
-}
-
-// design.dc.html 1c + 1a/1b: full breadcrumb trail (Hjem + `items`) rendered
-// white-on-dark in the hero's bottom edge bar. Mobile (1b) collapses the
-// middle of the trail away, keeping only the first item (Hjem), the
-// immediate parent of the current page, and the current page itself — every
-// item stays in the DOM (`hidden md:flex`), so this never diverges from the
-// desktop trail's link targets or order.
-function HeroBreadcrumb({ items }: { items: BreadcrumbItem[] }) {
-  const entries: BreadcrumbItem[] = [{ text: "Hjem", href: "/" }, ...items];
-  const lastIndex = entries.length - 1;
-  const parentIndex = Math.max(lastIndex - 1, 0);
-
-  return (
-    <nav aria-label="Brødsmulesti" className="font-ui text-[13px] md:text-sm">
-      <ol className="flex items-center gap-2">
-        {entries.map((item, index) => {
-          const isFirst = index === 0;
-          const isCurrent = index === lastIndex;
-          const isParent = !isFirst && index === parentIndex;
-          const isCollapsedOnMobile = !isFirst && !isParent && !isCurrent;
-
-          return (
-            <li
-              key={item.text}
-              className={`items-center gap-2 ${isCollapsedOnMobile ? "hidden md:flex" : "flex"}`}
-            >
-              {!isFirst ? (
-                <span aria-hidden="true" className="text-white/[.42]">
-                  ›
-                </span>
-              ) : null}
-              {isCurrent ? (
-                <span aria-current="page" className="font-semibold text-white">
-                  {item.text}
-                </span>
-              ) : (
-                <Link
-                  href={item.href ?? "#"}
-                  className={`text-white/[.78] hover:text-white hover:underline hover:underline-offset-[3px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[3px] ${
-                    isParent ? "max-w-[120px] truncate md:max-w-none md:overflow-visible" : ""
-                  }`}
-                >
-                  {item.text}
-                </Link>
               )}
             </li>
           );
