@@ -1,33 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
-import { FeatureCard } from "@/components/FeatureCard";
-
-// docs/scrape/home.json blocks 50-61.
-const SERVICES = [
-  {
-    href: "/anlegg",
-    heading: "Anlegg",
-    text: "Presis kontinuerlig smøring til din maskin",
-    image: { src: "/images/home/03-01289078.jpeg", alt: "", width: 386, height: 515 },
-  },
-  {
-    href: "/industri",
-    heading: "Industri",
-    text: "Skreddersydde løsninger for norsk industri",
-    image: { src: "/images/home/04-41b11055.jpg", alt: "Industri", width: 512, height: 683 },
-  },
-  {
-    href: "/produkter",
-    heading: "Produkter",
-    text: "Alt du trenger til installasjon, vedlikehold og drift",
-    image: {
-      src: "/images/home/05-92660531.jpeg",
-      alt: "Snjókeðjur, Hlífi- & festibúnaður",
-      width: 515,
-      height: 687,
-    },
-  },
-] as const;
+import { ServiceCardsGrid } from "@/components/ServiceCards";
 
 export function ServicesSection() {
   return (
@@ -46,13 +19,7 @@ export function ServicesSection() {
           Gi oss utfordringen så skal vi se hva vi klarer
         </p>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {SERVICES.map((service) => (
-            <Link key={service.href} href={service.href} className="block">
-              <FeatureCard heading={service.heading} text={service.text} image={service.image} headingTag="h5" />
-            </Link>
-          ))}
-        </div>
+        <ServiceCardsGrid className="mt-10" />
       </Container>
     </section>
   );

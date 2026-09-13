@@ -14,11 +14,11 @@ function ToggleIcon({ open }: { open: boolean }) {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className={`h-5 w-5 shrink-0 text-neutral-400 transition-transform duration-200 ${
-        open ? "rotate-45" : ""
+      className={`h-5 w-5 shrink-0 text-neutral-900 transition-transform duration-200 ${
+        open ? "rotate-180" : ""
       }`}
     >
-      <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" />
+      <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -30,24 +30,24 @@ function FaqRow({ item }: { item: FaqItem }) {
   const answerId = `faq-a-${rowId}`;
 
   return (
-    <div>
+    <div className="rounded-2xl bg-white shadow-sm">
       <button
         type="button"
         id={questionId}
         aria-expanded={isOpen}
         aria-controls={answerId}
         onClick={() => setIsOpen((open) => !open)}
-        className="flex w-full items-center gap-4 px-6 py-5 text-left"
+        className="flex w-full items-start justify-between gap-4 px-6 py-6 text-left"
       >
-        <ToggleIcon open={isOpen} />
         <span className="font-ui font-semibold text-neutral-900">{item.question}</span>
+        <ToggleIcon open={isOpen} />
       </button>
       {isOpen ? (
         <div
           id={answerId}
           role="region"
           aria-labelledby={questionId}
-          className="whitespace-pre-line pb-5 pl-9 pr-6 text-sm leading-relaxed text-neutral-600"
+          className="whitespace-pre-line px-6 pb-6 text-sm leading-relaxed text-neutral-600"
         >
           {item.answer}
         </div>
@@ -57,22 +57,22 @@ function FaqRow({ item }: { item: FaqItem }) {
 }
 
 /**
- * Accordion for "Spurt & Svarað" (docs/scrape/smurkerfi.json). Each row
- * opens independently (docs/reference/smurkerfi.desktop.jpg and
- * .mobile.jpg both show all three questions expanded at once, so this
- * matches "or all closable" rather than a mutually-exclusive accordion —
- * that choice also matters functionally: scripts/lib/accordion.mjs clicks
- * every question in one DOM pass, and a single-open accordion would end
- * that pass with only the last-clicked answer still in the DOM, failing
- * `npm run verify`'s text diff for the other two). The button's visible
- * text is exactly the question — the toggle icon is aria-hidden and the
- * answer renders in a sibling element outside the button — because
- * accordion.mjs opens rows by clicking whichever element's full
- * textContent ends in "?".
+ * Accordion for /anlegg's "Hvordan fungerer det?" (docs/scrape/anlegg.json)
+ * and "Spurt & Svarað" (docs/scrape/smurkerfi.json). Each row opens
+ * independently (docs/reference/anlegg.desktop.jpg shows each question as
+ * its own separate rounded white card with a right-aligned chevron, not a
+ * single seamless divided list) — that also matters functionally:
+ * scripts/lib/accordion.mjs clicks every question in one DOM pass, and a
+ * mutually-exclusive accordion would end that pass with only the
+ * last-clicked answer still in the DOM, failing `npm run verify`'s text
+ * diff for the other rows. The button's visible text is exactly the
+ * question — the toggle icon is aria-hidden and the answer renders in a
+ * sibling element outside the button — because accordion.mjs opens rows by
+ * clicking whichever element's full textContent ends in "?".
  */
 export function Faq({ items }: FaqProps) {
   return (
-    <div className="divide-y divide-neutral-200 overflow-hidden rounded-2xl bg-white">
+    <div className="space-y-4">
       {items.map((item) => (
         <FaqRow key={item.question} item={item} />
       ))}

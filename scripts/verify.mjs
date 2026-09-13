@@ -40,8 +40,18 @@ IGNORE_MISSING["/kontakt-oss"] = [exact("Senda!")];
 // "A B C" and turn a whole table row into one incomparable blob) keeps both
 // sides comparable cell-by-cell without touching any non-table route, since
 // nothing else on the site renders a real table.
+// /produkter's live "Skottgjennomføring"/"Lynfittings" links carry a
+// leading U+200B (zero-width space) that this rebuild's clean copy doesn't
+// reproduce (not visible content) — stripped here so both sides compare
+// equal.
 const norm = (s) =>
-  s.replace(/ /g, " ").replace(/\t/g, "\n").replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, "\n").trim();
+  s
+    .replace(/​/g, "")
+    .replace(/ /g, " ")
+    .replace(/\t/g, "\n")
+    .replace(/[ \t]+/g, " ")
+    .replace(/\s*\n\s*/g, "\n")
+    .trim();
 
 async function capture(page, url) {
   await page.goto(url, { waitUntil: "networkidle" });

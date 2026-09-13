@@ -117,6 +117,10 @@
       "text": "Hvor driftssikkert er systemet?"
     },
     {
+      "type": "text",
+      "text": "Systemene er dimensjonert for krevende miljøer og kontinuerlig drift. Komponentene er robuste og tilpasset nordiske forhold. Elektronisk overvåking kan integreres for varsling ved avvik."
+    },
+    {
       "type": "heading",
       "level": 4,
       "text": "Hva skjer dersom systemet får en feil?"
