@@ -20,7 +20,7 @@ the Resend contact flow, the fonts and the shared components carry over.
 ## Non-goals
 
 - Redesigning or "improving" copy, layout, or imagery. This is a faithful copy,
-  with exactly two deviations listed under *Deviations from live*.
+  with only the deviations listed under *Deviations from live*.
 - Customer login, Zirius integration, prices, payments, webshop (later project).
 - CMS. Content lives in typed data files in the repo.
 - Moving the elba.no domain. Production and DNS are a separate step.
@@ -230,6 +230,9 @@ in Resend is DNS work for Einar or Hlynur and is tracked in the handover.
 4. (technical) The U+200B product-slug redirects described under *Page
    inventory*, and the spec-table widget chrome (search box, pager) described
    under *Page templates*.
+5. (approved) The home hero's email and phone pills are anchors without an
+   href on live; the new site links them to `mailto:elba@elba.no` and
+   `tel:+4732252030`, text unchanged.
 
 All are noted in `docs/handover.md` so Hlynur is not surprised.
 
