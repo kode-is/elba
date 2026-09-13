@@ -1,7 +1,12 @@
 import { chromium } from "playwright";
 import { writeFile } from "node:fs/promises";
+import { readFileSync } from "node:fs";
+import { join, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { ROUTES, LIVE, livePath } from "./routes.mjs";
 import { expandAccordions } from "./lib/accordion.mjs";
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const LOCAL = process.env.LOCAL || "http://localhost:3000";
 const only = process.argv.slice(2);
@@ -27,11 +32,84 @@ const IGNORE_MISSING = Object.fromEntries(ROUTES.map((r) => [r, r.startsWith("/p
 IGNORE_MISSING["/"] = [/^\d{1,5}$/];
 // Task 8 (/om-oss): the same four stat counters, mid-animation (see StatsSection).
 IGNORE_MISSING["/om-oss"] = [/^\d{1,5}$/];
-IGNORE_MISSING["/anlegg"] = [/^\d{1,3}$/, /^\d+[ky]\+?$/];
 // The live submit button reads "Senda!" (a leftover Icelandic string on
 // elba.no's own contact form); this rebuild's button reads "Send" instead —
 // approved deviation, not a missing-content bug.
 IGNORE_MISSING["/kontakt-oss"] = [exact("Senda!")];
+
+// Every regex here is a *local-only* line of visible text (present locally,
+// not on live) that a human ruling has already approved — derived from the
+// `extra` lines in docs/verify-report.md as of this task. Anything not
+// covered here (or by `isTableText` below) makes a route FAIL, even if
+// `missing` is 0.
+const ALLOWED_EXTRA = [
+  // The "Gå til innhold" skip link, added on every route for keyboard/screen
+  // reader accessibility; live has none (docs/handover.md "Deviations from
+  // live").
+  exact("Gå til innhold"),
+  // sr-only <label> text for the contact form's fields (ContactForm.tsx), on
+  // both `/` and `/kontakt-oss` — live's Framer form has no equivalent
+  // labels (docs/handover.md "Deviations from live").
+  exact("Navn"),
+  exact("E-post"),
+  exact("Selskap"),
+  exact("Melding"),
+  exact("Nettside (ikke fyll ut)"),
+  // The submit button reads "Send" on both `/` and `/kontakt-oss`; live's
+  // own button still carries the Icelandic template string "Senda!" —
+  // approved deviation #1 in docs/handover.md.
+  exact("Send"),
+  // Home hero's industry marquee (IndustryStrip.tsx) renders a "•" between
+  // industry names as literal text; docs/scrape/home.json's blocks for that
+  // marquee (Task 6) contain no separate bullet block, so live renders its
+  // separator as a non-text glyph (background image/icon) instead.
+  exact("•"),
+  // The four stat-counter values (lib/stats.ts, docs/handover.md "Stats"):
+  // Framer's own count-up animation on live reproducibly settles 2 short of
+  // the value baked into our data (see the IGNORE_MISSING["/"] comment
+  // above), so our target values show up as local-only text.
+  exact("184"),
+  exact("14"),
+  exact("10984"),
+  exact("5984"),
+  // /anlegg's FAQ answer to "Hvor driftssikkert er systemet?"
+  // (docs/scrape/anlegg.json) is real live copy — Faq.tsx's rows open
+  // independently precisely so a scripted click-through leaves every answer
+  // visible locally (see that file's comment) — but on live itself,
+  // stepping through all three questions in sequence with
+  // scripts/lib/accordion.mjs reproducibly leaves this one specific answer
+  // re-collapsed by the time the pass finishes (confirmed directly against
+  // https://www.elba.no/anlegg), while the other two stay open. A capture
+  // artifact of automating live's own accordion, not missing/extra content.
+  exact(
+    "Systemene er dimensjonert for krevende miljøer og kontinuerlig drift. Komponentene er robuste og tilpasset nordiske forhold. Elektronisk overvåking kan integreres for varsling ved avvik.",
+  ),
+];
+
+// docs/scrape/tables.json's per-route header/cell strings. SpecTable renders
+// every row of a table (Task 12), but live's Framer "Table" widget only ever
+// shows its pager's current page server-side, so most rows past page 1 are
+// real content that simply isn't in this particular live capture — verified
+// against tables.json (the same hydrated-table scrape gen-produkter.mjs
+// builds lib/produkter.ts from) rather than allowed by a broad regex.
+const tablesByRoute = Object.fromEntries(
+  JSON.parse(readFileSync(join(ROOT, "docs/scrape/tables.json"), "utf8")).routes.map((r) => [r.route, r.tables]),
+);
+const TABLE_CELLS = Object.fromEntries(
+  Object.entries(tablesByRoute).map(([route, tables]) => {
+    const cells = new Set();
+    for (const t of tables) {
+      for (const h of t.headers) cells.add(h.trim());
+      for (const row of t.rows) {
+        const trimmed = row.map((c) => c.trim());
+        for (const c of trimmed) cells.add(c);
+        cells.add(trimmed.join("\t"));
+      }
+    }
+    return [route, cells];
+  }),
+);
+const isTableText = (route, text) => TABLE_CELLS[route]?.has(text.trim()) ?? false;
 
 // A browser's innerText joins adjacent cells of a real <table> row with a
 // tab character (spec behavior for display:table-cell boxes) — components/
@@ -110,10 +188,11 @@ for (const r of routes) {
   const missing = missingAll.filter(x => !ignorePatterns.some(re => re.test(x)));
   const ignored = missingAll.length - missing.length;
   const imgOk = local.images >= live.images;
-  const ok = missing.length === 0 && imgOk;
+  const disallowedExtra = extra.filter((x) => !ALLOWED_EXTRA.some((re) => re.test(x)) && !isTableText(r, x));
+  const ok = missing.length === 0 && imgOk && disallowedExtra.length === 0;
   if (!ok) failures++;
-  rows.push(`## ${r} ${ok ? "OK" : "FAIL"}\n- images live/local: ${live.images}/${local.images}${imgOk ? "" : " (missing)"}\n${missing.length ? "- missing text:\n" + missing.map(m => `  - ${m}`).join("\n") : ""}${extra.length ? "\n- extra text:\n" + extra.map(m => `  - ${m}`).join("\n") : ""}\n`);
-  console.log(`${ok ? "OK  " : "FAIL"} ${r} missing=${missing.length} extra=${extra.length} img=${live.images}/${local.images} ignored=${ignored}`);
+  rows.push(`## ${r} ${ok ? "OK" : "FAIL"}\n- images live/local: ${live.images}/${local.images}${imgOk ? "" : " (missing)"}\n${missing.length ? "- missing text:\n" + missing.map(m => `  - ${m}`).join("\n") : ""}${extra.length ? "\n- extra text:\n" + extra.map(m => `  - ${m}`).join("\n") : ""}${disallowedExtra.length ? "\n- disallowed extra text:\n" + disallowedExtra.map(m => `  - ${m}`).join("\n") : ""}\n`);
+  console.log(`${ok ? "OK  " : "FAIL"} ${r} missing=${missing.length} extra=${extra.length} disallowed=${disallowedExtra.length} img=${live.images}/${local.images} ignored=${ignored}`);
 }
 await browser.close();
 await writeFile("docs/verify-report.md", `# Verify report ${new Date().toISOString()}\n\n${rows.join("\n")}`);
