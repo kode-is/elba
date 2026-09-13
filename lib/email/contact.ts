@@ -1,20 +1,20 @@
 export type ContactPayload = {
-  nafn: string;
-  netfang: string;
-  simi: string;
-  skilabod: string;
+  navn: string;
+  epost: string;
+  selskap: string;
+  melding: string;
   /** Honeypot field — real visitors never fill this in. */
   website?: string;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-/** Validates a contact payload, returning an Icelandic error message or null when valid. */
+/** Validates a contact payload, returning a Norwegian error message or null when valid. */
 export function validateContact(p: ContactPayload): string | null {
-  if (p.website) return "Sending mistókst.";
-  if (!p.nafn?.trim()) return "Vinsamlegast fylltu út nafn.";
-  if (!EMAIL_RE.test(p.netfang?.trim() ?? "")) return "Vinsamlegast sláðu inn gilt netfang.";
-  if (!p.skilabod?.trim()) return "Vinsamlegast skrifaðu skilaboð.";
+  if (p.website) return "Sending mislyktes.";
+  if (!p.navn?.trim()) return "Vennligst fyll inn navn.";
+  if (!EMAIL_RE.test(p.epost?.trim() ?? "")) return "Vennligst oppgi en gyldig e-postadresse.";
+  if (!p.melding?.trim()) return "Vennligst skriv en melding.";
   return null;
 }
 
@@ -28,15 +28,15 @@ const ESCAPE_MAP: Record<string, string> = {
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ESCAPE_MAP[c]!);
 
 export function buildContactEmail(p: ContactPayload): { subject: string; text: string; html: string } {
-  const subject = `Fyrirspurn frá skralli.is – ${p.nafn.trim()}`;
+  const subject = `Henvendelse fra elba.no – ${p.navn.trim()}`;
   const text = [
-    `Nafn: ${p.nafn}`,
-    `Netfang: ${p.netfang}`,
-    `Símanúmer: ${p.simi || "-"}`,
+    `Navn: ${p.navn}`,
+    `E-post: ${p.epost}`,
+    `Selskap: ${p.selskap || "-"}`,
     "",
-    "Skilaboð:",
-    p.skilabod,
+    "Melding:",
+    p.melding,
   ].join("\n");
-  const html = `<p><strong>Nafn:</strong> ${esc(p.nafn)}</p><p><strong>Netfang:</strong> ${esc(p.netfang)}</p><p><strong>Símanúmer:</strong> ${esc(p.simi || "-")}</p><p><strong>Skilaboð:</strong></p><p>${esc(p.skilabod).replace(/\n/g, "<br/>")}</p>`;
+  const html = `<p><strong>Navn:</strong> ${esc(p.navn)}</p><p><strong>E-post:</strong> ${esc(p.epost)}</p><p><strong>Selskap:</strong> ${esc(p.selskap || "-")}</p><p><strong>Melding:</strong></p><p>${esc(p.melding).replace(/\n/g, "<br/>")}</p>`;
   return { subject, text, html };
 }

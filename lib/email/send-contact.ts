@@ -28,13 +28,13 @@ export async function sendContact(payload: ContactPayload, send: SendFn = defaul
     const err = validateContact(payload);
     if (err) return { ok: false, error: err };
     const mail = buildContactEmail(payload);
-    await send({ from: emailFrom(), to: contactTo(), replyTo: payload.netfang.trim(), ...mail });
+    await send({ from: emailFrom(), to: contactTo(), replyTo: payload.epost.trim(), ...mail });
     return { ok: true };
   } catch (e) {
     // Catches a malformed (non-object) payload from validateContact as well
     // as a missing EMAIL_FROM/RESEND_API_KEY env var from emailFrom()/send,
     // in addition to the send call itself throwing.
     console.error("contact send failed", e instanceof Error ? e.message : e);
-    return { ok: false, error: "Ekki tókst að senda skilaboðin. Reyndu aftur eða sendu póst á skralli@skralli.is." };
+    return { ok: false, error: "Kunne ikke sende meldingen. Prøv igjen eller send e-post til elba@elba.no." };
   }
 }

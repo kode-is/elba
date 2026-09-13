@@ -18,6 +18,10 @@ const WIDGET_CHROME = [exact("Search..."), exact("Previous"), exact("Next"), exa
 const IGNORE_MISSING = Object.fromEntries(ROUTES.map((r) => [r, r.startsWith("/produkter/") ? WIDGET_CHROME : []]));
 IGNORE_MISSING["/"] = [/^\d{1,3}$/];
 IGNORE_MISSING["/anlegg"] = [/^\d{1,3}$/, /^\d+[ky]\+?$/];
+// The live submit button reads "Senda!" (a leftover Icelandic string on
+// elba.no's own contact form); this rebuild's button reads "Send" instead —
+// approved deviation, not a missing-content bug.
+IGNORE_MISSING["/kontakt-oss"] = [exact("Senda!")];
 
 // A browser's innerText joins adjacent cells of a real <table> row with a
 // tab character (spec behavior for display:table-cell boxes) — components/
