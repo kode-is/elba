@@ -131,6 +131,13 @@ for (const file of readdirSync(SCRAPE).filter((f) => f.startsWith("produkter__")
     throw new Error(`${route}: consumed ${tables.length} table text-runs but tables.json has ${liveTables.length} tables`);
   }
 
+  // Any image or H3 heading collected after the last table's text-run never
+  // got attached to a table — silently dropping it would lose real content,
+  // so fail loudly instead.
+  if (pendingImages.length || pendingHeading) {
+    throw new Error(`${route}: ${pendingImages.length} image(s)/heading left unattached after the last table`);
+  }
+
   products.push({
     id,
     title,
