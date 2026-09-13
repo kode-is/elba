@@ -49,7 +49,7 @@ export function ServicesSection() {
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {SERVICES.map((service) => (
             <Link key={service.href} href={service.href} className="block">
-              <FeatureCard heading={service.heading} text={service.text} image={service.image} />
+              <FeatureCard heading={service.heading} text={service.text} image={service.image} headingTag="h5" />
             </Link>
           ))}
         </div>
