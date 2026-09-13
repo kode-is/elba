@@ -21,13 +21,13 @@ export function IconCardGrid({ items, className }: IconCardGridProps) {
         <div key={item.heading} className="flex gap-4">
           <span
             aria-hidden="true"
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand"
+            className="flex h-[70px] w-[70px] shrink-0 items-center justify-center rounded-[10px] bg-brand"
           >
             <span className="text-white">{item.icon}</span>
           </span>
           <div>
-            <h4 className="font-ui text-base font-semibold text-neutral-900">{item.heading}</h4>
-            <p className="mt-1.5 text-sm leading-relaxed text-neutral-600">{item.text}</p>
+            <h4 className="text-label-lg font-semibold text-black">{item.heading}</h4>
+            <p className="mt-1.5 text-body-lg text-ink-muted">{item.text}</p>
           </div>
         </div>
       ))}

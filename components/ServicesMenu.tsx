@@ -78,7 +78,7 @@ export function ServicesMenu({ href, text }: ServicesMenuProps) {
       onMouseEnter={openMenu}
       onMouseLeave={scheduleClose}
     >
-      <Link href={href} className="text-base font-normal text-white transition hover:text-white/80">
+      <Link href={href} className="text-body-lg font-normal text-white transition hover:text-white/80">
         {text}
       </Link>
       <button
@@ -111,7 +111,7 @@ export function ServicesMenu({ href, text }: ServicesMenuProps) {
           <div className="flex gap-x-16">
             <div className="w-[227px]">
               <h6 className="font-ui text-base font-semibold text-black">{servicesMenu.heading}</h6>
-              <p className="mt-3 font-ui text-sm font-normal text-[#444]">{servicesMenu.description}</p>
+              <p className="mt-3 font-ui text-body-lg font-normal text-ink-muted">{servicesMenu.description}</p>
             </div>
             {/* One column (Anlegg, Industri, Produkter) — no second <ul>. */}
             <ul className="w-[200px] space-y-[11px]">
@@ -120,7 +120,7 @@ export function ServicesMenu({ href, text }: ServicesMenuProps) {
                   <Link
                     href={link.href}
                     onClick={() => closeNow(false)}
-                    className="block font-ui text-base font-normal text-[#444] transition hover:text-brand"
+                    className="block font-ui text-body-lg font-normal text-ink-muted transition hover:text-brand"
                   >
                     {link.text}
                   </Link>

@@ -24,7 +24,7 @@ export function StepsSection() {
   return (
     <section className="bg-white pt-16 md:pt-20">
       <Container>
-        <h3 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">Få fast pris i dag</h3>
+        <h3 className="text-[23px] leading-[1.3] font-semibold text-black md:text-[36px]">Få fast pris i dag</h3>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {STEPS.map((step) => (
             <StepCard

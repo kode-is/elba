@@ -7,23 +7,21 @@ type FeatureCardProps = {
   image?: Img;
   /**
    * Heading level for `heading`, so callers can match their own scrape's
-   * level (e.g. the home page's service cards are H5 —
-   * docs/scrape/home.json blocks 52/56/60 — while the /smurkerfi grid's are
-   * H3). Defaults to "h3" so existing callers are unchanged.
+   * level (the home page's and /tjenester's service cards are H5 —
+   * docs/scrape/home.json blocks 52/56/60). Defaults to "h3".
    */
   headingTag?: "h2" | "h3" | "h4" | "h5";
 };
 
 /**
- * White, shadowed card used for the /smurkerfi product-feature grid (Task 9)
- * and reused by later service pages (Task 11): an optional top image plus a
- * heading and a line of body copy. Mirrors CategoryCard.tsx's card shell
- * without the icon badge.
+ * White, shadowed card behind the "Anlegg / Industri / Produkter" service
+ * grid on the home page and /tjenester (components/ServiceCards.tsx): an
+ * optional top image plus a heading and a line of body copy.
  */
 export function FeatureCard({ heading, text, image, headingTag = "h3" }: FeatureCardProps) {
   const Heading = headingTag;
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-sm">
+    <div className="flex h-full flex-col overflow-hidden rounded-[20px] bg-white shadow-sm">
       {image ? (
         <div
           className="relative w-full overflow-hidden"
@@ -39,8 +37,8 @@ export function FeatureCard({ heading, text, image, headingTag = "h3" }: Feature
         </div>
       ) : null}
       <div className="p-6">
-        <Heading className="font-ui text-lg font-semibold text-neutral-900">{heading}</Heading>
-        <p className="mt-2 text-sm leading-relaxed text-neutral-600">{text}</p>
+        <Heading className="font-ui text-sub font-semibold text-black md:text-sub-lg">{heading}</Heading>
+        <p className="mt-2 font-ui text-body text-ink-muted md:text-body-lg">{text}</p>
       </div>
     </div>
   );

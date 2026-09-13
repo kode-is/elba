@@ -1,16 +1,15 @@
 import { ContactForm } from "@/components/ContactForm";
 
-// docs/scrape/home.json block 68: the mini contact form's heading. Card
-// background is white (not the surface/cream tone used elsewhere on this
-// page) so ContactForm's own bg-surface fields — shared verbatim with
-// /kontakt-oss (Task 2), unchanged here — stay visibly distinct inside it,
-// matching the two-tone card the live screenshot shows.
+// docs/scrape/home.json block 68: the mini contact form's heading. Measured
+// on live (Task 11, docs/measure.txt): the card is the cream surface tone
+// with a 10px radius and 50px of padding, and the fields inside it are white
+// — the inverse of /kontakt-oss, where cream fields sit on a white section.
 export function ContactSection() {
   return (
-    <div className="rounded-2xl bg-white p-6 shadow-sm md:p-8">
-      <h3 className="text-center font-ui text-xl font-semibold text-neutral-900">Kontakt oss</h3>
+    <div className="rounded-[10px] bg-surface p-6 md:p-[50px]">
+      <h3 className="text-center font-ui text-card font-semibold text-black md:text-card-lg">Kontakt oss</h3>
       <div className="mt-6">
-        <ContactForm submitLabel="Send" />
+        <ContactForm submitLabel="Send" fieldTone="white" />
       </div>
     </div>
   );

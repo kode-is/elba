@@ -16,8 +16,8 @@ export function SubnavLabels({ items }: { items: string[] }) {
       {items.map((label, index) => (
         <span
           key={label}
-          className={`rounded-full border px-5 py-2 text-sm font-semibold ${
-            index === 0 ? "border-brand bg-brand text-white" : "border-neutral-300 text-neutral-700"
+          className={`rounded-full border px-5 py-2 text-[16px] leading-[1.2] font-semibold ${
+            index === 0 ? "border-brand bg-brand text-white" : "border-neutral-300 text-black"
           }`}
         >
           {label}

@@ -2,7 +2,7 @@ import { Container } from "@/components/Container";
 import { StatCounter } from "@/components/StatCounter";
 import { stats } from "@/lib/stats";
 
-/** Used on both the home page and /um-okkur — see lib/stats.ts. */
+/** Used on both the home page and /om-oss — see lib/stats.ts. */
 export function StatsSection() {
   return (
     <section className="bg-brand py-14 md:py-16">

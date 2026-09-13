@@ -18,8 +18,8 @@ export function CheckList({ items, className }: CheckListProps) {
     <ul className={`space-y-3${className ? ` ${className}` : ""}`}>
       {items.map((item) => (
         <li key={item} className="flex items-center gap-3">
-          <CheckIcon className="h-4 w-4 shrink-0 text-neutral-900" />
-          <h4 className="font-ui text-base font-semibold text-neutral-900">{item}</h4>
+          <CheckIcon className="h-4 w-4 shrink-0 text-black" />
+          <h4 className="font-ui text-label font-semibold text-black md:text-label-lg">{item}</h4>
         </li>
       ))}
     </ul>

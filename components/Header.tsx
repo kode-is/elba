@@ -36,7 +36,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-base font-normal text-white transition hover:text-white/80"
+                  className="text-body-lg font-normal text-white transition hover:text-white/80"
                 >
                   {item.text}
                 </Link>
@@ -46,7 +46,7 @@ export function Header() {
 
           <Link
             href={navCta.href}
-            className="inline-flex items-center justify-center rounded-md bg-brand px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-hover"
+            className="inline-flex items-center justify-center rounded-[10px] bg-brand px-[30px] py-5 text-[16px] leading-[1.2] font-semibold text-white transition hover:opacity-50"
           >
             {navCta.text}
           </Link>

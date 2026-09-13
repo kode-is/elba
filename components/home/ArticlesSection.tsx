@@ -14,13 +14,13 @@ export function ArticlesSection() {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 md:gap-16">
           <div>
-            <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">Nyeste artikler</h2>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-neutral-600 md:text-base">
+            <h2 className="text-section font-semibold text-black md:text-section-lg">Nyeste artikler</h2>
+            <p className="mt-4 max-w-sm text-lead text-ink-muted md:text-lead-lg">
               Hold deg oppdatert med våre siste nyheter, tips og oppdateringer fra bransjen.
             </p>
             <Link
               href="/artikler"
-              className="mt-6 inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-hover"
+              className="mt-6 inline-flex items-center justify-center rounded-[10px] bg-brand px-[30px] py-5 text-[16px] leading-[1.2] font-semibold text-white transition hover:opacity-50"
             >
               Les mer
             </Link>

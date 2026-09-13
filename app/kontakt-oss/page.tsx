@@ -27,7 +27,7 @@ export default function KontaktOss() {
         <div className="py-12 md:py-16">
           <Breadcrumb items={[{ text: "Kontakt oss" }]} />
           <div className="mx-auto mt-10 max-w-xl md:mt-14">
-            <h2 className="text-center text-3xl font-semibold text-neutral-900 md:text-[40px]">
+            <h2 className="text-center text-section font-semibold text-black md:text-section-lg">
               Send oss en forespørsel
             </h2>
             <div className="mt-8">

@@ -68,8 +68,8 @@ export default function EtikkOgAnsvar() {
                   {card.icon}
                 </span>
                 <div>
-                  <h4 className="font-ui text-lg font-semibold text-neutral-900">{card.heading}</h4>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-600 md:text-base">
+                  <h4 className="text-label-lg font-semibold text-black">{card.heading}</h4>
+                  <p className="mt-2 text-body-lg text-ink-muted">
                     {card.text}
                     {card.heading === "Etiske retningslinjer" ? (
                       <>

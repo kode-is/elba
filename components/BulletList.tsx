@@ -4,15 +4,15 @@ type BulletListProps = {
 };
 
 /**
- * Plain bulleted list for block-level `"list": <n>` annotations in
- * docs/scrape/vetrarbunadur.json and docs/scrape/fyrirokumannin.json — a
- * simple disc marker matches both reference screenshots exactly, so no
- * custom bullet glyph is needed. Shared because both routes need it.
+ * Plain bulleted list for the block-level `"list": <n>` annotations
+ * `npm run scrape-formatting` writes onto the article scrapes
+ * (docs/scrape/artikler__*.json). A simple disc marker matches the reference
+ * screenshots exactly, so no custom bullet glyph is needed.
  */
 export function BulletList({ items, className }: BulletListProps) {
   return (
     <ul
-      className={`list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-neutral-600 md:text-base${
+      className={`list-disc space-y-1.5 pl-5 font-ui text-body-lg text-ink-muted${
         className ? ` ${className}` : ""
       }`}
     >

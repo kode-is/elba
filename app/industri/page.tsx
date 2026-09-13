@@ -126,8 +126,8 @@ export default function Industri() {
               inset={{ src: "/images/industri/07-a80a4311.jpeg", alt: "Bedroom work", width: 229, height: 305 }}
             />
             <div>
-              <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">Tilpassede serviceavtaler</h2>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+              <h2 className="text-section font-semibold text-black md:text-section-lg">Tilpassede serviceavtaler</h2>
+              <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">
                 Norsk industri opererer under krevende forhold med høye krav til oppetid, presisjon og sikkerhet. Vi
                 leverer løsninger som sikrer stabil drift, reduserer uforutsette stans og forlenger levetiden på
                 kritisk utstyr.
@@ -140,10 +140,10 @@ export default function Industri() {
 
       <Container>
         <div className="py-14 md:py-20">
-          <h2 className="text-center text-3xl font-semibold text-neutral-900 md:text-[40px]">
+          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">
             Industriell pålitelighet
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-neutral-600 md:text-base">
+          <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-muted md:text-lead-lg">
             Dokumenterte fordeler for driftssikkerhet, totaløkonomi og bærekraftig produksjon.
           </p>
           <IconCardGrid items={RELIABILITY} className="mt-10" />

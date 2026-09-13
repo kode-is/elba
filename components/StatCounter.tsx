@@ -59,10 +59,10 @@ export function StatCounter({ value, suffix, label }: StatCounterProps) {
   return (
     <div ref={ref} className="flex flex-col items-center text-center md:items-start md:text-left">
       <div className="flex items-baseline gap-1">
-        <span className="font-stat text-4xl font-bold text-white md:text-5xl">{display}</span>
-        <span className="font-stat text-4xl font-bold text-brand-hover md:text-5xl">{suffix}</span>
+        <span className="font-stat text-stat font-bold text-stat-digit">{display}</span>
+        <span className="font-stat text-stat font-bold text-stat-digit">{suffix}</span>
       </div>
-      <p className="mt-2 font-stat text-sm font-medium text-white/80">{label}</p>
+      <p className="mt-2 font-stat text-[18px] leading-[28px] font-medium text-stat-label">{label}</p>
     </div>
   );
 }

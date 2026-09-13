@@ -7,15 +7,15 @@ export function ServicesSection() {
     <section className="bg-surface py-16 md:py-20">
       <Container>
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
-          <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">Våre tjenester</h2>
+          <h2 className="text-section font-semibold text-black md:text-section-lg">Våre tjenester</h2>
           <Link
             href="/tjenester"
-            className="inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-hover"
+            className="inline-flex items-center justify-center rounded-[10px] bg-brand px-[30px] py-5 text-[16px] leading-[1.2] font-semibold text-white transition hover:opacity-50"
           >
             Se utvalget
           </Link>
         </div>
-        <p className="mt-4 text-sm text-neutral-600 md:text-right md:text-base">
+        <p className="mt-4 text-lead text-ink-muted md:text-right md:text-lead-lg">
           Gi oss utfordringen så skal vi se hva vi klarer
         </p>
 

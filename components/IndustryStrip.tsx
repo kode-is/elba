@@ -1,9 +1,7 @@
 // Home hero's industry marquee (docs/scrape/home.json blocks 9-32): the live
 // page loops the same eight H3s three times in the DOM for a seamless
-// scroll. Mirrors the BrandStrip marquee mechanics documented in
-// app/globals.css's `.animate-marquee` keyframes (translate by -33.3333%,
-// i.e. exactly one of the three copies) but with plain text instead of
-// logos.
+// scroll — see app/globals.css's `.animate-marquee` keyframes (translate by
+// -33.3333%, i.e. exactly one of the three copies).
 const INDUSTRIES = [
   "Landbruk",
   "Sagbruk",
@@ -20,7 +18,7 @@ function IndustryList({ hidden }: { hidden?: boolean }) {
     <div aria-hidden={hidden ? true : undefined} className="flex shrink-0 items-center gap-x-10 px-5">
       {INDUSTRIES.map((name, index) => (
         <div key={index} className="flex shrink-0 items-center gap-x-10">
-          <h3 className="whitespace-nowrap text-lg font-medium text-white md:text-xl">{name}</h3>
+          <h3 className="whitespace-nowrap text-[28px] leading-[1.3] font-semibold text-white">{name}</h3>
           <span aria-hidden="true" className="text-white/50">
             •
           </span>

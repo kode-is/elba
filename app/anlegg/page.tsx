@@ -125,7 +125,7 @@ export default function Anlegg() {
 
       <section className="bg-surface py-14 md:py-20">
         <Container>
-          <h2 className="text-center text-3xl font-semibold text-neutral-900 md:text-[40px]">Hvordan fungerer det?</h2>
+          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Hvordan fungerer det?</h2>
           <div className="mt-10 grid gap-8 md:grid-cols-2 md:items-start md:gap-10">
             <Faq items={FAQ_ITEMS} />
             <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
@@ -154,12 +154,12 @@ export default function Anlegg() {
               />
             </div>
             <div>
-              <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">Digital overvåking</h2>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+              <h2 className="text-section font-semibold text-black md:text-section-lg">Digital overvåking</h2>
+              <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">
                 Vi tilbyr digital overvåking av sentralsmøresystemer både for individuelle maskiner eller som en
                 sentralisert oversikt over hele maskinparker.
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-600 md:text-base">
+              <p className="mt-3 text-lead text-ink-muted md:text-lead-lg">
                 Løsningene kan varsle fører ved avvik og gir historisk sporbarhet på sykluser og hendelser.
               </p>
               <CheckList items={["Oversikt", "Varsling", "Sporbarhet"]} className="mt-6" />
@@ -168,7 +168,7 @@ export default function Anlegg() {
         </div>
 
         <div className="pb-14 md:pb-20">
-          <h2 className="text-center text-3xl font-semibold text-neutral-900 md:text-[40px]">Nøkkelfunksjoner</h2>
+          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Nøkkelfunksjoner</h2>
           <IconCardGrid items={KEY_FUNCTIONS} className="mt-10" />
         </div>
 

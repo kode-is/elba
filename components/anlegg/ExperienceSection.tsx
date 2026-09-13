@@ -29,22 +29,22 @@ export function ExperienceSection({ image, stats, heading, paragraphs, linkText,
         <div className="absolute inset-x-4 bottom-4 flex divide-x divide-white/25 rounded-xl bg-brand">
           {stats.map((stat) => (
             <div key={stat.label} className="flex-1 px-6 py-5 text-center">
-              <h2 className="font-stat text-3xl font-bold text-white md:text-4xl">{stat.value}</h2>
-              <p className="mt-1 text-sm font-medium text-white/80">{stat.label}</p>
+              <h2 className="text-section-lg font-semibold text-white">{stat.value}</h2>
+              <p className="mt-1 text-body-lg text-stat-label">{stat.label}</p>
             </div>
           ))}
         </div>
       </div>
       <div>
-        <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">{heading}</h2>
+        <h2 className="text-section font-semibold text-black md:text-section-lg">{heading}</h2>
         {paragraphs.map((paragraph) => (
-          <p key={paragraph} className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+          <p key={paragraph} className="mt-4 text-lead text-ink-muted md:text-lead-lg">
             {paragraph}
           </p>
         ))}
         <Link
           href={linkHref}
-          className="mt-6 inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-hover"
+          className="mt-6 inline-flex items-center justify-center rounded-[10px] bg-brand px-[30px] py-5 text-[16px] leading-[1.2] font-semibold text-white transition hover:opacity-50"
         >
           {linkText}
         </Link>

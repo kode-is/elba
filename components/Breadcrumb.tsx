@@ -64,7 +64,7 @@ export function Breadcrumb({ items, variant = "plain" }: BreadcrumbProps) {
   }
 
   return (
-    <nav aria-label="Brødsmulesti" className="font-ui text-sm">
+    <nav aria-label="Brødsmulesti" className="font-ui text-eyebrow font-medium">
       <ol className="flex flex-wrap items-center gap-2 text-brand">
         <li>
           <Link href="/" aria-label="Hjem" className="flex items-center transition hover:opacity-75">
@@ -77,11 +77,11 @@ export function Breadcrumb({ items, variant = "plain" }: BreadcrumbProps) {
             <li key={item.text} className="flex items-center gap-2">
               <ChevronIcon className="h-3 w-3" />
               {item.href && !isLast ? (
-                <Link href={item.href} className="font-semibold transition hover:opacity-75">
+                <Link href={item.href} className="transition hover:opacity-75">
                   {item.text}
                 </Link>
               ) : (
-                <span className="font-normal">{item.text}</span>
+                <span>{item.text}</span>
               )}
             </li>
           );

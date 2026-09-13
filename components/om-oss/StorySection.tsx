@@ -51,8 +51,8 @@ export function StorySection({
     <div className="space-y-14 md:space-y-20">
       <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-16">
         <div className="order-2 md:order-1">
-          <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">{heading1}</h2>
-          <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">{text1}</p>
+          <h2 className="text-section font-semibold text-black md:text-section-lg">{heading1}</h2>
+          <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">{text1}</p>
         </div>
         <div className="order-1 grid grid-cols-2 gap-4 md:order-2">
           {/* Measured off docs/reference/om-oss.desktop.jpg: each photo box
@@ -104,8 +104,8 @@ export function StorySection({
           </div>
         </div>
         <div>
-          <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">{heading2}</h2>
-          <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">{text2}</p>
+          <h2 className="text-section font-semibold text-black md:text-section-lg">{heading2}</h2>
+          <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">{text2}</p>
           <ValuesSection className="mt-6" />
         </div>
       </div>

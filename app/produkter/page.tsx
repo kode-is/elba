@@ -64,8 +64,8 @@ export default function Produkter() {
 
           <div className="mt-10 grid items-center gap-10 md:mt-14 md:grid-cols-2 md:gap-16">
             <div>
-              <h3 className="text-2xl font-semibold text-neutral-900 md:text-[32px]">Et bredt produktspekter</h3>
-              <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">
+              <h3 className="text-[23px] leading-[1.3] font-semibold text-black md:text-[36px]">Et bredt produktspekter</h3>
+              <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">
                 I tillegg til det vi normalt har på lager og vårt faste sortiment, kan vi skaffe det meste som
                 trengs relatert til smøring, montering og drift: slanger, fittings, ventiler, fordelere, pumper,
                 styring/overvåking og tilhørende komponenter. Ta kontakt dersom du har behov for en spesifikk del
@@ -73,7 +73,7 @@ export default function Produkter() {
               </p>
               <Link
                 href="/kontakt-oss"
-                className="mt-6 inline-flex items-center justify-center rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-hover"
+                className="mt-6 inline-flex items-center justify-center rounded-[10px] bg-brand px-[30px] py-5 text-[16px] leading-[1.2] font-semibold text-white transition hover:opacity-50"
               >
                 Kontakt oss
               </Link>
@@ -93,11 +93,11 @@ export default function Produkter() {
 
       <section className="bg-surface py-14 md:py-20">
         <Container>
-          <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">Vi leverer</h2>
+          <h2 className="text-section font-semibold text-black md:text-section-lg">Vi leverer</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {DELIVERABLES.map((item) => (
               <div key={item} className="rounded-full bg-white px-6 py-4">
-                <h3 className="font-ui text-base font-semibold text-neutral-900">{item}</h3>
+                <h3 className="font-ui text-[20px] leading-[1.4] font-semibold text-black">{item}</h3>
               </div>
             ))}
           </div>

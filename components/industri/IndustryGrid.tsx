@@ -38,7 +38,7 @@ export function IndustryGrid({ items }: IndustryGridProps) {
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/0 to-black/0"
           />
-          <p className="absolute bottom-4 left-4 font-ui text-base font-semibold text-white">{item.caption}</p>
+          <p className="absolute bottom-4 left-4 font-ui text-[22px] leading-[1.2] font-semibold text-surface">{item.caption}</p>
         </div>
       ))}
     </div>

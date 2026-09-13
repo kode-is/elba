@@ -51,8 +51,8 @@ export default function OmOss() {
 
       <Container>
         <div className="py-14 md:py-20">
-          <h2 className="text-center text-3xl font-semibold text-neutral-900 md:text-[40px]">Vårt team</h2>
-          <p className="mx-auto mt-4 max-w-xl text-center text-sm leading-relaxed text-neutral-600 md:text-base">
+          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Vårt team</h2>
+          <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-muted md:text-lead-lg">
             {TEAM_INTRO}
           </p>
           <TeamGrid members={team} className="mt-10" />

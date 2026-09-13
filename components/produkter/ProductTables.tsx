@@ -54,7 +54,7 @@ export function ProductTables({ tables }: { tables: ProductTable[] }) {
               </div>
             ) : null}
             {table.heading ? (
-              <h3 id={headingId} className="mb-4 text-xl font-semibold text-neutral-900 md:text-2xl">
+              <h3 id={headingId} className="mb-4 text-[23px] leading-[1.3] font-semibold text-black md:text-[36px]">
                 {table.heading}
               </h3>
             ) : null}

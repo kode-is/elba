@@ -11,15 +11,15 @@ type StepCardProps = {
 
 export function StepCard({ number, title, text, linkText, href }: StepCardProps) {
   return (
-    <div className="flex flex-col rounded-2xl bg-surface p-6 md:p-8">
+    <div className="flex flex-col rounded-[20px] bg-surface p-6 md:p-8">
       <div className="flex items-start gap-3">
-        <h3 className="text-2xl font-semibold text-brand">{number}</h3>
-        <h5 className="font-ui text-lg font-semibold text-neutral-900">{title}</h5>
+        <h3 className="text-[20px] leading-[1.3] font-semibold text-brand md:text-[28px]">{number}</h3>
+        <h5 className="font-ui text-sub font-semibold text-black md:text-sub-lg">{title}</h5>
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-neutral-600">{text}</p>
+      <p className="mt-4 font-ui text-body text-ink-muted md:text-body-lg">{text}</p>
       <Link
         href={href}
-        className="mt-6 inline-flex w-fit items-center text-sm font-semibold text-brand transition hover:underline"
+        className="mt-6 inline-flex w-fit items-center text-body font-semibold text-brand transition hover:underline md:text-body-lg"
       >
         {linkText}
       </Link>

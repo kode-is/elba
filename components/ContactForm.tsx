@@ -6,12 +6,18 @@ import { validateContact, type ContactPayload } from "@/lib/email/contact";
 
 type ContactFormProps = {
   submitLabel: string;
+  /**
+   * Field background. Live uses cream fields on /kontakt-oss's white section
+   * and white fields inside the home page's cream form card (both measured —
+   * docs/measure.txt), so the two tones swap with the card around them.
+   */
+  fieldTone?: "cream" | "white";
 };
 
 const SUCCESS_TEXT = "Takk! Vi har mottatt henvendelsen din og svarer så snart vi kan.";
 
-const fieldClass =
-  "w-full rounded-md border border-transparent bg-surface px-4 py-4 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-brand focus:outline-none";
+const FIELD_CLASS =
+  "w-full rounded-[10px] border border-transparent px-5 py-5 text-[16px] text-black placeholder:text-ink-faint focus:border-brand focus:outline-none";
 
 // Map validation error messages to field names for aria-invalid/aria-describedby
 const ERROR_MESSAGE_TO_FIELD: Record<string, "navn" | "epost" | "melding"> = {
@@ -20,7 +26,8 @@ const ERROR_MESSAGE_TO_FIELD: Record<string, "navn" | "epost" | "melding"> = {
   "Vennligst skriv en melding.": "melding",
 };
 
-export function ContactForm({ submitLabel }: ContactFormProps) {
+export function ContactForm({ submitLabel, fieldTone = "cream" }: ContactFormProps) {
+  const fieldClass = `${FIELD_CLASS} ${fieldTone === "white" ? "bg-white" : "bg-surface"}`;
   const [navn, setNavn] = useState("");
   const [epost, setEpost] = useState("");
   const [selskap, setSelskap] = useState("");
@@ -57,7 +64,7 @@ export function ContactForm({ submitLabel }: ContactFormProps) {
   if (success) {
     return (
       <div role="status" aria-live="polite">
-        <p className="text-sm font-medium text-neutral-900">{SUCCESS_TEXT}</p>
+        <p className="text-body-lg font-medium text-black">{SUCCESS_TEXT}</p>
       </div>
     );
   }
@@ -144,12 +151,12 @@ export function ContactForm({ submitLabel }: ContactFormProps) {
         />
       </div>
       <div role="status" aria-live="polite" className="min-h-[1.5rem]">
-        {error ? <p id="contact-error-message" className="text-sm font-medium text-red-600">{error}</p> : null}
+        {error ? <p id="contact-error-message" className="text-body-lg font-medium text-red-600">{error}</p> : null}
       </div>
       <button
         type="submit"
         disabled={isPending}
-        className="w-full rounded-md bg-brand px-6 py-4 text-sm font-semibold text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-70"
+        className="w-full rounded-[10px] bg-brand px-6 py-5 text-[16px] leading-[1.2] font-semibold text-white transition hover:opacity-50 disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isPending ? "Sender..." : submitLabel}
       </button>

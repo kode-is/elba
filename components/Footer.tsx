@@ -54,13 +54,13 @@ function MailIcon({ className }: { className?: string }) {
 function FooterLinkColumn({ column, className }: { column: FooterColumn; className?: string }) {
   return (
     <div className={className}>
-      <h4 className="mb-6 font-ui font-semibold text-neutral-900">{column.heading}</h4>
+      <h4 className="mb-6 font-ui text-label-lg font-semibold text-black">{column.heading}</h4>
       <ul className="flex flex-col items-center gap-3 md:flex-row md:flex-wrap md:items-start md:gap-x-10">
         {column.links.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              className="font-ui text-sm text-neutral-600 transition hover:text-brand"
+              className="font-ui text-body-lg text-ink-muted transition hover:text-brand"
             >
               {link.text}
             </Link>
@@ -82,7 +82,7 @@ export function Footer() {
             <Link href="/" aria-label="ELBA - Hjem">
               <Image src={LOGO.src} alt="ELBA" width={LOGO.width} height={LOGO.height} className="h-14 w-auto" />
             </Link>
-            <div className="space-y-3 text-sm text-neutral-700">
+            <div className="text-[18px] leading-[2] text-ink-muted">
               <p className="flex items-center gap-2">
                 <HouseIcon className="h-[18px] w-[18px] shrink-0" />
                 <span>{site.address}</span>
@@ -100,7 +100,7 @@ export function Footer() {
                 </a>
               </p>
             </div>
-            <p className="text-sm text-neutral-500">
+            <p className="mt-4 text-body text-ink-faint">
               © {new Date().getFullYear()} {site.copyright}
             </p>
           </div>

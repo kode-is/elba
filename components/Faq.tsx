@@ -14,7 +14,7 @@ function ToggleIcon({ open }: { open: boolean }) {
       viewBox="0 0 24 24"
       fill="none"
       aria-hidden="true"
-      className={`h-5 w-5 shrink-0 text-neutral-900 transition-transform duration-200 ${
+      className={`h-5 w-5 shrink-0 text-black transition-transform duration-200 ${
         open ? "rotate-180" : ""
       }`}
     >
@@ -39,7 +39,7 @@ function FaqRow({ item }: { item: FaqItem }) {
         onClick={() => setIsOpen((open) => !open)}
         className="flex w-full items-start justify-between gap-4 px-6 py-6 text-left"
       >
-        <span className="font-ui font-semibold text-neutral-900">{item.question}</span>
+        <span className="text-label-lg font-semibold text-black">{item.question}</span>
         <ToggleIcon open={isOpen} />
       </button>
       {isOpen ? (
@@ -47,7 +47,7 @@ function FaqRow({ item }: { item: FaqItem }) {
           id={answerId}
           role="region"
           aria-labelledby={questionId}
-          className="whitespace-pre-line px-6 pb-6 text-sm leading-relaxed text-neutral-600"
+          className="whitespace-pre-line px-6 pb-6 text-body-lg text-ink-muted"
         >
           {item.answer}
         </div>
@@ -57,8 +57,8 @@ function FaqRow({ item }: { item: FaqItem }) {
 }
 
 /**
- * Accordion for /anlegg's "Hvordan fungerer det?" (docs/scrape/anlegg.json)
- * and "Spurt & Svarað" (docs/scrape/smurkerfi.json). Each row opens
+ * Accordion for /anlegg's "Hvordan fungerer det?" (docs/scrape/anlegg.json).
+ * Each row opens
  * independently (docs/reference/anlegg.desktop.jpg shows each question as
  * its own separate rounded white card with a right-aligned chevron, not a
  * single seamless divided list) — that also matters functionally:

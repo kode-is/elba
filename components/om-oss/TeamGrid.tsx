@@ -28,15 +28,15 @@ export function TeamGrid({ members, className }: TeamGridProps) {
           />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-4">
-            <h3 className="font-ui text-lg font-semibold text-white">{member.name}</h3>
-            <h6 className="mt-1 text-xs font-medium uppercase tracking-wide text-white/70">{member.role}</h6>
-            <h6 className="text-xs font-medium uppercase tracking-wide text-white/70">
+            <h3 className="font-ui text-card font-semibold text-white md:text-card-lg">{member.name}</h3>
+            <h6 className="mt-1 text-meta font-medium text-ink-faint">{member.role}</h6>
+            <h6 className="text-meta font-medium text-ink-faint">
               <a href={`mailto:${member.email}`} className="hover:text-white">
                 {member.email}
               </a>
             </h6>
             {member.phone ? (
-              <h6 className="text-xs font-medium uppercase tracking-wide text-white/70">
+              <h6 className="text-meta font-medium text-ink-faint">
                 <a href={`tel:${member.phone.replace(/\s+/g, "")}`} className="hover:text-white">
                   {member.phone}
                 </a>

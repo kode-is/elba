@@ -1,15 +1,17 @@
 import { Figtree, Inter } from "next/font/google";
 import localFont from "next/font/local";
 
-// Matches the live skralli.is (measured via computed styles on 5 pages at
-// 1440px — see docs/handover.md): Figtree is the site's default body/heading
-// font, Inter is Framer's default token font used for card-level titles,
-// breadcrumbs, footer links and table text, and Satoshi (self-hosted below)
-// is used only for the animated StatCounter digits. `next/font/google`
-// downloads these at build time and self-hosts them — no runtime request to
-// Google — so no `<link>` tag is needed or added.
+// Matches live www.elba.no, measured via computed styles on six pages at
+// 1440px and 390px (`node scripts/measure.mjs`, output in docs/measure.txt):
+// Figtree is the site's default body/heading font, Inter is Framer's default
+// token font used for card-level titles, breadcrumbs, footer links, article
+// body copy and table text, and Satoshi (self-hosted below) is used by the
+// stats band only — the counter digits (Satoshi 700 64px) and their labels
+// (Satoshi 500 18px/28px) on the home page and /om-oss. `next/font/google`
+// downloads Figtree and Inter at build time and self-hosts them — no runtime
+// request to Google — so no `<link>` tag is needed or added.
 export const figtree = Figtree({
-  weight: ["400", "600"],
+  weight: ["400", "500", "600"],
   subsets: ["latin", "latin-ext"],
   display: "swap",
   variable: "--font-figtree",

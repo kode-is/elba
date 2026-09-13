@@ -38,7 +38,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
 
   return (
     <main id="main">
-      <PageHero image={p.hero} title={p.title} />
+      <PageHero image={p.hero} title={p.title} height="min-h-[438px] md:min-h-[479px]" />
       <div className="bg-white pt-6">
         <Container>
           <Breadcrumb items={[{ text: "Produkter", href: "/produkter" }, { text: p.title }]} />
@@ -48,7 +48,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
         <Container>
           <SubnavLabels items={p.subnav} />
           {p.intro.map((t) => (
-            <p key={t} className="mb-4 text-neutral-700">
+            <p key={t} className="mb-4 font-ui text-body-lg text-ink-muted">
               {t}
             </p>
           ))}

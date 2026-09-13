@@ -43,9 +43,9 @@ export function ArticleCard({ title, href, image, excerpt, variant = "tile" }: A
           />
         </div>
         <div className="flex flex-col justify-center px-6 py-5 md:px-0 md:py-5 md:pr-6">
-          <h3 className="font-ui text-lg font-semibold text-neutral-900 md:text-xl">{title}</h3>
-          {excerpt ? <p className="mt-2 text-sm leading-relaxed text-neutral-600">{excerpt}</p> : null}
-          <p className="mt-3 text-sm font-semibold text-brand">Les mer →</p>
+          <h3 className="font-ui text-card font-semibold text-black md:text-card-lg">{title}</h3>
+          {excerpt ? <p className="mt-2 font-ui text-body text-ink-muted md:text-body-lg">{excerpt}</p> : null}
+          <p className="mt-3 text-body font-semibold text-brand md:text-body-lg">Les mer →</p>
         </div>
       </Link>
     );
@@ -63,9 +63,9 @@ export function ArticleCard({ title, href, image, excerpt, variant = "tile" }: A
         />
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-ui text-lg font-semibold text-neutral-900">{title}</h3>
-        {excerpt ? <p className="mt-2 text-sm leading-relaxed text-neutral-600">{excerpt}</p> : null}
-        <p className="mt-3 text-sm font-semibold text-brand">Les mer →</p>
+        <h3 className="font-ui text-card font-semibold text-black md:text-card-lg">{title}</h3>
+        {excerpt ? <p className="mt-2 font-ui text-body text-ink-muted md:text-body-lg">{excerpt}</p> : null}
+        <p className="mt-3 text-body font-semibold text-brand md:text-body-lg">Les mer →</p>
       </div>
     </Link>
   );

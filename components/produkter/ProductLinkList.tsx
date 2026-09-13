@@ -39,7 +39,7 @@ export function ProductLinkList({ items }: ProductLinkListProps) {
             />
           </div>
           <div className="p-5">
-            <h3 className="font-ui text-base font-semibold text-neutral-900">{item.text}</h3>
+            <h3 className="font-ui text-[20px] leading-[1.4] font-semibold text-black">{item.text}</h3>
           </div>
         </Link>
       ))}

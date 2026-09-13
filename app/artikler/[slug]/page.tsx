@@ -33,7 +33,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
 
   return (
     <main id="main">
-      <PageHero image={a.hero} title={a.title} />
+      <PageHero image={a.hero} title={a.title} height="min-h-[438px] md:min-h-[479px]" />
       <div className="bg-white pt-6">
         <Container>
           <div className={READING_COLUMN}>
@@ -46,7 +46,7 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
         <Container>
           <div className={READING_COLUMN}>
             {a.subtitle ? (
-              <h1 className="mb-6 text-2xl leading-tight font-bold text-neutral-900 md:text-[32px]">
+              <h1 className="mb-6 font-ui text-[24px] leading-[1.2] font-bold text-black md:text-[30px]">
                 {a.subtitle}
               </h1>
             ) : null}

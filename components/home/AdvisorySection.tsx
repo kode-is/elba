@@ -38,8 +38,8 @@ function ClockIcon() {
 export function AdvisorySection() {
   return (
     <div>
-      <h2 className="text-3xl font-semibold text-neutral-900 md:text-[40px]">Faglig rådgivning</h2>
-      <p className="mt-5 max-w-lg text-sm leading-relaxed text-neutral-600 md:text-base">
+      <h2 className="text-section font-semibold text-black md:text-section-lg">Faglig rådgivning</h2>
+      <p className="mt-5 max-w-lg text-lead text-ink-muted md:text-lead-lg">
         I over 30 år har ELBA bygget opp in-house ekspertise på smøresystemer og relaterte løsninger. Ta kontakt i
         dag så finner vi den løsningen som sparer din drift for mest tid og ressurser.
       </p>
@@ -50,8 +50,8 @@ export function AdvisorySection() {
             <CalendarIcon />
           </span>
           <div>
-            <h2 className="font-ui text-lg font-semibold text-neutral-900">Høy</h2>
-            <p className="text-sm text-neutral-600">tilgjengelighet</p>
+            <h2 className="text-[26px] leading-[1.3] font-semibold text-black">Høy</h2>
+            <p className="text-body text-ink-muted md:text-body-lg">tilgjengelighet</p>
           </div>
         </div>
         <div className="flex items-center gap-3">
@@ -59,8 +59,8 @@ export function AdvisorySection() {
             <ClockIcon />
           </span>
           <div>
-            <h2 className="font-ui text-lg font-semibold text-neutral-900">Rask</h2>
-            <p className="text-sm text-neutral-600">responstid</p>
+            <h2 className="text-[26px] leading-[1.3] font-semibold text-black">Rask</h2>
+            <p className="text-body text-ink-muted md:text-body-lg">responstid</p>
           </div>
         </div>
       </div>

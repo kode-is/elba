@@ -1,0 +1,390 @@
+
+## / (https://www.elba.no)
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | 
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Kontakt oss
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Kontakt oss
+H1 | Figtree | 600 | 70px | 84px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Velkommentil ELBA
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | I Industriens tjeneste
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0.5) | elba@elba.no
+H4 | Inter | 600 | 20px | 32px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | elba@elba.no
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0.5) | 32 25 20 30
+H4 | Inter | 600 | 20px | 32px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | 32 25 20 30
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Landbruk
+H3 | Figtree | 600 | 28px | 36.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Landbruk
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | 
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Sagbruk
+H3 | Figtree | 600 | 28px | 36.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Sagbruk
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Offshore
+H3 | Figtree | 600 | 28px | 36.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Offshore
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Papir/cellulose
+H3 | Figtree | 600 | 28px | 36.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Papir/cellulose
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Metall
+H3 | Figtree | 600 | 28px | 36.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Metall
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Maritim
+H3 | Figtree | 600 | 28px | 36.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Maritim
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Jernbane
+H3 | Figtree | 600 | 28px | 36.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Jernbane
+LI | sans-serif | 400 | 12px | normal | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Gjenvinning
+H3 | Figtree | 600 | 28px | 36.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Gjenvinning
+H3 | Figtree | 600 | 36px | 46.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Få fast pris i dag
+H3 | Figtree | 600 | 28px | 36.4px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | 1
+H5 | Inter | 600 | 18px | 28.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Send oss en forespørsel
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fortell oss om det du trenger å smøre.
+P | Figtree | 600 | 16px | 30.4px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Ta kontakt →
+A | Figtree | 600 | 16px | 30.4px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Ta kontakt →
+H3 | Figtree | 600 | 28px | 36.4px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | 2
+H5 | Inter | 600 | 18px | 28.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Få en fast pris
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Enten du monterer selv eller om vi gjør 
+H3 | Figtree | 600 | 28px | 36.4px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | 3
+H5 | Inter | 600 | 18px | 28.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Når passer det for deg?
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Sammen finner vi en tid som krever minim
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Våre tjenester
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Se utvalget
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Se utvalget
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Gi oss utfordringen så skal vi se hva vi
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | AnleggPresis kontinuerlig smøring til di
+H5 | Inter | 600 | 18px | 28.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Anlegg
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Presis kontinuerlig smøring til din mask
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | IndustriSkreddersydde løsninger for nors
+H5 | Inter | 600 | 18px | 28.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Industri
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Skreddersydde løsninger for norsk indust
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | ProdukterAlt du trenger til installasjon
+H5 | Inter | 600 | 18px | 28.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Produkter
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Alt du trenger til installasjon, vedlike
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Faglig rådgivning
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | I over 30 år har ELBA bygget opp in-hous
+H2 | Figtree | 600 | 26px | 33.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Høy
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | tilgjengelighet
+H2 | Figtree | 600 | 26px | 33.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Rask
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | responstid
+H3 | Inter | 600 | 22px | 30.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Kontakt oss
+P | Satoshi | 500 | 18px | 28px | rgb(217, 217, 217) | rgba(0, 0, 0, 0) | Montasjer i året
+P | Satoshi | 500 | 18px | 28px | rgb(217, 217, 217) | rgba(0, 0, 0, 0) | Års erfaring
+P | Satoshi | 500 | 18px | 28px | rgb(217, 217, 217) | rgba(0, 0, 0, 0) | Artikler på lager
+P | Satoshi | 500 | 18px | 28px | rgb(217, 217, 217) | rgba(0, 0, 0, 0) | Fornøyde kunder
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Nyeste artikler
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hold deg oppdatert med våre siste nyhete
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Les mer
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Les mer
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(245, 242, 239) | Nytt design på Elbas hjemmesideLes mer →
+H3 | Inter | 600 | 22px | 30.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Nytt design på Elbas hjemmeside
+P | Figtree | 600 | 16px | 30.4px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Les mer →
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(245, 242, 239) | Nytt eierskap for ElbaLes mer →
+H3 | Inter | 600 | 22px | 30.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Nytt eierskap for Elba
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(245, 242, 239) | Passiv og aktiv overvåking for driftsled
+H3 | Inter | 600 | 22px | 30.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Passiv og aktiv overvåking for driftsled
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fabrikkgata 11D, 3320 Vestfossen
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | 32 25 20 30
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | elba@elba.no
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Selskapet
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+
+## /om-oss (https://www.elba.no)
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | 
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Kontakt oss
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Kontakt oss
+H1 | Figtree | 600 | 70px | 84px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+P | Inter | 500 | 14px | 14px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Om oss
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Kvalitet og profesjonalitet.
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Vi er opptatt av å levere førsteklasses 
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Din drift er vår ambisjon.
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fra den minste minigraver til Norges stø
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Samarbeid
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Pålitelighet
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Kvalitet
+P | Satoshi | 500 | 18px | 28px | rgb(217, 217, 217) | rgba(0, 0, 0, 0) | Montasjer i året
+P | Satoshi | 500 | 18px | 28px | rgb(217, 217, 217) | rgba(0, 0, 0, 0) | Års erfaring
+P | Satoshi | 500 | 18px | 28px | rgb(217, 217, 217) | rgba(0, 0, 0, 0) | Artikler på lager
+P | Satoshi | 500 | 18px | 28px | rgb(217, 217, 217) | rgba(0, 0, 0, 0) | Fornøyde kunder
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Vårt team
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hos oss jobber et sterkt team av fagfolk
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Ronny Thoresen
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | Daglig leder
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | ronny@elba.no
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | 
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Haavard Gaathaug
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | Salgsingeniør
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | haavard@elba.no
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hege Hersæther
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | Driftsleder
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | hege@elba.no
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Adrian Myrvold
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | Logistikk og salg
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | adrian@elba.no
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Lukas Sundby Baklid
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | Logistikk
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | lager@elba.no
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | H. Isak Vilmundarson
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | Prosjektleder
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | isak@elba.no
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Christoffer Iversen
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | Senior montør
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | christoffer@elba.no
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | 776 4836
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Sondre Hovde Bamrud
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | sondre@elba.no
+H3 | Inter | 600 | 22px | 30.8px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Eva Hansen
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | Regnskap
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | eva@elba.no
+H2 | Figtree | 600 | 50px | 62.5px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Send oss en forespørsel
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | Kontakt oss
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fabrikkgata 11D, 3320 Vestfossen
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | 32 25 20 30
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | elba@elba.no
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Selskapet
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+
+## /anlegg (https://www.elba.no)
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | 
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Kontakt oss
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Kontakt oss
+H1 | Figtree | 600 | 70px | 84px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Anlegg
+P | Figtree | 400 | 18px | 34.2px | rgb(221, 221, 221) | rgba(0, 0, 0, 0) | Presis kontinuerlig smøring til din mask
+P | Inter | 500 | 14px | 14px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Anlegg
+H1 | Inter | 700 | 30px | 36px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Driftssikre smøresystemer
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | ELBA leverer sentralsmøreanlegg til grav
+H1 | Inter | 700 | 30px | 36px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Effektive løsninger
+P | Figtree | 400 | 18px | 34.2px | rgb(255, 182, 193) | rgba(0, 0, 0, 0) | Fra enkle pumpesystemer til løsninger me
+H1 | Inter | 700 | 30px | 36px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Profesjonell levering
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Vi leverer komplette kit til forhandlere
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Hvordan fungerer det?
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Kan systemet ettermonteres?
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Ja. Vi leverer modelltilpassede kit for 
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Hvor driftssikkert er systemet?
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Hva skjer dersom systemet får en feil?
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Ved eventuelle avvik gir overvåkede syst
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Digital overvåking
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Vi tilbyr digital overvåking av sentrals
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Løsningene kan varsle fører ved avvik og
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Oversikt
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Varsling
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Sporbarhet
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Nøkkelfunksjoner
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Jevn dosering
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Riktig fettmengde tilføres automatisk me
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Redusert nedetid
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Kontinuerlig smøring minimerer slitasjer
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Økt sikkerhet
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Manuell smøring i risikoområder redusere
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Lavere kostnader
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Mindre slitasje og færre reparasjoner gi
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Forlenget levetid
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Bolter, lager og ledd får optimal smørin
+H4 | Figtree | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Redusert forbruk
+P | Figtree | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Presis og kontrollert dosering minimerer
+H2 | Figtree | 600 | 50px | 62.5px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | 30y
+P | Figtree | 400 | 16px | 30.4px | rgb(221, 221, 221) | rgba(0, 0, 0, 0) | Erfaring
+H2 | Figtree | 600 | 50px | 62.5px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | 2k+
+P | Figtree | 400 | 16px | 30.4px | rgb(221, 221, 221) | rgba(0, 0, 0, 0) | Montasjer
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Erfaring i praksis
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Elba leverer og installerer sentralsmøre
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | 
+P | Figtree | 400 | 18px | 34.2px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Vi arbeider strukturert og prioriterer r
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Om oss
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+H2 | Figtree | 600 | 50px | 62.5px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Send oss en forespørsel
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | Kontakt oss
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fabrikkgata 11D, 3320 Vestfossen
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | 32 25 20 30
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | elba@elba.no
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Selskapet
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+
+## /produkter/fett (https://www.elba.no)
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | 
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Kontakt oss
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Kontakt oss
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | 
+H1 | Figtree | 600 | 70px | 84px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Fett
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | Produkter
+P | Inter | 500 | 14px | 14px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Produkter
+P | Inter | 500 | 14px | 14px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Fett
+TH | Inter | 600 | 15px | 19.5px | rgb(17, 17, 17) | rgb(247, 247, 248) | Forpakning
+TH | Inter | 600 | 15px | 19.5px | rgb(17, 17, 17) | rgb(247, 247, 248) | NLGI
+TH | Inter | 600 | 15px | 19.5px | rgb(17, 17, 17) | rgb(247, 247, 248) | Fortykker
+TH | Inter | 600 | 15px | 19.5px | rgb(17, 17, 17) | rgb(247, 247, 248) | Tilsats
+TH | Inter | 600 | 15px | 19.5px | rgb(17, 17, 17) | rgb(247, 247, 248) | Belastning
+TH | Inter | 600 | 15px | 19.5px | rgb(17, 17, 17) | rgb(247, 247, 248) | Tilkobling
+TH | Inter | 600 | 15px | 19.5px | rgb(17, 17, 17) | rgb(247, 247, 248) | Temp
+TH | Inter | 600 | 15px | 19.5px | rgb(17, 17, 17) | rgb(247, 247, 248) | Art.Nr.
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 400 g patron
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | EP 2
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | Calsium
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | Svært høy
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | std
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | -30 til 120
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 953148103
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | Litium
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | Medium
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 953147981
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | skru
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | -30  til 150
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 0320092
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | Aluminium
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | Fast
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | -20 til 1100
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 0320254
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 18 kg spann
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | Høy
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 953146425
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 953146467
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | EP 2 Bio
+TD | Inter | 400 | 15px | 19.5px | rgb(17, 17, 17) | rgb(255, 255, 255) | 953148319
+BUTTON | sans-serif | 500 | 15px | normal | rgb(17, 17, 17) | rgb(247, 247, 248) | Previous
+BUTTON | sans-serif | 500 | 15px | normal | rgb(17, 17, 17) | rgb(247, 247, 248) | Next
+H2 | Figtree | 600 | 50px | 62.5px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Send oss en forespørsel
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | Kontakt oss
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fabrikkgata 11D, 3320 Vestfossen
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | 32 25 20 30
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | elba@elba.no
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Selskapet
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+
+## /artikler/nytt-eierskap (https://www.elba.no)
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | 
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Kontakt oss
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Kontakt oss
+H6 | Figtree | 500 | 12px | 14.4px | rgb(145, 145, 145) | rgba(0, 0, 0, 0) | 
+H1 | Figtree | 600 | 70px | 84px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Nytt eierskap for Elba
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | Artikle
+P | Inter | 500 | 14px | 14px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Artikle
+P | Inter | 500 | 14px | 14px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Nytt eierskap for Elba
+H1 | Inter | 700 | 30px | 36px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Daglig leder kjøper opp Elba sammen med 
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Ronny, daglig leder i Elba, har kjøpt op
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Elba, en ledende aktør innen smøresystem
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Elba har i en årrekke vært spesialist på
+P | Inter | 400 | 16px | 28.8px | rgb(153, 153, 153) | rgba(0, 0, 0, 0) | “Vi skal bygge videre på det fundamentet
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Skralli er en sentral aktør innen servic
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Skralli kommer inn som en strategisk par
+P | Inter | 400 | 16px | 28.8px | rgb(153, 153, 153) | rgba(0, 0, 0, 0) | “Elba og Skralli utfyller hverandre godt
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | 
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fra venstre, Hlynur Isak Vilmundarson (m
+H2 | Inter | 600 | 26px | 33.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Gir stafettpinnen videre
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etter mange år ved roret overlater nå ti
+H2 | Inter | 600 | 26px | 33.8px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Et startskudd for videre vekst og innova
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | De nye eierne har allerede identifisert 
+P | Inter | 400 | 16px | 28.8px | rgb(153, 153, 153) | rgba(0, 0, 0, 0) | “Vi vil bruke mer ressurser på å følge o
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | En viktig del av satsingen er moderniser
+H2 | Figtree | 600 | 50px | 62.5px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Send oss en forespørsel
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | Kontakt oss
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fabrikkgata 11D, 3320 Vestfossen
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | 32 25 20 30
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | elba@elba.no
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Selskapet
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+
+## /kontakt-oss (https://www.elba.no)
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgba(0, 0, 0, 0) | 
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Hjem
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Om oss
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Artikler
+P | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | Figtree | 400 | 16px | 30.4px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Tjenester
+A | sans-serif | 400 | 12px | normal | rgb(0, 0, 238) | rgb(193, 30, 49) | Kontakt oss
+P | Figtree | 600 | 16px | 19.2px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Kontakt oss
+H1 | Figtree | 600 | 70px | 84px | rgb(255, 255, 255) | rgba(0, 0, 0, 0) | Kontakt oss
+P | Inter | 500 | 14px | 14px | rgb(193, 30, 49) | rgba(0, 0, 0, 0) | Kontakt oss
+H2 | Figtree | 600 | 50px | 62.5px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Send oss en forespørsel
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Fabrikkgata 11D, 3320 Vestfossen
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | 32 25 20 30
+P | Figtree | 400 | 18px | 14.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | elba@elba.no
+H4 | Inter | 600 | 20px | 32px | rgb(0, 0, 0) | rgba(0, 0, 0, 0) | Selskapet
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Hjem
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Om oss
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Artikler
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Tjenester
+P | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar
+A | Inter | 400 | 16px | 30.4px | rgb(68, 68, 68) | rgba(0, 0, 0, 0) | Etikk og ansvar

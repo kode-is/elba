@@ -25,7 +25,7 @@ export function FeatureTileGrid({ tiles }: FeatureTileGridProps) {
         tile.type === "image" ? (
           <div
             key={index}
-            className="relative h-[280px] w-full overflow-hidden rounded-2xl md:h-full md:min-h-[320px]"
+            className="relative h-[280px] w-full overflow-hidden rounded-[20px] md:h-full md:min-h-[320px]"
           >
             <Image
               src={tile.image.src}
@@ -38,16 +38,18 @@ export function FeatureTileGrid({ tiles }: FeatureTileGridProps) {
         ) : (
           <div
             key={index}
-            className={`flex flex-col justify-center rounded-2xl p-8 md:p-10 ${
-              tile.tone === "red" ? "bg-brand text-white" : "bg-surface text-neutral-900"
+            className={`flex flex-col justify-center rounded-[20px] p-8 md:p-10 ${
+              tile.tone === "red" ? "bg-brand text-white" : "bg-surface text-black"
             }`}
           >
-            <h1 className="font-ui text-2xl font-semibold md:text-[28px]">{tile.heading}</h1>
+            <h1 className="font-ui text-[24px] leading-[1.2] font-bold md:text-[30px]">{tile.heading}</h1>
             {tile.paragraphs.map((paragraph) => (
               <p
                 key={paragraph}
-                className={`mt-4 text-sm leading-relaxed md:text-base ${
-                  tile.tone === "red" ? "text-white/90" : "text-neutral-600"
+                className={`mt-4 ${
+                  tile.tone === "red"
+                    ? "text-lead text-brand-soft md:text-lead-lg"
+                    : "font-ui text-body text-ink-muted md:text-body-lg"
                 }`}
               >
                 {paragraph}
