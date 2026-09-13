@@ -14,7 +14,8 @@ import type { ProductTable } from "@/lib/produkter";
  * product photo) renders full-width with no card, matching the reference
  * screenshot; two or more sit in a two-column grid, each on the light card
  * background the live site uses behind its product photos (sampled from
- * docs/reference/produkter__skruhylser.desktop.jpg: rgb(235,238,245)) — the
+ * docs/reference/produkter__skruhylser.desktop.jpg: rgb(235,238,245),
+ * declared as the `--color-surface-cool` token in app/globals.css) — the
  * scrape doesn't distinguish "diagram" from "photo" blocks, so the same
  * card is used for both rather than inventing that distinction.
  */
@@ -39,7 +40,7 @@ export function ProductTables({ tables }: { tables: ProductTable[] }) {
             ) : table.images.length > 1 ? (
               <div className="mb-6 grid grid-cols-2 gap-4 md:gap-6">
                 {table.images.map((image, imageIndex) => (
-                  <div key={imageIndex} className="flex items-center justify-center rounded-2xl bg-[#ebeef5] p-6">
+                  <div key={imageIndex} className="flex items-center justify-center rounded-2xl bg-surface-cool p-6">
                     <Image
                       src={image.src}
                       alt={image.alt}
