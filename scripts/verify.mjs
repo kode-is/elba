@@ -25,6 +25,8 @@ const IGNORE_MISSING = Object.fromEntries(ROUTES.map((r) => [r, r.startsWith("/p
 // animation-timing artifact, not missing content. \d{1,3} only covered the
 // two smaller stats; widened to \d{1,5} to cover all four.
 IGNORE_MISSING["/"] = [/^\d{1,5}$/];
+// Task 8 (/om-oss): the same four stat counters, mid-animation (see StatsSection).
+IGNORE_MISSING["/om-oss"] = [/^\d{1,5}$/];
 IGNORE_MISSING["/anlegg"] = [/^\d{1,3}$/, /^\d+[ky]\+?$/];
 // The live submit button reads "Senda!" (a leftover Icelandic string on
 // elba.no's own contact form); this rebuild's button reads "Send" instead —
