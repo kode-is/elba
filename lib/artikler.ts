@@ -100,19 +100,23 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "finne riktig produkt eller løsning"
+        "text": "finne riktig produkt eller løsning",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "sende forespørsler"
+        "text": "sende forespørsler",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "komme i kontakt med oss"
+        "text": "komme i kontakt med oss",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "få oversikt over hva Elba tilbyr"
+        "text": "få oversikt over hva Elba tilbyr",
+        "list": 0
       },
       {
         "type": "heading",
@@ -266,15 +270,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Visuell indikatorstift på hovedblokk i progressivsystemer viser at smøresyklusen faktisk går."
+        "text": "Visuell indikatorstift på hovedblokk i progressivsystemer viser at smøresyklusen faktisk går.",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "Overtrykksventiler varsler lokalt dersom et smørepunkt er blokkert."
+        "text": "Overtrykksventiler varsler lokalt dersom et smørepunkt er blokkert.",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "Fordel: Umiddelbar, visuell bekreftelse ute på maskinen som fungerer alltid, også uten strøm eller nett."
+        "text": "Fordel: Umiddelbar, visuell bekreftelse ute på maskinen som fungerer alltid, også uten strøm eller nett.",
+        "list": 0
       },
       {
         "type": "heading",
@@ -287,19 +294,23 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Overvåker trykk, sykluser og status kontinuerlig"
+        "text": "Overvåker trykk, sykluser og status kontinuerlig",
+        "list": 1
       },
       {
         "type": "text",
-        "text": "Sender sanntidsvarsler ved avvik (e-post/SMS/portal)"
+        "text": "Sender sanntidsvarsler ved avvik (e-post/SMS/portal)",
+        "list": 1
       },
       {
         "type": "text",
-        "text": "Logger historikk og dokumentasjon for analyse og etterprøvbarhet"
+        "text": "Logger historikk og dokumentasjon for analyse og etterprøvbarhet",
+        "list": 1
       },
       {
         "type": "text",
-        "text": "Gir fjerninnsyn i hele maskinparken på tvers av lokasjoner"
+        "text": "Gir fjerninnsyn i hele maskinparken på tvers av lokasjoner",
+        "list": 1
       },
       {
         "type": "heading",
@@ -344,15 +355,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Maskinutleie (bevis på korrekt drift)"
+        "text": "Maskinutleie (bevis på korrekt drift)",
+        "list": 2
       },
       {
         "type": "text",
-        "text": "Flere operatører på samme maskin"
+        "text": "Flere operatører på samme maskin",
+        "list": 2
       },
       {
         "type": "text",
-        "text": "Revisjoner og kvalitetskrav"
+        "text": "Revisjoner og kvalitetskrav",
+        "list": 2
       },
       {
         "type": "heading",
@@ -374,19 +388,24 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Produksjonsanlegg med kontinuerlig drift"
+        "text": "Produksjonsanlegg med kontinuerlig drift",
+        "list": 3
       },
       {
         "type": "text",
-        "text": "Store entreprenører med mange maskiner på ulike lokasjoner"
+        "text": "Store entreprenører med mange maskiner på ulike lokasjoner",
+        "list": 3
       },
       {
         "type": "text",
-        "text": "Maskinutleie som trenger dokumentasjon og kontroll"
+        "text": "Maskinutleie som trenger dokumentasjon og kontroll",
+        "list": 3
       },
       {
         "type": "text",
-        "text": "Driftsmiljøer med høye krav til oppetid og sikkerhet"
+        "text": "Driftsmiljøer med høye krav til oppetid og sikkerhet",
+        "bold": true,
+        "list": 3
       },
       {
         "type": "heading",
@@ -445,15 +464,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Jevn og korrekt smøring"
+        "text": "Jevn og korrekt smøring",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "Mindre slitasje på lager, kjeder og føringer"
+        "text": "Mindre slitasje på lager, kjeder og føringer",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "Færre uforutsette driftsstans"
+        "text": "Færre uforutsette driftsstans",
+        "list": 0
       },
       {
         "type": "heading",
@@ -470,15 +492,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Reduserer behovet for akutte reparasjoner"
+        "text": "Reduserer behovet for akutte reparasjoner",
+        "list": 1
       },
       {
         "type": "text",
-        "text": "Forlenger levetiden på kritiske komponenter"
+        "text": "Forlenger levetiden på kritiske komponenter",
+        "list": 1
       },
       {
         "type": "text",
-        "text": "Gir mer planlagt og forutsigbart vedlikehold"
+        "text": "Gir mer planlagt og forutsigbart vedlikehold",
+        "list": 1
       },
       {
         "type": "text",
@@ -499,15 +524,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Brukes færre timer på enkle, manuelle oppgaver"
+        "text": "Brukes færre timer på enkle, manuelle oppgaver",
+        "list": 2
       },
       {
         "type": "text",
-        "text": "Kan vedlikeholdspersonell fokusere på inspeksjon og forbedring"
+        "text": "Kan vedlikeholdspersonell fokusere på inspeksjon og forbedring",
+        "list": 2
       },
       {
         "type": "text",
-        "text": "Blir HMS bedre, fordi færre må inn i utsatte områder"
+        "text": "Blir HMS bedre, fordi færre må inn i utsatte områder",
+        "list": 2
       },
       {
         "type": "text",
@@ -528,15 +556,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Å ta over og videreutvikle eksisterende smøresystemer"
+        "text": "Å ta over og videreutvikle eksisterende smøresystemer",
+        "list": 3
       },
       {
         "type": "text",
-        "text": "Service og optimalisering, uavhengig av leverandør og løsning"
+        "text": "Service og optimalisering, uavhengig av leverandør og løsning",
+        "list": 3
       },
       {
         "type": "text",
-        "text": "Tilpasning av systemtype etter bruksområde og drift"
+        "text": "Tilpasning av systemtype etter bruksområde og drift",
+        "list": 3
       },
       {
         "type": "text",
@@ -557,15 +588,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Stabil drift"
+        "text": "Stabil drift",
+        "list": 4
       },
       {
         "type": "text",
-        "text": "Lavere totale eierkostnader"
+        "text": "Lavere totale eierkostnader",
+        "list": 4
       },
       {
         "type": "text",
-        "text": "Lengre levetid på maskiner og utstyr"
+        "text": "Lengre levetid på maskiner og utstyr",
+        "list": 4
       },
       {
         "type": "text",
@@ -611,35 +645,43 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Én hovedlinje som forsyner alle smørepunkter"
+        "text": "Én hovedlinje som forsyner alle smørepunkter",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "Enkel oppbygning og kostnadseffektiv løsning"
+        "text": "Enkel oppbygning og kostnadseffektiv løsning",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "Lett å installere og vedlikeholde"
+        "text": "Lett å installere og vedlikeholde",
+        "list": 0
       },
       {
         "type": "text",
-        "text": "Styrker:"
+        "text": "Styrker:",
+        "bold": true
       },
       {
         "type": "text",
-        "text": "Driftssikkert og oversiktlig"
+        "text": "Driftssikkert og oversiktlig",
+        "list": 1
       },
       {
         "type": "text",
-        "text": "God løsning der belastning og temperatur er relativt stabile"
+        "text": "God løsning der belastning og temperatur er relativt stabile",
+        "list": 1
       },
       {
         "type": "text",
-        "text": "Begrensninger:"
+        "text": "Begrensninger:",
+        "bold": true
       },
       {
         "type": "text",
-        "text": "Mindre egnet for svært store systemer eller lange avstander"
+        "text": "Mindre egnet for svært store systemer eller lange avstander",
+        "list": 2
       },
       {
         "type": "heading",
@@ -652,39 +694,48 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "To hovedlinjer som jobber vekselvis"
+        "text": "To hovedlinjer som jobber vekselvis",
+        "list": 3
       },
       {
         "type": "text",
-        "text": "Kan håndtere høyt trykk og lange rørstrekk"
+        "text": "Kan håndtere høyt trykk og lange rørstrekk",
+        "list": 3
       },
       {
         "type": "text",
-        "text": "Svært robust løsning"
+        "text": "Svært robust løsning",
+        "list": 3
       },
       {
         "type": "text",
-        "text": "Styrker:"
+        "text": "Styrker:",
+        "bold": true
       },
       {
         "type": "text",
-        "text": "Ideell for mange smørepunkter"
+        "text": "Ideell for mange smørepunkter",
+        "list": 4
       },
       {
         "type": "text",
-        "text": "Tåler tøffe forhold og varierende belastning"
+        "text": "Tåler tøffe forhold og varierende belastning",
+        "list": 4
       },
       {
         "type": "text",
-        "text": "Begrensninger:"
+        "text": "Begrensninger:",
+        "bold": true
       },
       {
         "type": "text",
-        "text": "Mer kompleks installasjon"
+        "text": "Mer kompleks installasjon",
+        "list": 5
       },
       {
         "type": "text",
-        "text": "Høyere investeringskostnad enn enlinje"
+        "text": "Høyere investeringskostnad enn enlinje",
+        "list": 5
       },
       {
         "type": "heading",
@@ -697,35 +748,43 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Smøringen går i en fast rekkefølge gjennom fordelere"
+        "text": "Smøringen går i en fast rekkefølge gjennom fordelere",
+        "list": 6
       },
       {
         "type": "text",
-        "text": "Hvis ett punkt blokkeres, stopper hele systemet, noe som gjør feil lett å oppdage"
+        "text": "Hvis ett punkt blokkeres, stopper hele systemet, noe som gjør feil lett å oppdage",
+        "list": 6
       },
       {
         "type": "text",
-        "text": "Styrker:"
+        "text": "Styrker:",
+        "bold": true
       },
       {
         "type": "text",
-        "text": "Høy presisjon og kontroll"
+        "text": "Høy presisjon og kontroll",
+        "list": 7
       },
       {
         "type": "text",
-        "text": "Enkelt å overvåke både mekanisk og digitalt"
+        "text": "Enkelt å overvåke både mekanisk og digitalt",
+        "list": 7
       },
       {
         "type": "text",
-        "text": "Svært populært i entreprenør- og industrimaskiner"
+        "text": "Svært populært i entreprenør- og industrimaskiner",
+        "list": 7
       },
       {
         "type": "text",
-        "text": "Begrensninger:"
+        "text": "Begrensninger:",
+        "bold": true
       },
       {
         "type": "text",
-        "text": "Mindre egnet der ekstrem fleksibilitet kreves"
+        "text": "Mindre egnet der ekstrem fleksibilitet kreves",
+        "list": 8
       },
       {
         "type": "heading",
@@ -738,35 +797,43 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Hver smørelinje går direkte fra pumpen til smørepunktet"
+        "text": "Hver smørelinje går direkte fra pumpen til smørepunktet",
+        "list": 9
       },
       {
         "type": "text",
-        "text": "Full uavhengighet mellom punktene"
+        "text": "Full uavhengighet mellom punktene",
+        "list": 9
       },
       {
         "type": "text",
-        "text": "Styrker:"
+        "text": "Styrker:",
+        "bold": true
       },
       {
         "type": "text",
-        "text": "Svært fleksibelt"
+        "text": "Svært fleksibelt",
+        "list": 10
       },
       {
         "type": "text",
-        "text": "Enkelt å justere individuelle smøremengder"
+        "text": "Enkelt å justere individuelle smøremengder",
+        "list": 10
       },
       {
         "type": "text",
-        "text": "Begrensninger:"
+        "text": "Begrensninger:",
+        "bold": true
       },
       {
         "type": "text",
-        "text": "Begrenset antall smørepunkter"
+        "text": "Begrenset antall smørepunkter",
+        "list": 11
       },
       {
         "type": "text",
-        "text": "Mindre egnet for store systemer"
+        "text": "Mindre egnet for store systemer",
+        "list": 11
       },
       {
         "type": "heading",
@@ -779,15 +846,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Få smørepunkter / enkel maskin: Flerlinje eller enlinje"
+        "text": "Få smørepunkter / enkel maskin: Flerlinje eller enlinje",
+        "list": 12
       },
       {
         "type": "text",
-        "text": "Mange smørepunkter / høy driftssikkerhet: Progressivt system"
+        "text": "Mange smørepunkter / høy driftssikkerhet: Progressivt system",
+        "list": 12
       },
       {
         "type": "text",
-        "text": "Store anlegg / lange avstander / tung industri: Tolinjesystem"
+        "text": "Store anlegg / lange avstander / tung industri: Tolinjesystem",
+        "list": 12
       },
       {
         "type": "text",
@@ -822,15 +892,18 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Sanntidsvarsler ved avvik"
+        "text": "Sanntidsvarsler ved avvik",
+        "list": 13
       },
       {
         "type": "text",
-        "text": "Fjerninnsyn i maskinparkens status"
+        "text": "Fjerninnsyn i maskinparkens status",
+        "list": 13
       },
       {
         "type": "text",
-        "text": "Historikk og dokumentasjon for vedlikehold"
+        "text": "Historikk og dokumentasjon for vedlikehold",
+        "list": 13
       },
       {
         "type": "text",

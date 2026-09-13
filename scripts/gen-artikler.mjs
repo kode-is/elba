@@ -14,16 +14,17 @@
 //   ends with, which `<ContactCta />` renders instead of ArticleBlock
 //   content.
 //
-// The live scrape currently carries no `bold`/`list` annotations on any
-// artikler route's text blocks — scripts/scrape-formatting.mjs did find
-// list/strong candidates on the live HTML (see docs/scrape/formatting.json),
-// but a later scrape.mjs re-run (fixing footer detection) regenerated
-// docs/scrape/artikler__*.json's blocks fresh, after formatting.json was
-// written, so the annotations were never merged back in (verified: the
-// artikler__*.json mtimes postdate formatting.json's generatedAt, and no
-// block below carries a `bold`/`list` key). This generator still reads
-// them defensively, same as gen-produkter does for produkter, but they
-// never fire today — every text block renders as a plain paragraph.
+// `bold`/`list` annotations on text blocks come from a separate pass,
+// `npm run scrape-formatting` (scripts/scrape-formatting.mjs), which fetches
+// each route's live HTML and annotates docs/scrape/<route>.json in place —
+// run it (and re-run this generator) whenever docs/scrape/artikler__*.json
+// is refreshed from a plain `npm run scrape`, since that overwrites blocks[]
+// fresh and drops any earlier annotation (this happened once already: a
+// footer-detection fix re-scraped every route after scrape-formatting had
+// run, silently reverting all five artikler routes to unannotated — caught
+// only by comparing rendered pages against docs/reference/*.jpg). This
+// generator reads `bold`/`list` the same way gen-produkter does for
+// produkter, carrying them straight onto the matching `ArticleBlock`.
 //
 // No article shows a visible publish date on live (Framer's own <time>
 // element renders empty on every one of the five routes) — Article.date

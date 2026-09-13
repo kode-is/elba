@@ -69,15 +69,18 @@
     },
     {
       "type": "text",
-      "text": "Visuell indikatorstift på hovedblokk i progressivsystemer viser at smøresyklusen faktisk går."
+      "text": "Visuell indikatorstift på hovedblokk i progressivsystemer viser at smøresyklusen faktisk går.",
+      "list": 0
     },
     {
       "type": "text",
-      "text": "Overtrykksventiler varsler lokalt dersom et smørepunkt er blokkert."
+      "text": "Overtrykksventiler varsler lokalt dersom et smørepunkt er blokkert.",
+      "list": 0
     },
     {
       "type": "text",
-      "text": "Fordel: Umiddelbar, visuell bekreftelse ute på maskinen som fungerer alltid, også uten strøm eller nett."
+      "text": "Fordel: Umiddelbar, visuell bekreftelse ute på maskinen som fungerer alltid, også uten strøm eller nett.",
+      "list": 0
     },
     {
       "type": "heading",
@@ -90,19 +93,23 @@
     },
     {
       "type": "text",
-      "text": "Overvåker trykk, sykluser og status kontinuerlig"
+      "text": "Overvåker trykk, sykluser og status kontinuerlig",
+      "list": 1
     },
     {
       "type": "text",
-      "text": "Sender sanntidsvarsler ved avvik (e-post/SMS/portal)"
+      "text": "Sender sanntidsvarsler ved avvik (e-post/SMS/portal)",
+      "list": 1
     },
     {
       "type": "text",
-      "text": "Logger historikk og dokumentasjon for analyse og etterprøvbarhet"
+      "text": "Logger historikk og dokumentasjon for analyse og etterprøvbarhet",
+      "list": 1
     },
     {
       "type": "text",
-      "text": "Gir fjerninnsyn i hele maskinparken på tvers av lokasjoner"
+      "text": "Gir fjerninnsyn i hele maskinparken på tvers av lokasjoner",
+      "list": 1
     },
     {
       "type": "heading",
@@ -147,15 +154,18 @@
     },
     {
       "type": "text",
-      "text": "Maskinutleie (bevis på korrekt drift)"
+      "text": "Maskinutleie (bevis på korrekt drift)",
+      "list": 2
     },
     {
       "type": "text",
-      "text": "Flere operatører på samme maskin"
+      "text": "Flere operatører på samme maskin",
+      "list": 2
     },
     {
       "type": "text",
-      "text": "Revisjoner og kvalitetskrav"
+      "text": "Revisjoner og kvalitetskrav",
+      "list": 2
     },
     {
       "type": "heading",
@@ -177,19 +187,24 @@
     },
     {
       "type": "text",
-      "text": "Produksjonsanlegg med kontinuerlig drift"
+      "text": "Produksjonsanlegg med kontinuerlig drift",
+      "list": 3
     },
     {
       "type": "text",
-      "text": "Store entreprenører med mange maskiner på ulike lokasjoner"
+      "text": "Store entreprenører med mange maskiner på ulike lokasjoner",
+      "list": 3
     },
     {
       "type": "text",
-      "text": "Maskinutleie som trenger dokumentasjon og kontroll"
+      "text": "Maskinutleie som trenger dokumentasjon og kontroll",
+      "list": 3
     },
     {
       "type": "text",
-      "text": "Driftsmiljøer med høye krav til oppetid og sikkerhet"
+      "text": "Driftsmiljøer med høye krav til oppetid og sikkerhet",
+      "list": 3,
+      "bold": true
     },
     {
       "type": "heading",

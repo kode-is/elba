@@ -67,15 +67,18 @@
     },
     {
       "type": "text",
-      "text": "Jevn og korrekt smøring"
+      "text": "Jevn og korrekt smøring",
+      "list": 0
     },
     {
       "type": "text",
-      "text": "Mindre slitasje på lager, kjeder og føringer"
+      "text": "Mindre slitasje på lager, kjeder og føringer",
+      "list": 0
     },
     {
       "type": "text",
-      "text": "Færre uforutsette driftsstans"
+      "text": "Færre uforutsette driftsstans",
+      "list": 0
     },
     {
       "type": "heading",
@@ -92,15 +95,18 @@
     },
     {
       "type": "text",
-      "text": "Reduserer behovet for akutte reparasjoner"
+      "text": "Reduserer behovet for akutte reparasjoner",
+      "list": 1
     },
     {
       "type": "text",
-      "text": "Forlenger levetiden på kritiske komponenter"
+      "text": "Forlenger levetiden på kritiske komponenter",
+      "list": 1
     },
     {
       "type": "text",
-      "text": "Gir mer planlagt og forutsigbart vedlikehold"
+      "text": "Gir mer planlagt og forutsigbart vedlikehold",
+      "list": 1
     },
     {
       "type": "text",
@@ -121,15 +127,18 @@
     },
     {
       "type": "text",
-      "text": "Brukes færre timer på enkle, manuelle oppgaver"
+      "text": "Brukes færre timer på enkle, manuelle oppgaver",
+      "list": 2
     },
     {
       "type": "text",
-      "text": "Kan vedlikeholdspersonell fokusere på inspeksjon og forbedring"
+      "text": "Kan vedlikeholdspersonell fokusere på inspeksjon og forbedring",
+      "list": 2
     },
     {
       "type": "text",
-      "text": "Blir HMS bedre, fordi færre må inn i utsatte områder"
+      "text": "Blir HMS bedre, fordi færre må inn i utsatte områder",
+      "list": 2
     },
     {
       "type": "text",
@@ -150,15 +159,18 @@
     },
     {
       "type": "text",
-      "text": "Å ta over og videreutvikle eksisterende smøresystemer"
+      "text": "Å ta over og videreutvikle eksisterende smøresystemer",
+      "list": 3
     },
     {
       "type": "text",
-      "text": "Service og optimalisering, uavhengig av leverandør og løsning"
+      "text": "Service og optimalisering, uavhengig av leverandør og løsning",
+      "list": 3
     },
     {
       "type": "text",
-      "text": "Tilpasning av systemtype etter bruksområde og drift"
+      "text": "Tilpasning av systemtype etter bruksområde og drift",
+      "list": 3
     },
     {
       "type": "text",
@@ -179,15 +191,18 @@
     },
     {
       "type": "text",
-      "text": "Stabil drift"
+      "text": "Stabil drift",
+      "list": 4
     },
     {
       "type": "text",
-      "text": "Lavere totale eierkostnader"
+      "text": "Lavere totale eierkostnader",
+      "list": 4
     },
     {
       "type": "text",
-      "text": "Lengre levetid på maskiner og utstyr"
+      "text": "Lengre levetid på maskiner og utstyr",
+      "list": 4
     },
     {
       "type": "text",

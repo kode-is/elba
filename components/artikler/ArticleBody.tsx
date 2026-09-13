@@ -13,10 +13,12 @@ const HEADING_CLASS: Record<2 | 3 | 4, string> = {
  * Renders an article's `body` blocks in order (docs/scrape/artikler__<id>.json,
  * after the subtitle H1 and before the closing "Send oss en forespørsel" CTA
  * that `<ContactCta />` renders instead). Consecutive `text` blocks sharing
- * the same `list` group number are batched into one `<BulletList>` — dead
- * code against today's scrape (no artikler route currently carries `list`
- * annotations, see scripts/gen-artikler.mjs's header comment) but correct
- * per the `ArticleBlock` type for whenever scrape-formatting is re-run.
+ * the same `list` group number (from `npm run scrape-formatting`, see
+ * scripts/gen-artikler.mjs's header comment) are batched into one
+ * `<BulletList>` — e.g. velge-system's four system types each have a
+ * "Styrker:"/"Begrensninger:" pair of short bullet lists. A `bold` text
+ * block (those same "Styrker:"/"Begrensninger:" labels) renders as
+ * `<p><strong>…</strong></p>`.
  */
 export function ArticleBody({ body }: { body: ArticleBlock[] }) {
   const nodes: ReactNode[] = [];
