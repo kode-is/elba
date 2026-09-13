@@ -138,10 +138,20 @@ commits; what is left:
 - **Footer address block.** Live sets those three lines at 18px/14.4px
   line-height; we use 18px with `leading-2`, which reproduces live's 36px
   row pitch but not the computed line-height.
+- **Two mobile headings are deliberately smaller than live.** Live keeps
+  `/anlegg`'s "Nøkkelfunksjoner" and `/industri`'s "Industriell pålitelighet"
+  at 50px on a 390px screen, where they break mid-word ("Nøkkelfunksjone /
+  r" in `docs/reference/anlegg.mobile.jpg`); ours uses the 32px mobile
+  section size every other heading on the site uses.
+- **Product tables scroll inside their own box on mobile.** `SpecTable` keeps
+  a `min-w-[560px]` table inside `overflow-x-auto`, so a wide table scrolls
+  sideways within the page rather than reflowing; live's widget ships its own
+  responsive mobile table instead.
 - Two things in the reference screenshots are capture artefacts, not
   differences: the FAQ rows on `/anlegg` are open (the scraper expanded them
   before shooting), and the stat counters animate, so any screenshot taken
-  mid-count shows different numbers.
+  mid-count shows different numbers. Some `*.mobile.jpg` references also end
+  in a blank strip, which is a capture artefact too.
 - **Checked and not a difference:** all six `/anlegg` and `/industri` key-
   feature badges are brand red on live today (70×70, 10px radius, white
   glyph) — an earlier note about a cream badge on "Økt sikkerhet" does not
