@@ -1,0 +1,31 @@
+// TypeScript mirror of scripts/routes.mjs's ROUTES array, so app/sitemap.ts
+// (which runs through the Next.js/TypeScript build, not plain Node) can
+// import it directly. Keep this list identical to scripts/routes.mjs —
+// tests/routes.test.ts asserts the two arrays are equal.
+export const ROUTES = [
+  "/", "/um-okkur", "/thjonusta", "/hafa-samband", "/vorumerki",
+  "/smurkerfi", "/sturtuvagnar", "/oryggisrudur", "/vetrarbunadur",
+  "/fyrirokumannin", "/hifi-festibunadur", "/siubunadur",
+  "/vorumerki/um-beka", "/vorumerki/lilleseth-kjetting", "/vorumerki/gigant",
+  "/vorumerki/pebe", "/vorumerki/hammerglass", "/vorumerki/bmair",
+  "/sturtuvagnar/fjorhjola-minigrofuvagnar", "/sturtuvagnar/verktakavagnar",
+  "/sturtuvagnar/landbunadarvagnar", "/sturtuvagnar/hjolagrofuvagnar",
+  "/sturtuvagnar/velaflutningavagnar",
+  "/sturtuvagnar/hjolagrofuvagn-gd2-6x", "/sturtuvagnar/hjolagrofuvagn-gd3-6x",
+  "/sturtuvagnar/hjolagrofuvagn-gd3-8x", "/sturtuvagnar/hjolagrofuvagn-gd3-10x",
+  "/sturtuvagnar/gw-100", "/sturtuvagnar/gw-120", "/sturtuvagnar/gw-400",
+  "/sturtuvagnar/velavagn-ml80", "/sturtuvagnar/velavagn-ml160", "/sturtuvagnar/velavagn-ml210",
+  "/sturtuvagnar/velavagn-gll4-18", "/sturtuvagnar/velavagn-gll4-18l",
+  "/sturtuvagnar/velavagn-gll4-24", "/sturtuvagnar/velavagn-gll4-27",
+  "/sturtuvagnar/verktakavagn-gd3-13", "/sturtuvagnar/verktakavagn-gd4-15",
+  "/sturtuvagnar/verktakavagn-gd4-17", "/sturtuvagnar/verktakavagn-gd4-17sb",
+  "/sturtuvagnar/verktakavagn-gd4-20", "/sturtuvagnar/verktakavagn-gd4-30hs",
+  "/sturtuvagnar/landbunadarvagn-gd85", "/sturtuvagnar/landbunadarvagn-gd100",
+  "/sturtuvagnar/landbunadarvagn-gd125", "/sturtuvagnar/landbunadarvagn-gd140-gd140sb",
+  "/sturtuvagnar/landbunadarvagn-gd150",
+  "/hifi-festibunadur/hifikedjur", "/hifi-festibunadur/bindikedjur-strekkjarar",
+  "/hifi-festibunadur/stroffur", "/hifi-festibunadur/stroffur/hringstroffur",
+  "/hifi-festibunadur/stroffur/flatstroffur", "/hifi-festibunadur/stroffur/drattastroffur",
+  "/hifi-festibunadur/aukabunadur", "/hifi-festibunadur/bordastrekkjarar",
+  "/404",
+];

@@ -1,0 +1,39 @@
+{
+  "name": "skralli",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "scrape": "node scripts/scrape.mjs",
+    "scrape-svg": "node scripts/scrape-svg.mjs",
+    "normalize-scrape": "node scripts/normalize-scrape.mjs",
+    "scrape-formatting": "node scripts/scrape-formatting.mjs",
+    "scrape-tables": "node scripts/scrape-tables.mjs",
+    "scrape-mobile-diff": "node scripts/scrape-mobile-diff.mjs",
+    "verify": "node scripts/verify.mjs",
+    "gen-sturtuvagnar": "node scripts/gen-sturtuvagnar.mjs",
+    "gen-hifi": "node scripts/gen-hifi.mjs"
+  },
+  "dependencies": {
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "resend": "^6.26.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.4",
+    "playwright": "^1.63.0",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^5.0.0"
+  }
+}

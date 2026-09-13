@@ -1,0 +1,38 @@
+@import "tailwindcss";
+@theme {
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+  --font-ui: var(--font-inter), system-ui, sans-serif;
+  --font-stat: var(--font-satoshi), var(--font-figtree), sans-serif;
+  --color-brand-dark: #005380;
+  --color-brand-mid: #01A8DC;
+  --color-brand-light: #83D4F3;
+  --color-accent-green: #0A8754;
+  --color-accent-yellow: #FAC748;
+  --container-site: 1340px;
+}
+
+/* Brand strip marquee (BrandStrip.tsx): the track renders three identical
+   copies of the logo list back to back (matching the live site, which keeps
+   three sets of logos in the DOM), so translating by exactly -33.3333%
+   (one copy's width) loops seamlessly. */
+@keyframes marquee {
+  to {
+    transform: translateX(-33.3333%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 26s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  /* Home hero background video (components/home/Hero.tsx): keep the still
+     poster image visible instead of an autoplaying video. */
+  .hero-video {
+    display: none;
+  }
+}
