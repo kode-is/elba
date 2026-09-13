@@ -128,7 +128,7 @@ function HeroBreadcrumb({ items }: { items: BreadcrumbItem[] }) {
               ) : (
                 <Link
                   href={item.href ?? "#"}
-                  className={`text-white/[.78] hover:text-white hover:underline hover:underline-offset-[3px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#01A8DC] focus-visible:outline-offset-[3px] ${
+                  className={`text-white/[.78] hover:text-white hover:underline hover:underline-offset-[3px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-[3px] ${
                     isParent ? "max-w-[120px] truncate md:max-w-none md:overflow-visible" : ""
                   }`}
                 >
