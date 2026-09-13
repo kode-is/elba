@@ -1,26 +1,12 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { ArticleCard } from "@/components/artikler/ArticleCard";
+import { artikler } from "@/lib/artikler";
 
-// docs/scrape/home.json blocks 83-94. Task 10 switches this to
-// `artikler.slice(0, 3)` from lib/artikler.ts once that file exists.
-const ARTICLES = [
-  {
-    href: "/artikler/nytt-design",
-    title: "Nytt design på Elbas hjemmeside",
-    image: { src: "/images/home/06-d6adc654.jpeg", alt: "", width: 220, height: 204 },
-  },
-  {
-    href: "/artikler/nytt-eierskap",
-    title: "Nytt eierskap for Elba",
-    image: { src: "/images/home/07-85311014.jpeg", alt: "ELBA X SKRALLI", width: 220, height: 186 },
-  },
-  {
-    href: "/artikler/passiv-og-aktiv-overvaaking",
-    title: "Passiv og aktiv overvåking for driftsledere",
-    image: { src: "/images/home/08-8da04b4f.jpg", alt: "Groenevald-BEKA logo", width: 220, height: 146 },
-  },
-] as const;
+// docs/scrape/home.json blocks 83-94: the first three articles in
+// lib/artikler.ts's index order (nytt-design, nytt-eierskap,
+// passiv-og-aktiv-overvaaking).
+const HOME_ARTICLES = artikler.slice(0, 3);
 
 export function ArticlesSection() {
   return (
@@ -41,12 +27,12 @@ export function ArticlesSection() {
           </div>
 
           <div className="flex flex-col gap-6">
-            {ARTICLES.map((article) => (
+            {HOME_ARTICLES.map((article) => (
               <ArticleCard
-                key={article.href}
+                key={article.id}
                 title={article.title}
-                href={article.href}
-                image={article.image}
+                href={`/artikler/${article.id}`}
+                image={article.cardImage}
                 variant="row"
               />
             ))}

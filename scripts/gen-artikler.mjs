@@ -40,6 +40,26 @@ const CTA_HEADING = "Send oss en forespørsel";
 const strip = (s) => s.replace(/​/g, "").trim();
 const img = (b) => ({ src: b.local, alt: b.alt || "", width: b.width, height: b.height });
 
+// nytt-eierskap's scrape glues three pull-quotes' closing quote mark
+// directly onto their attribution with no separating whitespace (e.g.
+// `…selskapene."sier Villi…`) — a scraper DOM-flattening artifact, not
+// real copy: a fresh capture of the live page (scripts/verify.mjs) shows
+// a space there instead. One of the three instead glues on a "- Name,
+// role" byline (`…service"- Ronny, daglig leder`); live renders that
+// byline as its own line, not just a space-separated run, so that one
+// case splits into two blocks instead of gaining a space. Matches a
+// closing quote (" or ”) preceded by a non-space, non-opening-quote
+// character (so “Elba's own opening quote, always immediately followed
+// by a letter, is never touched) and immediately followed by another
+// non-space character.
+const GLUED_QUOTE = /^(.*[^\s"“])(["”])([^\s].*)$/s;
+function splitGluedQuote(text) {
+  const m = GLUED_QUOTE.exec(text);
+  if (!m) return [text];
+  const [, before, quote, after] = m;
+  return after.startsWith("-") ? [`${before}${quote}`, after] : [`${before}${quote} ${after}`];
+}
+
 // Card images + index order come from the /artikler index page: each
 // article is a [link(./artikler/<slug>), image, heading(3), text] group
 // (docs/scrape/artikler.json blocks 4-23).
@@ -106,10 +126,13 @@ for (const file of readdirSync(SCRAPE).filter((f) => f.startsWith("artikler__") 
       continue;
     }
     if (b.type === "text") {
-      const block = { type: "text", text: strip(b.text) };
-      if (b.bold) block.bold = true;
-      if (typeof b.list === "number") block.list = b.list;
-      body.push(block);
+      const parts = splitGluedQuote(strip(b.text));
+      for (const text of parts) {
+        const block = { type: "text", text };
+        if (b.bold) block.bold = true;
+        if (typeof b.list === "number") block.list = b.list;
+        body.push(block);
+      }
       continue;
     }
     if (b.type === "image") {

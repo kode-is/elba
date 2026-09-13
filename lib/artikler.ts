@@ -174,7 +174,7 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "“Elba og Skralli utfyller hverandre godt. Hos Skralli har vi bygget opp et team med lang bransjeerfaring innen anlegg, landbruk og industri, fra både Norge og Island, så her har vi gode muligheter til å dele erfaring på tvers av selskapene.”sier Villi, daglig leder i Skralli og styreleder i Elba."
+        "text": "“Elba og Skralli utfyller hverandre godt. Hos Skralli har vi bygget opp et team med lang bransjeerfaring innen anlegg, landbruk og industri, fra både Norge og Island, så her har vi gode muligheter til å dele erfaring på tvers av selskapene.” sier Villi, daglig leder i Skralli og styreleder i Elba."
       },
       {
         "type": "image",
@@ -193,7 +193,7 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "Etter mange år ved roret overlater nå tidligere eier Leif Børre Andersen styringen til Ronny og de nye eierne. “Jeg har vært med siden oppstarten i 1991, og det føles riktig å gi stafettpinnen videre til nye eiere som kan føre selskapet videre.\"sier Leif Børre Andersen, som nå går av med pensjon."
+        "text": "Etter mange år ved roret overlater nå tidligere eier Leif Børre Andersen styringen til Ronny og de nye eierne. “Jeg har vært med siden oppstarten i 1991, og det føles riktig å gi stafettpinnen videre til nye eiere som kan føre selskapet videre.\" sier Leif Børre Andersen, som nå går av med pensjon."
       },
       {
         "type": "heading",
@@ -206,7 +206,11 @@ export const artikler: Article[] = [
       },
       {
         "type": "text",
-        "text": "“Vi vil bruke mer ressurser på å følge opp kundene våre tettere og tilby enda raskere og mer forutsigbar service”- Ronny, daglig leder"
+        "text": "“Vi vil bruke mer ressurser på å følge opp kundene våre tettere og tilby enda raskere og mer forutsigbar service”"
+      },
+      {
+        "type": "text",
+        "text": "- Ronny, daglig leder"
       },
       {
         "type": "text",
