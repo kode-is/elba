@@ -1,0 +1,201 @@
+{
+  "route": "/tjenester",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/QSUVLULuYs0GzfaxExJ5K0ZYgx8.jpeg",
+      "alt": "Kitchen fixes",
+      "width": 1439,
+      "height": 1919,
+      "role": "content",
+      "local": "/images/tjenester/01-68fb1302.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Tjenester"
+    },
+    {
+      "type": "text",
+      "text": "Tjenester"
+    },
+    {
+      "type": "link",
+      "text": "AnleggPresis kontinuerlig smøring til din maskin",
+      "href": "./anlegg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/Lczesiy0hDYHEKmibfhXZ20Mtg.jpeg",
+      "alt": "",
+      "width": 386,
+      "height": 515,
+      "role": "content",
+      "local": "/images/home/03-01289078.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Anlegg"
+    },
+    {
+      "type": "text",
+      "text": "Presis kontinuerlig smøring til din maskin"
+    },
+    {
+      "type": "link",
+      "text": "IndustriSkreddersydde løsninger for norsk industri",
+      "href": "./industri"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/M7jmYndyo7mT0hJlK1KFCInIRqI.jpg",
+      "alt": "Industri",
+      "width": 512,
+      "height": 683,
+      "role": "content",
+      "local": "/images/home/04-41b11055.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Industri"
+    },
+    {
+      "type": "text",
+      "text": "Skreddersydde løsninger for norsk industri"
+    },
+    {
+      "type": "link",
+      "text": "ProdukterAlt du trenger til installasjon, vedlikehold og drift",
+      "href": "./produkter"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/6UxJCkr2qoe0bRiRWExfDCsrI4.jpeg",
+      "alt": "Snjókeðjur, Hlífi- & festibúnaður",
+      "width": 515,
+      "height": 687,
+      "role": "content",
+      "local": "/images/home/05-92660531.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Produkter"
+    },
+    {
+      "type": "text",
+      "text": "Alt du trenger til installasjon, vedlikehold og drift"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "./etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "./artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef",
+    "#fa6161"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/tjenester.desktop.jpg",
+    "mobile": "docs/reference/tjenester.mobile.jpg"
+  }
+}

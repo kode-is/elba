@@ -1,0 +1,963 @@
+{
+  "route": "/produkter/forlengere",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/veicQdoWQFwwmCnVkQx1xoNkaY.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 266,
+      "role": "content",
+      "local": "/images/produkter/05-a9bab172.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Forlengere"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "Forlengere"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/tBVbcd1U6qlZDYxSSVncTmcQw7k.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__forlengere/02-096291f6.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/d46YYzviwGq1VNYpMiZgtEhX0.png",
+      "alt": "",
+      "width": 400,
+      "height": 259,
+      "role": "content",
+      "local": "/images/produkter__forlengere/03-78b5f32a.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "G1"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "57.5"
+    },
+    {
+      "type": "text",
+      "text": "7.5"
+    },
+    {
+      "type": "text",
+      "text": "9"
+    },
+    {
+      "type": "text",
+      "text": "953148050"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "20"
+    },
+    {
+      "type": "text",
+      "text": "7.5"
+    },
+    {
+      "type": "text",
+      "text": "9"
+    },
+    {
+      "type": "text",
+      "text": "953148257"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "19"
+    },
+    {
+      "type": "text",
+      "text": "7"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "10021000301K"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "35"
+    },
+    {
+      "type": "text",
+      "text": "23"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "04011605806"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "23"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "04011600506"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "Rp 1/8\" BSP"
+    },
+    {
+      "type": "text",
+      "text": "23"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "på forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "18"
+    },
+    {
+      "type": "text",
+      "text": "8"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "10021000304K"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1.25"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1.25"
+    },
+    {
+      "type": "text",
+      "text": "20"
+    },
+    {
+      "type": "text",
+      "text": "7"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "på forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "22"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "04011600806"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1.25"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1.25"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "22"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "på forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 6"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Syrefast (316 / V4A)"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "G1"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "M 8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "Rp 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "23"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "953149386"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "18"
+    },
+    {
+      "type": "text",
+      "text": "7"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "på forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "23"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "04011600213"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "Rp 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "23"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "på forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "35"
+    },
+    {
+      "type": "text",
+      "text": "24"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "04011610813"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "M 10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "50"
+    },
+    {
+      "type": "text",
+      "text": "39"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "953149387"
+    },
+    {
+      "type": "text",
+      "text": "R 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "M 10x1"
+    },
+    {
+      "type": "text",
+      "text": "18"
+    },
+    {
+      "type": "text",
+      "text": "7"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "04011600313"
+    },
+    {
+      "type": "text",
+      "text": "R 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "Rp 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "18"
+    },
+    {
+      "type": "text",
+      "text": "7"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "på forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "R 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "Rp 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "23"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "04011600313"
+    },
+    {
+      "type": "text",
+      "text": "R 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "Rp 1/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "35"
+    },
+    {
+      "type": "text",
+      "text": "23"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "på forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 2"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Messing"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "G1"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "M 14 x x1"
+    },
+    {
+      "type": "text",
+      "text": "R 1/4 BSP"
+    },
+    {
+      "type": "text",
+      "text": "25"
+    },
+    {
+      "type": "text",
+      "text": "9"
+    },
+    {
+      "type": "text",
+      "text": "19"
+    },
+    {
+      "type": "text",
+      "text": "F2185/57-00"
+    },
+    {
+      "type": "text",
+      "text": "M 14 x x1"
+    },
+    {
+      "type": "text",
+      "text": "M 22 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "31"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953148344"
+    },
+    {
+      "type": "text",
+      "text": "M 18 X 1"
+    },
+    {
+      "type": "text",
+      "text": "M 20 X 1.5"
+    },
+    {
+      "type": "text",
+      "text": "45"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953147875"
+    },
+    {
+      "type": "text",
+      "text": "M 18 X 1"
+    },
+    {
+      "type": "text",
+      "text": "M 20 X 1.5"
+    },
+    {
+      "type": "text",
+      "text": "55"
+    },
+    {
+      "type": "text",
+      "text": "17"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953147152"
+    },
+    {
+      "type": "text",
+      "text": "M 18 X 1"
+    },
+    {
+      "type": "text",
+      "text": "M 20 X 1.5"
+    },
+    {
+      "type": "text",
+      "text": "75"
+    },
+    {
+      "type": "text",
+      "text": "17"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953148014"
+    },
+    {
+      "type": "text",
+      "text": "M 18 X 1"
+    },
+    {
+      "type": "text",
+      "text": "R 3/8 BSP"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953148417"
+    },
+    {
+      "type": "text",
+      "text": "M 20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "R 1/2 BSP"
+    },
+    {
+      "type": "text",
+      "text": "40"
+    },
+    {
+      "type": "text",
+      "text": "15"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953147686"
+    },
+    {
+      "type": "text",
+      "text": "M 20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "M 22 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953148295"
+    },
+    {
+      "type": "text",
+      "text": "M 22 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "M 20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953148771"
+    },
+    {
+      "type": "text",
+      "text": "M 22 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "R 1/4 BSP"
+    },
+    {
+      "type": "text",
+      "text": "40"
+    },
+    {
+      "type": "text",
+      "text": "15"
+    },
+    {
+      "type": "text",
+      "text": "27"
+    },
+    {
+      "type": "text",
+      "text": "953148176"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 2"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Forlenger rett",
+      "href": null
+    },
+    {
+      "text": "Forlenger 90 grader",
+      "href": null
+    },
+    {
+      "text": "Forlenger 45 grader",
+      "href": null
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__forlengere.desktop.jpg",
+    "mobile": "docs/reference/produkter__forlengere.mobile.jpg"
+  }
+}

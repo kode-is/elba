@@ -1,0 +1,403 @@
+{
+  "route": "/produkter/skruhylser",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/jTv3wa942k7J3DJZ78RarHkF6kw.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "logo",
+      "local": "/images/produkter/04-b584c29f.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Skruhylser"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "Skruhylser"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/ZSZ4neADrduRqY4yOhlJQm8eNgE.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__skruhylser/02-5962d532.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/Z7bHxPjMZPv1qqUUZ1OXJ5gc4jY.jpg",
+      "alt": "",
+      "width": 594,
+      "height": 341,
+      "role": "content",
+      "local": "/images/produkter__rørender/03-13a29e6b.jpg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/rXJZgLkpjlG4S15kXYb47I5ZDdk.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__skruhylser/04-8a3d91d2.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "For slange Ø 8,6"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr"
+    },
+    {
+      "type": "text",
+      "text": "Material"
+    },
+    {
+      "type": "text",
+      "text": "28"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "100121200"
+    },
+    {
+      "type": "text",
+      "text": "Forsinket blank"
+    },
+    {
+      "type": "text",
+      "text": "28"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "953149585"
+    },
+    {
+      "type": "text",
+      "text": "Forsinket sort"
+    },
+    {
+      "type": "text",
+      "text": "28"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "100121197"
+    },
+    {
+      "type": "text",
+      "text": "Syrefast"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/T0pIIk9DdCMyCumc4MztQIms6fw.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__skruhylser/05-83345125.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/ixQbt5Pg8DdsYMKJulFDe93wEU.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__skruhylser/06-0aee6c47.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "For slange Ø 11,2"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr"
+    },
+    {
+      "type": "text",
+      "text": "Material"
+    },
+    {
+      "type": "text",
+      "text": "28"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "100121305"
+    },
+    {
+      "type": "text",
+      "text": "Forsinket blank"
+    },
+    {
+      "type": "text",
+      "text": "28"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "953149586"
+    },
+    {
+      "type": "text",
+      "text": "Forsinket sort"
+    },
+    {
+      "type": "text",
+      "text": "28"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "100121347"
+    },
+    {
+      "type": "text",
+      "text": "Syrefast"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/FgR9OWdEwQ7QF3n1Rtfnmyd5vY.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__skruhylser/07-13136f12.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/wMi4UNWN6ZbeljWAXiR62nFoMIk.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__skruhylser/08-aba8a421.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "For slange Ø 5/16\""
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr"
+    },
+    {
+      "type": "text",
+      "text": "Material"
+    },
+    {
+      "type": "text",
+      "text": "26"
+    },
+    {
+      "type": "text",
+      "text": "1/2\""
+    },
+    {
+      "type": "text",
+      "text": "953149587"
+    },
+    {
+      "type": "text",
+      "text": "Forsinket blank"
+    },
+    {
+      "type": "text",
+      "text": "26"
+    },
+    {
+      "type": "text",
+      "text": "1/2\""
+    },
+    {
+      "type": "text",
+      "text": "953149588"
+    },
+    {
+      "type": "text",
+      "text": "Syrefast"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__skruhylser.desktop.jpg",
+    "mobile": "docs/reference/produkter__skruhylser.mobile.jpg"
+  }
+}

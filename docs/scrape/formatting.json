@@ -1,0 +1,431 @@
+{
+  "generatedAt": "2026-09-13T13:56:00.972Z",
+  "routes": [
+    {
+      "route": "/",
+      "lists": [
+        [
+          "Landbruk",
+          "Sagbruk",
+          "Offshore",
+          "Papir/cellulose",
+          "Metall",
+          "Maritim",
+          "Jernbane",
+          "Gjenvinning"
+        ],
+        [
+          "Landbruk",
+          "Sagbruk",
+          "Offshore",
+          "Papir/cellulose",
+          "Metall",
+          "Maritim",
+          "Jernbane",
+          "Gjenvinning"
+        ]
+      ],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/om-oss",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/tjenester",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/anlegg",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/industri",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/etikk-og-ansvar",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/kontakt-oss",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/rørender",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/forlengere",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/fylleutstyr",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/fyllenippler",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/skottgjennomføring",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/snittringmatur",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/banjokoblinger",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/lynfittings",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/slanger",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/fett",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/produkter/skruhylser",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/artikler",
+      "lists": [],
+      "strong": [],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/artikler/nytt-design",
+      "lists": [
+        [
+          "finne riktig produkt eller løsning",
+          "sende forespørsler",
+          "komme i kontakt med oss",
+          "få oversikt over hva Elba tilbyr"
+        ]
+      ],
+      "strong": [
+        "Nytt design på Elbas hjemmeside",
+        "Hva er nytt?",
+        "Enklere navigasjon",
+        "Moderne og ryddig design",
+        "Bedre på mobil og nettbrett",
+        "Hvorfor denne oppgraderingen?",
+        "Ta en titt"
+      ],
+      "annotated": {
+        "list": 4,
+        "bold": 1
+      }
+    },
+    {
+      "route": "/artikler/nytt-eierskap",
+      "lists": [],
+      "strong": [
+        "Gir stafettpinnen videre",
+        "Et startskudd for videre vekst og innovasjon"
+      ],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/artikler/passiv-og-aktiv-overvaaking",
+      "lists": [
+        [
+          "Visuell indikatorstift på hovedblokk i progressivsystemer viser at smøresyklusen faktisk går.",
+          "Overtrykksventiler varsler lokalt dersom et smørepunkt er blokkert.",
+          "Fordel: Umiddelbar, visuell bekreftelse ute på maskinen som fungerer alltid, også uten strøm eller nett."
+        ],
+        [
+          "Overvåker trykk, sykluser og status kontinuerlig",
+          "Sender sanntidsvarsler ved avvik (e-post/SMS/portal)",
+          "Logger historikk og dokumentasjon for analyse og etterprøvbarhet",
+          "Gir fjerninnsyn i hele maskinparken på tvers av lokasjoner"
+        ],
+        [
+          "Maskinutleie (bevis på korrekt drift)",
+          "Flere operatører på samme maskin",
+          "Revisjoner og kvalitetskrav"
+        ],
+        [
+          "Produksjonsanlegg med kontinuerlig drift",
+          "Store entreprenører med mange maskiner på ulike lokasjoner",
+          "Maskinutleie som trenger dokumentasjon og kontroll",
+          "Driftsmiljøer med høye krav til oppetid og sikkerhet"
+        ]
+      ],
+      "strong": [
+        "driftsledere",
+        "forutsigbar drift",
+        "digital fjernovervåking",
+        "analoge sikkerhetsindikatorer",
+        "automatisert smøring med overvåking",
+        "Elba",
+        "Visuell indikatorstift",
+        "Overtrykksventiler",
+        "El-Watch",
+        "sanntidsvarsler",
+        "historikk og dokumentasjon",
+        "fjerninnsyn",
+        "før",
+        "Produksjonsanlegg",
+        "Store entreprenører",
+        "Maskinutleie",
+        "Driftsmiljøer med høye krav til oppetid og sikkerhet",
+        "forutse dem"
+      ],
+      "annotated": {
+        "list": 14,
+        "bold": 1
+      }
+    },
+    {
+      "route": "/artikler/hvorfor-smoresystem-industri",
+      "lists": [
+        [
+          "Jevn og korrekt smøring",
+          "Mindre slitasje på lager, kjeder og føringer",
+          "Færre uforutsette driftsstans"
+        ],
+        [
+          "Reduserer behovet for akutte reparasjoner",
+          "Forlenger levetiden på kritiske komponenter",
+          "Gir mer planlagt og forutsigbart vedlikehold"
+        ],
+        [
+          "Brukes færre timer på enkle, manuelle oppgaver",
+          "Kan vedlikeholdspersonell fokusere på inspeksjon og forbedring",
+          "Blir HMS bedre, fordi færre må inn i utsatte områder"
+        ],
+        [
+          "Å ta over og videreutvikle eksisterende smøresystemer",
+          "Service og optimalisering, uavhengig av leverandør og løsning",
+          "Tilpasning av systemtype etter bruksområde og drift"
+        ],
+        [
+          "Stabil drift",
+          "Lavere totale eierkostnader",
+          "Lengre levetid på maskiner og utstyr"
+        ]
+      ],
+      "strong": [
+        "Elba"
+      ],
+      "annotated": {
+        "list": 15,
+        "bold": 0
+      }
+    },
+    {
+      "route": "/artikler/velge-system",
+      "lists": [
+        [
+          "Én hovedlinje som forsyner alle smørepunkter",
+          "Enkel oppbygning og kostnadseffektiv løsning",
+          "Lett å installere og vedlikeholde"
+        ],
+        [
+          "Driftssikkert og oversiktlig",
+          "God løsning der belastning og temperatur er relativt stabile"
+        ],
+        [
+          "Mindre egnet for svært store systemer eller lange avstander"
+        ],
+        [
+          "To hovedlinjer som jobber vekselvis",
+          "Kan håndtere høyt trykk og lange rørstrekk",
+          "Svært robust løsning"
+        ],
+        [
+          "Ideell for mange smørepunkter",
+          "Tåler tøffe forhold og varierende belastning"
+        ],
+        [
+          "Mer kompleks installasjon",
+          "Høyere investeringskostnad enn enlinje"
+        ],
+        [
+          "Smøringen går i en fast rekkefølge gjennom fordelere",
+          "Hvis ett punkt blokkeres, stopper hele systemet, noe som gjør feil lett å oppdage"
+        ],
+        [
+          "Høy presisjon og kontroll",
+          "Enkelt å overvåke både mekanisk og digitalt",
+          "Svært populært i entreprenør- og industrimaskiner"
+        ],
+        [
+          "Mindre egnet der ekstrem fleksibilitet kreves"
+        ],
+        [
+          "Hver smørelinje går direkte fra pumpen til smørepunktet",
+          "Full uavhengighet mellom punktene"
+        ],
+        [
+          "Svært fleksibelt",
+          "Enkelt å justere individuelle smøremengder"
+        ],
+        [
+          "Begrenset antall smørepunkter",
+          "Mindre egnet for store systemer"
+        ],
+        [
+          "Få smørepunkter / enkel maskin: Flerlinje eller enlinje",
+          "Mange smørepunkter / høy driftssikkerhet: Progressivt system",
+          "Store anlegg / lange avstander / tung industri: Tolinjesystem"
+        ],
+        [
+          "Sanntidsvarsler ved avvik",
+          "Fjerninnsyn i maskinparkens status",
+          "Historikk og dokumentasjon for vedlikehold"
+        ]
+      ],
+      "strong": [
+        "driftssikkerhet, vedlikeholdskostnader og levetid på maskiner",
+        "Best egnet for:",
+        "Styrker:",
+        "Begrensninger:",
+        "Best egnet for:",
+        "Styrker:",
+        "Begrensninger:",
+        "Best egnet for:",
+        "Styrker:",
+        "Begrensninger:",
+        "Best egnet for:",
+        "Styrker:",
+        "Begrensninger:",
+        "Få smørepunkter / enkel maskin:",
+        "Mange smørepunkter / høy driftssikkerhet:",
+        "Store anlegg / lange avstander / tung industri:",
+        "driftsmønster, vedlikeholdsstrategi og krav til oppetid",
+        "Elba",
+        "El-Watch",
+        "proaktivt vedlikehold"
+      ],
+      "annotated": {
+        "list": 31,
+        "bold": 8
+      }
+    },
+    {
+      "route": "/404",
+      "lists": [],
+      "strong": [
+        "Siden du leter etter finnes ikke eller har blitt flyttet. Vennligst gå tilbake til forsiden."
+      ],
+      "annotated": {
+        "list": 0,
+        "bold": 0
+      }
+    }
+  ]
+}

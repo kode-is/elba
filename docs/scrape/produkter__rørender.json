@@ -1,0 +1,1223 @@
+{
+  "route": "/produkter/rørender",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/2TBx9vTZBhdrDJn2SXKxlp92SIY.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 265,
+      "role": "content",
+      "local": "/images/produkter/08-3adcc4e8.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Rørender"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "Rørender"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/joy4ARsd7npbRENq67g6KGQOMw.jpg",
+      "alt": "",
+      "width": 594,
+      "height": 344,
+      "role": "content",
+      "local": "/images/produkter__rørender/02-64dfae38.jpg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/Z7bHxPjMZPv1qqUUZ1OXJ5gc4jY.jpg",
+      "alt": "",
+      "width": 594,
+      "height": 341,
+      "role": "content",
+      "local": "/images/produkter__rørender/03-13a29e6b.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "For Slange"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "51"
+    },
+    {
+      "type": "text",
+      "text": "20"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "953146718"
+    },
+    {
+      "type": "text",
+      "text": "5"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "64"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "100121218"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "51"
+    },
+    {
+      "type": "text",
+      "text": "20"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "100121186"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "55"
+    },
+    {
+      "type": "text",
+      "text": "24"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "100121190"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "61"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "100121201"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "96.5"
+    },
+    {
+      "type": "text",
+      "text": "65.5"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "953149589"
+    },
+    {
+      "type": "text",
+      "text": "8"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "61"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "100121217"
+    },
+    {
+      "type": "text",
+      "text": "1/4\""
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "61"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "953149590"
+    },
+    {
+      "type": "text",
+      "text": "3/16\""
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "51"
+    },
+    {
+      "type": "text",
+      "text": "20"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "953148377"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "11.2"
+    },
+    {
+      "type": "text",
+      "text": "65.5"
+    },
+    {
+      "type": "text",
+      "text": "22"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "953146736"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 2"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Syrefast (316 / V4A)"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "For Slange"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "61"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "100121196"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "11.2"
+    },
+    {
+      "type": "text",
+      "text": "65.5"
+    },
+    {
+      "type": "text",
+      "text": "22"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "953146814"
+    },
+    {
+      "type": "text",
+      "text": "8"
+    },
+    {
+      "type": "text",
+      "text": "11.2"
+    },
+    {
+      "type": "text",
+      "text": "65.5"
+    },
+    {
+      "type": "text",
+      "text": "22"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "100121348"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "11.2"
+    },
+    {
+      "type": "text",
+      "text": "73.5"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "953149592"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/qDOCqBz9keREhA5tzWHbt6k0Qws.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/04-50bf00d8.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/BNO2bpKQqX8Vi9EVX2G95RdSfJY.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/05-167b888a.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "For Slange"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "51"
+    },
+    {
+      "type": "text",
+      "text": "20"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "100121210"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "61"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "953147621"
+    },
+    {
+      "type": "text",
+      "text": "1/4\""
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "61"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "953149590"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "11.2"
+    },
+    {
+      "type": "text",
+      "text": "65.5"
+    },
+    {
+      "type": "text",
+      "text": "22"
+    },
+    {
+      "type": "text",
+      "text": "12"
+    },
+    {
+      "type": "text",
+      "text": "953149351"
+    },
+    {
+      "type": "text",
+      "text": "1/4\""
+    },
+    {
+      "type": "text",
+      "text": "1/8\" x 5/16\""
+    },
+    {
+      "type": "text",
+      "text": "2.09\""
+    },
+    {
+      "type": "text",
+      "text": "1.18\""
+    },
+    {
+      "type": "text",
+      "text": "7/16\""
+    },
+    {
+      "type": "text",
+      "text": "953149595"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Syrefast (316 / V4A)"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "For Slange"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "51"
+    },
+    {
+      "type": "text",
+      "text": "20"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "953148849"
+    },
+    {
+      "type": "text",
+      "text": "1/4\""
+    },
+    {
+      "type": "text",
+      "text": "1/8\" x 5/16\""
+    },
+    {
+      "type": "text",
+      "text": "53"
+    },
+    {
+      "type": "text",
+      "text": "21.5"
+    },
+    {
+      "type": "text",
+      "text": "7/16\""
+    },
+    {
+      "type": "text",
+      "text": "953149596"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket (svart)"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "For Slange"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "52.5"
+    },
+    {
+      "type": "text",
+      "text": "21.5"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "953149593"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "61"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "953149594"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/4LgSCv6uuMfwyOW7Gp3PSJ1s0.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/06-ac720e8d.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/p6Mv7u6R95Z7fHRaH3O3OmDI.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/07-898b37e0.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "For Slange"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "56"
+    },
+    {
+      "type": "text",
+      "text": "25"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "953148677"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/I1uF2T6vKf7kAUkKBBQ1640L8.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/08-ea008481.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/VnjUsTO3NCUzku7kvcL9bGWFLTM.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/09-5c81bee8.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "For Slange"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "L1"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "M 10x1"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "6 LL"
+    },
+    {
+      "type": "text",
+      "text": "39"
+    },
+    {
+      "type": "text",
+      "text": "11"
+    },
+    {
+      "type": "text",
+      "text": "953147626"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/ZcwYrlvcUvFrp8xGQmI9Yv6ul5Q.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/10-ff304097.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/kEy7QwLuGCpdRSB2md2A3Ruik.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/11-4e10c600.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "For Slange"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "SW1"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "56"
+    },
+    {
+      "type": "text",
+      "text": "1/8\" x 5/16\""
+    },
+    {
+      "type": "text",
+      "text": "1/8 NPT"
+    },
+    {
+      "type": "text",
+      "text": "\"7/16\""
+    },
+    {
+      "type": "text",
+      "text": "1/2\""
+    },
+    {
+      "type": "text",
+      "text": "953149598"
+    },
+    {
+      "type": "text",
+      "text": "57"
+    },
+    {
+      "type": "text",
+      "text": "1/8\" x 5/16\""
+    },
+    {
+      "type": "text",
+      "text": "1/8 BSPT"
+    },
+    {
+      "type": "text",
+      "text": "\"7/16\""
+    },
+    {
+      "type": "text",
+      "text": "1/2\""
+    },
+    {
+      "type": "text",
+      "text": "953149599"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/M4MQ5JkXhdxvMCJ94dXMB6RrTU4.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__rørender/12-21f1f3fb.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/oDf7GiWs3KU12lwE4bcm50EtN34.png",
+      "alt": "",
+      "width": 400,
+      "height": 263,
+      "role": "content",
+      "local": "/images/produkter__rørender/13-bc424d9a.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "Hose Ø"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "SW1"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "JIC37° 7/16"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "27.5"
+    },
+    {
+      "type": "text",
+      "text": "14"
+    },
+    {
+      "type": "text",
+      "text": "14"
+    },
+    {
+      "type": "text",
+      "text": "953149600"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "​Rørender rette",
+      "href": null
+    },
+    {
+      "text": "​Rørender 90 grader",
+      "href": null
+    },
+    {
+      "text": "​Rørender 45 grader",
+      "href": null
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__rørender.desktop.jpg",
+    "mobile": "docs/reference/produkter__rørender.mobile.jpg"
+  }
+}

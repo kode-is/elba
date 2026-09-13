@@ -1,0 +1,376 @@
+{
+  "route": "/anlegg",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/Lczesiy0hDYHEKmibfhXZ20Mtg.jpeg",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "role": "content",
+      "local": "/images/home/03-01289078.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Anlegg"
+    },
+    {
+      "type": "text",
+      "text": "Presis kontinuerlig smøring til din maskin"
+    },
+    {
+      "type": "text",
+      "text": "Anlegg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Driftssikre smøresystemer"
+    },
+    {
+      "type": "text",
+      "text": "ELBA leverer sentralsmøreanlegg til gravemaskiner, hjullastere, dumpere og annet anleggsutstyr. Reduser slitasje, minimerer driftsstans og sikre jevn smøring av kritisk utstyr."
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/VGc7uL8BWIY6kXp81TcDzBiE.jpeg",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "role": "content",
+      "local": "/images/anlegg/02-c89d7570.jpeg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/PssDjXQs8WLk0TCYrZi1YGSXUeE.jpeg",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "role": "content",
+      "local": "/images/anlegg/03-497fe191.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Effektive løsninger"
+    },
+    {
+      "type": "text",
+      "text": "Fra enkle pumpesystemer til løsninger med elektronisk overvåking. Modelltilpasset, dimensjonert og klargjort for installasjon. For nye maskiner og ettermontering."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Profesjonell levering"
+    },
+    {
+      "type": "text",
+      "text": "Vi leverer komplette kit til forhandlere eller håndterer installasjon direkte mot sluttkunde."
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/tjxFOwV6eDCk6SNOnZznP4RBQ.jpeg",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "role": "content",
+      "local": "/images/anlegg/04-c08775a5.jpeg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/c0EZxtMucSR6UOSZk2TBnWsqr4.svg",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "role": "background",
+      "local": "/images/anlegg/05-463dd036.svg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hvordan fungerer det?"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Kan systemet ettermonteres?"
+    },
+    {
+      "type": "text",
+      "text": "Ja. Vi leverer modelltilpassede kit for både nye og brukte maskiner. Ettermontering er særlig aktuelt på maskiner med høy belastning, mange smørepunkter eller varierende vedlikeholdsrutiner."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Hvor driftssikkert er systemet?"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Hva skjer dersom systemet får en feil?"
+    },
+    {
+      "type": "text",
+      "text": "Ved eventuelle avvik gir overvåkede systemer varsel tidlig. Uten overvåking vil systemet fortsatt være mekanisk robust og enkelt å feilsøke. Vi tilbyr rask support og reservedeler. Målet er alltid å minimere nedetid og sikre rask gjenoppretting."
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/xKTqMlhY0lFGY2C0kGnUdCLBPQ.jpeg",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "role": "content",
+      "local": "/images/anlegg/06-2207cb6d.jpeg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/x3uAYSJrkW10psyYSGtmnPKjEXs.jpg",
+      "alt": "Interior work",
+      "width": 0,
+      "height": 0,
+      "role": "content",
+      "local": "/images/anlegg/07-74a78715.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Digital overvåking"
+    },
+    {
+      "type": "text",
+      "text": "Vi tilbyr digital overvåking av sentralsmøresystemer både for individuelle maskiner eller som en sentralisert oversikt over hele maskinparker."
+    },
+    {
+      "type": "text",
+      "text": "Løsningene kan varsle fører ved avvik og gir historisk sporbarhet på sykluser og hendelser."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Oversikt"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Varsling"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Sporbarhet"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Nøkkelfunksjoner"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Jevn dosering"
+    },
+    {
+      "type": "text",
+      "text": "Riktig fettmengde tilføres automatisk med definerte intervaller uavhengig av operatør."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Redusert nedetid"
+    },
+    {
+      "type": "text",
+      "text": "Kontinuerlig smøring minimerer slitasjerelaterte stopp og uplanlagt verkstedtid."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Økt sikkerhet"
+    },
+    {
+      "type": "text",
+      "text": "Manuell smøring i risikoområder reduseres betydelig."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Lavere kostnader"
+    },
+    {
+      "type": "text",
+      "text": "Mindre slitasje og færre reparasjoner gir lavere totale driftskostnader over tid."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Forlenget levetid"
+    },
+    {
+      "type": "text",
+      "text": "Bolter, lager og ledd får optimal smøring som reduserer friksjon og komponentbytte."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Redusert forbruk"
+    },
+    {
+      "type": "text",
+      "text": "Presis og kontrollert dosering minimerer fettforbruk og reduserer miljøbelastning."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "30y"
+    },
+    {
+      "type": "text",
+      "text": "Erfaring"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2k+"
+    },
+    {
+      "type": "text",
+      "text": "Montasjer"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/4wSOhTfwQNjYYxgtlGq6VoCkzc.jpeg",
+      "alt": "Kitchen installation",
+      "width": 590,
+      "height": 787,
+      "role": "content",
+      "local": "/images/anlegg/08-d666f418.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Erfaring i praksis"
+    },
+    {
+      "type": "text",
+      "text": "Elba leverer og installerer sentralsmøresystemer til anleggsmaskiner over hele landet. Våre teknikere har solid erfaring med dimensjonering, montering og feilsøking i krevende driftsmiljøer."
+    },
+    {
+      "type": "text",
+      "text": "Vi arbeider strukturert og prioriterer rask respons. For både forhandlere og entreprenører betyr dette en leveranse som fungerer - også etter overtakelse."
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "./etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "./artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/anlegg.desktop.jpg",
+    "mobile": "docs/reference/anlegg.mobile.jpg"
+  }
+}

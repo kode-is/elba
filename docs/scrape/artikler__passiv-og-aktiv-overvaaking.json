@@ -1,0 +1,316 @@
+{
+  "route": "/artikler/passiv-og-aktiv-overvaaking",
+  "title": "Passiv og aktiv overvåking for driftsledere — Skralli",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/qsahXWnLCegkc8PRZD1P9pQqjF8.jpg",
+      "alt": "",
+      "width": 512,
+      "height": 341,
+      "role": "content",
+      "local": "/images/home/08-8da04b4f.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Passiv og aktiv overvåking for driftsledere"
+    },
+    {
+      "type": "link",
+      "text": "Artikle",
+      "href": "../artikler"
+    },
+    {
+      "type": "text",
+      "text": "Passiv og aktiv overvåking for driftsledere"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Slik gir smart overvåking av smøreanlegg høyere oppetid og lavere kostnader"
+    },
+    {
+      "type": "text",
+      "text": "For driftsledere i produksjonsanlegg, entreprenørvirksomheter og selskaper med store maskinparker er én ting helt avgjørende: forutsigbar drift. Smøring er ofte en undervurdert faktor – helt til den svikter. Med moderne smøreanlegg som kombinerer digital fjernovervåking og analoge sikkerhetsindikatorer, kan du ta full kontroll på maskinparken, redusere risiko og planlegge vedlikehold smartere."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hvorfor smøring er kritisk for driftssikkerhet"
+    },
+    {
+      "type": "text",
+      "text": "Mangelfull eller feil smøring er blant de vanligste årsakene til slitasje, varmgang og havari i maskiner. Konsekvensene er kostbare: uplanlagt nedetid, hastetilgang på deler og produksjonstap. For virksomheter med mange maskiner blir manuell oppfølging raskt en flaskehals. Løsningen er automatisert smøring med overvåking."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Dobbel kontroll: digital og analog overvåking"
+    },
+    {
+      "type": "text",
+      "text": "Elba leverer moderene smøreanlegg som gir mulighet for både analog og digital overvåking:"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Analog overvåking er enkel og robust"
+    },
+    {
+      "type": "text",
+      "text": "Visuell indikatorstift på hovedblokk i progressivsystemer viser at smøresyklusen faktisk går.",
+      "list": 0
+    },
+    {
+      "type": "text",
+      "text": "Overtrykksventiler varsler lokalt dersom et smørepunkt er blokkert.",
+      "list": 0
+    },
+    {
+      "type": "text",
+      "text": "Fordel: Umiddelbar, visuell bekreftelse ute på maskinen som fungerer alltid, også uten strøm eller nett.",
+      "list": 0
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Digital overvåking gir full oversikt, hvor som helst"
+    },
+    {
+      "type": "text",
+      "text": "I samarbeid med El-Watch kan smøreanlegget utstyres med trådløse sensorer som:"
+    },
+    {
+      "type": "text",
+      "text": "Overvåker trykk, sykluser og status kontinuerlig",
+      "list": 1
+    },
+    {
+      "type": "text",
+      "text": "Sender sanntidsvarsler ved avvik (e-post/SMS/portal)",
+      "list": 1
+    },
+    {
+      "type": "text",
+      "text": "Logger historikk og dokumentasjon for analyse og etterprøvbarhet",
+      "list": 1
+    },
+    {
+      "type": "text",
+      "text": "Gir fjerninnsyn i hele maskinparken på tvers av lokasjoner",
+      "list": 1
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hva betyr dette i praksis for deg som driftsleder?"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1) Mindre nedetid og mer forutsigbar produksjon"
+    },
+    {
+      "type": "text",
+      "text": "Du får varsel før en smørefeil utvikler seg til et havari. Det gir deg handlingsrom til å planlegge tiltak i stedet for å håndtere kriser."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2) Lavere vedlikeholdskostnader"
+    },
+    {
+      "type": "text",
+      "text": "Planlagt vedlikehold er betydelig rimeligere enn akutte stopp. Med data og varsler kan du bytte deler og rense linjer når det faktisk trengs."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3) Full kontroll på store maskinparker"
+    },
+    {
+      "type": "text",
+      "text": "Har du mange maskiner i produksjon, på anlegg eller ute hos kunder, gir fjernovervåking én samlet oversikt. Du slipper tidkrevende manuelle inspeksjoner."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "4) Dokumentasjon og ansvarlighet"
+    },
+    {
+      "type": "text",
+      "text": "All smøreaktivitet logges. Det gir verdifull dokumentasjon internt – og er spesielt nyttig for:"
+    },
+    {
+      "type": "text",
+      "text": "Maskinutleie (bevis på korrekt drift)",
+      "list": 2
+    },
+    {
+      "type": "text",
+      "text": "Flere operatører på samme maskin",
+      "list": 2
+    },
+    {
+      "type": "text",
+      "text": "Revisjoner og kvalitetskrav",
+      "list": 2
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "5) Enkelt å ta i bruk, også på eksisterende anlegg"
+    },
+    {
+      "type": "text",
+      "text": "De trådløse sensorene er raske å montere og krever minimal inngripen. Digital overvåking kan ettermonteres på eksisterende smøresystemer."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hvem passer løsningen for?"
+    },
+    {
+      "type": "text",
+      "text": "Denne kombinasjonen av analog og digital overvåking er spesielt verdifull for:"
+    },
+    {
+      "type": "text",
+      "text": "Produksjonsanlegg med kontinuerlig drift",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Store entreprenører med mange maskiner på ulike lokasjoner",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Maskinutleie som trenger dokumentasjon og kontroll",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Driftsmiljøer med høye krav til oppetid og sikkerhet",
+      "list": 3,
+      "bold": true
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Fra reaktivt til proaktivt vedlikehold"
+    },
+    {
+      "type": "text",
+      "text": "Når smøreanlegget overvåkes kontinuerlig, går du fra å reagere på feil til å forutse dem. Det er kjernen i prediktivt vedlikehold og en av de mest effektive måtene å forbedre både drift og økonomi på."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/artikler__passiv-og-aktiv-overvaaking.desktop.jpg",
+    "mobile": "docs/reference/artikler__passiv-og-aktiv-overvaaking.mobile.jpg"
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "route": "/artikler",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/bDK0FUDHfUzgWCN27vlneQeTkA.jpg",
+      "alt": "Discover",
+      "width": 1440,
+      "height": 959,
+      "role": "content",
+      "local": "/images/artikler/01-4c5c8102.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Artikler"
+    },
+    {
+      "type": "text",
+      "text": "Artikler"
+    },
+    {
+      "type": "link",
+      "text": "Nytt design på Elbas hjemmesideLes mer →",
+      "href": "./artikler/nytt-design"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/FI9Glc7bCV5AHTBtgMUwq1WBE8.jpeg",
+      "alt": "",
+      "width": 386,
+      "height": 358,
+      "role": "content",
+      "local": "/images/home/06-d6adc654.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Nytt design på Elbas hjemmeside"
+    },
+    {
+      "type": "text",
+      "text": "Les mer →"
+    },
+    {
+      "type": "link",
+      "text": "Nytt eierskap for ElbaLes mer →",
+      "href": "./artikler/nytt-eierskap"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/5DAEF0zDUGs30h0GC4U7x80Kdo.jpeg",
+      "alt": "ELBA X SKRALLI",
+      "width": 386,
+      "height": 328,
+      "role": "content",
+      "local": "/images/home/07-85311014.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Nytt eierskap for Elba"
+    },
+    {
+      "type": "text",
+      "text": "Les mer →"
+    },
+    {
+      "type": "link",
+      "text": "Passiv og aktiv overvåking for driftsledereLes mer →",
+      "href": "./artikler/passiv-og-aktiv-overvaaking"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/qsahXWnLCegkc8PRZD1P9pQqjF8.jpg",
+      "alt": "Groenevald-BEKA logo",
+      "width": 386,
+      "height": 257,
+      "role": "content",
+      "local": "/images/home/08-8da04b4f.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Passiv og aktiv overvåking for driftsledere"
+    },
+    {
+      "type": "text",
+      "text": "Les mer →"
+    },
+    {
+      "type": "link",
+      "text": "Hvordan sparer smøresystemer penger?Les mer →",
+      "href": "./artikler/hvorfor-smoresystem-industri"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iBvZ17rqKYzarN6dJRf6VjVsY0.png",
+      "alt": "Smøresysten",
+      "width": 386,
+      "height": 290,
+      "role": "content",
+      "local": "/images/artikler/05-aa3c90a2.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Hvordan sparer smøresystemer penger?"
+    },
+    {
+      "type": "text",
+      "text": "Les mer →"
+    },
+    {
+      "type": "link",
+      "text": "Å velge riktig type systemLes mer →",
+      "href": "./artikler/velge-system"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/2kDd1itHI9Q5ub2a3pdp0T1Pug.jpeg",
+      "alt": "",
+      "width": 515,
+      "height": 687,
+      "role": "content",
+      "local": "/images/artikler/06-a2ff5186.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Å velge riktig type system"
+    },
+    {
+      "type": "text",
+      "text": "Les mer →"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "./etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "./artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/artikler.desktop.jpg",
+    "mobile": "docs/reference/artikler.mobile.jpg"
+  }
+}

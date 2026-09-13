@@ -3,7 +3,7 @@
 // and records lines that appear on only one of them. Live site only; no local server needed.
 import { chromium } from "playwright";
 import { writeFile } from "node:fs/promises";
-import { ROUTES, LIVE } from "./routes.mjs";
+import { ROUTES, LIVE, livePath } from "./routes.mjs";
 import { expandAccordions } from "./lib/accordion.mjs";
 
 const norm = (s) => s.replace(/ /g, " ").replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, "\n").trim();
@@ -26,8 +26,8 @@ const browser = await chromium.launch();
 const out = { generatedAt: new Date().toISOString(), routes: [] };
 for (const route of ROUTES) {
   try {
-    const mobile = await captureText(browser, LIVE + route, { width: 390, height: 844 });
-    const desktop = await captureText(browser, LIVE + route, { width: 1440, height: 900 });
+    const mobile = await captureText(browser, LIVE + livePath(route), { width: 390, height: 844 });
+    const desktop = await captureText(browser, LIVE + livePath(route), { width: 1440, height: 900 });
     const mobileOnly = [...mobile].filter((l) => !desktop.has(l));
     const desktopOnly = [...desktop].filter((l) => !mobile.has(l));
     out.routes.push({ route, mobileOnly, desktopOnly });

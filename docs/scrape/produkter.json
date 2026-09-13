@@ -1,0 +1,407 @@
+{
+  "route": "/produkter",
+  "title": "ELBA AS - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/6UxJCkr2qoe0bRiRWExfDCsrI4.jpeg",
+      "alt": "Snjókeðjur, Hlífi- & festibúnaður",
+      "width": 1919,
+      "height": 2560,
+      "role": "content",
+      "local": "/images/home/05-92660531.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Produkter"
+    },
+    {
+      "type": "text",
+      "text": "Alt du trenger til installasjon, vedlikehold og drift"
+    },
+    {
+      "type": "text",
+      "text": "Produkter"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Et bredt produktspekter"
+    },
+    {
+      "type": "text",
+      "text": "I tillegg til det vi normalt har på lager og vårt faste sortiment, kan vi skaffe det meste som trengs relatert til smøring, montering og drift: slanger, fittings, ventiler, fordelere, pumper, styring/overvåking og tilhørende komponenter. Ta kontakt dersom du har behov for en spesifikk del eller ønsker teknisk bistand."
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/j8McUEdQNsMl6CqkryK2K9i6g.jpeg",
+      "alt": "",
+      "width": 960,
+      "height": 1280,
+      "role": "content",
+      "local": "/images/produkter/02-620c9f4c.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Vi leverer"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Standardvarer"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Spesialdeler"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "OEM-løsninger"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Ettermarked"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Teknisk rådgivning"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Dokumentasjon"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Overvåking"
+    },
+    {
+      "type": "link",
+      "text": "Fett",
+      "href": "./produkter/fett"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/fc5wv4Xcqy0SVwzGUl2lqzR7KiE.jpeg",
+      "alt": "",
+      "width": 303,
+      "height": 404,
+      "role": "content",
+      "local": "/images/produkter/03-e1cf3aba.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fett"
+    },
+    {
+      "type": "link",
+      "text": "Skruhylser",
+      "href": "./produkter/skruhylser"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/jTv3wa942k7J3DJZ78RarHkF6kw.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter/04-b584c29f.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Skruhylser"
+    },
+    {
+      "type": "link",
+      "text": "Forlengere",
+      "href": "./produkter/forlengere"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/veicQdoWQFwwmCnVkQx1xoNkaY.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 266,
+      "role": "content",
+      "local": "/images/produkter/05-a9bab172.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forlengere"
+    },
+    {
+      "type": "link",
+      "text": "​Skottgjennomføring",
+      "href": "./produkter/​skottgjennomføring"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/rOrlEruRxc0GzzE3mg8Ey1TZA.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter/06-53f273f5.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "​Skottgjennomføring"
+    },
+    {
+      "type": "link",
+      "text": "Slanger",
+      "href": "./produkter/slanger"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/df7FzVigAJLcAK8HerLNuKvhZrY.jpg",
+      "alt": "",
+      "width": 303,
+      "height": 91,
+      "role": "content",
+      "local": "/images/produkter/07-9bd24da2.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Slanger"
+    },
+    {
+      "type": "link",
+      "text": "Rørender",
+      "href": "./produkter/rørender"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/2TBx9vTZBhdrDJn2SXKxlp92SIY.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 265,
+      "role": "content",
+      "local": "/images/produkter/08-3adcc4e8.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Rørender"
+    },
+    {
+      "type": "link",
+      "text": "Fylleutstyr",
+      "href": "./produkter/fylleutstyr"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/g9N6bIXBoc8bjSBU1TIIbhEaFY.jpeg",
+      "alt": "",
+      "width": 303,
+      "height": 303,
+      "role": "content",
+      "local": "/images/produkter/09-d1bc0ce1.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fylleutstyr"
+    },
+    {
+      "type": "link",
+      "text": "Banjokoblinger",
+      "href": "./produkter/banjokoblinger"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/KMz8Zr1J23SEABYvLfCzhXAkZME.jpg",
+      "alt": "",
+      "width": 303,
+      "height": 196,
+      "role": "content",
+      "local": "/images/produkter/10-948804a8.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Banjokoblinger"
+    },
+    {
+      "type": "link",
+      "text": "Snittringmatur",
+      "href": "./produkter/snittringmatur"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/04aPpDz6bGnvOS5EHGzAoF6flKU.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 257,
+      "role": "content",
+      "local": "/images/produkter/11-575445e6.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Snittringmatur"
+    },
+    {
+      "type": "link",
+      "text": "Lynfittings",
+      "href": "./produkter/​lynfittings"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/glV13VJ6sSznzU05iwtdiIGrJNk.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 261,
+      "role": "content",
+      "local": "/images/produkter/12-f7bc3daa.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Lynfittings"
+    },
+    {
+      "type": "link",
+      "text": "Fyllenippler",
+      "href": "./produkter/fyllenippler"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/sBQHfT9sxxzJVUO3IruJHzqqJ9E.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 261,
+      "role": "content",
+      "local": "/images/produkter/13-a8093807.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fyllenippler"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "./etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "./artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter.desktop.jpg",
+    "mobile": "docs/reference/produkter.mobile.jpg"
+  }
+}

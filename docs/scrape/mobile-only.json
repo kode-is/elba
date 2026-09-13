@@ -1,0 +1,155 @@
+{
+  "generatedAt": "2026-09-13T13:58:46.351Z",
+  "routes": [
+    {
+      "route": "/",
+      "mobileOnly": [
+        "11",
+        "10981"
+      ],
+      "desktopOnly": [
+        "Se utvalget",
+        "12",
+        "10982"
+      ]
+    },
+    {
+      "route": "/om-oss",
+      "mobileOnly": [
+        "181",
+        "10981",
+        "5981"
+      ],
+      "desktopOnly": [
+        "182",
+        "10982",
+        "5982"
+      ]
+    },
+    {
+      "route": "/tjenester",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/anlegg",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/industri",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/etikk-og-ansvar",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/kontakt-oss",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/rørender",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/forlengere",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/fylleutstyr",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/fyllenippler",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/skottgjennomføring",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/snittringmatur",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/banjokoblinger",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/lynfittings",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/slanger",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/fett",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/produkter/skruhylser",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/artikler",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/artikler/nytt-design",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/artikler/nytt-eierskap",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/artikler/passiv-og-aktiv-overvaaking",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/artikler/hvorfor-smoresystem-industri",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/artikler/velge-system",
+      "mobileOnly": [],
+      "desktopOnly": []
+    },
+    {
+      "route": "/404",
+      "mobileOnly": [],
+      "desktopOnly": [
+        "Om oss",
+        "Artikler",
+        "Tjenester",
+        "Kontakt oss"
+      ]
+    }
+  ]
+}

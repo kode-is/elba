@@ -1,0 +1,71 @@
+{
+  "route": "/404",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/suEIx9ZEFnvi1sBJGxIGIOF7o.jpg",
+      "alt": "Handyman working",
+      "width": 1440,
+      "height": 959,
+      "role": "content",
+      "local": "/images/404/01-d1eed4a4.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "404"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Siden du leter etter finnes ikke eller har blitt flyttet. Vennligst gå tilbake til forsiden."
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "./"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "./artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/404.desktop.jpg",
+    "mobile": "docs/reference/404.mobile.jpg"
+  }
+}

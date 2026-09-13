@@ -1,0 +1,370 @@
+{
+  "route": "/produkter/fett",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/fc5wv4Xcqy0SVwzGUl2lqzR7KiE.jpeg",
+      "alt": "",
+      "width": 1439,
+      "height": 1919,
+      "role": "logo",
+      "local": "/images/produkter/03-e1cf3aba.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Fett"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "Fett"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/t9CqTFiMfJG65C2CFEpBu4mNQ.jpeg",
+      "alt": "",
+      "width": 1200,
+      "height": 741,
+      "role": "content",
+      "local": "/images/produkter__fett/02-965997c1.jpeg"
+    },
+    {
+      "type": "text",
+      "text": "Forpakning"
+    },
+    {
+      "type": "text",
+      "text": "NLGI"
+    },
+    {
+      "type": "text",
+      "text": "Fortykker"
+    },
+    {
+      "type": "text",
+      "text": "Tilsats"
+    },
+    {
+      "type": "text",
+      "text": "Belastning"
+    },
+    {
+      "type": "text",
+      "text": "Tilkobling"
+    },
+    {
+      "type": "text",
+      "text": "Temp"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "400 g patron"
+    },
+    {
+      "type": "text",
+      "text": "EP 2"
+    },
+    {
+      "type": "text",
+      "text": "Calsium"
+    },
+    {
+      "type": "text",
+      "text": "Svært høy"
+    },
+    {
+      "type": "text",
+      "text": "std"
+    },
+    {
+      "type": "text",
+      "text": "-30 til 120"
+    },
+    {
+      "type": "text",
+      "text": "953148103"
+    },
+    {
+      "type": "text",
+      "text": "400 g patron"
+    },
+    {
+      "type": "text",
+      "text": "EP 2"
+    },
+    {
+      "type": "text",
+      "text": "Litium"
+    },
+    {
+      "type": "text",
+      "text": "Medium"
+    },
+    {
+      "type": "text",
+      "text": "std"
+    },
+    {
+      "type": "text",
+      "text": "-30 til 120"
+    },
+    {
+      "type": "text",
+      "text": "953147981"
+    },
+    {
+      "type": "text",
+      "text": "400 g patron"
+    },
+    {
+      "type": "text",
+      "text": "EP 2"
+    },
+    {
+      "type": "text",
+      "text": "Litium"
+    },
+    {
+      "type": "text",
+      "text": "Medium"
+    },
+    {
+      "type": "text",
+      "text": "skru"
+    },
+    {
+      "type": "text",
+      "text": "-30  til 150"
+    },
+    {
+      "type": "text",
+      "text": "0320092"
+    },
+    {
+      "type": "text",
+      "text": "400 g patron"
+    },
+    {
+      "type": "text",
+      "text": "EP 2"
+    },
+    {
+      "type": "text",
+      "text": "Aluminium"
+    },
+    {
+      "type": "text",
+      "text": "Fast"
+    },
+    {
+      "type": "text",
+      "text": "Svært høy"
+    },
+    {
+      "type": "text",
+      "text": "skru"
+    },
+    {
+      "type": "text",
+      "text": "-20 til 1100"
+    },
+    {
+      "type": "text",
+      "text": "0320254"
+    },
+    {
+      "type": "text",
+      "text": "18 kg spann"
+    },
+    {
+      "type": "text",
+      "text": "EP 2"
+    },
+    {
+      "type": "text",
+      "text": "Calsium"
+    },
+    {
+      "type": "text",
+      "text": "Høy"
+    },
+    {
+      "type": "text",
+      "text": "-30 til 120"
+    },
+    {
+      "type": "text",
+      "text": "953146425"
+    },
+    {
+      "type": "text",
+      "text": "18 kg spann"
+    },
+    {
+      "type": "text",
+      "text": "EP 2"
+    },
+    {
+      "type": "text",
+      "text": "Litium"
+    },
+    {
+      "type": "text",
+      "text": "Medium"
+    },
+    {
+      "type": "text",
+      "text": "-30 til 120"
+    },
+    {
+      "type": "text",
+      "text": "953146467"
+    },
+    {
+      "type": "text",
+      "text": "18 kg spann"
+    },
+    {
+      "type": "text",
+      "text": "EP 2 Bio"
+    },
+    {
+      "type": "text",
+      "text": "Calsium"
+    },
+    {
+      "type": "text",
+      "text": "Medium"
+    },
+    {
+      "type": "text",
+      "text": "-30 til 120"
+    },
+    {
+      "type": "text",
+      "text": "953148319"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__fett.desktop.jpg",
+    "mobile": "docs/reference/produkter__fett.mobile.jpg"
+  }
+}

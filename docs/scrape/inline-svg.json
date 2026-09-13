@@ -1,0 +1,2321 @@
+{
+  "generatedAt": "2026-09-13T13:55:53.325Z",
+  "routes": [
+    {
+      "route": "/",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Sagbruk <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 2"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Offshore <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 25"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Papir/cellulose <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(25"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Metall <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 255);"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Maritim <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 255"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Jernbane <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 25"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Gjenvinning <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 2"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "<div name=\"Title slider\" class=\"framer-njFyO framer-Nl24e framer-1eaqobb framer-v-1eaqobb\" data-framer-name=\"V"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Sagbruk <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 2"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Offshore <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 25"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Papir/cellulose <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(25"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Metall <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 255);"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Maritim <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 255"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Jernbane <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 25"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Gjenvinning <svg class=\"framer-reNqK framer-elb20e\" role=\"presentation\" viewBox=\"0 0 24 24\" style=\"--1m6trwb:1;--21h8s6:rgb(255, 255, 2"
+        },
+        {
+          "file": "docs/scrape/svg/805ecb3e.svg",
+          "hash": "805ecb3e",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Få fast pris i dag Få fast pris i dag </div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        },
+        {
+          "file": "docs/scrape/svg/751c30fc.svg",
+          "hash": "751c30fc",
+          "viewBox": "0 0 24 24",
+          "width": "9px",
+          "height": "9px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/om-oss",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-A2QQa.framer-11sc4"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Om oss <div class=\"framer-1oir0gy\" data-framer-co"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/tjenester",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-JDznw.framer-g7rsy"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Tjenester <div class=\"ssr-variant hidden-"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/anlegg",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-bRILb.framer-v963t"
+        },
+        {
+          "file": "docs/scrape/svg/b9d9b044.svg",
+          "hash": "b9d9b044",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "')\" data-framer-background-image-wrapper=\"true\"> <img decoding=\"async\" width=\"3024\" height=\"4032\" sizes=\"(min-width: 1200px) max(100vw, 1px), (max-width: 809.98px) max(100vw, 1px), (min-width: 810px) "
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Anlegg <div class=\"framer-q9u9ua\" style=\"will-change:transform;opacity:0;transform:translat"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/industri",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-3KiKX.framer-1t3eb"
+        },
+        {
+          "file": "docs/scrape/svg/b9d9b044.svg",
+          "hash": "b9d9b044",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "')\" data-framer-background-image-wrapper=\"true\"> <div class=\"framer-1pvlyyo\" style=\"background-color:var(--token-95e624c8-467e-4232-b2c7-c62803cd3aae, rgb(0, 83, 128));border-bottom-left-radius:10px;b"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Industri <div class=\"framer-14xuivg\" style=\"will-change:transform;opacity:0;transform:tran"
+        },
+        {
+          "file": "docs/scrape/svg/71a79b17.svg",
+          "hash": "71a79b17",
+          "viewBox": "0 0 24 24",
+          "width": "20",
+          "height": "20",
+          "ariaLabel": null,
+          "nearbyText": "<div class=\"framer-1on9qgw\" data-framer-component-type=\"RichTextContainer\" style=\"--extracted-1of0zx5:var(--token-905aed57-04fd-4dbe-819f-ac0b873aacbd, rgb(255, 255, 255));--framer-link-text-color:rgb"
+        },
+        {
+          "file": "docs/scrape/svg/3a4e971e.svg",
+          "hash": "3a4e971e",
+          "viewBox": "0 0 24 24",
+          "width": "20",
+          "height": "20",
+          "ariaLabel": null,
+          "nearbyText": "Send oss en forespørsel <a class=\"framer-Y8g9q framer-60ZAr framer-7XMsX framer"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/etikk-og-ansvar",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-3KiKX.framer-1t3eb"
+        },
+        {
+          "file": "docs/scrape/svg/b9d9b044.svg",
+          "hash": "b9d9b044",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "')\" data-framer-background-image-wrapper=\"true\"> <img decoding=\"async\" width=\"1200\" height=\"673\" sizes=\"(min-width: 1200px) max(100vw, 1px), (min-width: 810px) and (max-width: 1199.98px) 816px, (max-w"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Etikk og ansvar <div class=\"framer-1ytbf64\" data-framer-name=\"In"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/kontakt-oss",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}.framer-formspark-input::placeholder{color:var(--framer-formspark-placeholder-color)!important}@"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Kontakt oss <div class=\"framer-12l00zx\" data-framer-component-type=\"RichTextContainer\" style=\"will-change:transform;opacity:0;transfo"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-9NCv6.framer-15voc"
+        },
+        {
+          "file": "docs/scrape/svg/b9d9b044.svg",
+          "hash": "b9d9b044",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "')\" data-framer-background-image-wrapper=\"true\"> <img decoding=\"async\" width=\"3024\" height=\"4032\" sizes=\"(min-width: 1200px) max(100vw, 1px), (min-width: 810px) and (max-width: 1199.98px) max(100vw, 1"
+        },
+        {
+          "file": "docs/scrape/svg/b9d9b044.svg",
+          "hash": "b9d9b044",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "')\" data-framer-background-image-wrapper=\"true\"> <img decoding=\"async\" width=\"3024\" height=\"4032\" sizes=\"(min-width: 1200px) max(100vw, 1px), (min-width: 810px) and (max-width: 1199.98px) max(100vw, 1"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div class=\"framer-o1n5"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/rørender",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/forlengere",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/fylleutstyr",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/fyllenippler",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/skottgjennomføring",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/snittringmatur",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/banjokoblinger",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/lynfittings",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/slanger",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/fett",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/produkter/skruhylser",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Produkter <div"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/artikler",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-JDznw.framer-g7rsy"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikler <div clas"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/artikler/nytt-design",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/artikler/nytt-eierskap",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/artikler/passiv-og-aktiv-overvaaking",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/artikler/hvorfor-smoresystem-industri",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/artikler/velge-system",
+      "svgs": [
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);aspect-ratio:1;background-color:var(--43q7um);-webkit-mask:url(\"data:image/svg+xml, \") alpha no-repeat cent"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);mask:url(\"data:image/svg+xml, \") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-"
+        },
+        {
+          "file": "docs/scrape/svg/fcebcd9e.svg",
+          "hash": "fcebcd9e",
+          "viewBox": null,
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "\") alpha no-repeat center/auto var(--framer-icon-mask-mode,add),var(--framer-icon-mask,none);width:24px}@supports (aspect-ratio:1){body{--framer-aspect-ratio-supported:auto}}.framer-i2cpJ.framer-ro9yg"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/30fba5c6.svg",
+          "hash": "30fba5c6",
+          "viewBox": "0 0 24 24",
+          "width": null,
+          "height": null,
+          "ariaLabel": null,
+          "nearbyText": "Artikle <div cla"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div style=\"d"
+        },
+        {
+          "file": "docs/scrape/svg/f9706e44.svg",
+          "hash": "f9706e44",
+          "viewBox": "0 0 24 24",
+          "width": "100%",
+          "height": "1.5em",
+          "ariaLabel": null,
+          "nearbyText": "Fabrikkgata 11D, 3320 Vestfossen 32 25 20 30 <div class=\"framer-1"
+        },
+        {
+          "file": "docs/scrape/svg/ee49f69f.svg",
+          "hash": "ee49f69f",
+          "viewBox": "0 0 24 24",
+          "width": "16.500000464425764px",
+          "height": "17.250589992311827px",
+          "ariaLabel": null,
+          "nearbyText": "(function() { let s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = \"https://pdf.bestfreecdn.com/storage/js/pdf-6009.js?v=1771058615320\"; if (document.body) { d"
+        }
+      ]
+    },
+    {
+      "route": "/404",
+      "svgs": []
+    }
+  ],
+  "unique": [
+    {
+      "hash": "805ecb3e",
+      "file": "docs/scrape/svg/805ecb3e.svg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "hash": "f9706e44",
+      "file": "docs/scrape/svg/f9706e44.svg",
+      "usedOn": [
+        "/",
+        "/om-oss",
+        "/tjenester",
+        "/anlegg",
+        "/industri",
+        "/etikk-og-ansvar",
+        "/kontakt-oss",
+        "/produkter",
+        "/produkter/rørender",
+        "/produkter/forlengere",
+        "/produkter/fylleutstyr",
+        "/produkter/fyllenippler",
+        "/produkter/skottgjennomføring",
+        "/produkter/snittringmatur",
+        "/produkter/banjokoblinger",
+        "/produkter/lynfittings",
+        "/produkter/slanger",
+        "/produkter/fett",
+        "/produkter/skruhylser",
+        "/artikler",
+        "/artikler/nytt-design",
+        "/artikler/nytt-eierskap",
+        "/artikler/passiv-og-aktiv-overvaaking",
+        "/artikler/hvorfor-smoresystem-industri",
+        "/artikler/velge-system"
+      ]
+    },
+    {
+      "hash": "ee49f69f",
+      "file": "docs/scrape/svg/ee49f69f.svg",
+      "usedOn": [
+        "/",
+        "/om-oss",
+        "/tjenester",
+        "/anlegg",
+        "/industri",
+        "/etikk-og-ansvar",
+        "/kontakt-oss",
+        "/produkter",
+        "/produkter/rørender",
+        "/produkter/forlengere",
+        "/produkter/fylleutstyr",
+        "/produkter/fyllenippler",
+        "/produkter/skottgjennomføring",
+        "/produkter/snittringmatur",
+        "/produkter/banjokoblinger",
+        "/produkter/lynfittings",
+        "/produkter/slanger",
+        "/produkter/fett",
+        "/produkter/skruhylser",
+        "/artikler",
+        "/artikler/nytt-design",
+        "/artikler/nytt-eierskap",
+        "/artikler/passiv-og-aktiv-overvaaking",
+        "/artikler/hvorfor-smoresystem-industri",
+        "/artikler/velge-system"
+      ]
+    },
+    {
+      "hash": "751c30fc",
+      "file": "docs/scrape/svg/751c30fc.svg",
+      "usedOn": [
+        "/"
+      ]
+    },
+    {
+      "hash": "fcebcd9e",
+      "file": "docs/scrape/svg/fcebcd9e.svg",
+      "usedOn": [
+        "/om-oss",
+        "/tjenester",
+        "/anlegg",
+        "/industri",
+        "/etikk-og-ansvar",
+        "/kontakt-oss",
+        "/produkter",
+        "/produkter/rørender",
+        "/produkter/forlengere",
+        "/produkter/fylleutstyr",
+        "/produkter/fyllenippler",
+        "/produkter/skottgjennomføring",
+        "/produkter/snittringmatur",
+        "/produkter/banjokoblinger",
+        "/produkter/lynfittings",
+        "/produkter/slanger",
+        "/produkter/fett",
+        "/produkter/skruhylser",
+        "/artikler",
+        "/artikler/nytt-design",
+        "/artikler/nytt-eierskap",
+        "/artikler/passiv-og-aktiv-overvaaking",
+        "/artikler/hvorfor-smoresystem-industri",
+        "/artikler/velge-system"
+      ]
+    },
+    {
+      "hash": "30fba5c6",
+      "file": "docs/scrape/svg/30fba5c6.svg",
+      "usedOn": [
+        "/om-oss",
+        "/tjenester",
+        "/anlegg",
+        "/industri",
+        "/etikk-og-ansvar",
+        "/kontakt-oss",
+        "/produkter",
+        "/produkter/rørender",
+        "/produkter/forlengere",
+        "/produkter/fylleutstyr",
+        "/produkter/fyllenippler",
+        "/produkter/skottgjennomføring",
+        "/produkter/snittringmatur",
+        "/produkter/banjokoblinger",
+        "/produkter/lynfittings",
+        "/produkter/slanger",
+        "/produkter/fett",
+        "/produkter/skruhylser",
+        "/artikler",
+        "/artikler/nytt-design",
+        "/artikler/nytt-eierskap",
+        "/artikler/passiv-og-aktiv-overvaaking",
+        "/artikler/hvorfor-smoresystem-industri",
+        "/artikler/velge-system"
+      ]
+    },
+    {
+      "hash": "b9d9b044",
+      "file": "docs/scrape/svg/b9d9b044.svg",
+      "usedOn": [
+        "/anlegg",
+        "/industri",
+        "/etikk-og-ansvar",
+        "/produkter"
+      ]
+    },
+    {
+      "hash": "71a79b17",
+      "file": "docs/scrape/svg/71a79b17.svg",
+      "usedOn": [
+        "/industri"
+      ]
+    },
+    {
+      "hash": "3a4e971e",
+      "file": "docs/scrape/svg/3a4e971e.svg",
+      "usedOn": [
+        "/industri"
+      ]
+    }
+  ]
+}

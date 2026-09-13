@@ -1,0 +1,581 @@
+{
+  "route": "/",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "Hvert år leverer vi sentralsmøreanlegg til mange tusen smørepunkter, enten montert av egne montører eller hvor du selv setter opp systemet.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "asset",
+      "src": "https://framerusercontent.com/assets/QPvkdzMib7zEzxuEgjVLWCd0e4.mp4",
+      "kind": "video",
+      "local": "/video/hero.mp4"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/f5FVxzNp5xidC8JX8CzN1zAuI.png",
+      "alt": "",
+      "width": 1440,
+      "height": 808,
+      "role": "content",
+      "local": "/images/home/01-a13ec070.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Velkommen\ntil ELBA"
+    },
+    {
+      "type": "text",
+      "text": "I Industriens tjeneste"
+    },
+    {
+      "type": "link",
+      "text": "elba@elba.no",
+      "href": null
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "link",
+      "text": "32 25 20 30",
+      "href": null
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Landbruk"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Sagbruk"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Offshore"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Papir/cellulose"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Metall"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Maritim"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Jernbane"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Gjenvinning"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Landbruk"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Sagbruk"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Offshore"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Papir/cellulose"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Metall"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Maritim"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Jernbane"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Gjenvinning"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Landbruk"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Sagbruk"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Offshore"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Papir/cellulose"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Metall"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Maritim"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Jernbane"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Gjenvinning"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Få fast pris i dag"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "1"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "Fortell oss om det du trenger å smøre."
+    },
+    {
+      "type": "link",
+      "text": "Ta kontakt →",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "2"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Få en fast pris"
+    },
+    {
+      "type": "text",
+      "text": "Enten du monterer selv eller om vi gjør det."
+    },
+    {
+      "type": "link",
+      "text": "Ta kontakt →",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "3"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Når passer det for deg?"
+    },
+    {
+      "type": "text",
+      "text": "Sammen finner vi en tid som krever minimal nedetid."
+    },
+    {
+      "type": "link",
+      "text": "Ta kontakt →",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/wGAHOWhVswEtWkOKTJN6s2CW0.svg",
+      "alt": "",
+      "width": 0,
+      "height": 0,
+      "role": "background",
+      "local": "/images/home/02-d0cf3b93.svg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Våre tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Se utvalget",
+      "href": "./tjenester"
+    },
+    {
+      "type": "text",
+      "text": "Gi oss utfordringen så skal vi se hva vi klarer"
+    },
+    {
+      "type": "link",
+      "text": "AnleggPresis kontinuerlig smøring til din maskin",
+      "href": "./anlegg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/Lczesiy0hDYHEKmibfhXZ20Mtg.jpeg",
+      "alt": "",
+      "width": 386,
+      "height": 515,
+      "role": "content",
+      "local": "/images/home/03-01289078.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Anlegg"
+    },
+    {
+      "type": "text",
+      "text": "Presis kontinuerlig smøring til din maskin"
+    },
+    {
+      "type": "link",
+      "text": "IndustriSkreddersydde løsninger for norsk industri",
+      "href": "./industri"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/M7jmYndyo7mT0hJlK1KFCInIRqI.jpg",
+      "alt": "Industri",
+      "width": 512,
+      "height": 683,
+      "role": "content",
+      "local": "/images/home/04-41b11055.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Industri"
+    },
+    {
+      "type": "text",
+      "text": "Skreddersydde løsninger for norsk industri"
+    },
+    {
+      "type": "link",
+      "text": "ProdukterAlt du trenger til installasjon, vedlikehold og drift",
+      "href": "./produkter"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/6UxJCkr2qoe0bRiRWExfDCsrI4.jpeg",
+      "alt": "Snjókeðjur, Hlífi- & festibúnaður",
+      "width": 515,
+      "height": 687,
+      "role": "content",
+      "local": "/images/home/05-92660531.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 5,
+      "text": "Produkter"
+    },
+    {
+      "type": "text",
+      "text": "Alt du trenger til installasjon, vedlikehold og drift"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Faglig rådgivning"
+    },
+    {
+      "type": "text",
+      "text": "I over 30 år har ELBA bygget opp in-house ekspertise på smøresystemer og relaterte løsninger. Ta kontakt i dag så finner vi den løsningen som sparer din drift for mest tid og ressurser."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Høy"
+    },
+    {
+      "type": "text",
+      "text": "tilgjengelighet"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Rask"
+    },
+    {
+      "type": "text",
+      "text": "responstid"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Kontakt oss"
+    },
+    {
+      "type": "text",
+      "text": "183"
+    },
+    {
+      "type": "text",
+      "text": "+"
+    },
+    {
+      "type": "text",
+      "text": "Montasjer i året"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "Års erfaring"
+    },
+    {
+      "type": "text",
+      "text": "10983"
+    },
+    {
+      "type": "text",
+      "text": "+"
+    },
+    {
+      "type": "text",
+      "text": "Artikler på lager"
+    },
+    {
+      "type": "text",
+      "text": "5983"
+    },
+    {
+      "type": "text",
+      "text": "+"
+    },
+    {
+      "type": "text",
+      "text": "Fornøyde kunder"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Nyeste artikler"
+    },
+    {
+      "type": "text",
+      "text": "Hold deg oppdatert med våre siste nyheter, tips og oppdateringer fra bransjen."
+    },
+    {
+      "type": "link",
+      "text": "Les mer",
+      "href": "./artikler"
+    },
+    {
+      "type": "link",
+      "text": "Nytt design på Elbas hjemmesideLes mer →",
+      "href": "./artikler/nytt-design"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/FI9Glc7bCV5AHTBtgMUwq1WBE8.jpeg",
+      "alt": "",
+      "width": 220,
+      "height": 204,
+      "role": "content",
+      "local": "/images/home/06-d6adc654.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Nytt design på Elbas hjemmeside"
+    },
+    {
+      "type": "text",
+      "text": "Les mer →"
+    },
+    {
+      "type": "link",
+      "text": "Nytt eierskap for ElbaLes mer →",
+      "href": "./artikler/nytt-eierskap"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/5DAEF0zDUGs30h0GC4U7x80Kdo.jpeg",
+      "alt": "ELBA X SKRALLI",
+      "width": 220,
+      "height": 186,
+      "role": "content",
+      "local": "/images/home/07-85311014.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Nytt eierskap for Elba"
+    },
+    {
+      "type": "text",
+      "text": "Les mer →"
+    },
+    {
+      "type": "link",
+      "text": "Passiv og aktiv overvåking for driftsledereLes mer →",
+      "href": "./artikler/passiv-og-aktiv-overvaaking"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/qsahXWnLCegkc8PRZD1P9pQqjF8.jpg",
+      "alt": "Groenevald-BEKA logo",
+      "width": 220,
+      "height": 146,
+      "role": "content",
+      "local": "/images/home/08-8da04b4f.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Passiv og aktiv overvåking for driftsledere"
+    },
+    {
+      "type": "text",
+      "text": "Les mer →"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "./etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "./artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef",
+    "#fa6161"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/home.desktop.jpg",
+    "mobile": "docs/reference/home.mobile.jpg"
+  }
+}

@@ -1,0 +1,433 @@
+{
+  "route": "/artikler/velge-system",
+  "title": "Å velge riktig type system — Skralli",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/E7tCGiAfdNhaGXRFb5FTvMG6pGU.jpeg",
+      "alt": "",
+      "width": 512,
+      "height": 683,
+      "role": "content",
+      "local": "/images/artikler__velge-system/01-f8b4ac80.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Å velge riktig type system"
+    },
+    {
+      "type": "link",
+      "text": "Artikle",
+      "href": "../artikler"
+    },
+    {
+      "type": "text",
+      "text": "Å velge riktig type system"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Hvordan velge riktig smøresystem for din drift?"
+    },
+    {
+      "type": "text",
+      "text": "Valg av riktig smøresystem er avgjørende for driftssikkerhet, vedlikeholdskostnader og levetid på maskiner. For driftsledere i produksjonsanlegg, entreprenørvirksomheter og selskaper med store maskinparker finnes det ikke én løsning som passer alle. Riktig system avhenger av maskintype, antall smørepunkter og driftsforhold."
+    },
+    {
+      "type": "text",
+      "text": "Her er en kort og praktisk gjennomgang av de vanligste typene smøresystemer og når de passer best."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Enlinjesystem (single-line)"
+    },
+    {
+      "type": "text",
+      "text": "Best egnet for: Mindre og mellomstore systemer, moderate avstander og stabile forhold."
+    },
+    {
+      "type": "text",
+      "text": "Én hovedlinje som forsyner alle smørepunkter",
+      "list": 0
+    },
+    {
+      "type": "text",
+      "text": "Enkel oppbygning og kostnadseffektiv løsning",
+      "list": 0
+    },
+    {
+      "type": "text",
+      "text": "Lett å installere og vedlikeholde",
+      "list": 0
+    },
+    {
+      "type": "text",
+      "text": "Styrker:",
+      "bold": true
+    },
+    {
+      "type": "text",
+      "text": "Driftssikkert og oversiktlig",
+      "list": 1
+    },
+    {
+      "type": "text",
+      "text": "God løsning der belastning og temperatur er relativt stabile",
+      "list": 1
+    },
+    {
+      "type": "text",
+      "text": "Begrensninger:",
+      "bold": true
+    },
+    {
+      "type": "text",
+      "text": "Mindre egnet for svært store systemer eller lange avstander",
+      "list": 2
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Tolinjesystem (dual-line)"
+    },
+    {
+      "type": "text",
+      "text": "Best egnet for: Store anlegg, tung industri og krevende miljøer."
+    },
+    {
+      "type": "text",
+      "text": "To hovedlinjer som jobber vekselvis",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Kan håndtere høyt trykk og lange rørstrekk",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Svært robust løsning",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Styrker:",
+      "bold": true
+    },
+    {
+      "type": "text",
+      "text": "Ideell for mange smørepunkter",
+      "list": 4
+    },
+    {
+      "type": "text",
+      "text": "Tåler tøffe forhold og varierende belastning",
+      "list": 4
+    },
+    {
+      "type": "text",
+      "text": "Begrensninger:",
+      "bold": true
+    },
+    {
+      "type": "text",
+      "text": "Mer kompleks installasjon",
+      "list": 5
+    },
+    {
+      "type": "text",
+      "text": "Høyere investeringskostnad enn enlinje",
+      "list": 5
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Progressivt system"
+    },
+    {
+      "type": "text",
+      "text": "Best egnet for: Maskiner og anlegg der kontroll og driftssikkerhet er kritisk."
+    },
+    {
+      "type": "text",
+      "text": "Smøringen går i en fast rekkefølge gjennom fordelere",
+      "list": 6
+    },
+    {
+      "type": "text",
+      "text": "Hvis ett punkt blokkeres, stopper hele systemet, noe som gjør feil lett å oppdage",
+      "list": 6
+    },
+    {
+      "type": "text",
+      "text": "Styrker:",
+      "bold": true
+    },
+    {
+      "type": "text",
+      "text": "Høy presisjon og kontroll",
+      "list": 7
+    },
+    {
+      "type": "text",
+      "text": "Enkelt å overvåke både mekanisk og digitalt",
+      "list": 7
+    },
+    {
+      "type": "text",
+      "text": "Svært populært i entreprenør- og industrimaskiner",
+      "list": 7
+    },
+    {
+      "type": "text",
+      "text": "Begrensninger:",
+      "bold": true
+    },
+    {
+      "type": "text",
+      "text": "Mindre egnet der ekstrem fleksibilitet kreves",
+      "list": 8
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Flerlinjesystem (multi-line)"
+    },
+    {
+      "type": "text",
+      "text": "Best egnet for: Mindre maskiner med få smørepunkter eller der fleksibilitet er viktig."
+    },
+    {
+      "type": "text",
+      "text": "Hver smørelinje går direkte fra pumpen til smørepunktet",
+      "list": 9
+    },
+    {
+      "type": "text",
+      "text": "Full uavhengighet mellom punktene",
+      "list": 9
+    },
+    {
+      "type": "text",
+      "text": "Styrker:",
+      "bold": true
+    },
+    {
+      "type": "text",
+      "text": "Svært fleksibelt",
+      "list": 10
+    },
+    {
+      "type": "text",
+      "text": "Enkelt å justere individuelle smøremengder",
+      "list": 10
+    },
+    {
+      "type": "text",
+      "text": "Begrensninger:",
+      "bold": true
+    },
+    {
+      "type": "text",
+      "text": "Begrenset antall smørepunkter",
+      "list": 11
+    },
+    {
+      "type": "text",
+      "text": "Mindre egnet for store systemer",
+      "list": 11
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hvilket system bør du velge?"
+    },
+    {
+      "type": "text",
+      "text": "Som tommelfingerregel:"
+    },
+    {
+      "type": "text",
+      "text": "Få smørepunkter / enkel maskin: Flerlinje eller enlinje",
+      "list": 12
+    },
+    {
+      "type": "text",
+      "text": "Mange smørepunkter / høy driftssikkerhet: Progressivt system",
+      "list": 12
+    },
+    {
+      "type": "text",
+      "text": "Store anlegg / lange avstander / tung industri: Tolinjesystem",
+      "list": 12
+    },
+    {
+      "type": "text",
+      "text": "Riktig valg handler ikke bare om teknikk men om driftsmønster, vedlikeholdsstrategi og krav til oppetid."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Overvåking: fra enkel visuell kontroll til full fjernovervåking"
+    },
+    {
+      "type": "text",
+      "text": "Uansett type smøresystem kan Elba levere løsninger med ulike nivåer av overvåking:"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Analog overvåking:"
+    },
+    {
+      "type": "text",
+      "text": "Visuelle indikatorstifter og overtrykksventiler gir rask lokal kontroll."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Digital overvåking:"
+    },
+    {
+      "type": "text",
+      "text": "I samarbeid med El-Watch kan smøreanlegg overvåkes trådløst med sensorer som gir:"
+    },
+    {
+      "type": "text",
+      "text": "Sanntidsvarsler ved avvik",
+      "list": 13
+    },
+    {
+      "type": "text",
+      "text": "Fjerninnsyn i maskinparkens status",
+      "list": 13
+    },
+    {
+      "type": "text",
+      "text": "Historikk og dokumentasjon for vedlikehold",
+      "list": 13
+    },
+    {
+      "type": "text",
+      "text": "Dette gir deg mulighet til å gå fra reaktivt til proaktivt vedlikehold og redusere risikoen for uplanlagt nedetid."
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Usikker på hva som passer din drift?"
+    },
+    {
+      "type": "text",
+      "text": "Elba hjelper deg med å kartlegge behov, velge riktig smøresystem og sette opp ønsket nivå av overvåking, tilpasset din maskinpark og dine driftsmål."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/artikler__velge-system.desktop.jpg",
+    "mobile": "docs/reference/artikler__velge-system.mobile.jpg"
+  }
+}

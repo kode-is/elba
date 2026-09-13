@@ -3,7 +3,7 @@
 // No browser needed: Framer renders these icons server-side.
 import { mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
-import { ROUTES, LIVE } from "./routes.mjs";
+import { ROUTES, LIVE, livePath } from "./routes.mjs";
 
 const OUT_DIR = "docs/scrape/svg";
 const SVG_RE = /<svg\b[^>]*>[\s\S]*?<\/svg>/gi;
@@ -11,7 +11,7 @@ const attr = (svg, name) => { const m = svg.match(new RegExp(`\\s${name}="([^"]*
 const strip = (s) => s.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
 async function fetchHtml(route) {
-  const res = await fetch(LIVE + route, { headers: { "User-Agent": "Mozilla/5.0" } });
+  const res = await fetch(LIVE + livePath(route), { headers: { "User-Agent": "Mozilla/5.0" } });
   if (!res.ok) throw new Error(`${route} -> ${res.status}`);
   return res.text();
 }

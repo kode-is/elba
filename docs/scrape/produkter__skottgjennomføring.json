@@ -1,0 +1,374 @@
+{
+  "route": "/produkter/skottgjennomføring",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/rOrlEruRxc0GzzE3mg8Ey1TZA.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter/06-53f273f5.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "​Skottgjennomføring"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "​Skottgjennomføring"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/zD1VFO8cpoGL7AppHMSTYYfZkYc.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__skottgjennomføring/02-b6a4b506.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/jNxT1bVwTiAzuF7eBAl846dDtg.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__skottgjennomføring/03-e2bc3bf0.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "Serie"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "SW1"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "11643140"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "17"
+    },
+    {
+      "type": "text",
+      "text": "14"
+    },
+    {
+      "type": "text",
+      "text": "48"
+    },
+    {
+      "type": "text",
+      "text": "0401 4701 006"
+    },
+    {
+      "type": "text",
+      "text": "8"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "19"
+    },
+    {
+      "type": "text",
+      "text": "17"
+    },
+    {
+      "type": "text",
+      "text": "49"
+    },
+    {
+      "type": "text",
+      "text": "0401 4701 106"
+    },
+    {
+      "type": "text",
+      "text": "10"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "22"
+    },
+    {
+      "type": "text",
+      "text": "19"
+    },
+    {
+      "type": "text",
+      "text": "52"
+    },
+    {
+      "type": "text",
+      "text": "953149560"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Syrefast (316 / V4A)"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "Serie"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "SW1"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "17"
+    },
+    {
+      "type": "text",
+      "text": "14"
+    },
+    {
+      "type": "text",
+      "text": "48"
+    },
+    {
+      "type": "text",
+      "text": "0401 4701 013"
+    },
+    {
+      "type": "text",
+      "text": "8"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "19"
+    },
+    {
+      "type": "text",
+      "text": "17"
+    },
+    {
+      "type": "text",
+      "text": "49"
+    },
+    {
+      "type": "text",
+      "text": "0401 4701 113"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Skottgjennomføring",
+      "href": null
+    },
+    {
+      "text": "Skottgjennomføring innv. gjenger",
+      "href": null
+    },
+    {
+      "text": "Skottgjennomføring 90 grader",
+      "href": null
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__skottgjennomføring.desktop.jpg",
+    "mobile": "docs/reference/produkter__skottgjennomføring.mobile.jpg"
+  }
+}

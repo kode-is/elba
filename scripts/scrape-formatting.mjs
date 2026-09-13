@@ -1,14 +1,14 @@
 // scripts/scrape-formatting.mjs
 // Adds list/bold semantics to the scraped text blocks, from the live server-rendered HTML.
 import { readFile, writeFile } from "node:fs/promises";
-import { ROUTES, LIVE, routeToFile } from "./routes.mjs";
+import { ROUTES, LIVE, livePath, routeToFile } from "./routes.mjs";
 
 const decode = (s) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, " ");
 const strip = (html) => decode(html.replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]+>/g, "")).replace(/[ \t]+/g, " ").trim();
 const norm = (s) => s.replace(/ /g, " ").replace(/\s+/g, " ").trim();
 
 async function fetchHtml(route) {
-  const res = await fetch(LIVE + route, { headers: { "User-Agent": "Mozilla/5.0" } });
+  const res = await fetch(LIVE + livePath(route), { headers: { "User-Agent": "Mozilla/5.0" } });
   return res.text(); // /404 returns status 404 but still has the page HTML
 }
 

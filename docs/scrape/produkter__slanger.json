@@ -1,0 +1,268 @@
+{
+  "route": "/produkter/slanger",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/df7FzVigAJLcAK8HerLNuKvhZrY.jpg",
+      "alt": "",
+      "width": 1440,
+      "height": 432,
+      "role": "content",
+      "local": "/images/produkter/07-9bd24da2.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Slanger"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "Slanger"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/OBMAo2dQ9Mbsq2VUQWJygRTX4E.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__slanger/02-350b79a1.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/YwJAHITgwBzL73v2z2TSxvjDI.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__slanger/03-994707cc.png"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "D1"
+    },
+    {
+      "type": "text",
+      "text": "Fett"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "NLGI 2"
+    },
+    {
+      "type": "text",
+      "text": "100120200"
+    },
+    {
+      "type": "text",
+      "text": "8.6"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "tom"
+    },
+    {
+      "type": "text",
+      "text": "100120201"
+    },
+    {
+      "type": "text",
+      "text": "11.3"
+    },
+    {
+      "type": "text",
+      "text": "6.3"
+    },
+    {
+      "type": "text",
+      "text": "NLGI 2"
+    },
+    {
+      "type": "text",
+      "text": "100120265"
+    },
+    {
+      "type": "text",
+      "text": "11.3"
+    },
+    {
+      "type": "text",
+      "text": "6.3"
+    },
+    {
+      "type": "text",
+      "text": "tom"
+    },
+    {
+      "type": "text",
+      "text": "100120266"
+    },
+    {
+      "type": "text",
+      "text": "5/16\""
+    },
+    {
+      "type": "text",
+      "text": "1/8\""
+    },
+    {
+      "type": "text",
+      "text": "tom"
+    },
+    {
+      "type": "text",
+      "text": "på forespørsel"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Høytrykkslange",
+      "href": null
+    },
+    {
+      "text": "Nylonrør",
+      "href": null
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__slanger.desktop.jpg",
+    "mobile": "docs/reference/produkter__slanger.mobile.jpg"
+  }
+}

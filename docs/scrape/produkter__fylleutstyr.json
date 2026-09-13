@@ -1,0 +1,331 @@
+{
+  "route": "/produkter/fylleutstyr",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/g9N6bIXBoc8bjSBU1TIIbhEaFY.jpeg",
+      "alt": "",
+      "width": 1440,
+      "height": 1440,
+      "role": "content",
+      "local": "/images/produkter/09-d1bc0ce1.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Fylleutstyr"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "Fylleutstyr"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/r5lbPjj1vq3OXbjN1N6Z9S6e5w.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__fylleutstyr/02-ee9402bd.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/rZPo0EoPzcbgu1tWxi1UB4n82A.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__fylleutstyr/03-8149cfd1.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/leh82U3hxoYqtXOfMNqUAsf7K4.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__fylleutstyr/04-1e0b42a4.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/GbU3JxRjcCEqtf7tgRKtdmSvqg.png",
+      "alt": "",
+      "width": 400,
+      "height": 262,
+      "role": "content",
+      "local": "/images/produkter__fylleutstyr/05-06de2523.png"
+    },
+    {
+      "type": "text",
+      "text": "Fyllepresse til sentralsmøreanlegg for fettpatron iht. DIN 1284"
+    },
+    {
+      "type": "text",
+      "text": "Patron"
+    },
+    {
+      "type": "text",
+      "text": "Tilkobling"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "D1"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "400 g"
+    },
+    {
+      "type": "text",
+      "text": "med tutt og M26 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "293 mm"
+    },
+    {
+      "type": "text",
+      "text": "54 mm"
+    },
+    {
+      "type": "text",
+      "text": "56 mm"
+    },
+    {
+      "type": "text",
+      "text": "208103026"
+    },
+    {
+      "type": "text",
+      "text": "400 g"
+    },
+    {
+      "type": "text",
+      "text": "M26 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "293 mm"
+    },
+    {
+      "type": "text",
+      "text": "54 mm"
+    },
+    {
+      "type": "text",
+      "text": "56 mm"
+    },
+    {
+      "type": "text",
+      "text": "953146912"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/qIV0NlYniwMB2KwG5yzc7CDyv8.png",
+      "alt": "",
+      "width": 362,
+      "height": 368,
+      "role": "content",
+      "local": "/images/produkter__fylleutstyr/06-ebeeb7b4.png"
+    },
+    {
+      "type": "text",
+      "text": "Patron"
+    },
+    {
+      "type": "text",
+      "text": "Tilkobling"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "D1"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "400 g"
+    },
+    {
+      "type": "text",
+      "text": "med tutt"
+    },
+    {
+      "type": "text",
+      "text": "450 mm"
+    },
+    {
+      "type": "text",
+      "text": "54 mm"
+    },
+    {
+      "type": "text",
+      "text": "169 mm"
+    },
+    {
+      "type": "text",
+      "text": "20830001"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Fyllepresse",
+      "href": null
+    },
+    {
+      "text": "Fyllepumpe",
+      "href": null
+    },
+    {
+      "text": "Holdere",
+      "href": null
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__fylleutstyr.desktop.jpg",
+    "mobile": "docs/reference/produkter__fylleutstyr.mobile.jpg"
+  }
+}

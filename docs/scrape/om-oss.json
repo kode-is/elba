@@ -1,0 +1,474 @@
+{
+  "route": "/om-oss",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/8NvFyueXdNo0Kz1IgEwVtOJ12E.png",
+      "alt": "UM OKKur",
+      "width": 1440,
+      "height": 642,
+      "role": "content",
+      "local": "/images/om-oss/01-143b289f.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Om oss"
+    },
+    {
+      "type": "text",
+      "text": "Om oss"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Kvalitet og profesjonalitet."
+    },
+    {
+      "type": "text",
+      "text": "Vi er opptatt av å levere førsteklasses service og skape en positiv opplevelse for kundene våre. Vårt tekniske team i samarbeid med våre montører har mange års erfaring fra alt innen smøreteknikk."
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/gUsVBMxulAE5zcK7SL9PmN74Uk.png",
+      "alt": "Aðstaða",
+      "width": 200,
+      "height": 266,
+      "role": "content",
+      "local": "/images/om-oss/02-34e18c82.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/JNcWxTpH8H7QRlHQ7XGSzZNlUa0.jpeg",
+      "alt": "Aðstaða",
+      "width": 200,
+      "height": 266,
+      "role": "content",
+      "local": "/images/om-oss/03-9b3d1db5.jpeg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/I9d5AmtvNGR0O1Isnp7Dj47Ztu0.jpeg",
+      "alt": "Maskiner med smøreutstyr",
+      "width": 388,
+      "height": 518,
+      "role": "content",
+      "local": "/images/om-oss/04-ab45b0b4.jpeg"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/8sLy5x4gkqOqBf9SMb8CisWPaQ.jpeg",
+      "alt": "ELBA på fabrikk",
+      "width": 172,
+      "height": 229,
+      "role": "content",
+      "local": "/images/om-oss/05-55228eb9.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Din drift er vår ambisjon."
+    },
+    {
+      "type": "text",
+      "text": "Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen du har til oss. Elba har lang erfaring med å levere alt fra enkelt håndutstyr for fett til uortodokse smøresystemer til enestående applikasjoner."
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Samarbeid"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Pålitelighet"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Kvalitet"
+    },
+    {
+      "type": "text",
+      "text": "183"
+    },
+    {
+      "type": "text",
+      "text": "+"
+    },
+    {
+      "type": "text",
+      "text": "Montasjer i året"
+    },
+    {
+      "type": "text",
+      "text": "13"
+    },
+    {
+      "type": "text",
+      "text": "Års erfaring"
+    },
+    {
+      "type": "text",
+      "text": "10983"
+    },
+    {
+      "type": "text",
+      "text": "+"
+    },
+    {
+      "type": "text",
+      "text": "Artikler på lager"
+    },
+    {
+      "type": "text",
+      "text": "5983"
+    },
+    {
+      "type": "text",
+      "text": "+"
+    },
+    {
+      "type": "text",
+      "text": "Fornøyde kunder"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Vårt team"
+    },
+    {
+      "type": "text",
+      "text": "Hos oss jobber et sterkt team av fagfolk som er klare til å ta på seg alle typer utfordringer. Vi legger stor vekt på å sikre høyest mulig kvalitet og service."
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Ronny Thoresen"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Daglig leder"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "ronny@elba.no"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "Hlynur Ísak",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Haavard Gaathaug"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Salgsingeniør"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "haavard@elba.no"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Hege Hersæther"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Driftsleder"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "hege@elba.no"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Adrian Myrvold"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Logistikk og salg"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "adrian@elba.no"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Lukas Sundby Baklid"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Logistikk"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "lager@elba.no"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "Örvar S. Haraldsson",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "H. Isak Vilmundarson"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Prosjektleder"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "isak@elba.no"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Christoffer Iversen"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Senior montør"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "christoffer@elba.no"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "776 4836"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Sondre Hovde Bamrud"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Senior montør"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "sondre@elba.no"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+      "alt": "",
+      "width": 512,
+      "height": 512,
+      "role": "content",
+      "local": "/images/om-oss/06-ccdd026b.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Eva Hansen"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "Regnskap"
+    },
+    {
+      "type": "heading",
+      "level": 6,
+      "text": "eva@elba.no"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "./kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "./etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "./"
+    },
+    {
+      "text": "Om oss",
+      "href": "./om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "./artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "./tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "./kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/om-oss.desktop.jpg",
+    "mobile": "docs/reference/om-oss.mobile.jpg"
+  }
+}

@@ -1,0 +1,309 @@
+{
+  "route": "/artikler/hvorfor-smoresystem-industri",
+  "title": "Hvordan sparer smøresystemer penger? — Skralli",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iBvZ17rqKYzarN6dJRf6VjVsY0.png",
+      "alt": "Smøresystem",
+      "width": 512,
+      "height": 384,
+      "role": "content",
+      "local": "/images/artikler/05-aa3c90a2.png"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Hvordan sparer smøresystemer penger?"
+    },
+    {
+      "type": "link",
+      "text": "Artikle",
+      "href": "../artikler"
+    },
+    {
+      "type": "text",
+      "text": "Hvordan sparer smøresystemer penger?"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Hvordan smøresystemer sparer tid og penger i industrien"
+    },
+    {
+      "type": "text",
+      "text": "I industrien er det ofte de små tingene som avgjør lønnsomheten. Smøring er et godt eksempel. Det blir sjelden snakket høyt om, helt til noe stopper opp. Da blir det plutselig veldig dyrt."
+    },
+    {
+      "type": "text",
+      "text": "Med riktige smøresystemer kan industribedrifter redusere nedetid, forlenge levetiden på maskiner og frigjøre verdifull arbeidstid. Resultatet er lavere kostnader, bedre driftssikkerhet og mer forutsigbar produksjon."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Smøring som en del av produksjonen"
+    },
+    {
+      "type": "text",
+      "text": "Manuell smøring krever planlegging, ofte med stopp i produksjonen og personell som fysisk må til maskinen. I praksis betyr dette ofte at smøring blir utsatt, glemt eller utført ujevnt."
+    },
+    {
+      "type": "text",
+      "text": "Automatiske og sentraliserte smøresystemer gjør smøring til en kontinuerlig del av driften. Smørepunktene får riktig mengde smøremiddel – til rett tid – mens maskinen er i gang."
+    },
+    {
+      "type": "text",
+      "text": "Dette gir:"
+    },
+    {
+      "type": "text",
+      "text": "Jevn og korrekt smøring",
+      "list": 0
+    },
+    {
+      "type": "text",
+      "text": "Mindre slitasje på lager, kjeder og føringer",
+      "list": 0
+    },
+    {
+      "type": "text",
+      "text": "Færre uforutsette driftsstans",
+      "list": 0
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Mindre vedlikehold, færre timer og lavere kostnader"
+    },
+    {
+      "type": "text",
+      "text": "Vedlikehold er kostbart, spesielt når det er reaktivt. Slitte komponenter, havarier og hasteutkall gir både direkte kostnader og tapte produksjonstimer."
+    },
+    {
+      "type": "text",
+      "text": "Et godt smøresystem:"
+    },
+    {
+      "type": "text",
+      "text": "Reduserer behovet for akutte reparasjoner",
+      "list": 1
+    },
+    {
+      "type": "text",
+      "text": "Forlenger levetiden på kritiske komponenter",
+      "list": 1
+    },
+    {
+      "type": "text",
+      "text": "Gir mer planlagt og forutsigbart vedlikehold",
+      "list": 1
+    },
+    {
+      "type": "text",
+      "text": "Mange av våre kunder opplever at investeringen i et smøresystem betaler seg raskt – ofte gjennom færre vedlikeholdstimer alene."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Frigjør fagfolk til viktigere oppgaver"
+    },
+    {
+      "type": "text",
+      "text": "I en tid der kvalifisert personell er en knapp ressurs, gir det liten mening at dyktige teknikere bruker tid på rutinemessig smøring."
+    },
+    {
+      "type": "text",
+      "text": "Med automatiske systemer:"
+    },
+    {
+      "type": "text",
+      "text": "Brukes færre timer på enkle, manuelle oppgaver",
+      "list": 2
+    },
+    {
+      "type": "text",
+      "text": "Kan vedlikeholdspersonell fokusere på inspeksjon og forbedring",
+      "list": 2
+    },
+    {
+      "type": "text",
+      "text": "Blir HMS bedre, fordi færre må inn i utsatte områder",
+      "list": 2
+    },
+    {
+      "type": "text",
+      "text": "Dette gir både bedre ressursbruk og tryggere arbeidsforhold."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Smøresystemer kan tilpasses og overtas"
+    },
+    {
+      "type": "text",
+      "text": "Mange tror at nye smøresystemer alltid betyr full utskifting. Det stemmer ikke hos Elba."
+    },
+    {
+      "type": "text",
+      "text": "Hos Elba jobber vi daglig med:"
+    },
+    {
+      "type": "text",
+      "text": "Å ta over og videreutvikle eksisterende smøresystemer",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Service og optimalisering, uavhengig av leverandør og løsning",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Tilpasning av systemtype etter bruksområde og drift",
+      "list": 3
+    },
+    {
+      "type": "text",
+      "text": "Enten det er progressive systemer, enlinje-, tolinje- eller flerledersystemer, finnes det løsninger som passer både nye og eldre anlegg."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "En investering i driftssikkerhet"
+    },
+    {
+      "type": "text",
+      "text": "Smøring handler ikke bare om fett og olje – det handler om oppetid, kontroll og forutsigbarhet. I industrien er dette verdier som direkte påvirker bunnlinjen."
+    },
+    {
+      "type": "text",
+      "text": "Riktig smøresystem er derfor ikke en kostnad, men en investering i:"
+    },
+    {
+      "type": "text",
+      "text": "Stabil drift",
+      "list": 4
+    },
+    {
+      "type": "text",
+      "text": "Lavere totale eierkostnader",
+      "list": 4
+    },
+    {
+      "type": "text",
+      "text": "Lengre levetid på maskiner og utstyr",
+      "list": 4
+    },
+    {
+      "type": "text",
+      "text": "Ønsker du å vite hvordan et smøresystem kan optimaliseres for din drift, tar vi gjerne en prat."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/artikler__hvorfor-smoresystem-industri.desktop.jpg",
+    "mobile": "docs/reference/artikler__hvorfor-smoresystem-industri.mobile.jpg"
+  }
+}

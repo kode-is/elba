@@ -1,41 +1,88 @@
 // scripts/scrape-tables.mjs
-// Extracts <table> structures from the live server-rendered HTML of every route.
-import { writeFile } from "node:fs/promises";
-import { ROUTES, LIVE } from "./routes.mjs";
+// Reads every <table> AFTER Framer hydrates the page. The server HTML of
+// elba.no's product pages only contains the Table widget's demo rows
+// (Name / Email / Role / Status); the real spec rows are rendered
+// client-side, paginated ("Page 1 of N") and duplicated once for the
+// desktop and once for the mobile layout. This script clicks through the
+// pager, then drops exact-duplicate tables.
+import { chromium } from "playwright";
+import { mkdir, writeFile } from "node:fs/promises";
+import { ROUTES, LIVE, livePath } from "./routes.mjs";
 
-const decode = (s) => s.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#39;|&apos;/g, "'").replace(/&nbsp;/g, " ");
-const cellText = (html) => decode(html.replace(/<br\s*\/?>/gi, "\n").replace(/<[^>]+>/g, "")).replace(/[ \t]+/g, " ").replace(/\s*\n\s*/g, "\n").trim();
-const cells = (rowHtml, tag) => [...rowHtml.matchAll(new RegExp(`<${tag}\\b[^>]*>([\\s\\S]*?)<\\/${tag}>`, "gi"))].map((m) => cellText(m[1]));
+const PLACEHOLDER = JSON.stringify(["Name", "Email", "Role", "Status"]);
 
-async function fetchHtml(route) {
-  const res = await fetch(LIVE + route, { headers: { "User-Agent": "Mozilla/5.0" } });
-  return res.text(); // /404 returns status 404 but still has page HTML
+async function readTables(page) {
+  return page.evaluate(() => {
+    const clean = (s) => s.replace(/\s+/g, " ").trim();
+    const visible = (el) => { const r = el.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
+    const out = [];
+    for (const table of document.querySelectorAll("table")) {
+      if (!visible(table)) continue;
+      const headers = [...table.querySelectorAll("thead th, thead td")].map((c) => clean(c.textContent));
+      const rows = [...table.querySelectorAll("tbody tr")].map((tr) => [...tr.querySelectorAll("td, th")].map((c) => clean(c.textContent)));
+      let heading = null;
+      let node = table;
+      while (node && !heading) {
+        let sib = node.previousElementSibling;
+        while (sib && !heading) { const h = sib.matches("h1,h2,h3,h4,h5,h6") ? sib : sib.querySelector("h1,h2,h3,h4,h5,h6"); if (h) heading = clean(h.textContent); sib = sib.previousElementSibling; }
+        node = node.parentElement;
+      }
+      out.push({ headers, rows, precedingHeading: heading });
+    }
+    return out;
+  });
 }
 
+async function scrapeRoute(browser, route) {
+  const page = await (await browser.newContext({ viewport: { width: 1440, height: 900 } })).newPage();
+  await page.goto(LIVE + livePath(route), { waitUntil: "networkidle", timeout: 60000 });
+  await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 100)); } });
+  await page.waitForTimeout(1500);
+  // Collect page 1 of every widget, then click every enabled "Next" until none is enabled.
+  const pages = [await readTables(page)];
+  for (let i = 0; i < 20; i++) {
+    const next = page.locator("button:has-text('Next'):not([disabled]), [role=button]:has-text('Next'):not([aria-disabled='true'])");
+    if ((await next.count()) === 0) break;
+    await next.first().click();
+    await page.waitForTimeout(600);
+    pages.push(await readTables(page));
+  }
+  // Merge by DOM position: table i of every snapshot is the same widget
+  // (clicking "Next" never adds or removes tables), so later snapshots only
+  // contribute rows not seen yet. Never merge by heading — rørender repeats
+  // the same variant heading over several distinct tables.
+  const base = pages[0].map((t) => ({ ...t, rows: [...t.rows] }));
+  for (const snapshot of pages.slice(1)) {
+    if (snapshot.length !== base.length) { console.warn(`  ! table count changed between pager clicks (${base.length} → ${snapshot.length}); keeping page 1 only`); break; }
+    snapshot.forEach((t, i) => { for (const row of t.rows) if (!base[i].rows.some((r) => JSON.stringify(r) === JSON.stringify(row))) base[i].rows.push(row); });
+  }
+  // Drop the widget's demo table and the exact desktop/mobile duplicates.
+  const seen = new Set();
+  const out = [];
+  for (const t of base) {
+    if (JSON.stringify(t.headers) === PLACEHOLDER) continue;
+    const key = JSON.stringify([t.precedingHeading, t.headers, t.rows]);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(t);
+  }
+  await page.context().close();
+  return out.map((t, index) => ({ index, ...t }));
+}
+
+const browser = await chromium.launch();
 const out = { generatedAt: new Date().toISOString(), routes: [] };
 for (const route of ROUTES) {
-  let html;
-  try { html = await fetchHtml(route); } catch (e) { console.log(`${route}: fetch failed ${e.message}`); out.routes.push({ route, tables: [] }); continue; }
-  const tables = [];
-  const re = /<table\b[^>]*>([\s\S]*?)<\/table>/gi;
-  let m, index = 0;
-  while ((m = re.exec(html))) {
-    const before = html.slice(0, m.index);
-    const headings = [...before.matchAll(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi)];
-    const precedingHeading = headings.length ? cellText(headings[headings.length - 1][2]) : null;
-    const rowsHtml = [...m[1].matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map((r) => r[1]);
-    let headers = [];
-    const rows = [];
-    for (const r of rowsHtml) {
-      const th = cells(r, "th");
-      const td = cells(r, "td");
-      if (th.length && !td.length && !headers.length) headers = th;
-      else if (td.length) rows.push(th.length ? [...th, ...td] : td);
-    }
-    tables.push({ index: index++, headers, rows, precedingHeading });
+  try {
+    const tables = await scrapeRoute(browser, route);
+    out.routes.push({ route, tables });
+    if (tables.length) console.log(`${route}: ${tables.length} table(s) — ${tables.map((t) => `${t.headers.length} cols × ${t.rows.length} rows`).join(", ")}`);
+  } catch (e) {
+    console.error(`${route}: FAILED ${e.message}`);
+    out.routes.push({ route, tables: [] });
   }
-  out.routes.push({ route, tables });
-  if (tables.length) console.log(`${route}: ${tables.length} table(s) — ${tables.map((t) => `${t.headers.length} cols × ${t.rows.length} rows`).join(", ")}`);
 }
+await browser.close();
+await mkdir("docs/scrape", { recursive: true });
 await writeFile("docs/scrape/tables.json", JSON.stringify(out, null, 2) + "\n");
 console.log(`done: ${out.routes.filter((r) => r.tables.length).length} routes with tables`);

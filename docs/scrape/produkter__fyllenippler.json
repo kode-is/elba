@@ -1,0 +1,646 @@
+{
+  "route": "/produkter/fyllenippler",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/sBQHfT9sxxzJVUO3IruJHzqqJ9E.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 261,
+      "role": "content",
+      "local": "/images/produkter/13-a8093807.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Fyllenippler"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "Fyllenippler"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/p81Qw6sVexqSb6OQR9RWklSw1Eo.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__fyllenippler/02-f24eda9f.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/yzd7Fx9bmN04GvdBHEeHb17vok.png",
+      "alt": "",
+      "width": 400,
+      "height": 261,
+      "role": "content",
+      "local": "/images/produkter__fyllenippler/03-9e68b64a.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fyllenippel rett"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "Passer"
+    },
+    {
+      "type": "text",
+      "text": "M18 x 1.0"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "100"
+    },
+    {
+      "type": "text",
+      "text": "953147153"
+    },
+    {
+      "type": "text",
+      "text": "Groeneveld"
+    },
+    {
+      "type": "text",
+      "text": "M18 x 1.0"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "120"
+    },
+    {
+      "type": "text",
+      "text": "953147153"
+    },
+    {
+      "type": "text",
+      "text": "Groeneveld"
+    },
+    {
+      "type": "text",
+      "text": "M20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "45"
+    },
+    {
+      "type": "text",
+      "text": "21520150"
+    },
+    {
+      "type": "text",
+      "text": "Beka/Vogel/CLS"
+    },
+    {
+      "type": "text",
+      "text": "M20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "45"
+    },
+    {
+      "type": "text",
+      "text": "21520152"
+    },
+    {
+      "type": "text",
+      "text": "m/tilbakeslagsventil"
+    },
+    {
+      "type": "text",
+      "text": "M22 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "45"
+    },
+    {
+      "type": "text",
+      "text": "40154"
+    },
+    {
+      "type": "text",
+      "text": "Lincoln-Skf"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/p81Qw6sVexqSb6OQR9RWklSw1Eo.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__fyllenippler/02-f24eda9f.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/ZIHvTaTpwrZJGIN2PvaXfGGY.png",
+      "alt": "",
+      "width": 158,
+      "height": 103,
+      "role": "content",
+      "local": "/images/produkter__fyllenippler/05-d9e2c081.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fyllenippel 45°"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "Passer"
+    },
+    {
+      "type": "text",
+      "text": "M20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "118"
+    },
+    {
+      "type": "text",
+      "text": "21520146"
+    },
+    {
+      "type": "text",
+      "text": "Beka/Vogel/CLS"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/p81Qw6sVexqSb6OQR9RWklSw1Eo.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__fyllenippler/02-f24eda9f.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/UHvmJsrJl3kwWRYnZSRj8GWuPME.png",
+      "alt": "",
+      "width": 287,
+      "height": 166,
+      "role": "content",
+      "local": "/images/produkter__fyllenippler/07-a2fcde43.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fyllenippel 90°"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "Passer"
+    },
+    {
+      "type": "text",
+      "text": "M18 x 1.0"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "100"
+    },
+    {
+      "type": "text",
+      "text": "953147876"
+    },
+    {
+      "type": "text",
+      "text": "Groeneveld"
+    },
+    {
+      "type": "text",
+      "text": "M20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "38"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "50-56"
+    },
+    {
+      "type": "text",
+      "text": "21520149"
+    },
+    {
+      "type": "text",
+      "text": "Beka/Vogel/CLS"
+    },
+    {
+      "type": "text",
+      "text": "M20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "38"
+    },
+    {
+      "type": "text",
+      "text": "30"
+    },
+    {
+      "type": "text",
+      "text": "85-91"
+    },
+    {
+      "type": "text",
+      "text": "21520147"
+    },
+    {
+      "type": "text",
+      "text": "Beka/Vogel/CLS"
+    },
+    {
+      "type": "text",
+      "text": "M22 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "45"
+    },
+    {
+      "type": "text",
+      "text": "40154"
+    },
+    {
+      "type": "text",
+      "text": "Lincoln-Skf"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/71CZp8BACCHOs1RkGqeyNXwrg.png",
+      "alt": "",
+      "width": 158,
+      "height": 211,
+      "role": "content",
+      "local": "/images/produkter__fyllenippler/08-bc1caf3d.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/IVYSeBkuv8a4RaQeWDM9szwjqo.png",
+      "alt": "",
+      "width": 158,
+      "height": 211,
+      "role": "content",
+      "local": "/images/produkter__fyllenippler/09-175ec288.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Fyllenippel 0° - 90° justerbar"
+    },
+    {
+      "type": "text",
+      "text": "G"
+    },
+    {
+      "type": "text",
+      "text": "D"
+    },
+    {
+      "type": "text",
+      "text": "SW"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr."
+    },
+    {
+      "type": "text",
+      "text": "Passer"
+    },
+    {
+      "type": "text",
+      "text": "M20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "145 - 80"
+    },
+    {
+      "type": "text",
+      "text": "10132444"
+    },
+    {
+      "type": "text",
+      "text": "Beka/Vogel/CLS"
+    },
+    {
+      "type": "text",
+      "text": "M20 x 1.5"
+    },
+    {
+      "type": "text",
+      "text": "34"
+    },
+    {
+      "type": "text",
+      "text": "32"
+    },
+    {
+      "type": "text",
+      "text": "145 - 80"
+    },
+    {
+      "type": "text",
+      "text": "10136837"
+    },
+    {
+      "type": "text",
+      "text": "m/tilbakeslagsventil"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 1"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Fyllenippel for stuss",
+      "href": null
+    },
+    {
+      "text": "Fyllenippel gjenget tilkobling",
+      "href": null
+    },
+    {
+      "text": "Fyllenippel overgang",
+      "href": null
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__fyllenippler.desktop.jpg",
+    "mobile": "docs/reference/produkter__fyllenippler.mobile.jpg"
+  }
+}

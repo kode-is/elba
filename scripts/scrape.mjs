@@ -2,7 +2,7 @@ import { chromium } from "playwright";
 import { mkdir, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
-import { ROUTES, LIVE, routeToFile } from "./routes.mjs";
+import { ROUTES, LIVE, livePath, routeToFile } from "./routes.mjs";
 import { normalizeBlocks, normalizeNav } from "./lib/normalize.mjs";
 import { expandAccordions } from "./lib/accordion.mjs";
 
@@ -44,6 +44,27 @@ async function download(url, routeDir, idx) {
       result = { local: null, error: String(secondErr.message || secondErr) };
       console.error(`  ! image failed after retry: ${clean} — ${result.error}`);
     }
+  }
+  seenImages.set(clean, result);
+  return result;
+}
+
+async function downloadAsset(url, kind) {
+  const clean = stripParams(url);
+  if (seenImages.has(clean)) return seenImages.get(clean);
+  const dir = kind === "video" ? "video" : "docs";
+  const name = kind === "video" ? "hero.mp4" : path.basename(new URL(clean).pathname);
+  let result;
+  try {
+    const res = await fetch(clean, { headers: { "User-Agent": "Mozilla/5.0" } });
+    if (!res.ok) throw new Error(`download ${clean} -> ${res.status}`);
+    const local = `/${dir}/${name}`;
+    await mkdir(path.join("public", dir), { recursive: true });
+    await writeFile(path.join("public", local), Buffer.from(await res.arrayBuffer()));
+    result = { local };
+  } catch (e) {
+    result = { local: null, error: String(e.message || e) };
+    console.error(`  ! asset failed: ${clean} — ${result.error}`);
   }
   seenImages.set(clean, result);
   return result;
@@ -95,8 +116,17 @@ async function extractPage(page) {
       if (tag === "p" || (tag === "span" && el.parentElement && !/^(p|h[1-6]|a|button)$/i.test(el.parentElement.tagName) && el.children.length === 0)) {
         const t = textOf(el); if (t && !inChrome(el) || (footer && footer.contains(el) && t)) push({ type: "text", text: t }, el); continue;
       }
+      if (tag === "a") {
+        const href = el.getAttribute("href") || "";
+        if (/framerusercontent\.com\/assets\/.*\.pdf/i.test(href)) push({ type: "asset", src: href.split("?")[0], kind: "document", text: textOf(el) }, el);
+      }
       if (tag === "a" && !inChrome(el)) { const t = textOf(el); if (t) push({ type: "link", text: t, href: el.getAttribute("href") }, el); continue; }
       if (tag === "img") { const src = el.currentSrc || el.src; if (src && src.includes("framerusercontent")) push({ type: "image", src: src.split("?")[0], alt: el.alt || "", width: el.naturalWidth, height: el.naturalHeight, role: header && header.contains(el) || footer && footer.contains(el) ? "logo" : "content" }, el); continue; }
+      if (tag === "video" || tag === "source") {
+        const src = el.currentSrc || el.src || el.getAttribute("src");
+        if (src && src.includes("framerusercontent.com/assets")) push({ type: "asset", src: src.split("?")[0], kind: "video" }, el);
+        continue;
+      }
       const bgi = getComputedStyle(el).backgroundImage; const m = bgi && bgi.match(/url\("?(https:\/\/framerusercontent[^")]+)/);
       if (m) push({ type: "image", src: m[1].split("?")[0], alt: "", width: 0, height: 0, role: "background" }, el);
     }
@@ -109,7 +139,7 @@ async function scrapeRoute(browser, route) {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1, locale: "is" });
   const page = await ctx.newPage();
   try {
-    await page.goto(LIVE + route, { waitUntil: "networkidle", timeout: 60000 });
+    await page.goto(LIVE + livePath(route), { waitUntil: "networkidle", timeout: 60000 });
     await page.waitForTimeout(800);
     // trigger lazy content
     await page.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } window.scrollTo(0, 0); });
@@ -130,6 +160,12 @@ async function scrapeRoute(browser, route) {
     const routeDir = routeToFile(route);
     let idx = 0;
     for (const b of [...data.blocks, ...data.footer]) {
+      if (b.type === "asset") {
+        const { local, error } = await downloadAsset(b.src, b.kind);
+        b.local = local;
+        manifest.push({ route, originalUrl: b.src, localPath: local, kind: b.kind, width: 0, height: 0, alt: b.text || "", role: "asset", ...(error ? { error } : {}) });
+        continue;
+      }
       if (b.type !== "image") continue;
       const { local, error } = await download(b.src, routeDir, idx++);
       b.local = local;

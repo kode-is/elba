@@ -1,0 +1,1696 @@
+[
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/assets/QPvkdzMib7zEzxuEgjVLWCd0e4.mp4",
+    "localPath": "/video/hero.mp4",
+    "kind": "video",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "asset"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/f5FVxzNp5xidC8JX8CzN1zAuI.png",
+    "localPath": "/images/home/01-a13ec070.png",
+    "width": 1440,
+    "height": 808,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/wGAHOWhVswEtWkOKTJN6s2CW0.svg",
+    "localPath": "/images/home/02-d0cf3b93.svg",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "background"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/Lczesiy0hDYHEKmibfhXZ20Mtg.jpeg",
+    "localPath": "/images/home/03-01289078.jpeg",
+    "width": 386,
+    "height": 515,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/M7jmYndyo7mT0hJlK1KFCInIRqI.jpg",
+    "localPath": "/images/home/04-41b11055.jpg",
+    "width": 512,
+    "height": 683,
+    "alt": "Industri",
+    "role": "content"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/6UxJCkr2qoe0bRiRWExfDCsrI4.jpeg",
+    "localPath": "/images/home/05-92660531.jpeg",
+    "width": 515,
+    "height": 687,
+    "alt": "Snjókeðjur, Hlífi- & festibúnaður",
+    "role": "content"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/FI9Glc7bCV5AHTBtgMUwq1WBE8.jpeg",
+    "localPath": "/images/home/06-d6adc654.jpeg",
+    "width": 220,
+    "height": 204,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/5DAEF0zDUGs30h0GC4U7x80Kdo.jpeg",
+    "localPath": "/images/home/07-85311014.jpeg",
+    "width": 220,
+    "height": 186,
+    "alt": "ELBA X SKRALLI",
+    "role": "content"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/qsahXWnLCegkc8PRZD1P9pQqjF8.jpg",
+    "localPath": "/images/home/08-8da04b4f.jpg",
+    "width": 220,
+    "height": 146,
+    "alt": "Groenevald-BEKA logo",
+    "role": "content"
+  },
+  {
+    "route": "/",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/8NvFyueXdNo0Kz1IgEwVtOJ12E.png",
+    "localPath": "/images/om-oss/01-143b289f.png",
+    "width": 1440,
+    "height": 642,
+    "alt": "UM OKKur",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/gUsVBMxulAE5zcK7SL9PmN74Uk.png",
+    "localPath": "/images/om-oss/02-34e18c82.png",
+    "width": 200,
+    "height": 266,
+    "alt": "Aðstaða",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/JNcWxTpH8H7QRlHQ7XGSzZNlUa0.jpeg",
+    "localPath": "/images/om-oss/03-9b3d1db5.jpeg",
+    "width": 200,
+    "height": 266,
+    "alt": "Aðstaða",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/I9d5AmtvNGR0O1Isnp7Dj47Ztu0.jpeg",
+    "localPath": "/images/om-oss/04-ab45b0b4.jpeg",
+    "width": 388,
+    "height": 518,
+    "alt": "Maskiner med smøreutstyr",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/8sLy5x4gkqOqBf9SMb8CisWPaQ.jpeg",
+    "localPath": "/images/om-oss/05-55228eb9.jpeg",
+    "width": 172,
+    "height": 229,
+    "alt": "ELBA på fabrikk",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "Hlynur Ísak",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "Örvar S. Haraldsson",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/pAKFVkXyHo9OPesvbJxkrVnDI.png",
+    "localPath": "/images/om-oss/06-ccdd026b.png",
+    "width": 512,
+    "height": 512,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/om-oss",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/tjenester",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/tjenester",
+    "originalUrl": "https://framerusercontent.com/images/QSUVLULuYs0GzfaxExJ5K0ZYgx8.jpeg",
+    "localPath": "/images/tjenester/01-68fb1302.jpeg",
+    "width": 1439,
+    "height": 1919,
+    "alt": "Kitchen fixes",
+    "role": "content"
+  },
+  {
+    "route": "/tjenester",
+    "originalUrl": "https://framerusercontent.com/images/Lczesiy0hDYHEKmibfhXZ20Mtg.jpeg",
+    "localPath": "/images/home/03-01289078.jpeg",
+    "width": 386,
+    "height": 515,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/tjenester",
+    "originalUrl": "https://framerusercontent.com/images/M7jmYndyo7mT0hJlK1KFCInIRqI.jpg",
+    "localPath": "/images/home/04-41b11055.jpg",
+    "width": 512,
+    "height": 683,
+    "alt": "Industri",
+    "role": "content"
+  },
+  {
+    "route": "/tjenester",
+    "originalUrl": "https://framerusercontent.com/images/6UxJCkr2qoe0bRiRWExfDCsrI4.jpeg",
+    "localPath": "/images/home/05-92660531.jpeg",
+    "width": 515,
+    "height": 687,
+    "alt": "Snjókeðjur, Hlífi- & festibúnaður",
+    "role": "content"
+  },
+  {
+    "route": "/tjenester",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/Lczesiy0hDYHEKmibfhXZ20Mtg.jpeg",
+    "localPath": "/images/home/03-01289078.jpeg",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/VGc7uL8BWIY6kXp81TcDzBiE.jpeg",
+    "localPath": "/images/anlegg/02-c89d7570.jpeg",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/PssDjXQs8WLk0TCYrZi1YGSXUeE.jpeg",
+    "localPath": "/images/anlegg/03-497fe191.jpeg",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/tjxFOwV6eDCk6SNOnZznP4RBQ.jpeg",
+    "localPath": "/images/anlegg/04-c08775a5.jpeg",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/c0EZxtMucSR6UOSZk2TBnWsqr4.svg",
+    "localPath": "/images/anlegg/05-463dd036.svg",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "background"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/xKTqMlhY0lFGY2C0kGnUdCLBPQ.jpeg",
+    "localPath": "/images/anlegg/06-2207cb6d.jpeg",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/x3uAYSJrkW10psyYSGtmnPKjEXs.jpg",
+    "localPath": "/images/anlegg/07-74a78715.jpg",
+    "width": 0,
+    "height": 0,
+    "alt": "Interior work",
+    "role": "content"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/4wSOhTfwQNjYYxgtlGq6VoCkzc.jpeg",
+    "localPath": "/images/anlegg/08-d666f418.jpeg",
+    "width": 590,
+    "height": 787,
+    "alt": "Kitchen installation",
+    "role": "content"
+  },
+  {
+    "route": "/anlegg",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/M7jmYndyo7mT0hJlK1KFCInIRqI.jpg",
+    "localPath": "/images/home/04-41b11055.jpg",
+    "width": 512,
+    "height": 683,
+    "alt": "Industri",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/igZq4saTnLvxoRX3W4HzsIOpyI.jpg",
+    "localPath": "/images/industri/02-46c62221.jpg",
+    "width": 626,
+    "height": 835,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/6480uMouB46sv1YH998wedlyE.jpeg",
+    "localPath": "/images/industri/03-dbbda199.jpeg",
+    "width": 388,
+    "height": 517,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/A7y1filSmqmva2sjzPKZG7kxBvo.jpeg",
+    "localPath": "/images/industri/04-c4e0224c.jpeg",
+    "width": 626,
+    "height": 835,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/c0EZxtMucSR6UOSZk2TBnWsqr4.svg",
+    "localPath": "/images/anlegg/05-463dd036.svg",
+    "width": 0,
+    "height": 0,
+    "alt": "",
+    "role": "background"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/QLlMsuNmwdReBWb28zSO8kVXpVQ.jpeg",
+    "localPath": "/images/industri/06-5ec9edb8.jpeg",
+    "width": 388,
+    "height": 518,
+    "alt": "Interior work",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/Mv9TJiBhXmPymkkHN6I3l3ZG0s0.jpeg",
+    "localPath": "/images/industri/07-a80a4311.jpeg",
+    "width": 229,
+    "height": 305,
+    "alt": "Bedroom work",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/4MXDynwmAG8oViMKirk10l0JZg.jpg",
+    "localPath": "/images/industri/08-75ffe60e.jpg",
+    "width": 287,
+    "height": 191,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/6oZF3BpVJDqVrAuGFkE2bJVGls.webp",
+    "localPath": "/images/industri/09-0317a30c.webp",
+    "width": 287,
+    "height": 410,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/wHRTsipCvTUi6I9qIUMCXukw.jpg",
+    "localPath": "/images/industri/10-eed0a990.jpg",
+    "width": 287,
+    "height": 191,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/INHCBrokmlOMm9XKMUI9QVTkwEo.jpg",
+    "localPath": "/images/industri/11-e9f91639.jpg",
+    "width": 287,
+    "height": 191,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/XAYhox9dWdIyhxNKCwibHJLQGy0.jpg",
+    "localPath": "/images/industri/12-de2c4bb0.jpg",
+    "width": 287,
+    "height": 188,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/bzPadMndV6YxAvZ2THmLwX55N4.jpg",
+    "localPath": "/images/industri/13-0187a2eb.jpg",
+    "width": 287,
+    "height": 189,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/fDpIJ4tMYRo6gpFCoIP6hVDojI.jpg",
+    "localPath": "/images/industri/14-431f1023.jpg",
+    "width": 287,
+    "height": 430,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/rHIXeu1OW2Dfjw6YVpaGvzAPdY.jpg",
+    "localPath": "/images/industri/15-9a740c4d.jpg",
+    "width": 287,
+    "height": 157,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/0AsSTFKhJ78jdS2Daksbgsrw5Q.jpg",
+    "localPath": "/images/industri/16-f908364e.jpg",
+    "width": 287,
+    "height": 191,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/1q2vMa9szPAr20we4jXTyGmPnc.jpg",
+    "localPath": "/images/industri/17-9598e4dc.jpg",
+    "width": 287,
+    "height": 430,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/industri",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/etikk-og-ansvar",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/etikk-og-ansvar",
+    "originalUrl": "https://framerusercontent.com/images/0XCCFlKfKzL5SiUykhT5OqUR9Ro.jpg",
+    "localPath": "/images/etikk-og-ansvar/01-799b1404.jpg",
+    "width": 1440,
+    "height": 807,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/etikk-og-ansvar",
+    "originalUrl": "https://framerusercontent.com/assets/77tNNLfbWmUiQnPLVWnCArstbbo.pdf",
+    "localPath": "/docs/77tNNLfbWmUiQnPLVWnCArstbbo.pdf",
+    "kind": "document",
+    "width": 0,
+    "height": 0,
+    "alt": "Last ned",
+    "role": "asset"
+  },
+  {
+    "route": "/etikk-og-ansvar",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/kontakt-oss",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/kontakt-oss",
+    "originalUrl": "https://framerusercontent.com/images/cQ1gIEcQhSybhvvNAF6YCJHAsI.jpeg",
+    "localPath": "/images/kontakt-oss/01-f66e1710.jpeg",
+    "width": 1919,
+    "height": 2560,
+    "alt": "Kontakt ELBA",
+    "role": "content"
+  },
+  {
+    "route": "/kontakt-oss",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/6UxJCkr2qoe0bRiRWExfDCsrI4.jpeg",
+    "localPath": "/images/home/05-92660531.jpeg",
+    "width": 1919,
+    "height": 2560,
+    "alt": "Snjókeðjur, Hlífi- & festibúnaður",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/j8McUEdQNsMl6CqkryK2K9i6g.jpeg",
+    "localPath": "/images/produkter/02-620c9f4c.jpeg",
+    "width": 960,
+    "height": 1280,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/fc5wv4Xcqy0SVwzGUl2lqzR7KiE.jpeg",
+    "localPath": "/images/produkter/03-e1cf3aba.jpeg",
+    "width": 303,
+    "height": 404,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/jTv3wa942k7J3DJZ78RarHkF6kw.jpg",
+    "localPath": "/images/produkter/04-b584c29f.jpg",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/veicQdoWQFwwmCnVkQx1xoNkaY.jpg",
+    "localPath": "/images/produkter/05-a9bab172.jpg",
+    "width": 400,
+    "height": 266,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/rOrlEruRxc0GzzE3mg8Ey1TZA.jpg",
+    "localPath": "/images/produkter/06-53f273f5.jpg",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/df7FzVigAJLcAK8HerLNuKvhZrY.jpg",
+    "localPath": "/images/produkter/07-9bd24da2.jpg",
+    "width": 303,
+    "height": 91,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/2TBx9vTZBhdrDJn2SXKxlp92SIY.jpg",
+    "localPath": "/images/produkter/08-3adcc4e8.jpg",
+    "width": 400,
+    "height": 265,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/g9N6bIXBoc8bjSBU1TIIbhEaFY.jpeg",
+    "localPath": "/images/produkter/09-d1bc0ce1.jpeg",
+    "width": 303,
+    "height": 303,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/KMz8Zr1J23SEABYvLfCzhXAkZME.jpg",
+    "localPath": "/images/produkter/10-948804a8.jpg",
+    "width": 303,
+    "height": 196,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/04aPpDz6bGnvOS5EHGzAoF6flKU.jpg",
+    "localPath": "/images/produkter/11-575445e6.jpg",
+    "width": 400,
+    "height": 257,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/glV13VJ6sSznzU05iwtdiIGrJNk.jpg",
+    "localPath": "/images/produkter/12-f7bc3daa.jpg",
+    "width": 400,
+    "height": 261,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/sBQHfT9sxxzJVUO3IruJHzqqJ9E.jpg",
+    "localPath": "/images/produkter/13-a8093807.jpg",
+    "width": 400,
+    "height": 261,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/2TBx9vTZBhdrDJn2SXKxlp92SIY.jpg",
+    "localPath": "/images/produkter/08-3adcc4e8.jpg",
+    "width": 400,
+    "height": 265,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/joy4ARsd7npbRENq67g6KGQOMw.jpg",
+    "localPath": "/images/produkter__rørender/02-64dfae38.jpg",
+    "width": 594,
+    "height": 344,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/Z7bHxPjMZPv1qqUUZ1OXJ5gc4jY.jpg",
+    "localPath": "/images/produkter__rørender/03-13a29e6b.jpg",
+    "width": 594,
+    "height": 341,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/qDOCqBz9keREhA5tzWHbt6k0Qws.png",
+    "localPath": "/images/produkter__rørender/04-50bf00d8.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/BNO2bpKQqX8Vi9EVX2G95RdSfJY.png",
+    "localPath": "/images/produkter__rørender/05-167b888a.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/4LgSCv6uuMfwyOW7Gp3PSJ1s0.png",
+    "localPath": "/images/produkter__rørender/06-ac720e8d.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/p6Mv7u6R95Z7fHRaH3O3OmDI.png",
+    "localPath": "/images/produkter__rørender/07-898b37e0.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/I1uF2T6vKf7kAUkKBBQ1640L8.png",
+    "localPath": "/images/produkter__rørender/08-ea008481.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/VnjUsTO3NCUzku7kvcL9bGWFLTM.png",
+    "localPath": "/images/produkter__rørender/09-5c81bee8.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/ZcwYrlvcUvFrp8xGQmI9Yv6ul5Q.png",
+    "localPath": "/images/produkter__rørender/10-ff304097.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/kEy7QwLuGCpdRSB2md2A3Ruik.png",
+    "localPath": "/images/produkter__rørender/11-4e10c600.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/M4MQ5JkXhdxvMCJ94dXMB6RrTU4.png",
+    "localPath": "/images/produkter__rørender/12-21f1f3fb.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/oDf7GiWs3KU12lwE4bcm50EtN34.png",
+    "localPath": "/images/produkter__rørender/13-bc424d9a.png",
+    "width": 400,
+    "height": 263,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/rørender",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/forlengere",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/forlengere",
+    "originalUrl": "https://framerusercontent.com/images/veicQdoWQFwwmCnVkQx1xoNkaY.jpg",
+    "localPath": "/images/produkter/05-a9bab172.jpg",
+    "width": 400,
+    "height": 266,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/forlengere",
+    "originalUrl": "https://framerusercontent.com/images/tBVbcd1U6qlZDYxSSVncTmcQw7k.png",
+    "localPath": "/images/produkter__forlengere/02-096291f6.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/forlengere",
+    "originalUrl": "https://framerusercontent.com/images/d46YYzviwGq1VNYpMiZgtEhX0.png",
+    "localPath": "/images/produkter__forlengere/03-78b5f32a.png",
+    "width": 400,
+    "height": 259,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/forlengere",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fylleutstyr",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fylleutstyr",
+    "originalUrl": "https://framerusercontent.com/images/g9N6bIXBoc8bjSBU1TIIbhEaFY.jpeg",
+    "localPath": "/images/produkter/09-d1bc0ce1.jpeg",
+    "width": 1440,
+    "height": 1440,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fylleutstyr",
+    "originalUrl": "https://framerusercontent.com/images/r5lbPjj1vq3OXbjN1N6Z9S6e5w.png",
+    "localPath": "/images/produkter__fylleutstyr/02-ee9402bd.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fylleutstyr",
+    "originalUrl": "https://framerusercontent.com/images/rZPo0EoPzcbgu1tWxi1UB4n82A.png",
+    "localPath": "/images/produkter__fylleutstyr/03-8149cfd1.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fylleutstyr",
+    "originalUrl": "https://framerusercontent.com/images/leh82U3hxoYqtXOfMNqUAsf7K4.png",
+    "localPath": "/images/produkter__fylleutstyr/04-1e0b42a4.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fylleutstyr",
+    "originalUrl": "https://framerusercontent.com/images/GbU3JxRjcCEqtf7tgRKtdmSvqg.png",
+    "localPath": "/images/produkter__fylleutstyr/05-06de2523.png",
+    "width": 400,
+    "height": 262,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fylleutstyr",
+    "originalUrl": "https://framerusercontent.com/images/qIV0NlYniwMB2KwG5yzc7CDyv8.png",
+    "localPath": "/images/produkter__fylleutstyr/06-ebeeb7b4.png",
+    "width": 362,
+    "height": 368,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fylleutstyr",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/sBQHfT9sxxzJVUO3IruJHzqqJ9E.jpg",
+    "localPath": "/images/produkter/13-a8093807.jpg",
+    "width": 400,
+    "height": 261,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/p81Qw6sVexqSb6OQR9RWklSw1Eo.png",
+    "localPath": "/images/produkter__fyllenippler/02-f24eda9f.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/yzd7Fx9bmN04GvdBHEeHb17vok.png",
+    "localPath": "/images/produkter__fyllenippler/03-9e68b64a.png",
+    "width": 400,
+    "height": 261,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/p81Qw6sVexqSb6OQR9RWklSw1Eo.png",
+    "localPath": "/images/produkter__fyllenippler/02-f24eda9f.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/ZIHvTaTpwrZJGIN2PvaXfGGY.png",
+    "localPath": "/images/produkter__fyllenippler/05-d9e2c081.png",
+    "width": 158,
+    "height": 103,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/p81Qw6sVexqSb6OQR9RWklSw1Eo.png",
+    "localPath": "/images/produkter__fyllenippler/02-f24eda9f.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/UHvmJsrJl3kwWRYnZSRj8GWuPME.png",
+    "localPath": "/images/produkter__fyllenippler/07-a2fcde43.png",
+    "width": 287,
+    "height": 166,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/71CZp8BACCHOs1RkGqeyNXwrg.png",
+    "localPath": "/images/produkter__fyllenippler/08-bc1caf3d.png",
+    "width": 158,
+    "height": 211,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/IVYSeBkuv8a4RaQeWDM9szwjqo.png",
+    "localPath": "/images/produkter__fyllenippler/09-175ec288.png",
+    "width": 158,
+    "height": 211,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fyllenippler",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skottgjennomføring",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skottgjennomføring",
+    "originalUrl": "https://framerusercontent.com/images/rOrlEruRxc0GzzE3mg8Ey1TZA.jpg",
+    "localPath": "/images/produkter/06-53f273f5.jpg",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skottgjennomføring",
+    "originalUrl": "https://framerusercontent.com/images/zD1VFO8cpoGL7AppHMSTYYfZkYc.png",
+    "localPath": "/images/produkter__skottgjennomføring/02-b6a4b506.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skottgjennomføring",
+    "originalUrl": "https://framerusercontent.com/images/jNxT1bVwTiAzuF7eBAl846dDtg.png",
+    "localPath": "/images/produkter__skottgjennomføring/03-e2bc3bf0.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skottgjennomføring",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/snittringmatur",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/snittringmatur",
+    "originalUrl": "https://framerusercontent.com/images/04aPpDz6bGnvOS5EHGzAoF6flKU.jpg",
+    "localPath": "/images/produkter/11-575445e6.jpg",
+    "width": 400,
+    "height": 257,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/snittringmatur",
+    "originalUrl": "https://framerusercontent.com/images/QUGLHE7Jp3HtvQnL9etPGOqt8yk.png",
+    "localPath": "/images/produkter__snittringmatur/02-62732d8a.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/snittringmatur",
+    "originalUrl": "https://framerusercontent.com/images/RGpeHtXzSAc2Tul8ddakbQGz5MA.png",
+    "localPath": "/images/produkter__snittringmatur/03-bd137810.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/snittringmatur",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/banjokoblinger",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/banjokoblinger",
+    "originalUrl": "https://framerusercontent.com/images/KMz8Zr1J23SEABYvLfCzhXAkZME.jpg",
+    "localPath": "/images/produkter/10-948804a8.jpg",
+    "width": 1440,
+    "height": 933,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/banjokoblinger",
+    "originalUrl": "https://framerusercontent.com/images/Gncy9fNCVge64LlAuze2R3WGDQ.png",
+    "localPath": "/images/produkter__banjokoblinger/02-164d85ca.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/banjokoblinger",
+    "originalUrl": "https://framerusercontent.com/images/iHJmu0x10hPE0BROsYXRzoEGA.png",
+    "localPath": "/images/produkter__banjokoblinger/03-a95df89c.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/banjokoblinger",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/lynfittings",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/lynfittings",
+    "originalUrl": "https://framerusercontent.com/images/glV13VJ6sSznzU05iwtdiIGrJNk.jpg",
+    "localPath": "/images/produkter/12-f7bc3daa.jpg",
+    "width": 400,
+    "height": 261,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/lynfittings",
+    "originalUrl": "https://framerusercontent.com/images/1MYsTh6Knhr1bepuY3WMcKMyzNE.png",
+    "localPath": "/images/produkter__lynfittings/02-1fef0363.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/lynfittings",
+    "originalUrl": "https://framerusercontent.com/images/sIFSKhilTIdmj0qOEqKkBVbsLo.png",
+    "localPath": "/images/produkter__lynfittings/03-c4fc2c5e.png",
+    "width": 400,
+    "height": 263,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/lynfittings",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/slanger",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/slanger",
+    "originalUrl": "https://framerusercontent.com/images/df7FzVigAJLcAK8HerLNuKvhZrY.jpg",
+    "localPath": "/images/produkter/07-9bd24da2.jpg",
+    "width": 1440,
+    "height": 432,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/slanger",
+    "originalUrl": "https://framerusercontent.com/images/OBMAo2dQ9Mbsq2VUQWJygRTX4E.png",
+    "localPath": "/images/produkter__slanger/02-350b79a1.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/slanger",
+    "originalUrl": "https://framerusercontent.com/images/YwJAHITgwBzL73v2z2TSxvjDI.png",
+    "localPath": "/images/produkter__slanger/03-994707cc.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/slanger",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fett",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/produkter/fett",
+    "originalUrl": "https://framerusercontent.com/images/fc5wv4Xcqy0SVwzGUl2lqzR7KiE.jpeg",
+    "localPath": "/images/produkter/03-e1cf3aba.jpeg",
+    "width": 1439,
+    "height": 1919,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/produkter/fett",
+    "originalUrl": "https://framerusercontent.com/images/t9CqTFiMfJG65C2CFEpBu4mNQ.jpeg",
+    "localPath": "/images/produkter__fett/02-965997c1.jpeg",
+    "width": 1200,
+    "height": 741,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/fett",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/jTv3wa942k7J3DJZ78RarHkF6kw.jpg",
+    "localPath": "/images/produkter/04-b584c29f.jpg",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/ZSZ4neADrduRqY4yOhlJQm8eNgE.png",
+    "localPath": "/images/produkter__skruhylser/02-5962d532.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/Z7bHxPjMZPv1qqUUZ1OXJ5gc4jY.jpg",
+    "localPath": "/images/produkter__rørender/03-13a29e6b.jpg",
+    "width": 594,
+    "height": 341,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/rXJZgLkpjlG4S15kXYb47I5ZDdk.png",
+    "localPath": "/images/produkter__skruhylser/04-8a3d91d2.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/T0pIIk9DdCMyCumc4MztQIms6fw.png",
+    "localPath": "/images/produkter__skruhylser/05-83345125.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/ixQbt5Pg8DdsYMKJulFDe93wEU.png",
+    "localPath": "/images/produkter__skruhylser/06-0aee6c47.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/FgR9OWdEwQ7QF3n1Rtfnmyd5vY.png",
+    "localPath": "/images/produkter__skruhylser/07-13136f12.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/wMi4UNWN6ZbeljWAXiR62nFoMIk.png",
+    "localPath": "/images/produkter__skruhylser/08-aba8a421.png",
+    "width": 400,
+    "height": 260,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/produkter/skruhylser",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/artikler",
+    "originalUrl": "https://framerusercontent.com/images/bDK0FUDHfUzgWCN27vlneQeTkA.jpg",
+    "localPath": "/images/artikler/01-4c5c8102.jpg",
+    "width": 1440,
+    "height": 959,
+    "alt": "Discover",
+    "role": "content"
+  },
+  {
+    "route": "/artikler",
+    "originalUrl": "https://framerusercontent.com/images/FI9Glc7bCV5AHTBtgMUwq1WBE8.jpeg",
+    "localPath": "/images/home/06-d6adc654.jpeg",
+    "width": 386,
+    "height": 358,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler",
+    "originalUrl": "https://framerusercontent.com/images/5DAEF0zDUGs30h0GC4U7x80Kdo.jpeg",
+    "localPath": "/images/home/07-85311014.jpeg",
+    "width": 386,
+    "height": 328,
+    "alt": "ELBA X SKRALLI",
+    "role": "content"
+  },
+  {
+    "route": "/artikler",
+    "originalUrl": "https://framerusercontent.com/images/qsahXWnLCegkc8PRZD1P9pQqjF8.jpg",
+    "localPath": "/images/home/08-8da04b4f.jpg",
+    "width": 386,
+    "height": 257,
+    "alt": "Groenevald-BEKA logo",
+    "role": "content"
+  },
+  {
+    "route": "/artikler",
+    "originalUrl": "https://framerusercontent.com/images/iBvZ17rqKYzarN6dJRf6VjVsY0.png",
+    "localPath": "/images/artikler/05-aa3c90a2.png",
+    "width": 386,
+    "height": 290,
+    "alt": "Smøresysten",
+    "role": "content"
+  },
+  {
+    "route": "/artikler",
+    "originalUrl": "https://framerusercontent.com/images/2kDd1itHI9Q5ub2a3pdp0T1Pug.jpeg",
+    "localPath": "/images/artikler/06-a2ff5186.jpeg",
+    "width": 515,
+    "height": 687,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/nytt-design",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/artikler/nytt-design",
+    "originalUrl": "https://framerusercontent.com/images/iwKCask0iR9tQ7PKlNm0Rvf8gI.jpeg",
+    "localPath": "/images/artikler__nytt-design/01-95634bec.jpeg",
+    "width": 512,
+    "height": 384,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/nytt-design",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/nytt-eierskap",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/artikler/nytt-eierskap",
+    "originalUrl": "https://framerusercontent.com/images/ArRu8ntlGOVlaTfvJAgtlwf8pg.jpeg",
+    "localPath": "/images/artikler__nytt-eierskap/01-2291d1ce.jpeg",
+    "width": 512,
+    "height": 276,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/nytt-eierskap",
+    "originalUrl": "https://framerusercontent.com/images/4wXIjJY9abv5h24lgniQK0EB7o.jpg",
+    "localPath": "/images/artikler__nytt-eierskap/02-4cbf519c.jpg",
+    "width": 1440,
+    "height": 1223,
+    "alt": "Nye eiere av Elba",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/nytt-eierskap",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/passiv-og-aktiv-overvaaking",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/artikler/passiv-og-aktiv-overvaaking",
+    "originalUrl": "https://framerusercontent.com/images/qsahXWnLCegkc8PRZD1P9pQqjF8.jpg",
+    "localPath": "/images/home/08-8da04b4f.jpg",
+    "width": 512,
+    "height": 341,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/passiv-og-aktiv-overvaaking",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/hvorfor-smoresystem-industri",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/artikler/hvorfor-smoresystem-industri",
+    "originalUrl": "https://framerusercontent.com/images/iBvZ17rqKYzarN6dJRf6VjVsY0.png",
+    "localPath": "/images/artikler/05-aa3c90a2.png",
+    "width": 512,
+    "height": 384,
+    "alt": "Smøresystem",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/hvorfor-smoresystem-industri",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/velge-system",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/artikler/velge-system",
+    "originalUrl": "https://framerusercontent.com/images/E7tCGiAfdNhaGXRFb5FTvMG6pGU.jpeg",
+    "localPath": "/images/artikler__velge-system/01-f8b4ac80.jpeg",
+    "width": 512,
+    "height": 683,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/artikler/velge-system",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "content"
+  },
+  {
+    "route": "/404",
+    "originalUrl": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+    "localPath": "/images/home/00-d1c05434.png",
+    "width": 216,
+    "height": 64,
+    "alt": "",
+    "role": "logo"
+  },
+  {
+    "route": "/404",
+    "originalUrl": "https://framerusercontent.com/images/suEIx9ZEFnvi1sBJGxIGIOF7o.jpg",
+    "localPath": "/images/404/01-d1eed4a4.jpg",
+    "width": 1440,
+    "height": 959,
+    "alt": "Handyman working",
+    "role": "content"
+  }
+]

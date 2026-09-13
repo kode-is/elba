@@ -1,0 +1,646 @@
+{
+  "route": "/produkter/snittringmatur",
+  "title": "ELBA - I INDUSTRIENS TJENESTE",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/04aPpDz6bGnvOS5EHGzAoF6flKU.jpg",
+      "alt": "",
+      "width": 400,
+      "height": 257,
+      "role": "content",
+      "local": "/images/produkter/11-575445e6.jpg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Snittringmatur"
+    },
+    {
+      "type": "link",
+      "text": "Produkter",
+      "href": "../produkter"
+    },
+    {
+      "type": "text",
+      "text": "Snittringmatur"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/QUGLHE7Jp3HtvQnL9etPGOqt8yk.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__snittringmatur/02-62732d8a.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/RGpeHtXzSAc2Tul8ddakbQGz5MA.png",
+      "alt": "",
+      "width": 400,
+      "height": 260,
+      "role": "content",
+      "local": "/images/produkter__snittringmatur/03-bd137810.png"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Forsinket stål (Zn-Ni)"
+    },
+    {
+      "type": "text",
+      "text": "RøR Dim. D"
+    },
+    {
+      "type": "text",
+      "text": "Gjenge D1"
+    },
+    {
+      "type": "text",
+      "text": "Serie"
+    },
+    {
+      "type": "text",
+      "text": "Type"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LL M6X1 ZN"
+    },
+    {
+      "type": "text",
+      "text": "11643050"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LL M8X1 ZN"
+    },
+    {
+      "type": "text",
+      "text": "11643060"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1.25"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LL M8X1.25 ZN"
+    },
+    {
+      "type": "text",
+      "text": "11643065"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "M10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LL M10X1 ZN"
+    },
+    {
+      "type": "text",
+      "text": "04012210406"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "R 1/8"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LLR 1/8\" ZN"
+    },
+    {
+      "type": "text",
+      "text": "11643070"
+    },
+    {
+      "type": "text",
+      "text": "5"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 5 LL M6X1 ZN"
+    },
+    {
+      "type": "text",
+      "text": "953147779"
+    },
+    {
+      "type": "text",
+      "text": "5"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 5 LL M8X1 ZN"
+    },
+    {
+      "type": "text",
+      "text": "953147863"
+    },
+    {
+      "type": "text",
+      "text": "5"
+    },
+    {
+      "type": "text",
+      "text": "R 1/8"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "We  5LLR  1/8\" ZN"
+    },
+    {
+      "type": "text",
+      "text": "953147799"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 6 LL M6X1 ZN"
+    },
+    {
+      "type": "text",
+      "text": "04012200406"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1.25"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 6 LL M8X1.25 ZN"
+    },
+    {
+      "type": "text",
+      "text": "11643089"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 3"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "text": "Syrefast (316 / V4A)"
+    },
+    {
+      "type": "text",
+      "text": "RøR Dim. D"
+    },
+    {
+      "type": "text",
+      "text": "Gjenge D1"
+    },
+    {
+      "type": "text",
+      "text": "Serie"
+    },
+    {
+      "type": "text",
+      "text": "Type"
+    },
+    {
+      "type": "text",
+      "text": "Art.Nr"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LL M6X1 SS"
+    },
+    {
+      "type": "text",
+      "text": "953148859"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LL M8X1 SS"
+    },
+    {
+      "type": "text",
+      "text": "04012210513"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "M10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LL M10X1 SS"
+    },
+    {
+      "type": "text",
+      "text": "953148860"
+    },
+    {
+      "type": "text",
+      "text": "4"
+    },
+    {
+      "type": "text",
+      "text": "R 1/8"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 4 LLR 1/8\" SS"
+    },
+    {
+      "type": "text",
+      "text": "04012210613"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "M6 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 6 LL M6X1 SS"
+    },
+    {
+      "type": "text",
+      "text": "106057"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "M8 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 6 LL M8X1 SS"
+    },
+    {
+      "type": "text",
+      "text": "106038"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "M10 x 1"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 6 LL M10X1 SS"
+    },
+    {
+      "type": "text",
+      "text": "04012200313LL"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "R 1/8"
+    },
+    {
+      "type": "text",
+      "text": "LL"
+    },
+    {
+      "type": "text",
+      "text": "WE 6 LLR 1/8\"SS"
+    },
+    {
+      "type": "text",
+      "text": "12805740"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "R 1/4"
+    },
+    {
+      "type": "text",
+      "text": "L"
+    },
+    {
+      "type": "text",
+      "text": "WE 6 LR 1/8\" SS"
+    },
+    {
+      "type": "text",
+      "text": "12805760"
+    },
+    {
+      "type": "text",
+      "text": "6"
+    },
+    {
+      "type": "text",
+      "text": "R 1/4"
+    },
+    {
+      "type": "text",
+      "text": "S"
+    },
+    {
+      "type": "text",
+      "text": "WE 6 S 1/4\" SS"
+    },
+    {
+      "type": "text",
+      "text": "1060109"
+    },
+    {
+      "type": "text",
+      "text": "Page 1 of 2"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Vinkel \"WE\"",
+      "href": null
+    },
+    {
+      "text": "Rett \"GE\"",
+      "href": null
+    },
+    {
+      "text": "Sammenkobling \"G\"",
+      "href": null
+    },
+    {
+      "text": "Sammenkobling \"W\"",
+      "href": null
+    },
+    {
+      "text": "T-stykke​",
+      "href": null
+    },
+    {
+      "text": "Mutter​e​",
+      "href": null
+    },
+    {
+      "text": "Snittringer",
+      "href": null
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f7f7f8",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/produkter__snittringmatur.desktop.jpg",
+    "mobile": "docs/reference/produkter__snittringmatur.mobile.jpg"
+  }
+}

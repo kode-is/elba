@@ -1,0 +1,208 @@
+{
+  "route": "/artikler/nytt-eierskap",
+  "title": "Nytt eierskap for Elba — Skralli",
+  "description": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "logo",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/ArRu8ntlGOVlaTfvJAgtlwf8pg.jpeg",
+      "alt": "",
+      "width": 512,
+      "height": 276,
+      "role": "content",
+      "local": "/images/artikler__nytt-eierskap/01-2291d1ce.jpeg"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Nytt eierskap for Elba"
+    },
+    {
+      "type": "link",
+      "text": "Artikle",
+      "href": "../artikler"
+    },
+    {
+      "type": "text",
+      "text": "Nytt eierskap for Elba"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Daglig leder kjøper opp Elba sammen med islendinger"
+    },
+    {
+      "type": "text",
+      "text": "Ronny, daglig leder i Elba, har kjøpt opp selskapet sammen med islendingene i Skralli."
+    },
+    {
+      "type": "text",
+      "text": "Elba, en ledende aktør innen smøresystemer og utstyr til anlegg og industri i Norge, har fått nye eiere. Selskapet eies nå av daglig leder Ronny Thoresen, som har vært en del av Elba i nær 30 år, og det islandske selskapet Skralli. KPMG i Norge har vært rådgivere i prosessen."
+    },
+    {
+      "type": "text",
+      "text": "Elba har i en årrekke vært spesialist på smøreanlegg i Norge, og med Ronny på eiersiden videreføres kontinuiteten i selskapet."
+    },
+    {
+      "type": "text",
+      "text": "“Vi skal bygge videre på det fundamentet som er lagt igjennom flere tiår,” sier Ronny, daglig leder og medeier i Elba."
+    },
+    {
+      "type": "text",
+      "text": "Skralli er en sentral aktør innen service til anlegg, industri og landbruk på Island, og er det eneste selskapet der som har smøreanlegg som et av sine kjerneområder. Med de nye eierne får Elba et solid fundament for videre vekst i et marked som i økende grad preges av teknologiutvikling og strengere regelverk. Målet er å møte kundenes behov for mer avansert overvåking og etterlevelse av stadig høyere krav."
+    },
+    {
+      "type": "text",
+      "text": "Skralli kommer inn som en strategisk partner, med daglig leder Vilmundur “Villi” Theodorsson i spissen. Villi har lang erfaring fra anleggsbransjen på Island, men er mest kjent i Norge fra sin rolle som senior produktsjef hos Pon Equipment Norge fra 2010 til 2020."
+    },
+    {
+      "type": "text",
+      "text": "“Elba og Skralli utfyller hverandre godt. Hos Skralli har vi bygget opp et team med lang bransjeerfaring innen anlegg, landbruk og industri, fra både Norge og Island, så her har vi gode muligheter til å dele erfaring på tvers av selskapene.”sier Villi, daglig leder i Skralli og styreleder i Elba."
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/4wXIjJY9abv5h24lgniQK0EB7o.jpg",
+      "alt": "Nye eiere av Elba",
+      "width": 1440,
+      "height": 1223,
+      "role": "content",
+      "local": "/images/artikler__nytt-eierskap/02-4cbf519c.jpg"
+    },
+    {
+      "type": "text",
+      "text": "Fra venstre, Hlynur Isak Vilmundarson (medeier i Skralli og prosjektleder Elba), Ronny J. Thoresen (daglig leder Elba), Leif Børre Andersen (tidligere eier av Elba), Vilmundur Theodorsson (medeier og daglig leder i Skralli), Örvar S. Haraldsson (medeier og salgssjef i Skralli)"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Gir stafettpinnen videre"
+    },
+    {
+      "type": "text",
+      "text": "Etter mange år ved roret overlater nå tidligere eier Leif Børre Andersen styringen til Ronny og de nye eierne. “Jeg har vært med siden oppstarten i 1991, og det føles riktig å gi stafettpinnen videre til nye eiere som kan føre selskapet videre.\"sier Leif Børre Andersen, som nå går av med pensjon."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Et startskudd for videre vekst og innovasjon"
+    },
+    {
+      "type": "text",
+      "text": "De nye eierne har allerede identifisert flere satsingsområder som skal styrke Elba i årene som kommer. Strengere krav til sertifiseringer og sikkerhet, spesielt fra kunder innen offshore og industri, gjør at kvalitet og sporbarhet blir sentrale temaer fremover."
+    },
+    {
+      "type": "text",
+      "text": "“Vi vil bruke mer ressurser på å følge opp kundene våre tettere og tilby enda raskere og mer forutsigbar service”- Ronny, daglig leder"
+    },
+    {
+      "type": "text",
+      "text": "En viktig del av satsingen er modernisering og digitalisering av smøresystemene. Elba vil i større grad ta i bruk sensorteknologi og flowmetere som gir bedre overvåkning av anleggene. Slik kan vedlikehold planlegges før feil oppstår, noe som reduserer kostnader og nedetid, og fører til høy driftssikkerhet for kundene."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Send oss en forespørsel"
+    },
+    {
+      "type": "link",
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "image",
+      "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
+      "alt": "",
+      "width": 216,
+      "height": 64,
+      "role": "content",
+      "local": "/images/home/00-d1c05434.png"
+    },
+    {
+      "type": "text",
+      "text": "Fabrikkgata 11D, 3320 Vestfossen"
+    },
+    {
+      "type": "text",
+      "text": "32 25 20 30"
+    },
+    {
+      "type": "text",
+      "text": "elba@elba.no"
+    },
+    {
+      "type": "text",
+      "text": "© 2026 Elba AS"
+    },
+    {
+      "type": "heading",
+      "level": 4,
+      "text": "Selskapet"
+    },
+    {
+      "type": "link",
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "type": "link",
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "type": "link",
+      "text": "Artikler",
+      "href": "../kontakt-oss"
+    },
+    {
+      "type": "link",
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "type": "link",
+      "text": "Etikk og ansvar",
+      "href": "../etikk-og-ansvar"
+    }
+  ],
+  "footer": [],
+  "nav": [
+    {
+      "text": "Hjem",
+      "href": "../"
+    },
+    {
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
+    }
+  ],
+  "colors": [
+    "#c11e31",
+    "#000000",
+    "#f5f2ef"
+  ],
+  "screenshots": {
+    "desktop": "docs/reference/artikler__nytt-eierskap.desktop.jpg",
+    "mobile": "docs/reference/artikler__nytt-eierskap.mobile.jpg"
+  }
+}
