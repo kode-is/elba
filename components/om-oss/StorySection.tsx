@@ -27,12 +27,15 @@ type StorySectionProps = {
  *
  * Row 2 ("Din drift er vår ambisjon."): a tall photo with a smaller photo
  * overlapping its bottom-right corner, left on desktop / first on mobile
- * (matching source order, no reordering needed) — same shape as
- * components/PhotoCollage.tsx, but that component always hides its inset
- * below md and adds a white border/shadow that neither of om-oss's own
- * reference screenshots show (the inset is visible at 390px too, borderless).
- * Rebuilt locally here rather than stretching the shared component for a
- * shape it doesn't actually have on this page.
+ * (matching source order, no reordering needed). Same general idea as
+ * components/PhotoCollage.tsx (an overlapping inset thumbnail) but not the
+ * same measured shape: PhotoCollage's main/inset are aspect-[3/4]/aspect-
+ * [4/3] at inset width 55%, always hides the inset below md, and adds a
+ * white border/shadow — none of that matches om-oss's own reference
+ * screenshots (measured pixel boxes below; inset is visible at 390px too,
+ * borderless, and portrait rather than landscape). Rebuilt locally here
+ * rather than stretching the shared component for a shape it doesn't
+ * actually have on this page.
  */
 export function StorySection({
   heading1,
@@ -52,6 +55,11 @@ export function StorySection({
           <p className="mt-4 text-sm leading-relaxed text-neutral-600 md:text-base">{text1}</p>
         </div>
         <div className="order-1 grid grid-cols-2 gap-4 md:order-2">
+          {/* Measured off docs/reference/om-oss.desktop.jpg: each photo box
+              is ~202x503 / ~200x503 at 1440px (≈2:5), not the scraped
+              200x266 (3:4) source images — object-cover crops the taller
+              box. Cross-checked against .mobile.jpg too (~133x304, ≈0.44,
+              same shape). */}
           {[image1, image2].map((image) => (
             <div key={image.src} className="relative aspect-[2/5] w-full overflow-hidden rounded-2xl">
               <Image
@@ -68,7 +76,11 @@ export function StorySection({
 
       <div className="grid gap-8 md:grid-cols-2 md:items-center md:gap-16">
         <div className="relative">
-          <div className="relative aspect-square w-full overflow-hidden rounded-2xl">
+          {/* Measured off docs/reference/om-oss.desktop.jpg: main photo box
+              is ~386x502 at 1440px (≈3:4, matching the scraped 388x518
+              source) — not square. Cross-checked against .mobile.jpg
+              (~240x350, ≈0.69, same portrait shape). */}
+          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
             <Image
               src={mainImage.src}
               alt={mainImage.alt}
@@ -77,12 +89,16 @@ export function StorySection({
               className="object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 -right-6 aspect-[4/3] w-[55%] overflow-hidden rounded-2xl">
+          {/* Measured off docs/reference/om-oss.desktop.jpg: inset photo box
+              is ~172x297 at 1440px (≈3:5, portrait) at ~45% of the main
+              box's width (172/386) — not PhotoCollage's landscape aspect-
+              [4/3] at 55% width. */}
+          <div className="absolute -bottom-6 -right-6 aspect-[3/5] w-[45%] overflow-hidden rounded-2xl">
             <Image
               src={insetImage.src}
               alt={insetImage.alt}
               fill
-              sizes="(min-width: 768px) 27vw, 50vw"
+              sizes="(min-width: 768px) 22vw, 45vw"
               className="object-cover"
             />
           </div>
