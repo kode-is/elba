@@ -138,6 +138,13 @@ commits; what is left:
 - **Footer address block.** Live sets those three lines at 18px/14.4px
   line-height; we use 18px with `leading-2`, which reproduces live's 36px
   row pitch but not the computed line-height.
+- **Footer copyright year.** `components/Footer.tsx` is a statically
+  prerendered server component, so `new Date().getFullYear()` would freeze at
+  the build year forever. `components/CurrentYear.tsx` renders that same
+  build year on the server (so the client's first render matches, with no
+  hydration warning), then corrects it to the real year in a `useEffect` once
+  mounted — the same client-side mechanism live's own footer uses (see the
+  spec's "Footer year" note).
 - **Two mobile headings are deliberately smaller than live.** Live keeps
   `/anlegg`'s "Nøkkelfunksjoner" and `/industri`'s "Industriell pålitelighet"
   at 50px on a 390px screen, where they break mid-word ("Nøkkelfunksjone /

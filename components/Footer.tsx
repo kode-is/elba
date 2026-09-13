@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
+import { CurrentYear } from "./CurrentYear";
 import { site, footerColumns } from "@/lib/site";
 
 type FooterColumn = (typeof footerColumns)[number];
@@ -101,7 +102,7 @@ export function Footer() {
               </p>
             </div>
             <p className="mt-4 text-body text-ink-faint">
-              © {new Date().getFullYear()} {site.copyright}
+              © <CurrentYear /> {site.copyright}
             </p>
           </div>
 
