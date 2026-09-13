@@ -1,7 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { Footer } from "./Footer";
-export function FooterGate({ hideOn }: { hideOn: string[] }) {
+export function FooterGate({ hideOn, children }: { hideOn: string[]; children: React.ReactNode }) {
   const pathname = usePathname();
-  return hideOn.includes(pathname) ? null : <Footer />;
+  return hideOn.includes(pathname) ? null : <>{children}</>;
 }
