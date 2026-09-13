@@ -65,7 +65,7 @@ export function Hero() {
       </video>
       <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto w-full max-w-site px-5 md:px-[50px]">
+      <div className="relative z-10 mx-auto w-full max-w-[calc(var(--container-site)+100px)] px-5 md:px-[50px]">
         <h1 className="text-[49px] font-semibold leading-[1.2] text-white md:text-[70px]">
           Velkommen
           <br />
@@ -73,7 +73,7 @@ export function Hero() {
         </h1>
         <p className="mt-4 text-body text-white md:text-body-lg">I Industriens tjeneste</p>
 
-        <div className="mt-8 flex flex-wrap items-center gap-3">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 md:justify-start">
           <a
             href={`mailto:${site.email}`}
             className="flex items-center gap-3 rounded-full bg-black/50 py-2.5 pl-[15px] pr-5 backdrop-blur-sm transition hover:opacity-80"

@@ -26,7 +26,7 @@ export default function OmOss() {
         image={{ src: "/images/om-oss/01-143b289f.png", alt: "", width: 1440, height: 642 }}
         title="Om oss"
       />
-      <Container>
+      <Container narrow>
         <div className="py-12 md:py-16">
           <Breadcrumb items={[{ text: "Om oss" }]} />
           <div className="mt-10 md:mt-14">
@@ -49,7 +49,7 @@ export default function OmOss() {
           animated values as the home page — see lib/stats.ts. */}
       <StatsSection />
 
-      <Container>
+      <Container narrow>
         <div className="py-14 md:py-20">
           <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Vårt team</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-lead text-ink-muted md:text-lead-lg">

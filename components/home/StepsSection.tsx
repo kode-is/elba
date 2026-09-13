@@ -45,10 +45,11 @@ export function StepsSection() {
           tjenester" section below it (docs/reference/home.desktop.jpg). */}
       <div
         aria-hidden="true"
-        className="mt-14 h-14 w-full md:mt-16"
+        className="mt-14 h-[69px] w-full md:mt-16"
         style={{
           backgroundImage: "url(/images/home/02-d0cf3b93.svg)",
           backgroundRepeat: "repeat",
+          backgroundSize: "48px auto",
         }}
       />
     </section>

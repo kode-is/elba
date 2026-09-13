@@ -112,7 +112,7 @@ export default function Anlegg() {
         title="Anlegg"
         subtitle="Presis kontinuerlig smøring til din maskin"
       />
-      <Container>
+      <Container narrow>
         <div className="py-12 md:py-16">
           <Breadcrumb items={[{ text: "Anlegg" }]} />
           <div className="mt-10 md:mt-14">
@@ -141,7 +141,7 @@ export default function Anlegg() {
         </Container>
       </section>
 
-      <Container>
+      <Container narrow>
         <div className="py-14 md:py-20">
           <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
             <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">

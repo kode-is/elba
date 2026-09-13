@@ -30,8 +30,8 @@ function IndustryList({ hidden }: { hidden?: boolean }) {
 
 export function IndustryStrip() {
   return (
-    <div className="relative z-10 mx-auto max-w-site md:-mt-16 md:px-[50px]">
-      <div className="overflow-hidden bg-brand py-6 md:rounded-3xl md:py-8">
+    <div className="relative z-10 mx-auto -mt-16 max-w-[calc(var(--container-site)+100px)] md:px-[50px]">
+      <div className="overflow-hidden rounded-[15px] bg-brand py-[29px] md:py-[50px]">
         <div className="flex w-max animate-marquee">
           <IndustryList />
           <IndustryList hidden />

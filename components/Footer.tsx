@@ -55,7 +55,7 @@ function FooterLinkColumn({ column, className }: { column: FooterColumn; classNa
   return (
     <div className={className}>
       <h4 className="mb-6 font-ui text-label-lg font-semibold text-black">{column.heading}</h4>
-      <ul className="flex flex-col items-center gap-3 md:flex-row md:flex-wrap md:items-start md:gap-x-10">
+      <ul className="flex flex-col items-center gap-3 md:flex-row md:flex-wrap md:items-start md:justify-between">
         {column.links.map((link) => (
           <li key={link.href}>
             <Link
@@ -77,7 +77,7 @@ export function Footer() {
   return (
     <footer className="bg-surface py-16 md:py-20">
       <Container>
-        <div className="flex flex-col items-center gap-12 text-center md:grid md:grid-cols-[1.3fr_1fr] md:items-start md:gap-8 md:text-left">
+        <div className="flex flex-col items-center gap-12 text-center md:grid md:grid-cols-[1fr_1.4fr] md:items-start md:gap-0 md:text-left">
           <div className="order-1 flex flex-col items-center gap-4 md:items-start">
             <Link href="/" aria-label="ELBA - Hjem">
               <Image src={LOGO.src} alt="ELBA" width={LOGO.width} height={LOGO.height} className="h-14 w-auto" />

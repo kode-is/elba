@@ -3,6 +3,13 @@ import type { ReactNode } from "react";
 type ContainerProps = {
   children: ReactNode;
   className?: string;
+  /**
+   * Use live's narrower inner-page column (960px, `--container-narrow`)
+   * instead of the 1240px band — /anlegg, /industri, /om-oss and /produkter
+   * lay their body sections out that way (measured Task 11), the same width
+   * the article pages read in.
+   */
+  narrow?: boolean;
 };
 
 /**
@@ -13,11 +20,12 @@ type ContainerProps = {
  * page gutters (20px on mobile), so this element's own max-width is the
  * measured column plus those two gutters.
  */
-export function Container({ children, className }: ContainerProps) {
+export function Container({ children, className, narrow }: ContainerProps) {
+  const width = narrow
+    ? "max-w-[calc(var(--container-narrow)+100px)]"
+    : "max-w-[calc(var(--container-site)+100px)]";
   return (
-    <div
-      className={`mx-auto max-w-[calc(var(--container-site)+100px)] px-5 md:px-[50px] ${className ?? ""}`.trim()}
-    >
+    <div className={`mx-auto ${width} px-5 md:px-[50px] ${className ?? ""}`.trim()}>
       {children}
     </div>
   );

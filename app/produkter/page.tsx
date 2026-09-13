@@ -58,7 +58,7 @@ export default function Produkter() {
         title="Produkter"
         subtitle="Alt du trenger til installasjon, vedlikehold og drift"
       />
-      <Container>
+      <Container narrow>
         <div className="py-12 md:py-16">
           <Breadcrumb items={[{ text: "Produkter" }]} />
 
@@ -92,7 +92,7 @@ export default function Produkter() {
       </Container>
 
       <section className="bg-surface py-14 md:py-20">
-        <Container>
+        <Container narrow>
           <h2 className="text-section font-semibold text-black md:text-section-lg">Vi leverer</h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {DELIVERABLES.map((item) => (
@@ -104,7 +104,7 @@ export default function Produkter() {
         </Container>
       </section>
 
-      <Container>
+      <Container narrow>
         <div className="py-12 md:py-16">
           <ProductLinkList items={PRODUCTS} />
         </div>

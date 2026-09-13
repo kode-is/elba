@@ -107,7 +107,7 @@ export default function Industri() {
         title="Industri"
         subtitle="Skreddersydde løsninger for norsk industri"
       />
-      <Container>
+      <Container narrow>
         <div className="py-12 md:py-16">
           <Breadcrumb items={[{ text: "Industri" }]} />
           <div className="mt-10 md:mt-14">
@@ -119,7 +119,7 @@ export default function Industri() {
       <TextureDivider src="/images/anlegg/05-463dd036.svg" />
 
       <section className="bg-surface py-14 md:py-20">
-        <Container>
+        <Container narrow>
           <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
             <PhotoCollage
               main={{ src: "/images/industri/06-5ec9edb8.jpeg", alt: "Interior work", width: 388, height: 518 }}
@@ -138,7 +138,7 @@ export default function Industri() {
         </Container>
       </section>
 
-      <Container>
+      <Container narrow>
         <div className="py-14 md:py-20">
           <h2 className="text-center text-section font-semibold text-black md:text-section-lg">
             Industriell pålitelighet

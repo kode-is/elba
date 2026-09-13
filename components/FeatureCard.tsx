@@ -22,11 +22,10 @@ export function FeatureCard({ heading, text, image, headingTag = "h3" }: Feature
   const Heading = headingTag;
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-[20px] bg-white shadow-sm">
+      {/* Live crops every service-card photo to the same 387x300 box
+          (measured Task 11), not to the source image's own aspect. */}
       {image ? (
-        <div
-          className="relative w-full overflow-hidden"
-          style={{ aspectRatio: `${image.width} / ${image.height}` }}
-        >
+        <div className="relative aspect-[387/300] w-full overflow-hidden">
           <Image
             src={image.src}
             alt={image.alt}

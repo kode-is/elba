@@ -62,6 +62,10 @@
      components/Container.tsx adds those gutters as padding, so its own
      max-width is this value plus the two desktop gutters. */
   --container-site: 1240px;
+  /* Inner-page column: /anlegg, /industri, /om-oss and /produkter lay their
+     body sections out in a 960px column (x=240..1200 at 1440px), the same
+     width the article pages use. */
+  --container-narrow: 960px;
 }
 
 /* Industry marquee (components/IndustryStrip.tsx): the track renders three
