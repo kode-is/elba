@@ -9,33 +9,8 @@
       "alt": "",
       "width": 216,
       "height": 64,
-      "role": "content",
+      "role": "logo",
       "local": "/images/home/00-d1c05434.png"
-    },
-    {
-      "type": "link",
-      "text": "Hjem",
-      "href": "../"
-    },
-    {
-      "type": "link",
-      "text": "Om oss",
-      "href": "../om-oss"
-    },
-    {
-      "type": "link",
-      "text": "Artikler",
-      "href": "../artikler"
-    },
-    {
-      "type": "link",
-      "text": "Tjenester",
-      "href": "../tjenester"
-    },
-    {
-      "type": "link",
-      "text": "Kontakt oss",
-      "href": "../kontakt-oss"
     },
     {
       "type": "image",
@@ -43,7 +18,7 @@
       "alt": "",
       "width": 400,
       "height": 265,
-      "role": "content",
+      "role": "logo",
       "local": "/images/produkter/08-3adcc4e8.jpg"
     },
     {
@@ -59,6 +34,21 @@
     {
       "type": "text",
       "text": "Rørender"
+    },
+    {
+      "type": "link",
+      "text": "​Rørender rette",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "​Rørender 90 grader",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "​Rørender 45 grader",
+      "href": null
     },
     {
       "type": "image",
@@ -1198,16 +1188,24 @@
   "footer": [],
   "nav": [
     {
-      "text": "​Rørender rette",
-      "href": null
+      "text": "Hjem",
+      "href": "../"
     },
     {
-      "text": "​Rørender 90 grader",
-      "href": null
+      "text": "Om oss",
+      "href": "../om-oss"
     },
     {
-      "text": "​Rørender 45 grader",
-      "href": null
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
     }
   ],
   "colors": [

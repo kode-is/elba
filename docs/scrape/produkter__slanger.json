@@ -9,33 +9,8 @@
       "alt": "",
       "width": 216,
       "height": 64,
-      "role": "content",
+      "role": "logo",
       "local": "/images/home/00-d1c05434.png"
-    },
-    {
-      "type": "link",
-      "text": "Hjem",
-      "href": "../"
-    },
-    {
-      "type": "link",
-      "text": "Om oss",
-      "href": "../om-oss"
-    },
-    {
-      "type": "link",
-      "text": "Artikler",
-      "href": "../artikler"
-    },
-    {
-      "type": "link",
-      "text": "Tjenester",
-      "href": "../tjenester"
-    },
-    {
-      "type": "link",
-      "text": "Kontakt oss",
-      "href": "../kontakt-oss"
     },
     {
       "type": "image",
@@ -43,7 +18,7 @@
       "alt": "",
       "width": 1440,
       "height": 432,
-      "role": "content",
+      "role": "logo",
       "local": "/images/produkter/07-9bd24da2.jpg"
     },
     {
@@ -59,6 +34,16 @@
     {
       "type": "text",
       "text": "Slanger"
+    },
+    {
+      "type": "link",
+      "text": "Høytrykkslange",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Nylonrør",
+      "href": null
     },
     {
       "type": "image",
@@ -247,12 +232,24 @@
   "footer": [],
   "nav": [
     {
-      "text": "Høytrykkslange",
-      "href": null
+      "text": "Hjem",
+      "href": "../"
     },
     {
-      "text": "Nylonrør",
-      "href": null
+      "text": "Om oss",
+      "href": "../om-oss"
+    },
+    {
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
     }
   ],
   "colors": [

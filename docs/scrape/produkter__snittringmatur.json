@@ -9,33 +9,8 @@
       "alt": "",
       "width": 216,
       "height": 64,
-      "role": "content",
+      "role": "logo",
       "local": "/images/home/00-d1c05434.png"
-    },
-    {
-      "type": "link",
-      "text": "Hjem",
-      "href": "../"
-    },
-    {
-      "type": "link",
-      "text": "Om oss",
-      "href": "../om-oss"
-    },
-    {
-      "type": "link",
-      "text": "Artikler",
-      "href": "../artikler"
-    },
-    {
-      "type": "link",
-      "text": "Tjenester",
-      "href": "../tjenester"
-    },
-    {
-      "type": "link",
-      "text": "Kontakt oss",
-      "href": "../kontakt-oss"
     },
     {
       "type": "image",
@@ -43,7 +18,7 @@
       "alt": "",
       "width": 400,
       "height": 257,
-      "role": "content",
+      "role": "logo",
       "local": "/images/produkter/11-575445e6.jpg"
     },
     {
@@ -59,6 +34,41 @@
     {
       "type": "text",
       "text": "Snittringmatur"
+    },
+    {
+      "type": "link",
+      "text": "Vinkel \"WE\"",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Rett \"GE\"",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Sammenkobling \"G\"",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Sammenkobling \"W\"",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "T-stykke​",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Mutter​e​",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Snittringer",
+      "href": null
     },
     {
       "type": "image",
@@ -605,32 +615,24 @@
   "footer": [],
   "nav": [
     {
-      "text": "Vinkel \"WE\"",
-      "href": null
+      "text": "Hjem",
+      "href": "../"
     },
     {
-      "text": "Rett \"GE\"",
-      "href": null
+      "text": "Om oss",
+      "href": "../om-oss"
     },
     {
-      "text": "Sammenkobling \"G\"",
-      "href": null
+      "text": "Artikler",
+      "href": "../artikler"
     },
     {
-      "text": "Sammenkobling \"W\"",
-      "href": null
+      "text": "Tjenester",
+      "href": "../tjenester"
     },
     {
-      "text": "T-stykke​",
-      "href": null
-    },
-    {
-      "text": "Mutter​e​",
-      "href": null
-    },
-    {
-      "text": "Snittringer",
-      "href": null
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
     }
   ],
   "colors": [

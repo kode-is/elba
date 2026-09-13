@@ -9,33 +9,8 @@
       "alt": "",
       "width": 216,
       "height": 64,
-      "role": "content",
+      "role": "logo",
       "local": "/images/home/00-d1c05434.png"
-    },
-    {
-      "type": "link",
-      "text": "Hjem",
-      "href": "../"
-    },
-    {
-      "type": "link",
-      "text": "Om oss",
-      "href": "../om-oss"
-    },
-    {
-      "type": "link",
-      "text": "Artikler",
-      "href": "../artikler"
-    },
-    {
-      "type": "link",
-      "text": "Tjenester",
-      "href": "../tjenester"
-    },
-    {
-      "type": "link",
-      "text": "Kontakt oss",
-      "href": "../kontakt-oss"
     },
     {
       "type": "image",
@@ -43,7 +18,7 @@
       "alt": "",
       "width": 400,
       "height": 266,
-      "role": "content",
+      "role": "logo",
       "local": "/images/produkter/05-a9bab172.jpg"
     },
     {
@@ -59,6 +34,21 @@
     {
       "type": "text",
       "text": "Forlengere"
+    },
+    {
+      "type": "link",
+      "text": "Forlenger rett",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Forlenger 90 grader",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Forlenger 45 grader",
+      "href": null
     },
     {
       "type": "image",
@@ -938,16 +928,24 @@
   "footer": [],
   "nav": [
     {
-      "text": "Forlenger rett",
-      "href": null
+      "text": "Hjem",
+      "href": "../"
     },
     {
-      "text": "Forlenger 90 grader",
-      "href": null
+      "text": "Om oss",
+      "href": "../om-oss"
     },
     {
-      "text": "Forlenger 45 grader",
-      "href": null
+      "text": "Artikler",
+      "href": "../artikler"
+    },
+    {
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
     }
   ],
   "colors": [

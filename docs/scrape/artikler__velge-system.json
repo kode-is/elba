@@ -59,43 +59,35 @@
     },
     {
       "type": "text",
-      "text": "Én hovedlinje som forsyner alle smørepunkter",
-      "list": 0
+      "text": "Én hovedlinje som forsyner alle smørepunkter"
     },
     {
       "type": "text",
-      "text": "Enkel oppbygning og kostnadseffektiv løsning",
-      "list": 0
+      "text": "Enkel oppbygning og kostnadseffektiv løsning"
     },
     {
       "type": "text",
-      "text": "Lett å installere og vedlikeholde",
-      "list": 0
+      "text": "Lett å installere og vedlikeholde"
     },
     {
       "type": "text",
-      "text": "Styrker:",
-      "bold": true
+      "text": "Styrker:"
     },
     {
       "type": "text",
-      "text": "Driftssikkert og oversiktlig",
-      "list": 1
+      "text": "Driftssikkert og oversiktlig"
     },
     {
       "type": "text",
-      "text": "God løsning der belastning og temperatur er relativt stabile",
-      "list": 1
+      "text": "God løsning der belastning og temperatur er relativt stabile"
     },
     {
       "type": "text",
-      "text": "Begrensninger:",
-      "bold": true
+      "text": "Begrensninger:"
     },
     {
       "type": "text",
-      "text": "Mindre egnet for svært store systemer eller lange avstander",
-      "list": 2
+      "text": "Mindre egnet for svært store systemer eller lange avstander"
     },
     {
       "type": "heading",
@@ -108,48 +100,39 @@
     },
     {
       "type": "text",
-      "text": "To hovedlinjer som jobber vekselvis",
-      "list": 3
+      "text": "To hovedlinjer som jobber vekselvis"
     },
     {
       "type": "text",
-      "text": "Kan håndtere høyt trykk og lange rørstrekk",
-      "list": 3
+      "text": "Kan håndtere høyt trykk og lange rørstrekk"
     },
     {
       "type": "text",
-      "text": "Svært robust løsning",
-      "list": 3
+      "text": "Svært robust løsning"
     },
     {
       "type": "text",
-      "text": "Styrker:",
-      "bold": true
+      "text": "Styrker:"
     },
     {
       "type": "text",
-      "text": "Ideell for mange smørepunkter",
-      "list": 4
+      "text": "Ideell for mange smørepunkter"
     },
     {
       "type": "text",
-      "text": "Tåler tøffe forhold og varierende belastning",
-      "list": 4
+      "text": "Tåler tøffe forhold og varierende belastning"
     },
     {
       "type": "text",
-      "text": "Begrensninger:",
-      "bold": true
+      "text": "Begrensninger:"
     },
     {
       "type": "text",
-      "text": "Mer kompleks installasjon",
-      "list": 5
+      "text": "Mer kompleks installasjon"
     },
     {
       "type": "text",
-      "text": "Høyere investeringskostnad enn enlinje",
-      "list": 5
+      "text": "Høyere investeringskostnad enn enlinje"
     },
     {
       "type": "heading",
@@ -162,43 +145,35 @@
     },
     {
       "type": "text",
-      "text": "Smøringen går i en fast rekkefølge gjennom fordelere",
-      "list": 6
+      "text": "Smøringen går i en fast rekkefølge gjennom fordelere"
     },
     {
       "type": "text",
-      "text": "Hvis ett punkt blokkeres, stopper hele systemet, noe som gjør feil lett å oppdage",
-      "list": 6
+      "text": "Hvis ett punkt blokkeres, stopper hele systemet, noe som gjør feil lett å oppdage"
     },
     {
       "type": "text",
-      "text": "Styrker:",
-      "bold": true
+      "text": "Styrker:"
     },
     {
       "type": "text",
-      "text": "Høy presisjon og kontroll",
-      "list": 7
+      "text": "Høy presisjon og kontroll"
     },
     {
       "type": "text",
-      "text": "Enkelt å overvåke både mekanisk og digitalt",
-      "list": 7
+      "text": "Enkelt å overvåke både mekanisk og digitalt"
     },
     {
       "type": "text",
-      "text": "Svært populært i entreprenør- og industrimaskiner",
-      "list": 7
+      "text": "Svært populært i entreprenør- og industrimaskiner"
     },
     {
       "type": "text",
-      "text": "Begrensninger:",
-      "bold": true
+      "text": "Begrensninger:"
     },
     {
       "type": "text",
-      "text": "Mindre egnet der ekstrem fleksibilitet kreves",
-      "list": 8
+      "text": "Mindre egnet der ekstrem fleksibilitet kreves"
     },
     {
       "type": "heading",
@@ -211,43 +186,35 @@
     },
     {
       "type": "text",
-      "text": "Hver smørelinje går direkte fra pumpen til smørepunktet",
-      "list": 9
+      "text": "Hver smørelinje går direkte fra pumpen til smørepunktet"
     },
     {
       "type": "text",
-      "text": "Full uavhengighet mellom punktene",
-      "list": 9
+      "text": "Full uavhengighet mellom punktene"
     },
     {
       "type": "text",
-      "text": "Styrker:",
-      "bold": true
+      "text": "Styrker:"
     },
     {
       "type": "text",
-      "text": "Svært fleksibelt",
-      "list": 10
+      "text": "Svært fleksibelt"
     },
     {
       "type": "text",
-      "text": "Enkelt å justere individuelle smøremengder",
-      "list": 10
+      "text": "Enkelt å justere individuelle smøremengder"
     },
     {
       "type": "text",
-      "text": "Begrensninger:",
-      "bold": true
+      "text": "Begrensninger:"
     },
     {
       "type": "text",
-      "text": "Begrenset antall smørepunkter",
-      "list": 11
+      "text": "Begrenset antall smørepunkter"
     },
     {
       "type": "text",
-      "text": "Mindre egnet for store systemer",
-      "list": 11
+      "text": "Mindre egnet for store systemer"
     },
     {
       "type": "heading",
@@ -260,18 +227,15 @@
     },
     {
       "type": "text",
-      "text": "Få smørepunkter / enkel maskin: Flerlinje eller enlinje",
-      "list": 12
+      "text": "Få smørepunkter / enkel maskin: Flerlinje eller enlinje"
     },
     {
       "type": "text",
-      "text": "Mange smørepunkter / høy driftssikkerhet: Progressivt system",
-      "list": 12
+      "text": "Mange smørepunkter / høy driftssikkerhet: Progressivt system"
     },
     {
       "type": "text",
-      "text": "Store anlegg / lange avstander / tung industri: Tolinjesystem",
-      "list": 12
+      "text": "Store anlegg / lange avstander / tung industri: Tolinjesystem"
     },
     {
       "type": "text",
@@ -306,18 +270,15 @@
     },
     {
       "type": "text",
-      "text": "Sanntidsvarsler ved avvik",
-      "list": 13
+      "text": "Sanntidsvarsler ved avvik"
     },
     {
       "type": "text",
-      "text": "Fjerninnsyn i maskinparkens status",
-      "list": 13
+      "text": "Fjerninnsyn i maskinparkens status"
     },
     {
       "type": "text",
-      "text": "Historikk og dokumentasjon for vedlikehold",
-      "list": 13
+      "text": "Historikk og dokumentasjon for vedlikehold"
     },
     {
       "type": "text",

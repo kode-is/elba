@@ -92,7 +92,11 @@ async function extractPage(page) {
     // footer as its last child, identifiable by the company kennitala it
     // always carries.
     const root = document.querySelector("[data-framer-root]");
-    let header = document.querySelector("header, [data-framer-name*='Nav' i], [data-framer-name*='Header' i]");
+    // Exact layer-name match only: a substring match (e.g. `*='Nav' i`) also
+    // matches elba.no's product-variant "Subnav" layer, which sits before
+    // the real header in some routes' DOM and would hijack `header` before
+    // the root.firstElementChild fallback below ever runs.
+    let header = document.querySelector("header, [data-framer-name='Nav' i], [data-framer-name='Navigation' i], [data-framer-name='Header' i]");
     if (!header && root) header = root.firstElementChild;
     let footer = document.querySelector("footer, [data-framer-name*='Footer' i]");
     if (!footer && root) {

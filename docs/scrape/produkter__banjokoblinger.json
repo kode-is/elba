@@ -9,33 +9,8 @@
       "alt": "",
       "width": 216,
       "height": 64,
-      "role": "content",
+      "role": "logo",
       "local": "/images/home/00-d1c05434.png"
-    },
-    {
-      "type": "link",
-      "text": "Hjem",
-      "href": "../"
-    },
-    {
-      "type": "link",
-      "text": "Om oss",
-      "href": "../om-oss"
-    },
-    {
-      "type": "link",
-      "text": "Artikler",
-      "href": "../artikler"
-    },
-    {
-      "type": "link",
-      "text": "Tjenester",
-      "href": "../tjenester"
-    },
-    {
-      "type": "link",
-      "text": "Kontakt oss",
-      "href": "../kontakt-oss"
     },
     {
       "type": "image",
@@ -43,7 +18,7 @@
       "alt": "",
       "width": 1440,
       "height": 933,
-      "role": "content",
+      "role": "logo",
       "local": "/images/produkter/10-948804a8.jpg"
     },
     {
@@ -59,6 +34,31 @@
     {
       "type": "text",
       "text": "Banjokoblinger"
+    },
+    {
+      "type": "link",
+      "text": "Banjokobling",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Banjokobling utv./innv.",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Banjo T",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Svivel union vinkel",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Svivel 90 grader",
+      "href": null
     },
     {
       "type": "image",
@@ -367,24 +367,24 @@
   "footer": [],
   "nav": [
     {
-      "text": "Banjokobling",
-      "href": null
+      "text": "Hjem",
+      "href": "../"
     },
     {
-      "text": "Banjokobling utv./innv.",
-      "href": null
+      "text": "Om oss",
+      "href": "../om-oss"
     },
     {
-      "text": "Banjo T",
-      "href": null
+      "text": "Artikler",
+      "href": "../artikler"
     },
     {
-      "text": "Svivel union vinkel",
-      "href": null
+      "text": "Tjenester",
+      "href": "../tjenester"
     },
     {
-      "text": "Svivel 90 grader",
-      "href": null
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
     }
   ],
   "colors": [

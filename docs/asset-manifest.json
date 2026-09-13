@@ -310,8 +310,8 @@
     "route": "/anlegg",
     "originalUrl": "https://framerusercontent.com/images/Lczesiy0hDYHEKmibfhXZ20Mtg.jpeg",
     "localPath": "/images/home/03-01289078.jpeg",
-    "width": 0,
-    "height": 0,
+    "width": 1439,
+    "height": 1919,
     "alt": "",
     "role": "content"
   },
@@ -319,8 +319,8 @@
     "route": "/anlegg",
     "originalUrl": "https://framerusercontent.com/images/VGc7uL8BWIY6kXp81TcDzBiE.jpeg",
     "localPath": "/images/anlegg/02-c89d7570.jpeg",
-    "width": 0,
-    "height": 0,
+    "width": 626,
+    "height": 835,
     "alt": "",
     "role": "content"
   },
@@ -328,8 +328,8 @@
     "route": "/anlegg",
     "originalUrl": "https://framerusercontent.com/images/PssDjXQs8WLk0TCYrZi1YGSXUeE.jpeg",
     "localPath": "/images/anlegg/03-497fe191.jpeg",
-    "width": 0,
-    "height": 0,
+    "width": 517,
+    "height": 689,
     "alt": "",
     "role": "content"
   },
@@ -337,8 +337,8 @@
     "route": "/anlegg",
     "originalUrl": "https://framerusercontent.com/images/tjxFOwV6eDCk6SNOnZznP4RBQ.jpeg",
     "localPath": "/images/anlegg/04-c08775a5.jpeg",
-    "width": 0,
-    "height": 0,
+    "width": 626,
+    "height": 835,
     "alt": "",
     "role": "content"
   },
@@ -355,8 +355,8 @@
     "route": "/anlegg",
     "originalUrl": "https://framerusercontent.com/images/xKTqMlhY0lFGY2C0kGnUdCLBPQ.jpeg",
     "localPath": "/images/anlegg/06-2207cb6d.jpeg",
-    "width": 0,
-    "height": 0,
+    "width": 582,
+    "height": 776,
     "alt": "",
     "role": "content"
   },
@@ -364,8 +364,8 @@
     "route": "/anlegg",
     "originalUrl": "https://framerusercontent.com/images/x3uAYSJrkW10psyYSGtmnPKjEXs.jpg",
     "localPath": "/images/anlegg/07-74a78715.jpg",
-    "width": 0,
-    "height": 0,
+    "width": 388,
+    "height": 270,
     "alt": "Interior work",
     "role": "content"
   },
@@ -764,7 +764,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/rørender",
@@ -773,7 +773,7 @@
     "width": 400,
     "height": 265,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/rørender",
@@ -899,7 +899,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/forlengere",
@@ -908,7 +908,7 @@
     "width": 400,
     "height": 266,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/forlengere",
@@ -944,7 +944,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/fylleutstyr",
@@ -953,7 +953,7 @@
     "width": 1440,
     "height": 1440,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/fylleutstyr",
@@ -1016,7 +1016,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/fyllenippler",
@@ -1025,7 +1025,7 @@
     "width": 400,
     "height": 261,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/fyllenippler",
@@ -1115,7 +1115,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/skottgjennomføring",
@@ -1124,7 +1124,7 @@
     "width": 400,
     "height": 260,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/skottgjennomføring",
@@ -1160,7 +1160,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/snittringmatur",
@@ -1169,7 +1169,7 @@
     "width": 400,
     "height": 257,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/snittringmatur",
@@ -1205,7 +1205,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/banjokoblinger",
@@ -1214,7 +1214,7 @@
     "width": 1440,
     "height": 933,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/banjokoblinger",
@@ -1250,7 +1250,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/lynfittings",
@@ -1259,7 +1259,7 @@
     "width": 400,
     "height": 261,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/lynfittings",
@@ -1295,7 +1295,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/slanger",
@@ -1304,7 +1304,7 @@
     "width": 1440,
     "height": 432,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/slanger",

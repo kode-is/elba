@@ -9,33 +9,8 @@
       "alt": "",
       "width": 216,
       "height": 64,
-      "role": "content",
+      "role": "logo",
       "local": "/images/home/00-d1c05434.png"
-    },
-    {
-      "type": "link",
-      "text": "Hjem",
-      "href": "../"
-    },
-    {
-      "type": "link",
-      "text": "Om oss",
-      "href": "../om-oss"
-    },
-    {
-      "type": "link",
-      "text": "Artikler",
-      "href": "../artikler"
-    },
-    {
-      "type": "link",
-      "text": "Tjenester",
-      "href": "../tjenester"
-    },
-    {
-      "type": "link",
-      "text": "Kontakt oss",
-      "href": "../kontakt-oss"
     },
     {
       "type": "image",
@@ -43,7 +18,7 @@
       "alt": "",
       "width": 400,
       "height": 261,
-      "role": "content",
+      "role": "logo",
       "local": "/images/produkter/12-f7bc3daa.jpg"
     },
     {
@@ -59,6 +34,26 @@
     {
       "type": "text",
       "text": "Lynfittings"
+    },
+    {
+      "type": "link",
+      "text": "Rett \"GE\"",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "90° \"WE\"",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "90° \"WE\" dreibar",
+      "href": null
+    },
+    {
+      "type": "link",
+      "text": "Sammenkobling \"G\"",
+      "href": null
     },
     {
       "type": "image",
@@ -332,20 +327,24 @@
   "footer": [],
   "nav": [
     {
-      "text": "Rett \"GE\"",
-      "href": null
+      "text": "Hjem",
+      "href": "../"
     },
     {
-      "text": "90° \"WE\"",
-      "href": null
+      "text": "Om oss",
+      "href": "../om-oss"
     },
     {
-      "text": "90° \"WE\" dreibar",
-      "href": null
+      "text": "Artikler",
+      "href": "../artikler"
     },
     {
-      "text": "Sammenkobling \"G\"",
-      "href": null
+      "text": "Tjenester",
+      "href": "../tjenester"
+    },
+    {
+      "text": "Kontakt oss",
+      "href": "../kontakt-oss"
     }
   ],
   "colors": [
