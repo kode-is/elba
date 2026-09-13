@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   description:
     "Hvert år leverer vi sentralsmøreanlegg til mange tusen smørepunkter, enten montert av egne montører eller hvor du selv setter opp systemet.",
   metadataBase: new URL("https://www.elba.no"),
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
