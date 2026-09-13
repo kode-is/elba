@@ -3,11 +3,10 @@
   --font-sans: var(--font-figtree), system-ui, sans-serif;
   --font-ui: var(--font-inter), system-ui, sans-serif;
   --font-stat: var(--font-satoshi), var(--font-figtree), sans-serif;
-  --color-brand-dark: #005380;
-  --color-brand-mid: #01A8DC;
-  --color-brand-light: #83D4F3;
-  --color-accent-green: #0A8754;
-  --color-accent-yellow: #FAC748;
+  --color-brand: #c11e31;        /* ELBA RED, cheatsheet */
+  --color-brand-hover: #a3182a;  /* provisional; Task 11 replaces with the live hover colour */
+  --color-brand-soft: #fbeaec;   /* provisional light tint; Task 11 replaces with the live value */
+  --color-surface: #f7f4f2;      /* provisional form/footer background; Task 11 replaces */
   --container-site: 1340px;
 }
 

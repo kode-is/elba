@@ -121,7 +121,7 @@ export function ServicesMenu({ href, text }: ServicesMenuProps) {
                       <Link
                         href={link.href}
                         onClick={() => closeNow(false)}
-                        className="block font-ui text-base font-normal text-[#444] transition hover:text-brand-dark"
+                        className="block font-ui text-base font-normal text-[#444] transition hover:text-brand"
                       >
                         {link.text}
                       </Link>

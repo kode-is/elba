@@ -1,29 +1,16 @@
 import { pageMetadata } from "@/lib/seo";
-import { BrandStrip } from "@/components/BrandStrip";
-import { Hero } from "@/components/home/Hero";
-import { StepsSection } from "@/components/home/StepsSection";
-import { CategoriesSection } from "@/components/home/CategoriesSection";
-import { AdvisorySection } from "@/components/home/AdvisorySection";
-import { StatsSection } from "@/components/StatsSection";
-import { BrandsSection } from "@/components/home/BrandsSection";
 
 export const metadata = pageMetadata({
-  title: "Skralli - Þinn samstarfsaðili",
+  title: "ELBA - I INDUSTRIENS TJENESTE",
   description:
-    "Skralli aðstoðar þig við að finna réttu lausnina fyrir þig. Hvort sem það er að finna lausn fyrir smurtæki eða finna rétta sætisáklæðið, Við getum aðstoðað þig.",
+    "Hvert år leverer vi sentralsmøreanlegg til mange tusen smørepunkter, enten montert av egne montører eller hvor du selv setter opp systemet.",
   path: "/",
 });
 
 export default function Home() {
   return (
     <main id="main">
-      <Hero />
-      <BrandStrip />
-      <StepsSection />
-      <CategoriesSection />
-      <AdvisorySection />
-      <StatsSection />
-      <BrandsSection />
+      <h1>ELBA</h1>
     </main>
   );
 }

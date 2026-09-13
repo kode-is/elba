@@ -5,7 +5,7 @@ import { stats } from "@/lib/stats";
 /** Used on both the home page and /um-okkur — see lib/stats.ts. */
 export function StatsSection() {
   return (
-    <section className="bg-brand-dark py-14 md:py-16">
+    <section className="bg-brand py-14 md:py-16">
       <Container>
         <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4 md:divide-x md:divide-white/15">
           {stats.map((stat, index) => (

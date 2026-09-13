@@ -121,7 +121,7 @@ export function MobileMenu({ nav }: MobileMenuProps) {
             type="button"
             aria-label="Loka valmynd"
             onClick={close}
-            className="absolute right-8 top-8 flex h-6 w-6 items-center justify-center text-neutral-900 transition hover:text-brand-dark"
+            className="absolute right-8 top-8 flex h-6 w-6 items-center justify-center text-neutral-900 transition hover:text-brand"
           >
             <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
               <path
@@ -158,7 +158,7 @@ export function MobileMenu({ nav }: MobileMenuProps) {
           <Link
             href={navCta.href}
             onClick={close}
-            className="mt-6 block rounded-md bg-brand-dark py-3 text-center text-base font-semibold text-white"
+            className="mt-6 block rounded-md bg-brand py-3 text-center text-base font-semibold text-white"
           >
             {navCta.text}
           </Link>

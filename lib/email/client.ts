@@ -11,7 +11,7 @@ export function emailFrom(): string {
 }
 
 export function contactTo(): string {
-  return process.env.CONTACT_TO || "skralli@skralli.is";
+  return process.env.CONTACT_TO || "elba@elba.no";
 }
 
 let cached: { key: string; client: Resend } | null = null;

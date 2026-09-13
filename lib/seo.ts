@@ -1,34 +1,17 @@
 // Shared per-page <head> boilerplate: canonical link, Open Graph, Twitter
 // card and the robots meta tag, all derived from a page's own title,
-// description and path. Reproduces what every route on the live site
-// (skralli.is) emits — confirmed against curl'd <head> output for `/`,
-// `/vorumerki/bmair`, `/sturtuvagnar/gw-100` and
-// `/hifi-festibunadur/hifikedjur`:
-//   <link rel="canonical" href="https://skralli.is<path>">
-//   <meta property="og:title" content="<title>">
-//   <meta property="og:description" content="<description>">
-//   <meta property="og:type" content="website">
-//   <meta property="og:url" content="https://skralli.is<path>">
-//   <meta name="twitter:card" content="summary_large_image">
-//   <meta name="twitter:title" content="<title>">
-//   <meta name="twitter:description" content="<description>">
-//   <meta name="robots" content="max-image-preview:large">
-// The live site has no og:image; this recreation adds one site-wide (the
-// home hero still) since link-preview cards with no image look broken on
-// every platform that surfaces them.
-// apple-touch-icon (`app/apple-icon.png`) is a separate Next.js
-// file-convention icon and isn't part of this helper.
+// description and path.
 import type { Metadata } from "next";
 
-const SITE_URL = "https://skralli.is";
+const SITE_URL = "https://www.elba.no";
 
-// Home hero still (components/home/Hero.tsx), reused site-wide as the
-// Open Graph / Twitter card image since the live site has none of its own.
+// Home hero still. Placeholder for now — Task 6 sets the real hero still
+// path from the elba.no scrape.
 const OG_IMAGE = {
-  url: "/images/home/01-087a3e5c.png",
+  url: "/images/home/01-placeholder.png",
   width: 1440,
   height: 807,
-  alt: "Skralli - Þinn samstarfsaðili",
+  alt: "ELBA - I INDUSTRIENS TJENESTE",
 };
 
 export function pageMetadata({
@@ -50,8 +33,8 @@ export function pageMetadata({
       title,
       description,
       url,
-      siteName: "Skralli",
-      locale: "is_IS",
+      siteName: "ELBA",
+      locale: "nb_NO",
       images: [OG_IMAGE],
     },
     twitter: {

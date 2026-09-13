@@ -1,5 +1,5 @@
 {
-  "name": "skralli",
+  "name": "elba",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -15,8 +15,8 @@
     "scrape-tables": "node scripts/scrape-tables.mjs",
     "scrape-mobile-diff": "node scripts/scrape-mobile-diff.mjs",
     "verify": "node scripts/verify.mjs",
-    "gen-sturtuvagnar": "node scripts/gen-sturtuvagnar.mjs",
-    "gen-hifi": "node scripts/gen-hifi.mjs"
+    "gen-produkter": "node scripts/gen-produkter.mjs",
+    "gen-artikler": "node scripts/gen-artikler.mjs"
   },
   "dependencies": {
     "next": "16.3.4",

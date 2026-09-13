@@ -1,10 +1,6 @@
-# Skralli
+# Elba
 
-Static Next.js recreation of skralli.is (Icelandic B2B site). Typography matches
-the live site: Figtree (site default), Inter (card/table/footer text), and
-Satoshi (the animated stat numbers), all self-hosted via `next/font` — see
-`app/fonts.ts`. The client's NowAlt font files remain in `assets/fonts/` for
-reference/brand use but are no longer wired into the site.
+Static Next.js recreation of elba.no (Elba AS, Norway). Bootstrapped from kode-is/skralli.
 
 ## Development
 
@@ -27,15 +23,15 @@ Copy `.env.example` to `.env.local` and fill in the values:
 ## Verifying against the live site
 
 `npm run verify` renders each local route with Playwright/Chromium and diffs its
-visible text against the **live** skralli.is (not a local fixture), so it needs:
+visible text against the **live** www.elba.no (not a local fixture), so it needs:
 
 1. The site running locally on `:3000` (`npm run dev` or `npm run build && npm start`).
 2. Chromium installed for Playwright: `npx playwright install chromium`.
-3. A network path to the live site (it fetches `https://skralli.is` directly).
+3. A network path to the live site (it fetches `https://www.elba.no` directly).
 
 ```bash
 npm run verify                          # every route in scripts/routes.mjs
-npm run verify -- / /hafa-samband       # only the listed routes
+npm run verify -- / /kontakt-oss        # only the listed routes
 ```
 Output per route is `OK`, or a diff of `missing` (text present live but not locally)
 and `extra` (text present locally but not live).
@@ -57,10 +53,10 @@ npm run scrape-formatting   # list/bold semantics for scraped text blocks
 npm run scrape-tables       # <table> structures (e.g. hifi-festibunadur spec tables)
 npm run scrape-mobile-diff  # text visible only on mobile or only on desktop, live site
 npm run normalize-scrape    # one-off cleanup pass over already-scraped docs/scrape/*.json
-npm run gen-sturtuvagnar    # regenerates lib/sturtuvagnar.ts from docs/scrape/sturtuvagnar__*.json
-npm run gen-hifi            # regenerates lib/hifi.ts from docs/scrape/hifi-festibunadur__*.json + tables.json
+npm run gen-produkter       # regenerates lib/produkter.ts from docs/scrape/produkter__*.json
+npm run gen-artikler        # regenerates lib/artikler.ts from docs/scrape/artikler__*.json
 ```
 
-All scrape scripts talk to the **live** skralli.is directly (no local server
-needed); `gen-sturtuvagnar`/`gen-hifi` instead read the already-scraped JSON
+All scrape scripts talk to the **live** www.elba.no directly (no local server
+needed); `gen-produkter`/`gen-artikler` instead read the already-scraped JSON
 files and write local `lib/*.ts` data.

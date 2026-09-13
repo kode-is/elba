@@ -23,7 +23,7 @@ export function Breadcrumb({ items, variant = "plain" }: BreadcrumbProps) {
     <nav aria-label="Brauðmolaslóð" className="font-ui text-sm">
       <ol className="flex flex-wrap items-center gap-2 text-neutral-500">
         <li>
-          <Link href="/" className="transition hover:text-brand-dark">
+          <Link href="/" className="transition hover:text-brand">
             Forsíða
           </Link>
         </li>
@@ -33,7 +33,7 @@ export function Breadcrumb({ items, variant = "plain" }: BreadcrumbProps) {
             <li key={item.text} className="flex items-center gap-2">
               <span aria-hidden="true">&gt;</span>
               {item.href && !isLast ? (
-                <Link href={item.href} className="transition hover:text-brand-dark">
+                <Link href={item.href} className="transition hover:text-brand">
                   {item.text}
                 </Link>
               ) : (

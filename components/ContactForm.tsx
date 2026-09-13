@@ -30,7 +30,7 @@ const SUCCESS_TEXT =
   "Takk fyrir! Við höfum móttekið fyrirspurnina og svörum innan 1 klst á opnunartíma.";
 
 const fieldClass =
-  "w-full rounded-md border border-transparent bg-[#f0f4fa] px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-brand-dark focus:outline-none";
+  "w-full rounded-md border border-transparent bg-[#f0f4fa] px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-500 focus:border-brand focus:outline-none";
 
 // Map validation error messages to field names for aria-invalid/aria-describedby
 const ERROR_MESSAGE_TO_FIELD: Record<string, "nafn" | "netfang" | "skilabod"> = {
@@ -42,7 +42,7 @@ const ERROR_MESSAGE_TO_FIELD: Record<string, "nafn" | "netfang" | "skilabod"> = 
 const CARD_LABEL_CLASS = "mb-1.5 block font-ui text-xs font-semibold text-[#171717]";
 
 const CARD_FIELD_BASE =
-  "w-full rounded-md border bg-[#F0F4FA] font-ui text-[15px] text-[#171717] placeholder:text-neutral-500 outline-none focus:border-brand-mid focus:bg-white focus:ring-[3px] focus:ring-brand-mid/[.18]";
+  "w-full rounded-md border bg-[#F0F4FA] font-ui text-[15px] text-[#171717] placeholder:text-neutral-500 outline-none focus:border-brand-hover focus:bg-white focus:ring-[3px] focus:ring-brand-hover/[.18]";
 
 function cardFieldClass(hasError: boolean, extra: string) {
   return `${CARD_FIELD_BASE} ${extra} ${hasError ? "border-[#C0392B] bg-[#FFF7F7]" : "border-[#E3E9F2]"}`;
@@ -93,7 +93,7 @@ export function ContactForm({
         <div role="status" aria-live="polite">
           <div
             aria-hidden="true"
-            className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF6F0] font-ui text-lg font-bold text-accent-green"
+            className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-[#EAF6F0] font-ui text-lg font-bold text-brand"
           >
             ✓
           </div>
@@ -221,7 +221,7 @@ export function ContactForm({
         <button
           type="submit"
           disabled={isPending}
-          className="w-full rounded-none bg-brand-dark px-[30px] py-5 text-base font-semibold text-white transition hover:bg-brand-mid disabled:cursor-not-allowed disabled:opacity-70"
+          className="w-full rounded-none bg-brand px-[30px] py-5 text-base font-semibold text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-70"
         >
           {isPending ? "Sendi..." : submitLabel}
         </button>
@@ -326,7 +326,7 @@ export function ContactForm({
       <button
         type="submit"
         disabled={isPending}
-        className="w-full rounded-md bg-brand-dark px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-mid disabled:cursor-not-allowed disabled:opacity-70"
+        className="w-full rounded-md bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-hover disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isPending ? "Sendi..." : submitLabel}
       </button>
