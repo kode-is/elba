@@ -42,7 +42,13 @@ export function ArticlesSection() {
 
           <div className="flex flex-col gap-6">
             {ARTICLES.map((article) => (
-              <ArticleCard key={article.href} title={article.title} href={article.href} image={article.image} />
+              <ArticleCard
+                key={article.href}
+                title={article.title}
+                href={article.href}
+                image={article.image}
+                variant="row"
+              />
             ))}
           </div>
         </div>
