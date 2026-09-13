@@ -28,7 +28,12 @@ const ESCAPE_MAP: Record<string, string> = {
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ESCAPE_MAP[c]!);
 
 export function buildContactEmail(p: ContactPayload): { subject: string; text: string; html: string } {
-  const subject = `Henvendelse fra elba.no – ${p.navn.trim()}`;
+  // The subject line is a single mail header: a name carrying \r or \n
+  // could otherwise inject additional headers (e.g. a forged Bcc). Collapse
+  // any run of CR/LF to a space and cap the length; the body keeps the
+  // original trimmed name.
+  const navn = p.navn.trim().replace(/[\r\n]+/g, " ").slice(0, 120);
+  const subject = `Henvendelse fra elba.no – ${navn}`;
   const text = [
     `Navn: ${p.navn}`,
     `E-post: ${p.epost}`,

@@ -28,4 +28,9 @@ describe("buildContactEmail", () => {
   it("escapes html in message", () => {
     expect(buildContactEmail({ ...ok, melding: "<b>x</b>" }).html).not.toContain("<b>x</b>");
   });
+  it("keeps the subject on one line", () => {
+    const m = buildContactEmail({ ...ok, navn: "Ola\r\nBcc: x@y.z" });
+    expect(m.subject).not.toContain("\r");
+    expect(m.subject).not.toContain("\n");
+  });
 });

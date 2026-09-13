@@ -57,6 +57,10 @@ every route's visible text against the live site; at the end of Task 11 all
    the Vercel project from this repo, set the three env vars above, then
    point `elba.no` / `www.elba.no` at it. `lib/seo.ts` and `app/sitemap.ts`
    already hard-code `https://www.elba.no` as the canonical origin.
+10. **No captcha or rate limit on the contact form.** `app/actions.ts` only
+    has the honeypot field (`website`) — nothing stops a scripted flood of
+    submissions. A Vercel Firewall rate-limit rule or a per-IP throttle in
+    `submitContact` is the suggested follow-up once the form is live.
 
 ---
 
