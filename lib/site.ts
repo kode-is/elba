@@ -1,5 +1,5 @@
-// Site-wide constants. Placeholder values for now — Task 4 replaces every
-// string with ones scraped verbatim from elba.no.
+// Site-wide constants, scraped verbatim from elba.no (docs/scrape/home.json's
+// `nav` and `footer` blocks) — see tests/nav.test.ts.
 
 export const site = {
   name: "ELBA",

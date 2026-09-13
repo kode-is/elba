@@ -1,15 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Container } from "./Container";
 import { MobileMenu } from "./MobileMenu";
 import { ServicesMenu } from "./ServicesMenu";
 import { nav, navCta } from "@/lib/site";
 
+// docs/scrape/home.json's header block (role: "logo") — same file as the
+// footer logo (docs/handover.md "Logos").
+const LOGO = { src: "/images/home/00-d1c05434.png", width: 216, height: 64 };
+
 export function Header() {
   return (
     <header className="absolute inset-x-0 top-0 z-50">
       <Container className="flex items-center justify-between py-6 md:py-8">
         <Link href="/" aria-label="ELBA - Hjem">
-          <span className="text-2xl font-bold text-brand">ELBA</span>
+          <Image
+            src={LOGO.src}
+            alt="ELBA"
+            width={LOGO.width}
+            height={LOGO.height}
+            className="h-8 w-auto md:h-10"
+            priority
+          />
         </Link>
 
         {/* Nav + CTA are grouped so the hover panel can anchor (right-0)
@@ -34,7 +46,7 @@ export function Header() {
 
           <Link
             href={navCta.href}
-            className="inline-flex items-center justify-center rounded-md border border-white/70 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-white hover:text-brand"
+            className="inline-flex items-center justify-center rounded-md bg-brand px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-hover"
           >
             {navCta.text}
           </Link>

@@ -14,10 +14,10 @@ export default function NotFound() {
     <main id="main">
       <PageHero
         image={{
-          src: "/images/404/01-placeholder.jpg",
-          alt: "",
+          src: "/images/404/01-d1eed4a4.jpg",
+          alt: "Handyman working",
           width: 1440,
-          height: 960,
+          height: 959,
         }}
         height="min-h-screen"
         overlayClassName="bg-black/55"
@@ -30,7 +30,7 @@ export default function NotFound() {
         </h2>
         <Link
           href="/"
-          className="mt-2 inline-flex items-center justify-center rounded-md border border-white px-8 py-3 text-sm font-semibold transition hover:bg-white hover:text-neutral-900"
+          className="mt-2 inline-flex items-center justify-center rounded-md border border-white px-8 py-3 text-sm font-semibold transition hover:bg-white hover:text-brand"
         >
           Hjem
         </Link>

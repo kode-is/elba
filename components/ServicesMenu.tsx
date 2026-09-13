@@ -9,10 +9,10 @@ type ServicesMenuProps = {
   text: string;
 };
 
-// Desktop-only hover/keyboard menu for the "Þjónusta" nav item. Renders
+// Desktop-only hover/keyboard menu for the "Tjenester" nav item. Renders
 // inside the header's nav+CTA group (see Header.tsx), which must be
 // `position: relative` so the panel's `right-0` aligns to that group's
-// right edge (the "Hafa samband" button) rather than under this item.
+// right edge (the "Kontakt oss" button) rather than under this item.
 export function ServicesMenu({ href, text }: ServicesMenuProps) {
   const [open, setOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -86,7 +86,7 @@ export function ServicesMenu({ href, text }: ServicesMenuProps) {
         type="button"
         aria-expanded={open}
         aria-controls={panelId}
-        aria-label={`Sýna ${text} valmynd`}
+        aria-label={`Vis ${text}-meny`}
         onFocus={openMenu}
         onClick={openMenu}
         className="flex h-4 w-4 items-center justify-center text-white"
@@ -106,30 +106,27 @@ export function ServicesMenu({ href, text }: ServicesMenuProps) {
         <nav
           id={panelId}
           aria-label={servicesMenu.heading}
-          className="absolute right-0 top-full z-50 mt-6 w-[850px] rounded-[15px] bg-white px-10 pt-[30px] pb-10"
+          className="absolute right-0 top-full z-50 mt-6 w-max rounded-[15px] bg-white px-10 pt-[30px] pb-10"
         >
-          <div className="flex gap-x-20">
+          <div className="flex gap-x-16">
             <div className="w-[227px]">
               <h6 className="font-ui text-base font-semibold text-black">{servicesMenu.heading}</h6>
               <p className="mt-3 font-ui text-sm font-normal text-[#444]">{servicesMenu.description}</p>
             </div>
-            <div className="flex gap-x-9">
-              {servicesMenu.columns.map((column, index) => (
-                <ul key={index} className="w-[200px] space-y-[11px]">
-                  {column.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        onClick={() => closeNow(false)}
-                        className="block font-ui text-base font-normal text-[#444] transition hover:text-brand"
-                      >
-                        {link.text}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+            {/* One column (Anlegg, Industri, Produkter) — no second <ul>. */}
+            <ul className="w-[200px] space-y-[11px]">
+              {servicesMenu.columns.flat().map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    onClick={() => closeNow(false)}
+                    className="block font-ui text-base font-normal text-[#444] transition hover:text-brand"
+                  >
+                    {link.text}
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </nav>
       ) : null}

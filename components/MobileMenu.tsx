@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { navCta } from "@/lib/site";
+import { navCta, servicesMenu } from "@/lib/site";
 
 type NavItem = { text: string; href: string };
 
@@ -83,7 +83,7 @@ export function MobileMenu({ nav }: MobileMenuProps) {
       <button
         ref={toggleButtonRef}
         type="button"
-        aria-label={open ? "Loka valmynd" : "Opna valmynd"}
+        aria-label={open ? "Lukk meny" : "Åpne meny"}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
         className="relative z-10 flex h-10 w-10 items-center justify-center text-white"
@@ -113,13 +113,13 @@ export function MobileMenu({ nav }: MobileMenuProps) {
         <div
           role="dialog"
           aria-modal="true"
-          aria-label="Valmynd"
+          aria-label="Meny"
           className="fixed inset-x-[30px] top-[95px] z-[60] rounded-3xl bg-neutral-100 px-8 py-8 shadow-xl"
         >
           <button
             ref={closeButtonRef}
             type="button"
-            aria-label="Loka valmynd"
+            aria-label="Lukk meny"
             onClick={close}
             className="absolute right-8 top-8 flex h-6 w-6 items-center justify-center text-neutral-900 transition hover:text-brand"
           >
@@ -134,25 +134,30 @@ export function MobileMenu({ nav }: MobileMenuProps) {
           </button>
           <nav className="flex flex-col items-center gap-6">
             {nav.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={close}
-                className="inline-flex items-center gap-1.5 font-ui text-lg font-medium text-neutral-900"
-              >
-                {item.text}
-                {item.text === "Þjónusta" ? (
-                  <svg viewBox="0 0 12 8" fill="none" className="h-2.5 w-2.5" aria-hidden="true">
-                    <path
-                      d="M1 1.5L6 6.5L11 1.5"
-                      stroke="currentColor"
-                      strokeWidth={1.5}
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+              <div key={item.href} className="flex flex-col items-center gap-4">
+                <Link
+                  href={item.href}
+                  onClick={close}
+                  className="font-ui text-lg font-medium text-neutral-900"
+                >
+                  {item.text}
+                </Link>
+                {item.text === "Tjenester" ? (
+                  <ul className="flex flex-col items-center gap-3">
+                    {servicesMenu.columns.flat().map((link) => (
+                      <li key={link.href}>
+                        <Link
+                          href={link.href}
+                          onClick={close}
+                          className="font-ui text-base font-normal text-neutral-600 transition hover:text-brand"
+                        >
+                          {link.text}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
                 ) : null}
-              </Link>
+              </div>
             ))}
           </nav>
           <Link

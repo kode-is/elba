@@ -6,7 +6,7 @@
   --color-brand: #c11e31;        /* ELBA RED, cheatsheet */
   --color-brand-hover: #a3182a;  /* provisional; Task 11 replaces with the live hover colour */
   --color-brand-soft: #fbeaec;   /* provisional light tint; Task 11 replaces with the live value */
-  --color-surface: #f7f4f2;      /* provisional form/footer background; Task 11 replaces */
+  --color-surface: #f5f2ef;      /* home.json colors: warm off-white form/footer background */
   --container-site: 1340px;
 }
 
