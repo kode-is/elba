@@ -11,7 +11,7 @@ type StepCardProps = {
 
 export function StepCard({ number, title, text, linkText, href }: StepCardProps) {
   return (
-    <div className="flex flex-col rounded-2xl bg-[#f0f4fa] p-6 md:p-8">
+    <div className="flex flex-col rounded-2xl bg-surface p-6 md:p-8">
       <div className="flex items-start gap-3">
         <h3 className="text-2xl font-semibold text-brand">{number}</h3>
         <h5 className="font-ui text-lg font-semibold text-neutral-900">{title}</h5>

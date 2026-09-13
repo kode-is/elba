@@ -5,12 +5,12 @@ import type { Metadata } from "next";
 
 const SITE_URL = "https://www.elba.no";
 
-// Home hero still. Placeholder for now — Task 6 sets the real hero still
-// path from the elba.no scrape.
+// Home hero still (docs/scrape/home.json block 2 — the poster used by
+// components/home/Hero.tsx's <video>).
 const OG_IMAGE = {
-  url: "/images/home/01-placeholder.png",
+  url: "/images/home/01-a13ec070.png",
   width: 1440,
-  height: 807,
+  height: 808,
   alt: "ELBA - I INDUSTRIENS TJENESTE",
 };
 

@@ -16,7 +16,15 @@ const exact = (s) => new RegExp(`^${escapeRe(s)}$`);
 const WIDGET_CHROME = [exact("Search..."), exact("Previous"), exact("Next"), exact("Export CSV"), /^Page \d+ of \d+$/i, /^All .+$/];
 // Stat counters on the home page and /anlegg hydrate to animated values.
 const IGNORE_MISSING = Object.fromEntries(ROUTES.map((r) => [r, r.startsWith("/produkter/") ? WIDGET_CHROME : []]));
-IGNORE_MISSING["/"] = [/^\d{1,3}$/];
+// Task 6 (home): the live page's own count-up animation for the four
+// "_Metric item" stats (184 / 14 / 10984 / 5984 — see lib/stats.ts) doesn't
+// always finish easing to its target within this script's capture window;
+// confirmed by diffing the live SSR HTML (which bakes in a lower rounded
+// baseline, e.g. 10980) against a settled capture, which lands 2 short of
+// the true target (10982, 5982) both times, reproducibly — a live
+// animation-timing artifact, not missing content. \d{1,3} only covered the
+// two smaller stats; widened to \d{1,5} to cover all four.
+IGNORE_MISSING["/"] = [/^\d{1,5}$/];
 IGNORE_MISSING["/anlegg"] = [/^\d{1,3}$/, /^\d+[ky]\+?$/];
 // The live submit button reads "Senda!" (a leftover Icelandic string on
 // elba.no's own contact form); this rebuild's button reads "Send" instead —
