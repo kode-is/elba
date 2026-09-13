@@ -97,7 +97,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/om-oss",
@@ -241,7 +241,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/tjenester",
@@ -295,7 +295,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/anlegg",
@@ -385,7 +385,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/industri",
@@ -556,7 +556,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/etikk-og-ansvar",
@@ -593,7 +593,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/kontakt-oss",
@@ -620,7 +620,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter",
@@ -755,7 +755,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/rørender",
@@ -890,7 +890,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/forlengere",
@@ -935,7 +935,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/fylleutstyr",
@@ -1007,7 +1007,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/fyllenippler",
@@ -1106,7 +1106,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/skottgjennomføring",
@@ -1151,7 +1151,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/snittringmatur",
@@ -1196,7 +1196,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/banjokoblinger",
@@ -1241,7 +1241,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/lynfittings",
@@ -1286,7 +1286,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/slanger",
@@ -1331,7 +1331,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/fett",
@@ -1367,7 +1367,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/produkter/skruhylser",
@@ -1457,7 +1457,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/artikler",
@@ -1529,7 +1529,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/artikler/nytt-design",
@@ -1556,7 +1556,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/artikler/nytt-eierskap",
@@ -1592,7 +1592,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/artikler/passiv-og-aktiv-overvaaking",
@@ -1619,7 +1619,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/artikler/hvorfor-smoresystem-industri",
@@ -1646,7 +1646,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/artikler/velge-system",
@@ -1673,7 +1673,7 @@
     "width": 216,
     "height": 64,
     "alt": "",
-    "role": "content"
+    "role": "logo"
   },
   {
     "route": "/404",

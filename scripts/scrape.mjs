@@ -89,8 +89,8 @@ async function extractPage(page) {
     // "Nav"/"Header"/"Footer" — try the semantic selectors first, then fall
     // back to page structure: every route's [data-framer-root] renders the
     // shared nav as its first child, and (when the page has one) the shared
-    // footer as its last child, identifiable by the company kennitala it
-    // always carries.
+    // footer as its last child, identifiable by its copyright line or
+    // "Selskapet" column heading.
     const root = document.querySelector("[data-framer-root]");
     // Exact layer-name match only: a substring match (e.g. `*='Nav' i`) also
     // matches elba.no's product-variant "Subnav" layer, which sits before
@@ -98,10 +98,10 @@ async function extractPage(page) {
     // the root.firstElementChild fallback below ever runs.
     let header = document.querySelector("header, [data-framer-name='Nav' i], [data-framer-name='Navigation' i], [data-framer-name='Header' i]");
     if (!header && root) header = root.firstElementChild;
-    let footer = document.querySelector("footer, [data-framer-name*='Footer' i]");
+    let footer = document.querySelector("footer, [data-framer-name='Footer' i]");
     if (!footer && root) {
       const last = root.lastElementChild;
-      if (last && last !== header && /Kt\.\s*\d{6}-\d{4}/.test(last.textContent)) footer = last;
+      if (last && last !== header && /©\s*\d{4}\s*Elba AS|Selskapet/.test(last.textContent)) footer = last;
     }
 
     const inChrome = (el) => (header && header.contains(el)) || (footer && footer.contains(el));

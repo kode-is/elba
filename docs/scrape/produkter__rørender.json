@@ -1128,14 +1128,16 @@
       "type": "link",
       "text": "Kontakt oss",
       "href": "../kontakt-oss"
-    },
+    }
+  ],
+  "footer": [
     {
       "type": "image",
       "src": "https://framerusercontent.com/images/iga2aBBs0EBYMhuuRiXiEYqLp9Y.png",
       "alt": "",
       "width": 216,
       "height": 64,
-      "role": "content",
+      "role": "logo",
       "local": "/images/home/00-d1c05434.png"
     },
     {
@@ -1160,32 +1162,26 @@
       "text": "Selskapet"
     },
     {
-      "type": "link",
-      "text": "Hjem",
-      "href": "../"
+      "type": "text",
+      "text": "Hjem"
     },
     {
-      "type": "link",
-      "text": "Om oss",
-      "href": "../om-oss"
+      "type": "text",
+      "text": "Om oss"
     },
     {
-      "type": "link",
-      "text": "Artikler",
-      "href": "../kontakt-oss"
+      "type": "text",
+      "text": "Artikler"
     },
     {
-      "type": "link",
-      "text": "Tjenester",
-      "href": "../tjenester"
+      "type": "text",
+      "text": "Tjenester"
     },
     {
-      "type": "link",
-      "text": "Etikk og ansvar",
-      "href": "../etikk-og-ansvar"
+      "type": "text",
+      "text": "Etikk og ansvar"
     }
   ],
-  "footer": [],
   "nav": [
     {
       "text": "Hjem",
