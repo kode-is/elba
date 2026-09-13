@@ -2,10 +2,12 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { pageMetadata } from "@/lib/seo";
 
+// docs/scrape/404.json: the live 404 page carries the site-wide description,
+// not the home page's own.
 export const metadata = pageMetadata({
   title: "ELBA - I INDUSTRIENS TJENESTE",
   description:
-    "Hvert år leverer vi sentralsmøreanlegg til mange tusen smørepunkter, enten montert av egne montører eller hvor du selv setter opp systemet.",
+    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
   path: "/404",
 });
 
