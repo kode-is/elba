@@ -1248,7 +1248,9 @@ export const produkter: Product[] = [
       "Fyllepumpe",
       "Holdere"
     ],
-    "intro": [],
+    "intro": [
+      "Fyllepresse til sentralsmøreanlegg for fettpatron iht. DIN 1284"
+    ],
     "tables": [
       {
         "heading": null,

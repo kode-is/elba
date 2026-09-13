@@ -81,19 +81,16 @@ for (const file of readdirSync(SCRAPE).filter((f) => f.startsWith("produkter__")
   const tables = [];
   let pendingImages = [];
   let pendingHeading = null;
-  let inRun = false;
-  let sawContent = false; // true once the first image or subnav link appears
+  let inRun = false; // currently consuming the contiguous text run of an already-started table
 
   for (const b of body) {
     if (b.type === "link" && b.href === null) {
       subnav.push(strip(b.text));
-      sawContent = true;
       inRun = false;
       continue;
     }
     if (b.type === "image") {
       pendingImages.push(img(b));
-      sawContent = true;
       inRun = false;
       continue;
     }
@@ -103,17 +100,28 @@ for (const file of readdirSync(SCRAPE).filter((f) => f.startsWith("produkter__")
       continue;
     }
     if (b.type === "text") {
-      if (!sawContent) { intro.push(b.text); continue; }
       const isMember = memberSet.has(b.text.trim());
-      if (isMember && !inRun) {
-        const t = liveTables[tables.length];
-        if (!t) throw new Error(`${route}: found a ${tables.length + 1}th table text-run but tables.json only has ${liveTables.length} tables`);
-        tables.push({ heading: pendingHeading, headers: t.headers, rows: t.rows, images: pendingImages });
-        pendingHeading = null;
-        pendingImages = [];
-        inRun = true;
+      if (isMember) {
+        if (!inRun) {
+          const t = liveTables[tables.length];
+          if (!t) throw new Error(`${route}: found a ${tables.length + 1}th table text-run but tables.json only has ${liveTables.length} tables`);
+          tables.push({ heading: pendingHeading, headers: t.headers, rows: t.rows, images: pendingImages });
+          pendingHeading = null;
+          pendingImages = [];
+          inRun = true;
+        }
+        continue; // member text mid-run; the actual cell values come from tables.json
       }
-      continue; // non-member text (pager, stray captions) is discarded either way
+      // Non-member text: mid-run this is the live table widget's own
+      // "Page X of Y" pager (or a cell whose whitespace doesn't exactly
+      // match tables.json's normalised copy) — discarded either way since
+      // the run's data already came from tables.json. Outside a run it's
+      // real copy the scrape doesn't model anywhere else (e.g.
+      // fylleutstyr's "Fyllepresse til sentralsmøreanlegg for fettpatron
+      // iht. DIN 1284", a caption between its images and first table) —
+      // kept as intro so scripts/verify.mjs doesn't flag it missing.
+      if (!inRun) intro.push(b.text);
+      continue;
     }
     // H1/H2 headings and real-href links (e.g. the "Kontakt oss" CTA) carry
     // no product content; ignored.

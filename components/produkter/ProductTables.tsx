@@ -32,8 +32,8 @@ export function ProductTables({ tables }: { tables: ProductTable[] }) {
                   alt={table.images[0].alt}
                   width={table.images[0].width}
                   height={table.images[0].height}
-                  sizes="(min-width: 768px) 640px, 100vw"
-                  className="h-auto w-full max-w-2xl rounded-2xl object-contain"
+                  sizes="(min-width: 768px) 1152px, 100vw"
+                  className="h-auto w-auto max-w-full rounded-2xl object-contain"
                 />
               </div>
             ) : table.images.length > 1 ? (
