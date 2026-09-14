@@ -64,8 +64,16 @@ every route's visible text against the live site; at the end of Task 11 all
    `app/(site)/industri/page.tsx`, `app/(site)/artikler/page.tsx`) — none of
    them describe the photo they're on. Same class of issue as the rest of
    this item; Hlynur to supply real Norwegian alt texts for all of it.
-9. **Vercel production + DNS.** The project has never been deployed: create
-   the Vercel project from this repo, set the three env vars above, then
+9. **Vercel production + DNS.** The Vercel project `elba` now exists (team
+   **Kode Solutions**, scope `kode-solutions-44807b0f`), linked to
+   `kode-is/elba` on GitHub, with a preview deployment at
+   https://elba-pp1utfpwt-kode-solutions-44807b0f.vercel.app built from PR
+   https://github.com/kode-is/elba/pull/1 (Deployment Protection is on for
+   that URL, so it prompts for a Vercel login — sign in with the account
+   that has access to Kode Solutions). Still needed: add `RESEND_API_KEY`,
+   `EMAIL_FROM` (e.g. `Elba <web@elba.no>`), and `CONTACT_TO` = `elba@elba.no`
+   as environment variables for both **Preview** and **Production** in the
+   Vercel project `elba`, then merge the PR, promote to production, and
    point `elba.no` / `www.elba.no` at it. `lib/seo.ts` and `app/sitemap.ts`
    already hard-code `https://www.elba.no` as the canonical origin.
 10. **No captcha or rate limit on the contact form.** `app/actions.ts` only
@@ -78,6 +86,13 @@ every route's visible text against the live site; at the end of Task 11 all
     itself bakes in a lower baseline (180 / 10 / 10980 / 5980) before that
     animation runs. Please confirm 184/14/10984/5984 are the numbers you
     actually want shown, not just where the animation happened to land.
+12. **`CurrentYear` hydration note.** `components/CurrentYear.tsx` derives
+    its server snapshot from the module-load year (`BUILD_YEAR`), so right
+    after a New Year — before the next redeploy — the console will show one
+    hydration warning as the client corrects to the real year; it then
+    self-corrects on the following render, so it's cosmetic. The follow-up,
+    if it's worth doing, is inlining the build year via a build-time env var
+    instead of computing it at module load.
 
 ---
 
