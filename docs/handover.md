@@ -5,6 +5,11 @@ site (`docs/scrape/*.json`, `docs/reference/*.jpg`). `npm run verify` diffs
 every route's visible text against the live site; at the end of Task 11 all
 26 routes pass with `missing=0`.
 
+Since 2026-09-18 the site also departs from live on purpose in three places —
+Produkter as its own item, a catalog search, and a new breadcrumb (deviations
+6-8 below; spec `docs/superpowers/specs/2026-09-18-produkter-catalog-search-design.md`).
+`npm run verify` still passes 26/26 with those recorded in `scripts/verify.mjs`.
+
 ---
 
 ## Still needs you or Hlynur
@@ -23,10 +28,15 @@ every route's visible text against the live site; at the end of Task 11 all
    its own strings. Success: "Takk! Vi har mottatt henvendelsen din og svarer
    så snart vi kan." Errors: "Vennligst fyll inn navn.", "Vennligst oppgi en
    gyldig e-postadresse.", "Vennligst skriv en melding."
-4. **Product-table search box, if you want it.** Live's Framer "Table" widget
-   ships a `Search…` field, a `Previous / Page X of Y / Next` pager and a CSV
-   export; `components/SpecTable.tsx` renders every row instead. Say the word
-   and a client-side filter is a small addition.
+4. **Review the new Norwegian UI strings (Hlynur).** The catalog search and
+   the new breadcrumb/nav carry copy that is ours, not live's: `Produkter`
+   (nav, footer, home heading), `Se alle produkter`, `Søk i alle produkter`,
+   the placeholder `Art.nr., gjenge, dimensjon, materiale …`, `Søk`,
+   `Kategori`, `Materiale`, `Forsinket stål` / `Syrefast` / `Messing`,
+   `Viser N av 215 produkter`, `Nullstill`, `Ingen treff`, `Finner du ikke det
+   du leter etter? Ta kontakt, så hjelper vi deg.` and the breadcrumb's
+   `Hjem`. (Live's own per-table `Search…` box, pager and CSV export are still
+   not reproduced — the catalog search on `/produkter` replaces the need.)
 5. **Placeholder team avatar.** All nine team members share the same
    silhouette placeholder (`/images/om-oss/06-ccdd026b.png`) on live
    (`lib/team.ts`); real portraits can drop straight into
@@ -119,6 +129,37 @@ every route's visible text against the live site; at the end of Task 11 all
 5. **The hero e-mail/phone pills are real links.** Live's anchors have no
    `href`; ours are `mailto:` and `tel:` (text verbatim).
 
+6. **Produkter is its own item, not a service.** Requested by Hlynur
+   (2026-09-16): "Produkter" is a fifth main-nav item and a footer link, and is
+   gone from the Tjenester panel and from the "Våre tjenester" cards on `/` and
+   `/tjenester`, which now show Anlegg + Industri (`lib/site.ts`,
+   `components/ServiceCards.tsx`). The home page gains a "Produkter" section
+   (`components/home/ProductsSection.tsx`): the card's old line of copy, a
+   search form and a pill per category. With five items the desktop nav no
+   longer fits a 768px band, so it starts at `lg` (1024px); tablets get the
+   hamburger menu.
+7. **Catalog search on `/produkter`.** One search box plus Kategori and
+   Materiale filter chips across all 215 table rows at once
+   (`components/produkter/ProductCatalog.tsx`, logic in `lib/catalog.ts`,
+   tests in `tests/catalog.test.ts`). It matches Art.Nr., category, table
+   heading and every cell, ignoring case, `ø/æ/å`, `,` vs `.` and spaces
+   (`04014701013` finds `0401 4701 013`, `M10x1` finds `M 10x1`); several words
+   must all match. Until a search or filter is active the page shows the
+   eleven category cards as before. State lives in the URL
+   (`?q=…&kategori=a,b&materiale=x`), so searches can be shared, and the home
+   section and every `/produkter/<kategori>` page carry a small form that
+   deep-links into it. The page order changed to catalog → "Vi leverer" → "Et
+   bredt produktspekter"; the copy itself is untouched. Material is derived
+   from the table heading ("Forsinket…", "Syrefast…", "Messing") or the
+   `Material` column, which covers 5 of the 11 categories — rows without a
+   material only drop out while a Materiale chip is on.
+8. **Breadcrumb band, as on kode-is/skralli-v2.** A full-width cream band
+   directly under every hero with a text trail `Hjem › Produkter › Rørender`
+   (muted ink, brand-red on hover, current page in black), rendered by
+   `PageHero`'s `crumbs` prop (`components/Breadcrumb.tsx`). It replaces live's
+   red house-icon-and-chevron trail inside each page's content column. The
+   article trail still says `Artikle` (sic) — that is live's own copy.
+
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under
 `extra` in `docs/verify-report.md`.
@@ -152,8 +193,9 @@ commits; what is left:
   stacks every table full width. Same content, same order, single column.
 - **`/produkter/skruhylser`'s three-image group** renders 2 + 1; live shows
   two side by side with the third inset over the second.
-- **`/produkter` card order.** The eleven product cards are a CSS `columns-3`
-  masonry, so the browser's height balancing doesn't always put the same card
+- **`/produkter` card order.** The eleven product cards (now inside the
+  catalog, in the 1240px band rather than live's 960px column) are a CSS
+  `columns-3` masonry, so the browser's height balancing doesn't always put the same card
   in the same column as live. All eleven are present in scrape order.
 - **Per-row tile widths on `/anlegg` and `/industri`.** Live's feature-tile
   rows aren't a uniform grid: rows 1 and 3 are 470/470 and row 2 is 388/552
@@ -162,9 +204,6 @@ commits; what is left:
   sentence with an inline element; the scrape only records whole-block
   `bold`, so that sentence renders upright. (The pull-quotes themselves now
   match live exactly: italic Inter 16px/1.8 in #999, indented 22px.)
-- **Breadcrumb indent.** Live indents the breadcrumb differently on every
-  page (icon at x=126 on `/produkter/rørender`, 178 on `/kontakt-oss`, 246 on
-  `/om-oss` and the articles); ours always starts at its column's left edge.
 - **`/etikk-og-ansvar`** lays its four cards out in a ~860px column
   (x=340..1200) on live; we use the full 1240px band there.
 - **Product pages use the full band.** Live's product body column is 1200px
@@ -302,7 +341,7 @@ Real send pending `RESEND_API_KEY` / `EMAIL_FROM` / `CONTACT_TO` — no `.env.lo
 
 ## Done
 
-All dates 2026-09-13.
+Tasks 1-11 are dated 2026-09-13.
 
 | Task | Date | What landed |
 | --- | --- | --- |
@@ -317,3 +356,4 @@ All dates 2026-09-13.
 | 9 | 2026-09-13 | Products — `scripts/gen-produkter.mjs`, `lib/produkter.ts`, the `/produkter/[slug]` template, `SpecTable`/`ProductTables` and the U+200B redirects. |
 | 10 | 2026-09-13 | Articles — `scripts/gen-artikler.mjs`, `lib/artikler.ts`, the `/artikler/[slug]` template and the home/index cards. |
 | 11 | 2026-09-13 | Typography, colour and container measured off live (`scripts/measure.mjs`, `docs/measure.txt`) and applied; metadata finished for all 26 routes; full verification (lint, tsc, 31 tests, build, `npm run verify` 26/26 `missing=0`); screenshot pass against the reference at 1440 and 390; this handover. |
+| 12 | 2026-09-18 | Produkter as its own nav item and home section, the cross-catalog search on `/produkter` (`lib/catalog.ts`, 18 tests), and the skralli-v2 breadcrumb band — approved deviations 6-8; lint, tsc, 50 tests, build and `npm run verify` 26/26 all pass. |
