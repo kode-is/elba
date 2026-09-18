@@ -3,8 +3,11 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { ProductLinkList } from "@/components/produkter/ProductLinkList";
+import { ProductCatalog } from "@/components/produkter/ProductCatalog";
 import { ContactCta } from "@/components/ContactCta";
 import { pageMetadata } from "@/lib/seo";
+import { buildCatalog } from "@/lib/catalog";
+import { produkter } from "@/lib/produkter";
 
 export const metadata = pageMetadata({
   title: "ELBA AS - I INDUSTRIENS TJENESTE",
@@ -44,6 +47,12 @@ const PRODUCTS = [
   { text: "Fyllenippler", href: "/produkter/fyllenippler", image: { src: "/images/produkter/13-a8093807.jpg", alt: "", width: 400, height: 261 } },
 ];
 
+// Built here, on the server, and handed to the client component as props —
+// lib/catalog.ts never imports the generated product data itself.
+const CATALOG = buildCatalog(produkter);
+// Filter chips follow the cards' order.
+const CATEGORIES = PRODUCTS.map((p) => ({ id: p.href.slice("/produkter/".length), title: p.text }));
+
 export default function Produkter() {
   return (
     <main id="main">
@@ -58,6 +67,30 @@ export default function Produkter() {
         subtitle="Alt du trenger til installasjon, vedlikehold og drift"
         crumbs={[{ text: "Produkter" }]}
       />
+      {/* The catalog comes first — products are what this page is for; the
+          intro and "Vi leverer" blocks (live copy, unchanged) follow it.
+          Approved deviation from live's order — docs/handover.md. */}
+      <section className="bg-white py-12 md:py-16">
+        <Container>
+          <ProductCatalog items={CATALOG} categories={CATEGORIES}>
+            <ProductLinkList items={PRODUCTS} />
+          </ProductCatalog>
+        </Container>
+      </section>
+
+      <section className="bg-surface py-14 md:py-20">
+        <Container narrow>
+          <h2 className="text-section font-semibold text-black md:text-section-lg">Vi leverer</h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {DELIVERABLES.map((item) => (
+              <div key={item} className="rounded-full bg-white px-6 py-4">
+                <h3 className="font-ui text-[20px] leading-[1.4] font-semibold text-black">{item}</h3>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       <Container narrow>
         <div className="py-12 md:py-16">
           <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
@@ -86,25 +119,6 @@ export default function Produkter() {
               />
             </div>
           </div>
-        </div>
-      </Container>
-
-      <section className="bg-surface py-14 md:py-20">
-        <Container narrow>
-          <h2 className="text-section font-semibold text-black md:text-section-lg">Vi leverer</h2>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {DELIVERABLES.map((item) => (
-              <div key={item} className="rounded-full bg-white px-6 py-4">
-                <h3 className="font-ui text-[20px] leading-[1.4] font-semibold text-black">{item}</h3>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <Container narrow>
-        <div className="py-12 md:py-16">
-          <ProductLinkList items={PRODUCTS} />
         </div>
       </Container>
 
