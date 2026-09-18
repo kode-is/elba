@@ -116,7 +116,7 @@ export function ServicesMenu({ href, text }: ServicesMenuProps) {
               <h6 className="font-ui text-base font-semibold text-black">{servicesMenu.heading}</h6>
               <p className="mt-3 font-ui text-body-lg font-normal text-ink-muted">{servicesMenu.description}</p>
             </div>
-            {/* One column (Anlegg, Industri, Produkter) — no second <ul>. */}
+            {/* One column (Anlegg, Industri) — no second <ul>. */}
             <ul className="w-[200px] space-y-[11px]">
               {servicesMenu.columns.flat().map((link) => (
                 <li key={link.href}>
