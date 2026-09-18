@@ -3,7 +3,6 @@ import { pageMetadata } from "@/lib/seo";
 import { ARTIKKEL_SLUGS } from "@/lib/routes";
 import { articleBySlug } from "@/lib/artikler";
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { ContactCta } from "@/components/ContactCta";
 import { ArticleBody } from "@/components/artikler/ArticleBody";
@@ -34,15 +33,13 @@ export default async function ArticlePage({ params }: { params: Promise<Params> 
 
   return (
     <main id="main">
-      <PageHero image={a.hero} title={a.title} height="min-h-[438px] md:min-h-[479px]" />
-      <div className="bg-white pt-6">
-        <Container>
-          <div className={READING_COLUMN}>
-            {/* "Artikle" is the live site's own breadcrumb copy (verbatim, sic) — not a typo introduced here. */}
-            <Breadcrumb items={[{ text: "Artikle", href: "/artikler" }, { text: a.title }]} />
-          </div>
-        </Container>
-      </div>
+      <PageHero
+        image={a.hero}
+        title={a.title}
+        height="min-h-[438px] md:min-h-[479px]"
+        // "Artikle" is the live site's own breadcrumb copy (verbatim, sic) — not a typo introduced here.
+        crumbs={[{ text: "Artikle", href: "/artikler" }, { text: a.title }]}
+      />
       <article className="bg-white py-8 md:py-12">
         <Container>
           <div className={READING_COLUMN}>

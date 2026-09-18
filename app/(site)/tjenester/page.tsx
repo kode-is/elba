@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { ServiceCardsGrid } from "@/components/ServiceCards";
 import { ContactCta } from "@/components/ContactCta";
@@ -23,11 +22,11 @@ export default function Tjenester() {
           height: 1919,
         }}
         title="Tjenester"
+        crumbs={[{ text: "Tjenester" }]}
       />
       <Container>
         <div className="py-12 md:py-16">
-          <Breadcrumb items={[{ text: "Tjenester" }]} />
-          <ServiceCardsGrid className="mt-10" />
+          <ServiceCardsGrid />
         </div>
       </Container>
       <ContactCta />

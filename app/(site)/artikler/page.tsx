@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { ArticleCard } from "@/components/artikler/ArticleCard";
 import { ContactCta } from "@/components/ContactCta";
@@ -24,11 +23,11 @@ export default function Artikler() {
           height: 959,
         }}
         title="Artikler"
+        crumbs={[{ text: "Artikler" }]}
       />
       <Container>
         <div className="py-12 md:py-16">
-          <Breadcrumb items={[{ text: "Artikler" }]} />
-          <div className="mt-10 grid gap-8 md:mt-14 md:grid-cols-3">
+          <div className="grid gap-8 md:grid-cols-3">
             {artikler.map((article) => (
               <ArticleCard
                 key={article.id}

@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { FeatureTileGrid, type FeatureTile } from "@/components/FeatureTileGrid";
 import { TextureDivider } from "@/components/TextureDivider";
@@ -106,13 +105,11 @@ export default function Industri() {
         image={{ src: "/images/home/04-41b11055.jpg", alt: "Industri", width: 512, height: 683 }}
         title="Industri"
         subtitle="Skreddersydde løsninger for norsk industri"
+        crumbs={[{ text: "Industri" }]}
       />
       <Container narrow>
         <div className="py-12 md:py-16">
-          <Breadcrumb items={[{ text: "Industri" }]} />
-          <div className="mt-10 md:mt-14">
-            <FeatureTileGrid tiles={TILES} />
-          </div>
+          <FeatureTileGrid tiles={TILES} />
         </div>
       </Container>
 

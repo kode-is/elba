@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { ProductLinkList } from "@/components/produkter/ProductLinkList";
 import { ContactCta } from "@/components/ContactCta";
@@ -57,12 +56,11 @@ export default function Produkter() {
         }}
         title="Produkter"
         subtitle="Alt du trenger til installasjon, vedlikehold og drift"
+        crumbs={[{ text: "Produkter" }]}
       />
       <Container narrow>
         <div className="py-12 md:py-16">
-          <Breadcrumb items={[{ text: "Produkter" }]} />
-
-          <div className="mt-10 grid items-center gap-10 md:mt-14 md:grid-cols-2 md:gap-16">
+          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
             <div>
               <h3 className="text-[23px] leading-[1.3] font-semibold text-black md:text-[36px]">Et bredt produktspekter</h3>
               <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">
