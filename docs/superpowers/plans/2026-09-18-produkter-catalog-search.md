@@ -241,7 +241,7 @@ export function normalize(s: string): string {
     .replace(/ø/g, "o")
     .replace(/æ/g, "ae")
     .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/,/g, ".")
     .replace(/×/g, "x")
     .replace(/\s+/g, " ")
