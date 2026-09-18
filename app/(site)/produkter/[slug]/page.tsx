@@ -3,7 +3,6 @@ import { pageMetadata } from "@/lib/seo";
 import { PRODUKT_SLUGS } from "@/lib/routes";
 import { productBySlug } from "@/lib/produkter";
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { ContactCta } from "@/components/ContactCta";
 import { SubnavLabels } from "@/components/produkter/SubnavLabels";
@@ -38,12 +37,12 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
 
   return (
     <main id="main">
-      <PageHero image={p.hero} title={p.title} height="min-h-[438px] md:min-h-[479px]" />
-      <div className="bg-white pt-6">
-        <Container>
-          <Breadcrumb items={[{ text: "Produkter", href: "/produkter" }, { text: p.title }]} />
-        </Container>
-      </div>
+      <PageHero
+        image={p.hero}
+        title={p.title}
+        height="min-h-[438px] md:min-h-[479px]"
+        crumbs={[{ text: "Produkter", href: "/produkter" }, { text: p.title }]}
+      />
       <section className="bg-white py-12 md:py-16">
         <Container>
           <SubnavLabels items={p.subnav} />

@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { ContactCta } from "@/components/ContactCta";
 import { ScalesIcon, MegaphoneIcon, LeafIcon, HandshakeIcon } from "@/components/icons";
@@ -53,12 +52,11 @@ export default function EtikkOgAnsvar() {
           height: 807,
         }}
         title="Etikk og ansvar"
+        crumbs={[{ text: "Etikk og ansvar" }]}
       />
       <Container>
         <div className="py-12 md:py-16">
-          <Breadcrumb items={[{ text: "Etikk og ansvar" }]} />
-
-          <div className="mt-10 divide-y divide-neutral-200 md:mt-14">
+          <div className="divide-y divide-neutral-200">
             {CARDS.map((card) => (
               <div key={card.heading} className="flex gap-5 py-8 first:pt-0 last:pb-0">
                 <span

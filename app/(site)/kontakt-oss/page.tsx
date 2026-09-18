@@ -1,5 +1,4 @@
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
 import { pageMetadata } from "@/lib/seo";
@@ -22,11 +21,11 @@ export default function KontaktOss() {
           height: 2560,
         }}
         title="Kontakt oss"
+        crumbs={[{ text: "Kontakt oss" }]}
       />
       <Container>
         <div className="py-12 md:py-16">
-          <Breadcrumb items={[{ text: "Kontakt oss" }]} />
-          <div className="mx-auto mt-10 max-w-xl md:mt-14">
+          <div className="mx-auto max-w-xl">
             <h2 className="text-center text-section font-semibold text-black md:text-section-lg">
               Send oss en forespørsel
             </h2>

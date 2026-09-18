@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { PageHero } from "@/components/PageHero";
-import { Breadcrumb } from "@/components/Breadcrumb";
 import { Container } from "@/components/Container";
 import { FeatureTileGrid, type FeatureTile } from "@/components/FeatureTileGrid";
 import { TextureDivider } from "@/components/TextureDivider";
@@ -111,13 +110,11 @@ export default function Anlegg() {
         image={{ src: "/images/home/03-01289078.jpeg", alt: "", width: 1439, height: 1919 }}
         title="Anlegg"
         subtitle="Presis kontinuerlig smøring til din maskin"
+        crumbs={[{ text: "Anlegg" }]}
       />
       <Container narrow>
         <div className="py-12 md:py-16">
-          <Breadcrumb items={[{ text: "Anlegg" }]} />
-          <div className="mt-10 md:mt-14">
-            <FeatureTileGrid tiles={TILES} />
-          </div>
+          <FeatureTileGrid tiles={TILES} />
         </div>
       </Container>
 
