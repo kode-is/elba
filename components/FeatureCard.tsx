@@ -8,13 +8,13 @@ type FeatureCardProps = {
   /**
    * Heading level for `heading`, so callers can match their own scrape's
    * level (the home page's and /tjenester's service cards are H5 —
-   * docs/scrape/home.json blocks 52/56/60). Defaults to "h3".
+   * docs/scrape/home.json blocks 52/56). Defaults to "h3".
    */
   headingTag?: "h2" | "h3" | "h4" | "h5";
 };
 
 /**
- * White, shadowed card behind the "Anlegg / Industri / Produkter" service
+ * White, shadowed card behind the "Anlegg / Industri" service
  * grid on the home page and /tjenester (components/ServiceCards.tsx): an
  * optional top image plus a heading and a line of body copy.
  */
@@ -30,7 +30,7 @@ export function FeatureCard({ heading, text, image, headingTag = "h3" }: Feature
             src={image.src}
             alt={image.alt}
             fill
-            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
         </div>

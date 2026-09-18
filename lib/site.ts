@@ -1,5 +1,8 @@
 // Site-wide constants, scraped verbatim from elba.no (docs/scrape/home.json's
-// `nav` and `footer` blocks) — see tests/nav.test.ts.
+// `nav` and `footer` blocks) — see tests/nav.test.ts. One approved deviation:
+// "Produkter" is its own nav item (and footer link) instead of a third entry
+// under Tjenester — products are not a service
+// (docs/superpowers/specs/2026-09-18-produkter-catalog-search-design.md).
 
 export const site = {
   name: "ELBA",
@@ -15,6 +18,7 @@ export const nav = [
   { text: "Om oss", href: "/om-oss" },
   { text: "Artikler", href: "/artikler" },
   { text: "Tjenester", href: "/tjenester" },
+  { text: "Produkter", href: "/produkter" },
 ] as const;
 
 export const navCta = { text: "Kontakt oss", href: "/kontakt-oss" } as const;
@@ -28,7 +32,6 @@ export const servicesMenu = {
     [
       { text: "Anlegg", href: "/anlegg" },
       { text: "Industri", href: "/industri" },
-      { text: "Produkter", href: "/produkter" },
     ],
   ],
 } as const;
@@ -41,6 +44,7 @@ export const footerColumns = [
       { text: "Om oss", href: "/om-oss" },
       { text: "Artikler", href: "/artikler" }, // live links this to /kontakt-oss; approved fix
       { text: "Tjenester", href: "/tjenester" },
+      { text: "Produkter", href: "/produkter" },
       { text: "Etikk og ansvar", href: "/etikk-og-ansvar" },
     ],
   },
