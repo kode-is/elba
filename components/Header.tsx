@@ -26,8 +26,11 @@ export function Header() {
 
         {/* Nav + CTA are grouped so the hover panel can anchor (right-0)
             to this group's right edge — i.e. the "Kontakt oss" button's
-            right edge — instead of centring under the "Tjenester" word. */}
-        <div className="relative ml-auto hidden items-center gap-x-10 md:flex">
+            right edge — instead of centring under the "Tjenester" word.
+            Desktop nav starts at lg, not md: with "Produkter" as a fifth
+            item the row needs ~735px, more than a 768px viewport's 668px
+            band, so tablets keep the hamburger menu. */}
+        <div className="relative ml-auto hidden items-center gap-x-10 lg:flex">
           <nav aria-label="Hovedmeny" className="flex items-center gap-x-[30px]">
             {nav.map((item) =>
               item.text === "Tjenester" ? (

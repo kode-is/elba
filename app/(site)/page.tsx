@@ -3,6 +3,7 @@ import { Hero } from "@/components/home/Hero";
 import { IndustryStrip } from "@/components/IndustryStrip";
 import { StepsSection } from "@/components/home/StepsSection";
 import { ServicesSection } from "@/components/home/ServicesSection";
+import { ProductsSection } from "@/components/home/ProductsSection";
 import { AdvisorySection } from "@/components/home/AdvisorySection";
 import { ContactSection } from "@/components/home/ContactSection";
 import { ArticlesSection } from "@/components/home/ArticlesSection";
@@ -23,6 +24,7 @@ export default function Home() {
       <IndustryStrip />
       <StepsSection />
       <ServicesSection />
+      <ProductsSection />
 
       <section className="bg-white py-16 md:py-24">
         <Container>

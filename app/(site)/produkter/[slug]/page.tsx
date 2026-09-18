@@ -7,6 +7,7 @@ import { Container } from "@/components/Container";
 import { ContactCta } from "@/components/ContactCta";
 import { SubnavLabels } from "@/components/produkter/SubnavLabels";
 import { ProductTables } from "@/components/produkter/ProductTables";
+import { CatalogSearchForm } from "@/components/produkter/CatalogSearchForm";
 
 type Params = { slug: string };
 const clean = (raw: string) => {
@@ -45,6 +46,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
       />
       <section className="bg-white py-12 md:py-16">
         <Container>
+          <CatalogSearchForm id="produkt-sok" className="mb-10 max-w-xl" />
           <SubnavLabels items={p.subnav} />
           {p.intro.map((t) => (
             <p key={t} className="mb-4 font-ui text-body-lg text-ink-muted">

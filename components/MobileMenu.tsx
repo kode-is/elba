@@ -79,7 +79,7 @@ export function MobileMenu({ nav }: MobileMenuProps) {
   }, [open]);
 
   return (
-    <div ref={containerRef} className="ml-auto md:hidden">
+    <div ref={containerRef} className="ml-auto lg:hidden">
       <button
         ref={toggleButtonRef}
         type="button"
