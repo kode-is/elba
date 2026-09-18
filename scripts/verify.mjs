@@ -36,6 +36,13 @@ IGNORE_MISSING["/om-oss"] = [/^\d{1,5}$/];
 // elba.no's own contact form); this rebuild's button reads "Send" instead —
 // approved deviation, not a missing-content bug.
 IGNORE_MISSING["/kontakt-oss"] = [exact("Senda!")];
+// Produkter is no longer a "Våre tjenester" card (products are not a service —
+// docs/superpowers/specs/2026-09-18-produkter-catalog-search-design.md), so
+// the card's line of copy is gone from /tjenester. The home page keeps the
+// same line in its own Produkter section, so nothing is missing there.
+IGNORE_MISSING["/tjenester"] = [exact("Alt du trenger til installasjon, vedlikehold og drift")];
+// …and that card's photo went with it, on both routes that showed the cards.
+const EXPECTED_FEWER_IMAGES = { "/": 1, "/tjenester": 1 };
 
 // Every regex here is a *local-only* line of visible text (present locally,
 // not on live) that a human ruling has already approved — derived from the
@@ -85,6 +92,29 @@ const ALLOWED_EXTRA = [
   exact(
     "Systemene er dimensjonert for krevende miljøer og kontinuerlig drift. Komponentene er robuste og tilpasset nordiske forhold. Elektronisk overvåking kan integreres for varsling ved avvik.",
   ),
+  // Approved deviations 6-8 in docs/handover.md (spec:
+  // docs/superpowers/specs/2026-09-18-produkter-catalog-search-design.md).
+  // The skralli-v2 breadcrumb band: a "Hjem" text crumb and "›" separators in
+  // place of live's house icon and chevrons.
+  exact("Hjem"),
+  exact("›"),
+  // Produkter as its own nav item, footer link and home section.
+  exact("Produkter"),
+  exact("Se alle produkter"),
+  // The catalog search: its heading/label and submit button (home,
+  // /produkter, every /produkter/<kategori>), the two filter rows, and the
+  // chip / home-pill labels — the three materials and the eleven categories.
+  exact("Søk i alle produkter"),
+  exact("Søk"),
+  exact("Kategori"),
+  exact("Materiale"),
+  exact("Forsinket stål"),
+  exact("Syrefast"),
+  exact("Messing"),
+  ...[
+    "Banjokoblinger", "Fett", "Forlengere", "Fyllenippler", "Fylleutstyr", "Lynfittings",
+    "Rørender", "Skottgjennomføring", "Skruhylser", "Slanger", "Snittringmatur",
+  ].map(exact),
 ];
 
 // docs/scrape/tables.json's per-route header/cell strings. SpecTable renders
@@ -188,7 +218,7 @@ for (const r of routes) {
   const ignorePatterns = IGNORE_MISSING[r] || [];
   const missing = missingAll.filter(x => !ignorePatterns.some(re => re.test(x)));
   const ignored = missingAll.length - missing.length;
-  const imgOk = local.images >= live.images;
+  const imgOk = local.images + (EXPECTED_FEWER_IMAGES[r] ?? 0) >= live.images;
   const disallowedExtra = extra.filter((x) => !ALLOWED_EXTRA.some((re) => re.test(x)) && !isTableText(r, x));
   const ok = missing.length === 0 && imgOk && disallowedExtra.length === 0;
   if (!ok) failures++;
