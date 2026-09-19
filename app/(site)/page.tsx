@@ -22,9 +22,11 @@ export default function Home() {
     <main id="main">
       <Hero />
       <IndustryStrip />
+      {/* First thing under the hero: Hlynur asked for Produkter "efst á síðunni
+          sem sér dæmi" — its own item at the top, not a card among the services. */}
+      <ProductsSection />
       <StepsSection />
       <ServicesSection />
-      <ProductsSection />
 
       <section className="bg-white py-16 md:py-24">
         <Container>

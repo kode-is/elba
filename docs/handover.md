@@ -140,8 +140,8 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    (2026-09-16): "Produkter" is a fifth main-nav item and a footer link, and is
    gone from the Tjenester panel and from the "Våre tjenester" cards on `/` and
    `/tjenester`, which now show Anlegg + Industri (`lib/site.ts`,
-   `components/ServiceCards.tsx`). The home page gains a "Produkter" section
-   (`components/home/ProductsSection.tsx`): the card's old line of copy, a
+   `components/ServiceCards.tsx`). The home page gains a "Produkter" section at
+   the top, directly under the hero (`components/home/ProductsSection.tsx`): the card's old line of copy, a
    search form and a pill per category. With five items the desktop nav no
    longer fits a 768px band, so it starts at `lg` (1024px); tablets get the
    hamburger menu.
