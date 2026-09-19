@@ -14,16 +14,19 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
 
 ## Still needs you or Hlynur
 
-1. **Resend (contact form).** `app/actions.ts` sends through Resend and needs
-   three env vars in Vercel (all environments): `RESEND_API_KEY`,
-   `EMAIL_FROM`, `CONTACT_TO`. The `elba.no` sending domain also has to be
-   verified inside Resend (DKIM/SPF records) before `EMAIL_FROM` can be an
-   `@elba.no` address. No `.env.local` exists on the build machine, so **no
-   real send has ever been exercised** — validation errors, the honeypot
-   rejection and the "env vars missing" failure path were all verified
-   against the dev server instead (Task 5 report).
-2. **One real form send**, once those vars are in place: submit the form on
-   `/kontakt-oss` and confirm the mail arrives at `CONTACT_TO`.
+1. **Resend (contact form) — working; switch the recipient before launch.**
+   `RESEND_API_KEY`, `EMAIL_FROM` and `CONTACT_TO` were added to the Vercel
+   project for **Preview** and **Production** on 2026-09-19, and one real send
+   was exercised that day from the PR #2 preview's `/kontakt-oss`: the form
+   showed its success message and the mail arrived in the inbox (not spam),
+   from `elba@elba.no`, subject `Henvendelse fra elba.no – <navn>`, reply-to
+   the visitor's address. **`CONTACT_TO` pointed at Einar's address for that
+   test — set it to `elba@elba.no` (and redeploy) before go-live.** There is
+   still no `.env.local`, and the variables are not set for the Development
+   environment, so a local `npm run dev` shows the friendly failure message
+   instead of sending.
+2. **One more send after the `CONTACT_TO` switch**, to confirm the mail lands
+   in Elba's own inbox.
 3. **Review the success/error copy.** Ours is new — live's Framer form shows
    its own strings. Success: "Takk! Vi har mottatt henvendelsen din og svarer
    så snart vi kan." Errors: "Vennligst fyll inn navn.", "Vennligst oppgi en
@@ -87,10 +90,8 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    https://elba-pp1utfpwt-kode-solutions-44807b0f.vercel.app built from PR
    https://github.com/kode-is/elba/pull/1 (Deployment Protection is on for
    that URL, so it prompts for a Vercel login — sign in with the account
-   that has access to Kode Solutions). Still needed: add `RESEND_API_KEY`,
-   `EMAIL_FROM` (e.g. `Elba <web@elba.no>`), and `CONTACT_TO` = `elba@elba.no`
-   as environment variables for both **Preview** and **Production** in the
-   Vercel project `elba`, then merge the PR, promote to production, and
+   that has access to Kode Solutions). The three mail variables are now set
+   for **Preview** and **Production** (item 1). Still needed: merge the PR, promote to production, and
    point `elba.no` / `www.elba.no` at it. `lib/seo.ts` and `app/sitemap.ts`
    already hard-code `https://www.elba.no` as the canonical origin.
 10. **No captcha or rate limit on the contact form.** `app/actions.ts` only
@@ -334,7 +335,10 @@ The live site uses a single logo file in both header and footer:
 
 ## Contact form
 
-Real send pending `RESEND_API_KEY` / `EMAIL_FROM` / `CONTACT_TO` — no `.env.local` exists on this machine, so a real Resend send to elba@elba.no was not exercised. Validation errors, the honeypot rejection, and the friendly failure message (env vars missing) were all verified against the dev server instead; see `.superpowers/sdd/2026-09-13-elba-website-recreation/task-5-report.md` for the observed output.
+Real send verified 2026-09-19 on the Vercel preview (see "Still needs you or
+Hlynur" #1). Validation errors, the honeypot rejection and the friendly failure
+message (env vars missing) were verified against the dev server earlier; see
+`.superpowers/sdd/2026-09-13-elba-website-recreation/task-5-report.md`.
 
 ## Content pages (Task 7)
 
