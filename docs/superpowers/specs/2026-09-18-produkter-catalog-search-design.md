@@ -24,8 +24,8 @@ the change is recorded under "Deviations from live (approved)" in
   gains `Produkter` after `Tjenester`.
 - `components/ServiceCards.tsx`: the Produkter card is removed; the grid is two
   cards (`md:grid-cols-2`) on the home page and `/tjenester`.
-- Home page: a new `components/home/ProductsSection.tsx` directly after
-  `ServicesSection` — heading "Produkter", the existing line "Alt du trenger
+- Home page: a new `components/home/ProductsSection.tsx` at the top, directly
+  under the hero and industry strip ("efst á síðunni") — heading "Produkter", the existing line "Alt du trenger
   til installasjon, vedlikehold og drift", a search form (GET →
   `/produkter?q=…`) and a "Se alle produkter" link.
 - `MobileMenu` needs no structural change: it renders `nav` and expands
