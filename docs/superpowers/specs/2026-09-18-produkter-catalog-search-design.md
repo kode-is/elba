@@ -127,6 +127,29 @@ medium-weight ink. Elba's equivalent:
   browser pass of `/`, `/tjenester`, `/produkter` (idle, query, filter, no
   match, deep link) and one category page at 1440 and 390 wide.
 
+## 5. Site-wide search palette (added 2026-09-19, at Einar's request)
+
+"A search feature like Totus has, just better." kode-is/totus has a header
+search icon that opens a ⌘K dialog over a client-side index of its pages,
+categories and products, grouped by type. Elba's version
+(`components/SearchPalette.tsx`, `lib/search.ts`):
+
+- **Index:** pages (with search-only keywords), the 11 categories, all 215
+  rows (sharing `lib/catalog.ts`'s haystack, so it matches exactly what
+  `/produkter` matches) and the 5 articles including body text. Built on the
+  server, prerendered at `/search-index.json`, fetched on first open — Totus
+  bundles its index into every page.
+- **Ranking:** every word must match; an exact Art.Nr. scores highest, then
+  title-starts-with, word-start, title-contains, body-only. Groups are ordered
+  by their best hit; six hits per group with the full count shown.
+- **Keyboard and a11y:** native modal `<dialog>`; combobox + listbox with
+  `aria-activedescendant`; ↑ ↓ Home End Enter; ⌘K / Ctrl+K toggles, `/` opens,
+  Esc closes. Totus has no result navigation and a hand-rolled overlay.
+- **Extras:** matched words highlighted (space-blind for codes, so `m10x1`
+  marks `M 10 x 1`); shortcuts (categories + pages) before typing; the product
+  group links on to `/produkter?q=…`; a product row opens the catalog filtered
+  to that row.
+
 ## New Norwegian strings (for Hlynur to review)
 
 Produkter · Se alle produkter · Søk i alle produkter · Art.nr., gjenge,

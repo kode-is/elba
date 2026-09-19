@@ -6,8 +6,8 @@ every route's visible text against the live site; at the end of Task 11 all
 26 routes pass with `missing=0`.
 
 Since 2026-09-18 the site also departs from live on purpose in three places —
-Produkter as its own item, a catalog search, and a new breadcrumb (deviations
-6-8 below; spec `docs/superpowers/specs/2026-09-18-produkter-catalog-search-design.md`).
+Produkter as its own item, a catalog search, a new breadcrumb and a site-wide
+search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-produkter-catalog-search-design.md`).
 `npm run verify` still passes 26/26 with those recorded in `scripts/verify.mjs`.
 
 ---
@@ -35,7 +35,14 @@ Produkter as its own item, a catalog search, and a new breadcrumb (deviations
    `Kategori`, `Materiale`, `Forsinket stål` / `Syrefast` / `Messing`,
    `Viser N av 215 produkter`, `Nullstill`, `Ingen treff`, `Finner du ikke det
    du leter etter? Ta kontakt, så hjelper vi deg.` and the breadcrumb's
-   `Hjem`. (Live's own per-table `Search…` box, pager and CSV export are still
+   `Hjem`. The search palette adds: `Søk`, `Søk etter produkt, art.nr.,
+   artikkel eller side …`, `Lukk søk`, the group names `Produktkategorier` /
+   `Produkter` / `Artikler` / `Sider`, `N av M`, `Se alle N treff i
+   produktkatalogen` / `Se treffet i produktkatalogen`, `Art.nr. …`,
+   `<Kategori> – på forespørsel`, `N produkter`, `Laster søk …`, `Kunne ikke
+   laste søket. Lukk og prøv igjen.`, `Ingen treff for «…». Prøv et annet
+   søkeord, eller ta kontakt.` and the key hints `naviger` / `åpne` / `lukk` /
+   `eller / åpner søket`. (Live's own per-table `Search…` box, pager and CSV export are still
    not reproduced — the catalog search on `/produkter` replaces the need.)
 5. **Placeholder team avatar.** All nine team members share the same
    silhouette placeholder (`/images/om-oss/06-ccdd026b.png`) on live
@@ -159,6 +166,26 @@ Produkter as its own item, a catalog search, and a new breadcrumb (deviations
    `PageHero`'s `crumbs` prop (`components/Breadcrumb.tsx`). It replaces live's
    red house-icon-and-chevron trail inside each page's content column. The
    article trail still says `Artikle` (sic) — that is live's own copy.
+
+9. **Site-wide search palette.** A search button in the header (every width;
+   beside the hamburger below `lg`) opens a command palette over the pages,
+   the eleven product categories, all 215 product rows and the five articles
+   (`components/SearchPalette.tsx`, ranking and highlighting in
+   `lib/search.ts`, tests in `tests/search.test.ts`). Modelled on
+   kode-is/totus's search — `⌘K` / `Ctrl+K` — plus: `/` opens it too; ↑ ↓ Home
+   End Enter walk the results; it is a native modal `<dialog>` with combobox
+   semantics (focus trap, Esc, focus back to the button); matched words are
+   highlighted; an exact Art.Nr. ranks first and "rørender" leads with the
+   category rather than its thirty rows; each group shows six hits with an
+   "N av M" count, and the product group ends in "Se alle N treff i
+   produktkatalogen" → `/produkter?q=…`; before anything is typed it lists the
+   categories and pages as shortcuts. A product row opens the `/produkter`
+   catalog filtered down to itself. The index is a prerendered static file,
+   `/search-index.json` (`app/search-index.json/route.ts`, ~90 KB, ~15 KB
+   gzipped), fetched the first time the palette opens and warmed when the
+   button is hovered or focused — nothing is added to the pages' own bundles.
+   The page keywords in `lib/search.ts` (`PAGES`) are search-only and worth a
+   look from Hlynur: add the words customers actually use.
 
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under
@@ -357,3 +384,4 @@ Tasks 1-11 are dated 2026-09-13.
 | 10 | 2026-09-13 | Articles — `scripts/gen-artikler.mjs`, `lib/artikler.ts`, the `/artikler/[slug]` template and the home/index cards. |
 | 11 | 2026-09-13 | Typography, colour and container measured off live (`scripts/measure.mjs`, `docs/measure.txt`) and applied; metadata finished for all 26 routes; full verification (lint, tsc, 31 tests, build, `npm run verify` 26/26 `missing=0`); screenshot pass against the reference at 1440 and 390; this handover. |
 | 12 | 2026-09-18 | Produkter as its own nav item and home section, the cross-catalog search on `/produkter` (`lib/catalog.ts`, 18 tests), and the skralli-v2 breadcrumb band — approved deviations 6-8; lint, tsc, 50 tests, build and `npm run verify` 26/26 all pass. |
+| 13 | 2026-09-19 | Site-wide search palette in the header, after kode-is/totus (`components/SearchPalette.tsx`, `lib/search.ts`, `/search-index.json`, 14 tests) — approved deviation 9; lint, tsc, 64 tests, build and `npm run verify` 26/26 all pass. |
