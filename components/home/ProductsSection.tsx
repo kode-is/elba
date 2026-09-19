@@ -14,7 +14,7 @@ export function ProductsSection() {
   return (
     <section className="bg-white pt-16 md:pt-24">
       <Container>
-        <div className="rounded-[20px] bg-surface-cool px-6 py-10 md:px-14 md:py-14">
+        <div className="rounded-[20px] bg-surface px-6 py-10 md:px-14 md:py-14">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-center">
             <div>
               <h2 className="text-section font-semibold text-black md:text-section-lg">Produkter</h2>
