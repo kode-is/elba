@@ -22,7 +22,8 @@ const WIDGET_CHROME = [exact("Search..."), exact("Previous"), exact("Next"), exa
 // Stat counters on the home page and /anlegg hydrate to animated values.
 const IGNORE_MISSING = Object.fromEntries(ROUTES.map((r) => [r, r.startsWith("/produkter/") ? WIDGET_CHROME : []]));
 // Task 6 (home): the live page's own count-up animation for the four
-// "_Metric item" stats (184 / 14 / 10984 / 5984 — see lib/stats.ts) doesn't
+// "_Metric item" stats (live's 184 / 14 / 10984 / 5984; lib/stats.ts now
+// ships ELBA's confirmed 200 / 30 / 11000 / 6000 instead) doesn't
 // always finish easing to its target within this script's capture window;
 // confirmed by diffing the live SSR HTML (which bakes in a lower rounded
 // baseline, e.g. 10980) against a settled capture, which lands 2 short of
@@ -71,15 +72,16 @@ const ALLOWED_EXTRA = [
   // marquee (Task 6) contain no separate bullet block, so live renders its
   // separator as a non-text glyph (background image/icon) instead.
   exact("•"),
-  // The four stat-counter values (lib/stats.ts, docs/handover.md "Still
-  // needs you or Hlynur" #11):
-  // Framer's own count-up animation on live reproducibly settles 2 short of
-  // the value baked into our data (see the IGNORE_MISSING["/"] comment
-  // above), so our target values show up as local-only text.
-  exact("184"),
-  exact("14"),
-  exact("10984"),
-  exact("5984"),
+  // The four stat-counter values (lib/stats.ts). These are ELBA's own
+  // confirmed round figures and intentionally differ from live's
+  // (184 / 14 / 10984 / 5984), which resolves docs/handover.md "Still needs
+  // you or Hlynur" #11 — so they are local-only text by design, on top of
+  // the live count-up animation artifact described in the
+  // IGNORE_MISSING["/"] comment above.
+  exact("200"),
+  exact("30"),
+  exact("11000"),
+  exact("6000"),
   // /anlegg's FAQ answer to "Hvor driftssikkert er systemet?"
   // (docs/scrape/anlegg.json) is real live copy — Faq.tsx's rows open
   // independently precisely so a scripted click-through leaves every answer
