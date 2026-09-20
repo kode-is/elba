@@ -30,7 +30,7 @@ export function FeatureCard({ heading, text, image, headingTag = "h3" }: Feature
             src={image.src}
             alt={image.alt}
             fill
-            sizes="(min-width: 768px) 50vw, 100vw"
+            sizes="(min-width: 768px) 387px, 100vw"
             className="object-cover"
           />
         </div>
