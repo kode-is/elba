@@ -92,8 +92,10 @@ export function StorySection({
           {/* Measured off docs/reference/om-oss.desktop.jpg: inset photo box
               is ~172x297 at 1440px (≈3:5, portrait) at ~45% of the main
               box's width (172/386) — not PhotoCollage's landscape aspect-
-              [4/3] at 55% width. */}
-          <div className="absolute -bottom-6 -right-6 aspect-[3/5] w-[45%] overflow-hidden rounded-2xl">
+              [4/3] at 55% width. The overhang is 16px on phones: the page
+              gutter there is 20px, so the desktop 24px pushed the page 4px
+              wider than the screen. */}
+          <div className="absolute -right-4 -bottom-6 aspect-[3/5] w-[45%] overflow-hidden rounded-2xl md:-right-6">
             <Image
               src={insetImage.src}
               alt={insetImage.alt}

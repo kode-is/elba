@@ -12,7 +12,7 @@ export function ArticlesSection() {
   return (
     <section className="bg-white py-16 md:py-20">
       <Container>
-        <div className="grid gap-10 md:grid-cols-2 md:gap-16">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
             <h2 className="text-section font-semibold text-black md:text-section-lg">Nyeste artikler</h2>
             <p className="mt-4 max-w-sm text-lead text-ink-muted md:text-lead-lg">
