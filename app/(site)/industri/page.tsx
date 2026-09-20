@@ -24,7 +24,7 @@ const TILES: FeatureTile[] = [
     tone: "red",
     heading: "Lang erfaring",
     paragraphs: [
-      "Med over 30 års erfaring i norsk industri vet vi hva som kreves for stabil og lønnsom drift. Når du velger Elba, får du en langsiktig partner som kjenner industrien, utstyret og kravene som stilles i praksis.",
+      "Med over 30 års erfaring i norsk industri vet vi hva som kreves for stabil og lønnsom drift. Når du velger ELBA, får du en langsiktig partner som kjenner industrien, utstyret og kravene som stilles i praksis.",
     ],
   },
   { type: "image", image: { src: "/images/industri/02-46c62221.jpg", alt: "", width: 626, height: 835 } },

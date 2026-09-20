@@ -10,7 +10,10 @@ export const site = {
   phone: "32 25 20 30",
   phoneHref: "tel:+4732252030",
   email: "elba@elba.no",
-  copyright: "Elba AS",
+  // Enhetsregisteret (data.brreg.no): ELBA AS, Fabrikkgata 11D, 3320
+  // Vestfossen — the same address as `address` above.
+  orgNumber: "859 772 382",
+  copyright: "ELBA AS",
 } as const;
 
 export const nav = [

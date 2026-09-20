@@ -101,9 +101,12 @@ export function Footer() {
                 </a>
               </p>
             </div>
-            <p className="mt-4 text-body text-ink-faint">
-              © <CurrentYear /> {site.copyright}
-            </p>
+            <div className="mt-4 text-body text-ink-faint">
+              <p>Org.nr. {site.orgNumber}</p>
+              <p>
+                © <CurrentYear /> {site.copyright}
+              </p>
+            </div>
           </div>
 
           <FooterLinkColumn column={selskapet} className="order-2" />

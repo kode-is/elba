@@ -35,7 +35,7 @@ export default function OmOss() {
             image1={{ src: "/images/om-oss/02-34e18c82.png", alt: "Aðstaða", width: 200, height: 266 }}
             image2={{ src: "/images/om-oss/03-9b3d1db5.jpeg", alt: "Aðstaða", width: 200, height: 266 }}
             heading2="Din drift er vår ambisjon."
-            text2="Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen du har til oss. Elba har lang erfaring med å levere alt fra enkelt håndutstyr for fett til uortodokse smøresystemer til enestående applikasjoner."
+            text2="Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen du har til oss. ELBA har lang erfaring med å levere alt fra enkelt håndutstyr for fett til uortodokse smøresystemer til enestående applikasjoner."
             mainImage={{ src: "/images/om-oss/04-ab45b0b4.jpeg", alt: "Maskiner med smøreutstyr", width: 388, height: 518 }}
             insetImage={{ src: "/images/om-oss/05-55228eb9.jpeg", alt: "ELBA på fabrikk", width: 172, height: 229 }}
           />

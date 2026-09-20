@@ -31,13 +31,12 @@ type ServiceCardsGridProps = { className?: string };
  * page's "Våre tjenester" section and /tjenester (which reuses the identical
  * cards with no extra heading around them, per
  * docs/reference/tjenester.desktop.jpg). With two cards instead of live's
- * three, the pair is capped at two of live's card widths (2 x 387px + the
- * 24px gap) and centred, so each card keeps the size it has on live rather
- * than stretching to half the band.
+ * three, each card takes half of the content band rather than live's fixed
+ * 387px width (approved deviation from live).
  */
 export function ServiceCardsGrid({ className }: ServiceCardsGridProps) {
   return (
-    <div className={`mx-auto grid max-w-[798px] gap-6 md:grid-cols-2${className ? ` ${className}` : ""}`}>
+    <div className={`grid gap-6 md:grid-cols-2${className ? ` ${className}` : ""}`}>
       {SERVICE_CARDS.map((service) => (
         <Link key={service.href} href={service.href} className="block">
           <FeatureCard heading={service.heading} text={service.text} image={service.image} headingTag="h5" />
