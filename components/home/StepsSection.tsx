@@ -1,5 +1,6 @@
 import { Container } from "@/components/Container";
 import { StepCard } from "@/components/StepCard";
+import { TextureDivider } from "@/components/TextureDivider";
 
 // docs/scrape/home.json blocks 33-45.
 const STEPS = [
@@ -39,19 +40,10 @@ export function StepsSection() {
         </div>
       </Container>
 
-      {/* docs/scrape/home.json block 46: an SVG background image
-          (/images/home/02-d0cf3b93.svg, a repeating dot texture) sitting on
-          the boundary between this white section and the cream "Våre
-          tjenester" section below it (docs/reference/home.desktop.jpg). */}
-      <div
-        aria-hidden="true"
-        className="mt-14 h-[69px] w-full md:mt-16"
-        style={{
-          backgroundImage: "url(/images/home/02-d0cf3b93.svg)",
-          backgroundRepeat: "repeat",
-          backgroundSize: "48px auto",
-        }}
-      />
+      {/* docs/scrape/home.json block 46: the faint dot separator on the
+          boundary between this white section and the cream "Våre tjenester"
+          section below it (docs/reference/home.desktop.jpg). */}
+      <TextureDivider src="/images/home/02-d0cf3b93.svg" tone="faint" className="mt-14 md:mt-16" />
     </section>
   );
 }
