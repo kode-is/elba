@@ -63,7 +63,12 @@ function IndustryList({ hidden }: { hidden?: boolean }) {
 
 export function IndustryStrip() {
   return (
-    <div className="relative z-10 mx-auto -mt-16 max-w-[calc(var(--container-site)+100px)] md:px-[50px]">
+    // The pull-up has to track components/home/Hero.tsx's own bottom padding
+    // (pb-16 / md:pb-24), which is responsive: a flat -mt-16 cancelled the
+    // hero's 64px of mobile padding exactly, leaving the band touching the
+    // phone pill above it, while desktop's 96px kept a 32px gap. Halving the
+    // pull below md lands both breakpoints on that same 32px.
+    <div className="relative z-10 mx-auto -mt-8 max-w-[calc(var(--container-site)+100px)] md:-mt-16 md:px-[50px]">
       <div className="overflow-hidden rounded-[15px] bg-brand py-[29px] md:py-[50px]">
         <div className="flex w-max animate-marquee">
           <IndustryList />
