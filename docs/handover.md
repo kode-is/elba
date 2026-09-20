@@ -25,6 +25,23 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    still no `.env.local`, and the variables are not set for the Development
    environment, so a local `npm run dev` shows the friendly failure message
    instead of sending.
+2. **Sub-category pills need a mapping from Elba.** Every product page shows
+   a row of "pills" naming sub-types (`Rørender rette` / `90 grader` /
+   `45 grader`, `Muttere`, `T-stykke`, …) — 33 of them across 9 routes. They
+   are inert text on live **and** in the Framer source project
+   (`https://global-curiosity-381133.framer.app`): `<div>`/`<span>`, no href,
+   `cursor: auto`, clicking changes nothing. Making them filter needs to know
+   which table rows belong to which pill, and that link exists nowhere in the
+   data: the pills describe *shape* (rett / 90° / T-stykke) while the table
+   headings describe *material* (Forsinket stål / Syrefast / Messing), and the
+   counts don't line up (banjokoblinger 5 pills over 1 table, snittringmatur 7
+   over 2). A text match finds only 1 of 33. For several pills the rows are
+   not published at all — lynfittings lists 4 types but ships one table,
+   `Lynfittings 0° rett "GE"`. Hlynur needs to fill in the mapping (and supply
+   the missing rows); the ready-made fill-in sheet is the "underkategorier"
+   document sent to Einar on 2026-09-20. Until then the pills stay labels —
+   the header search already finds all 33 of them and lands on the right
+   category page, which is verified.
 2. **One more send after the `CONTACT_TO` switch**, to confirm the mail lands
    in Elba's own inbox.
 3. **Review the success/error copy.** Ours is new — live's Framer form shows
@@ -407,3 +424,4 @@ Tasks 1-11 are dated 2026-09-13.
 | 12 | 2026-09-18 | Produkter as its own nav item and home section, the cross-catalog search on `/produkter` (`lib/catalog.ts`, 18 tests), and the skralli-v2 breadcrumb band — approved deviations 6-8; lint, tsc, 50 tests, build and `npm run verify` 26/26 all pass. |
 | 13 | 2026-09-19 | Site-wide search palette in the header, after kode-is/totus (`components/SearchPalette.tsx`, `lib/search.ts`, `/search-index.json`, 14 tests) — approved deviation 9; lint, tsc, 64 tests, build and `npm run verify` 26/26 all pass. |
 | 14 | 2026-09-20 | Service cards back to live's size, tablet-width layout fixes (article cards, stats band, advisory row, /om-oss overhang), dot separators matched to live's measured values; `www.elba.no` + `elba.no` added to the Vercel project. |
+| 15 | 2026-09-20 | Category-page search boxes scoped to their own category; audit of the 33 sub-category pills (mapping missing — see "Still needs you or Hlynur" #2). |
