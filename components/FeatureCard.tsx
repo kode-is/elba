@@ -23,14 +23,20 @@ export function FeatureCard({ heading, text, image, headingTag = "h3" }: Feature
   return (
     <div className="flex h-full flex-col overflow-hidden rounded-[20px] bg-white shadow-sm">
       {/* Live crops every service-card photo to the same 387x300 box
-          (measured Task 11), not to the source image's own aspect. */}
+          (measured Task 11), not to the source image's own aspect. We keep
+          that crop, but cap its height: the cards are no longer pinned to
+          live's 387px width (components/ServiceCards.tsx), and a bare
+          aspect ratio scales the photo with the card — a 608px-wide card
+          would give a 471px-tall image. Narrow cards (up to ~413px, which
+          covers mobile and the md two-column band) are unaffected and still
+          match live exactly; wider ones crop to 320px instead of growing. */}
       {image ? (
-        <div className="relative aspect-[387/300] w-full overflow-hidden">
+        <div className="relative aspect-[387/300] max-h-[320px] w-full overflow-hidden">
           <Image
             src={image.src}
             alt={image.alt}
             fill
-            sizes="(min-width: 768px) 387px, 100vw"
+            sizes="(min-width: 768px) 50vw, 100vw"
             className="object-cover"
           />
         </div>

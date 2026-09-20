@@ -112,12 +112,15 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     has the honeypot field (`website`) — nothing stops a scripted flood of
     submissions. A Vercel Firewall rate-limit rule or a per-IP throttle in
     `submitContact` is the suggested follow-up once the form is live.
-11. **Confirm the stat-counter numbers.** The four home/`om-oss` counters
-    (`lib/stats.ts`: 184 / 14 / 10984 / 5984) were read off live's own
-    count-up animation once it visibly settled; live's server-rendered HTML
-    itself bakes in a lower baseline (180 / 10 / 10980 / 5980) before that
-    animation runs. Please confirm 184/14/10984/5984 are the numbers you
-    actually want shown, not just where the animation happened to land.
+11. ~~**Confirm the stat-counter numbers.**~~ **Answered.** The four
+    home/`om-oss` counters were originally read off live's own count-up
+    animation wherever it visibly settled (184 / 14 / 10984 / 5984), which
+    was never a deliberate choice — live's server-rendered HTML bakes in a
+    different baseline again (180 / 10 / 10980 / 5980). ELBA has now
+    confirmed the real figures, and `lib/stats.ts` ships them:
+    **200+ montasjer i året, 30 års erfaring, 11000+ artikler på lager,
+    6000+ fornøyde kunder.** These intentionally differ from live, so
+    `scripts/verify.mjs` lists them as expected local-only text.
 12. **`CurrentYear` hydration note.** `components/CurrentYear.tsx` derives
     its server snapshot from the module-load year (`BUILD_YEAR`), so right
     after a New Year — before the next redeploy — the console will show one
