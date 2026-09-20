@@ -46,7 +46,7 @@ export default async function ProductPage({ params }: { params: Promise<Params> 
       />
       <section className="bg-white py-12 md:py-16">
         <Container>
-          <CatalogSearchForm id="produkt-sok" className="mb-10 max-w-xl" />
+          <CatalogSearchForm id="produkt-sok" categoryId={p.id} categoryTitle={p.title} className="mb-10 max-w-xl" />
           <SubnavLabels items={p.subnav} />
           {p.intro.map((t) => (
             <p key={t} className="mb-4 font-ui text-body-lg text-ink-muted">
