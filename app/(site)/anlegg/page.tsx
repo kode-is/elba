@@ -113,7 +113,9 @@ export default function Anlegg() {
         crumbs={[{ text: "Anlegg" }]}
       />
       <Container narrow>
-        <div className="py-12 md:py-16">
+        {/* Less room below than above: on live the dot separator starts
+            right under the tiles (0-25px), not a full section-gap later. */}
+        <div className="pt-12 pb-6 md:pt-16">
           <FeatureTileGrid tiles={TILES} />
         </div>
       </Container>
