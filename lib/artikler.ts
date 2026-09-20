@@ -132,7 +132,7 @@ export const artikler: Article[] = [
         "text": "Velkommen til nye ELBA.no!"
       }
     ],
-    "metaTitle": "Nytt design på Elbas hjemmeside — Elba",
+    "metaTitle": "Nytt design på Elbas hjemmeside — ELBA",
     "metaDescription": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg."
   },
   {
@@ -221,7 +221,7 @@ export const artikler: Article[] = [
         "text": "En viktig del av satsingen er modernisering og digitalisering av smøresystemene. Elba vil i større grad ta i bruk sensorteknologi og flowmetere som gir bedre overvåkning av anleggene. Slik kan vedlikehold planlegges før feil oppstår, noe som reduserer kostnader og nedetid, og fører til høy driftssikkerhet for kundene."
       }
     ],
-    "metaTitle": "Nytt eierskap for Elba — Elba",
+    "metaTitle": "Nytt eierskap for Elba — ELBA",
     "metaDescription": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg."
   },
   {
@@ -417,7 +417,7 @@ export const artikler: Article[] = [
         "text": "Når smøreanlegget overvåkes kontinuerlig, går du fra å reagere på feil til å forutse dem. Det er kjernen i prediktivt vedlikehold og en av de mest effektive måtene å forbedre både drift og økonomi på."
       }
     ],
-    "metaTitle": "Passiv og aktiv overvåking for driftsledere — Elba",
+    "metaTitle": "Passiv og aktiv overvåking for driftsledere — ELBA",
     "metaDescription": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg."
   },
   {
@@ -606,7 +606,7 @@ export const artikler: Article[] = [
         "text": "Ønsker du å vite hvordan et smøresystem kan optimaliseres for din drift, tar vi gjerne en prat."
       }
     ],
-    "metaTitle": "Hvordan sparer smøresystemer penger? — Elba",
+    "metaTitle": "Hvordan sparer smøresystemer penger? — ELBA",
     "metaDescription": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg."
   },
   {
@@ -919,7 +919,7 @@ export const artikler: Article[] = [
         "text": "Elba hjelper deg med å kartlegge behov, velge riktig smøresystem og sette opp ønsket nivå av overvåking, tilpasset din maskinpark og dine driftsmål."
       }
     ],
-    "metaTitle": "Å velge riktig type system — Elba",
+    "metaTitle": "Å velge riktig type system — ELBA",
     "metaDescription": "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg."
   }
 ];

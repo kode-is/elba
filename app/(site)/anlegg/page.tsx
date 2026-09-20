@@ -180,7 +180,7 @@ export default function Anlegg() {
             ]}
             heading="Erfaring i praksis"
             paragraphs={[
-              "Elba leverer og installerer sentralsmøresystemer til anleggsmaskiner over hele landet. Våre teknikere har solid erfaring med dimensjonering, montering og feilsøking i krevende driftsmiljøer.",
+              "ELBA leverer og installerer sentralsmøresystemer til anleggsmaskiner over hele landet. Våre teknikere har solid erfaring med dimensjonering, montering og feilsøking i krevende driftsmiljøer.",
               "Vi arbeider strukturert og prioriterer rask respons. For både forhandlere og entreprenører betyr dette en leveranse som fungerer - også etter overtakelse.",
             ]}
             linkText="Om oss"

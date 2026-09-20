@@ -14,9 +14,9 @@ describe("artikler", () => {
     }
   });
 
-  it("metaTitle always ends with ' — Elba' and never carries the live 'Skralli' suffix", () => {
+  it("metaTitle always ends with ' — ELBA' and never carries the live 'Skralli' suffix", () => {
     for (const a of artikler) {
-      expect(a.metaTitle.endsWith(" — Elba")).toBe(true);
+      expect(a.metaTitle.endsWith(" — ELBA")).toBe(true);
       expect(a.metaTitle).not.toContain("Skralli");
     }
   });
