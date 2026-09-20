@@ -84,16 +84,30 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    `app/(site)/industri/page.tsx`, `app/(site)/artikler/page.tsx`) — none of
    them describe the photo they're on. Same class of issue as the rest of
    this item; Hlynur to supply real Norwegian alt texts for all of it.
-9. **Vercel production + DNS.** The Vercel project `elba` now exists (team
-   **Kode Solutions**, scope `kode-solutions-44807b0f`), linked to
-   `kode-is/elba` on GitHub, with a preview deployment at
-   https://elba-pp1utfpwt-kode-solutions-44807b0f.vercel.app built from PR
-   https://github.com/kode-is/elba/pull/1 (Deployment Protection is on for
-   that URL, so it prompts for a Vercel login — sign in with the account
-   that has access to Kode Solutions). The three mail variables are now set
-   for **Preview** and **Production** (item 1). Still needed: merge the PR, promote to production, and
-   point `elba.no` / `www.elba.no` at it. `lib/seo.ts` and `app/sitemap.ts`
-   already hard-code `https://www.elba.no` as the canonical origin.
+9. **Vercel production + DNS — domains added, waiting for the DNS switch.**
+   The Vercel project `elba` (team **Kode Solutions**, scope
+   `kode-solutions-44807b0f`, linked to `kode-is/elba`) deploys `main` to
+   production; the public production alias is https://elba-pi.vercel.app
+   (deployment URLs themselves sit behind the Vercel login). On 2026-09-20
+   `www.elba.no` and `elba.no` were added to the project, with `elba.no`
+   redirecting (308) to `www.elba.no` — the canonical origin `lib/seo.ts` and
+   `app/sitemap.ts` already use. DNS for elba.no is hosted at hyp.net
+   (Domeneshop) and still points at Framer. To go live, change **only** these
+   records there:
+
+   | Type | Name | Now (Framer) | Change to (Vercel) |
+   | --- | --- | --- | --- |
+   | A | `@` | `31.43.160.6` | `216.150.1.1` |
+   | A | `@` | `31.43.161.6` | `216.150.16.1` |
+   | CNAME | `www` | `sites.framer.app.` | `2f8a7504558d2c43.vercel-dns-016.com.` |
+
+   Leave the nameservers and every mail record alone: `MX` and the SPF/`MS=`
+   TXT records (Microsoft 365), `_dmarc`, and Resend's `resend._domainkey` and
+   `send.elba.no` records. Vercel issues the certificates by itself once the
+   records resolve; `vercel domains verify www.elba.no --scope
+   kode-solutions-44807b0f` reports the state. Before the switch: set
+   `CONTACT_TO` to `elba@elba.no` and redeploy (item 1). Keep the Framer site
+   published until the new records have propagated.
 10. **No captcha or rate limit on the contact form.** `app/actions.ts` only
     has the honeypot field (`website`) — nothing stops a scripted flood of
     submissions. A Vercel Firewall rate-limit rule or a per-IP throttle in
@@ -389,3 +403,4 @@ Tasks 1-11 are dated 2026-09-13.
 | 11 | 2026-09-13 | Typography, colour and container measured off live (`scripts/measure.mjs`, `docs/measure.txt`) and applied; metadata finished for all 26 routes; full verification (lint, tsc, 31 tests, build, `npm run verify` 26/26 `missing=0`); screenshot pass against the reference at 1440 and 390; this handover. |
 | 12 | 2026-09-18 | Produkter as its own nav item and home section, the cross-catalog search on `/produkter` (`lib/catalog.ts`, 18 tests), and the skralli-v2 breadcrumb band — approved deviations 6-8; lint, tsc, 50 tests, build and `npm run verify` 26/26 all pass. |
 | 13 | 2026-09-19 | Site-wide search palette in the header, after kode-is/totus (`components/SearchPalette.tsx`, `lib/search.ts`, `/search-index.json`, 14 tests) — approved deviation 9; lint, tsc, 64 tests, build and `npm run verify` 26/26 all pass. |
+| 14 | 2026-09-20 | Service cards back to live's size, tablet-width layout fixes (article cards, stats band, advisory row, /om-oss overhang), dot separators matched to live's measured values; `www.elba.no` + `elba.no` added to the Vercel project. |
