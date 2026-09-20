@@ -30,7 +30,7 @@ export default function Home() {
 
       <section className="bg-white py-16 md:py-24">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[1fr_450px] md:gap-16">
+          <div className="grid gap-10 lg:grid-cols-[1fr_450px] lg:gap-16">
             <AdvisorySection />
             <ContactSection />
           </div>
