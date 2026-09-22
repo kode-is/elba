@@ -3,8 +3,9 @@ import { produkter } from "@/lib/produkter";
 import { artikler } from "@/lib/artikler";
 import { ROUTES } from "@/lib/routes";
 import { buildSearchIndex, highlight, searchIndex } from "@/lib/search";
+import { SUBNAV_TABLES } from "@/lib/subnav";
 
-const index = buildSearchIndex({ products: produkter, articles: artikler });
+const index = buildSearchIndex({ products: produkter, articles: artikler, subnav: SUBNAV_TABLES });
 const rows = produkter.reduce((n, p) => n + p.tables.reduce((m, t) => m + t.rows.length, 0), 0);
 const group = (q: string, type: string) => searchIndex(index, q).groups.find((g) => g.type === type);
 
@@ -66,6 +67,20 @@ describe("searchIndex", () => {
     expect(group("overvåking", "artikkel")!.items.map((i) => i.href)).toContain("/artikler/passiv-og-aktiv-overvaaking");
     expect(group("telefon", "side")!.items[0].href).toBe("/kontakt-oss");
     expect(group("etikk", "side")!.items[0].href).toBe("/etikk-og-ansvar");
+  });
+  it("finds sub-category pills and links straight to the pill on its page", () => {
+    const pills = group("90 grader", "underkategori")!;
+    expect(pills.items.map((i) => i.href)).toEqual(
+      expect.arrayContaining([
+        "/produkter/rørender?type=rorender-90-grader",
+        "/produkter/forlengere?type=forlenger-90-grader",
+        "/produkter/skottgjennomføring?type=skottgjennomforing-90-grader",
+      ]),
+    );
+    const vinkel = group('vinkel "we"', "underkategori")!.items[0];
+    expect(vinkel.href).toBe("/produkter/snittringmatur?type=vinkel-we");
+    expect(vinkel.subtitle).toBe("Snittringmatur · 35 produkter");
+    expect(group("t-stykke", "underkategori")!.items[0].subtitle).toBe("Snittringmatur · ikke i nettkatalogen – ta kontakt");
   });
   it("prefers a title that starts with the query over one that merely mentions it", () => {
     const sider = group("produkter", "side")!;

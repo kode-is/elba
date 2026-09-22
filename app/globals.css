@@ -93,3 +93,12 @@
     display: none;
   }
 }
+
+/* Tailwind 4's preflight gives buttons the default arrow cursor; every button
+   on this site is an action (pills, chips, search, menus), so show it. */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
