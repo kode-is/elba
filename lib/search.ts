@@ -10,7 +10,6 @@
 import type { Product } from "@/lib/produkter";
 import type { Article } from "@/lib/artikler";
 import { buildCatalog, normalize, toSearchString } from "@/lib/catalog";
-import { pillsFor, type SubnavTables } from "@/lib/subnav";
 
 export type SearchType = "kategori" | "underkategori" | "produkt" | "artikkel" | "side";
 
@@ -56,16 +55,7 @@ const squeeze = (s: string) => s.replace(/ /g, "");
 
 const excerpt = (text: string, max = 110) => (text.length <= max ? text : `${text.slice(0, max).trimEnd()}…`);
 
-export function buildSearchIndex({
-  products,
-  articles,
-  subnav = {},
-}: {
-  products: Product[];
-  articles: Article[];
-  /** lib/subnav.ts's SUBNAV_TABLES — passed in so this file imports no data. */
-  subnav?: SubnavTables;
-}): SearchItem[] {
+export function buildSearchIndex({ products, articles }: { products: Product[]; articles: Article[] }): SearchItem[] {
   const items: SearchItem[] = [];
 
   for (const page of PAGES) {
@@ -73,29 +63,30 @@ export function buildSearchIndex({
   }
 
   for (const product of products) {
-    const rowCount = product.tables.reduce((n, t) => n + t.rows.length, 0);
-    const headings = product.tables.map((t) => t.heading ?? "");
+    const tables = product.tabs.flatMap((tab) => tab.tables);
+    const rowCount = tables.reduce((n, t) => n + t.rows.length, 0);
+    const headings = tables.map((t) => t.heading ?? "");
+    const pills = product.tabs.map((tab) => tab.label).filter((label): label is string => label !== null);
     items.push({
       type: "kategori",
       title: product.title,
-      subtitle: [`${rowCount} produkter`, ...product.subnav].join(" · "),
+      subtitle: [`${rowCount} produkter`, ...pills].join(" · "),
       href: `/produkter/${product.id}`,
-      blob: normalize([product.title, "produkter", ...product.subnav, ...headings, ...product.intro].join(" ")),
+      blob: normalize([product.title, "produkter", ...pills, ...headings, ...product.intro].join(" ")),
     });
   }
 
-  // One item per sub-category pill, linking to that pill selected on its page
-  // (?type=). An unpublished sub-type still gets an item — its page shows a
-  // "ta kontakt" panel — so a search for "T-stykke" lands somewhere useful.
+  // One item per sub-category tab, linking to that tab selected on its page.
   for (const product of products) {
-    for (const pill of pillsFor(product, subnav)) {
-      const count = pill.tables.reduce((n, t) => n + product.tables[t].rows.length, 0);
+    for (const tab of product.tabs) {
+      if (!tab.label) continue;
+      const count = tab.tables.reduce((n, t) => n + t.rows.length, 0);
       items.push({
         type: "underkategori",
-        title: pill.label,
-        subtitle: `${product.title} · ${count ? `${count} produkter` : "ikke i nettkatalogen – ta kontakt"}`,
-        href: `/produkter/${product.id}?type=${pill.slug}`,
-        blob: normalize(`${pill.label} ${product.title}`),
+        title: tab.label,
+        subtitle: `${product.title} · ${count} produkter`,
+        href: `/produkter/${product.id}?type=${tab.slug}`,
+        blob: normalize(`${tab.label} ${product.title}`),
       });
     }
   }
@@ -103,7 +94,7 @@ export function buildSearchIndex({
   // One item per table row, sharing the catalog's haystack so the palette and
   // /produkter match exactly the same things. A row opens the catalog filtered
   // down to itself — by Art.Nr. where it has one, else by its own cells.
-  for (const row of buildCatalog(products, subnav)) {
+  for (const row of buildCatalog(products)) {
     const hasArtNr = /\d/.test(row.artNr);
     const specs = row.headers
       .map((header, i) => ({ header, cell: row.cells[i] ?? "" }))
@@ -111,7 +102,7 @@ export function buildSearchIndex({
     items.push({
       type: "produkt",
       title: hasArtNr ? `Art.nr. ${row.artNr}` : `${row.categoryTitle} – på forespørsel`,
-      subtitle: [row.categoryTitle, row.heading, ...specs.map(({ header, cell }) => `${header} ${cell}`)]
+      subtitle: [row.categoryTitle, row.subtype, row.heading, ...specs.map(({ header, cell }) => `${header} ${cell}`)]
         .filter(Boolean)
         .join(" · "),
       href: `/produkter${toSearchString({

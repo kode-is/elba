@@ -29,7 +29,12 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    still no `.env.local`, and the variables are not set for the Development
    environment, so a local `npm run dev` shows the friendly failure message
    instead of sending.
-2. **One more send after the `CONTACT_TO` switch**, to confirm the mail lands
+2. **Re-run the sub-category scrape when Elba edits products.** The tabs live
+   only in the Framer project (`https://global-curiosity-381133.framer.app`),
+   which is still the content source — `www.elba.no` now serves this rebuild.
+   After any change there: `npm run scrape-subnav && npm run fetch-subnav-images
+   && npm run gen-produkter`, then `npm test`. Both scripts are idempotent.
+3. **One more send after the `CONTACT_TO` switch**, to confirm the mail lands
    in Elba's own inbox.
 3. **Review the success/error copy.** Ours is new — live's Framer form shows
    its own strings. Success: "Takk! Vi har mottatt henvendelsen din og svarer
@@ -51,9 +56,7 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    søkeord, eller ta kontakt.`, the category-page search label `Søk i
    <Kategori>` with placeholder `Søk i <Kategori> — art.nr., gjenge,
    dimensjon …`, the palette group `Underkategorier` with `ikke i
-   nettkatalogen – ta kontakt`, the pill panel `Disse artiklene ligger ikke i
-   nettkatalogen ennå, men vi skaffer det meste. Ta kontakt, så hjelper vi
-   deg.`, and the key hints `naviger` / `åpne` / `lukk` /
+   nettkatalogen – ta kontakt`, and the key hints `naviger` / `åpne` / `lukk` /
    `eller / åpner søket`. (Live's own per-table `Search…` box, pager and CSV export are still
    not reproduced — the catalog search on `/produkter` replaces the need.)
 5. **Placeholder team avatar.** All nine team members share the same
@@ -146,22 +149,27 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     self-corrects on the following render, so it's cosmetic. The follow-up,
     if it's worth doing, is inlining the build year via a build-time env var
     instead of computing it at module load.
-13. **Confirm the sub-category pill mapping (Hlynur).** The 33 pills on the
-    nine product pages that have them are now pressable (deviation 10). On
-    live and in the Framer source they were inert labels; which tables a pill
-    covers is recorded in `lib/subnav.ts`. On every page the first pill — the
-    one live draws as selected — is the sub-type of all the tables shown, and
-    the other 24 pills are sub-types with no published articles, which show a
-    "ta kontakt" panel. Three pages prove it from the data (snittringmatur:
-    every Type is `WE …`; lynfittings: the table is headed `0° rett "GE"`;
-    fylleutstyr: the caption says `Fyllepresse`), five from the drawings
-    (rørender, forlengere and skottgjennomføring are all straight;
-    banjokoblinger and slanger show one type each). **Fyllenippler rests on
-    the first-pill rule alone** — its tables are split by angle (rett / 45° /
-    90° / justerbar) while its pills are split by connection (for stuss /
-    gjenget tilkobling / overgang), so Hlynur should confirm which the four
-    tables are. When Elba publishes the missing sub-types (90°/45° rørender,
-    T-stykke, muttere …), each new table gets a line in `lib/subnav.ts`.
+13. **Two products' data changed upstream — worth confirming with Elba.**
+    The sub-category tabs were re-scraped from the Framer project on
+    2026-09-22 (`npm run scrape-subnav`, `npm run fetch-subnav-images`,
+    `npm run gen-produkter`). Nine of the eleven pages' first tabs came back
+    byte-identical to what was already shipped, which is what validates the
+    scrape — but two did not, because Elba edited them in Framer after the
+    original scrape:
+    **banjokoblinger** went from one eight-row table (`04013210706` …) to five
+    tabs whose first holds two rows (`953149564`, `953149565`), and
+    **skottgjennomføring**'s six rows gained `SW2`/`L1` columns under new
+    article numbers (`04014721006` … in place of `11643140` …). This site now
+    shows Framer's current data; `scripts/verify.mjs` lists the replaced values
+    as expected so the comparison against the older production build still
+    passes. Worth a word with Hlynur that the replacements are the intended
+    ones.
+14. **Four tabs duplicate another tab's content in Framer** — checked directly,
+    including the drawings: banjokoblinger's "Banjokobling utv./innv." shows
+    the same table and images as "Banjokobling", and skottgjennomføring's
+    "90 grader" the same as its first tab. That is how the source site behaves,
+    so it is reproduced faithfully; Elba presumably has not finished filling
+    those two in.
 
 ---
 
@@ -239,15 +247,15 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    The page keywords in `lib/search.ts` (`PAGES`) are search-only and worth a
    look from Hlynur: add the words customers actually use.
 
-10. **Pressable sub-category pills.** On live the pill row above a product's
-    tables is decoration. Here each pill is an `aria-pressed` button
-    (`components/produkter/SubnavFilter.tsx`): it shows the tables it covers
-    (`lib/subnav.ts`) and hides the rest — kept mounted, so the prerendered
-    HTML still carries every table — or shows a "ta kontakt" panel for a
-    sub-type with nothing published. The choice is in `?type=<slug>`; the
-    header search has an `Underkategorier` group linking straight to a pill,
-    and `/produkter` catalog rows are also found by their pill. Each category
-    page's own search box searches that category (`Søk i <Kategori>`).
+10. **Sub-category tabs.** The pill row above a product's tables is a tab
+    control on the original Framer site, and it works here too
+    (`components/produkter/SubnavFilter.tsx`): `aria-pressed` buttons that show
+    one tab's tables and hide the others, all of them server-rendered and kept
+    mounted so the prerendered HTML carries the whole catalogue. The choice is
+    in `?type=<slug>`; the header search has an `Underkategorier` group linking
+    straight to a tab, and `/produkter` catalog rows are found by their
+    sub-type. Each category page's own search box searches that category
+    (`Søk i <Kategori>`).
 
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under
@@ -453,3 +461,4 @@ Tasks 1-11 are dated 2026-09-13.
 | 14 | 2026-09-20 | Service cards back to live's size, tablet-width layout fixes (article cards, stats band, advisory row, /om-oss overhang), dot separators matched to live's measured values; `www.elba.no` + `elba.no` added to the Vercel project. |
 | 15 | 2026-09-20 | Category-page search boxes scoped to their own category; audit of the 33 sub-category pills (mapping missing — see "Still needs you or Hlynur" #2). |
 | 16 | 2026-09-22 | Sub-category pills pressable on all nine product pages (`lib/subnav.ts`, `SubnavFilter`, 11 tests), `Underkategorier` in the header search, pointer cursor on buttons; branch rebased onto the post-DNS-switch `main`; `npm run verify` 26/26 against production. |
+| 17 | 2026-09-22 | Sub-category tabs re-scraped from Framer: the site has 77 tables / 495 rows where the first release shipped 24 / 215. New `scrape-subnav` + `fetch-subnav-images` scripts, `Product.tabs` replaces the flat table list, and the pills now switch real content. |

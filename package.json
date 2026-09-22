@@ -13,6 +13,8 @@
     "normalize-scrape": "node scripts/normalize-scrape.mjs",
     "scrape-formatting": "node scripts/scrape-formatting.mjs",
     "scrape-tables": "node scripts/scrape-tables.mjs",
+    "scrape-subnav": "node scripts/scrape-subnav.mjs",
+    "fetch-subnav-images": "node scripts/fetch-subnav-images.mjs",
     "scrape-mobile-diff": "node scripts/scrape-mobile-diff.mjs",
     "verify": "node scripts/verify.mjs",
     "gen-produkter": "node scripts/gen-produkter.mjs",

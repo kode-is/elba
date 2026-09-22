@@ -41,6 +41,21 @@ IGNORE_MISSING["/kontakt-oss"] = [exact("Senda!")];
 // docs/superpowers/specs/2026-09-18-produkter-catalog-search-design.md), so
 // the card's line of copy is gone from /tjenester. The home page keeps the
 // same line in its own Produkter section, so nothing is missing there.
+// Elba revised two products in Framer after the original scrape, so the
+// production build compared against still shows their previous rows. These are
+// the cell values that were replaced (docs/handover.md, "Still needs you or
+// Hlynur"): banjokoblinger's eight rows became two plus four new tabs, and
+// skottgjennomføring's six rows gained SW2/L1 columns under new article
+// numbers.
+IGNORE_MISSING["/produkter/banjokoblinger"] = [
+  ...IGNORE_MISSING["/produkter/banjokoblinger"],
+  ...["04013210706", "04013210206", "953149559", "04013200706", "04013200206LL", "04013200206", "04013200906", "4", "8x1", "10x1", "10", "L"].map(exact),
+];
+IGNORE_MISSING["/produkter/skottgjennomføring"] = [
+  ...IGNORE_MISSING["/produkter/skottgjennomføring"],
+  ...["11643140", "0401 4701 006", "0401 4701 106", "953149560", "0401 4701 013", "0401 4701 113", "4", "LL", "49", "52"].map(exact),
+];
+
 // …and since that box is scoped to its own category, the site-wide label
 // production shows there is intentionally gone on every category page.
 for (const r of ROUTES.filter((r) => r.startsWith("/produkter/"))) IGNORE_MISSING[r] = [...IGNORE_MISSING[r], exact("Søk i alle produkter")];
@@ -136,10 +151,20 @@ const ALLOWED_EXTRA = [
 const tablesByRoute = Object.fromEntries(
   JSON.parse(readFileSync(join(ROOT, "docs/scrape/tables.json"), "utf8")).routes.map((r) => [r.route, r.tables]),
 );
+// The sub-category tabs (scripts/scrape-subnav.mjs): their rows, headers and
+// variant headings are real product content this site now renders and the
+// production build compared against does not — the original scrape only
+// captured each page's first tab.
+for (const r of JSON.parse(readFileSync(join(ROOT, "docs/scrape/subnav.json"), "utf8")).routes) {
+  const route = decodeURIComponent(r.route);
+  const tables = r.tabs.flatMap((tab) => tab.groups.map((g) => ({ headers: g.headers, rows: g.rows, heading: g.heading })));
+  tablesByRoute[route] = [...(tablesByRoute[route] ?? []), ...tables];
+}
 const TABLE_CELLS = Object.fromEntries(
   Object.entries(tablesByRoute).map(([route, tables]) => {
     const cells = new Set();
     for (const t of tables) {
+      if (t.heading) cells.add(t.heading.trim());
       for (const h of t.headers) cells.add(h.trim());
       for (const row of t.rows) {
         const trimmed = row.map((c) => c.trim());

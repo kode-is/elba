@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { SpecTable } from "@/components/SpecTable";
 import { SubnavFilter } from "@/components/produkter/SubnavFilter";
-import { pillsFor } from "@/lib/subnav";
 import type { Product, ProductTable } from "@/lib/produkter";
 
 /**
@@ -22,13 +21,17 @@ import type { Product, ProductTable } from "@/lib/produkter";
  * card is used for both rather than inventing that distinction.
  */
 export function ProductTables({ product }: { product: Product }) {
-  // The page's caption (only fylleutstyr has one) describes its first table,
-  // so it renders inside that group and hides along with it.
-  const groups = product.tables.map((table, index) => (
-    <TableGroup key={index} table={table} index={index} intro={index === 0 ? product.intro : []} />
-  ));
-  if (product.subnav.length === 0) return <div className="flex flex-col gap-14 md:gap-20">{groups}</div>;
-  return <SubnavFilter pills={pillsFor(product)}>{groups}</SubnavFilter>;
+  // The page's caption (only fylleutstyr has one) describes the first table of
+  // the first tab, so it renders inside that group and hides along with it.
+  const tabs = product.tabs.map((tab, tabIndex) => ({
+    label: tab.label,
+    slug: tab.slug,
+    tables: tab.tables.map((table, index) => (
+      <TableGroup key={index} table={table} index={index} intro={tabIndex === 0 && index === 0 ? product.intro : []} />
+    )),
+  }));
+  if (tabs.length === 1) return <div className="flex flex-col gap-14 md:gap-20">{tabs[0].tables}</div>;
+  return <SubnavFilter tabs={tabs} />;
 }
 
 function TableGroup({ table, index, intro }: { table: ProductTable; index: number; intro: string[] }) {

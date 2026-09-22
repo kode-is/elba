@@ -8,7 +8,6 @@ import { ContactCta } from "@/components/ContactCta";
 import { pageMetadata } from "@/lib/seo";
 import { buildCatalog } from "@/lib/catalog";
 import { produkter } from "@/lib/produkter";
-import { SUBNAV_TABLES } from "@/lib/subnav";
 
 export const metadata = pageMetadata({
   title: "ELBA AS - I INDUSTRIENS TJENESTE",
@@ -50,7 +49,7 @@ const PRODUCTS = [
 
 // Built here, on the server, and handed to the client component as props —
 // lib/catalog.ts never imports the generated product data itself.
-const CATALOG = buildCatalog(produkter, SUBNAV_TABLES);
+const CATALOG = buildCatalog(produkter);
 // Filter chips follow the cards' order.
 const CATEGORIES = PRODUCTS.map((p) => ({ id: p.href.slice("/produkter/".length), title: p.text }));
 
