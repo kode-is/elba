@@ -3,6 +3,7 @@ import { produkter } from "@/lib/produkter";
 import {
   EMPTY_QUERY, buildCatalog, groupResults, isActive, normalize, parseQuery, searchCatalog, toSearchString,
 } from "@/lib/catalog";
+import { SUBNAV_TABLES } from "@/lib/subnav";
 
 const items = buildCatalog(produkter);
 const search = (q: Partial<typeof EMPTY_QUERY>) => searchCatalog(items, { ...EMPTY_QUERY, ...q });
@@ -27,6 +28,19 @@ describe("buildCatalog", () => {
     expect(of("fett", null)).toEqual(new Set([null]));
     const skruhylser = items.filter((i) => i.categoryId === "skruhylser");
     expect(new Set(skruhylser.map((i) => i.material))).toEqual(new Set(["forsinket", "syrefast"]));
+  });
+});
+
+describe("buildCatalog with sub-category pills", () => {
+  const withPills = buildCatalog(produkter, SUBNAV_TABLES);
+  it("adds each row's pill to what it is searched by", () => {
+    const hits = searchCatalog(withPills, { ...EMPTY_QUERY, q: "rorender rette" });
+    expect(hits).toHaveLength(items.filter((i) => i.categoryId === "rørender").length);
+    expect(searchCatalog(withPills, { ...EMPTY_QUERY, q: "vinkel we" }).every((i) => i.categoryId === "snittringmatur")).toBe(true);
+  });
+  it("changes nothing else about the rows", () => {
+    expect(withPills.map((i) => i.key)).toEqual(items.map((i) => i.key));
+    expect(searchCatalog(withPills, { ...EMPTY_QUERY, q: "04014701013" })).toHaveLength(1);
   });
 });
 

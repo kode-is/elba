@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { SpecTable } from "@/components/SpecTable";
-import type { ProductTable } from "@/lib/produkter";
+import { SubnavFilter } from "@/components/produkter/SubnavFilter";
+import { pillsFor } from "@/lib/subnav";
+import type { Product, ProductTable } from "@/lib/produkter";
 
 /**
  * The repeated "variant" groups on a product page: an images row (the
@@ -19,49 +21,58 @@ import type { ProductTable } from "@/lib/produkter";
  * scrape doesn't distinguish "diagram" from "photo" blocks, so the same
  * card is used for both rather than inventing that distinction.
  */
-export function ProductTables({ tables }: { tables: ProductTable[] }) {
+export function ProductTables({ product }: { product: Product }) {
+  // The page's caption (only fylleutstyr has one) describes its first table,
+  // so it renders inside that group and hides along with it.
+  const groups = product.tables.map((table, index) => (
+    <TableGroup key={index} table={table} index={index} intro={index === 0 ? product.intro : []} />
+  ));
+  if (product.subnav.length === 0) return <div className="flex flex-col gap-14 md:gap-20">{groups}</div>;
+  return <SubnavFilter pills={pillsFor(product)}>{groups}</SubnavFilter>;
+}
+
+function TableGroup({ table, index, intro }: { table: ProductTable; index: number; intro: string[] }) {
+  const headingId = table.heading ? `produkt-tabell-${index}` : undefined;
   return (
-    <div className="space-y-14 md:space-y-20">
-      {tables.map((table, index) => {
-        const headingId = table.heading ? `produkt-tabell-${index}` : undefined;
-        return (
-          <div key={index}>
-            {table.images.length === 1 ? (
-              <div className="mb-6 flex justify-center">
-                <Image
-                  src={table.images[0].src}
-                  alt={table.images[0].alt}
-                  width={table.images[0].width}
-                  height={table.images[0].height}
-                  sizes="(min-width: 768px) 1152px, 100vw"
-                  className="h-auto w-auto max-w-full rounded-2xl object-contain"
-                />
-              </div>
-            ) : table.images.length > 1 ? (
-              <div className="mb-6 grid grid-cols-2 gap-4 md:gap-6">
-                {table.images.map((image, imageIndex) => (
-                  <div key={imageIndex} className="flex items-center justify-center rounded-2xl bg-surface-cool p-6">
-                    <Image
-                      src={image.src}
-                      alt={image.alt}
-                      width={image.width}
-                      height={image.height}
-                      sizes="(min-width: 768px) 600px, 50vw"
-                      className="h-auto w-full object-contain"
-                    />
-                  </div>
-                ))}
-              </div>
-            ) : null}
-            {table.heading ? (
-              <h3 id={headingId} className="mb-4 text-[23px] leading-[1.3] font-semibold text-black md:text-[36px]">
-                {table.heading}
-              </h3>
-            ) : null}
-            <SpecTable headers={table.headers} rows={table.rows} ariaLabelledBy={headingId} />
-          </div>
-        );
-      })}
+    <div>
+      {intro.map((text) => (
+        <p key={text} className="mb-4 font-ui text-body-lg text-ink-muted">
+          {text}
+        </p>
+      ))}
+      {table.images.length === 1 ? (
+        <div className="mb-6 flex justify-center">
+          <Image
+            src={table.images[0].src}
+            alt={table.images[0].alt}
+            width={table.images[0].width}
+            height={table.images[0].height}
+            sizes="(min-width: 768px) 1152px, 100vw"
+            className="h-auto w-auto max-w-full rounded-2xl object-contain"
+          />
+        </div>
+      ) : table.images.length > 1 ? (
+        <div className="mb-6 grid grid-cols-2 gap-4 md:gap-6">
+          {table.images.map((image, imageIndex) => (
+            <div key={imageIndex} className="flex items-center justify-center rounded-2xl bg-surface-cool p-6">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                width={image.width}
+                height={image.height}
+                sizes="(min-width: 768px) 600px, 50vw"
+                className="h-auto w-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      ) : null}
+      {table.heading ? (
+        <h3 id={headingId} className="mb-4 text-[23px] leading-[1.3] font-semibold text-black md:text-[36px]">
+          {table.heading}
+        </h3>
+      ) : null}
+      <SpecTable headers={table.headers} rows={table.rows} ariaLabelledBy={headingId} />
     </div>
   );
 }

@@ -66,16 +66,21 @@ function materialOf(text: string | null | undefined): Material | null {
  * One item per table row. The haystack holds the category title, the table
  * heading and every cell, normalised — plus a whitespace-free copy of each, so
  * "0401 4701 013" is found by "04014701013" and "M 10x1" by "M10x1". Column
- * headers stay out of it: "SW" or "L" would match nearly every row.
+ * headers stay out of it: "SW" or "L" would match nearly every row. With a
+ * pill map (lib/subnav.ts's SUBNAV_TABLES, passed in rather than imported so
+ * this file stays free of data), a row is also found by its sub-category pill,
+ * e.g. "Rørender rette" or 'Vinkel "WE"'.
  */
-export function buildCatalog(products: Product[]): CatalogItem[] {
+export function buildCatalog(products: Product[], subnav: Record<string, Record<string, number[]>> = {}): CatalogItem[] {
   const items: CatalogItem[] = [];
   for (const product of products) {
+    const pills = Object.entries(subnav[product.id] ?? {});
     product.tables.forEach((table, tableIndex) => {
+      const pillLabels = pills.filter(([, tables]) => tables.includes(tableIndex)).map(([label]) => label);
       const artIndex = table.headers.findIndex((h) => /^art\.?\s*nr\.?$/i.test(h.trim()));
       const materialIndex = table.headers.findIndex((h) => /^material/i.test(h.trim()));
       table.rows.forEach((cells, rowIndex) => {
-        const parts = [product.title, table.heading ?? "", ...cells].map(normalize).filter(Boolean);
+        const parts = [product.title, table.heading ?? "", ...pillLabels, ...cells].map(normalize).filter(Boolean);
         const haystack = [...new Set([...parts, ...parts.map((p) => p.replace(/ /g, ""))])].join(" ");
         items.push({
           key: `${product.id}:${tableIndex}:${rowIndex}`,
