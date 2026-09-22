@@ -2,16 +2,19 @@
 import type { Img } from "@/lib/types";
 
 export type ProductTable = { heading: string | null; headers: string[]; rows: string[][]; images: Img[] };
+/**
+ * One sub-category tab — the pills above a product's tables. A product
+ * without pills (fett, skruhylser) has a single tab with `label: null`.
+ */
+export type ProductTab = { label: string | null; slug: string; tables: ProductTable[] };
 export type Product = {
   id: string;
   /** Reserved for the later Zirius (ERP) integration; unset today. */
   erpId?: string;
   title: string;
   hero: Img;
-  /** Static sub-navigation pills (not links on the live site) above the tables. Empty on routes without them. */
-  subnav: string[];
   intro: string[];
-  tables: ProductTable[];
+  tabs: ProductTab[];
   metaTitle: string;
   metaDescription: string;
 };
@@ -26,103 +29,359 @@ export const produkter: Product[] = [
       "width": 1440,
       "height": 933
     },
-    "subnav": [
-      "Banjokobling",
-      "Banjokobling utv./innv.",
-      "Banjo T",
-      "Svivel union vinkel",
-      "Svivel 90 grader"
-    ],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": null,
-        "headers": [
-          "D",
-          "G",
-          "SW",
-          "SW1",
-          "Serie",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "4",
-            "8x1",
-            "10",
-            "14",
-            "LL",
-            "04013210706"
-          ],
-          [
-            "4",
-            "10x1",
-            "10",
-            "14",
-            "LL",
-            "04013210206"
-          ],
-          [
-            "4",
-            "1/8 BSP",
-            "10",
-            "14",
-            "LL",
-            "953149559"
-          ],
-          [
-            "6",
-            "8x1",
-            "12",
-            "14",
-            "LL",
-            "04013200706"
-          ],
-          [
-            "6",
-            "10x1",
-            "12",
-            "14",
-            "LL",
-            "04013200206LL"
-          ],
-          [
-            "6",
-            "10x1",
-            "14",
-            "14",
-            "L",
-            "04013200206"
-          ],
-          [
-            "6",
-            "1/8 BSP",
-            "12",
-            "14",
-            "LL",
-            "04013200906"
-          ],
-          [
-            "6",
-            "1/8 BSP",
-            "14",
-            "14",
-            "L",
-            "04013200206"
-          ]
-        ],
-        "images": [
+        "label": "Banjokobling",
+        "slug": "banjokobling",
+        "tables": [
           {
-            "src": "/images/produkter__banjokoblinger/02-164d85ca.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": null,
+            "headers": [
+              "D",
+              "G",
+              "SW",
+              "SW1",
+              "Serie",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "10 x 1",
+                "12",
+                "14",
+                "LL",
+                "953149564"
+              ],
+              [
+                "6",
+                "1/8 BSP",
+                "12",
+                "14",
+                "LL",
+                "953149565"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__banjokoblinger/04-9cde7fe1.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/05-e8b82e55.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/06-94fe778e.png",
+                "alt": "",
+                "width": 1000,
+                "height": 729
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/07-42e35940.png",
+                "alt": "",
+                "width": 1000,
+                "height": 832
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Banjokobling utv./innv.",
+        "slug": "banjokobling-utv-innv",
+        "tables": [
+          {
+            "heading": null,
+            "headers": [
+              "D",
+              "G",
+              "SW",
+              "SW1",
+              "Serie",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "10 x 1",
+                "12",
+                "14",
+                "LL",
+                "953149564"
+              ],
+              [
+                "6",
+                "1/8 BSP",
+                "12",
+                "14",
+                "LL",
+                "953149565"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__banjokoblinger/04-9cde7fe1.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/05-e8b82e55.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/06-94fe778e.png",
+                "alt": "",
+                "width": 1000,
+                "height": 729
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/07-42e35940.png",
+                "alt": "",
+                "width": 1000,
+                "height": 832
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Banjo T",
+        "slug": "banjo-t",
+        "tables": [
+          {
+            "heading": null,
+            "headers": [
+              "G",
+              "G1",
+              "G2",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M 10 x 1",
+                "M 10 x 1",
+                "M 10 x1",
+                "35",
+                "14",
+                "953148828"
+              ],
+              [
+                "1/8 BSP",
+                "1/8 BSP",
+                "1/8 BSP",
+                "35",
+                "14",
+                "953147288"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__banjokoblinger/08-fe3ef883.png",
+                "alt": "",
+                "width": 340,
+                "height": 195
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/09-bdba2105.png",
+                "alt": "",
+                "width": 338,
+                "height": 195
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Svivel union vinkel",
+        "slug": "svivel-union-vinkel",
+        "tables": [
+          {
+            "heading": null,
+            "headers": [
+              "D",
+              "G",
+              "G1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "M6x0.75",
+                "M8x1",
+                "9",
+                "på forespørsel"
+              ],
+              [
+                "4",
+                "M6x1",
+                "M8x1",
+                "9",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__banjokoblinger/10-4e7e33ef.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/11-f858f362.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Svivel 90 grader",
+        "slug": "svivel-90-grader",
+        "tables": [
+          {
+            "heading": "Forsinket stål",
+            "headers": [
+              "D",
+              "G1",
+              "G",
+              "SW",
+              "SW1",
+              "H",
+              "L",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "1/8 NPT",
+                "1/8 NPT",
+                "1/2\"",
+                "15",
+                "30",
+                "29",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__banjokoblinger/12-7f73bc72.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__banjokoblinger/13-de74f8f6.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
           },
           {
-            "src": "/images/produkter__banjokoblinger/03-a95df89c.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Forsinket messing",
+            "headers": [
+              "D",
+              "G1",
+              "G",
+              "SW",
+              "SW1",
+              "H",
+              "L",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "M 6 x 1",
+                "M 10 x 1",
+                "15",
+                "14",
+                "30",
+                "29",
+                "0402011"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Messing",
+            "headers": [
+              "D",
+              "G1",
+              "G",
+              "SW",
+              "SW1",
+              "H",
+              "L",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "M 8 x 1",
+                "M 8 x 1",
+                "15",
+                "14",
+                "30",
+                "26.5",
+                "på forespørsel"
+              ],
+              [
+                "4",
+                "M 10 x 1",
+                "M 8 x 1",
+                "15",
+                "14",
+                "30",
+                "26.5",
+                "på forespørsel"
+              ],
+              [
+                "6",
+                "M 8 x 1",
+                "M 10 x 1",
+                "15",
+                "14",
+                "30",
+                "29",
+                "0402012"
+              ],
+              [
+                "6",
+                "M10 x 1",
+                "M 10 x 1",
+                "15",
+                "14",
+                "30",
+                "29",
+                "0402013"
+              ],
+              [
+                "6",
+                "1/8 BSP",
+                "M 10 x 1",
+                "15",
+                "14",
+                "30",
+                "29",
+                "0402023"
+              ]
+            ],
+            "images": []
           }
         ]
       }
@@ -139,99 +398,104 @@ export const produkter: Product[] = [
       "width": 1439,
       "height": 1919
     },
-    "subnav": [],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": null,
-        "headers": [
-          "Forpakning",
-          "NLGI",
-          "Fortykker",
-          "Tilsats",
-          "Belastning",
-          "Tilkobling",
-          "Temp",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "400 g patron",
-            "EP 2",
-            "Calsium",
-            "",
-            "Svært høy",
-            "std",
-            "-30 til 120",
-            "953148103"
-          ],
-          [
-            "400 g patron",
-            "EP 2",
-            "Litium",
-            "",
-            "Medium",
-            "std",
-            "-30 til 120",
-            "953147981"
-          ],
-          [
-            "400 g patron",
-            "EP 2",
-            "Litium",
-            "",
-            "Medium",
-            "skru",
-            "-30 til 150",
-            "0320092"
-          ],
-          [
-            "400 g patron",
-            "EP 2",
-            "Aluminium",
-            "Fast",
-            "Svært høy",
-            "skru",
-            "-20 til 1100",
-            "0320254"
-          ],
-          [
-            "18 kg spann",
-            "EP 2",
-            "Calsium",
-            "",
-            "Høy",
-            "",
-            "-30 til 120",
-            "953146425"
-          ],
-          [
-            "18 kg spann",
-            "EP 2",
-            "Litium",
-            "",
-            "Medium",
-            "",
-            "-30 til 120",
-            "953146467"
-          ],
-          [
-            "18 kg spann",
-            "EP 2 Bio",
-            "Calsium",
-            "",
-            "Medium",
-            "",
-            "-30 til 120",
-            "953148319"
-          ]
-        ],
-        "images": [
+        "label": null,
+        "slug": "",
+        "tables": [
           {
-            "src": "/images/produkter__fett/02-965997c1.jpeg",
-            "alt": "",
-            "width": 1200,
-            "height": 741
+            "heading": null,
+            "headers": [
+              "Forpakning",
+              "NLGI",
+              "Fortykker",
+              "Tilsats",
+              "Belastning",
+              "Tilkobling",
+              "Temp",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "400 g patron",
+                "EP 2",
+                "Calsium",
+                "",
+                "Svært høy",
+                "std",
+                "-30 til 120",
+                "953148103"
+              ],
+              [
+                "400 g patron",
+                "EP 2",
+                "Litium",
+                "",
+                "Medium",
+                "std",
+                "-30 til 120",
+                "953147981"
+              ],
+              [
+                "400 g patron",
+                "EP 2",
+                "Litium",
+                "",
+                "Medium",
+                "skru",
+                "-30 til 150",
+                "0320092"
+              ],
+              [
+                "400 g patron",
+                "EP 2",
+                "Aluminium",
+                "Fast",
+                "Svært høy",
+                "skru",
+                "-20 til 1100",
+                "0320254"
+              ],
+              [
+                "18 kg spann",
+                "EP 2",
+                "Calsium",
+                "",
+                "Høy",
+                "",
+                "-30 til 120",
+                "953146425"
+              ],
+              [
+                "18 kg spann",
+                "EP 2",
+                "Litium",
+                "",
+                "Medium",
+                "",
+                "-30 til 120",
+                "953146467"
+              ],
+              [
+                "18 kg spann",
+                "EP 2 Bio",
+                "Calsium",
+                "",
+                "Medium",
+                "",
+                "-30 til 120",
+                "953148319"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fett/02-965997c1.jpeg",
+                "alt": "",
+                "width": 1200,
+                "height": 741
+              }
+            ]
           }
         ]
       }
@@ -248,763 +512,1152 @@ export const produkter: Product[] = [
       "width": 400,
       "height": 266
     },
-    "subnav": [
-      "Forlenger rett",
-      "Forlenger 90 grader",
-      "Forlenger 45 grader"
-    ],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "G",
-          "G1",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "M6 x 1",
-            "M6 x 1",
-            "57.5",
-            "7.5",
-            "9",
-            "953148050"
-          ],
-          [
-            "M6 x 1",
-            "M6 x 1",
-            "20",
-            "7.5",
-            "9",
-            "953148257"
-          ],
-          [
-            "M6 x 1",
-            "M8 x 1",
-            "19",
-            "7",
-            "11",
-            "10021000301K"
-          ],
-          [
-            "M6 x 1",
-            "M8 x 1",
-            "35",
-            "23",
-            "10",
-            "04011605806"
-          ],
-          [
-            "M6 x 1",
-            "M10 x 1",
-            "23",
-            "10",
-            "13",
-            "04011600506"
-          ],
-          [
-            "M6 x 1",
-            "Rp 1/8\" BSP",
-            "23",
-            "10",
-            "13",
-            "på forespørsel"
-          ],
-          [
-            "M8 x 1",
-            "M8 x 1",
-            "18",
-            "8",
-            "11",
-            "10021000304K"
-          ],
-          [
-            "M8 x 1.25",
-            "M8 x 1.25",
-            "20",
-            "7",
-            "11",
-            "på forespørsel"
-          ],
-          [
-            "M8 x 1",
-            "M8 x 1",
-            "32",
-            "22",
-            "11",
-            "04011600806"
-          ],
-          [
-            "M8 x 1.25",
-            "M8 x 1.25",
-            "32",
-            "22",
-            "11",
-            "på forespørsel"
-          ],
-          [
-            "M8 x 1",
-            "M8 x 1",
-            "62.5",
-            "52.5",
-            "11",
-            "04011603106"
-          ],
-          [
-            "M8 x 1",
-            "M10 x 1",
-            "23",
-            "12",
-            "13",
-            "04011600106"
-          ],
-          [
-            "M8 x 1",
-            "Rp 1/8\" BSP",
-            "23",
-            "12",
-            "13",
-            "953148297"
-          ],
-          [
-            "M8 x 1",
-            "Rp 1/4\" BSP",
-            "22",
-            "8",
-            "17",
-            "953148088"
-          ],
-          [
-            "M10 x 1",
-            "M8 x 1",
-            "18",
-            "8",
-            "11",
-            "10021000306k"
-          ],
-          [
-            "M10 x 1",
-            "M10 x 1",
-            "18",
-            "7",
-            "13",
-            "04011610306"
-          ],
-          [
-            "M10 x 1",
-            "M10x1",
-            "23",
-            "12",
-            "13",
-            "04011600206"
-          ],
-          [
-            "M10 x 1.5",
-            "M10x1",
-            "23",
-            "12",
-            "13",
-            "på forespørsel"
-          ],
-          [
-            "M10 x 1",
-            "M10x1",
-            "35",
-            "24",
-            "13",
-            "04011600706"
-          ],
-          [
-            "M10 x 1",
-            "M10x1",
-            "40",
-            "29",
-            "13",
-            "på forespørsel"
-          ],
-          [
-            "M10 x 1",
-            "M10x1",
-            "40",
-            "9",
-            "14",
-            "på forespørsel"
-          ],
-          [
-            "M10 x 1",
-            "M10x1",
-            "50",
-            "39",
-            "13",
-            "04011600606"
-          ],
-          [
-            "M10 x 1",
-            "Rp 1/8\" BSP",
-            "18",
-            "7",
-            "13",
-            "953149156"
-          ],
-          [
-            "M10 x 1",
-            "Rp 1/4\" BSP",
-            "22",
-            "8",
-            "17",
-            "953148279"
-          ],
-          [
-            "M12 x 1",
-            "M10x1",
-            "21",
-            "8.5",
-            "13",
-            "04011610106"
-          ],
-          [
-            "R 1/8\" BSP",
-            "M8x1",
-            "18",
-            "7",
-            "13",
-            "953148663"
-          ],
-          [
-            "R 1/8\" BSP",
-            "M10x1",
-            "18",
-            "7",
-            "13",
-            "04011600306"
-          ],
-          [
-            "R 1/8\" BSP",
-            "M10x1",
-            "50",
-            "38",
-            "13",
-            "04011611506"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/8\" BSP",
-            "18",
-            "11",
-            "13",
-            "953146847"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/8\" BSP",
-            "23",
-            "12",
-            "13",
-            "04011604106"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/8\" BSP",
-            "27",
-            "10",
-            "15",
-            "7158-02"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/8\" BSP",
-            "35",
-            "23",
-            "13",
-            "953146845"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/8\" BSP",
-            "41",
-            "29",
-            "13",
-            "på forespørsel"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/8\" BSP",
-            "45",
-            "33",
-            "13",
-            "953147988"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/8\" BSP",
-            "50",
-            "38",
-            "13",
-            "105225"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/8\" BSP",
-            "60",
-            "38",
-            "13",
-            "105226"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/4\" BSP",
-            "29",
-            "10",
-            "19",
-            "7005-04-02"
-          ],
-          [
-            "R 1/4\" BSP",
-            "M10x1",
-            "20",
-            "9",
-            "17",
-            "04011601206"
-          ],
-          [
-            "R 1/4\" BSP",
-            "M10x1",
-            "35",
-            "23",
-            "14",
-            "04011601006"
-          ],
-          [
-            "R 1/4\" BSP",
-            "M10x1",
-            "55",
-            "43",
-            "14",
-            "04011601106"
-          ],
-          [
-            "R 1/4\" BSP",
-            "Rp 1/8\" BSP",
-            "20",
-            "9",
-            "17",
-            "12650480"
-          ],
-          [
-            "R 1/8\" BSP",
-            "Rp 1/4\" BSP",
-            "22",
-            "8",
-            "17",
-            "på forespørsel"
-          ],
-          [
-            "R 1/4\" BSP",
-            "Rp 3/8\" BSP",
-            "33",
-            "9",
-            "2",
-            "3158-06-04"
-          ],
-          [
-            "R 1/4\" BSP",
-            "Rp 1/4\" BSP",
-            "25",
-            "9",
-            "19",
-            "på forespørsel"
-          ],
-          [
-            "R 1/4\" BSP",
-            "Rp 1/4\" BSP",
-            "50",
-            "36",
-            "17",
-            "på forespørsel"
-          ],
-          [
-            "R 1/4\" BSP",
-            "Rp 1/4\" BSP",
-            "65",
-            "51",
-            "17",
-            "på forespørsel"
-          ],
-          [
-            "R 1/4\" BSP",
-            "Rp 1/4\" BSP",
-            "85",
-            "71",
-            "17",
-            "på forespørsel"
-          ],
-          [
-            "R 1/4\" BSP",
-            "Rp 1/4\" BSP",
-            "104",
-            "90",
-            "17",
-            "på forespørsel"
-          ],
-          [
-            "R 1/2\" BSP",
-            "Rp 1/4\" BSP",
-            "31",
-            "10",
-            "27",
-            "953148017"
-          ],
-          [
-            "1/2\" NPT",
-            "1/8\" NPT",
-            "31",
-            "8",
-            "25",
-            "RBRN2N8"
-          ],
-          [
-            "1/2\" NPT",
-            "1/4\" NPT",
-            "34",
-            "10",
-            "25",
-            "953147186"
-          ],
-          [
-            "1/8\" NPT",
-            "1/8\" NPT",
-            "20",
-            "9",
-            "43862",
-            "på forespørsel"
-          ],
-          [
-            "1/8\" NPT",
-            "1/8\" NPT",
-            "30",
-            "18",
-            "43862",
-            "på forespørsel"
-          ],
-          [
-            "1/8\" NPT",
-            "1/8\" NPT",
-            "48",
-            "36",
-            "42614",
-            "på forespørsel"
-          ],
-          [
-            "1/4\"-28 UNF",
-            "Rp 1/8\" BSP",
-            "23",
-            "12",
-            "43862",
-            "på forespørsel"
-          ],
-          [
-            "1/4\"-28 UNF",
-            "M10 x 1",
-            "24",
-            "6",
-            "13",
-            "04011601406"
-          ],
-          [
-            "1/4\"-32 UNEF",
-            "M10 x 1",
-            "24",
-            "6",
-            "13",
-            "04011601306"
-          ]
-        ],
-        "images": [
+        "label": "Forlenger rett",
+        "slug": "forlenger-rett",
+        "tables": [
           {
-            "src": "/images/produkter__forlengere/02-096291f6.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M6 x 1",
+                "M6 x 1",
+                "57.5",
+                "7.5",
+                "9",
+                "953148050"
+              ],
+              [
+                "M6 x 1",
+                "M6 x 1",
+                "20",
+                "7.5",
+                "9",
+                "953148257"
+              ],
+              [
+                "M6 x 1",
+                "M8 x 1",
+                "19",
+                "7",
+                "11",
+                "10021000301K"
+              ],
+              [
+                "M6 x 1",
+                "M8 x 1",
+                "35",
+                "23",
+                "10",
+                "04011605806"
+              ],
+              [
+                "M6 x 1",
+                "M10 x 1",
+                "23",
+                "10",
+                "13",
+                "04011600506"
+              ],
+              [
+                "M6 x 1",
+                "Rp 1/8\" BSP",
+                "23",
+                "10",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "M8 x 1",
+                "M8 x 1",
+                "18",
+                "8",
+                "11",
+                "10021000304K"
+              ],
+              [
+                "M8 x 1.25",
+                "M8 x 1.25",
+                "20",
+                "7",
+                "11",
+                "på forespørsel"
+              ],
+              [
+                "M8 x 1",
+                "M8 x 1",
+                "32",
+                "22",
+                "11",
+                "04011600806"
+              ],
+              [
+                "M8 x 1.25",
+                "M8 x 1.25",
+                "32",
+                "22",
+                "11",
+                "på forespørsel"
+              ],
+              [
+                "M8 x 1",
+                "M8 x 1",
+                "62.5",
+                "52.5",
+                "11",
+                "04011603106"
+              ],
+              [
+                "M8 x 1",
+                "M10 x 1",
+                "23",
+                "12",
+                "13",
+                "04011600106"
+              ],
+              [
+                "M8 x 1",
+                "Rp 1/8\" BSP",
+                "23",
+                "12",
+                "13",
+                "953148297"
+              ],
+              [
+                "M8 x 1",
+                "Rp 1/4\" BSP",
+                "22",
+                "8",
+                "17",
+                "953148088"
+              ],
+              [
+                "M10 x 1",
+                "M8 x 1",
+                "18",
+                "8",
+                "11",
+                "10021000306k"
+              ],
+              [
+                "M10 x 1",
+                "M10 x 1",
+                "18",
+                "7",
+                "13",
+                "04011610306"
+              ],
+              [
+                "M10 x 1",
+                "M10x1",
+                "23",
+                "12",
+                "13",
+                "04011600206"
+              ],
+              [
+                "M10 x 1.5",
+                "M10x1",
+                "23",
+                "12",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "M10 x 1",
+                "M10x1",
+                "35",
+                "24",
+                "13",
+                "04011600706"
+              ],
+              [
+                "M10 x 1",
+                "M10x1",
+                "40",
+                "29",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "M10 x 1",
+                "M10x1",
+                "40",
+                "9",
+                "14",
+                "på forespørsel"
+              ],
+              [
+                "M10 x 1",
+                "M10x1",
+                "50",
+                "39",
+                "13",
+                "04011600606"
+              ],
+              [
+                "M10 x 1",
+                "Rp 1/8\" BSP",
+                "18",
+                "7",
+                "13",
+                "953149156"
+              ],
+              [
+                "M10 x 1",
+                "Rp 1/4\" BSP",
+                "22",
+                "8",
+                "17",
+                "953148279"
+              ],
+              [
+                "M12 x 1",
+                "M10x1",
+                "21",
+                "8.5",
+                "13",
+                "04011610106"
+              ],
+              [
+                "R 1/8\" BSP",
+                "M8x1",
+                "18",
+                "7",
+                "13",
+                "953148663"
+              ],
+              [
+                "R 1/8\" BSP",
+                "M10x1",
+                "18",
+                "7",
+                "13",
+                "04011600306"
+              ],
+              [
+                "R 1/8\" BSP",
+                "M10x1",
+                "50",
+                "38",
+                "13",
+                "04011611506"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/8\" BSP",
+                "18",
+                "11",
+                "13",
+                "953146847"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/8\" BSP",
+                "23",
+                "12",
+                "13",
+                "04011604106"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/8\" BSP",
+                "27",
+                "10",
+                "15",
+                "7158-02"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/8\" BSP",
+                "35",
+                "23",
+                "13",
+                "953146845"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/8\" BSP",
+                "41",
+                "29",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/8\" BSP",
+                "45",
+                "33",
+                "13",
+                "953147988"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/8\" BSP",
+                "50",
+                "38",
+                "13",
+                "105225"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/8\" BSP",
+                "60",
+                "38",
+                "13",
+                "105226"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/4\" BSP",
+                "29",
+                "10",
+                "19",
+                "7005-04-02"
+              ],
+              [
+                "R 1/4\" BSP",
+                "M10x1",
+                "20",
+                "9",
+                "17",
+                "04011601206"
+              ],
+              [
+                "R 1/4\" BSP",
+                "M10x1",
+                "35",
+                "23",
+                "14",
+                "04011601006"
+              ],
+              [
+                "R 1/4\" BSP",
+                "M10x1",
+                "55",
+                "43",
+                "14",
+                "04011601106"
+              ],
+              [
+                "R 1/4\" BSP",
+                "Rp 1/8\" BSP",
+                "20",
+                "9",
+                "17",
+                "12650480"
+              ],
+              [
+                "R 1/8\" BSP",
+                "Rp 1/4\" BSP",
+                "22",
+                "8",
+                "17",
+                "på forespørsel"
+              ],
+              [
+                "R 1/4\" BSP",
+                "Rp 3/8\" BSP",
+                "33",
+                "9",
+                "2",
+                "3158-06-04"
+              ],
+              [
+                "R 1/4\" BSP",
+                "Rp 1/4\" BSP",
+                "25",
+                "9",
+                "19",
+                "på forespørsel"
+              ],
+              [
+                "R 1/4\" BSP",
+                "Rp 1/4\" BSP",
+                "50",
+                "36",
+                "17",
+                "på forespørsel"
+              ],
+              [
+                "R 1/4\" BSP",
+                "Rp 1/4\" BSP",
+                "65",
+                "51",
+                "17",
+                "på forespørsel"
+              ],
+              [
+                "R 1/4\" BSP",
+                "Rp 1/4\" BSP",
+                "85",
+                "71",
+                "17",
+                "på forespørsel"
+              ],
+              [
+                "R 1/4\" BSP",
+                "Rp 1/4\" BSP",
+                "104",
+                "90",
+                "17",
+                "på forespørsel"
+              ],
+              [
+                "R 1/2\" BSP",
+                "Rp 1/4\" BSP",
+                "31",
+                "10",
+                "27",
+                "953148017"
+              ],
+              [
+                "1/2\" NPT",
+                "1/8\" NPT",
+                "31",
+                "8",
+                "25",
+                "RBRN2N8"
+              ],
+              [
+                "1/2\" NPT",
+                "1/4\" NPT",
+                "34",
+                "10",
+                "25",
+                "953147186"
+              ],
+              [
+                "1/8\" NPT",
+                "1/8\" NPT",
+                "20",
+                "9",
+                "43862",
+                "på forespørsel"
+              ],
+              [
+                "1/8\" NPT",
+                "1/8\" NPT",
+                "30",
+                "18",
+                "43862",
+                "på forespørsel"
+              ],
+              [
+                "1/8\" NPT",
+                "1/8\" NPT",
+                "48",
+                "36",
+                "42614",
+                "på forespørsel"
+              ],
+              [
+                "1/4\"-28 UNF",
+                "Rp 1/8\" BSP",
+                "23",
+                "12",
+                "43862",
+                "på forespørsel"
+              ],
+              [
+                "1/4\"-28 UNF",
+                "M10 x 1",
+                "24",
+                "6",
+                "13",
+                "04011601406"
+              ],
+              [
+                "1/4\"-32 UNEF",
+                "M10 x 1",
+                "24",
+                "6",
+                "13",
+                "04011601306"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__forlengere/02-096291f6.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__forlengere/03-78b5f32a.png",
+                "alt": "",
+                "width": 400,
+                "height": 259
+              }
+            ]
           },
           {
-            "src": "/images/produkter__forlengere/03-78b5f32a.png",
-            "alt": "",
-            "width": 400,
-            "height": 259
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M 8 x 1",
+                "Rp 1/8 BSP",
+                "23",
+                "10",
+                "13",
+                "953149386"
+              ],
+              [
+                "M 10 x 1",
+                "M 10 x 1",
+                "18",
+                "7",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "M 10 x 1",
+                "M 10 x 1",
+                "23",
+                "12",
+                "13",
+                "04011600213"
+              ],
+              [
+                "M 10 x 1",
+                "Rp 1/8 BSP",
+                "23",
+                "12",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "M 10 x 1",
+                "M 10 x 1",
+                "35",
+                "24",
+                "13",
+                "04011610813"
+              ],
+              [
+                "M 10 x 1",
+                "M 10 x 1",
+                "50",
+                "39",
+                "13",
+                "953149387"
+              ],
+              [
+                "R 1/8 BSP",
+                "M 10x1",
+                "18",
+                "7",
+                "13",
+                "04011600313"
+              ],
+              [
+                "R 1/8 BSP",
+                "Rp 1/8 BSP",
+                "18",
+                "7",
+                "11",
+                "på forespørsel"
+              ],
+              [
+                "R 1/8 BSP",
+                "Rp 1/8 BSP",
+                "23",
+                "12",
+                "13",
+                "04011600313"
+              ],
+              [
+                "R 1/8 BSP",
+                "Rp 1/8 BSP",
+                "35",
+                "23",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "R 1/8 BSP",
+                "Rp 1/8 BSP",
+                "50",
+                "38",
+                "13",
+                "953149388"
+              ],
+              [
+                "R 1/4 BSP",
+                "M 10x1",
+                "26",
+                "14",
+                "14",
+                "04011601213"
+              ],
+              [
+                "R 1/4 BSP",
+                "M 10x1",
+                "35",
+                "23",
+                "14",
+                "04011601013"
+              ],
+              [
+                "R 1/4 BSP",
+                "M 10x1",
+                "55",
+                "43",
+                "14",
+                "04011601113"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Messing",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M 14 x x1",
+                "R 1/4 BSP",
+                "25",
+                "9",
+                "19",
+                "F2185/57-00"
+              ],
+              [
+                "M 14 x x1",
+                "M 22 x 1.5",
+                "31",
+                "11",
+                "27",
+                "953148344"
+              ],
+              [
+                "M 18 X 1",
+                "M 20 X 1.5",
+                "45",
+                "",
+                "27",
+                "953147875"
+              ],
+              [
+                "M 18 X 1",
+                "M 20 X 1.5",
+                "55",
+                "17",
+                "27",
+                "953147152"
+              ],
+              [
+                "M 18 X 1",
+                "M 20 X 1.5",
+                "75",
+                "17",
+                "27",
+                "953148014"
+              ],
+              [
+                "M 18 X 1",
+                "R 3/8 BSP",
+                "",
+                "",
+                "27",
+                "953148417"
+              ],
+              [
+                "M 20 x 1.5",
+                "R 1/2 BSP",
+                "40",
+                "15",
+                "27",
+                "953147686"
+              ],
+              [
+                "M 20 x 1.5",
+                "M 22 x 1.5",
+                "",
+                "",
+                "27",
+                "953148295"
+              ],
+              [
+                "M 22 x 1.5",
+                "M 20 x 1.5",
+                "",
+                "",
+                "27",
+                "953148771"
+              ],
+              [
+                "M 22 x 1.5",
+                "R 1/4 BSP",
+                "40",
+                "15",
+                "27",
+                "953148176"
+              ],
+              [
+                "R 1/4 BSP",
+                "Rp 1/8 BSP",
+                "13",
+                "8",
+                "12",
+                "953148083"
+              ],
+              [
+                "7/16-UNEF-28",
+                "Rp 1/8 BSP",
+                "31",
+                "19",
+                "16",
+                "114048"
+              ],
+              [
+                "7/16-20 JIC",
+                "Rp 1/8 BSP",
+                "31",
+                "19",
+                "16",
+                "953147721"
+              ],
+              [
+                "UNF 1/4\" - 28",
+                "Rp 1/4\" BSP",
+                "",
+                "",
+                "",
+                "953147730"
+              ],
+              [
+                "UNF 3/8\"-24",
+                "R 1/8\" BSP",
+                "30",
+                "",
+                "",
+                "953146632"
+              ],
+              [
+                "UNF 3/4\"-16",
+                "M 20 x 1.5",
+                "",
+                "",
+                "",
+                "953149523"
+              ]
+            ],
+            "images": []
           }
         ]
       },
       {
-        "heading": "Syrefast (316 / V4A)",
-        "headers": [
-          "G",
-          "G1",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "M 8 x 1",
-            "Rp 1/8 BSP",
-            "23",
-            "10",
-            "13",
-            "953149386"
-          ],
-          [
-            "M 10 x 1",
-            "M 10 x 1",
-            "18",
-            "7",
-            "13",
-            "på forespørsel"
-          ],
-          [
-            "M 10 x 1",
-            "M 10 x 1",
-            "23",
-            "12",
-            "13",
-            "04011600213"
-          ],
-          [
-            "M 10 x 1",
-            "Rp 1/8 BSP",
-            "23",
-            "12",
-            "13",
-            "på forespørsel"
-          ],
-          [
-            "M 10 x 1",
-            "M 10 x 1",
-            "35",
-            "24",
-            "13",
-            "04011610813"
-          ],
-          [
-            "M 10 x 1",
-            "M 10 x 1",
-            "50",
-            "39",
-            "13",
-            "953149387"
-          ],
-          [
-            "R 1/8 BSP",
-            "M 10x1",
-            "18",
-            "7",
-            "13",
-            "04011600313"
-          ],
-          [
-            "R 1/8 BSP",
-            "Rp 1/8 BSP",
-            "18",
-            "7",
-            "11",
-            "på forespørsel"
-          ],
-          [
-            "R 1/8 BSP",
-            "Rp 1/8 BSP",
-            "23",
-            "12",
-            "13",
-            "04011600313"
-          ],
-          [
-            "R 1/8 BSP",
-            "Rp 1/8 BSP",
-            "35",
-            "23",
-            "13",
-            "på forespørsel"
-          ],
-          [
-            "R 1/8 BSP",
-            "Rp 1/8 BSP",
-            "50",
-            "38",
-            "13",
-            "953149388"
-          ],
-          [
-            "R 1/4 BSP",
-            "M 10x1",
-            "26",
-            "14",
-            "14",
-            "04011601213"
-          ],
-          [
-            "R 1/4 BSP",
-            "M 10x1",
-            "35",
-            "23",
-            "14",
-            "04011601013"
-          ],
-          [
-            "R 1/4 BSP",
-            "M 10x1",
-            "55",
-            "43",
-            "14",
-            "04011601113"
-          ]
-        ],
-        "images": []
+        "label": "Forlenger 90 grader",
+        "slug": "forlenger-90-grader",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M 6 x 1",
+                "M 6x1",
+                "23",
+                "12",
+                "953148532"
+              ],
+              [
+                "M 6 x 1",
+                "M 8x1",
+                "23",
+                "12",
+                "953148949"
+              ],
+              [
+                "M 6 x 1",
+                "M 10x1",
+                "23",
+                "13",
+                "100210010"
+              ],
+              [
+                "M 6 x 1",
+                "1/8 NPT",
+                "23",
+                "9/16\"",
+                "på forespørsel"
+              ],
+              [
+                "M 8 x 1",
+                "M 8x1",
+                "23",
+                "12",
+                "953149227"
+              ],
+              [
+                "M 8 x 1.25",
+                "M 8x1.25",
+                "23",
+                "12",
+                "953149447"
+              ],
+              [
+                "M 8 x 1",
+                "M 10x1",
+                "23",
+                "13",
+                "100210020"
+              ],
+              [
+                "M 10 x 1",
+                "M 8x1",
+                "23",
+                "12",
+                "953148740"
+              ],
+              [
+                "M 10 x 1",
+                "M 10x1",
+                "23",
+                "13",
+                "100210030"
+              ],
+              [
+                "M 10 x 1",
+                "M 10x1",
+                "29",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "M 10 x 1.5",
+                "M 10x1",
+                "23",
+                "13",
+                "953148509"
+              ],
+              [
+                "R 1/8 BSP",
+                "M 8x1",
+                "23",
+                "12",
+                "på forespørsel"
+              ],
+              [
+                "R 1/8 BSP",
+                "M 10x1",
+                "26",
+                "12",
+                "100210105"
+              ],
+              [
+                "R 1/8 BSP",
+                "Rp 1/8 - BSP",
+                "23",
+                "13",
+                "100210081"
+              ],
+              [
+                "R 1/4 BSP",
+                "M 10x1",
+                "26",
+                "14",
+                "100210035"
+              ],
+              [
+                "R 1/4 BSP",
+                "RP 1/4 BSP",
+                "23",
+                "17",
+                "på forespørsel"
+              ],
+              [
+                "1/8 NPT",
+                "1/8 NPT",
+                "23",
+                "9/16\"",
+                "på forespørsel"
+              ],
+              [
+                "1/8 NPT",
+                "1/8 NPT",
+                "38",
+                "9/16\"",
+                "på forespørsel"
+              ],
+              [
+                "1/4\"-28UNF",
+                "M 10x1",
+                "23",
+                "12",
+                "100210032"
+              ],
+              [
+                "1/4-28 UNF",
+                "1/8 BSP",
+                "23",
+                "13",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__forlengere/04-680c85aa.png",
+                "alt": "",
+                "width": 333,
+                "height": 195
+              },
+              {
+                "src": "/images/produkter__forlengere/05-3914996a.png",
+                "alt": "",
+                "width": 342,
+                "height": 204
+              },
+              {
+                "src": "/images/produkter__forlengere/06-f13e3ad9.png",
+                "alt": "",
+                "width": 333,
+                "height": 195
+              },
+              {
+                "src": "/images/produkter__forlengere/07-2cf98377.png",
+                "alt": "",
+                "width": 329,
+                "height": 195
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M 10 x 1",
+                "M 10x1",
+                "23",
+                "13",
+                "100210041"
+              ],
+              [
+                "M 10 x 1",
+                "M 10x1",
+                "65",
+                "13",
+                "100210042"
+              ],
+              [
+                "M 10 x 1",
+                "M 10x1",
+                "75",
+                "13",
+                "100210043"
+              ],
+              [
+                "R 1/8 BSPT tap",
+                "RP 1/8 BSP",
+                "23",
+                "13",
+                "953149390"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Messing",
+            "headers": [
+              "G",
+              "G1",
+              "D",
+              "SW",
+              "Item No."
+            ],
+            "rows": [
+              [
+                "M 6x1",
+                "M 8x1",
+                "4",
+                "11",
+                "på forespørsel"
+              ],
+              [
+                "M 8x1",
+                "M 8x1",
+                "4",
+                "11",
+                "på forespørsel"
+              ],
+              [
+                "M 10x1",
+                "M 8x1",
+                "4",
+                "11",
+                "953148616"
+              ]
+            ],
+            "images": []
+          }
+        ]
       },
       {
-        "heading": "Messing",
-        "headers": [
-          "G",
-          "G1",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "M 14 x x1",
-            "R 1/4 BSP",
-            "25",
-            "9",
-            "19",
-            "F2185/57-00"
-          ],
-          [
-            "M 14 x x1",
-            "M 22 x 1.5",
-            "31",
-            "11",
-            "27",
-            "953148344"
-          ],
-          [
-            "M 18 X 1",
-            "M 20 X 1.5",
-            "45",
-            "",
-            "27",
-            "953147875"
-          ],
-          [
-            "M 18 X 1",
-            "M 20 X 1.5",
-            "55",
-            "17",
-            "27",
-            "953147152"
-          ],
-          [
-            "M 18 X 1",
-            "M 20 X 1.5",
-            "75",
-            "17",
-            "27",
-            "953148014"
-          ],
-          [
-            "M 18 X 1",
-            "R 3/8 BSP",
-            "",
-            "",
-            "27",
-            "953148417"
-          ],
-          [
-            "M 20 x 1.5",
-            "R 1/2 BSP",
-            "40",
-            "15",
-            "27",
-            "953147686"
-          ],
-          [
-            "M 20 x 1.5",
-            "M 22 x 1.5",
-            "",
-            "",
-            "27",
-            "953148295"
-          ],
-          [
-            "M 22 x 1.5",
-            "M 20 x 1.5",
-            "",
-            "",
-            "27",
-            "953148771"
-          ],
-          [
-            "M 22 x 1.5",
-            "R 1/4 BSP",
-            "40",
-            "15",
-            "27",
-            "953148176"
-          ],
-          [
-            "R 1/4 BSP",
-            "Rp 1/8 BSP",
-            "13",
-            "8",
-            "12",
-            "953148083"
-          ],
-          [
-            "7/16-UNEF-28",
-            "Rp 1/8 BSP",
-            "31",
-            "19",
-            "16",
-            "114048"
-          ],
-          [
-            "7/16-20 JIC",
-            "Rp 1/8 BSP",
-            "31",
-            "19",
-            "16",
-            "953147721"
-          ],
-          [
-            "UNF 1/4\" - 28",
-            "Rp 1/4\" BSP",
-            "",
-            "",
-            "",
-            "953147730"
-          ],
-          [
-            "UNF 3/8\"-24",
-            "R 1/8\" BSP",
-            "30",
-            "",
-            "",
-            "953146632"
-          ],
-          [
-            "UNF 3/4\"-16",
-            "M 20 x 1.5",
-            "",
-            "",
-            "",
-            "953149523"
-          ]
-        ],
-        "images": []
+        "label": "Forlenger 45 grader",
+        "slug": "forlenger-45-grader",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M 6 x 1",
+                "M 8x1",
+                "23",
+                "13",
+                "100210095"
+              ],
+              [
+                "M 8 x 1",
+                "M 8x1",
+                "23",
+                "13",
+                "100210085"
+              ],
+              [
+                "M 8 X 1.25",
+                "M 8x1",
+                "23",
+                "12",
+                "100210090"
+              ],
+              [
+                "M 10 x 1",
+                "M 8x1",
+                "23",
+                "13",
+                "100210080"
+              ],
+              [
+                "M 10 x 1",
+                "M 10x1",
+                "23",
+                "13",
+                "953148111"
+              ],
+              [
+                "M 6 x 1",
+                "Rp 1/8 BSP",
+                "23",
+                "13",
+                "på forespørsel"
+              ],
+              [
+                "R 1/8 BSP",
+                "Rp 1/8 BSP",
+                "23",
+                "13",
+                "100210081"
+              ],
+              [
+                "R 1/4 BSP",
+                "RP 1/4 BSP",
+                "33",
+                "17",
+                "0401950007-00"
+              ],
+              [
+                "1/8 NPT",
+                "1/8 NPT",
+                "23",
+                "9/16",
+                "på forespørsel"
+              ],
+              [
+                "1/4\"-28UNF",
+                "M 8x1",
+                "23",
+                "12",
+                "100210098"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__forlengere/08-3949e13d.png",
+                "alt": "",
+                "width": 231,
+                "height": 132
+              },
+              {
+                "src": "/images/produkter__forlengere/09-577b5824.png",
+                "alt": "",
+                "width": 223,
+                "height": 133
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M 10 x 1",
+                "M 10x1",
+                "23",
+                "13",
+                "953149391"
+              ],
+              [
+                "1/8 BSPT",
+                "1/8 BSP",
+                "23",
+                "13",
+                "953149392"
+              ]
+            ],
+            "images": []
+          }
+        ]
       }
     ],
     "metaTitle": "ELBA - I INDUSTRIENS TJENESTE",
@@ -1019,214 +1672,561 @@ export const produkter: Product[] = [
       "width": 400,
       "height": 261
     },
-    "subnav": [
-      "Fyllenippel for stuss",
-      "Fyllenippel gjenget tilkobling",
-      "Fyllenippel overgang"
-    ],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": "Fyllenippel rett",
-        "headers": [
-          "G",
-          "D",
-          "SW",
-          "L",
-          "Art.Nr.",
-          "Passer"
-        ],
-        "rows": [
-          [
-            "M18 x 1.0",
-            "34",
-            "32",
-            "100",
-            "953147153",
-            "Groeneveld"
-          ],
-          [
-            "M18 x 1.0",
-            "34",
-            "32",
-            "120",
-            "953147153",
-            "Groeneveld"
-          ],
-          [
-            "M20 x 1.5",
-            "34",
-            "32",
-            "45",
-            "21520150",
-            "Beka/Vogel/CLS"
-          ],
-          [
-            "M20 x 1.5",
-            "34",
-            "32",
-            "45",
-            "21520152",
-            "m/tilbakeslagsventil"
-          ],
-          [
-            "M22 x 1.5",
-            "34",
-            "32",
-            "45",
-            "40154",
-            "Lincoln-Skf"
-          ]
-        ],
-        "images": [
+        "label": "Fyllenippel for stuss",
+        "slug": "fyllenippel-for-stuss",
+        "tables": [
           {
-            "src": "/images/produkter__fyllenippler/02-f24eda9f.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Fyllenippel rett",
+            "headers": [
+              "G",
+              "D",
+              "SW",
+              "L",
+              "Art.Nr.",
+              "Passer"
+            ],
+            "rows": [
+              [
+                "M18 x 1.0",
+                "34",
+                "32",
+                "100",
+                "953147153",
+                "Groeneveld"
+              ],
+              [
+                "M18 x 1.0",
+                "34",
+                "32",
+                "120",
+                "953147153",
+                "Groeneveld"
+              ],
+              [
+                "M20 x 1.5",
+                "34",
+                "32",
+                "45",
+                "21520150",
+                "Beka/Vogel/CLS"
+              ],
+              [
+                "M20 x 1.5",
+                "34",
+                "32",
+                "45",
+                "21520152",
+                "m/tilbakeslagsventil"
+              ],
+              [
+                "M22 x 1.5",
+                "34",
+                "32",
+                "45",
+                "40154",
+                "Lincoln-Skf"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/02-f24eda9f.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__fyllenippler/03-9e68b64a.png",
+                "alt": "",
+                "width": 400,
+                "height": 261
+              }
+            ]
           },
           {
-            "src": "/images/produkter__fyllenippler/03-9e68b64a.png",
-            "alt": "",
-            "width": 400,
-            "height": 261
+            "heading": "Fyllenippel 45°",
+            "headers": [
+              "G",
+              "D",
+              "SW",
+              "L",
+              "Art.Nr.",
+              "Passer"
+            ],
+            "rows": [
+              [
+                "M20 x 1.5",
+                "34",
+                "32",
+                "118",
+                "21520146",
+                "Beka/Vogel/CLS"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/02-f24eda9f.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__fyllenippler/05-d9e2c081.png",
+                "alt": "",
+                "width": 158,
+                "height": 103
+              }
+            ]
+          },
+          {
+            "heading": "Fyllenippel 90°",
+            "headers": [
+              "G",
+              "D",
+              "SW",
+              "L",
+              "Art.Nr.",
+              "Passer"
+            ],
+            "rows": [
+              [
+                "M18 x 1.0",
+                "34",
+                "32",
+                "100",
+                "953147876",
+                "Groeneveld"
+              ],
+              [
+                "M20 x 1.5",
+                "38",
+                "30",
+                "50-56",
+                "21520149",
+                "Beka/Vogel/CLS"
+              ],
+              [
+                "M20 x 1.5",
+                "38",
+                "30",
+                "85-91",
+                "21520147",
+                "Beka/Vogel/CLS"
+              ],
+              [
+                "M22 x 1.5",
+                "34",
+                "32",
+                "45",
+                "40154",
+                "Lincoln-Skf"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/02-f24eda9f.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__fyllenippler/07-a2fcde43.png",
+                "alt": "",
+                "width": 287,
+                "height": 166
+              }
+            ]
+          },
+          {
+            "heading": "Fyllenippel 0° - 90° justerbar",
+            "headers": [
+              "G",
+              "D",
+              "SW",
+              "L",
+              "Art.Nr.",
+              "Passer"
+            ],
+            "rows": [
+              [
+                "M20 x 1.5",
+                "34",
+                "32",
+                "145 - 80",
+                "10132444",
+                "Beka/Vogel/CLS"
+              ],
+              [
+                "M20 x 1.5",
+                "34",
+                "32",
+                "145 - 80",
+                "10136837",
+                "m/tilbakeslagsventil"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/08-bc1caf3d.png",
+                "alt": "",
+                "width": 158,
+                "height": 211
+              },
+              {
+                "src": "/images/produkter__fyllenippler/09-175ec288.png",
+                "alt": "",
+                "width": 158,
+                "height": 211
+              }
+            ]
           }
         ]
       },
       {
-        "heading": "Fyllenippel 45°",
-        "headers": [
-          "G",
-          "D",
-          "SW",
-          "L",
-          "Art.Nr.",
-          "Passer"
-        ],
-        "rows": [
-          [
-            "M20 x 1.5",
-            "34",
-            "32",
-            "118",
-            "21520146",
-            "Beka/Vogel/CLS"
-          ]
-        ],
-        "images": [
+        "label": "Fyllenippel gjenget tilkobling",
+        "slug": "fyllenippel-gjenget-tilkobling",
+        "tables": [
           {
-            "src": "/images/produkter__fyllenippler/02-f24eda9f.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Fyllenippel rett",
+            "headers": [
+              "L",
+              "L1",
+              "G",
+              "G1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "38",
+                "26",
+                "M22x1.5",
+                "M26x1.5",
+                "27",
+                "953146913"
+              ],
+              [
+                "60",
+                "48",
+                "M20x1.5",
+                "M26x1.5",
+                "27",
+                "100-207"
+              ],
+              [
+                "55",
+                "43",
+                "M22x1.5",
+                "M26x1.5",
+                "27",
+                "på forespørsel"
+              ],
+              [
+                "75",
+                "63",
+                "M22x1.5",
+                "M26x1.5",
+                "27",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/10-da39a327.png",
+                "alt": "",
+                "width": 340,
+                "height": 195
+              },
+              {
+                "src": "/images/produkter__fyllenippler/11-62d548af.png",
+                "alt": "",
+                "width": 326,
+                "height": 188
+              }
+            ]
           },
           {
-            "src": "/images/produkter__fyllenippler/05-d9e2c081.png",
-            "alt": "",
-            "width": 158,
-            "height": 103
+            "heading": "Fyllenippel 90°",
+            "headers": [
+              "G",
+              "G1",
+              "SW",
+              "L",
+              "Form",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M22x1.5",
+                "M26x1.5",
+                "27",
+                "47",
+                "firkantet kropp",
+                "953146914"
+              ],
+              [
+                "M22x1.5",
+                "M26x1.5",
+                "27",
+                "71",
+                "rund som bilde",
+                "på forespørsel"
+              ],
+              [
+                "M22x1.5",
+                "M26x1.5",
+                "27",
+                "93",
+                "rund som bilde",
+                "på forespørsel"
+              ],
+              [
+                "M22x1.5",
+                "M26x1.5",
+                "27",
+                "112",
+                "rund som bilde",
+                "på forespørsel"
+              ],
+              [
+                "M20x1.5",
+                "M26x1.5",
+                "27",
+                "99",
+                "rund som bilde",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/12-106295a1.png",
+                "alt": "",
+                "width": 340,
+                "height": 195
+              },
+              {
+                "src": "/images/produkter__fyllenippler/13-39a90d9d.png",
+                "alt": "",
+                "width": 343,
+                "height": 195
+              }
+            ]
           }
         ]
       },
       {
-        "heading": "Fyllenippel 90°",
-        "headers": [
-          "G",
-          "D",
-          "SW",
-          "L",
-          "Art.Nr.",
-          "Passer"
-        ],
-        "rows": [
-          [
-            "M18 x 1.0",
-            "34",
-            "32",
-            "100",
-            "953147876",
-            "Groeneveld"
-          ],
-          [
-            "M20 x 1.5",
-            "38",
-            "30",
-            "50-56",
-            "21520149",
-            "Beka/Vogel/CLS"
-          ],
-          [
-            "M20 x 1.5",
-            "38",
-            "30",
-            "85-91",
-            "21520147",
-            "Beka/Vogel/CLS"
-          ],
-          [
-            "M22 x 1.5",
-            "34",
-            "32",
-            "45",
-            "40154",
-            "Lincoln-Skf"
-          ]
-        ],
-        "images": [
+        "label": "Fyllenippel overgang",
+        "slug": "fyllenippel-overgang",
+        "tables": [
           {
-            "src": "/images/produkter__fyllenippler/02-f24eda9f.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Fyllenippel overgang 90°",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "L1",
+              "L2",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M20x1.5",
+                "M20x1.5",
+                "47",
+                "30",
+                "80",
+                "27",
+                "953147698"
+              ],
+              [
+                "M20x1.5",
+                "M20x1.5",
+                "82",
+                "30",
+                "115",
+                "27",
+                "953149621"
+              ],
+              [
+                "M22x1.5",
+                "M22x1.5",
+                "47",
+                "30",
+                "80",
+                "27",
+                "953147828"
+              ],
+              [
+                "M22x1.5",
+                "M22x1.5",
+                "82",
+                "30",
+                "115",
+                "27",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/14-5315b825.png",
+                "alt": "",
+                "width": 340,
+                "height": 195
+              },
+              {
+                "src": "/images/produkter__fyllenippler/15-f80cdfb7.png",
+                "alt": "",
+                "width": 342,
+                "height": 196
+              }
+            ]
           },
           {
-            "src": "/images/produkter__fyllenippler/07-a2fcde43.png",
-            "alt": "",
-            "width": 287,
-            "height": 166
-          }
-        ]
-      },
-      {
-        "heading": "Fyllenippel 0° - 90° justerbar",
-        "headers": [
-          "G",
-          "D",
-          "SW",
-          "L",
-          "Art.Nr.",
-          "Passer"
-        ],
-        "rows": [
-          [
-            "M20 x 1.5",
-            "34",
-            "32",
-            "145 - 80",
-            "10132444",
-            "Beka/Vogel/CLS"
-          ],
-          [
-            "M20 x 1.5",
-            "34",
-            "32",
-            "145 - 80",
-            "10136837",
-            "m/tilbakeslagsventil"
-          ]
-        ],
-        "images": [
-          {
-            "src": "/images/produkter__fyllenippler/08-bc1caf3d.png",
-            "alt": "",
-            "width": 158,
-            "height": 211
+            "heading": "Fyllenippel overgang 90° banjo",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M20x1.5",
+                "MM20x1.5",
+                "40",
+                "32",
+                "953147625"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/16-3c980b33.png",
+                "alt": "",
+                "width": 340,
+                "height": 196
+              },
+              {
+                "src": "/images/produkter__fyllenippler/17-39547c55.png",
+                "alt": "",
+                "width": 342,
+                "height": 195
+              }
+            ]
           },
           {
-            "src": "/images/produkter__fyllenippler/09-175ec288.png",
-            "alt": "",
-            "width": 158,
-            "height": 211
+            "heading": "Fyllenippel 90°",
+            "headers": [
+              "G",
+              "G1",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M14X1.0",
+                "M20x1.5",
+                "31",
+                "",
+                "953149435"
+              ],
+              [
+                "M18x1.0",
+                "M20x1.5",
+                "55",
+                "27",
+                "953147152"
+              ],
+              [
+                "M18x1.0",
+                "M20x1.5",
+                "75",
+                "27",
+                "953148014"
+              ],
+              [
+                "M18x1.0",
+                "3/8\" utv.",
+                "",
+                "27",
+                "953148417"
+              ],
+              [
+                "M20x1.5\"",
+                "1/2\" R innv.",
+                "",
+                "27",
+                "953147473"
+              ],
+              [
+                "M22x1.5\"",
+                "M20x1.5",
+                "47",
+                "27",
+                "953148771"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/18-5301b2fa.png",
+                "alt": "",
+                "width": 254,
+                "height": 147
+              },
+              {
+                "src": "/images/produkter__fyllenippler/19-2cf013c3.png",
+                "alt": "",
+                "width": 271,
+                "height": 173
+              }
+            ]
+          },
+          {
+            "heading": "Fyllenippel 0° - 90° justerbar",
+            "headers": [
+              "G1",
+              "G",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M14x1",
+                "1/4\" R",
+                "27",
+                "953147056"
+              ],
+              [
+                "M20x1.5",
+                "1/4\" R",
+                "24",
+                "på forespørsel"
+              ],
+              [
+                "M22x1.5",
+                "1/4\" R",
+                "24",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fyllenippler/20-18dc7f73.png",
+                "alt": "",
+                "width": 340,
+                "height": 195
+              },
+              {
+                "src": "/images/produkter__fyllenippler/21-ea48a828.png",
+                "alt": "",
+                "width": 341,
+                "height": 193
+              }
+            ]
           }
         ]
       }
@@ -1243,96 +2243,227 @@ export const produkter: Product[] = [
       "width": 1440,
       "height": 1440
     },
-    "subnav": [
-      "Fyllepresse",
-      "Fyllepumpe",
-      "Holdere"
-    ],
     "intro": [
       "Fyllepresse til sentralsmøreanlegg for fettpatron iht. DIN 1284"
     ],
-    "tables": [
+    "tabs": [
       {
-        "heading": null,
-        "headers": [
-          "Patron",
-          "Tilkobling",
-          "L",
-          "D",
-          "D1",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "400 g",
-            "med tutt og M26 x 1.5",
-            "293 mm",
-            "54 mm",
-            "56 mm",
-            "208103026"
-          ],
-          [
-            "400 g",
-            "M26 x 1.5",
-            "293 mm",
-            "54 mm",
-            "56 mm",
-            "953146912"
-          ]
-        ],
-        "images": [
+        "label": "Fyllepresse",
+        "slug": "fyllepresse",
+        "tables": [
           {
-            "src": "/images/produkter__fylleutstyr/02-ee9402bd.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": null,
+            "headers": [
+              "Patron",
+              "Tilkobling",
+              "L",
+              "D",
+              "D1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "400 g",
+                "med tutt og M26 x 1.5",
+                "293 mm",
+                "54 mm",
+                "56 mm",
+                "208103026"
+              ],
+              [
+                "400 g",
+                "M26 x 1.5",
+                "293 mm",
+                "54 mm",
+                "56 mm",
+                "953146912"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fylleutstyr/02-ee9402bd.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__fylleutstyr/03-8149cfd1.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__fylleutstyr/04-1e0b42a4.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__fylleutstyr/05-06de2523.png",
+                "alt": "",
+                "width": 400,
+                "height": 262
+              }
+            ]
           },
           {
-            "src": "/images/produkter__fylleutstyr/03-8149cfd1.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          },
-          {
-            "src": "/images/produkter__fylleutstyr/04-1e0b42a4.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          },
-          {
-            "src": "/images/produkter__fylleutstyr/05-06de2523.png",
-            "alt": "",
-            "width": 400,
-            "height": 262
+            "heading": null,
+            "headers": [
+              "Patron",
+              "Tilkobling",
+              "L",
+              "D",
+              "D1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "400 g",
+                "med tutt",
+                "450 mm",
+                "54 mm",
+                "169 mm",
+                "20830001"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fylleutstyr/06-ebeeb7b4.png",
+                "alt": "",
+                "width": 362,
+                "height": 368
+              }
+            ]
           }
         ]
       },
       {
-        "heading": null,
-        "headers": [
-          "Patron",
-          "Tilkobling",
-          "L",
-          "D",
-          "D1",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "400 g",
-            "med tutt",
-            "450 mm",
-            "54 mm",
-            "169 mm",
-            "20830001"
-          ]
-        ],
-        "images": [
+        "label": "Fyllepumpe",
+        "slug": "fyllepumpe",
+        "tables": [
           {
-            "src": "/images/produkter__fylleutstyr/06-ebeeb7b4.png",
-            "alt": "",
-            "width": 362,
-            "height": 368
+            "heading": null,
+            "headers": [
+              "For",
+              "Falokk Dia.Mm",
+              "FøLgelokk Dia",
+              "Hunnkobling",
+              "Hannkobling",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "16 - 20 kg",
+                "215 - 236",
+                "240 - 330",
+                "med",
+                "uten",
+                "080720"
+              ],
+              [
+                "16 - 20 kg",
+                "215 - 236",
+                "340 - 330",
+                "med",
+                "med",
+                "080720*"
+              ],
+              [
+                "25 kg",
+                "300-335",
+                "312 - 342",
+                "med",
+                "uten",
+                "40675"
+              ],
+              [
+                "25 kg",
+                "300-335",
+                "312 - 342",
+                "med",
+                "med",
+                "40675*"
+              ],
+              [
+                "50 kg",
+                "355-387",
+                "365 - 415",
+                "med",
+                "uten",
+                "40683"
+              ],
+              [
+                "50kg",
+                "355-387",
+                "365 - 415",
+                "med",
+                "med",
+                "40683*"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fylleutstyr/07-c66cf67c.png",
+                "alt": "",
+                "width": 600,
+                "height": 900
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Holdere",
+        "slug": "holdere",
+        "tables": [
+          {
+            "heading": null,
+            "headers": [
+              "Festemetode",
+              "Holder",
+              "HxBxD Mm",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "Magnet",
+                "Klips",
+                "Ø86 x100",
+                "953148747"
+              ],
+              [
+                "Bolt hull",
+                "Klips",
+                "7x42x100",
+                "953148748"
+              ],
+              [
+                "Bolt hull",
+                "Fjærbelastet",
+                "170x160x70",
+                "953148748"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__fylleutstyr/08-9cca389c.png",
+                "alt": "",
+                "width": 193,
+                "height": 134
+              },
+              {
+                "src": "/images/produkter__fylleutstyr/09-859076a9.png",
+                "alt": "",
+                "width": 183,
+                "height": 155
+              },
+              {
+                "src": "/images/produkter__fylleutstyr/10-135271f8.png",
+                "alt": "",
+                "width": 275,
+                "height": 183
+              }
+            ]
           }
         ]
       }
@@ -1349,120 +2480,335 @@ export const produkter: Product[] = [
       "width": 400,
       "height": 261
     },
-    "subnav": [
-      "Rett \"GE\"",
-      "90° \"WE\"",
-      "90° \"WE\" dreibar",
-      "Sammenkobling \"G\""
-    ],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": "Lynfittings 0° rett \"GE\"",
-        "headers": [
-          "D",
-          "G",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "4",
-            "M 6 x 1 tap",
-            "10",
-            "953147893"
-          ],
-          [
-            "4",
-            "M 8 x 1 tap",
-            "10",
-            "04062323"
-          ],
-          [
-            "4",
-            "M 10 x 1",
-            "11",
-            "04060872"
-          ],
-          [
-            "4",
-            "R 1/8 BSP",
-            "10",
-            "105335"
-          ],
-          [
-            "4",
-            "1/8 NPT",
-            "11",
-            "953149567"
-          ],
-          [
-            "4",
-            "1/4 - 28 UNF",
-            "11",
-            "953149566"
-          ],
-          [
-            "6",
-            "M 6 x 1",
-            "12",
-            "953146770"
-          ],
-          [
-            "6",
-            "M 8 x 1",
-            "12",
-            "04060877"
-          ],
-          [
-            "6",
-            "M 10 x 1",
-            "12",
-            "04060876"
-          ],
-          [
-            "6",
-            "R 1/8 BSP",
-            "12",
-            "106033"
-          ],
-          [
-            "6",
-            "1/8 NPT",
-            "12",
-            "953149568"
-          ],
-          [
-            "6",
-            "1/4 - 28 UNF",
-            "12",
-            "953149569"
-          ],
-          [
-            "1/4\"",
-            "1/4 - 28 UNF",
-            "12",
-            "953149570"
-          ],
-          [
-            "1/4\"",
-            "1/8 NPT",
-            "12",
-            "953159571"
-          ]
-        ],
-        "images": [
+        "label": "Rett \"GE\"",
+        "slug": "rett-ge",
+        "tables": [
           {
-            "src": "/images/produkter__lynfittings/02-1fef0363.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          },
+            "heading": "Lynfittings 0° rett \"GE\"",
+            "headers": [
+              "D",
+              "G",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "M 6 x 1 tap",
+                "10",
+                "953147893"
+              ],
+              [
+                "4",
+                "M 8 x 1 tap",
+                "10",
+                "04062323"
+              ],
+              [
+                "4",
+                "M 10 x 1",
+                "11",
+                "04060872"
+              ],
+              [
+                "4",
+                "R 1/8 BSP",
+                "10",
+                "105335"
+              ],
+              [
+                "4",
+                "1/8 NPT",
+                "11",
+                "953149567"
+              ],
+              [
+                "4",
+                "1/4 - 28 UNF",
+                "11",
+                "953149566"
+              ],
+              [
+                "6",
+                "M 6 x 1",
+                "12",
+                "953146770"
+              ],
+              [
+                "6",
+                "M 8 x 1",
+                "12",
+                "04060877"
+              ],
+              [
+                "6",
+                "M 10 x 1",
+                "12",
+                "04060876"
+              ],
+              [
+                "6",
+                "R 1/8 BSP",
+                "12",
+                "106033"
+              ],
+              [
+                "6",
+                "1/8 NPT",
+                "12",
+                "953149568"
+              ],
+              [
+                "6",
+                "1/4 - 28 UNF",
+                "12",
+                "953149569"
+              ],
+              [
+                "1/4\"",
+                "1/4 - 28 UNF",
+                "12",
+                "953149570"
+              ],
+              [
+                "1/4\"",
+                "1/8 NPT",
+                "12",
+                "953159571"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__lynfittings/02-1fef0363.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__lynfittings/03-c4fc2c5e.png",
+                "alt": "",
+                "width": 400,
+                "height": 263
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "90° \"WE\"",
+        "slug": "90-we",
+        "tables": [
           {
-            "src": "/images/produkter__lynfittings/03-c4fc2c5e.png",
-            "alt": "",
-            "width": 400,
-            "height": 263
+            "heading": "Lynfittings 90° vinkel \"WE\" dreibar / bajo",
+            "headers": [
+              "D",
+              "G",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "M6 x 1",
+                "13",
+                "953148885"
+              ],
+              [
+                "4",
+                "M8 x 1",
+                "13",
+                "04061536"
+              ],
+              [
+                "4",
+                "M10 x 1",
+                "13",
+                "04060982"
+              ],
+              [
+                "4",
+                "R 1/8 BSP",
+                "13",
+                "953148178"
+              ],
+              [
+                "4",
+                "1/8 NPT",
+                "13",
+                "953149572"
+              ],
+              [
+                "4",
+                "1/4 - 28 UNF",
+                "13",
+                "953149574"
+              ],
+              [
+                "6",
+                "M6 x 1",
+                "13",
+                "04062330"
+              ],
+              [
+                "6",
+                "M8 x 1",
+                "13",
+                "953147802"
+              ],
+              [
+                "6",
+                "M10 x 1",
+                "13",
+                "953146773"
+              ],
+              [
+                "6",
+                "R 1/8 BSP",
+                "13",
+                "953146771"
+              ],
+              [
+                "6",
+                "1/8 NPT",
+                "13",
+                "953149573"
+              ],
+              [
+                "6",
+                "1/4 - 28 UNF",
+                "13",
+                "953149575"
+              ],
+              [
+                "\"1/4\"\"\"",
+                "1/4 - 28 UNF",
+                "13",
+                "953149576"
+              ],
+              [
+                "\"1/4\"\"\"",
+                "1/8 NPT",
+                "13",
+                "953149577"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__lynfittings/04-3c235cad.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__lynfittings/05-3e6d818b.png",
+                "alt": "",
+                "width": 400,
+                "height": 270
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "90° \"WE\" dreibar",
+        "slug": "90-we-dreibar",
+        "tables": [
+          {
+            "heading": "Lynfittings 90° vinkel \"WE\" dreibar / bajo",
+            "headers": [
+              "D",
+              "G",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "1/8 NPT",
+                "13",
+                "953149573"
+              ],
+              [
+                "6",
+                "1/4 - 28 UNF",
+                "13",
+                "953149575"
+              ],
+              [
+                "\"1/4\"\"\"",
+                "1/4 - 28 UNF",
+                "13",
+                "953149576"
+              ],
+              [
+                "\"1/4\"\"\"",
+                "1/8 NPT",
+                "13",
+                "953149577"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__lynfittings/04-3c235cad.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__lynfittings/05-3e6d818b.png",
+                "alt": "",
+                "width": 400,
+                "height": 270
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Sammenkobling \"G\"",
+        "slug": "sammenkobling-g",
+        "tables": [
+          {
+            "heading": "Lynfittings 0° rett \"G\" sammenkobling",
+            "headers": [
+              "D",
+              "L",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "26",
+                "953148729"
+              ],
+              [
+                "6",
+                "29.5",
+                "953146774"
+              ],
+              [
+                "1/4\"",
+                "30",
+                "953149584"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__lynfittings/06-fb872f83.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__lynfittings/07-1d11f30f.png",
+                "alt": "",
+                "width": 400,
+                "height": 261
+              }
+            ]
           }
         ]
       }
@@ -1479,452 +2825,954 @@ export const produkter: Product[] = [
       "width": 400,
       "height": 265
     },
-    "subnav": [
-      "Rørender rette",
-      "Rørender 90 grader",
-      "Rørender 45 grader"
-    ],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "D",
-          "For Slange",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "4",
-            "8.6",
-            "51",
-            "20",
-            "10",
-            "953146718"
-          ],
-          [
-            "5",
-            "8.6",
-            "64",
-            "30",
-            "10",
-            "100121218"
-          ],
-          [
-            "6",
-            "8.6",
-            "51",
-            "20",
-            "10",
-            "100121186"
-          ],
-          [
-            "6",
-            "8.6",
-            "55",
-            "24",
-            "10",
-            "100121190"
-          ],
-          [
-            "6",
-            "8.6",
-            "61",
-            "30",
-            "10",
-            "100121201"
-          ],
-          [
-            "6",
-            "8.6",
-            "96.5",
-            "65.5",
-            "10",
-            "953149589"
-          ],
-          [
-            "8",
-            "8.6",
-            "61",
-            "30",
-            "10",
-            "100121217"
-          ],
-          [
-            "1/4\"",
-            "8.6",
-            "61",
-            "30",
-            "11",
-            "953149590"
-          ],
-          [
-            "3/16\"",
-            "8.6",
-            "51",
-            "20",
-            "10",
-            "953148377"
-          ],
-          [
-            "6",
-            "11.2",
-            "65.5",
-            "22",
-            "12",
-            "953146736"
-          ],
-          [
-            "8",
-            "11.2",
-            "65.5",
-            "22",
-            "12",
-            "100121301"
-          ],
-          [
-            "10",
-            "11.2",
-            "73.5",
-            "30",
-            "12",
-            "953149591"
-          ]
-        ],
-        "images": [
+        "label": "Rørender rette",
+        "slug": "rorender-rette",
+        "tables": [
           {
-            "src": "/images/produkter__rørender/02-64dfae38.jpg",
-            "alt": "",
-            "width": 594,
-            "height": 344
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "For Slange",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "8.6",
+                "51",
+                "20",
+                "10",
+                "953146718"
+              ],
+              [
+                "5",
+                "8.6",
+                "64",
+                "30",
+                "10",
+                "100121218"
+              ],
+              [
+                "6",
+                "8.6",
+                "51",
+                "20",
+                "10",
+                "100121186"
+              ],
+              [
+                "6",
+                "8.6",
+                "55",
+                "24",
+                "10",
+                "100121190"
+              ],
+              [
+                "6",
+                "8.6",
+                "61",
+                "30",
+                "10",
+                "100121201"
+              ],
+              [
+                "6",
+                "8.6",
+                "96.5",
+                "65.5",
+                "10",
+                "953149589"
+              ],
+              [
+                "8",
+                "8.6",
+                "61",
+                "30",
+                "10",
+                "100121217"
+              ],
+              [
+                "1/4\"",
+                "8.6",
+                "61",
+                "30",
+                "11",
+                "953149590"
+              ],
+              [
+                "3/16\"",
+                "8.6",
+                "51",
+                "20",
+                "10",
+                "953148377"
+              ],
+              [
+                "6",
+                "11.2",
+                "65.5",
+                "22",
+                "12",
+                "953146736"
+              ],
+              [
+                "8",
+                "11.2",
+                "65.5",
+                "22",
+                "12",
+                "100121301"
+              ],
+              [
+                "10",
+                "11.2",
+                "73.5",
+                "30",
+                "12",
+                "953149591"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/02-64dfae38.jpg",
+                "alt": "",
+                "width": 594,
+                "height": 344
+              },
+              {
+                "src": "/images/produkter__rørender/03-13a29e6b.jpg",
+                "alt": "",
+                "width": 594,
+                "height": 341
+              }
+            ]
           },
           {
-            "src": "/images/produkter__rørender/03-13a29e6b.jpg",
-            "alt": "",
-            "width": 594,
-            "height": 341
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "For Slange",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "61",
+                "30",
+                "10",
+                "100121196"
+              ],
+              [
+                "6",
+                "11.2",
+                "65.5",
+                "22",
+                "12",
+                "953146814"
+              ],
+              [
+                "8",
+                "11.2",
+                "65.5",
+                "22",
+                "12",
+                "100121348"
+              ],
+              [
+                "10",
+                "11.2",
+                "73.5",
+                "30",
+                "12",
+                "953149592"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "For Slange",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "51",
+                "20",
+                "10",
+                "100121210"
+              ],
+              [
+                "6",
+                "8.6",
+                "61",
+                "30",
+                "10",
+                "953147621"
+              ],
+              [
+                "1/4\"",
+                "8.6",
+                "61",
+                "30",
+                "11",
+                "953149590"
+              ],
+              [
+                "6",
+                "11.2",
+                "65.5",
+                "22",
+                "12",
+                "953149351"
+              ],
+              [
+                "1/4\"",
+                "1/8\" x 5/16\"",
+                "2.09\"",
+                "1.18\"",
+                "7/16\"",
+                "953149595"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/04-50bf00d8.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__rørender/05-167b888a.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "For Slange",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "51",
+                "20",
+                "10",
+                "953148849"
+              ],
+              [
+                "1/4\"",
+                "1/8\" x 5/16\"",
+                "53",
+                "21.5",
+                "7/16\"",
+                "953149596"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Forsinket (svart)",
+            "headers": [
+              "D",
+              "For Slange",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "52.5",
+                "21.5",
+                "10",
+                "953149593"
+              ],
+              [
+                "6",
+                "8.6",
+                "61",
+                "30",
+                "10",
+                "953149594"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "For Slange",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "8.6",
+                "56",
+                "25",
+                "10",
+                "953148677"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/06-ac720e8d.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__rørender/07-898b37e0.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "For Slange",
+              "L",
+              "L1",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "M 10x1",
+                "8.6",
+                "6 LL",
+                "39",
+                "11",
+                "953147626"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/08-ea008481.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__rørender/09-5c81bee8.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "L",
+              "For Slange",
+              "G",
+              "SW",
+              "SW1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "56",
+                "1/8\" x 5/16\"",
+                "1/8 NPT",
+                "\"7/16\"",
+                "1/2\"",
+                "953149598"
+              ],
+              [
+                "57",
+                "1/8\" x 5/16\"",
+                "1/8 BSPT",
+                "\"7/16\"",
+                "1/2\"",
+                "953149599"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/10-ff304097.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__rørender/11-4e10c600.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "G",
+              "Hose Ø",
+              "L",
+              "SW",
+              "SW1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "JIC37° 7/16",
+                "8.6",
+                "27.5",
+                "14",
+                "14",
+                "953149600"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/12-21f1f3fb.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__rørender/13-bc424d9a.png",
+                "alt": "",
+                "width": 400,
+                "height": 263
+              }
+            ]
           }
         ]
       },
       {
-        "heading": "Syrefast (316 / V4A)",
-        "headers": [
-          "D",
-          "For Slange",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "6",
-            "8.6",
-            "61",
-            "30",
-            "10",
-            "100121196"
-          ],
-          [
-            "6",
-            "11.2",
-            "65.5",
-            "22",
-            "12",
-            "953146814"
-          ],
-          [
-            "8",
-            "11.2",
-            "65.5",
-            "22",
-            "12",
-            "100121348"
-          ],
-          [
-            "10",
-            "11.2",
-            "73.5",
-            "30",
-            "12",
-            "953149592"
-          ]
-        ],
-        "images": []
-      },
-      {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "D",
-          "For Slange",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "6",
-            "8.6",
-            "51",
-            "20",
-            "10",
-            "100121210"
-          ],
-          [
-            "6",
-            "8.6",
-            "61",
-            "30",
-            "10",
-            "953147621"
-          ],
-          [
-            "1/4\"",
-            "8.6",
-            "61",
-            "30",
-            "11",
-            "953149590"
-          ],
-          [
-            "6",
-            "11.2",
-            "65.5",
-            "22",
-            "12",
-            "953149351"
-          ],
-          [
-            "1/4\"",
-            "1/8\" x 5/16\"",
-            "2.09\"",
-            "1.18\"",
-            "7/16\"",
-            "953149595"
-          ]
-        ],
-        "images": [
+        "label": "Rørender 90 grader",
+        "slug": "rorender-90-grader",
+        "tables": [
           {
-            "src": "/images/produkter__rørender/04-50bf00d8.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "For Slange",
+              "H",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "8.6",
+                "14",
+                "30",
+                "10",
+                "953146717"
+              ],
+              [
+                "5 (3/16\")",
+                "8.6",
+                "14",
+                "32",
+                "10",
+                "953148378"
+              ],
+              [
+                "6",
+                "8.6",
+                "13",
+                "21",
+                "10",
+                "100121208"
+              ],
+              [
+                "6",
+                "8.6",
+                "14",
+                "33",
+                "10",
+                "100121209"
+              ],
+              [
+                "6",
+                "8.6",
+                "17",
+                "28",
+                "10",
+                "953149603"
+              ],
+              [
+                "6",
+                "8.6",
+                "28",
+                "37",
+                "10",
+                "100121203"
+              ],
+              [
+                "6",
+                "8.6",
+                "28",
+                "53",
+                "10",
+                "953149602"
+              ],
+              [
+                "1/4\"",
+                "8.6",
+                "28",
+                "37",
+                "11",
+                "953149603"
+              ],
+              [
+                "6",
+                "11.2",
+                "22",
+                "45",
+                "12",
+                "953146786"
+              ],
+              [
+                "8",
+                "11.2",
+                "23",
+                "36",
+                "12",
+                "100121165"
+              ],
+              [
+                "8",
+                "11.2",
+                "23",
+                "55",
+                "12",
+                "100121167"
+              ],
+              [
+                "8",
+                "11.2",
+                "",
+                "75",
+                "12",
+                "100121169"
+              ],
+              [
+                "10",
+                "11.2",
+                "23",
+                "36",
+                "12",
+                "953149604"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/14-e987a433.jpg",
+                "alt": "",
+                "width": 402,
+                "height": 238
+              },
+              {
+                "src": "/images/produkter__rørender/15-5ce32ade.jpg",
+                "alt": "",
+                "width": 440,
+                "height": 260
+              }
+            ]
           },
           {
-            "src": "/images/produkter__rørender/05-167b888a.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "For Slange",
+              "H",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "28",
+                "37",
+                "10",
+                "100121379"
+              ],
+              [
+                "6",
+                "11.2",
+                "22",
+                "45",
+                "12",
+                "100121168"
+              ],
+              [
+                "8",
+                "11.2",
+                "23",
+                "36",
+                "12",
+                "100121166"
+              ],
+              [
+                "8",
+                "11.2",
+                "",
+                "75",
+                "12",
+                "100121169"
+              ],
+              [
+                "10",
+                "11.2",
+                "23",
+                "36",
+                "12",
+                "953149605"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "For Slange",
+              "H",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "25",
+                "37",
+                "10",
+                "953147619"
+              ],
+              [
+                "6",
+                "8.6",
+                "28",
+                "53",
+                "10",
+                "100121387"
+              ],
+              [
+                "1/4\"",
+                "8.6",
+                "28",
+                "37",
+                "11",
+                "953149606"
+              ],
+              [
+                "1/4\"",
+                "1/8\" x 5/16\"",
+                "27 mm / 1.06\"",
+                "35 mm / 1.38\"",
+                "11 mm / 7/16\"",
+                "953149607"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/16-ea4bb7f0.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__rørender/17-c5020371.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "For Slange",
+              "H",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "17",
+                "28",
+                "10",
+                "953149608"
+              ],
+              [
+                "6",
+                "8.6",
+                "28",
+                "37",
+                "10",
+                "953147619"
+              ],
+              [
+                "6",
+                "8.6",
+                "28",
+                "53",
+                "10",
+                "953147620"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "G",
+              "For Slange",
+              "H",
+              "L",
+              "SW / SW1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "JIC37°7/16",
+                "8.6",
+                "20.7",
+                "25.7",
+                "14",
+                "953149611"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/18-b0cbbda4.png",
+                "alt": "",
+                "width": 400,
+                "height": 262
+              },
+              {
+                "src": "/images/produkter__rørender/19-8f4649f5.png",
+                "alt": "",
+                "width": 400,
+                "height": 261
+              }
+            ]
           }
         ]
       },
       {
-        "heading": "Syrefast (316 / V4A)",
-        "headers": [
-          "D",
-          "For Slange",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "6",
-            "8.6",
-            "51",
-            "20",
-            "10",
-            "953148849"
-          ],
-          [
-            "1/4\"",
-            "1/8\" x 5/16\"",
-            "53",
-            "21.5",
-            "7/16\"",
-            "953149596"
-          ]
-        ],
-        "images": []
-      },
-      {
-        "heading": "Forsinket (svart)",
-        "headers": [
-          "D",
-          "For Slange",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "6",
-            "8.6",
-            "52.5",
-            "21.5",
-            "10",
-            "953149593"
-          ],
-          [
-            "6",
-            "8.6",
-            "61",
-            "30",
-            "10",
-            "953149594"
-          ]
-        ],
-        "images": []
-      },
-      {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "For Slange",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "8.6",
-            "56",
-            "25",
-            "10",
-            "953148677"
-          ]
-        ],
-        "images": [
+        "label": "Rørender 45 grader",
+        "slug": "rorender-45-grader",
+        "tables": [
           {
-            "src": "/images/produkter__rørender/06-ac720e8d.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "For Slange",
+              "H",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "24",
+                "15",
+                "10",
+                "100121206"
+              ],
+              [
+                "6",
+                "8.6",
+                "35",
+                "25",
+                "10",
+                "100121227"
+              ],
+              [
+                "8",
+                "8.6",
+                "37",
+                "",
+                "10",
+                "100121175"
+              ],
+              [
+                "8",
+                "8.6",
+                "45",
+                "",
+                "10",
+                "100121177"
+              ],
+              [
+                "1/4\"",
+                "8.6",
+                "35",
+                "25",
+                "11",
+                "953149616"
+              ],
+              [
+                "6",
+                "11.2",
+                "35",
+                "25",
+                "12",
+                "953149617"
+              ],
+              [
+                "8",
+                "11.2",
+                "35",
+                "25",
+                "12",
+                "953149618"
+              ],
+              [
+                "8",
+                "11.2",
+                "55",
+                "",
+                "12",
+                "100121163"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/20-42cfe0cd.jpg",
+                "alt": "",
+                "width": 448,
+                "height": 212
+              },
+              {
+                "src": "/images/produkter__rørender/21-5b65c030.jpg",
+                "alt": "",
+                "width": 422,
+                "height": 188
+              }
+            ]
           },
           {
-            "src": "/images/produkter__rørender/07-898b37e0.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          }
-        ]
-      },
-      {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "D",
-          "For Slange",
-          "L",
-          "L1",
-          "SW",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "M 10x1",
-            "8.6",
-            "6 LL",
-            "39",
-            "11",
-            "953147626"
-          ]
-        ],
-        "images": [
-          {
-            "src": "/images/produkter__rørender/08-ea008481.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "For Slange",
+              "H",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "35",
+                "25",
+                "10",
+                "100212187"
+              ],
+              [
+                "8",
+                "11.2",
+                "55",
+                "",
+                "12",
+                "100121163"
+              ]
+            ],
+            "images": []
           },
           {
-            "src": "/images/produkter__rørender/09-5c81bee8.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          }
-        ]
-      },
-      {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "L",
-          "For Slange",
-          "G",
-          "SW",
-          "SW1",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "56",
-            "1/8\" x 5/16\"",
-            "1/8 NPT",
-            "\"7/16\"",
-            "1/2\"",
-            "953149598"
-          ],
-          [
-            "57",
-            "1/8\" x 5/16\"",
-            "1/8 BSPT",
-            "\"7/16\"",
-            "1/2\"",
-            "953149599"
-          ]
-        ],
-        "images": [
-          {
-            "src": "/images/produkter__rørender/10-ff304097.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          },
-          {
-            "src": "/images/produkter__rørender/11-4e10c600.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          }
-        ]
-      },
-      {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "G",
-          "Hose Ø",
-          "L",
-          "SW",
-          "SW1",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "JIC37° 7/16",
-            "8.6",
-            "27.5",
-            "14",
-            "14",
-            "953149600"
-          ]
-        ],
-        "images": [
-          {
-            "src": "/images/produkter__rørender/12-21f1f3fb.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          },
-          {
-            "src": "/images/produkter__rørender/13-bc424d9a.png",
-            "alt": "",
-            "width": 400,
-            "height": 263
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "For Slange",
+              "H",
+              "L",
+              "SW",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "8.6",
+                "24",
+                "15",
+                "10",
+                "100121254"
+              ],
+              [
+                "6",
+                "8.6",
+                "35",
+                "25",
+                "10",
+                "953149619"
+              ],
+              [
+                "1/4\"",
+                "8.6",
+                "35",
+                "25",
+                "11",
+                "953149619"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__rørender/22-4434db09.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__rørender/23-085d2ed5.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
           }
         ]
       }
@@ -1941,101 +3789,326 @@ export const produkter: Product[] = [
       "width": 400,
       "height": 260
     },
-    "subnav": [
-      "Skottgjennomføring",
-      "Skottgjennomføring innv. gjenger",
-      "Skottgjennomføring 90 grader"
-    ],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "D",
-          "Serie",
-          "SW",
-          "SW1",
-          "L",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "4",
-            "LL",
-            "",
-            "10",
-            "",
-            "11643140"
-          ],
-          [
-            "6",
-            "L",
-            "17",
-            "14",
-            "48",
-            "0401 4701 006"
-          ],
-          [
-            "8",
-            "L",
-            "19",
-            "17",
-            "49",
-            "0401 4701 106"
-          ],
-          [
-            "10",
-            "L",
-            "22",
-            "19",
-            "52",
-            "953149560"
-          ]
-        ],
-        "images": [
+        "label": "Skottgjennomføring",
+        "slug": "skottgjennomforing",
+        "tables": [
           {
-            "src": "/images/produkter__skottgjennomføring/02-b6a4b506.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "Serie",
+              "SW",
+              "SW1",
+              "SW2",
+              "L",
+              "L1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "L",
+                "12",
+                "14",
+                "17",
+                "48",
+                "19",
+                "04014721006"
+              ],
+              [
+                "6",
+                "",
+                "12",
+                "17",
+                "19",
+                "50",
+                "31",
+                "04014722006"
+              ],
+              [
+                "8",
+                "L",
+                "12",
+                "17",
+                "19",
+                "57",
+                "26",
+                "953149561"
+              ],
+              [
+                "10",
+                "L",
+                "19",
+                "19",
+                "22",
+                "60",
+                "29",
+                "953149562"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__skottgjennomføring/04-dd5fd682.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__skottgjennomføring/05-069f1e24.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
           },
           {
-            "src": "/images/produkter__skottgjennomføring/03-e2bc3bf0.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "Serie",
+              "SW",
+              "SW1",
+              "SW2",
+              "L",
+              "L1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "L",
+                "12",
+                "14",
+                "17",
+                "48",
+                "19",
+                "953149394"
+              ],
+              [
+                "8",
+                "L",
+                "12",
+                "17",
+                "19",
+                "57",
+                "26",
+                "953149563"
+              ]
+            ],
+            "images": []
           }
         ]
       },
       {
-        "heading": "Syrefast (316 / V4A)",
-        "headers": [
-          "D",
-          "Serie",
-          "SW",
-          "SW1",
-          "L",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "6",
-            "L",
-            "17",
-            "14",
-            "48",
-            "0401 4701 013"
-          ],
-          [
-            "8",
-            "L",
-            "19",
-            "17",
-            "49",
-            "0401 4701 113"
-          ]
-        ],
-        "images": []
+        "label": "Skottgjennomføring innv. gjenger",
+        "slug": "skottgjennomforing-innv-gjenger",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "G",
+              "G1",
+              "Serie",
+              "SW",
+              "SW1",
+              "L",
+              "L1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "M6x1",
+                "M12x1.5",
+                "L",
+                "17",
+                "14",
+                "28",
+                "5",
+                "953149557"
+              ],
+              [
+                "6",
+                "M10x1",
+                "M12x1.5",
+                "L",
+                "17",
+                "14",
+                "60",
+                "20",
+                "953147434"
+              ],
+              [
+                "6",
+                "Rp 1/8 BSPP",
+                "M12x1.5",
+                "L",
+                "17",
+                "14",
+                "54",
+                "20",
+                "953149558"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__skottgjennomføring/06-5814c0a0.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__skottgjennomføring/07-c3190f14.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "G",
+              "G1",
+              "Serie",
+              "SW",
+              "SW1",
+              "L",
+              "L1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "M10x1",
+                "M12x1.5",
+                "L",
+                "17",
+                "14",
+                "60",
+                "20",
+                "953148591"
+              ]
+            ],
+            "images": []
+          }
+        ]
+      },
+      {
+        "label": "Skottgjennomføring 90 grader",
+        "slug": "skottgjennomforing-90-grader",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "Serie",
+              "SW",
+              "SW1",
+              "SW2",
+              "L",
+              "L1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "L",
+                "12",
+                "14",
+                "17",
+                "48",
+                "19",
+                "04014721006"
+              ],
+              [
+                "6",
+                "",
+                "12",
+                "17",
+                "19",
+                "50",
+                "31",
+                "04014722006"
+              ],
+              [
+                "8",
+                "L",
+                "12",
+                "17",
+                "19",
+                "57",
+                "26",
+                "953149561"
+              ],
+              [
+                "10",
+                "L",
+                "19",
+                "19",
+                "22",
+                "60",
+                "29",
+                "953149562"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__skottgjennomføring/04-dd5fd682.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__skottgjennomføring/05-069f1e24.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "Serie",
+              "SW",
+              "SW1",
+              "SW2",
+              "L",
+              "L1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "L",
+                "12",
+                "14",
+                "17",
+                "48",
+                "19",
+                "953149394"
+              ],
+              [
+                "8",
+                "L",
+                "12",
+                "17",
+                "19",
+                "57",
+                "26",
+                "953149563"
+              ]
+            ],
+            "images": []
+          }
+        ]
       }
     ],
     "metaTitle": "ELBA - I INDUSTRIENS TJENESTE",
@@ -2050,135 +4123,140 @@ export const produkter: Product[] = [
       "width": 400,
       "height": 260
     },
-    "subnav": [],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": "For slange Ø 8,6",
-        "headers": [
-          "L",
-          "SW",
-          "Art.Nr",
-          "Material"
-        ],
-        "rows": [
-          [
-            "28",
-            "12",
-            "100121200",
-            "Forsinket blank"
-          ],
-          [
-            "28",
-            "12",
-            "953149585",
-            "Forsinket sort"
-          ],
-          [
-            "28",
-            "12",
-            "100121197",
-            "Syrefast"
-          ]
-        ],
-        "images": [
+        "label": null,
+        "slug": "",
+        "tables": [
           {
-            "src": "/images/produkter__skruhylser/02-5962d532.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "For slange Ø 8,6",
+            "headers": [
+              "L",
+              "SW",
+              "Art.Nr",
+              "Material"
+            ],
+            "rows": [
+              [
+                "28",
+                "12",
+                "100121200",
+                "Forsinket blank"
+              ],
+              [
+                "28",
+                "12",
+                "953149585",
+                "Forsinket sort"
+              ],
+              [
+                "28",
+                "12",
+                "100121197",
+                "Syrefast"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__skruhylser/02-5962d532.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__rørender/03-13a29e6b.jpg",
+                "alt": "",
+                "width": 594,
+                "height": 341
+              },
+              {
+                "src": "/images/produkter__skruhylser/04-8a3d91d2.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
           },
           {
-            "src": "/images/produkter__rørender/03-13a29e6b.jpg",
-            "alt": "",
-            "width": 594,
-            "height": 341
+            "heading": "For slange Ø 11,2",
+            "headers": [
+              "L",
+              "SW",
+              "Art.Nr",
+              "Material"
+            ],
+            "rows": [
+              [
+                "28",
+                "12",
+                "100121305",
+                "Forsinket blank"
+              ],
+              [
+                "28",
+                "12",
+                "953149586",
+                "Forsinket sort"
+              ],
+              [
+                "28",
+                "12",
+                "100121347",
+                "Syrefast"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__skruhylser/05-83345125.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__skruhylser/06-0aee6c47.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
           },
           {
-            "src": "/images/produkter__skruhylser/04-8a3d91d2.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          }
-        ]
-      },
-      {
-        "heading": "For slange Ø 11,2",
-        "headers": [
-          "L",
-          "SW",
-          "Art.Nr",
-          "Material"
-        ],
-        "rows": [
-          [
-            "28",
-            "12",
-            "100121305",
-            "Forsinket blank"
-          ],
-          [
-            "28",
-            "12",
-            "953149586",
-            "Forsinket sort"
-          ],
-          [
-            "28",
-            "12",
-            "100121347",
-            "Syrefast"
-          ]
-        ],
-        "images": [
-          {
-            "src": "/images/produkter__skruhylser/05-83345125.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          },
-          {
-            "src": "/images/produkter__skruhylser/06-0aee6c47.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          }
-        ]
-      },
-      {
-        "heading": "For slange Ø 5/16\"",
-        "headers": [
-          "L",
-          "SW",
-          "Art.Nr",
-          "Material"
-        ],
-        "rows": [
-          [
-            "26",
-            "1/2\"",
-            "953149587",
-            "Forsinket blank"
-          ],
-          [
-            "26",
-            "1/2\"",
-            "953149588",
-            "Syrefast"
-          ]
-        ],
-        "images": [
-          {
-            "src": "/images/produkter__skruhylser/07-13136f12.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
-          },
-          {
-            "src": "/images/produkter__skruhylser/08-aba8a421.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "For slange Ø 5/16\"",
+            "headers": [
+              "L",
+              "SW",
+              "Art.Nr",
+              "Material"
+            ],
+            "rows": [
+              [
+                "26",
+                "1/2\"",
+                "953149587",
+                "Forsinket blank"
+              ],
+              [
+                "26",
+                "1/2\"",
+                "953149588",
+                "Syrefast"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__skruhylser/07-13136f12.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__skruhylser/08-aba8a421.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
           }
         ]
       }
@@ -2195,64 +4273,205 @@ export const produkter: Product[] = [
       "width": 1440,
       "height": 432
     },
-    "subnav": [
-      "Høytrykkslange",
-      "Nylonrør"
-    ],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": null,
-        "headers": [
-          "D",
-          "D1",
-          "Fett",
-          "Art.Nr."
-        ],
-        "rows": [
-          [
-            "8.6",
-            "4",
-            "NLGI 2",
-            "100120200"
-          ],
-          [
-            "8.6",
-            "4",
-            "tom",
-            "100120201"
-          ],
-          [
-            "11.3",
-            "6.3",
-            "NLGI 2",
-            "100120265"
-          ],
-          [
-            "11.3",
-            "6.3",
-            "tom",
-            "100120266"
-          ],
-          [
-            "5/16\"",
-            "1/8\"",
-            "tom",
-            "på forespørsel"
-          ]
-        ],
-        "images": [
+        "label": "Høytrykkslange",
+        "slug": "hoytrykkslange",
+        "tables": [
           {
-            "src": "/images/produkter__slanger/02-350b79a1.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": null,
+            "headers": [
+              "D",
+              "D1",
+              "Fett",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "8.6",
+                "4",
+                "NLGI 2",
+                "100120200"
+              ],
+              [
+                "8.6",
+                "4",
+                "tom",
+                "100120201"
+              ],
+              [
+                "11.3",
+                "6.3",
+                "NLGI 2",
+                "100120265"
+              ],
+              [
+                "11.3",
+                "6.3",
+                "tom",
+                "100120266"
+              ],
+              [
+                "5/16\"",
+                "1/8\"",
+                "tom",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__slanger/02-350b79a1.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__slanger/03-994707cc.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "Nylonrør",
+        "slug": "nylonror",
+        "tables": [
+          {
+            "heading": null,
+            "headers": [
+              "D",
+              "Farge",
+              "Material",
+              "Fett",
+              "Dimesjon",
+              "D1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "sort",
+                "PA 12 HL",
+                "tom",
+                "4 x 0.85",
+                "2.3",
+                "100120039"
+              ],
+              [
+                "4",
+                "sort",
+                "PA 12 HL",
+                "NLGI 000",
+                "4 x 0.85",
+                "2.3",
+                "på forespørsel"
+              ],
+              [
+                "5 (3/16\")",
+                "sort",
+                "PA 12 HL",
+                "NLGI 2",
+                "5 (3/16\")",
+                "",
+                "953147591"
+              ],
+              [
+                "6",
+                "sort",
+                "PA 12 HL",
+                "NLGI 000",
+                "6 x 1.5",
+                "3",
+                "100120100"
+              ],
+              [
+                "6",
+                "sort",
+                "PA 12 HL",
+                "tom",
+                "6 x 1.5",
+                "3",
+                "100120101"
+              ],
+              [
+                "6",
+                "transparent",
+                "PA 12 HL",
+                "tom",
+                "6 x 1.25",
+                "3.5",
+                "på forespørsel"
+              ],
+              [
+                "8",
+                "transparent",
+                "PA 12 HL",
+                "tom",
+                "8 x 1.5",
+                "5",
+                "100120080"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__slanger/04-daec88c6.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__slanger/05-4c0e4ccf.png",
+                "alt": "",
+                "width": 400,
+                "height": 254
+              }
+            ]
           },
           {
-            "src": "/images/produkter__slanger/03-994707cc.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "DIN 73378",
+            "headers": [
+              "D",
+              "Farge",
+              "Material",
+              "Fett",
+              "Dimesjon",
+              "D1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "sort",
+                "PA 12 HIPHL",
+                "NLGI 000",
+                "4 x 0.85",
+                "2.3",
+                "11620300-1"
+              ],
+              [
+                "4",
+                "sort",
+                "PA 12 HIPHL",
+                "tom",
+                "4 x 0.85",
+                "2.3",
+                "100120041"
+              ],
+              [
+                "4",
+                "transparent",
+                "PA 12 PHL",
+                "tom",
+                "4 x 0.85",
+                "2.3",
+                "953148054"
+              ]
+            ],
+            "images": []
           }
         ]
       }
@@ -2269,300 +4488,1628 @@ export const produkter: Product[] = [
       "width": 400,
       "height": 257
     },
-    "subnav": [
-      "Vinkel \"WE\"",
-      "Rett \"GE\"",
-      "Sammenkobling \"G\"",
-      "Sammenkobling \"W\"",
-      "T-stykke",
-      "Muttere",
-      "Snittringer"
-    ],
     "intro": [],
-    "tables": [
+    "tabs": [
       {
-        "heading": "Forsinket stål (Zn-Ni)",
-        "headers": [
-          "RøR Dim. D",
-          "Gjenge D1",
-          "Serie",
-          "Type",
-          "Art.Nr"
-        ],
-        "rows": [
-          [
-            "4",
-            "M6 x 1",
-            "LL",
-            "WE 4 LL M6X1 ZN",
-            "11643050"
-          ],
-          [
-            "4",
-            "M8 x 1",
-            "LL",
-            "WE 4 LL M8X1 ZN",
-            "11643060"
-          ],
-          [
-            "4",
-            "M8 x 1.25",
-            "LL",
-            "WE 4 LL M8X1.25 ZN",
-            "11643065"
-          ],
-          [
-            "4",
-            "M10 x 1",
-            "LL",
-            "WE 4 LL M10X1 ZN",
-            "04012210406"
-          ],
-          [
-            "4",
-            "R 1/8",
-            "LL",
-            "WE 4 LLR 1/8\" ZN",
-            "11643070"
-          ],
-          [
-            "5",
-            "M6 x 1",
-            "LL",
-            "WE 5 LL M6X1 ZN",
-            "953147779"
-          ],
-          [
-            "5",
-            "M8 x 1",
-            "LL",
-            "WE 5 LL M8X1 ZN",
-            "953147863"
-          ],
-          [
-            "5",
-            "R 1/8",
-            "LL",
-            "We 5LLR 1/8\" ZN",
-            "953147799"
-          ],
-          [
-            "6",
-            "M6 x 1",
-            "LL",
-            "WE 6 LL M6X1 ZN",
-            "04012200406"
-          ],
-          [
-            "6",
-            "M8 x 1.25",
-            "LL",
-            "WE 6 LL M8X1.25 ZN",
-            "11643089"
-          ],
-          [
-            "6",
-            "M8 x 1",
-            "LL",
-            "WE 6 LL M8X1 ZN",
-            "04012200506"
-          ],
-          [
-            "6",
-            "M10 x 1",
-            "LL",
-            "WE 6 LL M10X1 ZN",
-            "0401 2200 306"
-          ],
-          [
-            "6",
-            "R 1/8",
-            "LL",
-            "WE 6 LLR 1/8\"ZN",
-            "04012200606"
-          ],
-          [
-            "6",
-            "1/8 NPT",
-            "LL",
-            "WE 6 LLR 1/8\"NPT ZN",
-            "953149541"
-          ],
-          [
-            "6",
-            "M10 x 1",
-            "L",
-            "WE 6 L M10X1 ZN",
-            "04012201006"
-          ],
-          [
-            "6",
-            "R 1/8",
-            "L",
-            "WE 6 LR 1/8\"ZN",
-            "953146776"
-          ],
-          [
-            "6",
-            "R 1/4",
-            "L",
-            "WE 6 LR 1/4\"ZN",
-            "953147710"
-          ],
-          [
-            "6",
-            "R 1/4",
-            "S",
-            "WE 6 S 1/4\" ZN",
-            "106069"
-          ],
-          [
-            "6",
-            "1/4-28 UNF",
-            "LL",
-            "WE 6 LL 1/4-28 UNF ZN",
-            "953149540"
-          ],
-          [
-            "8",
-            "M10 x 1",
-            "LL",
-            "WE 8 LLR M10X1 ZN",
-            "953147932"
-          ],
-          [
-            "8",
-            "R 1/8",
-            "LL",
-            "WE 8 LLR 1/8\" ZN",
-            "11643090"
-          ],
-          [
-            "8",
-            "R 1/4",
-            "L",
-            "WE 8 LR 1/4\"ZN",
-            "116024"
-          ],
-          [
-            "10",
-            "R 1/4",
-            "L",
-            "WE 10 LR 1/4\"ZN",
-            "på forespørsel"
-          ]
-        ],
-        "images": [
+        "label": "Vinkel \"WE\"",
+        "slug": "vinkel-we",
+        "tables": [
           {
-            "src": "/images/produkter__snittringmatur/02-62732d8a.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "RøR Dim. D",
+              "Gjenge D1",
+              "Serie",
+              "Type",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "M6 x 1",
+                "LL",
+                "WE 4 LL M6X1 ZN",
+                "11643050"
+              ],
+              [
+                "4",
+                "M8 x 1",
+                "LL",
+                "WE 4 LL M8X1 ZN",
+                "11643060"
+              ],
+              [
+                "4",
+                "M8 x 1.25",
+                "LL",
+                "WE 4 LL M8X1.25 ZN",
+                "11643065"
+              ],
+              [
+                "4",
+                "M10 x 1",
+                "LL",
+                "WE 4 LL M10X1 ZN",
+                "04012210406"
+              ],
+              [
+                "4",
+                "R 1/8",
+                "LL",
+                "WE 4 LLR 1/8\" ZN",
+                "11643070"
+              ],
+              [
+                "5",
+                "M6 x 1",
+                "LL",
+                "WE 5 LL M6X1 ZN",
+                "953147779"
+              ],
+              [
+                "5",
+                "M8 x 1",
+                "LL",
+                "WE 5 LL M8X1 ZN",
+                "953147863"
+              ],
+              [
+                "5",
+                "R 1/8",
+                "LL",
+                "We 5LLR 1/8\" ZN",
+                "953147799"
+              ],
+              [
+                "6",
+                "M6 x 1",
+                "LL",
+                "WE 6 LL M6X1 ZN",
+                "04012200406"
+              ],
+              [
+                "6",
+                "M8 x 1.25",
+                "LL",
+                "WE 6 LL M8X1.25 ZN",
+                "11643089"
+              ],
+              [
+                "6",
+                "M8 x 1",
+                "LL",
+                "WE 6 LL M8X1 ZN",
+                "04012200506"
+              ],
+              [
+                "6",
+                "M10 x 1",
+                "LL",
+                "WE 6 LL M10X1 ZN",
+                "0401 2200 306"
+              ],
+              [
+                "6",
+                "R 1/8",
+                "LL",
+                "WE 6 LLR 1/8\"ZN",
+                "04012200606"
+              ],
+              [
+                "6",
+                "1/8 NPT",
+                "LL",
+                "WE 6 LLR 1/8\"NPT ZN",
+                "953149541"
+              ],
+              [
+                "6",
+                "M10 x 1",
+                "L",
+                "WE 6 L M10X1 ZN",
+                "04012201006"
+              ],
+              [
+                "6",
+                "R 1/8",
+                "L",
+                "WE 6 LR 1/8\"ZN",
+                "953146776"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "L",
+                "WE 6 LR 1/4\"ZN",
+                "953147710"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "S",
+                "WE 6 S 1/4\" ZN",
+                "106069"
+              ],
+              [
+                "6",
+                "1/4-28 UNF",
+                "LL",
+                "WE 6 LL 1/4-28 UNF ZN",
+                "953149540"
+              ],
+              [
+                "8",
+                "M10 x 1",
+                "LL",
+                "WE 8 LLR M10X1 ZN",
+                "953147932"
+              ],
+              [
+                "8",
+                "R 1/8",
+                "LL",
+                "WE 8 LLR 1/8\" ZN",
+                "11643090"
+              ],
+              [
+                "8",
+                "R 1/4",
+                "L",
+                "WE 8 LR 1/4\"ZN",
+                "116024"
+              ],
+              [
+                "10",
+                "R 1/4",
+                "L",
+                "WE 10 LR 1/4\"ZN",
+                "på forespørsel"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__snittringmatur/02-62732d8a.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__snittringmatur/03-bd137810.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
           },
           {
-            "src": "/images/produkter__snittringmatur/03-bd137810.png",
-            "alt": "",
-            "width": 400,
-            "height": 260
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "RøR Dim. D",
+              "Gjenge D1",
+              "Serie",
+              "Type",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "M6 x 1",
+                "LL",
+                "WE 4 LL M6X1 SS",
+                "953148859"
+              ],
+              [
+                "4",
+                "M8 x 1",
+                "LL",
+                "WE 4 LL M8X1 SS",
+                "04012210513"
+              ],
+              [
+                "4",
+                "M10 x 1",
+                "LL",
+                "WE 4 LL M10X1 SS",
+                "953148860"
+              ],
+              [
+                "4",
+                "R 1/8",
+                "LL",
+                "WE 4 LLR 1/8\" SS",
+                "04012210613"
+              ],
+              [
+                "6",
+                "M6 x 1",
+                "LL",
+                "WE 6 LL M6X1 SS",
+                "106057"
+              ],
+              [
+                "6",
+                "M8 x 1",
+                "LL",
+                "WE 6 LL M8X1 SS",
+                "106038"
+              ],
+              [
+                "6",
+                "M10 x 1",
+                "LL",
+                "WE 6 LL M10X1 SS",
+                "04012200313LL"
+              ],
+              [
+                "6",
+                "R 1/8",
+                "LL",
+                "WE 6 LLR 1/8\"SS",
+                "12805740"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "L",
+                "WE 6 LR 1/8\" SS",
+                "12805760"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "S",
+                "WE 6 S 1/4\" SS",
+                "1060109"
+              ],
+              [
+                "8",
+                "R 1/8",
+                "L",
+                "WE 8 LR 1/8\" SS",
+                "11643302"
+              ],
+              [
+                "10",
+                "R 1/8",
+                "L",
+                "WE 10 LR 1/8\" SS",
+                "953147089"
+              ]
+            ],
+            "images": []
           }
         ]
       },
       {
-        "heading": "Syrefast (316 / V4A)",
-        "headers": [
-          "RøR Dim. D",
-          "Gjenge D1",
-          "Serie",
-          "Type",
-          "Art.Nr"
-        ],
-        "rows": [
-          [
-            "4",
-            "M6 x 1",
-            "LL",
-            "WE 4 LL M6X1 SS",
-            "953148859"
-          ],
-          [
-            "4",
-            "M8 x 1",
-            "LL",
-            "WE 4 LL M8X1 SS",
-            "04012210513"
-          ],
-          [
-            "4",
-            "M10 x 1",
-            "LL",
-            "WE 4 LL M10X1 SS",
-            "953148860"
-          ],
-          [
-            "4",
-            "R 1/8",
-            "LL",
-            "WE 4 LLR 1/8\" SS",
-            "04012210613"
-          ],
-          [
-            "6",
-            "M6 x 1",
-            "LL",
-            "WE 6 LL M6X1 SS",
-            "106057"
-          ],
-          [
-            "6",
-            "M8 x 1",
-            "LL",
-            "WE 6 LL M8X1 SS",
-            "106038"
-          ],
-          [
-            "6",
-            "M10 x 1",
-            "LL",
-            "WE 6 LL M10X1 SS",
-            "04012200313LL"
-          ],
-          [
-            "6",
-            "R 1/8",
-            "LL",
-            "WE 6 LLR 1/8\"SS",
-            "12805740"
-          ],
-          [
-            "6",
-            "R 1/4",
-            "L",
-            "WE 6 LR 1/8\" SS",
-            "12805760"
-          ],
-          [
-            "6",
-            "R 1/4",
-            "S",
-            "WE 6 S 1/4\" SS",
-            "1060109"
-          ],
-          [
-            "8",
-            "R 1/8",
-            "L",
-            "WE 8 LR 1/8\" SS",
-            "11643302"
-          ],
-          [
-            "10",
-            "R 1/8",
-            "L",
-            "WE 10 LR 1/8\" SS",
-            "953147089"
-          ]
-        ],
-        "images": []
+        "label": "Rett \"GE\"",
+        "slug": "rett-ge",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "RøR Dim. D",
+              "Gjenge D1",
+              "Serie",
+              "Type",
+              "Sw1",
+              "Sw2",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "M6 x 1",
+                "LL",
+                "GE 4 LL M6X1 ZN",
+                "9",
+                "10",
+                "11643250"
+              ],
+              [
+                "4",
+                "M6 x 0.75",
+                "LL",
+                "GE 4 LL M6X0.75 ZN",
+                "9",
+                "10",
+                "04012012605"
+              ],
+              [
+                "4",
+                "M8 x 1",
+                "LL",
+                "GE 4 LL M8X1 ZN",
+                "9",
+                "10",
+                "11643270"
+              ],
+              [
+                "4",
+                "M8 x 1.25",
+                "LL",
+                "GE 4 LL M8X1.5 ZN",
+                "9",
+                "10",
+                "11643275"
+              ],
+              [
+                "4",
+                "M10 x 1",
+                "LL",
+                "GE 4 LL M10X1 ZN",
+                "11",
+                "10",
+                "04012210306"
+              ],
+              [
+                "4",
+                "R 1/8",
+                "LL",
+                "GE 4 LLr 1/8\" ZN",
+                "11",
+                "10",
+                "11643280"
+              ],
+              [
+                "5",
+                "M6 x 1",
+                "LL",
+                "GE 5 LL M6X1 ZN",
+                "11",
+                "12",
+                "953147778"
+              ],
+              [
+                "5",
+                "M8 x 1",
+                "LL",
+                "GE 5 LL M8X1 ZN",
+                "11",
+                "12",
+                "953149526"
+              ],
+              [
+                "5",
+                "M10x1",
+                "LL",
+                "GE 5 LL M10X1 ZN",
+                "11",
+                "12",
+                "953148940"
+              ],
+              [
+                "5",
+                "R 1/8",
+                "LL",
+                "GE 5 LLR 1/8\" ZN",
+                "11",
+                "12",
+                "953147798"
+              ],
+              [
+                "6",
+                "M6 x 1",
+                "LL",
+                "GE 6 LL M6X1 ZN",
+                "11",
+                "12",
+                "04012000406"
+              ],
+              [
+                "6",
+                "M 7 X 1",
+                "LL",
+                "GE 7 LL M7X1 ZN",
+                "11",
+                "12",
+                "04012003906"
+              ],
+              [
+                "6",
+                "M8 x 1",
+                "LL",
+                "GE 6 LL M8X1 ZN",
+                "11",
+                "12",
+                "04012000506"
+              ],
+              [
+                "6",
+                "M8 x 1.25",
+                "LL",
+                "GE 6 LL M8X1.25 ZN",
+                "11",
+                "12",
+                "953148253"
+              ],
+              [
+                "6",
+                "M10 x 1",
+                "LL",
+                "GE 6 LL M10X1 ZN",
+                "11",
+                "12",
+                "04012000306"
+              ],
+              [
+                "6",
+                "R 1/8",
+                "LL",
+                "GE 6 LLR 1/8\" ZN",
+                "11",
+                "12",
+                "04012000606"
+              ],
+              [
+                "6",
+                "R 1/8",
+                "L",
+                "GE 6 LR 1/8\" ZN",
+                "14",
+                "14",
+                "953147713"
+              ],
+              [
+                "6",
+                "1/8 NPT",
+                "LL",
+                "GE 6 LL 1/8\" NPT ZN",
+                "11",
+                "12",
+                "953149532"
+              ],
+              [
+                "6",
+                "M12X1.5",
+                "L",
+                "GE 6 L M12X1.5 ZN",
+                "17",
+                "14",
+                "953149527"
+              ],
+              [
+                "6",
+                "M14X1.5",
+                "L",
+                "GE 6 M14X1.5 ZN",
+                "19",
+                "14",
+                "953149528"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "L",
+                "GE 6 LR 1/4\" ZN",
+                "14",
+                "14",
+                "1150-25"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "LL",
+                "GE 6 LLR 1/4\" ZN",
+                "11",
+                "12",
+                "953149530"
+              ],
+              [
+                "6",
+                "1/4 NPT",
+                "L",
+                "GE 6 L 1/4\" NPT ZN",
+                "17",
+                "14",
+                "953149529"
+              ],
+              [
+                "6",
+                "1/4-28UNF",
+                "LL",
+                "GE 6 LL 1/4-28 UNF ZN",
+                "11",
+                "12",
+                "953149531"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "S",
+                "GE 6 SR 1/4\" ZN*",
+                "17",
+                "19",
+                "1050-24"
+              ],
+              [
+                "8",
+                "M 6 x 1",
+                "LL",
+                "GE 8 LL M6X1 ZN",
+                "14",
+                "14",
+                "953149535"
+              ],
+              [
+                "8",
+                "M 8 x 1",
+                "LL",
+                "GE 8 LL M8X1 ZN",
+                "14",
+                "14",
+                "953149536"
+              ],
+              [
+                "8",
+                "M 10 x 1",
+                "LL",
+                "GE 8 LL M10X1 ZN",
+                "14",
+                "14",
+                "11643305"
+              ],
+              [
+                "8",
+                "R 1/8",
+                "LL",
+                "GE 8 LLR 1/8\" ZN",
+                "14",
+                "14",
+                "11643300"
+              ],
+              [
+                "8",
+                "R 1/8",
+                "L",
+                "GE 8 LR 1/8\" ZN",
+                "19",
+                "14",
+                "953149534"
+              ],
+              [
+                "8",
+                "M14X1.5",
+                "L",
+                "GE 8 M14X1.5 ZN",
+                "19",
+                "14",
+                "953149533"
+              ],
+              [
+                "8",
+                "R 1/4",
+                "LL",
+                "GE 8 LLR 1/4\" ZN",
+                "14",
+                "14",
+                "953149537"
+              ],
+              [
+                "8",
+                "R 1/4",
+                "L",
+                "GE 8 LR 1/4\" ZN",
+                "19",
+                "17",
+                "04012020806"
+              ],
+              [
+                "10",
+                "",
+                "L",
+                "GE 10 LR 1/4\" ZN",
+                "19",
+                "19",
+                "1060-08"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__snittringmatur/04-5b8bc552.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__snittringmatur/05-6a7298f2.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "RøR Dim. D",
+              "Gjenge D1",
+              "",
+              "Type",
+              "Sw1",
+              "Sw2",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "M6 x 1",
+                "LL",
+                "GE 4 LL M6X1 SS",
+                "11",
+                "11",
+                "953148862"
+              ],
+              [
+                "4",
+                "M8 x 1",
+                "LL",
+                "GE 4 LL M8X1 SS",
+                "11",
+                "11",
+                "953148863"
+              ],
+              [
+                "4",
+                "M10 x 1",
+                "LL",
+                "GE 4 LL M10X1 SS",
+                "11",
+                "11",
+                "953148864"
+              ],
+              [
+                "4",
+                "R 1/8",
+                "LL",
+                "GE 4 LLR 1/8\" SS",
+                "11",
+                "10",
+                "953148865"
+              ],
+              [
+                "6",
+                "M 6 x 1",
+                "LL",
+                "GE 6 LL M6X1 SS",
+                "11",
+                "11",
+                "106028"
+              ],
+              [
+                "6",
+                "M 8 x 1",
+                "LL",
+                "GE 6 LL M8X1 SS",
+                "11",
+                "11",
+                "106029"
+              ],
+              [
+                "6",
+                "M 10 x 1",
+                "LL",
+                "GE 6 LL M10X1 SS",
+                "11",
+                "11",
+                "04012000313"
+              ],
+              [
+                "6",
+                "M 10 x 1",
+                "L",
+                "GE 6 L M10X1 SS",
+                "17",
+                "17",
+                "04012000213"
+              ],
+              [
+                "6",
+                "R 1/8",
+                "LL",
+                "GE 6 LLR 1/8\" SS",
+                "11",
+                "11",
+                "12805020"
+              ],
+              [
+                "6",
+                "R 1/8",
+                "L",
+                "GE 6 LR 1/8\" SS",
+                "14",
+                "14",
+                "12805020-1"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "L",
+                "GE 6 LR 1/4\" SS",
+                "19",
+                "19",
+                "04012001013L"
+              ],
+              [
+                "6",
+                "R 1/4",
+                "S",
+                "GE 6 SR 1/4\" SS",
+                "",
+                "",
+                "106110"
+              ],
+              [
+                "8",
+                "M 10 X 1",
+                "LL",
+                "GE 8 LL M10X1 SS",
+                "",
+                "",
+                "4012020313"
+              ],
+              [
+                "8",
+                "M 10 x 1",
+                "L",
+                "GE 8 L M10X1 SS",
+                "17",
+                "17",
+                "953149538"
+              ],
+              [
+                "8",
+                "R 1/8",
+                "LL",
+                "GE 8 LLR 1/8\" SS",
+                "14",
+                "14",
+                "04012020913"
+              ],
+              [
+                "8",
+                "R 1/8",
+                "L",
+                "GE 8 LR 1/8\" SS",
+                "17",
+                "17",
+                "11643301"
+              ],
+              [
+                "8",
+                "R 1/4",
+                "LL",
+                "GE 8 LLR 1/4\" SS",
+                "14",
+                "14",
+                "4012020913"
+              ],
+              [
+                "8",
+                "R 1/4",
+                "L",
+                "GE 8 LR 1/4\" SS",
+                "19",
+                "17",
+                "953147431"
+              ],
+              [
+                "10",
+                "M10X1",
+                "L",
+                "GE 10 M10X1 SS",
+                "17",
+                "19",
+                "953149539"
+              ]
+            ],
+            "images": []
+          }
+        ]
+      },
+      {
+        "label": "Sammenkobling \"G\"",
+        "slug": "sammenkobling-g",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "D",
+              "Serie",
+              "Type",
+              "Sw1",
+              "Sw2",
+              "Sw3",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "4",
+                "LL",
+                "G 4 LL ZN",
+                "10",
+                "9",
+                "10",
+                "11643010"
+              ],
+              [
+                "4",
+                "6",
+                "LL",
+                "G 4-6 LL ZN",
+                "10",
+                "11",
+                "12",
+                "953148143"
+              ],
+              [
+                "5",
+                "5",
+                "LL",
+                "G 5 LL ZN",
+                "",
+                "",
+                "",
+                "953147749"
+              ],
+              [
+                "6",
+                "6",
+                "LL",
+                "G 6 LL ZN",
+                "12",
+                "11",
+                "12",
+                "04013600306"
+              ],
+              [
+                "6",
+                "6",
+                "L",
+                "G 6 L ZN",
+                "14",
+                "12",
+                "14",
+                "12643400"
+              ],
+              [
+                "6",
+                "6",
+                "S",
+                "G 6 S ZN",
+                "14",
+                "17",
+                "17",
+                "04013602006"
+              ],
+              [
+                "6",
+                "8",
+                "LL",
+                "G 6-8 LL ZN",
+                "12",
+                "12",
+                "14",
+                "953149543"
+              ],
+              [
+                "6",
+                "10",
+                "L",
+                "G 6-10 L ZN",
+                "14",
+                "17",
+                "19",
+                "953148144"
+              ],
+              [
+                "8",
+                "8",
+                "LL",
+                "G 8 LL ZN",
+                "14",
+                "12",
+                "14",
+                "04013600406"
+              ],
+              [
+                "8",
+                "8",
+                "L",
+                "G 8 L ZN",
+                "17",
+                "14",
+                "17",
+                "11643030"
+              ],
+              [
+                "8",
+                "8",
+                "S",
+                "G 8 S ZN",
+                "17",
+                "19",
+                "19",
+                "04013602106"
+              ],
+              [
+                "10",
+                "10",
+                "LL",
+                "G 10 LL",
+                "17",
+                "19",
+                "19",
+                "953149542"
+              ],
+              [
+                "10",
+                "10",
+                "L",
+                "G 10 L ZN",
+                "19",
+                "17",
+                "19",
+                "116023"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__snittringmatur/06-5aa17e13.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__snittringmatur/07-237abfbb.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "D",
+              "Serie",
+              "Type",
+              "Sw1",
+              "Sw2",
+              "Sw3",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "4",
+                "LL",
+                "G 4 LL SS",
+                "10",
+                "9",
+                "10",
+                "04013600106"
+              ],
+              [
+                "4",
+                "6",
+                "LL",
+                "G 06/04 LL SS",
+                "11",
+                "12",
+                "10",
+                "953148143"
+              ],
+              [
+                "6",
+                "6",
+                "LL",
+                "G 6 LL SS",
+                "12",
+                "11",
+                "12",
+                "12805280-1"
+              ],
+              [
+                "6",
+                "6",
+                "L",
+                "G 6 L SS",
+                "14",
+                "12",
+                "14",
+                "953149544"
+              ],
+              [
+                "6",
+                "8",
+                "LL",
+                "G 6-8 LL SS",
+                "12",
+                "12",
+                "14",
+                "1060-20"
+              ],
+              [
+                "8",
+                "8",
+                "LL",
+                "G 8 LL SS",
+                "14",
+                "12",
+                "14",
+                "953147978"
+              ],
+              [
+                "8",
+                "8",
+                "L",
+                "G 8 L SS",
+                "14",
+                "17",
+                "17",
+                "1060-22"
+              ],
+              [
+                "10",
+                "10",
+                "L",
+                "G 10 L ZSS",
+                "19",
+                "17",
+                "19",
+                "116022"
+              ]
+            ],
+            "images": []
+          }
+        ]
+      },
+      {
+        "label": "Sammenkobling \"W\"",
+        "slug": "sammenkobling-w",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "Serie",
+              "Type",
+              "D1",
+              "SW",
+              "SW1",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "LL",
+                "W 6 LL",
+                "6",
+                "9",
+                "12",
+                "953147899"
+              ],
+              [
+                "6",
+                "L",
+                "W 6 L",
+                "6",
+                "12",
+                "14",
+                "106094"
+              ],
+              [
+                "8",
+                "LL",
+                "W 8 LL",
+                "8",
+                "12",
+                "14",
+                "953148284"
+              ],
+              [
+                "8",
+                "L",
+                "W 8 L",
+                "8",
+                "12",
+                "17",
+                "953148606"
+              ],
+              [
+                "10",
+                "L",
+                "W10-L",
+                "10",
+                "14",
+                "19",
+                "953149556"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__snittringmatur/08-2b83ab72.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__snittringmatur/09-fbf07640.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "label": "T-stykke",
+        "slug": "t-stykke",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "D",
+              "Serie",
+              "Type",
+              "Sw1",
+              "Sw2",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "LL",
+                "T 4 LL ZN",
+                "9",
+                "10",
+                "11643420"
+              ],
+              [
+                "6",
+                "LL",
+                "T 6 LL ZN",
+                "11",
+                "12",
+                "12806740"
+              ],
+              [
+                "6",
+                "L",
+                "T 6 L ZN",
+                "12",
+                "14",
+                "04013640313"
+              ],
+              [
+                "6",
+                "S",
+                "T 6 S ZN",
+                "14",
+                "17",
+                "04013642006"
+              ],
+              [
+                "8",
+                "LL",
+                "T 8 LL ZN",
+                "12",
+                "14",
+                "11643430"
+              ],
+              [
+                "8",
+                "L",
+                "T 8 L ZN",
+                "14",
+                "17",
+                "1051-26"
+              ],
+              [
+                "10",
+                "L",
+                "T 10 L ZN",
+                "14",
+                "19",
+                "953149545"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__snittringmatur/10-622e1ee9.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__snittringmatur/11-8af9454f.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "D",
+              "Serie",
+              "Type",
+              "Sw1",
+              "Sw2",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "6",
+                "LL",
+                "T 6 LL SS",
+                "12",
+                "11",
+                "12805280-1"
+              ],
+              [
+                "6",
+                "L",
+                "T 6 L SS",
+                "12",
+                "14",
+                "106043"
+              ],
+              [
+                "8",
+                "LL",
+                "T 8 LL SS",
+                "12",
+                "14",
+                "04013640413"
+              ],
+              [
+                "8",
+                "L",
+                "T 8 L SS",
+                "14",
+                "17",
+                "902997"
+              ]
+            ],
+            "images": []
+          }
+        ]
+      },
+      {
+        "label": "Muttere",
+        "slug": "muttere",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "RøR Dim. Di",
+              "Serie",
+              "Type",
+              "Sw1",
+              "Gjenge",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "LL",
+                "M 4 LL ZN",
+                "10",
+                "M8x1.0",
+                "11643210"
+              ],
+              [
+                "5",
+                "LL",
+                "M 5 LL ZN",
+                "12",
+                "M10x1.0",
+                "8035-53"
+              ],
+              [
+                "6",
+                "LL",
+                "M 6 LL ZN",
+                "12",
+                "M10x1.0",
+                "12643170"
+              ],
+              [
+                "6",
+                "LL",
+                "M 6 LL ZN SORT",
+                "12",
+                "M10x1.0",
+                "953149549"
+              ],
+              [
+                "6",
+                "L",
+                "M 6 L ZN",
+                "14",
+                "M12x1.5",
+                "12643190"
+              ],
+              [
+                "6",
+                "S",
+                "M 6 S ZN",
+                "17",
+                "M14X1.5",
+                "105156"
+              ],
+              [
+                "8",
+                "LL",
+                "M 8 LL ZN",
+                "14",
+                "M12x1.0",
+                "1051-20"
+              ],
+              [
+                "8",
+                "L",
+                "M 8 L ZN",
+                "17",
+                "M14X1.5",
+                "11643230"
+              ],
+              [
+                "8",
+                "S",
+                "M 8 S ZN",
+                "19",
+                "M16X1.5",
+                "4031502106"
+              ],
+              [
+                "10",
+                "LL",
+                "M 10 LL ZN",
+                "17",
+                "M14X1.5",
+                "953149548"
+              ],
+              [
+                "10",
+                "L",
+                "M 10 L ZN",
+                "19",
+                "M16X1.5",
+                "106030"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__snittringmatur/12-782dd176.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__snittringmatur/13-0aa8d4b9.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316 / V4A)",
+            "headers": [
+              "RøR Dim. D",
+              "",
+              "Type",
+              "Sw1",
+              "Sw2",
+              "Art.Nr"
+            ],
+            "rows": [
+              [
+                "4",
+                "LL",
+                "M 4 LL SS",
+                "10",
+                "M8X1.0",
+                "953149546"
+              ],
+              [
+                "6",
+                "LL",
+                "M 6 LL SS",
+                "12",
+                "M10x1.0",
+                "12641160"
+              ],
+              [
+                "6",
+                "L",
+                "M 6 L SS",
+                "14",
+                "M12x1.5",
+                "953147321"
+              ],
+              [
+                "6",
+                "S",
+                "M 6 S SS",
+                "17",
+                "M14X1.5",
+                "12641140"
+              ],
+              [
+                "8",
+                "LL",
+                "M 8 LL SS",
+                "14",
+                "M12x1.0",
+                "953149547"
+              ],
+              [
+                "8",
+                "L",
+                "M 8 L SS",
+                "17",
+                "M14X1.5",
+                "953147571"
+              ],
+              [
+                "10",
+                "L",
+                "M 10 L SS",
+                "19",
+                "M16X1.5",
+                "106095"
+              ]
+            ],
+            "images": []
+          }
+        ]
+      },
+      {
+        "label": "Snittringer",
+        "slug": "snittringer",
+        "tables": [
+          {
+            "heading": "Forsinket stål (Zn-Ni)",
+            "headers": [
+              "RøR Dim. D",
+              "Serie",
+              "Type",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "4",
+                "LL",
+                "D 4 LL",
+                "11643180"
+              ],
+              [
+                "5",
+                "LL",
+                "D 5 LL",
+                "8034-53"
+              ],
+              [
+                "6",
+                "LL",
+                "D 6 LL",
+                "12643010"
+              ],
+              [
+                "6",
+                "L og S",
+                "D 6 L/S",
+                "105157"
+              ],
+              [
+                "8",
+                "LL",
+                "D 8 LL",
+                "1051-21"
+              ],
+              [
+                "8",
+                "L og S",
+                "D 8 L /S",
+                "11643200"
+              ],
+              [
+                "10",
+                "LL",
+                "D 10 L L",
+                "953149551"
+              ],
+              [
+                "10",
+                "L",
+                "D 10 L",
+                "106039"
+              ]
+            ],
+            "images": [
+              {
+                "src": "/images/produkter__snittringmatur/14-a3e337c9.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              },
+              {
+                "src": "/images/produkter__snittringmatur/15-2aeca4c6.png",
+                "alt": "",
+                "width": 400,
+                "height": 260
+              }
+            ]
+          },
+          {
+            "heading": "Syrefast (316ti)",
+            "headers": [
+              "RøR Dim. D",
+              "Serie",
+              "Type",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "LL",
+                "D 6LL SS",
+                "12641040"
+              ],
+              [
+                "6",
+                "L og S",
+                "D 6 L/S SS",
+                "12641030"
+              ],
+              [
+                "8",
+                "LL",
+                "D 8 LL SS",
+                "953149552"
+              ],
+              [
+                "8",
+                "L og S",
+                "D 8 L/S SS",
+                "953147570"
+              ],
+              [
+                "10",
+                "L og S",
+                "D 10 L/S SS",
+                "106039"
+              ]
+            ],
+            "images": []
+          },
+          {
+            "heading": "Messing",
+            "headers": [
+              "RøR Dim. D",
+              "Serie",
+              "Type",
+              "Art.Nr."
+            ],
+            "rows": [
+              [
+                "6",
+                "LL",
+                "D 6 LL",
+                "953149553"
+              ]
+            ],
+            "images": []
+          }
+        ]
       }
     ],
     "metaTitle": "ELBA - I INDUSTRIENS TJENESTE",

@@ -3,10 +3,9 @@ import { produkter } from "@/lib/produkter";
 import { artikler } from "@/lib/artikler";
 import { ROUTES } from "@/lib/routes";
 import { buildSearchIndex, highlight, searchIndex } from "@/lib/search";
-import { SUBNAV_TABLES } from "@/lib/subnav";
 
-const index = buildSearchIndex({ products: produkter, articles: artikler, subnav: SUBNAV_TABLES });
-const rows = produkter.reduce((n, p) => n + p.tables.reduce((m, t) => m + t.rows.length, 0), 0);
+const index = buildSearchIndex({ products: produkter, articles: artikler });
+const rows = produkter.reduce((n, p) => n + p.tabs.reduce((m, tab) => m + tab.tables.reduce((k, t) => k + t.rows.length, 0), 0), 0);
 const group = (q: string, type: string) => searchIndex(index, q).groups.find((g) => g.type === type);
 
 describe("buildSearchIndex", () => {
@@ -24,9 +23,11 @@ describe("buildSearchIndex", () => {
       if (item.type === "produkt") expect(item.href).toMatch(/^\/produkter\?/);
     }
   });
-  it("gives every product row a readable title and its specs as subtitle", () => {
-    const item = index.find((i) => i.type === "produkt" && i.title === "Art.nr. 0401 4701 013")!;
-    expect(item.subtitle).toBe("Skottgjennomføring · Syrefast (316 / V4A) · D 6 · Serie L · SW 17 · SW1 14 · L 48");
+  it("gives every product row a readable title, with its sub-type and specs as subtitle", () => {
+    const item = index.find((i) => i.type === "produkt" && i.title === "Art.nr. 953149611")!;
+    expect(item.subtitle).toBe(
+      "Rørender · Rørender 90 grader · Forsinket stål (Zn-Ni) · G JIC37°7/16 · For Slange 8.6 · H 20.7 · L 25.7 · SW / SW1 14",
+    );
     // 23 rows have no article number ("på forespørsel") — they are named after their category instead.
     const onRequest = index.filter((i) => i.type === "produkt" && !i.title.startsWith("Art.nr."));
     expect(onRequest.length).toBeGreaterThan(0);
@@ -39,17 +40,17 @@ describe("searchIndex", () => {
     expect(searchIndex(index, "   ")).toEqual({ groups: [], total: 0 });
   });
   it("ranks an exact article number first, typed with or without its spaces", () => {
-    for (const q of ["0401 4701 013", "04014701013"]) {
+    for (const q of ["0401 2200 306", "04012200306"]) {
       const result = searchIndex(index, q);
       expect(result.groups[0].type).toBe("produkt");
-      expect(result.groups[0].items[0].title).toBe("Art.nr. 0401 4701 013");
+      expect(result.groups[0].items[0].title).toBe("Art.nr. 0401 2200 306");
     }
   });
-  it("puts the category above its thirty rows when the category is what was typed", () => {
+  it("puts the category above its rows when the category is what was typed", () => {
     const result = searchIndex(index, "rorender");
     expect(result.groups[0].type).toBe("kategori");
     expect(result.groups[0].items[0].href).toBe("/produkter/rørender");
-    expect(group("rorender", "produkt")!.total).toBe(30);
+    expect(group("rorender", "produkt")!.total).toBe(69); // every tab, not just the straight one
   });
   it("caps each group but reports the full count", () => {
     const produkt = group("forsinket", "produkt")!;
@@ -59,7 +60,7 @@ describe("searchIndex", () => {
   });
   it("requires every word", () => {
     const produkt = group("forlengere messing", "produkt")!;
-    expect(produkt.total).toBe(16);
+    expect(produkt.total).toBe(19); // sixteen straight, three at 90°
     expect(searchIndex(index, "forlengere xyzzy").total).toBe(0);
   });
   it("finds articles by body text and pages by keyword", () => {
@@ -80,7 +81,8 @@ describe("searchIndex", () => {
     const vinkel = group('vinkel "we"', "underkategori")!.items[0];
     expect(vinkel.href).toBe("/produkter/snittringmatur?type=vinkel-we");
     expect(vinkel.subtitle).toBe("Snittringmatur · 35 produkter");
-    expect(group("t-stykke", "underkategori")!.items[0].subtitle).toBe("Snittringmatur · ikke i nettkatalogen – ta kontakt");
+    // Every sub-type has real products now that the tabs are scraped.
+    expect(group("t-stykke", "underkategori")!.items[0].subtitle).toBe("Snittringmatur · 11 produkter");
   });
   it("prefers a title that starts with the query over one that merely mentions it", () => {
     const sider = group("produkter", "side")!;

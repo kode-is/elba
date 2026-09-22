@@ -1,43 +1,43 @@
 #!/usr/bin/env node
-// Generates lib/produkter.ts from docs/scrape/produkter__*.json (per-product
-// block dumps) and docs/scrape/tables.json (hydrated spec tables, in
-// document order, desktop/mobile duplicates already removed). Run:
-// npm run gen-produkter
+// Generates lib/produkter.ts from the scrape. Run: npm run gen-produkter
 //
-// Every product page's blocks follow one pattern after the site logo:
-//   hero image, H1 title, breadcrumb ("Produkter" link + title text),
-//   optional sub-navigation (`link` blocks with href: null), then repeated
-//   groups of [one or more `image` blocks] [optional H3 heading] [a run of
-//   `text` blocks that are the table's header/cell strings].
+// Two sources:
+//   docs/scrape/produkter__*.json — per-page block dumps, for the title, hero,
+//     <title>/description and the one caption the site carries (fylleutstyr's
+//     "Fyllepresse til sentralsmøreanlegg …").
+//   docs/scrape/subnav.json + subnav-images.json — every sub-category tab's
+//     tables, drawings and photos (scripts/scrape-subnav.mjs).
+//
+// The pill row above a product's tables is a Framer tab control, and the
+// original scrape only ever recorded the first tab — the site has 77 tables
+// across the eleven pages where we used to ship 24. Tables therefore come from
+// subnav.json, grouped per tab, rather than from the old positional pairing
+// between block text-runs and tables.json.
+//
 // The live scraper mislabels the product hero `role: "logo"` (a wrapper
 // artifact), so the hero is found by path — the first image block whose
 // `local` is NOT the shared site logo — not by role.
-//
-// Tables are paired to docs/scrape/tables.json purely by document order:
-// the k-th run of table text in blocks is the k-th table.json entry for
-// that route (verified by hand for all 11 routes — the counts match). A
-// text block is recognised as belonging to a table by membership in that
-// route's set of tables.json header/cell strings (trimmed); once a run has
-// started, any other text block (live's "Page X of Y" pager, stray
-// captions) is consumed as part of the same run and discarded — the actual
-// header/row data always comes from tables.json, never from this scrape.
-//
-// Images since the previous flush all attach to the next table (verified
-// against docs/reference screenshots + a live image-count check: capping
-// at two, as the brief's prose suggests, undercounts skruhylser's first
-// group (3 images) and fylleutstyr's first group (4 images) and would fail
-// scripts/verify.mjs's image-count assertion) — so every pending image is
-// kept, and the array is reset after each flush (extras are never carried
-// over to the next table).
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const SCRAPE = join(ROOT, "docs/scrape");
-const tablesByRoute = Object.fromEntries(
-  JSON.parse(readFileSync(join(SCRAPE, "tables.json"), "utf8")).routes.map((r) => [r.route, r.tables])
+const subnavByRoute = Object.fromEntries(
+  JSON.parse(readFileSync(join(SCRAPE, "subnav.json"), "utf8")).routes.map((r) => [decodeURIComponent(r.route), r.tabs])
 );
+const imageByUrl = JSON.parse(readFileSync(join(SCRAPE, "subnav-images.json"), "utf8"));
+
+/** `90° "WE" dreibar` → `90-we-dreibar` — a tab's ?type= value. */
+const tabSlug = (label) =>
+  label
+    .toLowerCase()
+    .replace(/ø/g, "o")
+    .replace(/æ/g, "ae")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 
 const SITE_LOGO = "/images/home/00-d1c05434.png";
 const strip = (s) => s.replace(/​/g, "").trim();
@@ -69,82 +69,39 @@ for (const file of readdirSync(SCRAPE).filter((f) => f.startsWith("produkter__")
   }
   const body = blocks.slice(i);
 
-  const liveTables = tablesByRoute[route] ?? [];
-  const memberSet = new Set();
-  for (const t of liveTables) {
-    for (const h of t.headers) memberSet.add(h.trim());
-    for (const row of t.rows) for (const c of row) memberSet.add(c.trim());
-  }
+  const tabsRaw = subnavByRoute[decodeURIComponent(route)];
+  if (!tabsRaw) throw new Error(`${route}: missing from docs/scrape/subnav.json — run npm run scrape-subnav`);
 
-  const subnav = [];
-  const intro = [];
-  const tables = [];
-  let pendingImages = [];
-  let pendingHeading = null;
-  let inRun = false; // currently consuming the contiguous text run of an already-started table
+  const tabs = tabsRaw.map((tab) => ({
+    label: tab.label,
+    slug: tab.label ? tabSlug(tab.label) : "",
+    tables: tab.groups.map((g) => ({
+      heading: g.heading,
+      headers: g.headers,
+      rows: g.rows,
+      images: g.images.map((image) => {
+        const hit = imageByUrl[image.url];
+        if (!hit) throw new Error(`${route}: ${image.url} missing from subnav-images.json — run npm run fetch-subnav-images`);
+        return { src: hit.local, alt: image.alt || "", width: hit.width, height: hit.height };
+      }),
+    })),
+  }));
 
-  for (const b of body) {
-    if (b.type === "link" && b.href === null) {
-      subnav.push(strip(b.text));
-      inRun = false;
-      continue;
-    }
-    if (b.type === "image") {
-      pendingImages.push(img(b));
-      inRun = false;
-      continue;
-    }
-    if (b.type === "heading" && b.level === 3) {
-      pendingHeading = strip(b.text);
-      inRun = false;
-      continue;
-    }
-    if (b.type === "text") {
-      const isMember = memberSet.has(b.text.trim());
-      if (isMember) {
-        if (!inRun) {
-          const t = liveTables[tables.length];
-          if (!t) throw new Error(`${route}: found a ${tables.length + 1}th table text-run but tables.json only has ${liveTables.length} tables`);
-          tables.push({ heading: pendingHeading, headers: t.headers, rows: t.rows, images: pendingImages });
-          pendingHeading = null;
-          pendingImages = [];
-          inRun = true;
-        }
-        continue; // member text mid-run; the actual cell values come from tables.json
-      }
-      // Non-member text: mid-run this is the live table widget's own
-      // "Page X of Y" pager (or a cell whose whitespace doesn't exactly
-      // match tables.json's normalised copy) — discarded either way since
-      // the run's data already came from tables.json. Outside a run it's
-      // real copy the scrape doesn't model anywhere else (e.g.
-      // fylleutstyr's "Fyllepresse til sentralsmøreanlegg for fettpatron
-      // iht. DIN 1284", a caption between its images and first table) —
-      // kept as intro so scripts/verify.mjs doesn't flag it missing.
-      if (!inRun) intro.push(b.text);
-      continue;
-    }
-    // H1/H2 headings and real-href links (e.g. the "Kontakt oss" CTA) carry
-    // no product content; ignored.
-  }
-
-  if (tables.length !== liveTables.length) {
-    throw new Error(`${route}: consumed ${tables.length} table text-runs but tables.json has ${liveTables.length} tables`);
-  }
-
-  // Any image or H3 heading collected after the last table's text-run never
-  // got attached to a table — silently dropping it would lose real content,
-  // so fail loudly instead.
-  if (pendingImages.length || pendingHeading) {
-    throw new Error(`${route}: ${pendingImages.length} image(s)/heading left unattached after the last table`);
-  }
+  // The page's own prose caption, if any. Everything else in the body is
+  // table text (cells, headers, the widget's "Page X of Y" pager) or a pill
+  // label, none of which is modelled here — so a text block only counts as
+  // copy when it reads like a sentence.
+  const intro = body
+    .filter((b) => b.type === "text")
+    .map((b) => b.text.trim())
+    .filter((text) => text.length > 25 && /[a-zæøå]{4,}/i.test(text) && !/^Page \d+ of \d+$/i.test(text));
 
   products.push({
     id,
     title,
     hero,
-    subnav,
     intro,
-    tables,
+    tabs,
     metaTitle: j.title,
     metaDescription: j.description,
   });
@@ -154,16 +111,19 @@ const ts = `// GENERATED by scripts/gen-produkter.mjs from docs/scrape — do no
 import type { Img } from "@/lib/types";
 
 export type ProductTable = { heading: string | null; headers: string[]; rows: string[][]; images: Img[] };
+/**
+ * One sub-category tab — the pills above a product's tables. A product
+ * without pills (fett, skruhylser) has a single tab with \`label: null\`.
+ */
+export type ProductTab = { label: string | null; slug: string; tables: ProductTable[] };
 export type Product = {
   id: string;
   /** Reserved for the later Zirius (ERP) integration; unset today. */
   erpId?: string;
   title: string;
   hero: Img;
-  /** Static sub-navigation pills (not links on the live site) above the tables. Empty on routes without them. */
-  subnav: string[];
   intro: string[];
-  tables: ProductTable[];
+  tabs: ProductTab[];
   metaTitle: string;
   metaDescription: string;
 };
@@ -173,9 +133,9 @@ export const produkter: Product[] = ${JSON.stringify(products, null, 2)};
 export const productBySlug = (slug: string): Product | undefined => produkter.find((p) => p.id === slug);
 `;
 writeFileSync(join(ROOT, "lib/produkter.ts"), ts);
-console.log(
-  `wrote lib/produkter.ts: ${products.length} products, ${products.reduce((n, p) => n + p.tables.length, 0)} tables, ${products.filter((p) => p.subnav.length > 0).length} with subnav`
-);
+const tableCount = products.reduce((n, p) => n + p.tabs.reduce((m, t) => m + t.tables.length, 0), 0);
+const rowCount = products.reduce((n, p) => n + p.tabs.reduce((m, t) => m + t.tables.reduce((k, x) => k + x.rows.length, 0), 0), 0);
+console.log(`wrote lib/produkter.ts: ${products.length} products, ${tableCount} tables, ${rowCount} rows`);
 for (const p of products) {
-  console.log(`  ${p.id}: ${p.tables.length} table(s), subnav=${p.subnav.length}, images/table=[${p.tables.map((t) => t.images.length).join(",")}]`);
+  console.log(`  ${p.id}: ${p.tabs.length} tab(s) — ${p.tabs.map((t) => `${t.label ?? "(uten fane)"} ${t.tables.length}t/${t.tables.reduce((n, x) => n + x.rows.length, 0)}r`).join(", ")}`);
 }

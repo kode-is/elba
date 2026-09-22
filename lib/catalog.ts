@@ -15,10 +15,13 @@ export const MATERIALS: { id: Material; label: string }[] = [
 ];
 
 export type CatalogItem = {
-  /** `${categoryId}:${tableIndex}:${rowIndex}` — Art.Nr. repeats across tables, so it can't be the key. */
+  /** `${categoryId}:${tabIndex}:${tableIndex}:${rowIndex}` — Art.Nr. repeats across tables, so it can't be the key. */
   key: string;
   categoryId: string;
   categoryTitle: string;
+  /** The sub-category tab this row sits under ("Rørender 90 grader"), or null on a product without pills. */
+  subtype: string | null;
+  tabIndex: number;
   tableIndex: number;
   heading: string | null;
   headers: string[];
@@ -37,7 +40,7 @@ export type CatalogGroup = {
   categoryId: string;
   categoryTitle: string;
   count: number;
-  tables: { tableIndex: number; heading: string | null; headers: string[]; rows: string[][] }[];
+  tables: { tabIndex: number; tableIndex: number; subtype: string | null; heading: string | null; headers: string[]; rows: string[][] }[];
 };
 
 /** Lower-case, fold Norwegian letters and diacritics, unify `,`/`.` and `×`/`x`, collapse whitespace. */
@@ -63,36 +66,37 @@ function materialOf(text: string | null | undefined): Material | null {
 }
 
 /**
- * One item per table row. The haystack holds the category title, the table
- * heading and every cell, normalised — plus a whitespace-free copy of each, so
- * "0401 4701 013" is found by "04014701013" and "M 10x1" by "M10x1". Column
- * headers stay out of it: "SW" or "L" would match nearly every row. With a
- * pill map (lib/subnav.ts's SUBNAV_TABLES, passed in rather than imported so
- * this file stays free of data), a row is also found by its sub-category pill,
- * e.g. "Rørender rette" or 'Vinkel "WE"'.
+ * One item per table row, across every sub-category tab. The haystack holds
+ * the category title, the tab label, the table heading and every cell,
+ * normalised — plus a whitespace-free copy of each, so "0401 4701 013" is
+ * found by "04014701013" and "M 10x1" by "M10x1", and a row is found by its
+ * sub-type ("Rørender 90 grader"). Column headers stay out of it: "SW" or "L"
+ * would match nearly every row.
  */
-export function buildCatalog(products: Product[], subnav: Record<string, Record<string, number[]>> = {}): CatalogItem[] {
+export function buildCatalog(products: Product[]): CatalogItem[] {
   const items: CatalogItem[] = [];
   for (const product of products) {
-    const pills = Object.entries(subnav[product.id] ?? {});
-    product.tables.forEach((table, tableIndex) => {
-      const pillLabels = pills.filter(([, tables]) => tables.includes(tableIndex)).map(([label]) => label);
-      const artIndex = table.headers.findIndex((h) => /^art\.?\s*nr\.?$/i.test(h.trim()));
-      const materialIndex = table.headers.findIndex((h) => /^material/i.test(h.trim()));
-      table.rows.forEach((cells, rowIndex) => {
-        const parts = [product.title, table.heading ?? "", ...pillLabels, ...cells].map(normalize).filter(Boolean);
-        const haystack = [...new Set([...parts, ...parts.map((p) => p.replace(/ /g, ""))])].join(" ");
-        items.push({
-          key: `${product.id}:${tableIndex}:${rowIndex}`,
-          categoryId: product.id,
-          categoryTitle: product.title,
-          tableIndex,
-          heading: table.heading,
-          headers: table.headers,
-          cells,
-          artNr: artIndex >= 0 ? (cells[artIndex] ?? "") : "",
-          material: materialOf(table.heading) ?? (materialIndex >= 0 ? materialOf(cells[materialIndex]) : null),
-          haystack,
+    product.tabs.forEach((tab, tabIndex) => {
+      tab.tables.forEach((table, tableIndex) => {
+        const artIndex = table.headers.findIndex((h) => /^art\.?\s*nr\.?$/i.test(h.trim()));
+        const materialIndex = table.headers.findIndex((h) => /^material/i.test(h.trim()));
+        table.rows.forEach((cells, rowIndex) => {
+          const parts = [product.title, tab.label ?? "", table.heading ?? "", ...cells].map(normalize).filter(Boolean);
+          const haystack = [...new Set([...parts, ...parts.map((p) => p.replace(/ /g, ""))])].join(" ");
+          items.push({
+            key: `${product.id}:${tabIndex}:${tableIndex}:${rowIndex}`,
+            categoryId: product.id,
+            categoryTitle: product.title,
+            subtype: tab.label,
+            tabIndex,
+            tableIndex,
+            heading: table.heading,
+            headers: table.headers,
+            cells,
+            artNr: artIndex >= 0 ? (cells[artIndex] ?? "") : "",
+            material: materialOf(table.heading) ?? (materialIndex >= 0 ? materialOf(cells[materialIndex]) : null),
+            haystack,
+          });
         });
       });
     });
@@ -121,8 +125,8 @@ export function groupResults(items: CatalogItem[]): CatalogGroup[] {
       groups.push(group);
     }
     let table = group.tables.at(-1);
-    if (!table || table.tableIndex !== item.tableIndex) {
-      table = { tableIndex: item.tableIndex, heading: item.heading, headers: item.headers, rows: [] };
+    if (!table || table.tableIndex !== item.tableIndex || table.tabIndex !== item.tabIndex) {
+      table = { tabIndex: item.tabIndex, tableIndex: item.tableIndex, subtype: item.subtype, heading: item.heading, headers: item.headers, rows: [] };
       group.tables.push(table);
     }
     table.rows.push(item.cells);

@@ -3,14 +3,13 @@ import { produkter } from "@/lib/produkter";
 import {
   EMPTY_QUERY, buildCatalog, groupResults, isActive, normalize, parseQuery, searchCatalog, toSearchString,
 } from "@/lib/catalog";
-import { SUBNAV_TABLES } from "@/lib/subnav";
 
 const items = buildCatalog(produkter);
 const search = (q: Partial<typeof EMPTY_QUERY>) => searchCatalog(items, { ...EMPTY_QUERY, ...q });
 
 describe("buildCatalog", () => {
   it("has one item per table row, with unique keys", () => {
-    const rows = produkter.reduce((n, p) => n + p.tables.reduce((m, t) => m + t.rows.length, 0), 0);
+    const rows = produkter.reduce((n, p) => n + p.tabs.reduce((m, tab) => m + tab.tables.reduce((k, t) => k + t.rows.length, 0), 0), 0);
     expect(items).toHaveLength(rows);
     expect(new Set(items.map((i) => i.key)).size).toBe(rows);
   });
@@ -31,16 +30,22 @@ describe("buildCatalog", () => {
   });
 });
 
-describe("buildCatalog with sub-category pills", () => {
-  const withPills = buildCatalog(produkter, SUBNAV_TABLES);
-  it("adds each row's pill to what it is searched by", () => {
-    const hits = searchCatalog(withPills, { ...EMPTY_QUERY, q: "rorender rette" });
-    expect(hits).toHaveLength(items.filter((i) => i.categoryId === "rørender").length);
-    expect(searchCatalog(withPills, { ...EMPTY_QUERY, q: "vinkel we" }).every((i) => i.categoryId === "snittringmatur")).toBe(true);
+describe("sub-category tabs", () => {
+  it("lets a row be found by its sub-type", () => {
+    const bent = searchCatalog(items, { ...EMPTY_QUERY, q: "rorender 90 grader" });
+    expect(bent).toHaveLength(26);
+    expect(bent.every((i) => i.categoryId === "rørender" && i.subtype === "Rørender 90 grader")).toBe(true);
+    // "WE" is the vinkel fitting in both snittringmatur and lynfittings.
+    const we = searchCatalog(items, { ...EMPTY_QUERY, q: "vinkel we" });
+    expect(we).toHaveLength(53);
+    expect(we.every((i) => (i.subtype ?? "").includes("WE"))).toBe(true);
   });
-  it("changes nothing else about the rows", () => {
-    expect(withPills.map((i) => i.key)).toEqual(items.map((i) => i.key));
-    expect(searchCatalog(withPills, { ...EMPTY_QUERY, q: "04014701013" })).toHaveLength(1);
+  it("keeps rows from different tabs apart", () => {
+    const rørender = items.filter((i) => i.categoryId === "rørender");
+    expect(new Set(rørender.map((i) => i.subtype))).toEqual(
+      new Set(["Rørender rette", "Rørender 90 grader", "Rørender 45 grader"]),
+    );
+    expect(new Set(rørender.map((i) => i.key)).size).toBe(rørender.length);
   });
 });
 
@@ -56,8 +61,8 @@ describe("normalize", () => {
 
 describe("searchCatalog", () => {
   it("finds an article number with or without its spaces", () => {
-    expect(search({ q: "0401 4701 013" }).map((i) => i.artNr)).toEqual(["0401 4701 013"]);
-    expect(search({ q: "04014701013" }).map((i) => i.artNr)).toEqual(["0401 4701 013"]);
+    expect(search({ q: "0401 2200 306" }).map((i) => i.artNr)).toEqual(["0401 2200 306"]);
+    expect(search({ q: "04012200306" }).map((i) => i.artNr)).toEqual(["0401 2200 306"]);
   });
   it("matches category names without diacritics", () => {
     const all = items.filter((i) => i.categoryId === "rørender");
@@ -71,7 +76,7 @@ describe("searchCatalog", () => {
   });
   it("requires every token (AND)", () => {
     const hits = search({ q: "forlengere messing" });
-    expect(hits.length).toBeGreaterThan(0);
+    expect(hits).toHaveLength(19);
     expect(hits.every((i) => i.categoryId === "forlengere" && i.material === "messing")).toBe(true);
   });
   it("filters by category (OR within the facet)", () => {
@@ -99,12 +104,12 @@ describe("groupResults", () => {
     const groups = groupResults(items);
     expect(groups.map((g) => g.categoryId)).toEqual(produkter.map((p) => p.id));
     const rørender = groups.find((g) => g.categoryId === "rørender")!;
-    expect(rørender.tables).toHaveLength(9);
+    expect(rørender.tables).toHaveLength(17); // nine straight, five 90°, three 45°
     expect(rørender.count).toBe(rørender.tables.reduce((n, t) => n + t.rows.length, 0));
     expect(groups.reduce((n, g) => n + g.count, 0)).toBe(items.length);
   });
   it("omits tables and categories with no matching rows", () => {
-    const groups = groupResults(search({ q: "04014701013" }));
+    const groups = groupResults(search({ q: "04012200306" }));
     expect(groups).toHaveLength(1);
     expect(groups[0].tables).toHaveLength(1);
     expect(groups[0].tables[0].rows).toHaveLength(1);
