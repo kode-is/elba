@@ -41,6 +41,9 @@ IGNORE_MISSING["/kontakt-oss"] = [exact("Senda!")];
 // docs/superpowers/specs/2026-09-18-produkter-catalog-search-design.md), so
 // the card's line of copy is gone from /tjenester. The home page keeps the
 // same line in its own Produkter section, so nothing is missing there.
+// …and since that box is scoped to its own category, the site-wide label
+// production shows there is intentionally gone on every category page.
+for (const r of ROUTES.filter((r) => r.startsWith("/produkter/"))) IGNORE_MISSING[r] = [...IGNORE_MISSING[r], exact("Søk i alle produkter")];
 IGNORE_MISSING["/tjenester"] = [exact("Alt du trenger til installasjon, vedlikehold og drift")];
 // …and that card's photo went with it, on both routes that showed the cards.
 const EXPECTED_FEWER_IMAGES = { "/": 1, "/tjenester": 1 };
@@ -50,6 +53,11 @@ const EXPECTED_FEWER_IMAGES = { "/": 1, "/tjenester": 1 };
 // `extra` lines in docs/verify-report.md as of this task. Anything not
 // covered here (or by `isTableText` below) makes a route FAIL, even if
 // `missing` is 0.
+const CATEGORY_TITLES = [
+  "Banjokoblinger", "Fett", "Forlengere", "Fyllenippler", "Fylleutstyr", "Lynfittings",
+  "Rørender", "Skottgjennomføring", "Skruhylser", "Slanger", "Snittringmatur",
+];
+
 const ALLOWED_EXTRA = [
   // The "Gå til innhold" skip link, added on every route for keyboard/screen
   // reader accessibility; live has none (docs/handover.md "Deviations from
@@ -113,10 +121,10 @@ const ALLOWED_EXTRA = [
   exact("Forsinket stål"),
   exact("Syrefast"),
   exact("Messing"),
-  ...[
-    "Banjokoblinger", "Fett", "Forlengere", "Fyllenippler", "Fylleutstyr", "Lynfittings",
-    "Rørender", "Skottgjennomføring", "Skruhylser", "Slanger", "Snittringmatur",
-  ].map(exact),
+  ...CATEGORY_TITLES.map(exact),
+  // A category page's search box searches that category, so its label reads
+  // "Søk i Rørender" etc. rather than "Søk i alle produkter".
+  ...CATEGORY_TITLES.map((title) => exact(`Søk i ${title}`)),
 ];
 
 // docs/scrape/tables.json's per-route header/cell strings. SpecTable renders

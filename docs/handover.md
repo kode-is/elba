@@ -21,27 +21,14 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    showed its success message and the mail arrived in the inbox (not spam),
    from `elba@elba.no`, subject `Henvendelse fra elba.no – <navn>`, reply-to
    the visitor's address. **`CONTACT_TO` pointed at Einar's address for that
-   test — set it to `elba@elba.no` (and redeploy) before go-live.** There is
+   test — set it to `elba@elba.no` (and redeploy) before go-live.** Update
+   2026-09-22: `CONTACT_TO` was re-created on 2026-09-20, a day after the
+   other two, which suggests it was switched — but its value is encrypted and
+   was not read, so confirm it now that elba.no is live and real customer
+   mail is flowing. There is
    still no `.env.local`, and the variables are not set for the Development
    environment, so a local `npm run dev` shows the friendly failure message
    instead of sending.
-2. **Sub-category pills need a mapping from Elba.** Every product page shows
-   a row of "pills" naming sub-types (`Rørender rette` / `90 grader` /
-   `45 grader`, `Muttere`, `T-stykke`, …) — 33 of them across 9 routes. They
-   are inert text on live **and** in the Framer source project
-   (`https://global-curiosity-381133.framer.app`): `<div>`/`<span>`, no href,
-   `cursor: auto`, clicking changes nothing. Making them filter needs to know
-   which table rows belong to which pill, and that link exists nowhere in the
-   data: the pills describe *shape* (rett / 90° / T-stykke) while the table
-   headings describe *material* (Forsinket stål / Syrefast / Messing), and the
-   counts don't line up (banjokoblinger 5 pills over 1 table, snittringmatur 7
-   over 2). A text match finds only 1 of 33. For several pills the rows are
-   not published at all — lynfittings lists 4 types but ships one table,
-   `Lynfittings 0° rett "GE"`. Hlynur needs to fill in the mapping (and supply
-   the missing rows); the ready-made fill-in sheet is the "underkategorier"
-   document sent to Einar on 2026-09-20. Until then the pills stay labels —
-   the header search already finds all 33 of them and lands on the right
-   category page, which is verified.
 2. **One more send after the `CONTACT_TO` switch**, to confirm the mail lands
    in Elba's own inbox.
 3. **Review the success/error copy.** Ours is new — live's Framer form shows
@@ -61,7 +48,12 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    produktkatalogen` / `Se treffet i produktkatalogen`, `Art.nr. …`,
    `<Kategori> – på forespørsel`, `N produkter`, `Laster søk …`, `Kunne ikke
    laste søket. Lukk og prøv igjen.`, `Ingen treff for «…». Prøv et annet
-   søkeord, eller ta kontakt.` and the key hints `naviger` / `åpne` / `lukk` /
+   søkeord, eller ta kontakt.`, the category-page search label `Søk i
+   <Kategori>` with placeholder `Søk i <Kategori> — art.nr., gjenge,
+   dimensjon …`, the palette group `Underkategorier` with `ikke i
+   nettkatalogen – ta kontakt`, the pill panel `Disse artiklene ligger ikke i
+   nettkatalogen ennå, men vi skaffer det meste. Ta kontakt, så hjelper vi
+   deg.`, and the key hints `naviger` / `åpne` / `lukk` /
    `eller / åpner søket`. (Live's own per-table `Search…` box, pager and CSV export are still
    not reproduced — the catalog search on `/produkter` replaces the need.)
 5. **Placeholder team avatar.** All nine team members share the same
@@ -101,7 +93,16 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    `app/(site)/industri/page.tsx`, `app/(site)/artikler/page.tsx`) — none of
    them describe the photo they're on. Same class of issue as the rest of
    this item; Hlynur to supply real Norwegian alt texts for all of it.
-9. **Vercel production + DNS — domains added, waiting for the DNS switch.**
+9. **Vercel production + DNS — live since ~2026-09-21.** Verified
+   2026-09-22: 1.1.1.1, 8.8.8.8 and 9.9.9.9 all resolve `www.elba.no` to the
+   CNAME below; `https://elba.no` and `http://www.elba.no` both 308 to
+   `https://www.elba.no`; the Let's Encrypt certificate is valid to
+   2026-12-19. The Framer site can be unpublished whenever Elba is ready.
+   Since the switch, `scripts/verify.mjs`'s `LIVE` (`https://www.elba.no`) is
+   **this site's own production**, so `npm run verify` now checks a branch
+   against production rather than against the Framer original — which is
+   still at https://global-curiosity-381133.framer.app if a faithful-copy
+   comparison is ever needed again. Original notes:
    The Vercel project `elba` (team **Kode Solutions**, scope
    `kode-solutions-44807b0f`, linked to `kode-is/elba`) deploys `main` to
    production; the public production alias is https://elba-pi.vercel.app
@@ -145,6 +146,22 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     self-corrects on the following render, so it's cosmetic. The follow-up,
     if it's worth doing, is inlining the build year via a build-time env var
     instead of computing it at module load.
+13. **Confirm the sub-category pill mapping (Hlynur).** The 33 pills on the
+    nine product pages that have them are now pressable (deviation 10). On
+    live and in the Framer source they were inert labels; which tables a pill
+    covers is recorded in `lib/subnav.ts`. On every page the first pill — the
+    one live draws as selected — is the sub-type of all the tables shown, and
+    the other 24 pills are sub-types with no published articles, which show a
+    "ta kontakt" panel. Three pages prove it from the data (snittringmatur:
+    every Type is `WE …`; lynfittings: the table is headed `0° rett "GE"`;
+    fylleutstyr: the caption says `Fyllepresse`), five from the drawings
+    (rørender, forlengere and skottgjennomføring are all straight;
+    banjokoblinger and slanger show one type each). **Fyllenippler rests on
+    the first-pill rule alone** — its tables are split by angle (rett / 45° /
+    90° / justerbar) while its pills are split by connection (for stuss /
+    gjenget tilkobling / overgang), so Hlynur should confirm which the four
+    tables are. When Elba publishes the missing sub-types (90°/45° rørender,
+    T-stykke, muttere …), each new table gets a line in `lib/subnav.ts`.
 
 ---
 
@@ -221,6 +238,16 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
    button is hovered or focused — nothing is added to the pages' own bundles.
    The page keywords in `lib/search.ts` (`PAGES`) are search-only and worth a
    look from Hlynur: add the words customers actually use.
+
+10. **Pressable sub-category pills.** On live the pill row above a product's
+    tables is decoration. Here each pill is an `aria-pressed` button
+    (`components/produkter/SubnavFilter.tsx`): it shows the tables it covers
+    (`lib/subnav.ts`) and hides the rest — kept mounted, so the prerendered
+    HTML still carries every table — or shows a "ta kontakt" panel for a
+    sub-type with nothing published. The choice is in `?type=<slug>`; the
+    header search has an `Underkategorier` group linking straight to a pill,
+    and `/produkter` catalog rows are also found by their pill. Each category
+    page's own search box searches that category (`Søk i <Kategori>`).
 
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under
@@ -425,3 +452,4 @@ Tasks 1-11 are dated 2026-09-13.
 | 13 | 2026-09-19 | Site-wide search palette in the header, after kode-is/totus (`components/SearchPalette.tsx`, `lib/search.ts`, `/search-index.json`, 14 tests) — approved deviation 9; lint, tsc, 64 tests, build and `npm run verify` 26/26 all pass. |
 | 14 | 2026-09-20 | Service cards back to live's size, tablet-width layout fixes (article cards, stats band, advisory row, /om-oss overhang), dot separators matched to live's measured values; `www.elba.no` + `elba.no` added to the Vercel project. |
 | 15 | 2026-09-20 | Category-page search boxes scoped to their own category; audit of the 33 sub-category pills (mapping missing — see "Still needs you or Hlynur" #2). |
+| 16 | 2026-09-22 | Sub-category pills pressable on all nine product pages (`lib/subnav.ts`, `SubnavFilter`, 11 tests), `Underkategorier` in the header search, pointer cursor on buttons; branch rebased onto the post-DNS-switch `main`; `npm run verify` 26/26 against production. |
