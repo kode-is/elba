@@ -171,6 +171,43 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     so it is reproduced faithfully; Elba presumably has not finished filling
     those two in.
 
+15. **Review the Protega / brannslukking copy before it goes live (Hlynur).**
+    `/brannslukking` and the Protega bands on `/`, `/anlegg` and `/industri`
+    are all new Norwegian copy, written from ELBA's own Protega material on
+    OneDrive (`Leverandør ressurser/Protega/Salgsmateriale`: the ELBA-branded
+    sales brochures and Protega's sales training for ELBA). Everything is in
+    `lib/brannslukking.ts` plus the section intros in
+    `app/(site)/brannslukking/page.tsx` and the three `ProtegaBand` calls.
+    Claims worth a second look against what Protega will stand behind:
+    **"100 % mekanisk"**, **"10 år driftslevetid"** (Mining brochure),
+    **CE · R107 · ISO 9001** (training, "in place today"), the
+    **flashpoint/autoignition figures** (Diesel 55/225, motorolje 205/315,
+    girolje 200/390 °C — training), the **"Turbo og eksos" band drawn from
+    300 °C** on the heat scale (ours, illustrative, no number shown), the
+    **1–100 kg** cylinder range, the **6/12-month inspection with
+    certificate** and **10-year hydrostatic test** (General brochure), and the
+    handheld/sprinkler comparison table (training). Deliberately left out:
+    Protega's named customers (BYD, DP World, Umicore, Satema, Veidekke), the
+    "100 % activation" claim, insurance-premium savings and the tunnel legal
+    requirement — add them only if Protega confirms they may be used.
+16. **Photos on `/brannslukking` (Hlynur).** From the ELBA brand folder
+    (`skron-clanker/elba/ELBA - Brand Folder/Photos and Media`, incl. "Our
+    segments" and one "People" shot — the montør photo in "Ett verkstedbesøk",
+    back to camera, no name or customer shown) and Protega's own installation
+    and product photos (OneDrive `Leverandør ressurser/Protega/Installasjons
+    bilder`, `Downloads/ELBA/.../Marketing images`). Resized to WebP in
+    `public/images/brannslukking/`. Several Protega photos are of Dutch
+    customer installations (Volvo L220H, Oxbo, Citizen CNC, a bus); they show
+    no customer names, but confirm Protega is happy for ELBA to use them. The
+    product cylinder carries Protega's own label in the photos — that is the
+    product, and is left as is; the site uses no Protega logo files.
+17. **`npm run verify` will flag the Protega additions until they are in
+    production.** `/brannslukking` is in `ROUTES` (so the sitemap lists it),
+    and `verify` compares against production, which does not have it yet — the
+    route and the new home/`/anlegg`/`/industri`/`/tjenester` text will show
+    as `missing`/`extra` until this branch is deployed, after which production
+    *is* this content again.
+
 ---
 
 ## Deviations from live (approved)
@@ -256,6 +293,35 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     straight to a tab, and `/produkter` catalog rows are found by their
     sub-type. Each category page's own search box searches that category
     (`Søk i <Kategori>`).
+
+11. **Fire suppression: Protega Solutions (2026-10-16).** ELBA now sells and
+    installs Protega's automatic fire suppression, so the site gains a new
+    service, which never existed on live: `/brannslukking` (in `ROUTES`, the
+    sitemap and the search palette), a third entry in the Tjenester panel and
+    a third "Våre tjenester" card (the grid is now three across from `lg`), a
+    "Nyhet" pill in the home hero styled like its e-mail/phone pills, and a
+    red Protega tile on `/` (directly below Produkter, which stays first under
+    the hero), `/anlegg` and `/industri`
+    (`components/brannslukking/ProtegaBand.tsx`).
+    **It is in ELBA's brand, not Protega's** (Hlynur, 2026-10-16): red, white
+    and black per the brand folder's Logo Cheatsheet, the site's existing
+    cream/`surface` tokens, no Protega gold, hexagon or logo — Protega is
+    named in text as the manufacturer only. The page is built from the
+    existing components: `PageHero`, `FeatureTileGrid` (the three audiences,
+    laid out as `/anlegg`'s intro), `StatsSection`, `FeatureCard`,
+    `IconCardGrid`, `CheckList`, `StepCard` (new `tone="white"` for cream
+    sections), `ExperienceSection`, `PhotoCollage`, `Faq`, `ContactCta`. New
+    pieces are limited to what had no equivalent: `SegmentGrid` (FeatureCard
+    style with live's overlapping red 55px badge), `HeatScale`,
+    `ComparisonTable` (dressed as `SpecTable`) and `SuppressionDemo`, an
+    animated direct/indirect drawing (a client component that only runs on
+    screen and holds one still frame under `prefers-reduced-motion`), plus
+    sparks drifting through the hero (`PageHero` gained a `decoration` slot
+    for them). Icons are the ELBA brand set ("Graphics/Icons/SVG",
+    incl. the Extinguisher icon) in `public/images/icons/brand/` and
+    `segments/anlegg.svg`, painted by the new shared `components/BrandIcon.tsx`
+    (which `IndustryStrip` now uses too). The nav itself is unchanged (five
+    items), and so is the footer.
 
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under
