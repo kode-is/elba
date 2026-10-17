@@ -23,6 +23,8 @@ type PageHeroProps = {
   contentClassName?: string;
   /** Breadcrumb trail, rendered as a band directly under the hero (as in kode-is/skralli-v2). Omit for no band (not-found). */
   crumbs?: BreadcrumbItem[];
+  /** Decorative layer between the tint and the content (/brannslukking's sparks). */
+  decoration?: ReactNode;
   /** Custom content, replacing the default title/subtitle block (not-found's 404 heading + copy + link). `title` is unused when this is set. */
   children?: ReactNode;
 };
@@ -35,6 +37,7 @@ export function PageHero({
   overlayClassName = "bg-black/50",
   contentClassName = "px-6 text-center",
   crumbs,
+  decoration,
   children,
 }: PageHeroProps) {
   return (
@@ -49,6 +52,7 @@ export function PageHero({
           className="object-cover"
         />
         <div className={`absolute inset-0 ${overlayClassName}`} aria-hidden="true" />
+        {decoration}
         <div className={`relative z-10 ${contentClassName}`}>
           {children ?? (
             <>

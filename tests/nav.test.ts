@@ -8,10 +8,10 @@ describe("site navigation", () => {
     expect(nav.find((n) => n.text === "Produkter")?.href).toBe("/produkter");
     expect(navCta).toEqual({ text: "Kontakt oss", href: "/kontakt-oss" });
   });
-  it("Tjenester panel lists Anlegg and Industri — Produkter is its own nav item", () => {
+  it("Tjenester panel lists Anlegg, Industri and Brannslukking — Produkter is its own nav item", () => {
     expect(servicesMenu.heading).toBe("Tjenester");
     expect(servicesMenu.description).toBe("Utforsk løsninger tilpasset din bransje og bruk");
-    expect(servicesMenu.columns.flat().map((l) => l.href)).toEqual(["/anlegg", "/industri"]);
+    expect(servicesMenu.columns.flat().map((l) => l.href)).toEqual(["/anlegg", "/industri", "/brannslukking"]);
   });
   it("footer Selskapet column links to the six pages, Artikler fixed", () => {
     const links = footerColumns[0].links;

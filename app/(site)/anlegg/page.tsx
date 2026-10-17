@@ -8,6 +8,7 @@ import { CheckList } from "@/components/CheckList";
 import { IconCardGrid, type IconCardItem } from "@/components/IconCardGrid";
 import { ExperienceSection } from "@/components/anlegg/ExperienceSection";
 import { ContactCta } from "@/components/ContactCta";
+import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
 import { TargetIcon, ClockIcon, HardHatIcon, CoinsIcon, LeafIcon } from "@/components/icons";
 import { pageMetadata } from "@/lib/seo";
 
@@ -188,6 +189,15 @@ export default function Anlegg() {
           />
         </div>
       </Container>
+
+      {/* Not on live: the new fire-suppression service, pitched to the same
+          machine owners and dealers this page is for. */}
+      <ProtegaBand
+        className="pb-16 md:pb-24"
+        heading="Smurt og sikret mot brann"
+        text="Motorrom, hydraulikk og turbo er der anleggsmaskiner tar fyr. Nå monterer vi automatisk brannslukking fra Protega – gjerne i samme verkstedbesøk som sentralsmøringen."
+        points={["Slukker uten fører til stede", "Ettermonteres på maskinene du har", "Kit til forhandlere"]}
+      />
 
       <ContactCta />
     </main>
