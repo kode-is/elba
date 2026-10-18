@@ -27,7 +27,7 @@ export const MODES: Record<LubeMode, { label: string; summary: string; steps: De
     steps: [
       {
         heading: "Pumpen starter etter fast pause",
-        text: "Pausetiden telles mens tenningen er på. Når den er ute, går EP-1 en innstilt tid, og røreverket i beholderen mater fettet frem til pumpeelementet.",
+        text: "Pausetiden telles mens tenningen er på. Når den er ute, går pumpen en innstilt tid, og røreverket i beholderen mater fettet frem til pumpeelementet.",
       },
       {
         heading: "Fordelerne doserer så lenge pumpen går",
@@ -97,20 +97,24 @@ export const DAY_MOMENTS = [
   },
 ] as const;
 
-/** The two BEKA components the drawing is modelled on. Facts from Groeneveld-BEKA's product pages. */
+/**
+ * Two examples from what ELBA fits — not the only pump or divider: one of the
+ * pumps, and the divider used on most installations. Facts from
+ * Groeneveld-BEKA's product pages.
+ */
 export const COMPONENTS = [
   {
     kind: "pump",
     name: "BEKA EP-1",
-    role: "Pumpen",
-    text: "Elektrisk stempelpumpe for 12 eller 24 V. Beholderen er gjennomsiktig, så du ser fettnivået, og et røreverk mater fettet frem til pumpeelementet. Pumpen styres med pause- og gangtid, fra egen styreenhet eller maskinens.",
+    role: "Eksempel på pumpe",
+    text: "En av pumpene vi leverer. Elektrisk stempelpumpe for 12 eller 24 V. Beholderen er gjennomsiktig, så du ser fettnivået, og et røreverk mater fettet frem til pumpeelementet. Pumpen styres med pause- og gangtid, fra egen styreenhet eller maskinens.",
     facts: ["Beholder fra 1,9 til 16 liter", "Fett til og med NLGI 2", "Overtrykksventil på hvert pumpeelement", "Tetthetsklasse IP65"],
   },
   {
     kind: "distributor",
     name: "BEKA MX-F",
-    role: "Fordeleren",
-    text: "Fordeleren deler fettet fra pumpen mellom smørepunktene. Den bygges med 3 til 12 stempler, to utløp per stempel, og utløp kan slås sammen der et punkt trenger mer fett.",
+    role: "Progressiv fordeler",
+    text: "Fordeleren vi bruker på de fleste anlegg. Den deler fettet fra pumpen mellom smørepunktene, bygges med 3 til 12 stempler, to utløp per stempel, og utløp kan slås sammen der et punkt trenger mer fett.",
     facts: ["Sink-nikkel-belagt stål", "0,025 til 0,105 cm³ per utløp og slag", "Indikatorstift eller sensor for syklusovervåking"],
   },
 ] as const;

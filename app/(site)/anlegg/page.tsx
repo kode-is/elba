@@ -183,10 +183,11 @@ export default function Anlegg() {
       {/* The parts */}
       <section className="bg-surface py-14 md:py-20">
         <Container>
-          <h2 className="text-section font-semibold text-black md:text-section-lg">Pumpe og fordelere</h2>
+          <h2 className="text-section font-semibold text-black md:text-section-lg">Pumper og fordelere</h2>
           <p className="mt-4 max-w-3xl text-lead text-ink-muted md:text-lead-lg">
             Et smøreanlegg består av en pumpe med styring, en eller flere fordelere og rør og slanger ut til hvert punkt.
-            Rør, slanger og koblinger har vi på{" "}
+            Vi leverer pumper og fordelere fra flere produsenter og velger etter maskin og bruk. Her er to vi bruker mye.
+            Pumpedeler, slanger og koblinger har vi på{" "}
             <Link href="/produkter" className="font-semibold text-brand hover:underline">
               eget lager
             </Link>
