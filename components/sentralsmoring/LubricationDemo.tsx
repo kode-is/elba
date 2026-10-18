@@ -8,8 +8,8 @@ import {
   clockLabel,
   CYCLE,
   cycleAt,
-  DAY_MS,
   dayClock,
+  dayLoopMs,
   FEED_LINE,
   FIRST_CYCLE,
   GREASE_END,
@@ -20,7 +20,6 @@ import {
   LINES,
   lineArrived,
   lineDoses,
-  MANUAL_DAY_MS,
   MANUAL_LEFT,
   OPTIMAL,
   overflowAt,
@@ -71,10 +70,10 @@ export function LubricationDemo() {
   const reduced = usePrefersReducedMotion();
   const small = useSmallScreen();
   const { ref, visible } = useOnScreen<HTMLDivElement>();
-  const [ms, setMs] = useLoopClock(visible && !reduced && !paused, mode === "manuell" ? MANUAL_DAY_MS : DAY_MS);
+  const [ms, setMs] = useLoopClock(visible && !reduced && !paused, dayLoopMs(mode));
 
   // The day's clock, and the machine's own time for its movements (the same
-  // except in manual mode after the greasing round, where the day runs faster).
+  // until the day speeds up after its first stretch).
   const { t, motion } = reduced ? { t: STILL[mode], motion: STILL[mode] } : dayClock(mode, ms);
   const auto = mode === "automatisk";
   const pose = poseAt(mode, motion);

@@ -3,7 +3,9 @@ import {
   clockLabel,
   cycleAt,
   dayClock,
-  MANUAL_DAY_MS,
+  dayLoopMs,
+  FIRST_CYCLE,
+  PERIOD,
   CYCLE,
   DAY_MS,
   FEED_LINE,
@@ -77,14 +79,35 @@ describe("grease model behind /anlegg's demo", () => {
     expect(poseAt("manuell", 0.5)).not.toEqual(STANDBY);
   });
 
-  it("plays the manual greasing round at the normal pace, then runs the rest of the day faster", () => {
+  it("plays the start of the day at the normal pace, then runs the rest faster", () => {
     expect(dayClock("manuell", GREASE_END * DAY_MS)).toEqual({ t: GREASE_END, motion: GREASE_END });
-    const late = dayClock("manuell", MANUAL_DAY_MS - 1);
-    expect(late.t).toBeGreaterThan(0.99);
-    // The machine keeps moving at its own pace; only the clock runs faster.
-    expect(late.motion).toBeCloseTo((MANUAL_DAY_MS - 1) / DAY_MS);
-    expect(MANUAL_DAY_MS).toBeLessThan(DAY_MS / 2);
-    expect(dayClock("automatisk", 30000)).toEqual({ t: 0.5, motion: 0.5 });
+    for (const mode of ["manuell", "automatisk"] as const) {
+      expect(dayLoopMs(mode)).toBeLessThan(DAY_MS * 0.65);
+      expect(dayClock(mode, dayLoopMs(mode) - 1).t).toBeGreaterThan(0.99);
+    }
+    // Automatic: every pump run plays at the normal pace.
+    for (let k = 1; FIRST_CYCLE + k * PERIOD + CYCLE < 1; k++) {
+      const run = FIRST_CYCLE + k * PERIOD;
+      let ms = 0;
+      while (dayClock("automatisk", ms).t < run) ms += 5;
+      let end = ms;
+      while (dayClock("automatisk", end).t < run + CYCLE) end += 5;
+      expect(end - ms).toBeGreaterThan(CYCLE * DAY_MS - 20);
+    }
+  });
+
+  it("holds each status line for at least a second of animation, at any speed", () => {
+    let last = "";
+    let since = 0;
+    const loop = dayLoopMs("automatisk");
+    for (let ms = 0; ms < loop; ms += 10) {
+      const p = phaseOf(cycleAt(dayClock("automatisk", ms).t).u);
+      if (p !== last) {
+        if (last && since > 0) expect(ms - since).toBeGreaterThan(1000);
+        last = p;
+        since = ms;
+      }
+    }
   });
 
   it("labels the clock from 07:00 to 15:00", () => {

@@ -59,22 +59,49 @@ const EMISSIONS = Array.from({ length: LINES }, (_, l) => emissions(l));
 
 export const clamp = (v: number, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
 
-// Manual mode plays the start of the day — parked, the round with the grease
-// gun, and driving off — at the normal pace, then runs the rest of the day
-// faster: only the clock speeds up, the machine keeps digging at its own pace.
-export const MANUAL_SLOW_TO = 0.14;
-export const MANUAL_FAST = 4;
-/** One manual day, in milliseconds of animation. */
-export const MANUAL_DAY_MS = DAY_MS * (MANUAL_SLOW_TO + (1 - MANUAL_SLOW_TO) / MANUAL_FAST);
+// After the first stretch of the day, the clock runs faster: in manual mode
+// once the greasing round is done and the machine has driven off, in
+// automatic mode except while the pump runs, so the dosing stays readable.
+// Only the clock speeds up; the machine keeps digging at its own pace.
+export const SLOW_TO = 0.14;
+export const FAST = 4;
+
+/** The day as stretches of [from, to, speed], in day units. */
+function stretches(mode: LubeMode): [number, number, number][] {
+  const out: [number, number, number][] = [[0, SLOW_TO, 1]];
+  if (mode === "manuell") return [...out, [SLOW_TO, 1, FAST]];
+  let at = SLOW_TO;
+  for (let k = 0; FIRST_CYCLE + k * PERIOD < 1; k++) {
+    const run = FIRST_CYCLE + k * PERIOD;
+    const runEnd = Math.min(1, run + CYCLE);
+    if (runEnd <= at) continue;
+    if (run > at) out.push([at, run, FAST]);
+    out.push([Math.max(at, run), runEnd, 1]);
+    at = runEnd;
+  }
+  if (at < 1) out.push([at, 1, FAST]);
+  return out;
+}
+const STRETCHES = { automatisk: stretches("automatisk"), manuell: stretches("manuell") };
+
+/** One day of the loop, in milliseconds of animation. */
+export function dayLoopMs(mode: LubeMode) {
+  return STRETCHES[mode].reduce((sum, [a, b, v]) => sum + ((b - a) * DAY_MS) / v, 0);
+}
 
 /**
  * The day's clock `t` (0-1) and the machine's own time `motion` (day units at
  * the normal pace, for its movements) at `ms` into the loop.
  */
 export function dayClock(mode: LubeMode, ms: number) {
-  const normal = ms / DAY_MS;
-  if (mode === "automatisk" || normal <= MANUAL_SLOW_TO) return { t: normal, motion: normal };
-  return { t: Math.min(0.9999, MANUAL_SLOW_TO + (normal - MANUAL_SLOW_TO) * MANUAL_FAST), motion: normal };
+  const motion = ms / DAY_MS;
+  let left = ms;
+  for (const [a, b, v] of STRETCHES[mode]) {
+    const span = ((b - a) * DAY_MS) / v;
+    if (left <= span) return { t: Math.min(0.9999, a + (left * v) / DAY_MS), motion };
+    left -= span;
+  }
+  return { t: 0.9999, motion };
 }
 const smooth = (v: number) => v * v * (3 - 2 * v);
 
