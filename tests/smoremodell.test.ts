@@ -2,17 +2,20 @@ import { describe, expect, it } from "vitest";
 import {
   clockLabel,
   cycleAt,
+  CYCLE,
+  DAY_MS,
+  FEED_LINE,
   GREASE_END,
   greaseLevel,
   gunAt,
-  lineStart,
-  lineTravel,
   LINES,
-  MAIN_OUTLETS,
+  lineEmissions,
   OPTIMAL,
   phaseOf,
   poseAt,
   STANDBY,
+  STROKES_FROM,
+  STROKES_TO,
 } from "@/lib/smoremodell";
 
 const day = Array.from({ length: 801 }, (_, i) => i / 800);
@@ -26,8 +29,9 @@ describe("grease model behind /anlegg's demo", () => {
     }
   });
 
-  it("has manual greasing too high in the morning and too low by the afternoon", () => {
-    expect(greaseLevel("manuell", GREASE_END + 0.01)).toBeGreaterThan(OPTIMAL.high);
+  it("never fills a bearing past what it holds by hand, and thins below the band by afternoon", () => {
+    for (const t of day) expect(greaseLevel("manuell", t)).toBeLessThanOrEqual(OPTIMAL.high);
+    expect(greaseLevel("manuell", GREASE_END + 0.01)).toBeGreaterThan(100);
     expect(greaseLevel("manuell", 7 / 8)).toBeLessThan(OPTIMAL.low);
   });
 
@@ -37,33 +41,36 @@ describe("grease model behind /anlegg's demo", () => {
     }
   });
 
-  it("serves the main divider's outlets in turn, then the secondary divider's", () => {
-    const starts = Array.from({ length: LINES }, (_, i) => lineStart(i));
-    for (let i = 1; i < LINES; i++) expect(starts[i]).toBeGreaterThan(starts[i - 1]);
-    // The secondary divider only starts once the main divider's last line has delivered.
-    expect(starts[MAIN_OUTLETS]).toBeGreaterThanOrEqual(lineStart(MAIN_OUTLETS - 1) + 0.1);
-    expect(lineStart(LINES - 1) + 0.08).toBeLessThanOrEqual(1);
-    const { u } = cycleAt(0.03 + 1 / 6 + 0.04);
-    expect(u).not.toBeNull();
-    const moving = Array.from({ length: LINES }, (_, i) => i).filter((i) => lineTravel(u, i) !== null);
-    expect(moving.length).toBeGreaterThan(0);
-    expect(moving.length).toBeLessThan(4);
-    expect(cycleAt(0.01).u).toBeNull();
+  it("doses only while the pump runs, and reaches every point in every run", () => {
+    for (let line = 0; line < LINES; line++) {
+      const e = lineEmissions(line);
+      expect(e.length).toBeGreaterThan(0);
+      for (const at of e) {
+        expect(at).toBeGreaterThanOrEqual(STROKES_FROM);
+        expect(at).toBeLessThanOrEqual(STROKES_TO);
+      }
+    }
+    // The secondary divider starts only once the feed line from the main divider has delivered.
+    const firstFeed = lineEmissions(FEED_LINE)[0];
+    for (let line = FEED_LINE + 1; line < LINES; line++) expect(lineEmissions(line)[0]).toBeGreaterThan(firstFeed);
+    // Both dividers work at the same time: main-divider doses continue after the secondary has begun.
+    expect(Math.max(...lineEmissions(0))).toBeGreaterThan(lineEmissions(FEED_LINE + 1)[0]);
   });
 
   it("holds each status phase for at least a second", () => {
     const seen: { phase: string; from: number }[] = [];
-    for (let t = 0; t < 1; t += 0.0005) {
+    for (let t = 0; t < 1; t += 0.0002) {
       const p = phaseOf(cycleAt(t).u);
       if (!seen.length || seen[seen.length - 1].phase !== p) seen.push({ phase: p, from: t });
     }
-    for (let i = 1; i < seen.length - 1; i++) expect((seen[i + 1].from - seen[i].from) * 60).toBeGreaterThan(1);
+    for (let i = 1; i < seen.length - 1; i++) expect((seen[i + 1].from - seen[i].from) * DAY_MS).toBeGreaterThan(1000);
+    expect(CYCLE * DAY_MS).toBeGreaterThan(2000);
   });
 
   it("parks the machine for the grease gun, then digs", () => {
-    expect(gunAt(0.05, 10)).not.toBeNull();
+    expect(gunAt(0.05, 11)).not.toBeNull();
     expect(poseAt("manuell", 0.05)).toEqual(STANDBY);
-    expect(gunAt(0.5, 10)).toBeNull();
+    expect(gunAt(0.5, 11)).toBeNull();
     expect(poseAt("manuell", 0.5)).not.toEqual(STANDBY);
   });
 

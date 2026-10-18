@@ -18,6 +18,7 @@
   --color-table-ink: #111111;    /* product table text */
   --color-stat-digit: #eaecf0;   /* counter digits on the red band */
   --color-stat-label: #d9d9d9;   /* counter labels on the red band */
+  --color-grease: #e9a23b;       /* grease in the /anlegg illustrations (lib/illustrasjon.ts) */
 
 
   /* Type scale, measured the same way at 1440px and 390px. A `-lg` token is

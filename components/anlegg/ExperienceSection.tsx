@@ -17,19 +17,19 @@ type ExperienceSectionProps = {
  * /anlegg's closing "Erfaring i praksis" section (docs/scrape/anlegg.json
  * blocks 43-51, docs/reference/anlegg.desktop.jpg): a photo with a red
  * two-stat banner overlapping its bottom edge, beside a heading + two
- * paragraphs + a filled "Om oss" button. The stat numbers ("30y", "2k+")
+ * paragraphs + a filled "Om oss" button. The stat numbers (e.g. "30 år", "2000+")
  * render as plain scraped headings — no count-up animation, unlike
  * StatCounter's home-page stats.
  */
 export function ExperienceSection({ image, stats, heading, paragraphs, linkText, linkHref }: ExperienceSectionProps) {
   return (
     <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[20px]">
         <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
         <div className="absolute inset-x-4 bottom-4 flex divide-x divide-white/25 rounded-xl bg-brand">
           {stats.map((stat) => (
             <div key={stat.label} className="flex-1 px-6 py-5 text-center">
-              <h2 className="text-section-lg font-semibold text-white">{stat.value}</h2>
+              <p className="text-section-lg font-semibold text-white">{stat.value}</p>
               <p className="mt-1 text-body-lg text-stat-label">{stat.label}</p>
             </div>
           ))}

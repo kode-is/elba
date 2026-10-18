@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { SYSTEMS, type SystemKind } from "@/lib/brannslukking";
 import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
+import { DemoControl, DemoStatus, DemoSteps, DemoToggle, useOnScreen } from "@/components/demo/Demo";
 
 // One loop of the demo: the tube is pressurised and watching, a fire starts
 // on the engine, the tube bursts where the flame touches it, the agent
@@ -38,19 +39,10 @@ const NOZZLES = [318, 432, 546];
 export function SuppressionDemo() {
   const [kind, setKind] = useState<SystemKind>("indirekte");
   const [phaseIndex, setPhaseIndex] = useState(0);
-  const [visible, setVisible] = useState(false);
   const [run, setRun] = useState(0);
   const reduced = usePrefersReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
-
   // Only animate while the drawing is on screen.
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting), { threshold: 0.3 });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
+  const { ref, visible } = useOnScreen<HTMLDivElement>();
 
   useEffect(() => {
     if (!visible || reduced) return;
@@ -78,18 +70,7 @@ export function SuppressionDemo() {
   return (
     <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-14">
       <div ref={ref} className="relative overflow-hidden rounded-[20px] bg-white p-3 shadow-sm md:p-5">
-        <div className="mb-3 flex items-center justify-between gap-3 px-2 pt-1">
-          <div className="flex items-center gap-2.5">
-            <span
-              aria-hidden="true"
-              className={`h-2.5 w-2.5 rounded-full transition-colors duration-300 ${
-                burning ? "animate-pulse bg-brand" : "bg-black"
-              }`}
-            />
-            <span className="font-ui text-[13px] font-semibold text-black md:text-[14px]">{STATUS[phase]}</span>
-          </div>
-          <span className="font-ui text-[13px] text-ink-muted">{system.label}</span>
-        </div>
+        <DemoStatus tone={burning ? "alarm" : "idle"} text={STATUS[phase]} aside={system.label} />
 
         <svg viewBox="0 0 680 380" role="img" aria-label={`${system.label}: ${system.summary}`} className="block h-auto w-full">
           <defs>
@@ -246,66 +227,29 @@ export function SuppressionDemo() {
         </svg>
 
         <div className="flex flex-wrap items-center justify-between gap-3 px-2 pt-3 pb-1">
-          <div className="flex flex-wrap gap-3" role="group" aria-label="Velg system">
-            {(Object.keys(SYSTEMS) as SystemKind[]).map((k) => (
-              <button
-                key={k}
-                type="button"
-                aria-pressed={kind === k}
-                onClick={() => choose(k)}
-                className={`rounded-full border px-5 py-2 text-[16px] leading-[1.2] font-semibold transition ${
-                  kind === k
-                    ? "border-brand bg-brand text-white"
-                    : "border-neutral-300 text-black hover:border-brand hover:text-brand"
-                }`}
-              >
-                {SYSTEMS[k].label}
-              </button>
-            ))}
-          </div>
+          <DemoToggle
+            label="Velg system"
+            options={(Object.keys(SYSTEMS) as SystemKind[]).map((k) => ({ key: k, label: SYSTEMS[k].label }))}
+            value={kind}
+            onChange={choose}
+          />
           {!reduced ? (
-            <button
-              type="button"
+            <DemoControl
+              kind="replay"
               onClick={() => {
                 setPhaseIndex(0);
                 setRun((r) => r + 1);
               }}
-              className="flex items-center gap-2 rounded-full px-3 py-2 font-ui text-[14px] font-semibold text-brand transition hover:underline"
-            >
-              <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth={2}>
-                <path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Spill av igjen
-            </button>
+            />
           ) : null}
         </div>
       </div>
 
       <div>
         <p className="text-lead text-ink-muted md:text-lead-lg">{system.summary}</p>
-        <ol className="mt-8 space-y-3">
-          {system.steps.map((s, i) => (
-            <li
-              key={s.heading}
-              aria-current={!reduced && step === i ? "step" : undefined}
-              className={`flex gap-4 rounded-[20px] border-2 bg-white p-5 transition-colors duration-300 ${
-                !reduced && step === i ? "border-brand" : "border-transparent"
-              }`}
-            >
-              <span
-                className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-[18px] font-semibold transition-colors duration-300 ${
-                  !reduced && step === i ? "bg-brand text-white" : "bg-surface text-brand"
-                }`}
-              >
-                {i + 1}
-              </span>
-              <div>
-                <h4 className="font-ui text-label font-semibold text-black md:text-label-lg">{s.heading}</h4>
-                <p className="mt-1 font-ui text-body text-ink-muted md:text-body-lg">{s.text}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+        <div className="mt-8">
+          <DemoSteps steps={system.steps} current={reduced ? null : step} />
+        </div>
         <p className="mt-8 font-ui text-[15px] font-semibold text-black">Passer best til</p>
         <ul className="mt-3 flex flex-wrap gap-2">
           {system.bestFor.map((b) => (

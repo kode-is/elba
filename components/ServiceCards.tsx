@@ -13,7 +13,7 @@ export const SERVICE_CARDS: ServiceCard[] = [
   {
     href: "/anlegg",
     heading: "Anlegg",
-    text: "Presis kontinuerlig smøring til din maskin",
+    text: "Sentralsmøring for anleggsmaskiner",
     image: { src: "/images/home/03-01289078.jpeg", alt: "", width: 386, height: 515 },
   },
   {

@@ -3,8 +3,9 @@
 // tested (tests/smoremodell.test.ts).
 //
 // One loop is one working day, 07:00 to 15:00, as `t` from 0 to 1. The
-// grease level is the amount in a bearing as a percentage of the optimum:
-// 100 is just right, and the band from 80 to 120 is drawn as "riktig".
+// grease level is the amount in a bearing as a percentage of what it should
+// hold: 100 is right, and 80 to 120 is drawn as the right band. The curves
+// are an illustration, not measurements.
 
 import type { LubeMode } from "@/lib/sentralsmoring";
 
@@ -15,42 +16,46 @@ export const DAY_HOURS = 8;
 
 export const OPTIMAL = { low: 80, high: 120 } as const;
 
-/** Automatic: a lubrication cycle every PERIOD (six a day, so the loop is seamless), the first at FIRST_CYCLE, each CYCLE long. */
-export const PERIOD = 1 / 6;
+// Automatic: the controller starts the pump after a set pause (counted while
+// the ignition is on) and lets it run for a set time. While the pump
+// delivers, the main divider strokes round and round, and every time one of
+// its feed outlets delivers, the secondary divider on the boom moves on too.
+// So both blocks work at the same time, for as long as the pump runs, and
+// each point gets a number of small doses per run.
+export const PERIOD = 1 / 8;
 export const FIRST_CYCLE = 0.03;
-export const CYCLE = 0.12;
+/** Pump run time, in day units (about three seconds of animation). */
+export const CYCLE = 0.05;
 
-// Within a cycle (u from 0 to 1): the pump runs, then the main divider serves
-// its six outlets in turn — five points and, last, the line to the secondary
-// divider on the boom — and once that line has delivered, the secondary
-// divider serves its five points in turn.
-export const PUMP_END = 0.2;
-export const MAIN_OUTLETS = 6;
-export const MAIN_GAP = 0.08;
-export const MAIN_TRAVEL = 0.1;
-export const SECONDARY_OUTLETS = 5;
+/** Within a run (u from 0 to 1): grease reaches the main divider, then the strokes start. */
+export const STROKES_FROM = 0.12;
+export const STROKES_TO = 0.86;
+export const MAIN_GAP = 0.035;
 export const SECONDARY_GAP = 0.05;
-export const SECONDARY_TRAVEL = 0.08;
-/** The main divider's last outlet feeds the secondary divider. */
-export const FEED_LINE = MAIN_OUTLETS - 1;
+/** Time for a dose to travel a line, in run units. */
+export const TRAVEL = 0.1;
 
-export const mainStart = (i: number) => PUMP_END + i * MAIN_GAP;
-export const secondaryStart = (j: number) => mainStart(FEED_LINE) + MAIN_TRAVEL + j * SECONDARY_GAP;
+/** Lines 0-4: main divider to its points; 5: main divider to the secondary; 6-12: secondary to its points. */
+export const LINES = 13;
+export const FEED_LINE = 5;
+/** The main divider's eight outlets: five points, and three combined into the line to the secondary. */
+const MAIN_OUTLET_LINE = [0, 1, 2, 3, 4, 5, 5, 5];
+/** The secondary's eight outlets: seven points, two combined for the bucket pin. */
+const SECONDARY_OUTLET_LINE = [6, 7, 8, 9, 10, 11, 12, 12];
 
-/** All eleven lines: 0-5 from the main divider (5 is the feed), 6-10 from the secondary one. */
-export const LINES = MAIN_OUTLETS + SECONDARY_OUTLETS;
-export function lineStart(line: number) {
-  return line < MAIN_OUTLETS ? mainStart(line) : secondaryStart(line - MAIN_OUTLETS);
+/** Every moment (in run units) a dose leaves its divider for `line`. */
+function emissions(line: number): number[] {
+  const out: number[] = [];
+  for (let s = 0; STROKES_FROM + s * MAIN_GAP <= STROKES_TO; s++) {
+    if (MAIN_OUTLET_LINE[s % 8] === line) out.push(STROKES_FROM + s * MAIN_GAP);
+  }
+  const secondaryFrom = STROKES_FROM + FEED_LINE * MAIN_GAP + TRAVEL;
+  for (let s = 0; secondaryFrom + s * SECONDARY_GAP <= STROKES_TO; s++) {
+    if (SECONDARY_OUTLET_LINE[s % 8] === line) out.push(secondaryFrom + s * SECONDARY_GAP);
+  }
+  return out;
 }
-export function lineTravelTime(line: number) {
-  return line < MAIN_OUTLETS ? MAIN_TRAVEL : SECONDARY_TRAVEL;
-}
-
-/** Manual: the operator greases the parked machine at the start of the day. */
-export const GREASE_START = 0.01;
-export const GREASE_END = 0.13;
-/** One dig cycle, in day units (about eight seconds). */
-export const DIG = 0.135;
+const EMISSIONS = Array.from({ length: LINES }, (_, l) => emissions(l));
 
 export const clamp = (v: number, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
 const smooth = (v: number) => v * v * (3 - 2 * v);
@@ -62,7 +67,7 @@ export function clockLabel(t: number) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`;
 }
 
-/** Where `t` falls in the automatic system's lubrication cycles: `u` is null between cycles. */
+/** Where `t` falls in the automatic system's runs: `u` is null while the pump pauses. */
 export function cycleAt(t: number): { index: number; u: number | null } {
   const index = Math.floor((t - FIRST_CYCLE) / PERIOD);
   const start = FIRST_CYCLE + index * PERIOD;
@@ -70,36 +75,38 @@ export function cycleAt(t: number): { index: number; u: number | null } {
   return { index, u: t >= FIRST_CYCLE && u < 1 ? u : null };
 }
 
-/** How far grease for `line` has travelled along it (0-1), or null if none is moving. */
-export function lineTravel(u: number | null, line: number) {
-  if (u === null) return null;
-  const f = (u - lineStart(line)) / lineTravelTime(line);
-  return f >= 0 && f <= 1 ? f : null;
+/** How far each dose now on `line` has travelled along it (0-1). */
+export function lineDoses(u: number | null, line: number): number[] {
+  if (u === null) return [];
+  return EMISSIONS[line].map((e) => (u - e) / TRAVEL).filter((f) => f >= 0 && f <= 1);
 }
 
-/** How long ago (0-1 of a short pulse) the dose on `line` arrived, or null. */
+/** How long ago (0-1 of a short pulse) a dose on `line` arrived, or null. */
 export function lineArrived(u: number | null, line: number) {
   if (u === null) return null;
-  const f = (u - lineStart(line) - lineTravelTime(line)) / 0.1;
-  return f >= 0 && f <= 1 ? f : null;
+  for (const e of EMISSIONS[line]) {
+    const f = (u - e - TRAVEL) / 0.07;
+    if (f >= 0 && f <= 1) return f;
+  }
+  return null;
 }
 
-export type CyclePhase = "idle" | "pump" | "main" | "secondary";
+/** When doses leave for `line` within a run — for the tests. */
+export const lineEmissions = (line: number) => EMISSIONS[line];
+
+export type CyclePhase = "idle" | "pump" | "dosing";
 
 export function phaseOf(u: number | null): CyclePhase {
   if (u === null) return "idle";
-  if (u < PUMP_END) return "pump";
-  if (u < secondaryStart(0)) return "main";
-  if (u < secondaryStart(SECONDARY_OUTLETS - 1) + SECONDARY_TRAVEL + 0.02) return "secondary";
-  return "idle";
+  return u < 0.4 ? "pump" : "dosing";
 }
 
-// Automatic: the level rises while a cycle delivers, and falls slowly in
-// between, so it saws gently around the optimum.
+// Automatic: the level rises while a run delivers and falls slowly in
+// between, so it saws gently around the right amount.
 const AUTO_LOW = 93;
 const AUTO_HIGH = 107;
-const RISE_FROM = PUMP_END * CYCLE;
-const RISE_TO = (secondaryStart(SECONDARY_OUTLETS - 1) + SECONDARY_TRAVEL) * CYCLE;
+const RISE_FROM = STROKES_FROM * CYCLE;
+const RISE_TO = (STROKES_TO + TRAVEL) * CYCLE;
 
 function autoLevel(t: number) {
   const index = Math.floor((t - FIRST_CYCLE) / PERIOD);
@@ -110,27 +117,40 @@ function autoLevel(t: number) {
   return AUTO_HIGH - (AUTO_HIGH - AUTO_LOW) * ((tau - RISE_TO) / fall);
 }
 
-// Manual: yesterday's leftovers, then everything at once at the gun, then a
-// long slide through the optimum and below it.
-export const MANUAL_LEFT = 24;
-const MANUAL_PEAK = 175;
+// Manual: greased once at the start of the shift, as the machine makers
+// prescribe for the bucket linkage (daily or every 10 hours). The bearing
+// fills up — what it cannot take is pushed out at the seals — and the film
+// thins through the day.
+export const GREASE_START = 0.01;
+export const GREASE_END = 0.08;
+export const MANUAL_LEFT = 45;
+const MANUAL_FULL = 110;
 
 function manualLevel(t: number) {
   if (t < GREASE_START) return MANUAL_LEFT;
-  if (t < GREASE_END) return MANUAL_LEFT + (MANUAL_PEAK - MANUAL_LEFT) * smooth((t - GREASE_START) / (GREASE_END - GREASE_START));
+  if (t < GREASE_END) return MANUAL_LEFT + (MANUAL_FULL - MANUAL_LEFT) * smooth((t - GREASE_START) / (GREASE_END - GREASE_START));
   const s = (t - GREASE_END) / (1 - GREASE_END);
-  return MANUAL_LEFT + (MANUAL_PEAK - MANUAL_LEFT) * Math.pow(1 - s, 1.15);
+  return MANUAL_LEFT + (MANUAL_FULL - MANUAL_LEFT) * (1 - s * s);
 }
 
 export function greaseLevel(mode: LubeMode, t: number) {
   return mode === "automatisk" ? autoLevel(t) : manualLevel(t);
 }
 
-/** Which manual point the gun is on (0 to count-1), or null outside the greasing round. */
-export function gunAt(t: number, count: number) {
-  if (t < GREASE_START || t >= GREASE_END) return null;
-  return Math.min(count - 1, Math.floor(((t - GREASE_START) / (GREASE_END - GREASE_START)) * count));
+/** Grease pushed out past the seals and left on the machine (0-1), for a point greased at `at`. */
+export function overflowAt(t: number, at: number) {
+  if (t < at) return 0;
+  return 0.8 - 0.45 * clamp((t - at) / (1 - at));
 }
+
+/** Which stop of the manual round (0 to stops-1) the gun is at, or null outside the round. */
+export function gunAt(t: number, stops: number) {
+  if (t < GREASE_START || t >= GREASE_END) return null;
+  return Math.min(stops - 1, Math.floor(((t - GREASE_START) / (GREASE_END - GREASE_START)) * stops));
+}
+
+/** When the gun has finished stop `k` of `stops`. */
+export const gunReaches = (k: number, stops: number) => GREASE_START + ((GREASE_END - GREASE_START) * (k + 1)) / stops;
 
 /**
  * The machine's attitude, in degrees counter-clockwise: the boom's pin-to-pin
@@ -140,19 +160,32 @@ export function gunAt(t: number, count: number) {
  */
 export type Pose = { boom: number; stick: number; bucket: number };
 
-/** The greasing position: stick plumb, bucket flat on the trench floor. */
-export const STANDBY: Pose = { boom: 4.7, stick: -94.7, bucket: 90 };
+/** The greasing position: bucket flat on the ground in front of the tracks, stick in. */
+export const STANDBY: Pose = { boom: 25.1, stick: -140.1, bucket: 114.9 };
 
-// One dig cycle: reach out, cut in, crowd and curl, lift, dump, and back.
+// One dig cycle, fitted (by inverse kinematics) to the trench in Machine.tsx
+// so the bucket cuts along the floor without passing through it: reach out,
+// cut in, drag along the floor, crowd and curl at the near wall, lift, carry
+// out curled, dump on the spoil heap beyond the trench, and back.
 const DIG_KEYS: { at: number; pose: Pose }[] = [
-  { at: 0, pose: { boom: 10, stick: -55, bucket: 125 } },
-  { at: 0.15, pose: { boom: -2, stick: -60, bucket: 112 } },
-  { at: 0.32, pose: { boom: -3, stick: -92, bucket: 72 } },
-  { at: 0.48, pose: { boom: -6, stick: -125, bucket: 35 } },
-  { at: 0.64, pose: { boom: 30, stick: -122, bucket: -14 } },
-  { at: 0.82, pose: { boom: 36, stick: -72, bucket: 140 } },
-  { at: 1, pose: { boom: 10, stick: -55, bucket: 125 } },
+  { at: 0, pose: { boom: 18.9, stick: -74.9, bucket: 106.1 } },
+  { at: 0.14, pose: { boom: 6.2, stick: -73.5, bucket: 95.4 } },
+  { at: 0.3, pose: { boom: 3.6, stick: -70.5, bucket: 66.9 } },
+  { at: 0.42, pose: { boom: 2, stick: -67.2, bucket: 35.2 } },
+  { at: 0.46, pose: { boom: 2.6, stick: -64.9, bucket: 20.3 } },
+  { at: 0.5, pose: { boom: 4.4, stick: -65.5, bucket: 6.1 } },
+  { at: 0.56, pose: { boom: 8, stick: -73.9, bucket: -24.1 } },
+  { at: 0.67, pose: { boom: 23, stick: -93, bucket: -30.1 } },
+  { at: 0.78, pose: { boom: 14.9, stick: -40.1, bucket: -74.8 } },
+  { at: 0.88, pose: { boom: 15.1, stick: -26.2, bucket: 66.1 } },
+  { at: 1, pose: { boom: 18.9, stick: -74.9, bucket: 106.1 } },
 ];
+
+/** Bucket lifted clear of the ground on the way out of the greasing position. */
+const LIFT_OFF: Pose = { boom: 34, stick: -125, bucket: 100 };
+
+/** One dig cycle, in day units (about eight seconds). */
+export const DIG = 0.135;
 
 const mix = (a: Pose, b: Pose, f: number): Pose => ({
   boom: a.boom + (b.boom - a.boom) * f,
@@ -173,8 +206,12 @@ export function digPose(phase: number): Pose {
 export function poseAt(mode: LubeMode, t: number): Pose {
   if (mode === "automatisk") return digPose((t / DIG) % 1);
   if (t < GREASE_END) return STANDBY;
+  // Out of the greasing position: lift clear of the ground first, then reach
+  // out to the first dig pose, then dig.
   const work = t - GREASE_END;
-  const dig = digPose((work / DIG) % 1);
-  // Ease out of the parked pose over the first part of the first dig cycle.
-  return mix(STANDBY, dig, smooth(clamp(work / (DIG * 0.35))));
+  const lift = DIG * 0.15;
+  const lead = DIG * 0.4;
+  if (work < lift) return mix(STANDBY, LIFT_OFF, smooth(work / lift));
+  if (work < lead) return mix(LIFT_OFF, DIG_KEYS[0].pose, smooth((work - lift) / (lead - lift)));
+  return digPose(((work - lead) / DIG) % 1);
 }

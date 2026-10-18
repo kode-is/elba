@@ -207,35 +207,46 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     route and the new home/`/anlegg`/`/industri`/`/tjenester` text will show
     as `missing`/`extra` until this branch is deployed, after which production
     *is* this content again.
-18. **Review the rewritten `/anlegg` (Hlynur).** The page is now built around
-    an animated progressive-lubrication demo (deviation 12 below), and most of
-    its copy is new: the hero line after "Presis kontinuerlig smøring til din
-    maskin", the intro, the tiles, "Ikke for mye. Ikke for lite.", "Pumpe og
-    progressiv fordeler", "Hvorfor progressivt?", three new FAQ answers and
-    lightly reworded key functions — all in `lib/sentralsmoring.ts` and
-    `app/(site)/anlegg/page.tsx`. Worth a second look:
-    - **BEKA is named** ("BEKA EP-1", "BEKA MX-F") in the component cards, and
-      "EP-1" labels the pump in the drawing. Confirm ELBA wants the
-      supplier's product names on the page; if not, drop the brand from
-      `COMPONENTS`.
-    - **The excavator is generic**, at CAT 350 proportions but in grey, with
-      no badge. Ten lubrication points are shown (five per divider); a real
-      350 has more — the drawing picks the ones that read at this size.
-    - **Product facts** are from BEKA's data sheets: EP-1 12/24 V, reservoirs
-      1.9–16 l, NLGI up to 2, IP65; MX-F galvanised steel, modular, 0.025–0.105
-      cm³ per outlet, indicator pin. Check them against the variants ELBA
-      actually fits.
-    - **The grease chart is illustrative, not measured.** It shows manual
-      greasing overshooting in the morning and running dry by the afternoon,
-      and the automatic system sawing gently around the optimum
-      (`lib/smoremodell.ts`); no numbers are shown on its axis.
-    - The pump is drawn running "with the machine" and the FAQ says the
-      interval counts operating time — true for how ELBA sets up the EP-1 on
-      excavators? Adjust the FAQ if some installs run on a plain timer.
-    - The old live copy that is gone: "Driftssikre smøresystemer" / "Effektive
-      løsninger" / "Profesjonell levering" tiles (reworded) and "Hvordan
-      fungerer det?" (now "Spørsmål og svar"). `npm run verify` will report
-      `/anlegg` as changed until this is in production, as in 17.
+18. **Review the rewritten `/anlegg` (Hlynur).** The page is built around two
+    animations (deviation 12) and most of its copy is new — all in
+    `lib/sentralsmoring.ts` and `app/(site)/anlegg/page.tsx`. It went through
+    a five-way review on 2026-10-18 (industry veteran, fact-check, imagery,
+    language, brand). Fixed then; still for ELBA to confirm:
+    - **BEKA is named** (cards "BEKA EP-1" / "BEKA MX-F", "EP-1" in the
+      drawing, photo alt texts). Drop the brand from `COMPONENTS` if ELBA
+      would rather not name the supplier.
+    - **Product facts** are from Groeneveld-BEKA's product pages
+      (https://www.groeneveld-beka.com/?p=2158 EP-1, ?p=2440 MX-F): EP-1 12/24
+      V, 1,9–16 l transparent reservoir, NLGI 000–2, IP65, relief valve on
+      each pump element (290 bar); MX-F zinc-nickel coated steel, 3–12
+      metering elements (2 outlets each), 0,025–0,105 cm³ per outlet and
+      stroke, outlets can be combined, pin detector / proximity switch. Check
+      them against the variants ELBA fits.
+    - **How ELBA wires the pump.** The FAQ says the controller is wired to the
+      ignition so the pause only counts while the machine is on, and "smører
+      ikke når maskinen står". Correct for how ELBA installs? (Lincoln/BEKA
+      controllers can also count engine-run signal or strokes.)
+    - **Manual greasing is told as the OEMs prescribe it**: once at shift start
+      (Cat: bucket linkage every 10 service hours or daily, more often in wet
+      or sandy work), grease until clean grease shows at the seals. The chart
+      is an illustration (no figures): the manual curve tops out inside the
+      band, overflow is shown as waste on the machine, and the film thins
+      through the day; one hard-to-reach point (stikkesylinder, fot) is
+      skipped in the round. No claim that central lubrication uses less grease.
+    - **Monitoring** is described as a cycle alarm ("varsel når syklusen ikke
+      blir fullført"), not instant. The "Innstilling og overvåking" photo
+      (`07-74a78715.jpg`) is the Groeneveld-BEKA pump-settings app, so the text
+      now says settings from the app plus cycle monitoring; swap in a
+      monitoring/fleet screenshot if ELBA has one.
+    - **The drawing is simplified**: 12 points on a machine that has more (the
+      page says so), svingkrans on the main divider, no quick coupler or
+      tiltrotator. A FAQ on tiltrotator/hurtigkobling lubrication would suit
+      Norwegian buyers if ELBA does it.
+    - The home/`/tjenester` Anlegg card text changed from "Presis kontinuerlig
+      smøring til din maskin" (live copy, but the system doses at intervals)
+      to "Sentralsmøring for anleggsmaskiner"; the ExperienceSection stats
+      now read "30 år" / "2000+" (also "30 år" on `/brannslukking`). `npm run
+      verify` will report these until deployed, as in 17.
 
 ---
 
@@ -358,36 +369,37 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     MX-F parts on an excavator.
     - `components/sentralsmoring/LubricationDemo.tsx` plays one working day
       (07–15) in about a minute. The machine (`Machine.tsx`) is a 50-tonne
-      class excavator at CAT 350 proportions (6.9 m boom, 3.35 m stick, 5.4 m
-      track, a large GP bucket), laid out in metres and solved as a real
+      class excavator at CAT 350 proportions (6.9 m reach boom, 3.35 m stick,
+      5.4 m track, a large GP bucket), laid out in metres and solved as a
       linkage: the bucket is driven by its cylinder through the idler and
-      power links, so it curls, crowds and dumps the right way. It is a
-      neutral grey render, not CAT yellow, so the lubrication system stands
-      out and no manufacturer's livery is copied.
-    - "Sentralsmøring": the excavator digs all day; every ten seconds or so
-      the EP-1 runs, the main divider on the upper frame serves five points
-      and sends a dose up the boom, and the secondary divider there serves
-      five more (stick, linkage and bucket). The dividers are drawn as plain
-      blocks that light up while they deliver. "Manuell smøring": parked in
-      the greasing position for the gun, overflow, then dry by the afternoon.
-      The status line changes per phase (pump, main divider, secondary
-      divider, digging), never per outlet, so it can be read.
-    - Under the drawing: a chart of grease in the bearing, and the bucket pin
-      in section — an even film all round with central lubrication; greased
-      parked, grease all round but thick in the free gap and thin where the
-      pin bears, and that thin side dries first.
-    - `components/sentralsmoring/DividerDemo.tsx` opens a progressive divider
-      up (three pistons, six outlets, indicator pin on piston A, pressure
-      gauge and relief valve) under "Inne i en progressiv fordeler", with a
-      "Tett utløp" mode where outlet 3 is plugged and the whole block stalls.
-      Its channels are schematic (pressure galleries round the bores) — in a
-      real block they run through the bores and the piston lands gate them.
-    - Both run only on screen, have a pause button and hold one still frame
-      under `prefers-reduced-motion`. Timing and grease model are pure
-      (`lib/smoremodell.ts`, tested in `tests/smoremodell.test.ts`). The page
-      keeps `/anlegg`'s photos, Digital overvåking, Nøkkelfunksjoner,
-      ExperienceSection and Protega band. `usePrefersReducedMotion` moved to
-      `lib/` so all the demos share it.
+      power links. The dig cycle (`lib/smoremodell.ts` `DIG_KEYS`) is fitted
+      by inverse kinematics to the trench drawn in `Machine.tsx` — the bucket
+      cuts at most a few centimetres into the floor and dumps on the spoil
+      heap; change the ground and the keys together. Neutral grey, no
+      manufacturer livery.
+    - "Sentralsmøring": after each pause the pump runs, and while it runs the
+      main divider on the upper frame (five points, three outlets combined
+      into the feed up the boom) and the secondary divider on the boom (seven
+      points, two outlets combined for the bucket pin) both cycle; lines run
+      along the boom flanges and cross every joint at its pivot.
+      "Manuell smøring": parked with the bucket flat in front of the tracks,
+      one round with the gun, overflow on the machine, film thinning.
+    - Under the drawing: an illustrative chart and the bucket pin in section
+      (not to scale; the pin bears on its lower side in both modes).
+    - `components/sentralsmoring/DividerDemo.tsx` is a schematic cutaway of a
+      progressive divider: each piston's groove joins the inlet to the
+      channel that drives the next piston (A→B→C→A), outlets 1–6, indicator
+      pin on A, gauge and relief valve on the pump; "Tett utløp" stalls the
+      block.
+    - All three demos (incl. `/brannslukking`) share `components/demo/Demo.tsx`
+      (status line, toggle, play control, steps, on-screen clock, phone
+      scaling). They run only on screen, can be paused, hold one still frame
+      under `prefers-reduced-motion`, and the status text changes per phase
+      (tested to stay at least a second). Illustration colours are in
+      `lib/illustrasjon.ts`; the grease amber is the one non-brand hue (also
+      `--color-grease`), and red is kept for ELBA's curve and for faults.
+    - `FeatureTileGrid` tile headings are now H3 (were H1, as on live) so each
+      page has one H1; `ExperienceSection` stat values are no longer H2.
 
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under

@@ -247,7 +247,7 @@ export default function Brannslukking() {
           <ExperienceSection
             image={{ src: "/images/brannslukking/montor.webp", alt: "ELBA-montør på jobb hos en industrikunde", width: 1200, height: 1600 }}
             stats={[
-              { value: "30y", label: "Erfaring" },
+              { value: "30 år", label: "Erfaring" },
               { value: "200+", label: "Montasjer i året" },
             ]}
             heading="Montert av ELBA"
