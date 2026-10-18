@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { SYSTEMS, type SystemKind } from "@/lib/brannslukking";
+import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 
 // One loop of the demo: the tube is pressurised and watching, a fire starts
 // on the engine, the tube bursts where the flame touches it, the agent
@@ -33,18 +34,6 @@ const STATUS: Record<Phase, string> = {
 // indirect system's discharge line.
 const BURST = { x: 432, y: 168 };
 const NOZZLES = [318, 432, 546];
-
-function usePrefersReducedMotion() {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReduced(query.matches);
-    update();
-    query.addEventListener("change", update);
-    return () => query.removeEventListener("change", update);
-  }, []);
-  return reduced;
-}
 
 export function SuppressionDemo() {
   const [kind, setKind] = useState<SystemKind>("indirekte");

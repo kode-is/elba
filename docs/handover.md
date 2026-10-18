@@ -207,6 +207,31 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     route and the new home/`/anlegg`/`/industri`/`/tjenester` text will show
     as `missing`/`extra` until this branch is deployed, after which production
     *is* this content again.
+18. **Review the rewritten `/anlegg` (Hlynur).** The page is now built around
+    an animated progressive-lubrication demo (deviation 12 below), and most of
+    its copy is new: the hero line after "Presis kontinuerlig smøring til din
+    maskin", the intro, the tiles, "Ikke for mye. Ikke for lite.", "Pumpe og
+    progressiv fordeler", "Hvorfor progressivt?", three new FAQ answers and
+    lightly reworded key functions — all in `lib/sentralsmoring.ts` and
+    `app/(site)/anlegg/page.tsx`. Worth a second look:
+    - **BEKA is named** ("BEKA EP-1", "BEKA MX-F") in the component cards and
+      the drawing labels ("EP-1", "MX-F"). Confirm ELBA wants the supplier's
+      product names on the page; if not, drop the brand from `COMPONENTS`.
+    - **Product facts** are from BEKA's data sheets: EP-1 12/24 V, reservoirs
+      1.9–16 l, NLGI up to 2, IP65; MX-F galvanised steel, modular, 0.025–0.105
+      cm³ per outlet, indicator pin. Check them against the variants ELBA
+      actually fits.
+    - **The grease chart is illustrative, not measured.** It shows manual
+      greasing overshooting in the morning and running dry by the afternoon,
+      and the automatic system sawing gently around the optimum
+      (`lib/smoremodell.ts`); no numbers are shown on its axis.
+    - The pump is drawn running "with the machine" and the FAQ says the
+      interval counts operating time — true for how ELBA sets up the EP-1 on
+      excavators? Adjust the FAQ if some installs run on a plain timer.
+    - The old live copy that is gone: "Driftssikre smøresystemer" / "Effektive
+      løsninger" / "Profesjonell levering" tiles (reworded) and "Hvordan
+      fungerer det?" (now "Spørsmål og svar"). `npm run verify` will report
+      `/anlegg` as changed until this is in production, as in 17.
 
 ---
 
@@ -322,6 +347,26 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     `segments/anlegg.svg`, painted by the new shared `components/BrandIcon.tsx`
     (which `IndustryStrip` now uses too). The nav itself is unchanged (five
     items), and so is the footer.
+
+12. **`/anlegg` rewritten around a lubrication demo (2026-10-18).** Hlynur
+    asked for the lubrication page to be rewritten with an animation in the
+    spirit of `/brannslukking`'s suppression demo, drawn on a BEKA EP-1 pump
+    and MX-F distributor on an excavator.
+    `components/sentralsmoring/LubricationDemo.tsx` plays one working day
+    (07–15) in about 22 seconds: with "Sentralsmøring" the excavator digs all
+    day while the pump runs six cycles and the MX-F serves six points in turn
+    (the grease travels each line while the boom, stick and bucket move); with
+    "Manuell smøring" it is parked for the grease gun, overflows, then runs
+    dry. A chart of grease in the bearing and a section through the bucket pin
+    (grease all round vs only on the unloaded side) sit under the drawing; the
+    three steps beside it light up as in the Protega demo. It only runs on
+    screen, has a pause button, and holds one still frame per mode under
+    `prefers-reduced-motion`. The drawing (`Machine.tsx`) is pure SVG in the
+    site's pale line style with the lubrication system in colour; the timing
+    and grease model is pure (`lib/smoremodell.ts`, tested in
+    `tests/smoremodell.test.ts`). The page keeps `/anlegg`'s photos, tiles,
+    Digital overvåking, Nøkkelfunksjoner, ExperienceSection and Protega band.
+    `usePrefersReducedMotion` moved to `lib/` so both demos share it.
 
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under

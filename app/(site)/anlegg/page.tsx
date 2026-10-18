@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { FeatureTileGrid, type FeatureTile } from "@/components/FeatureTileGrid";
@@ -9,24 +10,28 @@ import { IconCardGrid, type IconCardItem } from "@/components/IconCardGrid";
 import { ExperienceSection } from "@/components/anlegg/ExperienceSection";
 import { ContactCta } from "@/components/ContactCta";
 import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
+import { LubricationDemo } from "@/components/sentralsmoring/LubricationDemo";
+import { Distributor, Pump } from "@/components/sentralsmoring/Machine";
 import { TargetIcon, ClockIcon, HardHatIcon, CoinsIcon, LeafIcon } from "@/components/icons";
+import { COMPONENTS, DAY_MOMENTS, FAQ_ITEMS, PROGRESSIVE_POINTS } from "@/lib/sentralsmoring";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
+  title: "Sentralsmøring for anleggsmaskiner | ELBA",
   description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
+    "Progressiv sentralsmøring for gravemaskiner, hjullastere og dumpere. Smører mens maskinen jobber – i alle posisjoner – og holder fettmengden rundt det optimale hele dagen. Levert og montert av ELBA.",
   path: "/anlegg",
 });
 
-// docs/scrape/anlegg.json blocks 5-13.
+// The intro tiles, laid out as before (cream / photo / photo / red / cream /
+// photo); the copy now leads with what the page shows.
 const TILES: FeatureTile[] = [
   {
     type: "text",
     tone: "cream",
-    heading: "Driftssikre smøresystemer",
+    heading: "Smurt mens den jobber",
     paragraphs: [
-      "ELBA leverer sentralsmøreanlegg til gravemaskiner, hjullastere, dumpere og annet anleggsutstyr. Reduser slitasje, minimerer driftsstans og sikre jevn smøring av kritisk utstyr.",
+      "ELBA leverer sentralsmøreanlegg til gravemaskiner, hjullastere, dumpere og annet anleggsutstyr. Fettet går inn mens maskinen er i drift, når boltene beveger seg og er under last.",
     ],
   },
   { type: "image", image: { src: "/images/anlegg/02-c89d7570.jpeg", alt: "", width: 626, height: 835 } },
@@ -34,109 +39,182 @@ const TILES: FeatureTile[] = [
   {
     type: "text",
     tone: "red",
-    heading: "Effektive løsninger",
+    heading: "Riktig mengde, hele dagen",
     paragraphs: [
-      "Fra enkle pumpesystemer til løsninger med elektronisk overvåking. Modelltilpasset, dimensjonert og klargjort for installasjon. For nye maskiner og ettermontering.",
+      "Små doser med jevne mellomrom i stedet for alt på én gang. Ikke for mye om morgenen, ikke tørt om ettermiddagen.",
     ],
   },
   {
     type: "text",
     tone: "cream",
-    heading: "Profesjonell levering",
-    paragraphs: ["Vi leverer komplette kit til forhandlere eller håndterer installasjon direkte mot sluttkunde."],
+    heading: "Modelltilpasset og montert",
+    paragraphs: [
+      "Dimensjonert for maskinen og klar for montering – på nye maskiner og som ettermontering. Vi leverer komplette kit til forhandlere eller monterer direkte hos deg.",
+    ],
   },
   { type: "image", image: { src: "/images/anlegg/04-c08775a5.jpeg", alt: "", width: 626, height: 835 } },
 ];
 
-// docs/scrape/anlegg.json blocks 16-21 (block 19 is the recovered FAQ
-// answer — see docs/handover.md and the task report for the Playwright
-// patch script and the exact text).
-const FAQ_ITEMS = [
-  {
-    question: "Kan systemet ettermonteres?",
-    answer:
-      "Ja. Vi leverer modelltilpassede kit for både nye og brukte maskiner. Ettermontering er særlig aktuelt på maskiner med høy belastning, mange smørepunkter eller varierende vedlikeholdsrutiner.",
-  },
-  {
-    question: "Hvor driftssikkert er systemet?",
-    answer:
-      "Systemene er dimensjonert for krevende miljøer og kontinuerlig drift. Komponentene er robuste og tilpasset nordiske forhold. Elektronisk overvåking kan integreres for varsling ved avvik.",
-  },
-  {
-    question: "Hva skjer dersom systemet får en feil?",
-    answer:
-      "Ved eventuelle avvik gir overvåkede systemer varsel tidlig. Uten overvåking vil systemet fortsatt være mekanisk robust og enkelt å feilsøke. Vi tilbyr rask support og reservedeler. Målet er alltid å minimere nedetid og sikre rask gjenoppretting.",
-  },
-];
-
-// docs/scrape/anlegg.json blocks 31-42. Icons aren't in the scrape (see
-// components/icons.tsx).
 const KEY_FUNCTIONS: IconCardItem[] = [
   {
     icon: <TargetIcon className="h-6 w-6" />,
     heading: "Jevn dosering",
-    text: "Riktig fettmengde tilføres automatisk med definerte intervaller uavhengig av operatør.",
+    text: "Riktig fettmengde tilføres automatisk med faste intervaller, uavhengig av fører og skift.",
   },
   {
     icon: <ClockIcon className="h-6 w-6" />,
     heading: "Redusert nedetid",
-    text: "Kontinuerlig smøring minimerer slitasjerelaterte stopp og uplanlagt verkstedtid.",
+    text: "Ingen stopp for å smøre, og færre slitasjerelaterte stopp og uplanlagte verkstedbesøk.",
   },
   {
     icon: <HardHatIcon className="h-6 w-6" />,
     heading: "Økt sikkerhet",
-    text: "Manuell smøring i risikoområder reduseres betydelig.",
+    text: "Føreren slipper å krype rundt bom og skuffe med fettpressen. Manuell smøring i risikoområder reduseres betydelig.",
   },
   {
     icon: <CoinsIcon className="h-6 w-6" />,
     heading: "Lavere kostnader",
-    text: "Mindre slitasje og færre reparasjoner gir lavere totale driftskostnader over tid.",
+    text: "Mindre slitasje og færre bytter av bolter og bøssinger gir lavere driftskostnader over tid.",
   },
   {
     icon: <ClockIcon className="h-6 w-6" />,
     heading: "Forlenget levetid",
-    text: "Bolter, lager og ledd får optimal smøring som reduserer friksjon og komponentbytte.",
+    text: "Bolter, lager og ledd får smøring i alle posisjoner, hele dagen. Det reduserer friksjon og komponentbytte.",
   },
   {
     icon: <LeafIcon className="h-6 w-6" />,
     heading: "Redusert forbruk",
-    text: "Presis og kontrollert dosering minimerer fettforbruk og reduserer miljøbelastning.",
+    text: "Små, presise doser i stedet for overfylte lagre. Mindre fett brukes, og mindre havner på bakken.",
   },
 ];
+
+// The site's button: 10px radius, 20/30px padding, fades on hover.
+const BUTTON = "inline-flex items-center justify-center rounded-[10px] px-[30px] py-5 text-[16px] leading-[1.2] font-semibold transition";
 
 export default function Anlegg() {
   return (
     <main id="main">
       <PageHero
         image={{ src: "/images/home/03-01289078.jpeg", alt: "", width: 1439, height: 1919 }}
-        title="Anlegg"
-        subtitle="Presis kontinuerlig smøring til din maskin"
         crumbs={[{ text: "Anlegg" }]}
-      />
+        height="min-h-[520px] md:min-h-[580px]"
+        contentClassName="px-6 pt-16 text-center md:pt-12"
+      >
+        <h1 className="text-[36px] leading-[1.2] font-semibold text-white md:text-[70px]">Anlegg</h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lead text-white/85 md:text-lead-lg">
+          Presis kontinuerlig smøring til din maskin. Progressiv sentralsmøring som smører mens maskinen jobber – i alle
+          posisjoner, med riktig mengde hele dagen.
+        </p>
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
+          <Link href="/kontakt-oss" className={`${BUTTON} bg-brand text-white hover:opacity-50`}>
+            Be om tilbud
+          </Link>
+          <a href="#slik-virker-det" className={`${BUTTON} border border-white text-white hover:bg-white hover:text-brand`}>
+            Se hvordan det virker
+          </a>
+        </div>
+      </PageHero>
+
       <Container narrow>
-        {/* Less room below than above: on live the dot separator starts
-            right under the tiles (0-25px), not a full section-gap later. */}
         <div className="pt-12 pb-6 md:pt-16">
-          <FeatureTileGrid tiles={TILES} />
+          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Smøring som jobber med maskinen</h2>
+          <p className="mx-auto mt-4 max-w-3xl text-center text-lead text-ink-muted md:text-lead-lg">
+            Bom, stikke, skuffe og svingkrans – hvert ledd på en gravemaskin slites hver time den er i drift. Med sentralsmøring
+            får hvert punkt fett mens maskinen jobber – ikke bare når noen har tid til fettpressen.
+          </p>
+          <div className="mt-10">
+            <FeatureTileGrid tiles={TILES} />
+          </div>
         </div>
       </Container>
 
       <TextureDivider src="/images/anlegg/05-463dd036.svg" />
 
+      {/* The demo */}
+      <section id="slik-virker-det" className="scroll-mt-8 bg-surface py-14 md:py-20">
+        <Container>
+          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Smurt i alle posisjoner</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-center text-lead text-ink-muted md:text-lead-lg">
+            Én arbeidsdag på en gravemaskin, fra kl. 07 til 15. Se hvordan fettet fordeles når maskinen smører seg selv
+            mens den graver – og bytt til manuell smøring for å se forskjellen.
+          </p>
+          <div className="mt-10">
+            <LubricationDemo />
+          </div>
+        </Container>
+      </section>
+
+      {/* Too much, too little, right */}
+      <Container>
+        <div className="py-14 md:py-20">
+          <div className="grid gap-6 md:grid-cols-[0.9fr_1.1fr] md:items-end md:gap-16">
+            <h2 className="text-section font-semibold text-black md:text-section-lg">Ikke for mye. Ikke for lite.</h2>
+            <p className="text-lead text-ink-muted md:text-lead-lg">
+              Et lager trenger en jevn fettfilm, ikke en full dose om morgenen og ingenting om ettermiddagen. Det er
+              forskjellen på å smøre én gang om dagen og å smøre hele dagen.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {DAY_MOMENTS.map((m) => (
+              <div key={m.heading} className={`rounded-[20px] p-6 md:p-8 ${m.tone === "red" ? "bg-brand" : "bg-surface"}`}>
+                <p className={`font-ui text-[14px] font-semibold tracking-wide uppercase ${m.tone === "red" ? "text-brand-soft" : "text-brand"}`}>
+                  {m.when}
+                </p>
+                <h3 className={`mt-2 text-[24px] leading-[1.25] font-semibold md:text-[28px] ${m.tone === "red" ? "text-white" : "text-black"}`}>
+                  {m.heading}
+                </h3>
+                <p className={`mt-3 font-ui text-body md:text-body-lg ${m.tone === "red" ? "text-brand-soft" : "text-ink-muted"}`}>{m.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
+
+      {/* The system */}
       <section className="bg-surface py-14 md:py-20">
         <Container>
-          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Hvordan fungerer det?</h2>
-          <div className="mt-10 grid gap-8 md:grid-cols-2 md:items-start md:gap-10">
-            <Faq items={FAQ_ITEMS} />
-            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
-              <Image
-                src="/images/anlegg/06-2207cb6d.jpeg"
-                alt=""
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
+          <h2 className="text-section font-semibold text-black md:text-section-lg">Pumpe og progressiv fordeler</h2>
+          <p className="mt-4 max-w-3xl text-lead text-ink-muted md:text-lead-lg">
+            To komponenter gjør jobben: en pumpe som presser fettet ut, og en fordeler som deler det mellom punktene. Rør,
+            slanger og koblinger leverer vi fra{" "}
+            <Link href="/produkter" className="font-semibold text-brand hover:underline">
+              eget lager
+            </Link>
+            .
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {COMPONENTS.map((c) => (
+              <div key={c.name} className="flex flex-col overflow-hidden rounded-[20px] bg-white sm:flex-row">
+                <div className="flex items-center justify-center bg-surface-cool p-8 sm:w-[38%] sm:shrink-0">
+                  {c.kind === "pump" ? (
+                    <svg viewBox="-12 -8 64 90" aria-hidden="true" className="h-40 w-auto">
+                      <Pump x={0} y={0} level={0.72} stir={30} running={false} />
+                    </svg>
+                  ) : (
+                    <svg viewBox="172 246 96 46" aria-hidden="true" className="h-auto w-full max-w-[200px]">
+                      <Distributor active={null} pin={0.6} />
+                    </svg>
+                  )}
+                </div>
+                <div className="p-6 md:p-8">
+                  <p className="font-ui text-[14px] font-semibold text-brand">{c.role}</p>
+                  <h3 className="mt-1 text-[24px] leading-[1.25] font-semibold text-black">{c.name}</h3>
+                  <p className="mt-3 font-ui text-body text-ink-muted md:text-body-lg">{c.text}</p>
+                  <CheckList items={[...c.facts]} className="mt-5" />
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 grid gap-6 rounded-[20px] bg-white p-6 md:grid-cols-[1fr_1fr] md:items-center md:p-10">
+            <div>
+              <h3 className="text-[24px] leading-[1.25] font-semibold text-black md:text-[28px]">Hvorfor progressivt?</h3>
+              <p className="mt-3 font-ui text-body text-ink-muted md:text-body-lg">
+                I en progressiv fordeler må hvert stempel fullføre sin dose før det neste kan bevege seg. Derfor får alle
+                punktene fett i hver syklus – og stopper ett, stopper alle. En feil blir synlig med en gang, i stedet for å
+                bli oppdaget som en slitt bolt.
+              </p>
             </div>
+            <CheckList items={PROGRESSIVE_POINTS} />
           </div>
         </Container>
       </section>
@@ -171,10 +249,30 @@ export default function Anlegg() {
           <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Nøkkelfunksjoner</h2>
           <IconCardGrid items={KEY_FUNCTIONS} className="mt-10" />
         </div>
+      </Container>
 
-        <div className="pb-16 md:pb-24">
+      <section className="bg-surface py-14 md:py-20">
+        <Container>
+          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Spørsmål og svar</h2>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 md:items-start md:gap-10">
+            <Faq items={FAQ_ITEMS} />
+            <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
+              <Image
+                src="/images/anlegg/06-2207cb6d.jpeg"
+                alt=""
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <Container narrow>
+        <div className="py-16 md:py-24">
           <ExperienceSection
-            image={{ src: "/images/anlegg/08-d666f418.jpeg", alt: "Kitchen installation", width: 590, height: 787 }}
+            image={{ src: "/images/anlegg/08-d666f418.jpeg", alt: "ELBA-montør ved en anleggsmaskin", width: 590, height: 787 }}
             stats={[
               { value: "30y", label: "Erfaring" },
               { value: "2k+", label: "Montasjer" },
@@ -190,8 +288,6 @@ export default function Anlegg() {
         </div>
       </Container>
 
-      {/* Not on live: the new fire-suppression service, pitched to the same
-          machine owners and dealers this page is for. */}
       <ProtegaBand
         className="pb-16 md:pb-24"
         heading="Smurt og sikret mot brann"

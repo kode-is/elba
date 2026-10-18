@@ -43,7 +43,7 @@ const PAGES: { title: string; href: string; keywords: string }[] = [
   { title: "Hjem", href: "/", keywords: "forside elba sentralsmøring smøreanlegg smøreteknikk" },
   { title: "Om oss", href: "/om-oss", keywords: "team ansatte historie verdier kvalitet" },
   { title: "Tjenester", href: "/tjenester", keywords: "anlegg industri løsninger" },
-  { title: "Anlegg", href: "/anlegg", keywords: "anleggsmaskin gravemaskin maskin sentralsmøring overvåking montering" },
+  { title: "Anlegg", href: "/anlegg", keywords: "anleggsmaskin gravemaskin maskin sentralsmøring progressiv fordeler pumpe beka ep-1 mx-f fettpresse smørepunkt overvåking montering" },
   { title: "Industri", href: "/industri", keywords: "produksjon fabrikk smøresystem industrien havn" },
   {
     title: "Brannslukking",
