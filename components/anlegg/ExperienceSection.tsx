@@ -24,13 +24,14 @@ type ExperienceSectionProps = {
 export function ExperienceSection({ image, stats, heading, paragraphs, linkText, linkHref }: ExperienceSectionProps) {
   return (
     <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
-      <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[20px]">
-        <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
-        <div className="absolute inset-x-4 bottom-4 flex divide-x divide-white/25 rounded-xl bg-brand">
+      {/* Square on phones and landscape on tablets, where the photo spans the full width; portrait beside the text from md. */}
+      <div className="relative aspect-square w-full overflow-hidden rounded-[20px] sm:aspect-[4/3] md:aspect-[3/4]">
+        <Image src={image.src} alt={image.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-[50%_30%]" />
+        <div className="absolute inset-x-3 bottom-3 flex divide-x divide-white/25 rounded-xl bg-brand md:inset-x-4 md:bottom-4">
           {stats.map((stat) => (
-            <div key={stat.label} className="flex-1 px-6 py-5 text-center">
-              <p className="text-section-lg font-semibold text-white">{stat.value}</p>
-              <p className="mt-1 text-body-lg text-stat-label">{stat.label}</p>
+            <div key={stat.label} className="flex-1 px-4 py-3 text-center md:px-6 md:py-5">
+              <p className="text-[28px] leading-[1.2] font-semibold text-white md:text-section-lg">{stat.value}</p>
+              <p className="mt-1 text-body text-stat-label md:text-body-lg">{stat.label}</p>
             </div>
           ))}
         </div>

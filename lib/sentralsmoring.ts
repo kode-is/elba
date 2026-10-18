@@ -152,6 +152,38 @@ export const PARTS: PartGroup[] = [
   },
 ];
 
+/**
+ * What the newest pump generation ELBA supplies can do (built-in controller,
+ * app, CAN bus). From the manufacturer's product pages; the make and model are
+ * deliberately not named on the page yet. docs/handover.md lists the sources.
+ */
+export const PUMP_FEATURES = [
+  {
+    value: "App og display",
+    text: "Pausetid, gangtid og mengde stilles inn på pumpens eget display eller fra mobil via Bluetooth og wifi. Appen virker også uten mobildekning.",
+  },
+  {
+    value: "Logg og varsler",
+    text: "Pumpen logger sykluser og hendelser, og varsler når fettet i beholderen begynner å ta slutt.",
+  },
+  {
+    value: "CAN-bus",
+    text: "Pumpen kan kobles til maskinens CAN-bus og jobbe sammen med maskinens eget styresystem.",
+  },
+  {
+    value: "Tre kretser",
+    text: "Opptil tre pumpeelementer gir tre separate progressive kretser fra én pumpe, for eksempel overvogn, bom og redskap.",
+  },
+  {
+    value: "0,6–4 cm³/min",
+    text: "Mengden stilles trinnløst innenfor dette området, med opptil 350 bar til å presse fettet ut i lange rør og kalde punkter.",
+  },
+  {
+    value: "IP69K, −40 til +80 °C",
+    text: "Tåler høytrykksvask og norsk vinter, i et kompakt hus som får plass der det er trangt.",
+  },
+] as const;
+
 /** The divider cutaway (components/sentralsmoring/DividerDemo.tsx): running normally, and with outlet 3 blocked. */
 export type DividerMode = "normal" | "blokkert";
 

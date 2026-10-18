@@ -5,7 +5,6 @@ import { Container } from "@/components/Container";
 import { FeatureTileGrid, type FeatureTile } from "@/components/FeatureTileGrid";
 import { TextureDivider } from "@/components/TextureDivider";
 import { Faq } from "@/components/Faq";
-import { CheckList } from "@/components/CheckList";
 import { IconCardGrid, type IconCardItem } from "@/components/IconCardGrid";
 import { BrandIcon } from "@/components/BrandIcon";
 import { ExperienceSection } from "@/components/anlegg/ExperienceSection";
@@ -13,7 +12,7 @@ import { ContactCta } from "@/components/ContactCta";
 import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
 import { LubricationDemo } from "@/components/sentralsmoring/LubricationDemo";
 import { DividerDemo } from "@/components/sentralsmoring/DividerDemo";
-import { DAY_MOMENTS, FAQ_ITEMS, PARTS } from "@/lib/sentralsmoring";
+import { DAY_MOMENTS, FAQ_ITEMS, PARTS, PUMP_FEATURES } from "@/lib/sentralsmoring";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -248,31 +247,39 @@ export default function Anlegg() {
         </Container>
       </section>
 
-      {/* Settings and monitoring */}
+      {/* Control and monitoring */}
       <section className="bg-surface py-14 md:py-20">
-        <Container narrow>
+        <Container>
           <div className="grid gap-10 md:grid-cols-2 md:items-center md:gap-16">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px]">
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[20px] bg-white">
               <Image
                 src="/images/anlegg/07-74a78715.jpg"
                 alt="Innstillinger for smørepumpen i en app på nettbrett og mobil"
                 fill
                 sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-contain"
+                className="object-contain p-4"
               />
             </div>
             <div>
-              <h2 className="text-section font-semibold text-black md:text-section-lg">Innstilling og overvåking</h2>
+              <h2 className="text-section font-semibold text-black md:text-section-lg">Styring og overvåking</h2>
               <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">
-                Pause- og gangtid stilles inn fra mobil eller nettbrett. Med syklusovervåking får fører eller verksted varsel
-                når en fordeler ikke går rundt som den skal.
+                Den nye generasjonen pumper vi leverer har styringen bygget inn. Du stiller inn og leser av pumpen på
+                stedet eller fra mobilen, og den kan snakke med maskinens eget styresystem.
               </p>
               <p className="mt-3 text-lead text-ink-muted md:text-lead-lg">
-                For hele maskinparker kan smøreanleggene samles i én oversikt, med historikk over sykluser og hendelser.
+                Med syklusovervåking på fordeleren får fører eller verksted varsel når den ikke går rundt. For hele
+                maskinparker kan smøreanleggene samles i én oversikt, med historikk over sykluser og hendelser.
               </p>
-              <CheckList items={["Innstilling fra app", "Varsel når syklusen stopper", "Historikk per maskin"]} className="mt-6" />
             </div>
           </div>
+          <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {PUMP_FEATURES.map((f) => (
+              <li key={f.value} className="rounded-[20px] bg-white p-6">
+                <p className="font-ui text-[20px] leading-[1.3] font-bold text-brand">{f.value}</p>
+                <p className="mt-2 font-ui text-body text-ink-muted md:text-body-lg">{f.text}</p>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 

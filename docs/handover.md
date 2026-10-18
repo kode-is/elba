@@ -231,11 +231,17 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
       seals (shown as waste on the machine), settles into the band within
       about an hour, and thins through the day; one hard-to-reach point (stikkesylinder, fot) is
       skipped in the round. No claim that central lubrication uses less grease.
-    - **Monitoring** is described as a cycle alarm ("varsel når syklusen ikke
-      blir fullført"), not instant. The "Innstilling og overvåking" photo
-      (`07-74a78715.jpg`) is the Groeneveld-BEKA pump-settings app, so the text
-      now says settings from the app plus cycle monitoring; swap in a
-      monitoring/fleet screenshot if ELBA has one.
+    - **"Styring og overvåking"** describes the new pump generation without
+      naming it (`PUMP_FEATURES` in `lib/sentralsmoring.ts`): built-in
+      controller with display and app over Bluetooth/wifi that works without
+      internet, data and event log with low-level warning, CAN bus, up to
+      three pumping elements (three progressive circuits), 0,6–4 cm³/min,
+      350 bar, IP69K, −40 to +80 °C. Sources: the maker's product page
+      (https://dropsavet.com/bravo-compact/) and its Agritechnica listing
+      (https://digital.agritechnica.com/newfront/product/25675). No datasheet
+      was published; confirm the figures with the supplier before launch.
+      The divider cycle alarm and fleet overview remain ELBA's own offering.
+      The photo (`07-74a78715.jpg`) is the Groeneveld-BEKA settings app.
     - **The drawing is simplified**: 12 points on a machine that has more (the
       page says so), svingkrans on the main divider, no quick coupler or
       tiltrotator. A FAQ on tiltrotator/hurtigkobling lubrication would suit
