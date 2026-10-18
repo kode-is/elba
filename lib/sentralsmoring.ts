@@ -2,11 +2,10 @@
 // machines, built around an animated excavator (components/sentralsmoring/
 // LubricationDemo.tsx) and a divider cutaway (DividerDemo.tsx).
 //
-// The drawing is a 50-tonne class excavator (CAT 350 proportions) with the
-// parts ELBA fits: a BEKA EP-1 piston pump, a main BEKA MX-F progressive
-// divider on the upper frame and a secondary one on the boom. Product facts
-// are from Groeneveld-BEKA's product pages (EP-1, MX-F); greasing intervals
-// from the machine makers' maintenance schedules. docs/handover.md lists the
+// The drawing is a 50-tonne class excavator (CAT 350 proportions) with an
+// electric piston pump, a main progressive divider on the upper frame and a
+// secondary one on the boom. No makes are named on the page; greasing
+// intervals are from the machine makers' maintenance schedules. docs/handover.md lists the
 // sources and what is still for ELBA to confirm.
 //
 // House style for this copy: plain statements, one term per thing
@@ -98,26 +97,60 @@ export const DAY_MOMENTS = [
 ] as const;
 
 /**
- * Two examples from what ELBA fits — not the only pump or divider: one of the
- * pumps, and the divider used on most installations. Facts from
- * Groeneveld-BEKA's product pages.
+ * Parts for the lubrication system, grouped the way a mechanic looks for
+ * them. Pumps and dividers are not in the web catalogue (ELBA carries several
+ * makes, and the range is growing), so those groups lead to a request; the
+ * rest link to their catalogue categories.
  */
-export const COMPONENTS = [
+export type PartGroup = {
+  heading: string;
+  text: string;
+  icon: string;
+  links: { label: string; href: string }[];
+  ask?: string;
+};
+
+export const PARTS: PartGroup[] = [
   {
-    kind: "pump",
-    name: "BEKA EP-1",
-    role: "Eksempel på pumpe",
-    text: "En av pumpene vi leverer. Elektrisk stempelpumpe for 12 eller 24 V. Beholderen er gjennomsiktig, så du ser fettnivået, og et røreverk mater fettet frem til pumpeelementet. Pumpen styres med pause- og gangtid, fra egen styreenhet eller maskinens.",
-    facts: ["Beholder fra 1,9 til 16 liter", "Fett til og med NLGI 2", "Overtrykksventil på hvert pumpeelement", "Tetthetsklasse IP65"],
+    heading: "Pumper og pumpedeler",
+    text: "Pumper fra flere produsenter, og deler til dem: pumpeelementer, beholdere, overtrykksventiler og styringer.",
+    icon: "olje",
+    links: [],
+    ask: "Spør om pumpe eller pumpedel",
   },
   {
-    kind: "distributor",
-    name: "BEKA MX-F",
-    role: "Progressiv fordeler",
-    text: "Fordeleren vi bruker på de fleste anlegg. Den deler fettet fra pumpen mellom smørepunktene, bygges med 3 til 12 stempler, to utløp per stempel, og utløp kan slås sammen der et punkt trenger mer fett.",
-    facts: ["Sink-nikkel-belagt stål", "0,025 til 0,105 cm³ per utløp og slag", "Indikatorstift eller sensor for syklusovervåking"],
+    heading: "Fordelere",
+    text: "Progressive fordelere og seksjoner, indikatorstifter og sensorer for syklusovervåking. Vi bygger fordeleren etter antall punkter.",
+    icon: "komponenter",
+    links: [],
+    ask: "Spør om fordelere",
   },
-] as const;
+  {
+    heading: "Koblinger og rør",
+    text: "Alt som kobler pumpe, fordelere og smørepunkter sammen.",
+    icon: "teknisk",
+    links: [
+      { label: "Rørender", href: "/produkter/rørender" },
+      { label: "Banjokoblinger", href: "/produkter/banjokoblinger" },
+      { label: "Lynfittings", href: "/produkter/lynfittings" },
+      { label: "Snittringmatur", href: "/produkter/snittringmatur" },
+      { label: "Skruhylser", href: "/produkter/skruhylser" },
+      { label: "Forlengere", href: "/produkter/forlengere" },
+      { label: "Skottgjennomføring", href: "/produkter/skottgjennomføring" },
+    ],
+  },
+  {
+    heading: "Slanger, fett og påfylling",
+    text: "Slanger til bevegelige ledd, fett til anlegget og utstyr for å fylle beholderen.",
+    icon: "rask-service",
+    links: [
+      { label: "Slanger", href: "/produkter/slanger" },
+      { label: "Fett", href: "/produkter/fett" },
+      { label: "Fylleutstyr", href: "/produkter/fylleutstyr" },
+      { label: "Fyllenippler", href: "/produkter/fyllenippler" },
+    ],
+  },
+];
 
 /** The divider cutaway (components/sentralsmoring/DividerDemo.tsx): running normally, and with outlet 3 blocked. */
 export type DividerMode = "normal" | "blokkert";

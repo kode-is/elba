@@ -30,9 +30,12 @@ export function useLoopClock(running: boolean, loopMs: number) {
     let frame = 0;
     let last = performance.now();
     const tick = (now: number) => {
-      const dt = Math.min(64, now - last);
-      last = now;
-      setMs((m) => (m + dt) % loopMs);
+      // A frame's timestamp can be a little earlier than the moment the
+      // clock started, so never step backwards (a negative time right after
+      // a reset would index outside a demo's timeline).
+      const dt = Math.max(0, Math.min(64, now - last));
+      last = Math.max(last, now);
+      setMs((m) => (((m + dt) % loopMs) + loopMs) % loopMs);
       frame = requestAnimationFrame(tick);
     };
     frame = requestAnimationFrame(tick);

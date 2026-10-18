@@ -72,7 +72,8 @@ function control(q: number, side: "L" | "R") {
 }
 
 /** Everything the drawing needs at time `ms` into the loop. */
-function stateAt(mode: DividerMode, ms: number) {
+function stateAt(mode: DividerMode, at: number) {
+  const ms = Math.max(0, at);
   const blocked = mode === "blokkert";
   const stalled = blocked && ms >= STALL_MS;
   const k = stalled ? 2 : Math.floor(ms / STEP_MS) % 6;

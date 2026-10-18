@@ -13,7 +13,7 @@ import { ContactCta } from "@/components/ContactCta";
 import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
 import { LubricationDemo } from "@/components/sentralsmoring/LubricationDemo";
 import { DividerDemo } from "@/components/sentralsmoring/DividerDemo";
-import { COMPONENTS, DAY_MOMENTS, FAQ_ITEMS } from "@/lib/sentralsmoring";
+import { DAY_MOMENTS, FAQ_ITEMS, PARTS } from "@/lib/sentralsmoring";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -62,10 +62,6 @@ const TILES: FeatureTile[] = [
   },
 ];
 
-const PHOTOS: Record<(typeof COMPONENTS)[number]["kind"], { src: string; alt: string }> = {
-  pump: { src: "/images/anlegg/02-c89d7570.jpeg", alt: "BEKA EP-1 smørepumpe montert på en gravemaskin" },
-  distributor: { src: "/images/anlegg/08-d666f418.jpeg", alt: "Montør kobler smørerør til en BEKA MX-F fordeler" },
-};
 
 const ICON = (name: string) => <BrandIcon src={`/images/icons/brand/${name}.svg`} className="block h-10 w-10 bg-white" />;
 
@@ -180,31 +176,58 @@ export default function Anlegg() {
         </div>
       </Container>
 
-      {/* The parts */}
+      {/* Parts */}
       <section className="bg-surface py-14 md:py-20">
         <Container>
-          <h2 className="text-section font-semibold text-black md:text-section-lg">Pumper og fordelere</h2>
-          <p className="mt-4 max-w-3xl text-lead text-ink-muted md:text-lead-lg">
-            Et smøreanlegg består av en pumpe med styring, en eller flere fordelere og rør og slanger ut til hvert punkt.
-            Vi leverer pumper og fordelere fra flere produsenter og velger etter maskin og bruk. Her er to vi bruker mye.
-            Pumpedeler, slanger og koblinger har vi på{" "}
-            <Link href="/produkter" className="font-semibold text-brand hover:underline">
-              eget lager
-            </Link>
-            .
-          </p>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            {COMPONENTS.map((c) => (
-              <div key={c.name} className="flex flex-col overflow-hidden rounded-[20px] bg-white sm:flex-row">
-                <div className="relative h-64 sm:h-auto sm:w-[40%] sm:shrink-0">
-                  <Image src={PHOTOS[c.kind].src} alt={PHOTOS[c.kind].alt} fill sizes="(min-width: 1024px) 20vw, (min-width: 640px) 40vw, 100vw" className="object-cover" />
+          <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-end">
+            <div className="max-w-3xl">
+              <h2 className="text-section font-semibold text-black md:text-section-lg">Deler til smøreanlegget</h2>
+              <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">
+                Vi har deler på lager til de vanligste sentralsmøreanleggene, også til anlegg vi ikke har montert selv. Si
+                hvilken maskin og hvilket anlegg det gjelder, så finner vi riktig del.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <Link href="/produkter" className={`${BUTTON} bg-brand text-white hover:opacity-50`}>
+                Se produktkatalogen
+              </Link>
+              <Link href="/kontakt-oss" className={`${BUTTON} border border-black text-black hover:border-brand hover:text-brand`}>
+                Spør om reservedeler
+              </Link>
+            </div>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {PARTS.map((g) => (
+              <div key={g.heading} className="flex flex-col rounded-[20px] bg-white p-6 md:p-8">
+                <div className="flex items-center gap-4">
+                  <span aria-hidden="true" className="flex h-[55px] w-[55px] shrink-0 items-center justify-center rounded-[10px] bg-brand">
+                    <BrandIcon src={`/images/icons/brand/${g.icon}.svg`} className="block h-8 w-8 bg-white" />
+                  </span>
+                  <h3 className="font-ui text-[22px] leading-[1.25] font-bold text-black">{g.heading}</h3>
                 </div>
-                <div className="p-6 md:p-8">
-                  <p className="font-ui text-eyebrow font-semibold text-brand">{c.role}</p>
-                  <h3 className="mt-1 font-ui text-[24px] leading-[1.2] font-bold text-black">{c.name}</h3>
-                  <p className="mt-3 font-ui text-body text-ink-muted md:text-body-lg">{c.text}</p>
-                  <CheckList items={[...c.facts]} className="mt-5" />
-                </div>
+                <p className="mt-4 font-ui text-body text-ink-muted md:text-body-lg">{g.text}</p>
+                {g.links.length ? (
+                  <ul className="mt-5 flex flex-wrap gap-2">
+                    {g.links.map((l) => (
+                      <li key={l.href}>
+                        <Link
+                          href={l.href}
+                          className="block rounded-full bg-surface px-4 py-2 font-ui text-[14px] leading-[1.4] font-medium text-ink-muted transition hover:text-brand"
+                        >
+                          {l.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+                {g.ask ? (
+                  <Link
+                    href="/kontakt-oss"
+                    className="mt-auto inline-flex w-fit items-center pt-5 text-body font-semibold text-brand transition hover:underline md:text-body-lg"
+                  >
+                    {g.ask} →
+                  </Link>
+                ) : null}
               </div>
             ))}
           </div>

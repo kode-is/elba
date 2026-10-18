@@ -212,16 +212,13 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     `lib/sentralsmoring.ts` and `app/(site)/anlegg/page.tsx`. It went through
     a five-way review on 2026-10-18 (industry veteran, fact-check, imagery,
     language, brand). Fixed then; still for ELBA to confirm:
-    - **BEKA is named** (cards "BEKA EP-1" / "BEKA MX-F", "EP-1" in the
-      drawing, photo alt texts). Drop the brand from `COMPONENTS` if ELBA
-      would rather not name the supplier.
-    - **Product facts** are from Groeneveld-BEKA's product pages
-      (https://www.groeneveld-beka.com/?p=2158 EP-1, ?p=2440 MX-F): EP-1 12/24
-      V, 1,9–16 l transparent reservoir, NLGI 000–2, IP65, relief valve on
-      each pump element (290 bar); MX-F zinc-nickel coated steel, 3–12
-      metering elements (2 outlets each), 0,025–0,105 cm³ per outlet and
-      stroke, outlets can be combined, pin detector / proximity switch. Check
-      them against the variants ELBA fits.
+    - **No makes are named on the page.** The parts section ("Deler til
+      smøreanlegget", `PARTS` in `lib/sentralsmoring.ts`) is general: pumps
+      and pump parts "fra flere produsenter" and dividers lead to a request
+      (/kontakt-oss), fittings, hoses, grease and filling equipment link to
+      their catalogue categories. The pump in the drawing is still modelled
+      on an EP-1, and the earlier product facts (EP-1/MX-F) are no longer on
+      the page. When the new pump range can be named, add it here.
     - **How ELBA wires the pump.** The FAQ says the controller is wired to the
       ignition so the pause only counts while the machine is on, and "smører
       ikke når maskinen står". Correct for how ELBA installs? (Lincoln/BEKA
