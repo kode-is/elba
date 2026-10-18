@@ -13,7 +13,7 @@ export const SERVICE_CARDS: ServiceCard[] = [
   {
     href: "/anlegg",
     heading: "Anlegg",
-    text: "Presis kontinuerlig smøring til din maskin",
+    text: "Sentralsmøring for anleggsmaskiner",
     image: { src: "/images/home/03-01289078.jpeg", alt: "", width: 386, height: 515 },
   },
   {
@@ -21,6 +21,13 @@ export const SERVICE_CARDS: ServiceCard[] = [
     heading: "Industri",
     text: "Skreddersydde løsninger for norsk industri",
     image: { src: "/images/home/04-41b11055.jpg", alt: "Industri", width: 512, height: 683 },
+  },
+  // New service (Protega Solutions), not on live.
+  {
+    href: "/brannslukking",
+    heading: "Brannslukking",
+    text: "Automatisk brannslukking fra Protega Solutions",
+    image: { src: "/images/brannslukking/motorrom-ror.webp", alt: "", width: 1200, height: 1600 },
   },
 ];
 
@@ -36,7 +43,7 @@ type ServiceCardsGridProps = { className?: string };
  */
 export function ServiceCardsGrid({ className }: ServiceCardsGridProps) {
   return (
-    <div className={`grid gap-6 md:grid-cols-2${className ? ` ${className}` : ""}`}>
+    <div className={`grid gap-6 md:grid-cols-2 lg:grid-cols-3${className ? ` ${className}` : ""}`}>
       {SERVICE_CARDS.map((service) => (
         <Link key={service.href} href={service.href} className="block">
           <FeatureCard heading={service.heading} text={service.text} image={service.image} headingTag="h5" />

@@ -35,6 +35,8 @@ export const servicesMenu = {
     [
       { text: "Anlegg", href: "/anlegg" },
       { text: "Industri", href: "/industri" },
+      // Protega Solutions fire suppression — new service, not on live.
+      { text: "Brannslukking", href: "/brannslukking" },
     ],
   ],
 } as const;

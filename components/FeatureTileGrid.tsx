@@ -10,8 +10,9 @@ type FeatureTileGridProps = {
 };
 
 /**
- * Two-column grid alternating a coloured text tile (H1 heading + one or two
- * paragraphs, live markup keeps these at H1 despite sitting mid-page) with a
+ * Two-column grid alternating a coloured text tile (heading + one or two
+ * paragraphs; live markup had these at H1 mid-page, now H3 so each page keeps
+ * one H1) with a
  * plain photo tile — /anlegg's three-tile intro (docs/reference/
  * anlegg.desktop.jpg: cream/photo/photo/red/cream/photo) and /industri's
  * (docs/reference/industri.desktop.jpg: all three text tiles red). Shared
@@ -42,7 +43,7 @@ export function FeatureTileGrid({ tiles }: FeatureTileGridProps) {
               tile.tone === "red" ? "bg-brand text-white" : "bg-surface text-black"
             }`}
           >
-            <h1 className="font-ui text-[24px] leading-[1.2] font-bold md:text-[30px]">{tile.heading}</h1>
+            <h3 className="font-ui text-[24px] leading-[1.2] font-bold md:text-[30px]">{tile.heading}</h3>
             {tile.paragraphs.map((paragraph) => (
               <p
                 key={paragraph}

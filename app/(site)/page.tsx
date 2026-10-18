@@ -9,6 +9,7 @@ import { ContactSection } from "@/components/home/ContactSection";
 import { ArticlesSection } from "@/components/home/ArticlesSection";
 import { StatsSection } from "@/components/StatsSection";
 import { Container } from "@/components/Container";
+import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
 
 export const metadata = pageMetadata({
   title: "ELBA - I INDUSTRIENS TJENESTE",
@@ -25,6 +26,14 @@ export default function Home() {
       {/* First thing under the hero: Hlynur asked for Produkter "efst á síðunni
           sem sér dæmi" — its own item at the top, not a card among the services. */}
       <ProductsSection />
+      {/* Not on live: the new Protega fire-suppression service, kept below
+          Produkter so the catalog stays first under the hero. */}
+      <ProtegaBand
+        className="pt-16 md:pt-24"
+        heading="Nå beskytter vi maskinene dine mot brann også"
+        text="ELBA er forhandler og montør av automatisk brannslukking fra Protega Solutions. Samme kunder, samme maskiner, samme montører – nå med brannvern som slår inn av seg selv."
+        points={["Helt mekanisk, uten strøm", "Beskytter døgnet rundt", "Montert sammen med smøringen"]}
+      />
       <StepsSection />
       <ServicesSection />
 

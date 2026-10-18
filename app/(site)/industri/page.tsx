@@ -7,6 +7,7 @@ import { CheckList } from "@/components/CheckList";
 import { IconCardGrid, type IconCardItem } from "@/components/IconCardGrid";
 import { IndustryGrid, type IndustryCard } from "@/components/industri/IndustryGrid";
 import { ContactCta } from "@/components/ContactCta";
+import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
 import { ClockIcon, HardHatIcon, CoinsIcon, LeafIcon, SparkleIcon } from "@/components/icons";
 import { pageMetadata } from "@/lib/seo";
 
@@ -152,6 +153,14 @@ export default function Industri() {
           <IndustryGrid items={INDUSTRIES} />
         </div>
       </Container>
+
+      {/* Not on live: the new fire-suppression service, pitched to industry. */}
+      <ProtegaBand
+        className="pb-16 md:pb-24"
+        heading="Brannvern for ubemannet drift"
+        text="CNC-maskiner, el-skap og filteranlegg går natt og helg uten folk til stede. Protega oppdager og slukker brann på stedet – med rene slukkemidler som ikke skader elektronikken."
+        points={["CNC og maskineringssentre", "El-skap og filterskap", "Service med inspeksjonssertifikat"]}
+      />
 
       <ContactCta />
     </main>
