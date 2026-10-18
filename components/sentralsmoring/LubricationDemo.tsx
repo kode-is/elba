@@ -9,6 +9,7 @@ import {
   CYCLE,
   cycleAt,
   DAY_MS,
+  dayClock,
   FEED_LINE,
   FIRST_CYCLE,
   GREASE_END,
@@ -19,6 +20,7 @@ import {
   LINES,
   lineArrived,
   lineDoses,
+  MANUAL_DAY_MS,
   MANUAL_LEFT,
   OPTIMAL,
   overflowAt,
@@ -69,16 +71,18 @@ export function LubricationDemo() {
   const reduced = usePrefersReducedMotion();
   const small = useSmallScreen();
   const { ref, visible } = useOnScreen<HTMLDivElement>();
-  const [ms, setMs] = useLoopClock(visible && !reduced && !paused, DAY_MS);
+  const [ms, setMs] = useLoopClock(visible && !reduced && !paused, mode === "manuell" ? MANUAL_DAY_MS : DAY_MS);
 
-  const t = reduced ? STILL[mode] : ms / DAY_MS;
+  // The day's clock, and the machine's own time for its movements (the same
+  // except in manual mode after the greasing round, where the day runs faster).
+  const { t, motion } = reduced ? { t: STILL[mode], motion: STILL[mode] } : dayClock(mode, ms);
   const auto = mode === "automatisk";
-  const pose = poseAt(mode, t);
+  const pose = poseAt(mode, motion);
   const level = greaseLevel(mode, t);
   const u = auto ? cycleAt(t).u : null;
   const phase = phaseOf(u);
   const lines = routes(pose);
-  const digPhase = digPhaseAt(mode, t);
+  const digPhase = digPhaseAt(mode, motion);
   const load = digPhase === null ? 0 : loadAt(digPhase, pose);
   const emptying = digPhase === null ? 0 : spillAt(digPhase, pose);
   // Marks and labels grow on a phone, where the drawing renders at under half size.
@@ -108,6 +112,18 @@ export function LubricationDemo() {
   const alarm = !auto && t >= GREASE_END && level < OPTIMAL.low;
   const system = MODES[mode];
   const points = POINT_LINES.map((i) => lines[i][lines[i].length - 1]);
+  const pinLevel = pointLevel(BUCKET_PIN);
+  const pinState = auto
+    ? "Jevn fettfilm hele veien rundt."
+    : !greased(BUCKET_PIN)
+      ? "Lite fett igjen fra i går."
+      : pinLevel > OPTIMAL.high
+        ? "Mer fett enn lageret tar imot."
+        : pinLevel > 100
+          ? "Fett rundt bolten, tynnest der den bærer."
+          : pinLevel >= OPTIMAL.low
+            ? "Fettet trekker seg tilbake fra den belastede siden."
+            : "Den belastede siden går tørr.";
   const pinPulse = lineArrived(u, POINT_LINES[BUCKET_PIN]);
   const fresh = pinPulse === null ? 0 : Math.sin(Math.PI * pinPulse);
 
@@ -205,15 +221,11 @@ export function LubricationDemo() {
             </div>
           </div>
           <figure className="mx-auto w-36 text-center sm:w-full">
-            <PinSection mode={mode} level={pointLevel(BUCKET_PIN)} turn={pose.bucket - 90} fresh={fresh} />
-            <figcaption className="mt-1 font-ui text-[12px] leading-[1.35] text-ink-muted">
-              <span className="block font-semibold text-black">Skuffebolten i snitt</span>
-              {auto
-                ? "Jevn fettfilm, også på den belastede siden"
-                : pointLevel(BUCKET_PIN) > 100
-                  ? "Fett rundt bolten, tynnest der den ligger an"
-                  : "Den belastede siden tørker først"}
-              <span className="block">Ikke i målestokk</span>
+            <PinSection mode={mode} level={pinLevel} turn={pose.bucket - 90} fresh={fresh} />
+            <figcaption className="mt-2 font-ui text-[13px] leading-[1.45]">
+              <p className="font-semibold text-black">Skuffebolten i snitt</p>
+              <p className="mt-0.5 text-ink-muted">{pinState}</p>
+              <p className="mt-2 text-[11px] tracking-wide text-ink-faint uppercase">Ikke i målestokk</p>
             </figcaption>
           </figure>
         </div>

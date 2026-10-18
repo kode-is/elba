@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import {
   clockLabel,
   cycleAt,
+  dayClock,
+  MANUAL_DAY_MS,
   CYCLE,
   DAY_MS,
   FEED_LINE,
@@ -29,9 +31,10 @@ describe("grease model behind /anlegg's demo", () => {
     }
   });
 
-  it("never fills a bearing past what it holds by hand, and thins below the band by afternoon", () => {
-    for (const t of day) expect(greaseLevel("manuell", t)).toBeLessThanOrEqual(OPTIMAL.high);
-    expect(greaseLevel("manuell", GREASE_END + 0.01)).toBeGreaterThan(100);
+  it("overshoots by hand right after the gun, settles into the band, and thins below it by afternoon", () => {
+    expect(greaseLevel("manuell", GREASE_END)).toBeGreaterThan(OPTIMAL.high);
+    expect(greaseLevel("manuell", GREASE_END + 0.15)).toBeLessThanOrEqual(OPTIMAL.high);
+    expect(greaseLevel("manuell", GREASE_END + 0.15)).toBeGreaterThanOrEqual(OPTIMAL.low);
     expect(greaseLevel("manuell", 7 / 8)).toBeLessThan(OPTIMAL.low);
   });
 
@@ -72,6 +75,16 @@ describe("grease model behind /anlegg's demo", () => {
     expect(poseAt("manuell", 0.05)).toEqual(STANDBY);
     expect(gunAt(0.5, 11)).toBeNull();
     expect(poseAt("manuell", 0.5)).not.toEqual(STANDBY);
+  });
+
+  it("plays the manual greasing round at the normal pace, then runs the rest of the day faster", () => {
+    expect(dayClock("manuell", GREASE_END * DAY_MS)).toEqual({ t: GREASE_END, motion: GREASE_END });
+    const late = dayClock("manuell", MANUAL_DAY_MS - 1);
+    expect(late.t).toBeGreaterThan(0.99);
+    // The machine keeps moving at its own pace; only the clock runs faster.
+    expect(late.motion).toBeCloseTo((MANUAL_DAY_MS - 1) / DAY_MS);
+    expect(MANUAL_DAY_MS).toBeLessThan(DAY_MS / 2);
+    expect(dayClock("automatisk", 30000)).toEqual({ t: 0.5, motion: 0.5 });
   });
 
   it("labels the clock from 07:00 to 15:00", () => {

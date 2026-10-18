@@ -229,9 +229,10 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     - **Manual greasing is told as the OEMs prescribe it**: once at shift start
       (Cat: bucket linkage every 10 service hours or daily, more often in wet
       or sandy work), grease until clean grease shows at the seals. The chart
-      is an illustration (no figures): the manual curve tops out inside the
-      band, overflow is shown as waste on the machine, and the film thins
-      through the day; one hard-to-reach point (stikkesylinder, fot) is
+      is an illustration (no figures): the manual curve overshoots into
+      "for mye" right after the gun while the surplus is pushed out at the
+      seals (shown as waste on the machine), settles into the band within
+      about an hour, and thins through the day; one hard-to-reach point (stikkesylinder, fot) is
       skipped in the round. No claim that central lubrication uses less grease.
     - **Monitoring** is described as a cycle alarm ("varsel når syklusen ikke
       blir fullført"), not instant. The "Innstilling og overvåking" photo

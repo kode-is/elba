@@ -58,6 +58,24 @@ function emissions(line: number): number[] {
 const EMISSIONS = Array.from({ length: LINES }, (_, l) => emissions(l));
 
 export const clamp = (v: number, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
+
+// Manual mode plays the start of the day — parked, the round with the grease
+// gun, and driving off — at the normal pace, then runs the rest of the day
+// faster: only the clock speeds up, the machine keeps digging at its own pace.
+export const MANUAL_SLOW_TO = 0.14;
+export const MANUAL_FAST = 4;
+/** One manual day, in milliseconds of animation. */
+export const MANUAL_DAY_MS = DAY_MS * (MANUAL_SLOW_TO + (1 - MANUAL_SLOW_TO) / MANUAL_FAST);
+
+/**
+ * The day's clock `t` (0-1) and the machine's own time `motion` (day units at
+ * the normal pace, for its movements) at `ms` into the loop.
+ */
+export function dayClock(mode: LubeMode, ms: number) {
+  const normal = ms / DAY_MS;
+  if (mode === "automatisk" || normal <= MANUAL_SLOW_TO) return { t: normal, motion: normal };
+  return { t: Math.min(0.9999, MANUAL_SLOW_TO + (normal - MANUAL_SLOW_TO) * MANUAL_FAST), motion: normal };
+}
 const smooth = (v: number) => v * v * (3 - 2 * v);
 
 export function clockLabel(t: number) {
@@ -118,19 +136,25 @@ function autoLevel(t: number) {
 }
 
 // Manual: greased once at the start of the shift, as the machine makers
-// prescribe for the bucket linkage (daily or every 10 hours). The bearing
-// fills up — what it cannot take is pushed out at the seals — and the film
-// thins through the day.
+// prescribe for the bucket linkage (daily or every 10 hours). Right after the
+// gun the joint holds more than it should — the surplus is still being pushed
+// out at the seals — so the level overshoots into "too much" and falls back
+// into the band within the first hour or so; then the film thins through the
+// day.
 export const GREASE_START = 0.01;
 export const GREASE_END = 0.08;
 export const MANUAL_LEFT = 45;
 const MANUAL_FULL = 110;
+const MANUAL_SURPLUS = 30;
+/** How fast the surplus squeezes out, in day units. */
+const SQUEEZE = 0.07;
 
 function manualLevel(t: number) {
   if (t < GREASE_START) return MANUAL_LEFT;
-  if (t < GREASE_END) return MANUAL_LEFT + (MANUAL_FULL - MANUAL_LEFT) * smooth((t - GREASE_START) / (GREASE_END - GREASE_START));
+  if (t < GREASE_END)
+    return MANUAL_LEFT + (MANUAL_FULL + MANUAL_SURPLUS - MANUAL_LEFT) * smooth((t - GREASE_START) / (GREASE_END - GREASE_START));
   const s = (t - GREASE_END) / (1 - GREASE_END);
-  return MANUAL_LEFT + (MANUAL_FULL - MANUAL_LEFT) * (1 - s * s);
+  return MANUAL_LEFT + (MANUAL_FULL - MANUAL_LEFT) * (1 - s * s) + MANUAL_SURPLUS * Math.exp(-(t - GREASE_END) / SQUEEZE);
 }
 
 export function greaseLevel(mode: LubeMode, t: number) {
