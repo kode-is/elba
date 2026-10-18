@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { LUBE_POINTS, MAIN_POINTS, MODES, SECONDARY_POINTS, SKIPPED_POINT, type LubeMode } from "@/lib/sentralsmoring";
+import { LUBE_POINTS, MODES, SKIPPED_POINT, type LubeMode } from "@/lib/sentralsmoring";
 import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 import { ILL } from "@/lib/illustrasjon";
 import {
@@ -245,26 +245,6 @@ export function LubricationDemo() {
         <div className="mt-8">
           <DemoSteps steps={system.steps} current={reduced ? null : step} />
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-          {[
-            { heading: "Hovedfordeler", points: MAIN_POINTS },
-            { heading: "Sekundærfordeler", points: SECONDARY_POINTS },
-          ].map((g) => (
-            <div key={g.heading}>
-              <p className="font-ui text-[15px] font-semibold text-black">{g.heading}</p>
-              <ul className="mt-2 flex flex-wrap gap-2">
-                {g.points.map((p) => (
-                  <li key={p} className="rounded-full bg-white px-4 py-2 font-ui text-[14px] leading-[1.4] font-medium text-ink-muted">
-                    {p}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <p className="mt-4 font-ui text-[14px] leading-[1.6] text-ink-muted">
-          Tegningen er forenklet. En maskin i denne klassen har flere smørepunkter enn de som er vist her.
-        </p>
       </div>
     </div>
   );
