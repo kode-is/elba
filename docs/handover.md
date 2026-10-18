@@ -214,9 +214,13 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     progressiv fordeler", "Hvorfor progressivt?", three new FAQ answers and
     lightly reworded key functions — all in `lib/sentralsmoring.ts` and
     `app/(site)/anlegg/page.tsx`. Worth a second look:
-    - **BEKA is named** ("BEKA EP-1", "BEKA MX-F") in the component cards and
-      the drawing labels ("EP-1", "MX-F"). Confirm ELBA wants the supplier's
-      product names on the page; if not, drop the brand from `COMPONENTS`.
+    - **BEKA is named** ("BEKA EP-1", "BEKA MX-F") in the component cards, and
+      "EP-1" labels the pump in the drawing. Confirm ELBA wants the
+      supplier's product names on the page; if not, drop the brand from
+      `COMPONENTS`.
+    - **The excavator is generic**, at CAT 350 proportions but in grey, with
+      no badge. Ten lubrication points are shown (five per divider); a real
+      350 has more — the drawing picks the ones that read at this size.
     - **Product facts** are from BEKA's data sheets: EP-1 12/24 V, reservoirs
       1.9–16 l, NLGI up to 2, IP65; MX-F galvanised steel, modular, 0.025–0.105
       cm³ per outlet, indicator pin. Check them against the variants ELBA
@@ -350,23 +354,40 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
 
 12. **`/anlegg` rewritten around a lubrication demo (2026-10-18).** Hlynur
     asked for the lubrication page to be rewritten with an animation in the
-    spirit of `/brannslukking`'s suppression demo, drawn on a BEKA EP-1 pump
-    and MX-F distributor on an excavator.
-    `components/sentralsmoring/LubricationDemo.tsx` plays one working day
-    (07–15) in about 22 seconds: with "Sentralsmøring" the excavator digs all
-    day while the pump runs six cycles and the MX-F serves six points in turn
-    (the grease travels each line while the boom, stick and bucket move); with
-    "Manuell smøring" it is parked for the grease gun, overflows, then runs
-    dry. A chart of grease in the bearing and a section through the bucket pin
-    (grease all round vs only on the unloaded side) sit under the drawing; the
-    three steps beside it light up as in the Protega demo. It only runs on
-    screen, has a pause button, and holds one still frame per mode under
-    `prefers-reduced-motion`. The drawing (`Machine.tsx`) is pure SVG in the
-    site's pale line style with the lubrication system in colour; the timing
-    and grease model is pure (`lib/smoremodell.ts`, tested in
-    `tests/smoremodell.test.ts`). The page keeps `/anlegg`'s photos, tiles,
-    Digital overvåking, Nøkkelfunksjoner, ExperienceSection and Protega band.
-    `usePrefersReducedMotion` moved to `lib/` so both demos share it.
+    spirit of `/brannslukking`'s suppression demo, drawn on BEKA EP-1 and
+    MX-F parts on an excavator.
+    - `components/sentralsmoring/LubricationDemo.tsx` plays one working day
+      (07–15) in about a minute. The machine (`Machine.tsx`) is a 50-tonne
+      class excavator at CAT 350 proportions (6.9 m boom, 3.35 m stick, 5.4 m
+      track, a large GP bucket), laid out in metres and solved as a real
+      linkage: the bucket is driven by its cylinder through the idler and
+      power links, so it curls, crowds and dumps the right way. It is a
+      neutral grey render, not CAT yellow, so the lubrication system stands
+      out and no manufacturer's livery is copied.
+    - "Sentralsmøring": the excavator digs all day; every ten seconds or so
+      the EP-1 runs, the main divider on the upper frame serves five points
+      and sends a dose up the boom, and the secondary divider there serves
+      five more (stick, linkage and bucket). The dividers are drawn as plain
+      blocks that light up while they deliver. "Manuell smøring": parked in
+      the greasing position for the gun, overflow, then dry by the afternoon.
+      The status line changes per phase (pump, main divider, secondary
+      divider, digging), never per outlet, so it can be read.
+    - Under the drawing: a chart of grease in the bearing, and the bucket pin
+      in section — an even film all round with central lubrication; greased
+      parked, grease all round but thick in the free gap and thin where the
+      pin bears, and that thin side dries first.
+    - `components/sentralsmoring/DividerDemo.tsx` opens a progressive divider
+      up (three pistons, six outlets, indicator pin on piston A, pressure
+      gauge and relief valve) under "Inne i en progressiv fordeler", with a
+      "Tett utløp" mode where outlet 3 is plugged and the whole block stalls.
+      Its channels are schematic (pressure galleries round the bores) — in a
+      real block they run through the bores and the piston lands gate them.
+    - Both run only on screen, have a pause button and hold one still frame
+      under `prefers-reduced-motion`. Timing and grease model are pure
+      (`lib/smoremodell.ts`, tested in `tests/smoremodell.test.ts`). The page
+      keeps `/anlegg`'s photos, Digital overvåking, Nøkkelfunksjoner,
+      ExperienceSection and Protega band. `usePrefersReducedMotion` moved to
+      `lib/` so all the demos share it.
 
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under

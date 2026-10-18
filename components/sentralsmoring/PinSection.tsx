@@ -25,23 +25,25 @@ function arc(mid: number, span: number, r: number) {
 
 /**
  * The bucket pin in its bushing, in section. With central lubrication the
- * grease goes in while the pin turns under load, so it lies all the way
- * round. Greased parked, the pin rests on its loaded side: the grease only
- * reaches the free gap on top, the overflow squeezes out, and the loaded
- * side runs dry as the day goes on.
+ * grease goes in while the pin turns under load, so the film is even all the
+ * way round. Greased parked, the pin rests on its loaded side: right after
+ * the gun the grease does reach all the way round, but thick in the free gap
+ * and thin where the pin bears — and as the day goes on, that thin side runs
+ * dry first while the overflow squeezes out at the seals.
  */
 export function PinSection({ mode, level, turn, fresh }: { mode: LubeMode; level: number; turn: number; fresh: number }) {
   const auto = mode === "automatisk";
-  const drop = auto ? 0 : 8;
-  const span = Math.max(0, Math.min(150, (level / 100) * 130));
+  const drop = auto ? 0 : 7;
+  // How far round the bore the grease still reaches, from the free gap on top.
+  const span = auto ? 360 : Math.max(0, Math.min(360, ((level - 20) / 110) * 360));
   const excess = auto ? 0 : Math.max(0, (level - OPTIMAL.high) / 55);
-  const dry = auto ? 0 : Math.min(1, Math.max(0, (100 - level) / 50));
+  const dry = auto ? 0 : Math.min(1, Math.max(0, (330 - span) / 150));
   const clip = `pin-grease-${mode}`;
   return (
     <svg viewBox="0 0 140 140" aria-hidden="true" className="block h-auto w-full">
       <defs>
         <clipPath id={clip}>
-          <path d={auto ? wedge(0, 359.9) : wedge(-90, span)} />
+          <path d={span >= 359.9 ? wedge(-90, 359.9) : wedge(-90, span)} />
         </clipPath>
       </defs>
       <circle cx={C} cy={C} r={HOUSING} fill="#f5f2ef" stroke="#cfcfcf" strokeWidth="2" />

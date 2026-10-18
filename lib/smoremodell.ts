@@ -9,7 +9,7 @@
 import type { LubeMode } from "@/lib/sentralsmoring";
 
 /** One working day, in milliseconds of animation. */
-export const DAY_MS = 22000;
+export const DAY_MS = 60000;
 export const DAY_START_HOUR = 7;
 export const DAY_HOURS = 8;
 
@@ -17,18 +17,40 @@ export const OPTIMAL = { low: 80, high: 120 } as const;
 
 /** Automatic: a lubrication cycle every PERIOD (six a day, so the loop is seamless), the first at FIRST_CYCLE, each CYCLE long. */
 export const PERIOD = 1 / 6;
-export const FIRST_CYCLE = 0.05;
-export const CYCLE = 0.1;
-/** Within a cycle (u from 0 to 1): the pump runs first, then the MX-F serves its outlets in turn. */
-export const PUMP_END = 0.35;
-export const OUTLET_GAP = 0.08;
-export const OUTLET_TRAVEL = 0.15;
+export const FIRST_CYCLE = 0.03;
+export const CYCLE = 0.12;
+
+// Within a cycle (u from 0 to 1): the pump runs, then the main divider serves
+// its six outlets in turn — five points and, last, the line to the secondary
+// divider on the boom — and once that line has delivered, the secondary
+// divider serves its five points in turn.
+export const PUMP_END = 0.2;
+export const MAIN_OUTLETS = 6;
+export const MAIN_GAP = 0.08;
+export const MAIN_TRAVEL = 0.1;
+export const SECONDARY_OUTLETS = 5;
+export const SECONDARY_GAP = 0.05;
+export const SECONDARY_TRAVEL = 0.08;
+/** The main divider's last outlet feeds the secondary divider. */
+export const FEED_LINE = MAIN_OUTLETS - 1;
+
+export const mainStart = (i: number) => PUMP_END + i * MAIN_GAP;
+export const secondaryStart = (j: number) => mainStart(FEED_LINE) + MAIN_TRAVEL + j * SECONDARY_GAP;
+
+/** All eleven lines: 0-5 from the main divider (5 is the feed), 6-10 from the secondary one. */
+export const LINES = MAIN_OUTLETS + SECONDARY_OUTLETS;
+export function lineStart(line: number) {
+  return line < MAIN_OUTLETS ? mainStart(line) : secondaryStart(line - MAIN_OUTLETS);
+}
+export function lineTravelTime(line: number) {
+  return line < MAIN_OUTLETS ? MAIN_TRAVEL : SECONDARY_TRAVEL;
+}
 
 /** Manual: the operator greases the parked machine at the start of the day. */
 export const GREASE_START = 0.01;
-export const GREASE_END = 0.1;
-/** One dig cycle, in day units (about four seconds). */
-export const DIG = 0.19;
+export const GREASE_END = 0.13;
+/** One dig cycle, in day units (about eight seconds). */
+export const DIG = 0.135;
 
 export const clamp = (v: number, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, v));
 const smooth = (v: number) => v * v * (3 - 2 * v);
@@ -48,14 +70,28 @@ export function cycleAt(t: number): { index: number; u: number | null } {
   return { index, u: t >= FIRST_CYCLE && u < 1 ? u : null };
 }
 
-/** When outlet `i` (0-based, in MX-F order) starts to deliver within a cycle. */
-export const outletStart = (i: number) => PUMP_END + i * OUTLET_GAP;
-
-/** How far grease for outlet `i` has travelled along its line (0-1), or null if none is moving. */
-export function outletTravel(u: number | null, i: number) {
+/** How far grease for `line` has travelled along it (0-1), or null if none is moving. */
+export function lineTravel(u: number | null, line: number) {
   if (u === null) return null;
-  const f = (u - outletStart(i)) / OUTLET_TRAVEL;
+  const f = (u - lineStart(line)) / lineTravelTime(line);
   return f >= 0 && f <= 1 ? f : null;
+}
+
+/** How long ago (0-1 of a short pulse) the dose on `line` arrived, or null. */
+export function lineArrived(u: number | null, line: number) {
+  if (u === null) return null;
+  const f = (u - lineStart(line) - lineTravelTime(line)) / 0.1;
+  return f >= 0 && f <= 1 ? f : null;
+}
+
+export type CyclePhase = "idle" | "pump" | "main" | "secondary";
+
+export function phaseOf(u: number | null): CyclePhase {
+  if (u === null) return "idle";
+  if (u < PUMP_END) return "pump";
+  if (u < secondaryStart(0)) return "main";
+  if (u < secondaryStart(SECONDARY_OUTLETS - 1) + SECONDARY_TRAVEL + 0.02) return "secondary";
+  return "idle";
 }
 
 // Automatic: the level rises while a cycle delivers, and falls slowly in
@@ -63,7 +99,7 @@ export function outletTravel(u: number | null, i: number) {
 const AUTO_LOW = 93;
 const AUTO_HIGH = 107;
 const RISE_FROM = PUMP_END * CYCLE;
-const RISE_TO = (outletStart(5) + OUTLET_TRAVEL) * CYCLE;
+const RISE_TO = (secondaryStart(SECONDARY_OUTLETS - 1) + SECONDARY_TRAVEL) * CYCLE;
 
 function autoLevel(t: number) {
   const index = Math.floor((t - FIRST_CYCLE) / PERIOD);
@@ -76,7 +112,7 @@ function autoLevel(t: number) {
 
 // Manual: yesterday's leftovers, then everything at once at the gun, then a
 // long slide through the optimum and below it.
-const MANUAL_LEFT = 24;
+export const MANUAL_LEFT = 24;
 const MANUAL_PEAK = 175;
 
 function manualLevel(t: number) {
@@ -90,27 +126,32 @@ export function greaseLevel(mode: LubeMode, t: number) {
   return mode === "automatisk" ? autoLevel(t) : manualLevel(t);
 }
 
-/** Which manual point the gun is on (0-5), or null outside the greasing round. */
-export function gunAt(t: number) {
+/** Which manual point the gun is on (0 to count-1), or null outside the greasing round. */
+export function gunAt(t: number, count: number) {
   if (t < GREASE_START || t >= GREASE_END) return null;
-  return Math.min(5, Math.floor(((t - GREASE_START) / (GREASE_END - GREASE_START)) * 6));
+  return Math.min(count - 1, Math.floor(((t - GREASE_START) / (GREASE_END - GREASE_START)) * count));
 }
 
+/**
+ * The machine's attitude, in degrees counter-clockwise: the boom's pin-to-pin
+ * line above horizontal, the stick against the boom (negative folds it down),
+ * and the bucket against the stick (90 is level with the stick hanging
+ * straight down; lower curls it in, higher opens it).
+ */
 export type Pose = { boom: number; stick: number; bucket: number };
 
-/** Parked, bucket on the ground: where manual greasing happens. */
-export const STANDBY: Pose = { boom: 17, stick: 24, bucket: 18 };
+/** The greasing position: stick plumb, bucket flat on the trench floor. */
+export const STANDBY: Pose = { boom: 4.7, stick: -94.7, bucket: 90 };
 
-// One dig cycle: reach out, cut in, curl, lift, dump, and back. Angles in
-// degrees, clockwise on screen: a positive boom angle lowers the boom, a
-// positive stick angle pulls the stick in, a positive bucket angle curls it.
+// One dig cycle: reach out, cut in, crowd and curl, lift, dump, and back.
 const DIG_KEYS: { at: number; pose: Pose }[] = [
-  { at: 0, pose: { boom: 2, stick: -26, bucket: -30 } },
-  { at: 0.2, pose: { boom: 13, stick: -16, bucket: -12 } },
-  { at: 0.45, pose: { boom: 12, stick: 20, bucket: 45 } },
-  { at: 0.65, pose: { boom: -14, stick: 14, bucket: 70 } },
-  { at: 0.85, pose: { boom: -12, stick: -22, bucket: -40 } },
-  { at: 1, pose: { boom: 2, stick: -26, bucket: -30 } },
+  { at: 0, pose: { boom: 10, stick: -55, bucket: 125 } },
+  { at: 0.15, pose: { boom: -2, stick: -60, bucket: 112 } },
+  { at: 0.32, pose: { boom: -3, stick: -92, bucket: 72 } },
+  { at: 0.48, pose: { boom: -6, stick: -125, bucket: 35 } },
+  { at: 0.64, pose: { boom: 30, stick: -122, bucket: -14 } },
+  { at: 0.82, pose: { boom: 36, stick: -72, bucket: 140 } },
+  { at: 1, pose: { boom: 10, stick: -55, bucket: 125 } },
 ];
 
 const mix = (a: Pose, b: Pose, f: number): Pose => ({
@@ -119,7 +160,7 @@ const mix = (a: Pose, b: Pose, f: number): Pose => ({
   bucket: a.bucket + (b.bucket - a.bucket) * f,
 });
 
-function digPose(phase: number): Pose {
+export function digPose(phase: number): Pose {
   for (let i = 1; i < DIG_KEYS.length; i++) {
     const a = DIG_KEYS[i - 1];
     const b = DIG_KEYS[i];

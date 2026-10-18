@@ -11,9 +11,11 @@ import { ExperienceSection } from "@/components/anlegg/ExperienceSection";
 import { ContactCta } from "@/components/ContactCta";
 import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
 import { LubricationDemo } from "@/components/sentralsmoring/LubricationDemo";
-import { Distributor, Pump } from "@/components/sentralsmoring/Machine";
+import { Pump } from "@/components/sentralsmoring/Machine";
+import { DividerDemo } from "@/components/sentralsmoring/DividerDemo";
+import { DividerIcon } from "@/components/sentralsmoring/DividerIcon";
 import { TargetIcon, ClockIcon, HardHatIcon, CoinsIcon, LeafIcon } from "@/components/icons";
-import { COMPONENTS, DAY_MOMENTS, FAQ_ITEMS, PROGRESSIVE_POINTS } from "@/lib/sentralsmoring";
+import { COMPONENTS, DAY_MOMENTS, FAQ_ITEMS } from "@/lib/sentralsmoring";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -187,13 +189,11 @@ export default function Anlegg() {
               <div key={c.name} className="flex flex-col overflow-hidden rounded-[20px] bg-white sm:flex-row">
                 <div className="flex items-center justify-center bg-surface-cool p-8 sm:w-[38%] sm:shrink-0">
                   {c.kind === "pump" ? (
-                    <svg viewBox="-12 -8 64 90" aria-hidden="true" className="h-40 w-auto">
-                      <Pump x={0} y={0} level={0.72} stir={30} running={false} />
+                    <svg viewBox="-8 -6 56 92" aria-hidden="true" className="h-40 w-auto">
+                      <Pump x={0} y={80} level={0.72} stir={30} running={false} scale={1} />
                     </svg>
                   ) : (
-                    <svg viewBox="172 246 96 46" aria-hidden="true" className="h-auto w-full max-w-[200px]">
-                      <Distributor active={null} pin={0.6} />
-                    </svg>
+                    <DividerIcon className="h-auto w-full max-w-[200px]" />
                   )}
                 </div>
                 <div className="p-6 md:p-8">
@@ -205,16 +205,16 @@ export default function Anlegg() {
               </div>
             ))}
           </div>
-          <div className="mt-6 grid gap-6 rounded-[20px] bg-white p-6 md:grid-cols-[1fr_1fr] md:items-center md:p-10">
-            <div>
-              <h3 className="text-[24px] leading-[1.25] font-semibold text-black md:text-[28px]">Hvorfor progressivt?</h3>
-              <p className="mt-3 font-ui text-body text-ink-muted md:text-body-lg">
-                I en progressiv fordeler må hvert stempel fullføre sin dose før det neste kan bevege seg. Derfor får alle
-                punktene fett i hver syklus – og stopper ett, stopper alle. En feil blir synlig med en gang, i stedet for å
-                bli oppdaget som en slitt bolt.
-              </p>
+
+          <div id="fordeleren" className="mt-16 scroll-mt-8 md:mt-20">
+            <h2 className="text-section font-semibold text-black md:text-section-lg">Inne i en progressiv fordeler</h2>
+            <p className="mt-4 max-w-3xl text-lead text-ink-muted md:text-lead-lg">
+              Hvert stempel må fullføre sin dose før det neste kan bevege seg. Derfor får alle punktene fett i hver
+              syklus – og stopper ett, stopper alle.
+            </p>
+            <div className="mt-10">
+              <DividerDemo />
             </div>
-            <CheckList items={PROGRESSIVE_POINTS} />
           </div>
         </Container>
       </section>

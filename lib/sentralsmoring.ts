@@ -2,11 +2,13 @@
 // machines, built around an animated excavator (components/sentralsmoring/
 // LubricationDemo.tsx).
 //
-// The drawing is modelled on the parts ELBA fits: a BEKA EP-1 piston pump
-// (black pump housing, transparent reservoir with an agitator blade) and a
-// BEKA MX-F progressive distributor (galvanised steel, stacked sections, an
-// indicator pin). Product facts below are from BEKA's own data sheets; the
-// rest of the copy is new and listed in docs/handover.md for review.
+// The drawing is a 50-tonne class excavator (CAT 350 proportions) with the
+// parts ELBA fits: a BEKA EP-1 piston pump (black pump housing, transparent
+// reservoir with an agitator blade), a main BEKA MX-F progressive divider on
+// the upper frame and a secondary one on the boom. A second animation
+// (components/sentralsmoring/DividerDemo.tsx) opens a divider up. Product
+// facts below are from BEKA's own data sheets; the rest of the copy is new
+// and listed in docs/handover.md for review.
 
 export type LubeMode = "automatisk" | "manuell";
 
@@ -23,8 +25,8 @@ export const MODES: Record<LubeMode, { label: string; summary: string; steps: De
         text: "EP-1 starter en smøresyklus med fast intervall mens maskinen er i drift. Røreverket i reservoaret mater fettet frem til pumpeelementet.",
       },
       {
-        heading: "MX-F fordeler – ett punkt etter det andre",
-        text: "Den progressive fordeleren gir hvert utløp en fast dose, i fast rekkefølge. Indikatorstiften beveger seg for hver syklus, så du ser at smøringen går.",
+        heading: "Fordelerne doserer – ett punkt etter det andre",
+        text: "Hovedfordeleren på overvognen gir hvert punkt der en fast dose, i fast rekkefølge. Ett utløp går opp bommen til en sekundærfordeler, som forsyner stikke og skuffe på samme måte.",
       },
       {
         heading: "Fettet går inn mens bolten beveger seg",
@@ -53,15 +55,10 @@ export const MODES: Record<LubeMode, { label: string; summary: string; steps: De
   },
 };
 
-/** The six points in the drawing, in the order the MX-F serves them. */
-export const LUBE_POINTS = [
-  "Skuffebolt",
-  "Svingkrans",
-  "Bom/stikke-ledd",
-  "Bomsylinder, fot",
-  "Bomsylinder, stang",
-  "Bomfot",
-] as const;
+/** The points in the drawing, in the order the dividers serve them. */
+export const MAIN_POINTS = ["Svingkrans", "Bomsylinder, fot", "Bomfot", "Bomsylinder, stang", "Stikkesylinder, fot"] as const;
+export const SECONDARY_POINTS = ["Bom/stikke-ledd", "Stikkesylinder, stang", "Skuffesylinder, fot", "Skuffelenke", "Skuffebolt"] as const;
+export const LUBE_POINTS = [...MAIN_POINTS, ...SECONDARY_POINTS];
 
 /** "For mye, for lite, riktig" — the three moments the grease chart shows. */
 export const DAY_MOMENTS = [
@@ -103,12 +100,49 @@ export const COMPONENTS = [
   },
 ] as const;
 
-/** Why a progressive system: every piston has to finish before the next can move. */
-export const PROGRESSIVE_POINTS = [
-  "Hvert punkt får sin dose – i fast rekkefølge",
-  "Tetter ett punkt seg, stopper hele fordeleren",
-  "Du ser det på indikatorstiften, ikke på slitasjen",
-];
+/** The divider cutaway (components/sentralsmoring/DividerDemo.tsx): running normally, and with outlet 3 blocked. */
+export type DividerMode = "normal" | "blokkert";
+
+export const DIVIDER_MODES: Record<DividerMode, { label: string; summary: string; steps: DemoStep[] }> = {
+  normal: {
+    label: "Normal drift",
+    summary:
+      "Tre stempler, seks utløp. Fettet fra pumpen skyver ett stempel om gangen, og hvert slag sender en fast dose ut til ett smørepunkt.",
+    steps: [
+      {
+        heading: "Trykket skyver ett stempel",
+        text: "Fettet fra pumpen presser stempelet til endestopp. Fettet foran stempelet går ut gjennom ett utløp – alltid samme mengde.",
+      },
+      {
+        heading: "Først da går turen videre",
+        text: "Når stempelet står i endestopp, åpnes kanalen til neste stempel. A, B og C til høyre, så A, B og C tilbake – utløp 1 til 6, og så rundt igjen.",
+      },
+      {
+        heading: "Indikatorstiften viser at det går",
+        text: "Stiften følger stempel A ut og inn for hver runde. Beveger den seg mens pumpen går, får alle punktene fett.",
+      },
+    ],
+  },
+  blokkert: {
+    label: "Tett utløp",
+    summary:
+      "Et tett smørepunkt stopper hele fordeleren. Det høres ille ut, men det er nettopp poenget: feilen blir synlig med en gang, i stedet for som en slitt bolt.",
+    steps: [
+      {
+        heading: "To utløp får fett",
+        text: "Stempel A og B går som normalt og leverer til utløp 1 og 2.",
+      },
+      {
+        heading: "Utløp 3 er tett",
+        text: "Stempel C kan ikke skyve fettet ut, og blir stående. Ingen stempler bak det kan gå videre – ingen punkter blir stående tørre i det stille.",
+      },
+      {
+        heading: "Trykket stiger, stiften står",
+        text: "Overtrykksventilen åpner og viser fett, og indikatorstiften står stille. Med overvåking får føreren varsel med en gang.",
+      },
+    ],
+  },
+};
 
 export const FAQ_ITEMS = [
   {

@@ -5,8 +5,12 @@ import {
   GREASE_END,
   greaseLevel,
   gunAt,
+  lineStart,
+  lineTravel,
+  LINES,
+  MAIN_OUTLETS,
   OPTIMAL,
-  outletTravel,
+  phaseOf,
   poseAt,
   STANDBY,
 } from "@/lib/smoremodell";
@@ -33,19 +37,33 @@ describe("grease model behind /anlegg's demo", () => {
     }
   });
 
-  it("serves the six outlets one after another within a cycle", () => {
-    const { u } = cycleAt(0.05 + 1 / 6 + 0.06);
+  it("serves the main divider's outlets in turn, then the secondary divider's", () => {
+    const starts = Array.from({ length: LINES }, (_, i) => lineStart(i));
+    for (let i = 1; i < LINES; i++) expect(starts[i]).toBeGreaterThan(starts[i - 1]);
+    // The secondary divider only starts once the main divider's last line has delivered.
+    expect(starts[MAIN_OUTLETS]).toBeGreaterThanOrEqual(lineStart(MAIN_OUTLETS - 1) + 0.1);
+    expect(lineStart(LINES - 1) + 0.08).toBeLessThanOrEqual(1);
+    const { u } = cycleAt(0.03 + 1 / 6 + 0.04);
     expect(u).not.toBeNull();
-    const moving = [0, 1, 2, 3, 4, 5].filter((i) => outletTravel(u, i) !== null);
+    const moving = Array.from({ length: LINES }, (_, i) => i).filter((i) => lineTravel(u, i) !== null);
     expect(moving.length).toBeGreaterThan(0);
-    expect(moving.length).toBeLessThan(6);
+    expect(moving.length).toBeLessThan(4);
     expect(cycleAt(0.01).u).toBeNull();
   });
 
+  it("holds each status phase for at least a second", () => {
+    const seen: { phase: string; from: number }[] = [];
+    for (let t = 0; t < 1; t += 0.0005) {
+      const p = phaseOf(cycleAt(t).u);
+      if (!seen.length || seen[seen.length - 1].phase !== p) seen.push({ phase: p, from: t });
+    }
+    for (let i = 1; i < seen.length - 1; i++) expect((seen[i + 1].from - seen[i].from) * 60).toBeGreaterThan(1);
+  });
+
   it("parks the machine for the grease gun, then digs", () => {
-    expect(gunAt(0.05)).not.toBeNull();
+    expect(gunAt(0.05, 10)).not.toBeNull();
     expect(poseAt("manuell", 0.05)).toEqual(STANDBY);
-    expect(gunAt(0.5)).toBeNull();
+    expect(gunAt(0.5, 10)).toBeNull();
     expect(poseAt("manuell", 0.5)).not.toEqual(STANDBY);
   });
 

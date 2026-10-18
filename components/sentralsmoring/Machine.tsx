@@ -1,91 +1,154 @@
-// The drawing behind /anlegg's lubrication demo: an excavator in the site's
-// pale line style, with the lubrication system on it in colour — an EP-1
-// style pump (black housing, transparent reservoir, agitator blade) and an
-// MX-F style progressive distributor (galvanised sections, indicator pin).
-// Pure SVG pieces; LubricationDemo.tsx moves them.
+// The drawing behind /anlegg's lubrication demo: a 50-tonne class crawler
+// excavator (CAT 350 proportions — 6.9 m boom, 3.35 m stick, 5.4 m track,
+// a large GP bucket) seen from its right side, with the lubrication system
+// on it: an EP-1 style pump, a main divider on the upper frame and a
+// secondary divider on the boom. Everything is laid out in metres and solved
+// as a real linkage — the bucket is driven by its cylinder through the idler
+// and power links — then scaled into the SVG. LubricationDemo.tsx moves it.
 
 import type { Pose } from "@/lib/smoremodell";
 
 export type Pt = { x: number; y: number };
-type Frame = "house" | "boom" | "stick" | "bucket";
-type Local = { frame: Frame; x: number; y: number };
 
 export const GREASE = "#e9a23b";
 export const GREASE_DARK = "#b9741c";
-export const LINE = "#3a3a3a";
-const BODY = "#ffffff";
-const EDGE = "#cfcfcf";
-const SOFT = "#e0e0e0";
+export const LINE = "#262626";
 
-/** Boom foot, in the house (world) frame; the boom pivots here. */
-const FOOT: Pt = { x: 318, y: 262 };
-/** Boom tip (stick pivot), in the boom frame. */
-const TIP: Pt = { x: 215, y: -80 };
-/** Bucket pin, in the stick frame. */
-const PIN: Pt = { x: 40, y: 130 };
+// Machine colours: a neutral technical render in light grey, so the
+// lubrication system (black lines, amber grease) is what stands out.
+const BODY = "#e6e4de";
+const BODY_SHADE = "#cfccc4";
+const BODY_DARK = "#b3b0a8";
+const EDGE = "#85837c";
+const IRON = "#55575a";
+const IRON_DARK = "#36383b";
+const TRACK = "#2c2d2f";
+const GLASS = "#9fb4c4";
+const ROD = "#f1f3f5";
 
-const rad = (deg: number) => (deg * Math.PI) / 180;
-function rotate(p: Pt, deg: number): Pt {
-  const c = Math.cos(rad(deg));
-  const s = Math.sin(rad(deg));
-  return { x: p.x * c - p.y * s, y: p.x * s + p.y * c };
+// ---------------------------------------------------------------- geometry
+
+/** Metres to drawing units, and where the slewing centre stands on the ground. */
+const SCALE = 40;
+const ORIGIN = { x: 170, y: 300 };
+export const toSvg = (p: Pt): Pt => ({
+  x: Math.round((ORIGIN.x + p.x * SCALE) * 100) / 100,
+  y: Math.round((ORIGIN.y - p.y * SCALE) * 100) / 100,
+});
+
+/** Boom foot pin, on the upper frame. */
+const FOOT: Pt = { x: 1.2, y: 2.05 };
+const BOOM = 6.9;
+const STICK = 3.35;
+/** On the bucket, from its main pin to the power-link pin. */
+const BUCKET_LINK = 0.52;
+/** Idler link (stick to cylinder head) and power link (cylinder head to bucket). */
+const IDLER = 0.62;
+const POWER = 0.6;
+/** Where the idler link pivots on the stick. */
+const IDLER_PIN: Pt = { x: 2.88, y: 0.24 };
+/** Cylinder ends: boom cylinder base on the upper frame, the rest on boom and stick. */
+const BOOM_CYL_BASE: Pt = { x: 1.95, y: 1.5 };
+const BOOM_CYL_ROD: Pt = { x: 2.4, y: 0.12 };
+const STICK_CYL_BASE: Pt = { x: 3.15, y: 1.9 };
+const STICK_CYL_ROD: Pt = { x: -0.92, y: -0.12 };
+const BUCKET_CYL_BASE: Pt = { x: -0.22, y: 0.56 };
+
+const rad = (d: number) => (d * Math.PI) / 180;
+
+/** A frame: origin and direction; local (u, v) is u along it, v to its left. */
+type Frame = { o: Pt; a: number };
+const at = (f: Frame, u: number, v: number): Pt => ({
+  x: f.o.x + u * Math.cos(f.a) - v * Math.sin(f.a),
+  y: f.o.y + u * Math.sin(f.a) + v * Math.cos(f.a),
+});
+
+/** Where two circles meet, on the side `side` points to. */
+function circles(a: Pt, ra: number, b: Pt, rb: number, side: Pt): Pt {
+  const dx = b.x - a.x;
+  const dy = b.y - a.y;
+  const d = Math.hypot(dx, dy) || 1e-6;
+  const along = (ra * ra - rb * rb + d * d) / (2 * d);
+  const h = Math.sqrt(Math.max(0, ra * ra - along * along));
+  const m = { x: a.x + (dx * along) / d, y: a.y + (dy * along) / d };
+  const p1 = { x: m.x - (dy * h) / d, y: m.y + (dx * h) / d };
+  const p2 = { x: m.x + (dy * h) / d, y: m.y - (dx * h) / d };
+  const score = (p: Pt) => (p.x - m.x) * side.x + (p.y - m.y) * side.y;
+  return score(p1) >= score(p2) ? p1 : p2;
 }
-const add = (a: Pt, b: Pt): Pt => ({ x: a.x + b.x, y: a.y + b.y });
-// Rounded, so the server's and the browser's trigonometry render the same markup.
-const round = (p: Pt): Pt => ({ x: Math.round(p.x * 100) / 100, y: Math.round(p.y * 100) / 100 });
 
-/** Turns a point in any of the machine's frames into drawing coordinates for a pose. */
-export function toWorld(pose: Pose, p: Local): Pt {
-  return round(frameToWorld(pose, p));
+/** Every frame and linkage point of the machine for a pose, in metres. */
+export function solve(pose: Pose) {
+  const boom: Frame = { o: FOOT, a: rad(pose.boom) };
+  const tip = at(boom, BOOM, 0);
+  const stick: Frame = { o: tip, a: boom.a + rad(pose.stick) };
+  const pin = at(stick, STICK, 0);
+  const bucket: Frame = { o: pin, a: stick.a + rad(pose.bucket) };
+  const link = at(bucket, BUCKET_LINK, 0);
+  const idler = at(stick, IDLER_PIN.x, IDLER_PIN.y);
+  // The cylinder head sits where the idler and power links meet, on the
+  // outer side of the stick (its local +v).
+  const outer = { x: -Math.sin(stick.a), y: Math.cos(stick.a) };
+  const head = circles(idler, IDLER, link, POWER, outer);
+  return { boom, stick, bucket, tip, pin, link, idler, head };
+}
+type Solved = ReturnType<typeof solve>;
+
+// ------------------------------------------------- lubrication routing
+
+type Local = { f: "house" | "boom" | "stick" | "head"; u: number; v: number };
+const H = (u: number, v: number): Local => ({ f: "house", u, v });
+const B = (u: number, v: number): Local => ({ f: "boom", u, v });
+const S = (u: number, v: number): Local => ({ f: "stick", u, v });
+const HEAD: Local = { f: "head", u: 0, v: 0 };
+
+function place(m: Solved, p: Local): Pt {
+  if (p.f === "house") return { x: p.u, y: p.v };
+  if (p.f === "boom") return at(m.boom, p.u, p.v);
+  if (p.f === "stick") return at(m.stick, p.u, p.v);
+  return m.head;
 }
 
-function frameToWorld(pose: Pose, p: Local): Pt {
-  if (p.frame === "house") return { x: p.x, y: p.y };
-  const boomAt = (q: Pt) => add(FOOT, rotate(q, pose.boom));
-  if (p.frame === "boom") return boomAt(p);
-  const tip = boomAt(TIP);
-  const stickAt = (q: Pt) => add(tip, rotate(q, pose.boom + pose.stick));
-  if (p.frame === "stick") return stickAt(p);
-  return add(stickAt(PIN), rotate(p, pose.boom + pose.stick + pose.bucket));
-}
-
-const h = (x: number, y: number): Local => ({ frame: "house", x, y });
-const b = (x: number, y: number): Local => ({ frame: "boom", x, y });
-const s = (x: number, y: number): Local => ({ frame: "stick", x, y });
-const k = (x: number, y: number): Local => ({ frame: "bucket", x, y });
-
-// The MX-F: an inlet block, three sections with an outlet on top and one
-// underneath, and an end plate with the indicator pin.
-export const MXF = { x: 180, y: 258, w: 68, h: 24 };
-const SECTION_X = [202, 218, 234];
+/** The main divider, on the upper frame under the boom foot; the secondary one on the boom near its tip. */
+const MAIN = { u0: 0.95, u1: 1.45, v0: 1.56, v1: 1.74 };
+const SECONDARY = { u0: 5.45, u1: 5.95, v0: -0.1, v1: 0.08 };
 
 /**
- * The six lines, in the order the MX-F serves them (lib/sentralsmoring.ts
- * LUBE_POINTS): from an outlet, along the house and up the boom, to the
- * point. The last waypoint is the lubrication point itself.
+ * The eleven lines, by outlet (lib/smoremodell.ts LINES): 0-5 from the main
+ * divider — 5 runs up the boom to the secondary divider — and 6-10 from the
+ * secondary divider. Each ends at its lubrication point.
  */
-export const ROUTES: Local[][] = [
-  // 1 Skuffebolt: top of section 1, along the top of the boom and down the stick.
-  [h(202, 258), h(202, 244), h(304, 244), b(-10, -18), b(104, -110), b(206, -90), s(4, -2), s(44, 116), s(PIN.x, PIN.y)],
-  // 2 Svingkrans: underneath section 1, down to the slewing ring.
-  [h(202, 282), h(202, 312), h(250, 312)],
-  // 3 Bom/stikke-ledd: top of section 2, along the boom to its tip.
-  [h(218, 258), h(218, 248), h(306, 248), b(-4, -12), b(110, -116), b(TIP.x, TIP.y)],
-  // 4 Bomsylinder, fot: underneath section 2, to the cylinder's base.
-  [h(218, 282), h(218, 296), h(296, 296), h(300, 292)],
-  // 5 Bomsylinder, stang: top of section 3, along the boom's underside.
-  [h(234, 258), h(234, 252), h(308, 252), b(4, 2), b(76, -44)],
-  // 6 Bomfot: underneath section 3, round the end of the block.
-  [h(234, 282), h(234, 288), h(268, 288), h(268, 262), h(FOOT.x, FOOT.y)],
+const ROUTES: Local[][] = [
+  // Main divider
+  [H(1.02, 1.56), H(1.02, 1.24), H(0.3, 1.24)], // Svingkrans
+  [H(1.32, 1.56), H(1.32, 1.44), H(1.86, 1.44), H(BOOM_CYL_BASE.x, BOOM_CYL_BASE.y)], // Bomsylinder, fot
+  [H(1.0, 1.74), H(1.0, 2.05), H(FOOT.x, FOOT.y)], // Bomfot
+  [H(1.12, 1.74), H(1.12, 1.86), B(0.7, -0.2), B(2.2, 0.04), B(BOOM_CYL_ROD.x, BOOM_CYL_ROD.y)], // Bomsylinder, stang
+  [H(1.24, 1.74), H(1.24, 1.82), B(0.7, 0.0), B(2.7, 1.25), B(STICK_CYL_BASE.x, STICK_CYL_BASE.y)], // Stikkesylinder, fot
+  [H(1.36, 1.74), H(1.36, 1.78), B(0.7, 0.16), B(3.15, 0.92), B(SECONDARY.u0, -0.01)], // til sekundærfordeleren
+  // Secondary divider
+  [B(SECONDARY.u1, 0.0), B(BOOM, 0)], // Bom/stikke-ledd
+  [B(5.65, SECONDARY.v1), B(6.3, 0.3), S(-0.45, -0.26), S(STICK_CYL_ROD.x, STICK_CYL_ROD.y)], // Stikkesylinder, stang
+  [B(5.8, SECONDARY.v1), B(6.55, 0.2), S(-0.05, 0.36), S(BUCKET_CYL_BASE.x, BUCKET_CYL_BASE.y)], // Skuffesylinder, fot
+  [B(5.65, SECONDARY.v0), B(6.4, -0.24), S(0.4, 0.14), S(2.6, 0.16), HEAD], // Skuffelenke
+  [B(5.8, SECONDARY.v0), B(6.55, -0.3), S(0.4, -0.04), S(3.15, -0.06), S(STICK, 0)], // Skuffebolt
 ];
 
-/** The pump's line to the MX-F inlet. */
+/** The lines in drawing units for a pose. */
+export function routes(pose: Pose): Pt[][] {
+  const m = solve(pose);
+  return ROUTES.map((r) => r.map((p) => toSvg(place(m, p))));
+}
+
+/** The pump's line down to the main divider. */
 export const FEED: Pt[] = [
-  { x: 168, y: 226 },
-  { x: 160, y: 226 },
-  { x: 160, y: 270 },
-  { x: 180, y: 270 },
-];
+  { x: 0.62, y: 1.86 },
+  { x: 0.84, y: 1.86 },
+  { x: 0.84, y: 1.65 },
+  { x: MAIN.u0, y: 1.65 },
+].map(toSvg);
+/** Where the pump stands, in drawing units (its housing's bottom-left corner). */
+export const PUMP_AT = toSvg({ x: 0.06, y: 1.68 });
 
 export function polyline(points: Pt[]) {
   return points.map((p, i) => `${i ? "L" : "M"}${p.x.toFixed(1)} ${p.y.toFixed(1)}`).join(" ");
@@ -98,186 +161,292 @@ export function along(points: Pt[], f: number): Pt {
   for (let i = 0; i < lengths.length; i++) {
     if (left <= lengths[i] || i === lengths.length - 1) {
       const r = lengths[i] ? Math.min(1, left / lengths[i]) : 0;
-      return round({ x: points[i].x + (points[i + 1].x - points[i].x) * r, y: points[i].y + (points[i + 1].y - points[i].y) * r });
+      return {
+        x: Math.round((points[i].x + (points[i + 1].x - points[i].x) * r) * 100) / 100,
+        y: Math.round((points[i].y + (points[i + 1].y - points[i].y) * r) * 100) / 100,
+      };
     }
     left -= lengths[i];
   }
   return points[points.length - 1];
 }
 
-export const routeAt = (pose: Pose, i: number) => ROUTES[i].map((p) => toWorld(pose, p));
+// ---------------------------------------------------------------- drawing
 
-const shape = (pose: Pose, pts: Local[]) => polyline(pts.map((p) => toWorld(pose, p))) + " Z";
+const path = (pts: Pt[]) => polyline(pts.map(toSvg)) + " Z";
 
-/** A hydraulic cylinder: polished rod, and a barrel of fixed length from the base. */
-function Cylinder({ from, to, barrel }: { from: Pt; to: Pt; barrel: number }) {
-  const len = Math.hypot(to.x - from.x, to.y - from.y) || 1;
-  const end = round({ x: from.x + ((to.x - from.x) / len) * barrel, y: from.y + ((to.y - from.y) / len) * barrel });
+/** An outline through metre points in a frame: M, L, C, Q and Z commands. */
+function shape(f: Frame, cmds: (string | number)[]) {
+  let out = "";
+  let i = 0;
+  while (i < cmds.length) {
+    const c = cmds[i++] as string;
+    const n = c === "C" ? 3 : c === "Q" ? 2 : c === "Z" ? 0 : 1;
+    const pts: string[] = [];
+    for (let k = 0; k < n; k++) {
+      const p = toSvg(at(f, cmds[i++] as number, cmds[i++] as number));
+      pts.push(`${p.x} ${p.y}`);
+    }
+    out += `${c}${pts.join(" ")} `;
+  }
+  return out.trim();
+}
+
+const HOUSE: Frame = { o: { x: 0, y: 0 }, a: 0 };
+
+function Pin({ p, r = 0.13 }: { p: Pt; r?: number }) {
+  const s = toSvg(p);
+  return (
+    <g>
+      <circle cx={s.x} cy={s.y} r={r * SCALE} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
+      <circle cx={s.x} cy={s.y} r={r * SCALE * 0.45} fill={IRON} />
+    </g>
+  );
+}
+
+/** A hydraulic cylinder: barrel of fixed length from the base, chrome rod to the head. */
+function Cylinder({ from, to, barrel, bore = 0.3 }: { from: Pt; to: Pt; barrel: number; bore?: number }) {
+  const a = toSvg(from);
+  const b = toSvg(to);
+  const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+  const reach = Math.min(barrel * SCALE, len - 6);
+  const e = {
+    x: Math.round((a.x + ((b.x - a.x) / len) * reach) * 100) / 100,
+    y: Math.round((a.y + ((b.y - a.y) / len) * reach) * 100) / 100,
+  };
+  const w = bore * SCALE;
   return (
     <g strokeLinecap="round">
-      <line x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke="#9a9a9a" strokeWidth="6" />
-      <line x1={from.x} y1={from.y} x2={to.x} y2={to.y} stroke="#e9e9e9" strokeWidth="3" />
-      <line x1={from.x} y1={from.y} x2={end.x} y2={end.y} stroke={EDGE} strokeWidth="14" />
-      <line x1={from.x} y1={from.y} x2={end.x} y2={end.y} stroke={BODY} strokeWidth="11" />
-      <circle cx={from.x} cy={from.y} r="4" fill={SOFT} />
-      <circle cx={to.x} cy={to.y} r="4" fill={SOFT} />
+      <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke="#9aa0a6" strokeWidth={w * 0.48 + 1.5} />
+      <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={ROD} strokeWidth={w * 0.48} />
+      <line x1={a.x} y1={a.y} x2={e.x} y2={e.y} stroke={EDGE} strokeWidth={w + 2} />
+      <line x1={a.x} y1={a.y} x2={e.x} y2={e.y} stroke={BODY_SHADE} strokeWidth={w} />
+      <line x1={a.x} y1={a.y} x2={e.x} y2={e.y} stroke={BODY} strokeWidth={w * 0.35} opacity="0.8" />
     </g>
   );
 }
 
-/** The excavator's tracks and house; nothing here moves. */
-export function Undercarriage() {
+function Link({ from, to, width }: { from: Pt; to: Pt; width: number }) {
+  const a = toSvg(from);
+  const b = toSvg(to);
   return (
-    <g>
-      {/* Tracks */}
-      <rect x="118" y="320" width="292" height="42" rx="21" fill={BODY} stroke={EDGE} strokeWidth="2" />
-      <rect x="126" y="326" width="276" height="30" rx="15" fill="none" stroke={SOFT} strokeWidth="2" strokeDasharray="7 5" />
-      <circle cx="140" cy="341" r="15" fill={BODY} stroke={EDGE} strokeWidth="2" />
-      <circle cx="388" cy="341" r="15" fill={BODY} stroke={EDGE} strokeWidth="2" />
-      {[186, 232, 278, 324].map((x) => (
-        <circle key={x} cx={x} cy="343" r="8" fill={BODY} stroke={EDGE} strokeWidth="2" />
-      ))}
-      {/* Slewing ring */}
-      <rect x="196" y="306" width="140" height="15" rx="4" fill="#f5f2ef" stroke={EDGE} strokeWidth="2" />
-      {/* Counterweight, engine hood, cab */}
-      <path d="M96 304 V262 Q96 238 122 236 H152 V304 Z" fill="#f2f2f2" stroke={EDGE} strokeWidth="2" />
-      <rect x="150" y="232" width="92" height="72" rx="4" fill={BODY} stroke={EDGE} strokeWidth="2" />
-      {[164, 176, 188].map((y) => (
-        <line key={y} x1="104" y1={y + 92} x2="142" y2={y + 92} stroke={SOFT} strokeWidth="2" strokeLinecap="round" />
-      ))}
-      <path d="M240 304 V160 Q240 150 250 150 H292 Q300 150 302 158 L318 236 H340 V304 Z" fill={BODY} stroke={EDGE} strokeWidth="2" />
-      <path d="M250 162 H290 L304 230 H250 Z" fill="#e8edf3" stroke={EDGE} strokeWidth="1.5" />
-      <line x1="96" y1="304" x2="340" y2="304" stroke={EDGE} strokeWidth="2" />
+    <g strokeLinecap="round">
+      <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={IRON_DARK} strokeWidth={width * SCALE + 2} />
+      <line x1={a.x} y1={a.y} x2={b.x} y2={b.y} stroke={IRON} strokeWidth={width * SCALE} />
     </g>
   );
 }
 
-/** Boom, stick, bucket and their cylinders, for a pose. */
+/** Tracks, undercarriage and upper structure; none of it moves. */
+export function Body() {
+  const sprocket = toSvg({ x: -2.18, y: 0.57 });
+  const idler = toSvg({ x: 2.2, y: 0.55 });
+  const track = shape(HOUSE, ["M", -2.18, 1.13, "L", 2.2, 1.11, "Q", 2.78, 1.1, 2.76, 0.55, "Q", 2.74, 0.0, 2.2, 0.0, "L", -2.18, 0.0, "Q", -2.76, 0.0, -2.75, 0.57, "Q", -2.74, 1.13, -2.18, 1.13, "Z"]);
+  return (
+    <g strokeLinejoin="round">
+      {/* Crawler track: shoes, track frame, rollers, idler and sprocket */}
+      <path d={track} fill={TRACK} />
+      <path d={track} fill="none" stroke="#1b1b1c" strokeWidth="5" strokeDasharray="5 2.2" />
+      <path
+        d={path([{ x: -1.85, y: 0.36 }, { x: 1.9, y: 0.36 }, { x: 2.05, y: 0.82 }, { x: 1.7, y: 0.98 }, { x: -1.7, y: 0.98 }, { x: -2.0, y: 0.82 }])}
+        fill={IRON}
+        stroke={IRON_DARK}
+        strokeWidth="1"
+      />
+      <path d={path([{ x: -1.6, y: 0.62 }, { x: 1.62, y: 0.62 }, { x: 1.55, y: 0.78 }, { x: -1.55, y: 0.78 }])} fill={IRON_DARK} opacity="0.5" />
+      {[-1.55, -1.1, -0.65, -0.2, 0.25, 0.7, 1.15, 1.6].map((x) => {
+        const p = toSvg({ x, y: 0.22 });
+        return <circle key={x} cx={p.x} cy={p.y} r={0.15 * SCALE} fill={IRON} stroke={IRON_DARK} strokeWidth="1" />;
+      })}
+      {[-0.8, 0.85].map((x) => {
+        const p = toSvg({ x, y: 1.02 });
+        return <circle key={x} cx={p.x} cy={p.y} r={0.09 * SCALE} fill={IRON} stroke={IRON_DARK} strokeWidth="1" />;
+      })}
+      <circle cx={idler.x} cy={idler.y} r={0.42 * SCALE} fill={IRON} stroke={IRON_DARK} strokeWidth="1.5" />
+      <circle cx={idler.x} cy={idler.y} r={0.16 * SCALE} fill={IRON_DARK} />
+      <circle cx={sprocket.x} cy={sprocket.y} r={0.44 * SCALE} fill={IRON} stroke={IRON_DARK} strokeWidth="3" strokeDasharray="4 3" />
+      <circle cx={sprocket.x} cy={sprocket.y} r={0.24 * SCALE} fill={IRON_DARK} />
+      {/* Car body and slewing ring */}
+      <path d={path([{ x: -1.05, y: 1.1 }, { x: 1.05, y: 1.1 }, { x: 0.95, y: 1.36 }, { x: -0.95, y: 1.36 }])} fill={IRON_DARK} />
+
+      {/* Cab, on the far (left) side: its glass shows above and behind the boom */}
+      <path
+        d={shape(HOUSE, ["M", -0.12, 1.72, "L", -0.12, 3.2, "Q", -0.11, 3.32, 0.02, 3.33, "L", 1.3, 3.33, "Q", 1.42, 3.32, 1.46, 3.2, "L", 1.72, 1.95, "L", 1.72, 1.72, "Z"])}
+        fill={BODY_SHADE}
+        stroke={EDGE}
+        strokeWidth="1"
+      />
+      <path d={shape(HOUSE, ["M", 0.0, 2.05, "L", 0.0, 3.2, "L", 1.32, 3.2, "L", 1.58, 2.05, "Z"])} fill={GLASS} />
+      <path d={shape(HOUSE, ["M", 0.62, 2.05, "L", 0.62, 3.2])} stroke={IRON_DARK} strokeWidth="2.5" />
+      <path d={shape(HOUSE, ["M", 0.12, 3.1, "L", 0.42, 3.1, "L", 0.12, 2.6, "Z"])} fill="#ffffff" opacity="0.35" />
+
+      {/* Upper frame */}
+      <path d={path([{ x: -3.45, y: 1.36 }, { x: 2.08, y: 1.36 }, { x: 2.08, y: 1.62 }, { x: -3.45, y: 1.62 }])} fill={IRON} />
+      {/* Counterweight */}
+      <path
+        d={shape(HOUSE, ["M", -1.78, 1.4, "L", -3.2, 1.4, "Q", -3.64, 1.42, -3.64, 1.92, "L", -3.62, 2.32, "Q", -3.58, 2.66, -3.18, 2.68, "L", -1.78, 2.68, "Z"])}
+        fill={BODY_DARK}
+        stroke={EDGE}
+        strokeWidth="1"
+      />
+      <path d={shape(HOUSE, ["M", -3.5, 2.3, "L", -1.85, 2.3])} stroke={BODY} strokeWidth="2" opacity="0.6" />
+      {/* Engine compartment, exhaust and handrails */}
+      <path d={path([{ x: -1.8, y: 1.6 }, { x: -0.2, y: 1.6 }, { x: -0.2, y: 2.74 }, { x: -0.35, y: 2.86 }, { x: -1.8, y: 2.86 }])} fill={BODY} stroke={EDGE} strokeWidth="1" />
+      {[1.85, 1.98, 2.11, 2.24].map((y) => (
+        <path key={y} d={shape(HOUSE, ["M", -1.6, y, "L", -0.95, y])} stroke={BODY_DARK} strokeWidth="2.2" strokeLinecap="round" />
+      ))}
+      <path d={shape(HOUSE, ["M", -0.9, 2.86, "L", -0.9, 3.25])} stroke={IRON_DARK} strokeWidth="4.5" strokeLinecap="round" />
+      <path d={shape(HOUSE, ["M", -3.3, 2.68, "L", -3.3, 3.12, "L", -0.3, 3.12, "L", -0.3, 2.84])} fill="none" stroke={IRON_DARK} strokeWidth="1.5" />
+      <path d={shape(HOUSE, ["M", -1.8, 2.86, "L", -1.8, 3.12])} stroke={IRON_DARK} strokeWidth="1.5" />
+      {/* Tank compartment, where the pump is mounted */}
+      <path d={path([{ x: -0.2, y: 1.6 }, { x: 0.78, y: 1.6 }, { x: 0.78, y: 2.5 }, { x: -0.2, y: 2.5 }])} fill={BODY} stroke={EDGE} strokeWidth="1" />
+      <path d={shape(HOUSE, ["M", -0.2, 2.42, "L", 0.78, 2.42])} stroke={BODY_SHADE} strokeWidth="2" />
+      {/* Front of the upper frame: boom foot plates and the boom cylinder mount */}
+      <path d={path([{ x: 0.78, y: 1.6 }, { x: 0.86, y: 2.3 }, { x: 1.52, y: 2.34 }, { x: 1.85, y: 1.62 }])} fill={IRON} stroke={IRON_DARK} strokeWidth="1" />
+      <path d={path([{ x: 1.7, y: 1.36 }, { x: 2.2, y: 1.36 }, { x: 2.16, y: 1.66 }, { x: 1.78, y: 1.7 }])} fill={IRON} stroke={IRON_DARK} strokeWidth="1" />
+      {/* Step at the front corner */}
+      <path d={shape(HOUSE, ["M", 0.6, 1.36, "L", 0.6, 1.15, "L", 0.82, 1.15])} fill="none" stroke={IRON_DARK} strokeWidth="2" />
+    </g>
+  );
+}
+
+/** Boom, stick, linkage and bucket, with their cylinders, for a pose. */
 export function Arm({ pose }: { pose: Pose }) {
-  const w = (p: Local) => toWorld(pose, p);
+  const m = solve(pose);
   return (
-    <g>
-      <Cylinder from={w(h(300, 292))} to={w(b(76, -44))} barrel={58} />
+    <g strokeLinejoin="round">
+      <Cylinder from={BOOM_CYL_BASE} to={at(m.boom, BOOM_CYL_ROD.x, BOOM_CYL_ROD.y)} barrel={1.3} bore={0.32} />
+      {/* Boom: box section, deepest at the knee */}
       <path
-        d={shape(pose, [b(-14, -10), b(102, -120), b(118, -124), b(224, -96), b(230, -74), b(216, -64), b(116, -90), b(10, 16)])}
+        d={shape(m.boom, ["M", -0.28, 0.32, "Q", 0.9, 1.05, 2.95, 1.56, "Q", 3.35, 1.62, 3.7, 1.42, "L", 6.95, 0.34, "Q", 7.3, 0.2, 7.25, -0.08, "Q", 7.15, -0.36, 6.85, -0.32, "L", 3.55, 0.62, "Q", 3.2, 0.7, 2.9, 0.58, "L", 0.35, -0.34, "Q", -0.3, -0.45, -0.38, 0.0, "Z"])}
         fill={BODY}
         stroke={EDGE}
-        strokeWidth="2"
-        strokeLinejoin="round"
+        strokeWidth="1.2"
       />
-      <Cylinder from={w(b(96, -126))} to={w(s(-24, -46))} barrel={64} />
+      <path d={shape(m.boom, ["M", 0.4, 0.2, "Q", 1.5, 0.75, 3.0, 1.18, "L", 6.6, 0.12])} fill="none" stroke={BODY_SHADE} strokeWidth="2.5" />
+      {/* Brackets: boom cylinder rod end below, stick cylinder head on top */}
+      <path d={shape(m.boom, ["M", 2.1, 0.3, "L", 2.4, -0.02, "L", 2.72, 0.42, "Z"])} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
+      <path d={shape(m.boom, ["M", 2.85, 1.5, "L", 3.15, 2.02, "L", 3.5, 1.5, "Z"])} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
+      <Cylinder from={at(m.boom, STICK_CYL_BASE.x, STICK_CYL_BASE.y)} to={at(m.stick, STICK_CYL_ROD.x, STICK_CYL_ROD.y)} barrel={2.35} bore={0.3} />
+      {/* Stick */}
       <path
-        d={shape(pose, [s(-34, -44), s(-16, -54), s(14, -6), s(54, 124), s(38, 142), s(22, 132), s(-10, 10)])}
+        d={shape(m.stick, ["M", -1.02, -0.28, "Q", -1.12, -0.02, -0.86, 0.16, "L", -0.55, 0.36, "Q", -0.2, 0.5, 0.25, 0.44, "L", 2.95, 0.24, "Q", 3.4, 0.2, 3.5, 0.06, "Q", 3.52, -0.14, 3.3, -0.17, "L", 0.45, -0.4, "Q", -0.4, -0.5, -0.75, -0.42, "Z"])}
         fill={BODY}
         stroke={EDGE}
-        strokeWidth="2"
-        strokeLinejoin="round"
+        strokeWidth="1.2"
       />
-      <Cylinder from={w(s(8, -16))} to={w(k(24, -14))} barrel={52} />
-      <path
-        d={(() => {
-          const p = (x: number, y: number) => w(k(x, y));
-          const a = p(-6, -8);
-          const c1 = p(54, 18);
-          const e1 = p(34, 58);
-          const c2 = p(18, 68);
-          const e2 = p(-6, 62);
-          const t1 = p(-18, 68);
-          const t2 = p(-12, 56);
-          const c3 = p(-18, 24);
-          const l = p(24, -14);
-          return `M${a.x} ${a.y} L${l.x} ${l.y} Q${c1.x} ${c1.y} ${e1.x} ${e1.y} Q${c2.x} ${c2.y} ${e2.x} ${e2.y} L${t1.x} ${t1.y} L${t2.x} ${t2.y} Q${c3.x} ${c3.y} ${a.x} ${a.y} Z`;
-        })()}
-        fill="#f2f2f2"
-        stroke={EDGE}
-        strokeWidth="2"
-        strokeLinejoin="round"
-      />
-      {/* Pivot pins */}
-      {[w(h(FOOT.x, FOOT.y)), w(b(TIP.x, TIP.y)), w(s(PIN.x, PIN.y))].map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r="6" fill={SOFT} stroke={EDGE} strokeWidth="1.5" />
+      <path d={shape(m.stick, ["M", 0.3, 0.02, "L", 3.0, -0.02])} stroke={BODY_SHADE} strokeWidth="2.5" />
+      <path d={shape(m.stick, ["M", -0.42, 0.42, "L", -0.22, 0.72, "L", 0.05, 0.44, "Z"])} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
+      <Cylinder from={at(m.stick, BUCKET_CYL_BASE.x, BUCKET_CYL_BASE.y)} to={m.head} barrel={1.7} bore={0.26} />
+      <Bucket m={m} />
+      {/* Idler link (stick to cylinder head) and power link (cylinder head to bucket) */}
+      <Link from={m.idler} to={m.head} width={0.16} />
+      <Link from={m.head} to={m.link} width={0.2} />
+      {[FOOT, m.tip, at(m.boom, BOOM_CYL_ROD.x, BOOM_CYL_ROD.y), at(m.boom, STICK_CYL_BASE.x, STICK_CYL_BASE.y), BOOM_CYL_BASE].map((p, i) => (
+        <Pin key={`a${i}`} p={p} r={i < 2 ? 0.2 : 0.12} />
+      ))}
+      {[at(m.stick, STICK_CYL_ROD.x, STICK_CYL_ROD.y), at(m.stick, BUCKET_CYL_BASE.x, BUCKET_CYL_BASE.y), m.idler, m.head, m.link, m.pin].map((p, i) => (
+        <Pin key={`b${i}`} p={p} r={i === 5 ? 0.16 : 0.11} />
       ))}
     </g>
   );
 }
 
 /**
- * The EP-1 style pump on the engine hood. `level` is the reservoir fill
- * (0-1); `stir` turns the agitator blade (an angle in degrees); `running`
- * lights the pump's lamp.
+ * A large GP bucket in profile. Its frame has the main pin at the origin and
+ * the power-link pin along +u; the body hangs below (-v). With the stick
+ * plumb and the bucket level, the mouth faces the machine and the tooth
+ * points back towards it, as on any backhoe.
  */
-export function Pump({ x, y, level, stir, running }: { x: number; y: number; level: number; stir: number; running: boolean }) {
-  const top = y + 6;
-  const inner = 44;
-  const fillTop = top + inner * (1 - level);
+function Bucket({ m }: { m: Solved }) {
+  const f = m.bucket;
+  // A large bucket: the body is drawn 15 % up from the base profile, about
+  // the main pin; the pins and lugs stay where the linkage puts them.
+  const big = (cmds: (string | number)[]) => shape(f, cmds.map((c) => (typeof c === "number" ? c * 1.15 : c)));
+  return (
+    <g strokeLinejoin="round">
+      {/* Side plate */}
+      <path
+        d={big(["M", -0.5, -0.16, "L", 0.8, -0.16, "C", 1.06, -0.36, 1.1, -0.92, 0.86, -1.3, "C", 0.66, -1.58, 0.28, -1.66, -0.05, -1.66, "L", -0.52, -1.7, "L", -0.56, -1.54, "Q", -0.68, -0.86, -0.5, -0.16, "Z"])}
+        fill={BODY_SHADE}
+        stroke={EDGE}
+        strokeWidth="1.2"
+      />
+      {/* Side cutter along the mouth, wear straps on the wrapper */}
+      <path d={big(["M", -0.52, -1.5, "Q", -0.62, -0.86, -0.46, -0.24, "L", -0.36, -0.24, "Q", -0.5, -0.86, -0.42, -1.5, "Z"])} fill={BODY_DARK} />
+      {[
+        [0.98, -0.62, 0.84, -0.66],
+        [0.92, -1.08, 0.78, -1.06],
+        [0.55, -1.52, 0.47, -1.4],
+      ].map(([u0, v0, u1, v1], i) => (
+        <path key={i} d={big(["M", u0, v0, "L", u1, v1])} stroke={BODY_DARK} strokeWidth="3" strokeLinecap="round" />
+      ))}
+      {/* Lugs carrying the two pins */}
+      <path d={shape(f, ["M", -0.3, -0.19, "Q", -0.26, 0.16, 0.0, 0.16, "L", 0.52, 0.14, "Q", 0.74, 0.12, 0.8, -0.19, "Z"])} fill={BODY_DARK} stroke={EDGE} strokeWidth="1" />
+      {/* Lip and tooth */}
+      <path d={big(["M", -0.05, -1.66, "L", -0.52, -1.7, "L", -0.56, -1.54, "L", -0.1, -1.56, "Z"])} fill={IRON} />
+      <path d={big(["M", -0.5, -1.55, "L", -0.74, -1.62, "L", -0.9, -1.69, "L", -0.74, -1.73, "L", -0.5, -1.71, "Z"])} fill={IRON_DARK} />
+    </g>
+  );
+}
+
+/**
+ * The EP-1 style pump: black housing, transparent reservoir with grease and
+ * an agitator blade. `level` is the reservoir fill (0-1), `stir` turns the
+ * blade (degrees), `running` lights the lamp. (x, y) is the housing's
+ * bottom-left corner; drawn larger than life so it reads on the machine.
+ */
+export function Pump({ x, y, level, stir, running, scale = 0.6 }: { x: number; y: number; level: number; stir: number; running: boolean; scale?: number }) {
   const blade = Math.round(Math.abs(Math.cos(rad(stir))) * 1000) / 1000;
+  const inner = 44;
+  const top = 6;
+  const fillTop = top + inner * (1 - level);
   return (
-    <g>
-      {/* Reservoir, lid */}
-      <rect x={x + 4} y={top} width="32" height={inner} rx="5" fill="#eef3f8" />
-      <rect x={x + 5} y={fillTop} width="30" height={top + inner - fillTop} rx="4" fill={GREASE} />
-      <rect x={x + 5} y={fillTop} width="30" height="3" rx="1.5" fill="#f6c46f" />
-      <rect x={x + 20 - 13 * blade} y={top + 10} width={Math.max(2, 26 * blade)} height="30" rx="2" fill="#ffffff" opacity="0.35" />
-      <line x1={x + 20} y1={top} x2={x + 20} y2={top + inner} stroke="#5a5a5a" strokeWidth="1.5" opacity="0.5" />
-      <rect x={x + 4} y={top} width="32" height={inner} rx="5" fill="none" stroke="#9aa3ad" strokeWidth="1.5" />
-      <rect x={x + 9} y={top + 4} width="4" height={inner - 10} rx="2" fill="#ffffff" opacity="0.7" />
-      <rect x={x + 2} y={y} width="36" height="8" rx="3" fill="#1d1d1d" />
-      {/* Pump housing */}
-      <rect x={x} y={top + inner} width="40" height="24" rx="4" fill="#1d1d1d" />
-      <rect x={x + 6} y={top + inner + 7} width="18" height="3" rx="1.5" fill="#6b6b6b" />
-      <rect x={x + 6} y={top + inner + 13} width="12" height="3" rx="1.5" fill="#6b6b6b" />
-      <circle cx={x + 32} cy={top + inner + 9} r="3" fill={running ? "#c11e31" : "#4a4a4a"} />
+    <g transform={`translate(${x} ${Math.round((y - 80 * scale) * 100) / 100}) scale(${scale})`}>
+      <rect x="4" y={top} width="32" height={inner} rx="5" fill="#eef3f8" />
+      <rect x="5" y={fillTop} width="30" height={top + inner - fillTop} rx="4" fill={GREASE} />
+      <rect x="5" y={fillTop} width="30" height="3" rx="1.5" fill="#f6c46f" />
+      <rect x={20 - 13 * blade} y={top + 10} width={Math.max(2, 26 * blade)} height="30" rx="2" fill="#ffffff" opacity="0.35" />
+      <line x1="20" y1={top} x2="20" y2={top + inner} stroke="#5a5a5a" strokeWidth="1.5" opacity="0.5" />
+      <rect x="4" y={top} width="32" height={inner} rx="5" fill="none" stroke="#9aa3ad" strokeWidth="1.5" />
+      <rect x="9" y={top + 4} width="4" height={inner - 10} rx="2" fill="#ffffff" opacity="0.7" />
+      <rect x="2" y="0" width="36" height="8" rx="3" fill="#1d1d1d" />
+      <rect x="0" y={top + inner} width="40" height="30" rx="4" fill="#1d1d1d" />
+      <rect x="6" y={top + inner + 8} width="18" height="3" rx="1.5" fill="#6b6b6b" />
+      <rect x="6" y={top + inner + 15} width="12" height="3" rx="1.5" fill="#6b6b6b" />
+      <circle cx="32" cy={top + inner + 10} r="3" fill={running ? "#c11e31" : "#4a4a4a"} />
     </g>
   );
 }
 
-/**
- * The MX-F style distributor: galvanised sections between an inlet block and
- * an end plate. `active` is the outlet (0-5) delivering now; `pin` is how far
- * the indicator pin stands out (0-1).
- */
-export function Distributor({ active, pin }: { active: number | null; pin: number }) {
-  const { x, y, w, h: hh } = MXF;
+/** The two dividers, drawn plainly: a galvanised block that warms up while it delivers. */
+export function Dividers({ pose, main, secondary }: { pose: Pose; main: boolean; secondary: boolean }) {
+  const m = solve(pose);
+  const block = (f: Frame, r: typeof MAIN) =>
+    shape(f, ["M", r.u0, r.v0, "L", r.u1, r.v0, "L", r.u1, r.v1, "L", r.u0, r.v1, "Z"]);
   return (
     <g>
-      <defs>
-        <linearGradient id="mxf-steel" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#eef1f4" />
-          <stop offset="45%" stopColor="#c3cad2" />
-          <stop offset="100%" stopColor="#8f98a3" />
-        </linearGradient>
-      </defs>
-      {/* Indicator pin */}
-      <rect x={x + w - 2} y={y + hh / 2 - 2.5} width={5 + 9 * pin} height="5" rx="2" fill="#c11e31" />
-      <rect x={x} y={y} width={w} height={hh} rx="3" fill="url(#mxf-steel)" stroke="#7d8691" strokeWidth="1.5" />
-      {[194, 210, 226, 242].map((sx) => (
-        <line key={sx} x1={sx} y1={y + 1} x2={sx} y2={y + hh - 1} stroke="#7d8691" strokeWidth="1.2" />
+      {[
+        { d: block(HOUSE, MAIN), on: main },
+        { d: block(m.boom, SECONDARY), on: secondary },
+      ].map((b, i) => (
+        <path
+          key={i}
+          d={b.d}
+          fill={b.on ? "#f3d9a8" : "#c3cad2"}
+          stroke={b.on ? GREASE_DARK : "#6f7882"}
+          strokeWidth="1.5"
+          className="transition-[fill,stroke] duration-300"
+        />
       ))}
-      {SECTION_X.flatMap((sx, si) =>
-        [y - 3, y + hh - 1].map((oy, side) => {
-          const outlet = si * 2 + side;
-          return (
-            <rect
-              key={`${sx}-${side}`}
-              x={sx - 4}
-              y={oy}
-              width="8"
-              height="4"
-              rx="1"
-              fill={active === outlet ? GREASE : "#7d8691"}
-            />
-          );
-        }),
-      )}
-      <circle cx={x + 7} cy={y + hh / 2} r="3" fill="#7d8691" />
     </g>
   );
 }
 
 /** A grease gun at a point, for the manual round. */
-export function GreaseGun({ at }: { at: Pt }) {
+export function GreaseGun({ at: p }: { at: Pt }) {
   return (
-    <g transform={`translate(${at.x} ${at.y}) rotate(-35)`}>
+    <g transform={`translate(${p.x} ${p.y}) rotate(-35) scale(0.7)`}>
       <rect x="6" y="-5" width="10" height="10" rx="2" fill="#1d1d1d" />
       <rect x="16" y="-8" width="40" height="16" rx="7" fill="#c11e31" />
       <rect x="20" y="8" width="4" height="16" rx="2" fill="#1d1d1d" transform="rotate(20 22 8)" />
@@ -285,3 +454,10 @@ export function GreaseGun({ at }: { at: Pt }) {
     </g>
   );
 }
+
+/** The ground, the trench the machine digs and the spoil heap beyond it, in drawing units. */
+const SURFACE = ["M", -6, 0, "L", 4.1, 0, "Q", 4.4, -2.5, 5.1, -2.65, "L", 11.5, -2.65, "Q", 12.5, -2.5, 12.8, 0, "L", 13.2, 0, "Q", 14.1, 1.3, 15.0, 1.25, "Q", 15.8, 1.2, 16.4, 0, "L", 20, 0];
+export const GROUND = {
+  surface: shape(HOUSE, SURFACE),
+  fill: shape(HOUSE, [...SURFACE, "L", 20, -4, "L", -6, -4, "Z"]),
+};
