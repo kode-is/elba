@@ -23,11 +23,14 @@ import {
   OPTIMAL,
   overflowAt,
   PERIOD,
+  digPhaseAt,
+  loadAt,
+  spillAt,
   phaseOf,
   poseAt,
   type CyclePhase,
 } from "@/lib/smoremodell";
-import { along, Arm, Body, Dividers, FEED, GreaseGun, GROUND, polyline, Pump, PUMP_AT, PUMP_SCALE, routes } from "@/components/sentralsmoring/Machine";
+import { along, Arm, Body, Dividers, FEED, GreaseGun, GROUND, Load, polyline, Pump, PUMP_AT, PUMP_SCALE, routes } from "@/components/sentralsmoring/Machine";
 import { GreaseChart } from "@/components/sentralsmoring/GreaseChart";
 import { PinSection } from "@/components/sentralsmoring/PinSection";
 import { DemoControl, DemoStatus, DemoSteps, DemoToggle, useLoopClock, useOnScreen, useSmallScreen } from "@/components/demo/Demo";
@@ -75,6 +78,9 @@ export function LubricationDemo() {
   const u = auto ? cycleAt(t).u : null;
   const phase = phaseOf(u);
   const lines = routes(pose);
+  const digPhase = digPhaseAt(mode, t);
+  const load = digPhase === null ? 0 : loadAt(digPhase, pose);
+  const emptying = digPhase === null ? 0 : spillAt(digPhase, pose);
   // Marks and labels grow on a phone, where the drawing renders at under half size.
   const k = small ? 1.8 : 1;
 
@@ -121,6 +127,7 @@ export function LubricationDemo() {
 
           <Body />
           <Arm pose={pose} />
+          <Load pose={pose} load={load} emptying={emptying} />
 
           {/* The lubrication system: only on the machine that has one */}
           <g className="transition-opacity duration-500" opacity={auto ? 1 : 0}>
@@ -146,9 +153,6 @@ export function LubricationDemo() {
                 return <circle key={`${i}-${j}`} cx={p.x} cy={p.y} r={3.2 * k} fill={ILL.grease} stroke={ILL.greaseDark} strokeWidth="1" />;
               }),
             )}
-            <text x={PUMP_AT.x - 4} y={PUMP_AT.y - 4} textAnchor="end" fill="#000000" fontSize={13 * k} fontWeight="600" fontFamily="var(--font-inter)">
-              EP-1
-            </text>
           </g>
 
           {/* The points: fresh grease, a ring as a dose lands; overflow and dryness by hand */}

@@ -368,15 +368,24 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     spirit of `/brannslukking`'s suppression demo, drawn on BEKA EP-1 and
     MX-F parts on an excavator.
     - `components/sentralsmoring/LubricationDemo.tsx` plays one working day
-      (07–15) in about a minute. The machine (`Machine.tsx`) is a 50-tonne
-      class excavator at CAT 350 proportions (6.9 m reach boom, 3.35 m stick,
-      5.4 m track, a large GP bucket), laid out in metres and solved as a
-      linkage: the bucket is driven by its cylinder through the idler and
-      power links. The dig cycle (`lib/smoremodell.ts` `DIG_KEYS`) is fitted
-      by inverse kinematics to the trench drawn in `Machine.tsx` — the bucket
-      cuts at most a few centimetres into the floor and dumps on the spoil
-      heap; change the ground and the keys together. Neutral grey, no
-      manufacturer livery.
+      (07–15) in about a minute. The excavator's geometry is in
+      `lib/gravemaskin.ts`: a 50-tonne class machine at CAT 350 proportions
+      (6.9 m reach boom, 3.35 m stick, 5.4 m track) with a large GP bucket
+      modelled on a Cat GP bucket (raked mouth, long floor, teeth ahead of
+      the top lip, tip radius about 2 m), laid out in metres and solved as a
+      linkage. `Machine.tsx` draws it; the upper structure is one plain
+      rectangular body with panel lines. Neutral grey, no livery.
+    - The dig cycle (`lib/smoremodell.ts` `DIG_KEYS`) is planned as an
+      operator digs: cut in at the far end, drag the stick in while the
+      bucket curls, lift out curled with the stick pulled in, carry out to
+      the spoil heap and open the bucket there; soil is drawn in the bucket
+      and falls on the heap once the mouth tips past `SPILL`. The trench
+      (`TRENCH`) is not freehand: it is the hole this cut carves, generated
+      from the bucket outline over the cut. `tests/gravemaskin.test.ts`
+      checks that the bucket never passes through the stick or the ground,
+      rests on its heel for greasing, empties only over the heap, and that
+      the trench still matches the cut — change the keys and the trench
+      together.
     - "Sentralsmøring": after each pause the pump runs, and while it runs the
       main divider on the upper frame (five points, three outlets combined
       into the feed up the boom) and the secondary divider on the boom (seven

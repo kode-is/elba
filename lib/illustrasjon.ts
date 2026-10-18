@@ -21,6 +21,8 @@ export const ILL = {
   grease: "#e9a23b",
   greaseDark: "#b9741c",
   greaseLight: "#f6c46f",
+  // Soil in the bucket and on the heap
+  soil: "#8c7356",
   // Lubrication lines and fittings
   hose: "#262626",
   // Galvanised steel: dividers, pistons, pins

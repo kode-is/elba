@@ -160,29 +160,55 @@ export const gunReaches = (k: number, stops: number) => GREASE_START + ((GREASE_
  */
 export type Pose = { boom: number; stick: number; bucket: number };
 
-/** The greasing position: bucket flat on the ground in front of the tracks, stick in. */
-export const STANDBY: Pose = { boom: 25.1, stick: -140.1, bucket: 114.9 };
+/** The greasing position: bucket resting on its heel on flat ground in front of the tracks, stick in. */
+export const STANDBY: Pose = { boom: 19, stick: -146.2, bucket: 119.2 };
 
-// One dig cycle, fitted (by inverse kinematics) to the trench in Machine.tsx
-// so the bucket cuts along the floor without passing through it: reach out,
-// cut in, drag along the floor, crowd and curl at the near wall, lift, carry
-// out curled, dump on the spoil heap beyond the trench, and back.
+// One dig cycle, planned the way an operator digs and checked in
+// tests/gravemaskin.test.ts: reach out, cut in at the far end, drag the
+// stick in along the floor while the bucket curls, lift out curled with the
+// stick pulled in (the bucket never curls past the stick), carry out curled
+// to the spoil heap and only open the bucket there. The trench in lib/gravemaskin.ts is
+// the hole this cut carves.
 const DIG_KEYS: { at: number; pose: Pose }[] = [
-  { at: 0, pose: { boom: 18.9, stick: -74.9, bucket: 106.1 } },
-  { at: 0.14, pose: { boom: 6.2, stick: -73.5, bucket: 95.4 } },
-  { at: 0.3, pose: { boom: 3.6, stick: -70.5, bucket: 66.9 } },
-  { at: 0.42, pose: { boom: 2, stick: -67.2, bucket: 35.2 } },
-  { at: 0.46, pose: { boom: 2.6, stick: -64.9, bucket: 20.3 } },
-  { at: 0.5, pose: { boom: 4.4, stick: -65.5, bucket: 6.1 } },
-  { at: 0.56, pose: { boom: 8, stick: -73.9, bucket: -24.1 } },
-  { at: 0.67, pose: { boom: 23, stick: -93, bucket: -30.1 } },
-  { at: 0.78, pose: { boom: 14.9, stick: -40.1, bucket: -74.8 } },
-  { at: 0.88, pose: { boom: 15.1, stick: -26.2, bucket: 66.1 } },
-  { at: 1, pose: { boom: 18.9, stick: -74.9, bucket: 106.1 } },
+  { at: 0, pose: { boom: 26, stick: -74, bucket: 110 } },
+  { at: 0.14, pose: { boom: 7, stick: -66, bucket: 93 } },
+  { at: 0.3, pose: { boom: 2, stick: -66, bucket: 72 } },
+  { at: 0.42, pose: { boom: 0, stick: -73, bucket: 44 } },
+  { at: 0.5, pose: { boom: 6, stick: -80, bucket: 20 } },
+  { at: 0.58, pose: { boom: 17, stick: -98, bucket: 9 } },
+  { at: 0.68, pose: { boom: 30, stick: -125, bucket: 8 } },
+  { at: 0.8, pose: { boom: 24, stick: -56, bucket: 8 } },
+  { at: 0.92, pose: { boom: 16, stick: -26, bucket: 104 } },
+  { at: 1, pose: { boom: 26, stick: -74, bucket: 110 } },
 ];
 
+/** The part of the dig cycle where the bucket is in the ground. */
+export const CUT = { from: 0, to: 0.62 } as const;
+
+/** The bucket's attitude in degrees (0: level, mouth towards the machine; higher tips the mouth down). */
+export const bucketAttitude = (pose: Pose) => pose.boom + pose.stick + pose.bucket;
+/** Soil starts to slide out once the mouth has tipped this far, and is all out here. */
+export const SPILL = { from: 60, to: 92 } as const;
+/** The bucket opens over the heap at the end of this part of the cycle. */
+const DUMP = { from: 0.8, to: 0.92 } as const;
+
+/** How full the bucket is (0-1): filled through the cut, emptied over the heap as the mouth tips past SPILL. */
+export function loadAt(phase: number, pose: Pose) {
+  if (phase < 0.2 || phase >= DUMP.to) return 0;
+  if (phase < 0.5) return smooth((phase - 0.2) / 0.3);
+  if (phase < DUMP.from) return 1;
+  return 1 - clamp((bucketAttitude(pose) - SPILL.from) / (SPILL.to - SPILL.from));
+}
+
+/** Whether soil is falling from the bucket now, and how far through (0-1). */
+export function spillAt(phase: number, pose: Pose) {
+  if (phase < DUMP.from || phase >= DUMP.to) return 0;
+  const f = (bucketAttitude(pose) - SPILL.from) / (SPILL.to - SPILL.from);
+  return f > 0 && f < 1 ? f : 0;
+}
+
 /** Bucket lifted clear of the ground on the way out of the greasing position. */
-const LIFT_OFF: Pose = { boom: 34, stick: -125, bucket: 100 };
+const LIFT_OFF: Pose = { boom: 32, stick: -130, bucket: 100 };
 
 /** One dig cycle, in day units (about eight seconds). */
 export const DIG = 0.135;
@@ -193,6 +219,8 @@ const mix = (a: Pose, b: Pose, f: number): Pose => ({
   bucket: a.bucket + (b.bucket - a.bucket) * f,
 });
 
+export const DIG_KEY_POSES = DIG_KEYS;
+
 export function digPose(phase: number): Pose {
   for (let i = 1; i < DIG_KEYS.length; i++) {
     const a = DIG_KEYS[i - 1];
@@ -200,6 +228,13 @@ export function digPose(phase: number): Pose {
     if (phase <= b.at) return mix(a.pose, b.pose, smooth((phase - a.at) / (b.at - a.at)));
   }
   return DIG_KEYS[0].pose;
+}
+
+/** Where the machine is in its dig cycle at `t` (0-1), or null while parked or leaving the greasing position. */
+export function digPhaseAt(mode: LubeMode, t: number): number | null {
+  if (mode === "automatisk") return (t / DIG) % 1;
+  const work = t - GREASE_END - DIG * 0.4;
+  return work < 0 ? null : (work / DIG) % 1;
 }
 
 /** The machine's pose at `t`: digging all day, or parked first for the grease gun. */

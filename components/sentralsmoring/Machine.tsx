@@ -10,8 +10,28 @@
 
 import type { Pose } from "@/lib/smoremodell";
 import { ILL } from "@/lib/illustrasjon";
+import {
+  at,
+  BOOM,
+  BOOM_CYL_BASE,
+  BOOM_CYL_ROD,
+  BUCKET_CYL_BASE,
+  BUCKET_SCALE,
+  FOOT,
+  HEAP,
+  heapAt,
+  IDLER_PIN,
+  solve,
+  STICK,
+  STICK_CYL_BASE,
+  STICK_CYL_ROD,
+  TRENCH,
+  type Frame,
+  type Pt,
+  type Solved,
+} from "@/lib/gravemaskin";
 
-export type Pt = { x: number; y: number };
+export type { Pt };
 
 // Machine colours: a neutral technical render in light grey, so the
 // lubrication system (black lines, amber grease) is what stands out. No
@@ -25,6 +45,7 @@ const IRON_DARK = "#36383b";
 const TRACK = "#2c2d2f";
 const GLASS = "#9fb4c4";
 const ROD = "#f1f3f5";
+const SOIL = ILL.soil;
 
 // ---------------------------------------------------------------- geometry
 
@@ -36,63 +57,7 @@ export const toSvg = (p: Pt): Pt => ({
   y: Math.round((ORIGIN.y - p.y * SCALE) * 100) / 100,
 });
 
-/** Boom foot pin, on the upper frame. */
-const FOOT: Pt = { x: 1.2, y: 2.05 };
-const BOOM = 6.9;
-const STICK = 3.35;
-/** On the bucket, from its main pin to the power-link pin. */
-const BUCKET_LINK = 0.52;
-/** Idler link (stick to cylinder head) and power link (cylinder head to bucket). */
-const IDLER = 0.62;
-const POWER = 0.6;
-/** Where the idler link pivots on the stick. */
-const IDLER_PIN: Pt = { x: 2.88, y: 0.24 };
-/** Cylinder ends: boom cylinder base on the upper frame, the rest on boom and stick. */
-const BOOM_CYL_BASE: Pt = { x: 2.0, y: 1.45 };
-const BOOM_CYL_ROD: Pt = { x: 3.0, y: 0.25 };
-const STICK_CYL_BASE: Pt = { x: 3.15, y: 1.9 };
-const STICK_CYL_ROD: Pt = { x: -0.92, y: -0.12 };
-const BUCKET_CYL_BASE: Pt = { x: -0.22, y: 0.56 };
-
 const rad = (d: number) => (d * Math.PI) / 180;
-
-/** A frame: origin and direction; local (u, v) is u along it, v to its left. */
-type Frame = { o: Pt; a: number };
-const at = (f: Frame, u: number, v: number): Pt => ({
-  x: f.o.x + u * Math.cos(f.a) - v * Math.sin(f.a),
-  y: f.o.y + u * Math.sin(f.a) + v * Math.cos(f.a),
-});
-
-/** Where two circles meet, on the side `side` points to. */
-function circles(a: Pt, ra: number, b: Pt, rb: number, side: Pt): Pt {
-  const dx = b.x - a.x;
-  const dy = b.y - a.y;
-  const d = Math.hypot(dx, dy) || 1e-6;
-  const along = (ra * ra - rb * rb + d * d) / (2 * d);
-  const h = Math.sqrt(Math.max(0, ra * ra - along * along));
-  const m = { x: a.x + (dx * along) / d, y: a.y + (dy * along) / d };
-  const p1 = { x: m.x - (dy * h) / d, y: m.y + (dx * h) / d };
-  const p2 = { x: m.x + (dy * h) / d, y: m.y - (dx * h) / d };
-  const score = (p: Pt) => (p.x - m.x) * side.x + (p.y - m.y) * side.y;
-  return score(p1) >= score(p2) ? p1 : p2;
-}
-
-/** Every frame and linkage point of the machine for a pose, in metres. */
-export function solve(pose: Pose) {
-  const boom: Frame = { o: FOOT, a: rad(pose.boom) };
-  const tip = at(boom, BOOM, 0);
-  const stick: Frame = { o: tip, a: boom.a + rad(pose.stick) };
-  const pin = at(stick, STICK, 0);
-  const bucket: Frame = { o: pin, a: stick.a + rad(pose.bucket) };
-  const link = at(bucket, BUCKET_LINK, 0);
-  const idler = at(stick, IDLER_PIN.x, IDLER_PIN.y);
-  // The cylinder head sits where the idler and power links meet, on the
-  // outer side of the stick (its local +v).
-  const outer = { x: -Math.sin(stick.a), y: Math.cos(stick.a) };
-  const head = circles(idler, IDLER, link, POWER, outer);
-  return { boom, stick, bucket, tip, pin, link, idler, head };
-}
-type Solved = ReturnType<typeof solve>;
 
 // ------------------------------------------------- lubrication routing
 
@@ -289,26 +254,17 @@ export function Body() {
       <path d={shape(HOUSE, ["M", 0.12, 3.1, "L", 0.42, 3.1, "L", 0.12, 2.6, "Z"])} fill="#ffffff" opacity="0.35" />
 
       {/* Upper frame */}
-      <path d={path([{ x: -3.45, y: 1.36 }, { x: 2.08, y: 1.36 }, { x: 2.08, y: 1.62 }, { x: -3.45, y: 1.62 }])} fill={IRON} />
-      {/* Counterweight */}
-      <path
-        d={shape(HOUSE, ["M", -1.78, 1.4, "L", -3.2, 1.4, "Q", -3.64, 1.42, -3.64, 1.92, "L", -3.62, 2.32, "Q", -3.58, 2.66, -3.18, 2.68, "L", -1.78, 2.68, "Z"])}
-        fill={BODY_DARK}
-        stroke={EDGE}
-        strokeWidth="1"
-      />
-      <path d={shape(HOUSE, ["M", -3.5, 2.3, "L", -1.85, 2.3])} stroke={BODY} strokeWidth="2" opacity="0.6" />
-      {/* Engine compartment, exhaust and handrails */}
-      <path d={path([{ x: -1.8, y: 1.6 }, { x: -0.2, y: 1.6 }, { x: -0.2, y: 2.74 }, { x: -0.35, y: 2.86 }, { x: -1.8, y: 2.86 }])} fill={BODY} stroke={EDGE} strokeWidth="1" />
-      {[1.85, 1.98, 2.11, 2.24].map((y) => (
-        <path key={y} d={shape(HOUSE, ["M", -1.6, y, "L", -0.95, y])} stroke={BODY_DARK} strokeWidth="2.2" strokeLinecap="round" />
+      <path d={path([{ x: -3.5, y: 1.36 }, { x: 2.08, y: 1.36 }, { x: 2.08, y: 1.62 }, { x: -3.5, y: 1.62 }])} fill={IRON} />
+      {/* Upper structure: counterweight, engine and front compartment as one body, with panel lines */}
+      <rect x={toSvg({ x: -3.6, y: 2.8 }).x} y={toSvg({ x: -3.6, y: 2.8 }).y} width={(0.78 + 3.6) * SCALE} height={(2.8 - 1.6) * SCALE} rx="3" fill={BODY} stroke={EDGE} strokeWidth="1.2" />
+      {[-1.85, -0.2].map((x) => (
+        <path key={x} d={shape(HOUSE, ["M", x, 1.62, "L", x, 2.78])} stroke={EDGE} strokeWidth="1" opacity="0.7" />
       ))}
-      <path d={shape(HOUSE, ["M", -0.9, 2.86, "L", -0.9, 3.25])} stroke={IRON_DARK} strokeWidth="4.5" strokeLinecap="round" />
-      <path d={shape(HOUSE, ["M", -3.3, 2.68, "L", -3.3, 3.12, "L", -0.3, 3.12, "L", -0.3, 2.84])} fill="none" stroke={IRON_DARK} strokeWidth="1.5" />
-      <path d={shape(HOUSE, ["M", -1.8, 2.86, "L", -1.8, 3.12])} stroke={IRON_DARK} strokeWidth="1.5" />
-      {/* Front compartment, its hatch open on the pump */}
-      <path d={path([{ x: -0.2, y: 1.6 }, { x: 0.78, y: 1.6 }, { x: 0.78, y: 2.5 }, { x: -0.2, y: 2.5 }])} fill={BODY} stroke={EDGE} strokeWidth="1" />
-      <path d={shape(HOUSE, ["M", -0.2, 2.42, "L", 0.78, 2.42])} stroke={BODY_SHADE} strokeWidth="2" />
+      <path d={shape(HOUSE, ["M", -3.58, 2.52, "L", -1.85, 2.52])} stroke={BODY_SHADE} strokeWidth="2" />
+      {[1.9, 2.04, 2.18, 2.32].map((y) => (
+        <path key={y} d={shape(HOUSE, ["M", -1.55, y, "L", -0.6, y])} stroke={BODY_DARK} strokeWidth="2" strokeLinecap="round" />
+      ))}
+      {/* The front compartment's hatch, open on the pump */}
       <path d={path([{ x: 0.1, y: 1.66 }, { x: 0.72, y: 1.66 }, { x: 0.72, y: 2.34 }, { x: 0.1, y: 2.34 }])} fill={IRON} stroke={IRON_DARK} strokeWidth="1" />
       {/* Front of the upper frame: boom foot plates and the boom cylinder mount */}
       <path d={path([{ x: 0.78, y: 1.6 }, { x: 0.86, y: 2.3 }, { x: 1.52, y: 2.34 }, { x: 1.85, y: 1.62 }])} fill={IRON} stroke={IRON_DARK} strokeWidth="1" />
@@ -363,39 +319,89 @@ export function Arm({ pose }: { pose: Pose }) {
 }
 
 /**
- * A large GP bucket in profile. Its frame has the main pin at the origin and
- * the power-link pin along +u; the body hangs below (-v). With the stick
- * plumb and the bucket level, the mouth faces the machine and the tooth
- * points back towards it, as on any backhoe.
+ * A large GP bucket in profile (outline in lib/gravemaskin.ts): main pin at
+ * the origin, power-link pin along +u, the body below. The mouth is raked
+ * forward, so the cutting edge and tooth sit well ahead of the top lip, with
+ * a long flat floor and one large radius round the back up to the ears.
  */
 function Bucket({ m }: { m: Solved }) {
   const f = m.bucket;
-  // A large bucket: the body is drawn 15 % up from the base profile, about
-  // the main pin; the pins and lugs stay where the linkage puts them.
-  const big = (cmds: (string | number)[]) => shape(f, cmds.map((c) => (typeof c === "number" ? c * 1.15 : c)));
+  const k = BUCKET_SCALE;
+  const p = (u: number, v: number) => toSvg(at(f, u * k, v * k));
+  const P = (u: number, v: number) => {
+    const q = p(u, v);
+    return `${q.x} ${q.y}`;
+  };
+  // Side plate: top plate, wrapper (one smooth curve), floor, lip, mouth edge.
+  const side = `M${P(-0.55, -0.3)} L${P(0.8, -0.22)} C${P(1.08, -0.3)} ${P(1.16, -0.9)} ${P(0.98, -1.32)} C${P(0.82, -1.68)} ${P(0.5, -1.83)} ${P(0.2, -1.83)} L${P(-1.0, -1.79)} L${P(-1.05, -1.66)} L${P(-0.55, -0.3)} Z`;
   return (
     <g strokeLinejoin="round">
-      {/* Side plate */}
-      <path
-        d={big(["M", -0.5, -0.16, "L", 0.8, -0.16, "C", 1.06, -0.36, 1.1, -0.92, 0.86, -1.3, "C", 0.66, -1.58, 0.28, -1.66, -0.05, -1.66, "L", -0.52, -1.7, "L", -0.56, -1.54, "Q", -0.68, -0.86, -0.5, -0.16, "Z"])}
-        fill={BODY_SHADE}
-        stroke={EDGE}
-        strokeWidth="1.2"
-      />
-      {/* Side cutter along the mouth, wear straps on the wrapper */}
-      <path d={big(["M", -0.52, -1.5, "Q", -0.62, -0.86, -0.46, -0.24, "L", -0.36, -0.24, "Q", -0.5, -0.86, -0.42, -1.5, "Z"])} fill={BODY_DARK} />
+      <path d={side} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1.2" />
+      {/* Side cutter along the lower mouth edge, top lip reinforcement */}
+      <path d={`M${P(-1.03, -1.64)} L${P(-0.8, -1.02)} L${P(-0.7, -1.04)} L${P(-0.92, -1.66)} Z`} fill={BODY_DARK} />
+      <path d={`M${P(-0.55, -0.3)} L${P(0.1, -0.27)} L${P(0.1, -0.38)} L${P(-0.6, -0.42)} Z`} fill={BODY_DARK} />
+      {/* Wear straps across the wrapper */}
       {[
-        [0.98, -0.62, 0.84, -0.66],
-        [0.92, -1.08, 0.78, -1.06],
-        [0.55, -1.52, 0.47, -1.4],
+        [1.08, -0.7, 0.94, -0.72],
+        [1.0, -1.12, 0.87, -1.08],
+        [0.62, -1.7, 0.56, -1.56],
       ].map(([u0, v0, u1, v1], i) => (
-        <path key={i} d={big(["M", u0, v0, "L", u1, v1])} stroke={BODY_DARK} strokeWidth="3" strokeLinecap="round" />
+        <path key={i} d={`M${P(u0, v0)} L${P(u1, v1)}`} stroke={BODY_DARK} strokeWidth="3" strokeLinecap="round" />
       ))}
-      {/* Lugs carrying the two pins */}
-      <path d={shape(f, ["M", -0.3, -0.19, "Q", -0.26, 0.16, 0.0, 0.16, "L", 0.52, 0.14, "Q", 0.74, 0.12, 0.8, -0.19, "Z"])} fill={BODY_DARK} stroke={EDGE} strokeWidth="1" />
-      {/* Lip and tooth */}
-      <path d={big(["M", -0.05, -1.66, "L", -0.52, -1.7, "L", -0.56, -1.54, "L", -0.1, -1.56, "Z"])} fill={IRON} />
-      <path d={big(["M", -0.5, -1.55, "L", -0.74, -1.62, "L", -0.9, -1.69, "L", -0.74, -1.73, "L", -0.5, -1.71, "Z"])} fill={IRON_DARK} />
+      {/* Ears carrying the two pins */}
+      <path
+        d={(() => {
+          const q = (u: number, v: number) => {
+            const r = toSvg(at(f, u, v));
+            return `${r.x} ${r.y}`;
+          };
+          return `M${q(-0.24, -0.25)} Q${q(-0.26, 0.17)} ${q(0.0, 0.17)} L${q(0.52, 0.15)} Q${q(0.74, 0.14)} ${q(0.76, -0.22)} Z`;
+        })()}
+        fill={BODY_DARK}
+        stroke={EDGE}
+        strokeWidth="1"
+      />
+      {/* Cutting edge, adapter and tooth */}
+      <path d={`M${P(0.2, -1.83)} L${P(-1.0, -1.79)} L${P(-1.05, -1.66)} L${P(0.1, -1.72)} Z`} fill={IRON} />
+      <path d={`M${P(-0.98, -1.64)} L${P(-1.25, -1.69)} L${P(-1.45, -1.76)} L${P(-1.27, -1.81)} L${P(-0.98, -1.8)} Z`} fill={IRON_DARK} />
+    </g>
+  );
+}
+
+/**
+ * Soil in the bucket, heaped above the mouth, for a load of 0-1; while the
+ * bucket empties, clumps fall from the mouth onto the heap below.
+ */
+export function Load({ pose, load, emptying }: { pose: Pose; load: number; emptying: number }) {
+  const m = solve(pose);
+  const f = m.bucket;
+  const k = BUCKET_SCALE;
+  const p = (u: number, v: number) => toSvg(at(f, u * k, v * k));
+  const P = (u: number, v: number) => {
+    const q = p(u, v);
+    return `${q.x} ${q.y}`;
+  };
+  const bulge = 0.12 + 0.38 * load;
+  const mouth = p(-0.8, -0.98);
+  const lip = at(f, -0.8 * k, -0.98 * k);
+  const below = toSvg({ x: lip.x, y: heapAt(lip.x) });
+  return (
+    <g>
+      {load > 0.02 ? (
+        <path
+          d={`M${P(-0.55, -0.3)} Q${P(-0.78 - bulge, -0.6)} ${P(-0.8 - bulge * 0.9, -1.0)} Q${P(-1.0 - bulge * 0.6, -1.45)} ${P(-1.03, -1.62)} L${P(-0.78, -0.95)} Z`}
+          fill={SOIL}
+          opacity={Math.min(1, load * 1.5)}
+        />
+      ) : null}
+      {emptying > 0 && emptying < 1
+        ? [0, 0.18, 0.36, 0.54, 0.72].map((lag, i) => {
+            const fall = (emptying + lag) % 1;
+            const x = Math.round((mouth.x + (i - 2) * 4 + (below.x - mouth.x) * fall) * 10) / 10;
+            const y = Math.round((mouth.y + (below.y - mouth.y) * fall * fall) * 10) / 10;
+            return <ellipse key={i} cx={x} cy={y} rx={5.5 - i * 0.5} ry={4.5 - i * 0.4} fill={SOIL} />;
+          })
+        : null}
     </g>
   );
 }
@@ -466,14 +472,21 @@ export function GreaseGun({ at: p }: { at: Pt }) {
 
 /**
  * The ground: flat in front of the tracks (where the bucket rests for
- * greasing), the trench the machine digs, and the spoil heap beyond it. The
- * dig cycle in lib/smoremodell.ts is fitted to these shapes.
+ * greasing), the trench the dig cycle itself carves (lib/gravemaskin.ts
+ * TRENCH) and the spoil heap the bucket empties on.
  */
-const SURFACE = [
-  "M", -6, 0, "L", 7.3, 0, "C", 7.38, -1.4, 7.5, -2.6, 7.7, -2.6, "L", 10.6, -2.6, "C", 11.05, -2.6, 11.25, -1.4, 11.3, 0,
-  "L", 11.6, 0, "C", 12.1, 1.0, 12.4, 1.3, 12.9, 1.3, "C", 13.4, 1.3, 13.7, 1.0, 14.2, 0, "L", 20, 0,
-];
+function groundPath() {
+  const pts: Pt[] = [{ x: -6, y: 0 }, ...TRENCH.map(([x, y]) => ({ x, y }))];
+  const n = 24;
+  for (let i = 0; i <= n; i++) {
+    const x = HEAP.centre - HEAP.half + (2 * HEAP.half * i) / n;
+    pts.push({ x, y: heapAt(x) });
+  }
+  pts.push({ x: 20, y: 0 });
+  return polyline(pts.map(toSvg));
+}
+const SURFACE = groundPath();
 export const GROUND = {
-  surface: shape(HOUSE, SURFACE),
-  fill: shape(HOUSE, [...SURFACE, "L", 20, -4, "L", -6, -4, "Z"]),
+  surface: SURFACE,
+  fill: `${SURFACE} L${toSvg({ x: 20, y: -4 }).x} ${toSvg({ x: 20, y: -4 }).y} L${toSvg({ x: -6, y: -4 }).x} ${toSvg({ x: -6, y: -4 }).y} Z`,
 };
