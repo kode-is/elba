@@ -374,14 +374,17 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
       modelled on a Cat GP bucket (raked mouth, long floor, teeth ahead of
       the top lip, tip radius about 2 m), laid out in metres and solved as a
       linkage. `Machine.tsx` draws it; the upper structure is one plain
-      rectangular body with panel lines. Neutral grey, no livery.
+      rectangular body with panel lines and handrails. Neutral grey with a
+      small ELBA wordmark on the counterweight (cropped from
+      `public/logos/elba-logo.svg`); no machine maker's livery.
     - The dig cycle (`lib/smoremodell.ts` `DIG_KEYS`) is planned as an
       operator digs: cut in at the far end, drag the stick in while the
       bucket curls, lift out curled with the stick pulled in, carry out to
       the spoil heap and open the bucket there; soil is drawn in the bucket
-      and falls on the heap once the mouth tips past `SPILL`. The trench
-      (`TRENCH`) is not freehand: it is the hole this cut carves, generated
-      from the bucket outline over the cut. `tests/gravemaskin.test.ts`
+      and falls on the heap once the mouth tips past `SPILL`. The cut is
+      planned by the tooth tip (ramp down at the far end, along the floor, up
+      the near wall) and the trench (`TRENCH`) is that tooth path; the rest of
+      the bucket rides inside the cut. `tests/gravemaskin.test.ts`
       checks that the bucket never passes through the stick or the ground,
       rests on its heel for greasing, empties only over the heap, and that
       the trench still matches the cut — change the keys and the trench

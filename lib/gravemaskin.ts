@@ -89,10 +89,20 @@ export const BUCKET_OUTLINE: [number, number][] = (
     [-1.05, -1.76],
     [-1.45, -1.76],
     [-1.03, -1.62],
-    [-0.78, -0.95],
+    // The mouth edge, curved forward like a flatter copy of the back (MOUTH_EDGE)
+    [-1.051, -1.24],
+    [-0.978, -0.893],
+    [-0.81, -0.579],
   ] as [number, number][]
 ).map(B);
 export const TOOTH: [number, number] = B([-1.45, -1.76]);
+/** The side plate's front edge, from the top lip down to the cutting edge, as a cubic (unscaled bucket units). */
+export const MOUTH_EDGE: [number, number][] = [
+  [-0.55, -0.3],
+  [-0.96, -0.65],
+  [-1.12, -1.09],
+  [-1.03, -1.62],
+];
 
 /** The stick's side outline in its frame (pivot at the origin, bucket pin at u = STICK). */
 export const STICK_OUTLINE: [number, number][] = [
@@ -113,20 +123,26 @@ export const STICK_OUTLINE: [number, number][] = [
 ];
 
 /**
- * The trench: not drawn freehand but the hole the bucket's own cut carves —
- * the lowest the bucket outline reaches at each 0.1 m across the dig phase of
- * the cycle in lib/smoremodell.ts (DIG_KEYS), lightly smoothed. Regenerate it
- * if the dig keys change; tests/gravemaskin.test.ts checks they still agree.
+ * The trench is the path of the bucket's tooth: the lowest the tooth tip
+ * reaches at each 5 cm across the cut in lib/smoremodell.ts (DIG_KEYS) —
+ * down the ramp at the far end, along the floor, up the near wall. The rest of
+ * the bucket rides inside the cut above it. Regenerate it if the dig keys
+ * change; tests/gravemaskin.test.ts checks they still agree.
  */
 export const TRENCH: [number, number][] = [
-  [6.7, 0], [6.8, -0.06], [6.9, -0.36], [7, -1.03], [7.1, -1.61], [7.2, -1.92], [7.3, -1.99], [7.4, -2.05], [7.5, -2.12],
-  [7.6, -2.17], [7.7, -2.22], [7.8, -2.28], [7.9, -2.34], [8, -2.41], [8.1, -2.48], [8.2, -2.52], [8.3, -2.57], [8.4, -2.62],
-  [8.5, -2.68], [8.6, -2.75], [8.7, -2.75], [8.8, -2.74], [8.9, -2.72], [9, -2.71], [9.1, -2.69], [9.2, -2.67], [9.3, -2.64],
-  [9.4, -2.61], [9.5, -2.58], [9.6, -2.55], [9.7, -2.51], [9.8, -2.47], [9.9, -2.42], [10, -2.37], [10.1, -2.32], [10.2, -2.27],
-  [10.3, -2.18], [10.4, -2.08], [10.5, -1.99], [10.6, -1.86], [10.7, -1.7], [10.8, -1.54], [10.9, -1.35], [11, -1.17],
-  [11.1, -0.94], [11.2, -0.66], [11.3, 0],
+  [7.25, 0], [7.3, -1.29], [7.35, -1.55], [7.4, -1.71], [7.45, -1.84], [7.5, -1.95], [7.55, -2.03], [7.6, -2.11],
+  [7.65, -2.18], [7.7, -2.24], [7.75, -2.29], [7.8, -2.34], [7.85, -2.39], [7.9, -2.41], [7.95, -2.41], [8, -2.42],
+  [8.05, -2.42], [8.1, -2.43], [8.15, -2.43], [8.2, -2.44], [8.25, -2.44], [8.3, -2.44], [8.35, -2.45], [8.4, -2.45],
+  [8.45, -2.45], [8.5, -2.45], [8.55, -2.45], [8.6, -2.45], [8.65, -2.44], [8.7, -2.42], [8.75, -2.4], [8.8, -2.38],
+  [8.85, -2.36], [8.9, -2.35], [8.95, -2.32], [9, -2.3], [9.05, -2.28], [9.1, -2.26], [9.15, -2.24], [9.2, -2.21],
+  [9.25, -2.19], [9.3, -2.16], [9.35, -2.14], [9.4, -2.11], [9.45, -2.08], [9.5, -2.03], [9.55, -1.99], [9.6, -1.95],
+  [9.65, -1.89], [9.7, -1.85], [9.75, -1.8], [9.8, -1.75], [9.85, -1.71], [9.9, -1.65], [9.95, -1.6], [10, -1.55],
+  [10.05, -1.49], [10.1, -1.44], [10.15, -1.39], [10.2, -1.33], [10.25, -1.28], [10.3, -1.23], [10.35, -1.18],
+  [10.4, -1.13], [10.45, -1.08], [10.5, -1.03], [10.55, -0.98], [10.6, -0.92], [10.65, -0.87], [10.7, -0.81],
+  [10.75, -0.75], [10.8, -0.7], [10.85, -0.63], [10.9, -0.57], [10.95, -0.5], [11, -0.44], [11.05, -0.36],
+  [11.1, -0.28], [11.15, -0.21], [11.2, -0.12], [11.25, -0.03], [11.3, 0],
 ];
-/** The spoil heap right at the trench's far rim, where the bucket empties. */
+/** The spoil heap just beyond the trench's far end, where the bucket empties. */
 export const HEAP = { centre: 12.5, half: 1.15, height: 1.05 };
 
 /** The heap's profile: a low, rounded pile. */
@@ -138,7 +154,8 @@ export function heapAt(x: number) {
 /** Ground height at x: the trench, the heap, or flat ground. */
 export function groundAt(x: number) {
   if (x > TRENCH[0][0] && x < TRENCH[TRENCH.length - 1][0]) {
-    const i = Math.min(TRENCH.length - 2, Math.floor((x - TRENCH[0][0]) / 0.1));
+    let i = 0;
+    while (i < TRENCH.length - 2 && TRENCH[i + 1][0] < x) i++;
     const [x0, y0] = TRENCH[i];
     const [x1, y1] = TRENCH[i + 1];
     return y0 + ((y1 - y0) * (x - x0)) / (x1 - x0);

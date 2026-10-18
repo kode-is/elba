@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { at, groundAt, HEAP, heapAt, outlines, solve, TRENCH, type Pt } from "@/lib/gravemaskin";
+import { at, groundAt, HEAP, heapAt, outlines, solve, TOOTH, TRENCH, type Pt } from "@/lib/gravemaskin";
 import { bucketAttitude, CUT, digPose, GREASE_END, DIG, loadAt, poseAt, SPILL, STANDBY } from "@/lib/smoremodell";
 import type { Pose } from "@/lib/smoremodell";
 
@@ -50,17 +50,15 @@ describe("the excavator in /anlegg's demo", () => {
     expect(Math.abs(low)).toBeLessThan(0.06);
   });
 
-  it("draws the trench as the hole the cut carves", () => {
+  it("draws the trench as the path of the bucket's tooth", () => {
     const deepest = new Map<number, number>();
-    for (let ph = CUT.from; ph <= CUT.to; ph += 0.001) {
-      for (const p of bucketEdge(digPose(ph))) {
-        if (p.y >= 0) continue;
-        const k = Math.round(p.x * 10);
-        deepest.set(k, Math.min(deepest.get(k) ?? 0, p.y));
-      }
+    for (let ph = CUT.from; ph <= CUT.to; ph += 0.0005) {
+      const tip = at(solve(digPose(ph)).bucket, TOOTH[0], TOOTH[1]);
+      if (tip.y >= 0) continue;
+      const k = Math.round(tip.x * 20);
+      deepest.set(k, Math.min(deepest.get(k) ?? 0, tip.y));
     }
-    // Lightly smoothed, so within 20 cm everywhere.
-    for (const [x, y] of TRENCH.slice(2, -2)) expect(Math.abs((deepest.get(Math.round(x * 10)) ?? 0) - y)).toBeLessThan(0.2);
+    for (const [x, y] of TRENCH.slice(1, -1)) expect(Math.abs((deepest.get(Math.round(x * 20)) ?? 0) - y)).toBeLessThan(0.03);
   });
 
   it("carries the load curled and only empties it over the spoil heap", () => {

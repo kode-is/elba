@@ -163,27 +163,34 @@ export type Pose = { boom: number; stick: number; bucket: number };
 /** The greasing position: bucket resting on its heel on flat ground in front of the tracks, stick in. */
 export const STANDBY: Pose = { boom: 19, stick: -146.2, bucket: 119.2 };
 
-// One dig cycle, planned the way an operator digs and checked in
-// tests/gravemaskin.test.ts: reach out, cut in at the far end, drag the
-// stick in along the floor while the bucket curls, lift out curled with the
-// stick pulled in (the bucket never curls past the stick), carry out curled
-// to the spoil heap and only open the bucket there. The trench in lib/gravemaskin.ts is
-// the hole this cut carves.
+// One dig cycle, planned by where the bucket's tooth goes (solved back to
+// boom, stick and bucket by inverse kinematics) and checked in
+// tests/gravemaskin.test.ts: the tooth cuts in at the far end and goes down a
+// ramp, along the floor and up the near wall, with the bucket held steep
+// enough that its body rides inside the cut; then the bucket lifts out
+// curled with the stick pulled in (it never curls past the stick), carries
+// out to the spoil heap and only opens there. The trench in
+// lib/gravemaskin.ts is the tooth's path.
 const DIG_KEYS: { at: number; pose: Pose }[] = [
-  { at: 0, pose: { boom: 26, stick: -74, bucket: 110 } },
-  { at: 0.14, pose: { boom: 7, stick: -66, bucket: 93 } },
-  { at: 0.3, pose: { boom: 2, stick: -66, bucket: 72 } },
-  { at: 0.42, pose: { boom: 0, stick: -73, bucket: 44 } },
-  { at: 0.5, pose: { boom: 6, stick: -80, bucket: 20 } },
-  { at: 0.58, pose: { boom: 17, stick: -98, bucket: 9 } },
+  { at: 0, pose: { boom: 19.6, stick: -41.7, bucket: 88.2 } },
+  { at: 0.06, pose: { boom: 16.3, stick: -49.3, bucket: 95.1 } },
+  { at: 0.12, pose: { boom: 14.6, stick: -58.4, bucket: 103.7 } },
+  { at: 0.2, pose: { boom: 12.2, stick: -71.3, bucket: 114.1 } },
+  { at: 0.28, pose: { boom: 8.3, stick: -79, bucket: 117.6 } },
+  { at: 0.36, pose: { boom: 6.8, stick: -87.7, bucket: 120.9 } },
+  { at: 0.43, pose: { boom: 7.1, stick: -92.8, bucket: 113.7 } },
+  { at: 0.49, pose: { boom: 8.3, stick: -87.8, bucket: 84.5 } },
+  { at: 0.55, pose: { boom: 9, stick: -79.9, bucket: 45.9 } },
+  { at: 0.6, pose: { boom: 9.1, stick: -72.8, bucket: 8.6 } },
+  { at: 0.64, pose: { boom: 16, stick: -85, bucket: 8 } },
   { at: 0.68, pose: { boom: 30, stick: -125, bucket: 8 } },
   { at: 0.8, pose: { boom: 24, stick: -56, bucket: 8 } },
   { at: 0.92, pose: { boom: 16, stick: -26, bucket: 104 } },
-  { at: 1, pose: { boom: 26, stick: -74, bucket: 110 } },
+  { at: 1, pose: { boom: 19.6, stick: -41.7, bucket: 88.2 } },
 ];
 
 /** The part of the dig cycle where the bucket is in the ground. */
-export const CUT = { from: 0, to: 0.62 } as const;
+export const CUT = { from: 0.06, to: 0.6 } as const;
 
 /** The bucket's attitude in degrees (0: level, mouth towards the machine; higher tips the mouth down). */
 export const bucketAttitude = (pose: Pose) => pose.boom + pose.stick + pose.bucket;

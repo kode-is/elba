@@ -264,6 +264,19 @@ export function Body() {
       {[1.9, 2.04, 2.18, 2.32].map((y) => (
         <path key={y} d={shape(HOUSE, ["M", -1.55, y, "L", -0.6, y])} stroke={BODY_DARK} strokeWidth="2" strokeLinecap="round" />
       ))}
+      {/* Handrails on top */}
+      <path d={shape(HOUSE, ["M", -3.3, 2.8, "L", -3.3, 3.12, "L", -0.3, 3.12, "L", -0.3, 2.8])} fill="none" stroke={IRON_DARK} strokeWidth="1.5" />
+      <path d={shape(HOUSE, ["M", -1.8, 2.8, "L", -1.8, 3.12])} stroke={IRON_DARK} strokeWidth="1.5" />
+      {/* A small ELBA wordmark on the counterweight */}
+      {(() => {
+        const tl = toSvg({ x: -3.36, y: 2.33 });
+        const w = 0.95 * SCALE;
+        return (
+          <svg x={tl.x} y={tl.y} width={w} height={Math.round(((w * 117.1) / 399.5) * 100) / 100} viewBox="105.79 241.45 399.5 117.1" aria-hidden="true">
+            <image href="/logos/elba-logo.svg" width="600" height="600" opacity="0.9" />
+          </svg>
+        );
+      })()}
       {/* The front compartment's hatch, open on the pump */}
       <path d={path([{ x: 0.1, y: 1.66 }, { x: 0.72, y: 1.66 }, { x: 0.72, y: 2.34 }, { x: 0.1, y: 2.34 }])} fill={IRON} stroke={IRON_DARK} strokeWidth="1" />
       {/* Front of the upper frame: boom foot plates and the boom cylinder mount */}
@@ -332,13 +345,14 @@ function Bucket({ m }: { m: Solved }) {
     const q = p(u, v);
     return `${q.x} ${q.y}`;
   };
-  // Side plate: top plate, wrapper (one smooth curve), floor, lip, mouth edge.
-  const side = `M${P(-0.55, -0.3)} L${P(0.8, -0.22)} C${P(1.08, -0.3)} ${P(1.16, -0.9)} ${P(0.98, -1.32)} C${P(0.82, -1.68)} ${P(0.5, -1.83)} ${P(0.2, -1.83)} L${P(-1.0, -1.79)} L${P(-1.05, -1.66)} L${P(-0.55, -0.3)} Z`;
+  // Side plate: top plate, wrapper (one smooth curve), floor, lip, and the
+  // front edge curving forward like a flatter copy of the back.
+  const side = `M${P(-0.55, -0.3)} L${P(0.8, -0.22)} C${P(1.08, -0.3)} ${P(1.16, -0.9)} ${P(0.98, -1.32)} C${P(0.82, -1.68)} ${P(0.5, -1.83)} ${P(0.2, -1.83)} L${P(-1.0, -1.79)} L${P(-1.05, -1.66)} C${P(-1.13, -1.12)} ${P(-0.96, -0.65)} ${P(-0.55, -0.3)} Z`;
   return (
     <g strokeLinejoin="round">
       <path d={side} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1.2" />
       {/* Side cutter along the lower mouth edge, top lip reinforcement */}
-      <path d={`M${P(-1.03, -1.64)} L${P(-0.8, -1.02)} L${P(-0.7, -1.04)} L${P(-0.92, -1.66)} Z`} fill={BODY_DARK} />
+      <path d={`M${P(-0.93, -0.9)} C${P(-1.0, -1.11)} ${P(-1.02, -1.35)} ${P(-0.98, -1.62)}`} fill="none" stroke={BODY_DARK} strokeWidth="4" strokeLinecap="round" />
       <path d={`M${P(-0.55, -0.3)} L${P(0.1, -0.27)} L${P(0.1, -0.38)} L${P(-0.6, -0.42)} Z`} fill={BODY_DARK} />
       {/* Wear straps across the wrapper */}
       {[
