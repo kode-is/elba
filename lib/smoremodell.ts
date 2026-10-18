@@ -185,7 +185,7 @@ const DIG_KEYS: { at: number; pose: Pose }[] = [
   { at: 0.64, pose: { boom: 16, stick: -85, bucket: 8 } },
   { at: 0.68, pose: { boom: 30, stick: -125, bucket: 8 } },
   { at: 0.8, pose: { boom: 24, stick: -56, bucket: 8 } },
-  { at: 0.92, pose: { boom: 16, stick: -26, bucket: 104 } },
+  { at: 0.92, pose: { boom: 16, stick: -30, bucket: 106 } },
   { at: 1, pose: { boom: 19.6, stick: -41.7, bucket: 88.2 } },
 ];
 

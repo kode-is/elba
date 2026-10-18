@@ -1,5 +1,20 @@
 import { describe, expect, it } from "vitest";
-import { at, groundAt, HEAP, heapAt, outlines, solve, TOOTH, TRENCH, type Pt } from "@/lib/gravemaskin";
+import {
+  at,
+  BOOM,
+  boomTopAt,
+  groundAt,
+  HEAP,
+  heapAt,
+  outlines,
+  solve,
+  STICK_CYL_BASE,
+  STICK_CYL_RADIUS,
+  STICK_CYL_ROD,
+  TOOTH,
+  TRENCH,
+  type Pt,
+} from "@/lib/gravemaskin";
 import { bucketAttitude, CUT, digPose, GREASE_END, DIG, loadAt, poseAt, SPILL, STANDBY } from "@/lib/smoremodell";
 import type { Pose } from "@/lib/smoremodell";
 
@@ -70,6 +85,22 @@ describe("the excavator in /anlegg's demo", () => {
       expect(mouth.x).toBeGreaterThan(HEAP.centre - HEAP.half - 0.1);
       expect(mouth.x).toBeLessThan(HEAP.centre + HEAP.half);
       expect(mouth.y).toBeGreaterThan(heapAt(mouth.x) + 0.3);
+    }
+  });
+
+  it("keeps the stick cylinder riding above the boom", () => {
+    for (const pose of [...phases.map(digPose), ...exit, STANDBY]) {
+      // The stick's top end, in the boom's frame.
+      const g = (pose.stick * Math.PI) / 180;
+      const tail = {
+        x: BOOM + STICK_CYL_ROD.x * Math.cos(g) - STICK_CYL_ROD.y * Math.sin(g),
+        y: STICK_CYL_ROD.x * Math.sin(g) + STICK_CYL_ROD.y * Math.cos(g),
+      };
+      for (let f = 0; f <= 1; f += 0.02) {
+        const u = STICK_CYL_BASE.x + (tail.x - STICK_CYL_BASE.x) * f;
+        const v = STICK_CYL_BASE.y + (tail.y - STICK_CYL_BASE.y) * f;
+        if (u >= 3.7 && u <= 6.95) expect(v - STICK_CYL_RADIUS).toBeGreaterThan(boomTopAt(u) + 0.05);
+      }
     }
   });
 

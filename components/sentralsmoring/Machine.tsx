@@ -96,7 +96,7 @@ const ROUTES: Local[][] = [
   [H(1.38, 1.74), H(1.38, 1.78), B(0.2, 0.0), B(0.6, 0.45), B(1.85, 0.95), B(3.2, 1.22), B(3.75, 1.17), B(SECONDARY.u0, 0.49)], // til sekundærfordeleren
   // Secondary divider
   [B(SECONDARY.u1, 0.49), B(6.6, 0.18), B(BOOM, 0)], // Bom/stikke-ledd
-  [B(5.45, SECONDARY.v1), B(6.4, 0.36), B(6.75, 0.15), S(-0.2, -0.12), S(STICK_CYL_ROD.x, STICK_CYL_ROD.y)], // Stikkesylinder, stang
+  [B(5.45, SECONDARY.v1), B(6.4, 0.36), B(6.75, 0.15), S(-0.2, 0.05), S(-0.75, 0.3), S(STICK_CYL_ROD.x, STICK_CYL_ROD.y)], // Stikkesylinder, stang
   [B(5.65, SECONDARY.v1), B(6.45, 0.3), B(6.8, 0.1), S(0.1, 0.18), S(-0.1, 0.45), S(BUCKET_CYL_BASE.x, BUCKET_CYL_BASE.y)], // Skuffesylinder, fot
   [B(5.4, SECONDARY.v0), B(6.5, 0.05), B(6.75, -0.1), S(0.15, 0.1), S(2.6, 0.12), S(IDLER_PIN.x, IDLER_PIN.y)], // Mellomlenke
   [B(5.52, SECONDARY.v0), B(6.55, 0.0), B(6.78, -0.14), S(0.15, 0.04), S(2.55, 0.07), S(2.83, 0.2), HEAD], // Lenkeledd
@@ -306,13 +306,13 @@ export function Arm({ pose }: { pose: Pose }) {
       <path d={shape(m.boom, ["M", 0.4, 0.2, "Q", 1.5, 0.75, 3.0, 1.18, "L", 6.6, 0.12])} fill="none" stroke={ILL.brand} strokeWidth="1.6" />
       {/* Brackets, welded to the flanges: boom cylinder rod end below, stick cylinder head on top */}
       <path d={shape(m.boom, ["M", 2.62, 0.5, "L", 3.0, 0.1, "L", 3.38, 0.64, "Q", 3.0, 0.68, 2.62, 0.5, "Z"])} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
-      <path d={shape(m.boom, ["M", 2.8, 1.52, "L", 3.15, 2.04, "L", 3.52, 1.5, "Q", 3.15, 1.6, 2.8, 1.52, "Z"])} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
+      <path d={shape(m.boom, ["M", 2.75, 1.52, "L", 3.15, 2.2, "L", 3.56, 1.5, "Q", 3.15, 1.6, 2.75, 1.52, "Z"])} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
       {/* Boom cylinder: the right-hand one of the pair, in front of the boom */}
       <Cylinder from={BOOM_CYL_BASE} to={at(m.boom, BOOM_CYL_ROD.x, BOOM_CYL_ROD.y)} barrel={1.8} bore={0.34} />
-      <Cylinder from={at(m.boom, STICK_CYL_BASE.x, STICK_CYL_BASE.y)} to={at(m.stick, STICK_CYL_ROD.x, STICK_CYL_ROD.y)} barrel={2.6} bore={0.3} />
+      <Cylinder from={at(m.boom, STICK_CYL_BASE.x, STICK_CYL_BASE.y)} to={at(m.stick, STICK_CYL_ROD.x, STICK_CYL_ROD.y)} barrel={2.8} bore={0.3} />
       {/* Stick */}
       <path
-        d={shape(m.stick, ["M", -1.02, -0.28, "Q", -1.12, -0.02, -0.86, 0.16, "L", -0.55, 0.36, "Q", -0.2, 0.5, 0.25, 0.44, "L", 2.95, 0.24, "Q", 3.4, 0.2, 3.5, 0.06, "Q", 3.52, -0.14, 3.3, -0.17, "L", 0.45, -0.4, "Q", -0.4, -0.5, -0.75, -0.42, "Z"])}
+        d={shape(m.stick, ["M", -1.0, -0.3, "Q", -1.22, 0.0, -1.18, 0.3, "Q", -1.14, 0.56, -0.9, 0.58, "Q", -0.4, 0.58, 0.25, 0.44, "L", 2.95, 0.24, "Q", 3.4, 0.2, 3.5, 0.06, "Q", 3.52, -0.14, 3.3, -0.17, "L", 0.45, -0.4, "Q", -0.4, -0.5, -0.75, -0.42, "Z"])}
         fill={BODY}
         stroke={EDGE}
         strokeWidth="1.2"

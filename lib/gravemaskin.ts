@@ -25,8 +25,9 @@ export const IDLER_PIN: Pt = { x: 2.88, y: 0.24 };
 /** Cylinder ends: boom cylinder base on the upper frame, the rest on boom and stick. */
 export const BOOM_CYL_BASE: Pt = { x: 2.0, y: 1.45 };
 export const BOOM_CYL_ROD: Pt = { x: 3.0, y: 0.25 };
-export const STICK_CYL_BASE: Pt = { x: 3.15, y: 1.9 };
-export const STICK_CYL_ROD: Pt = { x: -0.92, y: -0.12 };
+export const STICK_CYL_BASE: Pt = { x: 3.15, y: 2.05 };
+/** On the stick's cranked top end, so the cylinder rides above the boom even with the stick well out. */
+export const STICK_CYL_ROD: Pt = { x: -1.05, y: 0.35 };
 export const BUCKET_CYL_BASE: Pt = { x: -0.22, y: 0.56 };
 
 const rad = (d: number) => (d * Math.PI) / 180;
@@ -106,11 +107,12 @@ export const MOUTH_EDGE: [number, number][] = [
 
 /** The stick's side outline in its frame (pivot at the origin, bucket pin at u = STICK). */
 export const STICK_OUTLINE: [number, number][] = [
-  [-1.02, -0.28],
-  [-1.0, 0.0],
-  [-0.86, 0.16],
-  [-0.55, 0.36],
-  [-0.2, 0.47],
+  [-1.0, -0.3],
+  [-1.16, 0.0],
+  [-1.18, 0.3],
+  [-1.1, 0.52],
+  [-0.9, 0.58],
+  [-0.5, 0.56],
   [0.25, 0.44],
   [2.95, 0.24],
   [3.35, 0.18],
@@ -121,6 +123,13 @@ export const STICK_OUTLINE: [number, number][] = [
   [-0.4, -0.48],
   [-0.75, -0.42],
 ];
+
+/** The boom's top edge over its forward section, in the boom frame (u from the knee to the tip). */
+export function boomTopAt(u: number) {
+  return 1.42 - ((u - 3.7) * 1.08) / 3.25;
+}
+/** The stick cylinder's radius, for clearance over the boom. */
+export const STICK_CYL_RADIUS = 0.15;
 
 /**
  * The trench is the path of the bucket's tooth: the lowest the tooth tip
