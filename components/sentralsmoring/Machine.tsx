@@ -264,6 +264,8 @@ export function Body() {
       {[1.9, 2.04, 2.18, 2.32].map((y) => (
         <path key={y} d={shape(HOUSE, ["M", -1.55, y, "L", -0.6, y])} stroke={BODY_DARK} strokeWidth="2" strokeLinecap="round" />
       ))}
+      {/* A thin ELBA-red stripe along the bottom of the body */}
+      <path d={path([{ x: -3.6, y: 1.66 }, { x: 0.78, y: 1.66 }, { x: 0.78, y: 1.72 }, { x: -3.6, y: 1.72 }])} fill={ILL.brand} />
       {/* Handrails on top */}
       <path d={shape(HOUSE, ["M", -3.3, 2.8, "L", -3.3, 3.12, "L", -0.3, 3.12, "L", -0.3, 2.8])} fill="none" stroke={IRON_DARK} strokeWidth="1.5" />
       <path d={shape(HOUSE, ["M", -1.8, 2.8, "L", -1.8, 3.12])} stroke={IRON_DARK} strokeWidth="1.5" />
@@ -300,7 +302,8 @@ export function Arm({ pose }: { pose: Pose }) {
         stroke={EDGE}
         strokeWidth="1.2"
       />
-      <path d={shape(m.boom, ["M", 0.4, 0.2, "Q", 1.5, 0.75, 3.0, 1.18, "L", 6.6, 0.12])} fill="none" stroke={BODY_SHADE} strokeWidth="2.5" />
+      {/* An ELBA-red pinstripe along the side of the boom */}
+      <path d={shape(m.boom, ["M", 0.4, 0.2, "Q", 1.5, 0.75, 3.0, 1.18, "L", 6.6, 0.12])} fill="none" stroke={ILL.brand} strokeWidth="1.6" />
       {/* Brackets, welded to the flanges: boom cylinder rod end below, stick cylinder head on top */}
       <path d={shape(m.boom, ["M", 2.62, 0.5, "L", 3.0, 0.1, "L", 3.38, 0.64, "Q", 3.0, 0.68, 2.62, 0.5, "Z"])} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
       <path d={shape(m.boom, ["M", 2.8, 1.52, "L", 3.15, 2.04, "L", 3.52, 1.5, "Q", 3.15, 1.6, 2.8, 1.52, "Z"])} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1" />
@@ -346,13 +349,13 @@ function Bucket({ m }: { m: Solved }) {
     return `${q.x} ${q.y}`;
   };
   // Side plate: top plate, wrapper (one smooth curve), floor, lip, and the
-  // front edge curving forward like a flatter copy of the back.
-  const side = `M${P(-0.55, -0.3)} L${P(0.8, -0.22)} C${P(1.08, -0.3)} ${P(1.16, -0.9)} ${P(0.98, -1.32)} C${P(0.82, -1.68)} ${P(0.5, -1.83)} ${P(0.2, -1.83)} L${P(-1.0, -1.79)} L${P(-1.05, -1.66)} C${P(-1.13, -1.12)} ${P(-0.96, -0.65)} ${P(-0.55, -0.3)} Z`;
+  // front edge curving in towards the back on its way up.
+  const side = `M${P(-0.55, -0.3)} L${P(0.8, -0.22)} C${P(1.08, -0.3)} ${P(1.16, -0.9)} ${P(0.98, -1.32)} C${P(0.82, -1.68)} ${P(0.5, -1.83)} ${P(0.2, -1.83)} L${P(-1.0, -1.79)} L${P(-1.05, -1.66)} C${P(-0.62, -1.27)} ${P(-0.46, -0.83)} ${P(-0.55, -0.3)} Z`;
   return (
     <g strokeLinejoin="round">
       <path d={side} fill={BODY_SHADE} stroke={EDGE} strokeWidth="1.2" />
       {/* Side cutter along the lower mouth edge, top lip reinforcement */}
-      <path d={`M${P(-0.93, -0.9)} C${P(-1.0, -1.11)} ${P(-1.02, -1.35)} ${P(-0.98, -1.62)}`} fill="none" stroke={BODY_DARK} strokeWidth="4" strokeLinecap="round" />
+      <path d={`M${P(-0.56, -1.03)} C${P(-0.64, -1.25)} ${P(-0.78, -1.45)} ${P(-0.98, -1.62)}`} fill="none" stroke={BODY_DARK} strokeWidth="4" strokeLinecap="round" />
       <path d={`M${P(-0.55, -0.3)} L${P(0.1, -0.27)} L${P(0.1, -0.38)} L${P(-0.6, -0.42)} Z`} fill={BODY_DARK} />
       {/* Wear straps across the wrapper */}
       {[
@@ -396,14 +399,14 @@ export function Load({ pose, load, emptying }: { pose: Pose; load: number; empty
     return `${q.x} ${q.y}`;
   };
   const bulge = 0.12 + 0.38 * load;
-  const mouth = p(-0.8, -0.98);
-  const lip = at(f, -0.8 * k, -0.98 * k);
+  const mouth = p(-0.7, -1.1);
+  const lip = at(f, -0.7 * k, -1.1 * k);
   const below = toSvg({ x: lip.x, y: heapAt(lip.x) });
   return (
     <g>
       {load > 0.02 ? (
         <path
-          d={`M${P(-0.55, -0.3)} Q${P(-0.78 - bulge, -0.6)} ${P(-0.8 - bulge * 0.9, -1.0)} Q${P(-1.0 - bulge * 0.6, -1.45)} ${P(-1.03, -1.62)} L${P(-0.78, -0.95)} Z`}
+          d={`M${P(-0.55, -0.3)} Q${P(-0.78 - bulge, -0.6)} ${P(-0.8 - bulge * 0.9, -1.0)} Q${P(-1.0 - bulge * 0.6, -1.45)} ${P(-1.03, -1.62)} L${P(-0.77, -1.34)} L${P(-0.6, -1.03)} L${P(-0.53, -0.68)} Z`}
           fill={SOIL}
           opacity={Math.min(1, load * 1.5)}
         />

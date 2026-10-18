@@ -71,8 +71,8 @@ export type Solved = ReturnType<typeof solve>;
  * The bucket's side profile in its own frame (main pin at the origin, the
  * power-link pin along +u, the body below): top plate from the front corner
  * back to the rear corner, the wrapper round to the heel, the long floor, the
- * cutting edge and tooth well ahead of the top lip, and the raked mouth edge
- * back up. Modelled on a Cat GP bucket; tip radius about 2 m.
+ * cutting edge and tooth well ahead of the top lip, and the mouth edge
+ * curving in on its way back up. Modelled on a Cat GP bucket; tip radius about 2 m.
  */
 export const BUCKET_SCALE = 0.88;
 const B = ([u, v]: [number, number]): [number, number] => [u * BUCKET_SCALE, v * BUCKET_SCALE];
@@ -89,18 +89,18 @@ export const BUCKET_OUTLINE: [number, number][] = (
     [-1.05, -1.76],
     [-1.45, -1.76],
     [-1.03, -1.62],
-    // The mouth edge, curved forward like a flatter copy of the back (MOUTH_EDGE)
-    [-1.051, -1.24],
-    [-0.978, -0.893],
-    [-0.81, -0.579],
+    // The mouth edge, curving in towards the back (MOUTH_EDGE)
+    [-0.769, -1.341],
+    [-0.603, -1.027],
+    [-0.529, -0.681],
   ] as [number, number][]
 ).map(B);
 export const TOOTH: [number, number] = B([-1.45, -1.76]);
 /** The side plate's front edge, from the top lip down to the cutting edge, as a cubic (unscaled bucket units). */
 export const MOUTH_EDGE: [number, number][] = [
   [-0.55, -0.3],
-  [-0.96, -0.65],
-  [-1.12, -1.09],
+  [-0.46, -0.83],
+  [-0.62, -1.27],
   [-1.03, -1.62],
 ];
 

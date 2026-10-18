@@ -374,9 +374,10 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
       modelled on a Cat GP bucket (raked mouth, long floor, teeth ahead of
       the top lip, tip radius about 2 m), laid out in metres and solved as a
       linkage. `Machine.tsx` draws it; the upper structure is one plain
-      rectangular body with panel lines and handrails. Neutral grey with a
-      small ELBA wordmark on the counterweight (cropped from
-      `public/logos/elba-logo.svg`); no machine maker's livery.
+      rectangular body with panel lines and handrails. Neutral grey, branded
+      lightly in ELBA red: a small wordmark on the counterweight (cropped from
+      `public/logos/elba-logo.svg`), a thin stripe along the body and a
+      pinstripe along the boom; no machine maker's livery.
     - The dig cycle (`lib/smoremodell.ts` `DIG_KEYS`) is planned as an
       operator digs: cut in at the far end, drag the stick in while the
       bucket curls, lift out curled with the stick pulled in, carry out to
