@@ -51,6 +51,12 @@ const PAGES: { title: string; href: string; keywords: string }[] = [
     keywords:
       "protega brannslukningsanlegg brannslukkingsanlegg brannvern brann slukking automatisk deteksjonsrør slukkemiddel pulver fk-5-1-12 skum motorrom r107 buss cnc el-skap",
   },
+  {
+    title: "Flowmetere",
+    href: "/flowmetere",
+    keywords:
+      "kytola kytölä flowmeter flowmåler strømningsmåler mengdemåler oljesmøring sirkulasjonssmøring oljesirkulasjon ovalhjul oval gear variabelt areal rotameter sr1 2950 srx vex v smart k smart kld smart oval d2 slm tetningsvann oilcol papirmaskin valseverk modbus",
+  },
   { title: "Produkter", href: "/produkter", keywords: "katalog sortiment deler varer art.nr. søk" },
   { title: "Artikler", href: "/artikler", keywords: "nyheter fagstoff blogg" },
   { title: "Etikk og ansvar", href: "/etikk-og-ansvar", keywords: "code of conduct miljø bærekraft retningslinjer" },

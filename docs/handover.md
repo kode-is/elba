@@ -251,6 +251,23 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
       to "Sentralsmøring for anleggsmaskiner"; the ExperienceSection stats
       now read "30 år" / "2000+" (also "30 år" on `/brannslukking`). `npm run
       verify` will report these until deployed, as in 17.
+19. **Review `/flowmetere` — Kytola Instruments (Hlynur).** New page, not on
+    live, linked from the Tjenester menu and the search palette. Copy in
+    `lib/flowmetere.ts` and `app/(site)/flowmetere/page.tsx`, drawn from
+    Kytola's datasheets on OneDrive (`Leverandør ressurser/Kytola`) and
+    kytola.com. Branding as on `/brannslukking`: ELBA colours only, no Kytola
+    logo or blue; "Kytola"/"Kytola Instruments" in text (Kytola's own
+    spelling — not "Kytölä", which the 2026-11-24 LinkedIn draft in
+    skron-marketing uses and should be corrected), "KYTOLA®" in the trademark
+    line. Product photos are Kytola's, cut out of the datasheets
+    (`public/images/flowmetere/`); hero is "Our segments/paper-cellulose",
+    montør is "People/Sondre Borregaard2" (face in profile — swap if not
+    cleared). Claims to confirm: **"over 20 år" with Kytola** (customer folders
+    go back to 2000), **"Ifølge Kytola kan én unngått lagerskade betale hele
+    overvåkingssystemet"** (kytola.com), the **demo's cold-oil over-reading on
+    variable-area meters** (5,2 vs 4,0 L/min — illustrative, the datasheets
+    only say VA meters are sized for operating viscosity), and that ELBA
+    sources **parts for older Kytola models**.
 
 ---
 
