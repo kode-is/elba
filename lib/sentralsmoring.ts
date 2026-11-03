@@ -30,7 +30,7 @@ export const MODES: Record<LubeMode, { label: string; summary: string; steps: De
       },
       {
         heading: "Fordelerne doserer så lenge pumpen går",
-        text: "Hovedfordeleren på overvognen går rundt og rundt og gir hvert punkt sin dose i fast rekkefølge. Tre utløp er slått sammen og mater sekundærfordeleren på bommen, som forsyner stikke og skuffe.",
+        text: "Hovedfordeleren på overvognen gir hvert punkt sin dose i fast rekkefølge, og mater sekundærfordeleren på bommen.",
       },
       {
         heading: "Fettet kommer inn under arbeid",
@@ -113,7 +113,7 @@ export type PartGroup = {
 export const PARTS: PartGroup[] = [
   {
     heading: "Pumper og pumpedeler",
-    text: "Pumper fra flere produsenter, og deler til dem: pumpeelementer, beholdere, overtrykksventiler og styringer.",
+    text: "Pumper fra flere produsenter, og deler til dem: pumpeelementer, beholdere, overtrykksventiler og kretskort.",
     icon: "olje",
     links: [],
     ask: "Spør om pumpe eller pumpedel",
@@ -160,7 +160,7 @@ export const PARTS: PartGroup[] = [
 export const PUMP_FEATURES = [
   {
     value: "App og display",
-    text: "Pausetid, gangtid og mengde stilles inn på pumpens eget display eller fra mobil via Bluetooth og wifi. Appen virker også uten mobildekning.",
+    text: "Pausetid, smøretid og mengde stilles inn på pumpens eget display eller fra mobil via Bluetooth og wifi. Appen virker også uten mobildekning.",
   },
   {
     value: "Logg og varsler",
@@ -176,7 +176,7 @@ export const PUMP_FEATURES = [
   },
   {
     value: "0,6–4 cm³/min",
-    text: "Mengden stilles trinnløst innenfor dette området, med opptil 350 bar til å presse fettet ut i lange rør og kalde punkter.",
+    text: "Mengden stilles trinnløst innenfor dette området, med opptil 350 bar til å presse fettet ut i lange slanger og kalde punkter.",
   },
   {
     value: "IP69K, −40 til +80 °C",
@@ -203,7 +203,7 @@ export const DIVIDER_MODES: Record<DividerMode, { label: string; summary: string
       },
       {
         heading: "Indikatorstiften viser syklusen",
-        text: "Stiften følger stempel A ut og inn én gang per runde. Går den, går fordeleren. Slanger og rør må likevel sjekkes, for et avrevet rør ser ikke stiften.",
+        text: "Stiften følger stempel A ut og inn én gang per runde. Går den, går fordeleren. Slangene må likevel sjekkes, for en avrevet slange ser ikke stiften.",
       },
     ],
   },
@@ -237,7 +237,7 @@ export const FAQ_ITEMS = [
   {
     question: "Hvor ofte smører det, og hvor mye?",
     answer:
-      "Pausetid og gangtid stilles inn etter maskin, antall punkter og hvordan maskinen brukes. Fordeleren låser forholdet mellom punktene, mens pumpens gangtid avgjør hvor mye fett som går ut totalt. Det stiller vi inn ved montering og justerer ved behov.",
+      "Pausetid og smøretid stilles inn etter maskin, antall punkter og hvordan maskinen brukes. Fordeleren låser forholdet mellom punktene, mens pumpens smøretid avgjør hvor mye fett som går ut totalt. Det stiller vi inn ved montering og justerer ved behov.",
   },
   {
     question: "Hva skjer hvis et smørepunkt tetter seg?",
@@ -252,7 +252,7 @@ export const FAQ_ITEMS = [
   {
     question: "Hva med vinter og kulde?",
     answer:
-      "Fettet må passe temperaturen og lengden på rørene. Med for stivt fett i kulde kan overtrykksventilen slippe ut fett uten at noe er tett. Vi velger fett og rørdimensjon etter hvor maskinen skal jobbe.",
+      "Fettet må passe temperaturen og lengden på slangene. Med for stivt fett i kulde kan overtrykksventilen slippe ut fett uten at noe er tett. Vi velger fett og slangedimensjon etter hvor maskinen skal jobbe.",
   },
   {
     question: "Hva skjer om anlegget får en feil?",

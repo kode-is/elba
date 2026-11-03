@@ -39,7 +39,7 @@ const TILES: FeatureTile[] = [
   },
   {
     type: "image",
-    image: { src: "/images/anlegg/03-497fe191.jpeg", alt: "Fordeler med smørerør montert på en maskin", width: 517, height: 689 },
+    image: { src: "/images/anlegg/03-497fe191.jpeg", alt: "Fordeler med smøreslanger montert på en maskin", width: 517, height: 689 },
   },
   {
     type: "text",
@@ -57,7 +57,7 @@ const TILES: FeatureTile[] = [
   },
   {
     type: "image",
-    image: { src: "/images/anlegg/04-c08775a5.jpeg", alt: "ELBA-montør legger smørerør på en maskin", width: 626, height: 835 },
+    image: { src: "/images/anlegg/04-c08775a5.jpeg", alt: "ELBA-montør legger smøreslanger på en maskin", width: 626, height: 835 },
   },
 ];
 
