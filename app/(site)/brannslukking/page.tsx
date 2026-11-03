@@ -96,7 +96,7 @@ export default function Brannslukking() {
           <p className="mx-auto mt-4 max-w-3xl text-center text-lead text-ink-muted md:text-lead-lg">
             I over 30 år har vi smurt maskinene til entreprenører, bønder, sagbruk, rederier og industri over hele
             landet. Der fett og hydraulikkolje går tett på varme flater, er det også brannfare. Nå får du smøring og
-            brannvern fra samme leverandør – ofte i samme verkstedbesøk.
+            brannvern fra samme leverandør.
           </p>
           <div className="mt-10">
             <FeatureTileGrid tiles={TILES} />
@@ -225,7 +225,7 @@ export default function Brannslukking() {
       {/* One workshop visit */}
       <section className="bg-surface py-14 md:py-20">
         <Container>
-          <h2 className="text-section font-semibold text-black md:text-section-lg">Ett verkstedbesøk. Smurt og sikret.</h2>
+          <h2 className="text-section font-semibold text-black md:text-section-lg">Fra kartlegging til sertifikat</h2>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {PROCESS.map((p, i) => (
               <StepCard
@@ -252,7 +252,7 @@ export default function Brannslukking() {
             ]}
             heading="Montert av ELBA"
             paragraphs={[
-              "Våre montører kjenner maskinene dine fra før. Nå monterer de brannslukking i samme runde som sentralsmøringen – én avtale, én faktura og én kontakt å ringe.",
+              "Våre montører kjenner maskinene dine fra før. Nå monterer de også brannslukking, med samme krav til utførelse og dokumentasjon.",
               "For forhandlere leverer vi komplette kit og lærer opp egne teknikere, så systemet monteres riktig og dokumenteres fra første dag.",
             ]}
             linkText="Om oss"

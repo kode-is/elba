@@ -144,7 +144,7 @@ export const SYSTEMS: Record<
 > = {
   direkte: {
     label: "Direkte system",
-    summary: "Deteksjonsrøret er både føler og utløp. Enkelt, få deler – best i mindre, lukkede rom.",
+    summary: "Deteksjonsrøret er både føler og utløp. Få deler, og ett rør kan gå gjennom flere skap.",
     steps: [
       { heading: "Overvåker", text: "Et trykksatt polymerrør går gjennom risikosonen og kjenner etter varme hele tiden." },
       { heading: "Sprekker", text: "Når flammen treffer røret, sprekker det, og trykket faller momentant." },
@@ -194,7 +194,7 @@ export const REASONS = [
   { icon: ICONS.reliability, heading: "Nesten ingen falske utløsninger", text: "Et deteksjonsrør laget for formålet, og utprøvd i felt." },
   { icon: ICONS.professional, heading: "Bygget for krevende miljøer", text: "Kompakt og robust, utviklet for 10 års driftslevetid." },
   { icon: ICONS.components, heading: "Enkel ettermontering", text: "Passer både nye maskiner og maskinene du allerede har." },
-  { icon: ICONS.sustainability, heading: "Lav totalkostnad", text: "Lite vedlikehold og lang levetid – og langt billigere enn én brann." },
+  { icon: ICONS.sustainability, heading: "Lav totalkostnad", text: "Lite vedlikehold og lang levetid. Langt billigere enn én brann." },
   { icon: ICONS.expertise, heading: "Sertifisert", text: "CE-merket, R107-godkjent for buss og ADR-kjøretøy, og ISO 9001-sertifisert produksjon." },
 ];
 
@@ -211,7 +211,7 @@ export const PROCESS = [
   },
   {
     heading: "Montering",
-    text: "Våre egne montører installerer – gjerne i samme verkstedbesøk som sentralsmøringen. Du får opplæring og full dokumentasjon.",
+    text: "Våre egne montører installerer. Du får opplæring og full dokumentasjon.",
   },
   {
     heading: "Service og sertifikat",

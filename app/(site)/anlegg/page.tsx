@@ -324,7 +324,7 @@ export default function Anlegg() {
       <ProtegaBand
         className="pb-16 md:pb-24"
         heading="Brannslukking fra Protega"
-        text="Brann i anleggsmaskiner starter ofte i motorrommet, ved turboen eller i hydraulikken. Vi monterer automatisk brannslukking fra Protega, gjerne i samme verkstedbesøk som sentralsmøringen."
+        text="Brann i anleggsmaskiner starter ofte i motorrommet, ved turboen eller i hydraulikken. Vi monterer automatisk brannslukking fra Protega på de samme maskinene."
         points={["Slukker uten fører til stede", "Ettermonteres på maskinene du har", "Kit til forhandlere"]}
       />
 
