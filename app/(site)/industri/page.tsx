@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { FeatureTileGrid, type FeatureTile } from "@/components/FeatureTileGrid";
@@ -8,7 +9,11 @@ import { IconCardGrid, type IconCardItem } from "@/components/IconCardGrid";
 import { IndustryGrid, type IndustryCard } from "@/components/industri/IndustryGrid";
 import { ContactCta } from "@/components/ContactCta";
 import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
-import { ClockIcon, HardHatIcon, CoinsIcon, LeafIcon, SparkleIcon } from "@/components/icons";
+import { BrandIcon } from "@/components/BrandIcon";
+import { SpecTable } from "@/components/SpecTable";
+import { Faq } from "@/components/Faq";
+import { CheckIcon, ClockIcon, HardHatIcon, CoinsIcon, LeafIcon, SparkleIcon } from "@/components/icons";
+import { FAQ_ITEMS, MONITORING_METHODS, MONITORING_TABLE } from "@/lib/industri";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
@@ -33,9 +38,9 @@ const TILES: FeatureTile[] = [
   {
     type: "text",
     tone: "red",
-    heading: "Digital overvåkning",
+    heading: "Overvåkning",
     paragraphs: [
-      "Med digital overvåkning får du full kontroll på smøresystemene i sanntid. Få full oversikt over drift med et øyekast og oppdag avvik tidlig for tryggere drift.",
+      "Med overvåking ser du at smøringen virker, ikke bare at pumpen går. Måleinstrumenter viser mengden ute på anlegget, og digital overvåking samler alt i én oversikt og varsler ved avvik.",
     ],
   },
   {
@@ -138,6 +143,66 @@ export default function Industri() {
         </Container>
       </section>
 
+      {/* Monitoring: the review asked for far more on this, instruments as
+          well as digital (docs/handover.md). New, not on live. */}
+      <section id="overvaking" className="scroll-mt-8 py-14 md:py-20">
+        <Container>
+          <h2 className="text-section font-semibold text-black md:text-section-lg">Se at smøringen virker</h2>
+          <p className="mt-4 max-w-3xl text-lead text-ink-muted md:text-lead-lg">
+            At pumpen går, sier ikke at lageret får fett. Vi overvåker smøringen der det teller: med måleinstrumenter som
+            viser mengden ute på anlegget, med indikatorer som virker uten strøm, og med digital overvåking som samler alt
+            i én oversikt og varsler når noe avviker.
+          </p>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {MONITORING_METHODS.map((m) => (
+              <div key={m.heading} className="flex flex-col rounded-[20px] bg-surface p-6 md:p-8">
+                <div className="flex items-center gap-4">
+                  <span aria-hidden="true" className="flex h-[55px] w-[55px] shrink-0 items-center justify-center rounded-[10px] bg-brand">
+                    <BrandIcon src={`/images/icons/brand/${m.icon}.svg`} className="block h-8 w-8 bg-white" />
+                  </span>
+                  <div>
+                    <p className="font-ui text-eyebrow font-semibold text-brand">{m.eyebrow}</p>
+                    <h3 className="font-ui text-[22px] leading-[1.25] font-bold text-black">{m.heading}</h3>
+                  </div>
+                </div>
+                <p className="mt-4 font-ui text-body text-ink-muted md:text-body-lg">{m.text}</p>
+                <ul className="mt-5 space-y-2">
+                  {m.points.map((p) => (
+                    <li key={p} className="flex items-start gap-3">
+                      <CheckIcon className="mt-1.5 h-4 w-4 shrink-0 text-brand" />
+                      <span className="font-ui text-body font-semibold text-black md:text-body-lg">{p}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="bg-surface py-14 md:py-20">
+        <Container>
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center lg:gap-16">
+            <div>
+              <h2 id="hva-vi-overvaker" className="text-section font-semibold text-black md:text-section-lg">
+                Hva vi overvåker
+              </h2>
+              <p className="mt-4 text-lead text-ink-muted md:text-lead-lg">
+                Hver del av anlegget har sitt mål og sitt instrument. Vi setter sammen det som passer anlegget og
+                styresystemet dere har, fra en indikatorstift på fordeleren til full overvåking av alle punkter.
+              </p>
+              <Link
+                href="/kontakt-oss"
+                className="mt-6 inline-flex items-center justify-center rounded-[10px] bg-brand px-[30px] py-5 text-[16px] leading-[1.2] font-semibold text-white transition hover:opacity-50"
+              >
+                Spør om overvåking
+              </Link>
+            </div>
+            <SpecTable headers={MONITORING_TABLE.headers} rows={MONITORING_TABLE.rows} ariaLabelledBy="hva-vi-overvaker" />
+          </div>
+        </Container>
+      </section>
+
       <Container narrow>
         <div className="py-14 md:py-20">
           <h2 className="text-center text-section font-semibold text-black md:text-section-lg">
@@ -154,9 +219,18 @@ export default function Industri() {
         </div>
       </Container>
 
+      <section className="bg-surface py-14 md:py-20">
+        <Container narrow>
+          <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Spørsmål og svar om overvåking</h2>
+          <div className="mx-auto mt-10 max-w-3xl">
+            <Faq items={FAQ_ITEMS} />
+          </div>
+        </Container>
+      </section>
+
       {/* Not on live: the new fire-suppression service, pitched to industry. */}
       <ProtegaBand
-        className="pb-16 md:pb-24"
+        className="py-16 md:py-24"
         heading="Brannvern for ubemannet drift"
         text="CNC-maskiner, el-skap og filteranlegg går natt og helg uten folk til stede. Protega oppdager og slukker brann på stedet – med rene slukkemidler som ikke skader elektronikken."
         points={["CNC og maskineringssentre", "El-skap og filterskap", "Service med inspeksjonssertifikat"]}
