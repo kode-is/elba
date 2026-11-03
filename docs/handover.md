@@ -251,6 +251,38 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
       to "Sentralsmøring for anleggsmaskiner"; the ExperienceSection stats
       now read "30 år" / "2000+" (also "30 år" on `/brannslukking`). `npm run
       verify` will report these until deployed, as in 17.
+19. **The 2026-11 preview review (Hlynur, VALA comments 1–17 on the
+    elba.no preview).** Fourteen are dealt with on this branch; each commit
+    names its numbers. Still for Hlynur:
+    - **VALA #9, icons on the three agent cards** ("Riktig middel for
+      risikoen", `AGENTS` in `lib/brannslukking.ts`) was asked as a
+      question and is not done. If yes: the cards are `FeatureCard` without
+      an image; the brand folder has no powder/gas/foam glyphs, so they would
+      be three new hand-drawn icons in `components/icons.tsx`.
+    - **VALA #11, "utviklet for 10 års driftslevetid"** (`REASONS`,
+      "Bygget for krevende miljøer"): is the ten years Protega's design life
+      (the Mining brochure says so, see 15) or only the ten-year hydrostatic
+      test of the cylinder? Left as is until Protega answers.
+    - **The same-visit pitch** was taken out where #13 and #15 pointed (the
+      Montering step, "Montert av ELBA", the page intro, the steps heading
+      and the band on `/anlegg`). Three places still say it, untouched
+      because they were not commented on: the FAQ "Kan det monteres samtidig
+      med sentralsmøring?", the "Montert sammen med sentralsmøringen" point
+      under "Maskineier og entreprenør" (`AUDIENCES`), and "Montert sammen
+      med smøringen" in the home-page band. Say if they should go too.
+    - **`/industri`'s monitoring sections** (#16, `lib/industri.ts`) name
+      Kytölä and Assalub Lubemon on Hlynur's instruction. The product facts
+      are general (a Kytölä meter reads on its scale without power and can
+      carry an alarm limit or signal output; Lubemon measures the grease
+      delivered to each point and alarms on deviation); confirm them against
+      the makers' datasheets, and add model names if ELBA wants them.
+    - **Hammer lubrication** (#4) names BEKA Hamax on `/anlegg` (intro tile
+      and a FAQ): hydraulically driven, on the hammer or carrier, chisel
+      paste to the chisel bushing while the hammer runs. First make named on
+      that page; check the wording against BEKA's own.
+    - **"Rør" became "slanger"** throughout `/anlegg`'s copy (#2), except
+      the parts group "Koblinger og rør", whose catalogue links are rørender
+      and the like.
 
 ---
 
