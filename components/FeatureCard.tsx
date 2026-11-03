@@ -17,11 +17,17 @@ type FeatureCardProps = {
  * White, shadowed card behind the "Anlegg / Industri" service
  * grid on the home page and /tjenester (components/ServiceCards.tsx): an
  * optional top image plus a heading and a line of body copy.
+ *
+ * Inside a `group` link (the service grid) the card shows it is clickable on
+ * hover: it lifts, its shadow deepens, the photo zooms a little and the
+ * heading turns red. The same three cues mark every linked card on the site
+ * (ArticleCard, ProductLinkList). Standing alone, as on /brannslukking's
+ * agent cards, nothing happens on hover.
  */
 export function FeatureCard({ heading, text, image, headingTag = "h3" }: FeatureCardProps) {
   const Heading = headingTag;
   return (
-    <div className="flex h-full flex-col overflow-hidden rounded-[20px] bg-white shadow-sm">
+    <div className="flex h-full flex-col overflow-hidden rounded-[20px] bg-white shadow-sm transition duration-300 group-hover:-translate-y-1 group-hover:shadow-md">
       {/* Live crops every service-card photo to the same 387x300 box
           (measured Task 11), not to the source image's own aspect. We keep
           that crop, but cap its height: the cards are no longer pinned to
@@ -37,12 +43,12 @@ export function FeatureCard({ heading, text, image, headingTag = "h3" }: Feature
             alt={image.alt}
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
+            className="object-cover transition duration-700 group-hover:scale-105"
           />
         </div>
       ) : null}
       <div className="p-6">
-        <Heading className="font-ui text-sub font-semibold text-black md:text-sub-lg">{heading}</Heading>
+        <Heading className="font-ui text-sub font-semibold text-black transition-colors md:text-sub-lg group-hover:text-brand">{heading}</Heading>
         <p className="mt-2 font-ui text-body text-ink-muted md:text-body-lg">{text}</p>
       </div>
     </div>

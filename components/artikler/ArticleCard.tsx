@@ -37,7 +37,7 @@ export function ArticleCard({ title, href, image, excerpt, variant = "tile" }: A
       <div className="@container">
         <Link
           href={href}
-          className="flex flex-col overflow-hidden rounded-2xl bg-surface transition hover:bg-surface/70 @sm:flex-row @sm:items-stretch @sm:gap-5"
+          className="group flex flex-col overflow-hidden rounded-2xl bg-surface transition duration-300 hover:-translate-y-1 hover:shadow-md @sm:flex-row @sm:items-stretch @sm:gap-5"
         >
           <div className="relative h-48 w-full shrink-0 overflow-hidden @sm:h-auto @sm:min-h-[150px] @sm:w-[160px] @lg:w-[220px]">
             <Image
@@ -45,13 +45,13 @@ export function ArticleCard({ title, href, image, excerpt, variant = "tile" }: A
               alt={image.alt}
               fill
               sizes="(min-width: 480px) 220px, 100vw"
-              className="object-cover"
+              className="object-cover transition duration-700 group-hover:scale-105"
             />
           </div>
           <div className="flex min-w-0 flex-1 flex-col justify-center px-6 py-5 @sm:px-0 @sm:pr-6">
-            <h3 className="font-ui text-card font-semibold text-black @lg:text-card-lg">{title}</h3>
+            <h3 className="font-ui text-card font-semibold text-black transition-colors group-hover:text-brand @lg:text-card-lg">{title}</h3>
             {excerpt ? <p className="mt-2 font-ui text-body text-ink-muted md:text-body-lg">{excerpt}</p> : null}
-            <p className="mt-3 text-body font-semibold text-brand md:text-body-lg">Les mer →</p>
+            <p className="mt-3 text-body font-semibold text-brand group-hover:underline md:text-body-lg">Les mer →</p>
           </div>
         </Link>
       </div>
@@ -59,20 +59,20 @@ export function ArticleCard({ title, href, image, excerpt, variant = "tile" }: A
   }
 
   return (
-    <Link href={href} className="flex flex-col overflow-hidden rounded-2xl bg-surface transition hover:opacity-90">
+    <Link href={href} className="group flex flex-col overflow-hidden rounded-2xl bg-surface transition duration-300 hover:-translate-y-1 hover:shadow-md">
       <div className="relative aspect-[4/3] w-full overflow-hidden">
         <Image
           src={image.src}
           alt={image.alt}
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-          className="object-cover"
+          className="object-cover transition duration-700 group-hover:scale-105"
         />
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-ui text-card font-semibold text-black md:text-card-lg">{title}</h3>
+        <h3 className="font-ui text-card font-semibold text-black transition-colors group-hover:text-brand md:text-card-lg">{title}</h3>
         {excerpt ? <p className="mt-2 font-ui text-body text-ink-muted md:text-body-lg">{excerpt}</p> : null}
-        <p className="mt-3 text-body font-semibold text-brand md:text-body-lg">Les mer →</p>
+        <p className="mt-3 text-body font-semibold text-brand group-hover:underline md:text-body-lg">Les mer →</p>
       </div>
     </Link>
   );
