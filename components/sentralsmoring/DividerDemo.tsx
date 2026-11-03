@@ -154,7 +154,7 @@ export function DividerDemo() {
       <div ref={ref} className="overflow-hidden rounded-[20px] bg-white p-3 shadow-sm md:p-5">
         <DemoStatus tone={s.stalled ? "alarm" : pressurised ? "active" : "idle"} text={status} />
 
-        <svg viewBox="0 0 600 330" role="img" aria-label={`Progressiv fordeler i snitt, forenklet: ${info.summary}`} className="block h-auto w-full">
+        <svg viewBox="0 -56 600 386" role="img" aria-label={`Progressiv fordeler i snitt, forenklet: ${info.summary}`} className="block h-auto w-full">
           <defs>
             <linearGradient id="divider-steel" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor={ILL.steelLight} />
@@ -167,20 +167,53 @@ export function DividerDemo() {
             </linearGradient>
           </defs>
 
-          {/* The pump, with its relief valve, and a gauge on the line */}
-          <rect x="20" y="10" width="100" height="36" rx="6" fill="#1d1d1d" />
-          <text x="62" y={33 + (k - 1) * 4} textAnchor="middle" fill="#ffffff" fontWeight="600" {...font}>
-            Pumpe
-          </text>
-          <rect x="100" y="2" width="12" height="10" rx="2" fill={ILL.brand} />
-          {s.relief > 0 ? (
-            <g opacity={s.relief}>
-              <ellipse cx={106 + 8 * s.relief} cy={2 - 4 * s.relief} rx={3 + 7 * s.relief} ry={2 + 4 * s.relief} fill={ILL.grease} stroke={ILL.greaseDark} />
-              <text x="130" y={12 + (k - 1) * 4} fill={ILL.brand} fontWeight="600" {...font}>
-                Overtrykksventil
-              </text>
+          {/* The pump: reservoir with stirrer on top, pump body with its
+              element, then the relief valve on the outlet line and the gauge.
+              The valve is drawn and labelled all the time, and vents grease
+              upwards in red when the block stalls. */}
+          <g>
+            {/* Reservoir */}
+            <rect x="28" y="-40" width="84" height="46" rx="5" fill="#ffffff" stroke={ILL.steelDark} strokeWidth="1.5" />
+            <rect x="29.5" y="-20" width="81" height="25" fill={ILL.grease} opacity="0.9" />
+            <rect x="62" y="-47" width="16" height="7" rx="2" fill={ILL.steelMid} />
+            {/* Stirrer, turning while the pump runs */}
+            <line x1="70" y1="-40" x2="70" y2="6" stroke={ILL.steelDark} strokeWidth="2" />
+            <g transform={`rotate(${pressurised && !reduced ? Math.round((time / 12) % 360) : 20} 70 -6)`}>
+              <line x1="42" y1="-6" x2="98" y2="-6" stroke={ILL.steelDark} strokeWidth="3" strokeLinecap="round" />
             </g>
-          ) : null}
+            {/* Pump body and element */}
+            <rect x="20" y="6" width="100" height="40" rx="6" fill="#1d1d1d" />
+            <rect
+              x={Math.round((96 + (pressurised && !reduced ? 5 * Math.sin(time / 90) : 0)) * 10) / 10}
+              y="14"
+              width="12"
+              height="24"
+              rx="2"
+              fill={pressurised ? ILL.grease : ILL.steelMid}
+              className="transition-colors duration-300"
+            />
+            <text x="58" y={31 + (k - 1) * 4} textAnchor="middle" fill="#ffffff" fontWeight="600" {...font}>
+              Pumpe
+            </text>
+          </g>
+
+          {/* Relief valve on the outlet line, venting upwards */}
+          <g>
+            <rect x="156" y="-6" width="12" height="26" fill={ILL.steelMid} />
+            <rect x="150" y="17" width="24" height="22" rx="3" fill={s.relief > 0 ? ILL.brand : ILL.steel} stroke={s.relief > 0 ? ILL.brand : ILL.steelDark} strokeWidth="1.5" className="transition-colors duration-300" />
+            <rect x="152" y="-12" width="20" height="7" rx="2" fill={ILL.brand} />
+            {s.relief > 0 ? (
+              <g>
+                <circle cx="162" cy="28" r="20" fill="none" stroke={ILL.brand} strokeWidth="2" opacity="0.6" className="motion-safe:animate-pulse" />
+                <ellipse cx="162" cy={-16 - 14 * s.relief} rx={4 + 7 * s.relief} ry={3 + 9 * s.relief} fill={ILL.grease} stroke={ILL.greaseDark} opacity={0.4 + 0.6 * s.relief} />
+                <circle cx={150 - 8 * s.relief} cy={-24 - 10 * s.relief} r={2 + 1.5 * s.relief} fill={ILL.greaseDark} opacity={s.relief} />
+                <circle cx={176 + 6 * s.relief} cy={-30 - 6 * s.relief} r={1.5 + 1.5 * s.relief} fill={ILL.greaseDark} opacity={s.relief} />
+              </g>
+            ) : null}
+            <text x="180" y={-4 + (k - 1) * 2} fill={s.relief > 0 ? ILL.brand : ILL.inkMuted} fontWeight="600" fontFamily="var(--font-inter)" fontSize={11 * k} className="transition-colors duration-300">
+              Overtrykksventil
+            </text>
+          </g>
 
           {/* The block: three sections, one bore each */}
           <rect x="110" y="66" width="380" height="250" rx="10" fill="url(#divider-steel)" stroke={ILL.steelDark} strokeWidth="2" />
@@ -199,7 +232,7 @@ export function DividerDemo() {
           )}
 
           {/* Pressure gauge on the pump line */}
-          <g transform="translate(210 28)">
+          <g transform="translate(222 28)">
             <circle r="13" fill="#ffffff" stroke={ILL.steelDark} strokeWidth="2" />
             <path d="M9.2 -9.2 A13 13 0 0 1 9.2 9.2" fill="none" stroke={ILL.brand} strokeWidth="3" />
             <line
