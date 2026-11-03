@@ -31,6 +31,7 @@ const TILES: FeatureTile[] = [
     heading: "Fett inn under arbeid",
     paragraphs: [
       "ELBA leverer og monterer smøreanlegg på gravemaskiner, hjullastere, dumpere og annet anleggsutstyr. Pumpen går mens maskinen er i drift, og fettet kommer inn mens leddene beveger seg.",
+      "Til hydraulikkhammere leverer vi hammersmøring fra BEKA, Hamax, som smører meiselen så lenge hammeren går.",
     ],
   },
   {

@@ -245,6 +245,11 @@ export const FAQ_ITEMS = [
       "Fordeleren stopper, og står en sekundærfordeler, stopper også hovedfordeleren. Indikatorstiften står stille, og overtrykksventilen på pumpen slipper ut fett. Uten overvåking må noen se det, så vi anbefaler syklusovervåking som varsler når fordeleren ikke går rundt.",
   },
   {
+    question: "Smører dere hydraulikkhammere også?",
+    answer:
+      "Ja. Til hydraulikkhammere leverer og monterer vi BEKA Hamax. Det er en hydraulisk drevet smørepumpe som sitter på hammeren eller bæremaskinen og presser meiselpasta inn i meiselbøssingen så lenge hammeren går. Meisel og bøssinger får jevn smøring der slitasjen er størst, uten at føreren må stoppe og smøre for hånd.",
+  },
+  {
     question: "Kan anlegget ettermonteres?",
     answer:
       "Ja. Vi leverer modelltilpassede kit for både nye og brukte maskiner. Ettermontering er særlig aktuelt på maskiner med høy belastning, mange smørepunkter eller varierende vedlikeholdsrutiner.",
