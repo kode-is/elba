@@ -5,11 +5,17 @@ import { SYSTEMS, type SystemKind } from "@/lib/brannslukking";
 import { usePrefersReducedMotion } from "@/lib/usePrefersReducedMotion";
 import { DemoControl, DemoStatus, DemoSteps, DemoToggle, useOnScreen } from "@/components/demo/Demo";
 
-// One loop of the demo: the tube is pressurised and watching, a fire starts
-// on the engine, the tube bursts where the flame touches it, the agent
-// discharges (through the burst in the direct system, through the nozzles in
-// the indirect one) and the fire goes out. Each phase lights up its step in
-// the list beside the drawing.
+// One loop of the demo: the tube is pressurised and watching, a fire starts,
+// the tube bursts where the flame touches it, the agent discharges and the
+// fire goes out. Each phase lights up its step in the list beside the drawing.
+//
+// The two systems are drawn where each is typically used. The indirect
+// system protects an engine bay: the tube loops over the engine, and the
+// agent comes out of nozzles on a separate discharge line. The direct system
+// protects electrical cabinets: one tube weaves between the components of
+// the first cabinet, passes through the wall into the next and carries on
+// there, and the agent comes out of the burst itself. One system, several
+// cabinets.
 type Phase = "watch" | "fire" | "burst" | "discharge" | "out";
 
 const TIMELINE: { phase: Phase; ms: number }[] = [
@@ -25,16 +31,66 @@ const STEP_OF: Record<Phase, number> = { watch: 0, fire: 0, burst: 1, discharge:
 
 const STATUS: Record<Phase, string> = {
   watch: "Trykksatt og klar",
-  fire: "Brann i motorrommet",
+  fire: "Brann",
   burst: "Røret sprekker – trykket faller",
   discharge: "Slukker",
   out: "Brannen er slukket",
 };
 
-// Where the flame meets the tube (the burst point), and the nozzles of the
-// indirect system's discharge line.
-const BURST = { x: 432, y: 168 };
+const FIRE_STATUS: Record<SystemKind, string> = { direkte: "Brann i el-skapet", indirekte: "Brann i motorrommet" };
+
+// Where the flame meets the tube (the burst point) and where the flame
+// stands, per system; and the nozzles of the indirect system's discharge
+// line.
+const SCENE: Record<SystemKind, { burst: { x: number; y: number }; flameBase: number; tube: string }> = {
+  indirekte: {
+    burst: { x: 432, y: 168 },
+    flameBase: 214,
+    // Enters the bay, loops over the engine.
+    tube: "M104 96 H196 Q210 96 210 110 V154 Q210 168 224 168 H600 Q614 168 614 182 V214",
+  },
+  direkte: {
+    burst: { x: 307, y: 168 },
+    flameBase: 192,
+    // Along the top of cabinet 1, down between the rows, through the wall
+    // into cabinet 2 and up through it, ending blind.
+    tube: "M104 96 H372 Q380 96 380 104 V160 Q380 168 372 168 H194 Q186 168 186 176 V240 Q186 248 194 248 H632 Q640 248 640 240 V176 Q640 168 632 168 H448 Q440 168 440 160 V104 Q440 96 448 96 H560",
+  },
+};
 const NOZZLES = [318, 432, 546];
+
+// The two cabinets of the direct scene: left edge of each, and the top of
+// each row of modules.
+const CABINETS = [170, 424];
+const ROWS = [108, 188, 268];
+
+/** An electrical cabinet: a door frame, three DIN rails and four modules on each. */
+function Cabinet({ x, label, burning }: { x: number; label: string; burning?: { row: number; slot: number } }) {
+  return (
+    <g>
+      <rect x={x} y="28" width="232" height="326" rx="10" fill="#f5f2ef" stroke="#e0e0e0" />
+      <text x={x + 22} y="56" fill="#919191" fontSize="12" letterSpacing="2.5" fontFamily="var(--font-inter)">
+        {label}
+      </text>
+      {ROWS.map((y, r) => (
+        <g key={y}>
+          <line x1={x + 16} y1={y + 20} x2={x + 216} y2={y + 20} stroke="#cfcfcf" strokeWidth="3" />
+          {[0, 1, 2, 3].map((i) => {
+            const mx = x + 26 + i * 46;
+            const hot = burning && burning.row === r && burning.slot === i;
+            return (
+              <g key={i}>
+                <rect x={mx} y={y} width="38" height="40" rx="4" fill="#ffffff" stroke={hot ? "#919191" : "#cfcfcf"} />
+                <rect x={mx + 6} y={y + 6} width="26" height="7" rx="2" fill="#e0e0e0" />
+                <rect x={mx + 6} y={y + 27} width="26" height="7" rx="2" fill="#e0e0e0" />
+              </g>
+            );
+          })}
+        </g>
+      ))}
+    </g>
+  );
+}
 
 export function SuppressionDemo() {
   const [kind, setKind] = useState<SystemKind>("indirekte");
@@ -57,6 +113,8 @@ export function SuppressionDemo() {
   const phase: Phase = reduced ? "discharge" : TIMELINE[phaseIndex].phase;
   const step = STEP_OF[phase];
   const system = SYSTEMS[kind];
+  const scene = SCENE[kind];
+  const BURST = scene.burst;
   const burning = phase === "fire" || phase === "burst" || phase === "discharge";
   const burst = phase === "burst" || phase === "discharge" || phase === "out";
   const spraying = phase === "discharge";
@@ -70,7 +128,7 @@ export function SuppressionDemo() {
   return (
     <div className="grid gap-10 lg:grid-cols-[1.25fr_1fr] lg:items-center lg:gap-14">
       <div ref={ref} className="relative overflow-hidden rounded-[20px] bg-white p-3 shadow-sm md:p-5">
-        <DemoStatus tone={burning ? "alarm" : "idle"} text={STATUS[phase]} aside={system.label} />
+        <DemoStatus tone={burning ? "alarm" : "idle"} text={phase === "fire" ? FIRE_STATUS[kind] : STATUS[phase]} aside={system.label} />
 
         <svg viewBox="0 0 680 380" role="img" aria-label={`${system.label}: ${system.summary}`} className="block h-auto w-full">
           <defs>
@@ -96,6 +154,15 @@ export function SuppressionDemo() {
             </linearGradient>
           </defs>
 
+          {kind === "direkte" ? (
+            <g>
+              <Cabinet x={CABINETS[0]} label="EL-SKAP 1" burning={{ row: 1, slot: 2 }} />
+              <Cabinet x={CABINETS[1]} label="EL-SKAP 2" />
+              {/* The sleeve where the tube passes through the wall between the cabinets */}
+              <rect x="398" y="240" width="30" height="16" rx="3" fill="#cfcfcf" />
+            </g>
+          ) : (
+            <g>
           {/* Engine bay */}
           <rect x="170" y="28" width="486" height="326" rx="18" fill="#f5f2ef" stroke="#e0e0e0" />
           <text x="192" y="56" fill="#919191" fontSize="12" letterSpacing="2.5" fontFamily="var(--font-inter)">
@@ -113,11 +180,13 @@ export function SuppressionDemo() {
           <text x="219" y="290" textAnchor="middle" fill="#919191" fontSize="10" fontFamily="var(--font-inter)">
             HYD
           </text>
+            </g>
+          )}
 
           {/* Heat haze under the fire */}
           <ellipse
             cx={BURST.x}
-            cy="200"
+            cy={scene.flameBase - 14}
             rx="90"
             ry="60"
             fill="url(#demo-heat)"
@@ -126,7 +195,8 @@ export function SuppressionDemo() {
           />
 
           {/* Indirect: discharge line and nozzles along the top */}
-          <g className="transition-opacity duration-500" opacity={kind === "indirekte" ? 1 : 0}>
+          {kind === "indirekte" ? (
+          <g>
             <path d="M118 130 H150 Q160 130 160 120 V78 Q160 68 170 68 H600" fill="none" stroke="#444444" strokeWidth="5" strokeLinecap="round" />
             {NOZZLES.map((x) => (
               <g key={x}>
@@ -135,10 +205,11 @@ export function SuppressionDemo() {
               </g>
             ))}
           </g>
+          ) : null}
 
-          {/* Detection tube: enters the bay, loops over the engine. */}
+          {/* Detection tube */}
           <path
-            d="M104 96 H196 Q210 96 210 110 V154 Q210 168 224 168 H600 Q614 168 614 182 V214"
+            d={scene.tube}
             fill="none"
             stroke={burst ? "#ffb6c1" : "#c11e31"}
             strokeWidth="6"
@@ -148,7 +219,7 @@ export function SuppressionDemo() {
           {/* Pressure moving through the tube while it is intact */}
           {!burst ? (
             <path
-              d="M104 96 H196 Q210 96 210 110 V154 Q210 168 224 168 H600 Q614 168 614 182 V214"
+              d={scene.tube}
               fill="none"
               stroke="#ffffff"
               strokeWidth="2"
@@ -165,11 +236,11 @@ export function SuppressionDemo() {
             <circle cx={BURST.x + 4} cy={BURST.y - 16} r="1.4" fill="#ffb6c1" />
           </g>
 
-          {/* Fire on the engine heads */}
+          {/* Fire: on the engine heads, or on a module in the first cabinet */}
           <g
             style={{
-              transformOrigin: `${BURST.x}px 212px`,
-              transform: `scale(${phase === "fire" ? 0.75 : burning ? 1 : 0})`,
+              transformOrigin: `${BURST.x}px ${scene.flameBase - 2}px`,
+              transform: `translateY(${scene.flameBase - 214}px) scale(${phase === "fire" ? 0.75 : burning ? 1 : 0})`,
             }}
             className="transition-transform duration-700 ease-out"
           >

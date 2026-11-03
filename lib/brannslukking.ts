@@ -146,7 +146,7 @@ export const SYSTEMS: Record<
     label: "Direkte system",
     summary: "Deteksjonsrøret er både føler og utløp. Få deler, og ett rør kan gå gjennom flere skap.",
     steps: [
-      { heading: "Overvåker", text: "Et trykksatt polymerrør går gjennom risikosonen og kjenner etter varme hele tiden." },
+      { heading: "Overvåker", text: "Et trykksatt polymerrør legges mellom komponentene i skapet og videre inn i neste skap. Ett system kan dekke flere skap." },
       { heading: "Sprekker", text: "Når flammen treffer røret, sprekker det, og trykket faller momentant." },
       { heading: "Slukker", text: "Slukkemiddelet strømmer ut gjennom åpningen – akkurat der brannen er." },
     ],
