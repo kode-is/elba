@@ -6,15 +6,11 @@ import { ProductLinkList } from "@/components/produkter/ProductLinkList";
 import { ProductCatalog } from "@/components/produkter/ProductCatalog";
 import { ContactCta } from "@/components/ContactCta";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
 import { buildCatalog } from "@/lib/catalog";
 import { produkter } from "@/lib/produkter";
 
-export const metadata = pageMetadata({
-  title: "ELBA AS - I INDUSTRIENS TJENESTE",
-  description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
-  path: "/produkter",
-});
+export const metadata = pageMetadata(PAGE_META["/produkter"]);
 
 // docs/scrape/produkter.json blocks 10-16 — no icons: docs/reference/
 // produkter.desktop.jpg shows plain white pills, and docs/scrape/
