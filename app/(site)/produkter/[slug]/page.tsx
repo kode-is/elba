@@ -1,5 +1,6 @@
 import { notFound, permanentRedirect } from "next/navigation";
 import { pageMetadata } from "@/lib/seo";
+import { productMeta } from "@/lib/seo-meta";
 import { PRODUKT_SLUGS } from "@/lib/routes";
 import { productBySlug } from "@/lib/produkter";
 import { PageHero } from "@/components/PageHero";
@@ -23,7 +24,7 @@ export function generateStaticParams(): Params[] {
 
 export async function generateMetadata({ params }: { params: Promise<Params> }) {
   const p = productBySlug(clean((await params).slug).replace(/^​/, ""));
-  return p ? pageMetadata({ title: p.metaTitle, description: p.metaDescription, path: `/produkter/${p.id}` }) : {};
+  return p ? pageMetadata(productMeta(p.id, p.title)) : {};
 }
 
 // Two live product URLs carry a leading U+200B (zero-width space) — see

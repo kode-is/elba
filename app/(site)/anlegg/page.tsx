@@ -14,13 +14,10 @@ import { LubricationDemo } from "@/components/sentralsmoring/LubricationDemo";
 import { DividerDemo } from "@/components/sentralsmoring/DividerDemo";
 import { DAY_MOMENTS, FAQ_ITEMS, PARTS, PUMP_FEATURES } from "@/lib/sentralsmoring";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
+import { yearsInBusiness } from "@/lib/site";
 
-export const metadata = pageMetadata({
-  title: "Sentralsmøring for anleggsmaskiner | ELBA",
-  description:
-    "Progressiv sentralsmøring for gravemaskiner, hjullastere og dumpere. Pumpen går med faste pauser mens maskinen er i drift, og fordelerne gir hvert smørepunkt sin dose. Levert og montert av ELBA.",
-  path: "/anlegg",
-});
+export const metadata = pageMetadata(PAGE_META["/anlegg"]);
 
 // The intro tiles, laid out as before (cream / photo / photo / red / cream /
 // photo), now with photos of ELBA's own installations.
@@ -304,7 +301,7 @@ export default function Anlegg() {
           <ExperienceSection
             image={{ src: "/images/brannslukking/montor.webp", alt: "ELBA-montør på jobb", width: 1200, height: 1600 }}
             stats={[
-              { value: "30 år", label: "Erfaring" },
+              { value: `${yearsInBusiness} år`, label: "Erfaring" },
               { value: "2000+", label: "Montasjer" },
             ]}
             heading="Erfaring i praksis"

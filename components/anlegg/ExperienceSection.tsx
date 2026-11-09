@@ -17,7 +17,7 @@ type ExperienceSectionProps = {
  * /anlegg's closing "Erfaring i praksis" section (docs/scrape/anlegg.json
  * blocks 43-51, docs/reference/anlegg.desktop.jpg): a photo with a red
  * two-stat banner overlapping its bottom edge, beside a heading + two
- * paragraphs + a filled "Om oss" button. The stat numbers (e.g. "30 år", "2000+")
+ * paragraphs + a filled "Om oss" button. The stat numbers (e.g. "35 år", "2000+")
  * render as plain scraped headings — no count-up animation, unlike
  * StatCounter's home-page stats.
  */
