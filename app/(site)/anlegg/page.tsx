@@ -11,13 +11,9 @@ import { ContactCta } from "@/components/ContactCta";
 import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
 import { TargetIcon, ClockIcon, HardHatIcon, CoinsIcon, LeafIcon } from "@/components/icons";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
 
-export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
-  description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
-  path: "/anlegg",
-});
+export const metadata = pageMetadata(PAGE_META["/anlegg"]);
 
 // docs/scrape/anlegg.json blocks 5-13.
 const TILES: FeatureTile[] = [

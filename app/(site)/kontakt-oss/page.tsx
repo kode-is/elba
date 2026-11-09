@@ -2,13 +2,9 @@ import { PageHero } from "@/components/PageHero";
 import { Container } from "@/components/Container";
 import { ContactForm } from "@/components/ContactForm";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
 
-export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
-  description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
-  path: "/kontakt-oss",
-});
+export const metadata = pageMetadata(PAGE_META["/kontakt-oss"]);
 
 export default function KontaktOss() {
   return (

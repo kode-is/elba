@@ -10,13 +10,10 @@ import { ContactCta } from "@/components/ContactCta";
 import { ProtegaBand } from "@/components/brannslukking/ProtegaBand";
 import { ClockIcon, HardHatIcon, CoinsIcon, LeafIcon, SparkleIcon } from "@/components/icons";
 import { pageMetadata } from "@/lib/seo";
+import { yearsInBusiness } from "@/lib/site";
+import { PAGE_META } from "@/lib/seo-meta";
 
-export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
-  description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
-  path: "/industri",
-});
+export const metadata = pageMetadata(PAGE_META["/industri"]);
 
 // docs/scrape/industri.json blocks 5-14.
 const TILES: FeatureTile[] = [
@@ -25,7 +22,7 @@ const TILES: FeatureTile[] = [
     tone: "red",
     heading: "Lang erfaring",
     paragraphs: [
-      "Med over 30 års erfaring i norsk industri vet vi hva som kreves for stabil og lønnsom drift. Når du velger ELBA, får du en langsiktig partner som kjenner industrien, utstyret og kravene som stilles i praksis.",
+      `Med over ${yearsInBusiness} års erfaring i norsk industri vet vi hva som kreves for stabil og lønnsom drift. Når du velger ELBA, får du en langsiktig partner som kjenner industrien, utstyret og kravene som stilles i praksis.`,
     ],
   },
   { type: "image", image: { src: "/images/industri/02-46c62221.jpg", alt: "", width: 626, height: 835 } },
