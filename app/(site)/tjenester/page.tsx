@@ -3,13 +3,9 @@ import { Container } from "@/components/Container";
 import { ServiceCardsGrid } from "@/components/ServiceCards";
 import { ContactCta } from "@/components/ContactCta";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
 
-export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
-  description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
-  path: "/tjenester",
-});
+export const metadata = pageMetadata(PAGE_META["/tjenester"]);
 
 export default function Tjenester() {
   return (

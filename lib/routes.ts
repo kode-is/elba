@@ -3,7 +3,7 @@
 // import it directly. Keep this list identical to scripts/routes.mjs —
 // tests/routes.test.ts asserts the two arrays are equal.
 export const ROUTES = [
-  "/", "/om-oss", "/tjenester", "/anlegg", "/industri", "/etikk-og-ansvar", "/kontakt-oss",
+  "/", "/om-oss", "/tjenester", "/anlegg", "/industri", "/brannslukking", "/etikk-og-ansvar", "/kontakt-oss",
   "/produkter",
   "/produkter/rørender", "/produkter/forlengere", "/produkter/fylleutstyr", "/produkter/fyllenippler",
   "/produkter/skottgjennomføring", "/produkter/snittringmatur", "/produkter/banjokoblinger",

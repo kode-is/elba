@@ -45,6 +45,12 @@ const PAGES: { title: string; href: string; keywords: string }[] = [
   { title: "Tjenester", href: "/tjenester", keywords: "anlegg industri løsninger" },
   { title: "Anlegg", href: "/anlegg", keywords: "anleggsmaskin gravemaskin maskin sentralsmøring overvåking montering" },
   { title: "Industri", href: "/industri", keywords: "produksjon fabrikk smøresystem industrien havn" },
+  {
+    title: "Brannslukking",
+    href: "/brannslukking",
+    keywords:
+      "protega brannslukningsanlegg brannslukkingsanlegg brannvern brann slukking automatisk deteksjonsrør slukkemiddel pulver fk-5-1-12 skum motorrom r107 buss cnc el-skap",
+  },
   { title: "Produkter", href: "/produkter", keywords: "katalog sortiment deler varer art.nr. søk" },
   { title: "Artikler", href: "/artikler", keywords: "nyheter fagstoff blogg" },
   { title: "Etikk og ansvar", href: "/etikk-og-ansvar", keywords: "code of conduct miljø bærekraft retningslinjer" },

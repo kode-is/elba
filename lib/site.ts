@@ -14,7 +14,30 @@ export const site = {
   // Vestfossen — the same address as `address` above.
   orgNumber: "859 772 382",
   copyright: "ELBA AS",
+  // Enhetsregisteret's stiftelsesdato for org.nr. 859 772 382.
+  founded: "1991-01-02",
 } as const;
+
+/**
+ * Whole years since ELBA was founded, worked out when the page is built — so
+ * "35 års erfaring" moves on by itself with the next deploy after each
+ * 2 January instead of going stale in the copy.
+ */
+export const yearsInBusiness = (() => {
+  const founded = new Date(site.founded);
+  const now = new Date();
+  const passedAnniversary =
+    now.getMonth() > founded.getMonth() ||
+    (now.getMonth() === founded.getMonth() && now.getDate() >= founded.getDate());
+  return now.getFullYear() - founded.getFullYear() - (passedAnniversary ? 0 : 1);
+})();
+
+/**
+ * ELBA's own positioning line — approved by ELBA on 2026-11-09. Shown on
+ * the home page and /om-oss and repeated in the search metadata, JSON-LD and
+ * /llms.txt so Google and AI assistants read the same claim everywhere.
+ */
+export const positioning = "ELBA er en av Norges største og mest erfarne leverandører av smøreløsninger";
 
 export const nav = [
   { text: "Hjem", href: "/" },
@@ -35,6 +58,8 @@ export const servicesMenu = {
     [
       { text: "Anlegg", href: "/anlegg" },
       { text: "Industri", href: "/industri" },
+      // Protega Solutions fire suppression — new service, not on live.
+      { text: "Brannslukking", href: "/brannslukking" },
     ],
   ],
 } as const;
