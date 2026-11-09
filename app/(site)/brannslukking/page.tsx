@@ -31,13 +31,10 @@ import {
   RISK_ZONES,
 } from "@/lib/brannslukking";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
+import { yearsInBusiness } from "@/lib/site";
 
-export const metadata = pageMetadata({
-  title: "Automatisk brannslukking | ELBA",
-  description:
-    "ELBA leverer og monterer automatisk brannslukking fra Protega Solutions for anleggsmaskiner, landbruk, gjenvinning, transport, maritim og industri. Helt mekanisk, uten strøm, døgnet rundt.",
-  path: "/brannslukking",
-});
+export const metadata = pageMetadata(PAGE_META["/brannslukking"]);
 
 // The three audiences as /anlegg's intro tiles: cream / photo / photo / red /
 // cream / photo.
@@ -94,7 +91,7 @@ export default function Brannslukking() {
         <div className="pt-12 pb-6 md:pt-16">
           <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Samme kunder. Samme maskiner.</h2>
           <p className="mx-auto mt-4 max-w-3xl text-center text-lead text-ink-muted md:text-lead-lg">
-            I over 30 år har vi smurt maskinene til entreprenører, bønder, sagbruk, rederier og industri over hele
+            I over {yearsInBusiness} år har vi smurt maskinene til entreprenører, bønder, sagbruk, rederier og industri over hele
             landet. Der fett og hydraulikkolje går tett på varme flater, er det også brannfare. Nå får du smøring og
             brannvern fra samme leverandør – ofte i samme verkstedbesøk.
           </p>
@@ -110,7 +107,7 @@ export default function Brannslukking() {
         <Container>
           <h2 className="text-center text-section font-semibold text-black md:text-section-lg">Dine bransjer</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-lead text-ink-muted md:text-lead-lg">
-            Bransjene vi har smurt i 30 år, og det vi beskytter i hver av dem.
+            Bransjene vi har smurt i {yearsInBusiness} år, og det vi beskytter i hver av dem.
           </p>
           <div className="mt-14">
             <SegmentGrid />

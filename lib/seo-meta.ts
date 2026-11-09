@@ -31,7 +31,7 @@ export const PAGE_META = {
   "/tjenester": {
     title: "Tjenester – sentralsmøring for anlegg og industri | ELBA",
     description:
-      "ELBA dimensjonerer, leverer, monterer og servicerer sentralsmøreanlegg for anleggsmaskiner og norsk industri. Send en forespørsel og få fast pris.",
+      "ELBA dimensjonerer, leverer, monterer og servicerer sentralsmøreanlegg for anleggsmaskiner og norsk industri – og automatisk brannslukking fra Protega. Send en forespørsel og få fast pris.",
     path: "/tjenester",
   },
   "/anlegg": {
@@ -45,6 +45,12 @@ export const PAGE_META = {
     description:
       `Skreddersydde smøresystemer for norsk industri fra en partner med over ${yearsInBusiness} års erfaring: digital overvåking, service- og tilstandsrapporter og tilpassede serviceavtaler for høy oppetid.`,
     path: "/industri",
+  },
+  "/brannslukking": {
+    title: "Automatisk brannslukking for maskiner – Protega | ELBA",
+    description:
+      "ELBA leverer og monterer automatisk brannslukking fra Protega Solutions for anleggsmaskiner, landbruk, gjenvinning, transport, maritim og industri. Helt mekanisk, uten strøm, døgnet rundt.",
+    path: "/brannslukking",
   },
   "/etikk-og-ansvar": {
     title: "Etikk og ansvar | ELBA",
