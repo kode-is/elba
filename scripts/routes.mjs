@@ -1,5 +1,5 @@
 export const ROUTES = [
-  "/", "/om-oss", "/tjenester", "/anlegg", "/industri", "/etikk-og-ansvar", "/kontakt-oss",
+  "/", "/om-oss", "/tjenester", "/anlegg", "/industri", "/brannslukking", "/etikk-og-ansvar", "/kontakt-oss",
   "/produkter",
   "/produkter/rørender", "/produkter/forlengere", "/produkter/fylleutstyr", "/produkter/fyllenippler",
   "/produkter/skottgjennomføring", "/produkter/snittringmatur", "/produkter/banjokoblinger",
