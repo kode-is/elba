@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
 import { Hero } from "@/components/home/Hero";
 import { IndustryStrip } from "@/components/IndustryStrip";
 import { StepsSection } from "@/components/home/StepsSection";
@@ -10,12 +11,7 @@ import { ArticlesSection } from "@/components/home/ArticlesSection";
 import { StatsSection } from "@/components/StatsSection";
 import { Container } from "@/components/Container";
 
-export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
-  description:
-    "Hvert år leverer vi sentralsmøreanlegg til mange tusen smørepunkter, enten montert av egne montører eller hvor du selv setter opp systemet.",
-  path: "/",
-});
+export const metadata = pageMetadata(PAGE_META["/"]);
 
 export default function Home() {
   return (
