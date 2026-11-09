@@ -14,13 +14,9 @@ import { MeterTable } from "@/components/flowmetere/MeterTable";
 import { ICONS } from "@/lib/brannslukking";
 import { FAQ_ITEMS, INDUSTRIES, KYTOLA_NAME, MORE_PRODUCTS, PROCESS, PRODUCTS } from "@/lib/flowmetere";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
 
-export const metadata = pageMetadata({
-  title: "Flowmetere fra Kytola | ELBA",
-  description:
-    "ELBA leverer, monterer og servicerer flowmetere og overvåking av oljesmøring fra Kytola Instruments: ovalhjulsmålere, flowmetere med variabelt areal, KLD Smart og OVAL D2 for papir, metall og prosessindustri.",
-  path: "/flowmetere",
-});
+export const metadata = pageMetadata(PAGE_META["/flowmetere"]);
 
 // The site's button: 10px radius, 20/30px padding, fades on hover.
 const BUTTON = "inline-flex items-center justify-center rounded-[10px] px-[30px] py-5 text-[16px] leading-[1.2] font-semibold transition";
