@@ -3,14 +3,10 @@ import { Container } from "@/components/Container";
 import { ContactCta } from "@/components/ContactCta";
 import { ScalesIcon, MegaphoneIcon, LeafIcon, HandshakeIcon } from "@/components/icons";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
 import type { ReactNode } from "react";
 
-export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
-  description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
-  path: "/etikk-og-ansvar",
-});
+export const metadata = pageMetadata(PAGE_META["/etikk-og-ansvar"]);
 
 // docs/scrape/etikk-og-ansvar.json blocks 4-13. The icons aren't in the
 // scrape (see components/icons.tsx); block 5's paragraph text ends with the

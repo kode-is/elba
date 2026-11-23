@@ -102,7 +102,7 @@ const ALLOWED_EXTRA = [
   // the live count-up animation artifact described in the
   // IGNORE_MISSING["/"] comment above.
   exact("200"),
-  exact("30"),
+  /^\d{2}$/, // years of experience, counted from 1991 (lib/site.ts)
   exact("11000"),
   exact("6000"),
   // /anlegg's FAQ answer to "Hvor driftssikkert er systemet?"

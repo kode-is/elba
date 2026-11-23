@@ -1,15 +1,9 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { pageMetadata } from "@/lib/seo";
+import { PAGE_META } from "@/lib/seo-meta";
 
-// docs/scrape/404.json: the live 404 page carries the site-wide description,
-// not the home page's own.
-export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
-  description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
-  path: "/404",
-});
+export const metadata = pageMetadata(PAGE_META["/404"]);
 
 export default function NotFound() {
   return (

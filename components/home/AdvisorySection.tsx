@@ -1,3 +1,5 @@
+import { positioning, yearsInBusiness } from "@/lib/site";
+
 const ICON_PROPS = {
   viewBox: "0 0 24 24",
   fill: "none",
@@ -40,8 +42,9 @@ export function AdvisorySection() {
     <div>
       <h2 className="text-section font-semibold text-black md:text-section-lg">Faglig rådgivning</h2>
       <p className="mt-5 max-w-lg text-lead text-ink-muted md:text-lead-lg">
-        I over 30 år har ELBA bygget opp in-house ekspertise på smøresystemer og relaterte løsninger. Ta kontakt i
-        dag så finner vi den løsningen som sparer din drift for mest tid og ressurser.
+        {positioning}. I over {yearsInBusiness} år har vi bygget opp in-house ekspertise på smøresystemer og
+        relaterte løsninger. Ta kontakt i dag så finner vi den løsningen som sparer din drift for mest tid og
+        ressurser.
       </p>
 
       <div className="mt-8 flex flex-wrap gap-x-10 gap-y-6">

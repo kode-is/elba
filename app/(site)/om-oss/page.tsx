@@ -6,13 +6,10 @@ import { TeamGrid } from "@/components/om-oss/TeamGrid";
 import { ContactCta } from "@/components/ContactCta";
 import { team } from "@/lib/team";
 import { pageMetadata } from "@/lib/seo";
+import { positioning } from "@/lib/site";
+import { PAGE_META } from "@/lib/seo-meta";
 
-export const metadata = pageMetadata({
-  title: "ELBA - I INDUSTRIENS TJENESTE",
-  description:
-    "ELBA - Din partner innen smøreteknikk i Norge. Fra den minste minigraver til Norges største produksjonsanlegg er vi klare til å møte utfordringen med deg.",
-  path: "/om-oss",
-});
+export const metadata = pageMetadata(PAGE_META["/om-oss"]);
 
 // docs/scrape/om-oss.json blocks 27: "Vårt team" intro paragraph.
 const TEAM_INTRO =
@@ -31,7 +28,7 @@ export default function OmOss() {
           {/* docs/scrape/om-oss.json blocks 4-14. */}
           <StorySection
             heading1="Kvalitet og profesjonalitet."
-            text1="Vi er opptatt av å levere førsteklasses service og skape en positiv opplevelse for kundene våre. Vårt tekniske team i samarbeid med våre montører har mange års erfaring fra alt innen smøreteknikk."
+            text1={`${positioning}, med sentralsmøring som spesialfelt siden 1991. Vi er opptatt av å levere førsteklasses service og skape en positiv opplevelse for kundene våre. Vårt tekniske team i samarbeid med våre montører har mange års erfaring fra alt innen smøreteknikk.`}
             image1={{ src: "/images/om-oss/02-34e18c82.png", alt: "Aðstaða", width: 200, height: 266 }}
             image2={{ src: "/images/om-oss/03-9b3d1db5.jpeg", alt: "Aðstaða", width: 200, height: 266 }}
             heading2="Din drift er vår ambisjon."

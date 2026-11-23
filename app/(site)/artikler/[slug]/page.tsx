@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { pageMetadata } from "@/lib/seo";
+import { ARTICLE_DESCRIPTIONS } from "@/lib/seo-meta";
 import { ARTIKKEL_SLUGS } from "@/lib/routes";
 import { articleBySlug } from "@/lib/artikler";
 import { PageHero } from "@/components/PageHero";
@@ -15,7 +16,7 @@ export function generateStaticParams(): Params[] {
 
 export async function generateMetadata({ params }: { params: Promise<Params> }) {
   const a = articleBySlug((await params).slug);
-  return a ? pageMetadata({ title: a.metaTitle, description: a.metaDescription, path: `/artikler/${a.id}` }) : {};
+  return a ? pageMetadata({ title: a.metaTitle, description: ARTICLE_DESCRIPTIONS[a.id] ?? a.metaDescription, path: `/artikler/${a.id}` }) : {};
 }
 
 // Body copy (breadcrumb through the last paragraph) sits in a centered
