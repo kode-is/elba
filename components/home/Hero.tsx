@@ -1,4 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
+import { BrandIcon } from "@/components/BrandIcon";
+import { ICONS } from "@/lib/brannslukking";
 import { site } from "@/lib/site";
 
 const ICON_PROPS = {
@@ -66,6 +69,21 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/35" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto w-full max-w-[calc(var(--container-site)+100px)] px-5 md:px-[50px]">
+        {/* Not on live: announces the new Protega fire-suppression service. */}
+        <Link
+          href="/brannslukking"
+          className="group mb-6 inline-flex items-center gap-3 rounded-full bg-black/50 py-1.5 pr-5 pl-1.5 backdrop-blur-sm transition hover:opacity-80"
+        >
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand">
+            <BrandIcon src={ICONS.extinguisher} className="h-5 w-5 bg-white" />
+          </span>
+          <span className="font-ui text-[14px] font-semibold text-white md:text-[15px]">
+            Nyhet: automatisk brannslukking
+          </span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" className="h-4 w-4 text-white transition group-hover:translate-x-0.5" fill="none" stroke="currentColor" strokeWidth={2}>
+            <path d="M5 12h14M13 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </Link>
         <h1 className="text-[49px] font-semibold leading-[1.2] text-white md:text-[70px]">
           Velkommen
           <br />

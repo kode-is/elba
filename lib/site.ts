@@ -58,6 +58,10 @@ export const servicesMenu = {
     [
       { text: "Anlegg", href: "/anlegg" },
       { text: "Industri", href: "/industri" },
+      // Protega Solutions fire suppression — new service, not on live.
+      { text: "Brannslukking", href: "/brannslukking" },
+      // Kytola Instruments flow meters and oil-lubrication monitoring — not on live.
+      { text: "Flowmetere", href: "/flowmetere" },
     ],
   ],
 } as const;

@@ -1,3 +1,5 @@
+import { BrandIcon } from "@/components/BrandIcon";
+
 // Home hero's industry marquee (docs/scrape/home.json blocks 9-32): the live
 // page loops the same eight H3s three times in the DOM for a seamless
 // scroll — see app/globals.css's `.animate-marquee` keyframes (translate by
@@ -26,28 +28,13 @@ const INDUSTRIES = [
   { name: "Gjenvinning", icon: "/images/icons/segments/gjenvinning.svg" },
 ];
 
-/** Decorative — the segment is already named by the <h3> beside it. */
-function SegmentIcon({ src }: { src: string }) {
-  const mask = {
-    maskImage: `url(${src})`,
-    WebkitMaskImage: `url(${src})`,
-    maskRepeat: "no-repeat",
-    WebkitMaskRepeat: "no-repeat",
-    maskPosition: "center",
-    WebkitMaskPosition: "center",
-    maskSize: "contain",
-    WebkitMaskSize: "contain",
-  };
-  return <span aria-hidden="true" className="h-8 w-8 shrink-0 bg-white md:h-9 md:w-9" style={mask} />;
-}
-
 function IndustryList({ hidden }: { hidden?: boolean }) {
   return (
     <div aria-hidden={hidden ? true : undefined} className="flex shrink-0 items-center gap-x-10 px-5">
       {INDUSTRIES.map((industry, index) => (
         <div key={index} className="flex shrink-0 items-center gap-x-10">
           <div className="flex shrink-0 items-center gap-x-3">
-            <SegmentIcon src={industry.icon} />
+            <BrandIcon src={industry.icon} className="h-8 w-8 bg-white md:h-9 md:w-9" />
             <h3 className="whitespace-nowrap text-[28px] leading-[1.3] font-semibold text-white">
               {industry.name}
             </h3>
