@@ -18,6 +18,8 @@
   --color-table-ink: #111111;    /* product table text */
   --color-stat-digit: #eaecf0;   /* counter digits on the red band */
   --color-stat-label: #d9d9d9;   /* counter labels on the red band */
+  --color-grease: #e9a23b;       /* grease in the /anlegg illustrations (lib/illustrasjon.ts) */
+
 
   /* Type scale, measured the same way at 1440px and 390px. A `-lg` token is
      the >=768px value of the same role; a role with only one token renders at
@@ -82,9 +84,70 @@
   animation: marquee 26s linear infinite;
 }
 
+/* Fire suppression (/brannslukking): sparks drift up through the hero, and
+   the demo's flame flickers while pressure runs along its detection tube.
+   All of it stops under prefers-reduced-motion below. */
+@keyframes spark-rise {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(var(--drift, 12px), -260px, 0) scale(0.4);
+  }
+}
+
+@keyframes flame-flicker {
+  0%,
+  100% {
+    transform: scale(1, 1) skewX(0deg);
+  }
+  33% {
+    transform: scale(0.94, 1.06) skewX(-2deg);
+  }
+  66% {
+    transform: scale(1.05, 0.96) skewX(2deg);
+  }
+}
+
+/* Pressure travelling along the detection tube. */
+@keyframes tube-flow {
+  to {
+    stroke-dashoffset: -48;
+  }
+}
+
+.animate-spark-rise {
+  animation: spark-rise var(--dur, 7s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-flame {
+  animation: flame-flicker 0.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+.animate-tube-flow {
+  animation: tube-flow 1.6s linear infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee {
     animation-play-state: paused;
+  }
+
+  .animate-flame,
+  .animate-tube-flow {
+    animation: none;
+  }
+
+  .animate-spark-rise {
+    display: none;
   }
 
   /* Home hero background video (components/home/Hero.tsx): keep the still

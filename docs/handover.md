@@ -171,6 +171,87 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     so it is reproduced faithfully; Elba presumably has not finished filling
     those two in.
 
+15. **Review the Protega / brannslukking copy before it goes live (Hlynur).**
+    `/brannslukking` and the Protega bands on `/`, `/anlegg` and `/industri`
+    are all new Norwegian copy, written from ELBA's own Protega material on
+    OneDrive (`Leverandør ressurser/Protega/Salgsmateriale`: the ELBA-branded
+    sales brochures and Protega's sales training for ELBA). Everything is in
+    `lib/brannslukking.ts` plus the section intros in
+    `app/(site)/brannslukking/page.tsx` and the three `ProtegaBand` calls.
+    Claims worth a second look against what Protega will stand behind:
+    **"100 % mekanisk"**, **"10 år driftslevetid"** (Mining brochure),
+    **CE · R107 · ISO 9001** (training, "in place today"), the
+    **flashpoint/autoignition figures** (Diesel 55/225, motorolje 205/315,
+    girolje 200/390 °C — training), the **"Turbo og eksos" band drawn from
+    300 °C** on the heat scale (ours, illustrative, no number shown), the
+    **1–100 kg** cylinder range, the **6/12-month inspection with
+    certificate** and **10-year hydrostatic test** (General brochure), and the
+    handheld/sprinkler comparison table (training). Deliberately left out:
+    Protega's named customers (BYD, DP World, Umicore, Satema, Veidekke), the
+    "100 % activation" claim, insurance-premium savings and the tunnel legal
+    requirement — add them only if Protega confirms they may be used.
+16. **Photos on `/brannslukking` (Hlynur).** From the ELBA brand folder
+    (`skron-clanker/elba/ELBA - Brand Folder/Photos and Media`, incl. "Our
+    segments" and one "People" shot — the montør photo in "Ett verkstedbesøk",
+    back to camera, no name or customer shown) and Protega's own installation
+    and product photos (OneDrive `Leverandør ressurser/Protega/Installasjons
+    bilder`, `Downloads/ELBA/.../Marketing images`). Resized to WebP in
+    `public/images/brannslukking/`. Several Protega photos are of Dutch
+    customer installations (Volvo L220H, Oxbo, Citizen CNC, a bus); they show
+    no customer names, but confirm Protega is happy for ELBA to use them. The
+    product cylinder carries Protega's own label in the photos — that is the
+    product, and is left as is; the site uses no Protega logo files.
+17. **`npm run verify` will flag the Protega additions until they are in
+    production.** `/brannslukking` is in `ROUTES` (so the sitemap lists it),
+    and `verify` compares against production, which does not have it yet — the
+    route and the new home/`/anlegg`/`/industri`/`/tjenester` text will show
+    as `missing`/`extra` until this branch is deployed, after which production
+    *is* this content again.
+18. **Review the rewritten `/anlegg` (Hlynur).** The page is built around two
+    animations (deviation 12) and most of its copy is new — all in
+    `lib/sentralsmoring.ts` and `app/(site)/anlegg/page.tsx`. It went through
+    a five-way review on 2026-10-18 (industry veteran, fact-check, imagery,
+    language, brand). Fixed then; still for ELBA to confirm:
+    - **No makes are named on the page.** The parts section ("Deler til
+      smøreanlegget", `PARTS` in `lib/sentralsmoring.ts`) is general: pumps
+      and pump parts "fra flere produsenter" and dividers lead to a request
+      (/kontakt-oss), fittings, hoses, grease and filling equipment link to
+      their catalogue categories. The pump in the drawing is still modelled
+      on an EP-1, and the earlier product facts (EP-1/MX-F) are no longer on
+      the page. When the new pump range can be named, add it here.
+    - **How ELBA wires the pump.** The FAQ says the controller is wired to the
+      ignition so the pause only counts while the machine is on, and "smører
+      ikke når maskinen står". Correct for how ELBA installs? (Lincoln/BEKA
+      controllers can also count engine-run signal or strokes.)
+    - **Manual greasing is told as the OEMs prescribe it**: once at shift start
+      (Cat: bucket linkage every 10 service hours or daily, more often in wet
+      or sandy work), grease until clean grease shows at the seals. The chart
+      is an illustration (no figures): the manual curve overshoots into
+      "for mye" right after the gun while the surplus is pushed out at the
+      seals (shown as waste on the machine), settles into the band within
+      about an hour, and thins through the day; one hard-to-reach point (stikkesylinder, fot) is
+      skipped in the round. No claim that central lubrication uses less grease.
+    - **"Styring og overvåking"** describes the new pump generation without
+      naming it (`PUMP_FEATURES` in `lib/sentralsmoring.ts`): built-in
+      controller with display and app over Bluetooth/wifi that works without
+      internet, data and event log with low-level warning, CAN bus, up to
+      three pumping elements (three progressive circuits), 0,6–4 cm³/min,
+      350 bar, IP69K, −40 to +80 °C. Sources: the maker's product page
+      (https://dropsavet.com/bravo-compact/) and its Agritechnica listing
+      (https://digital.agritechnica.com/newfront/product/25675). No datasheet
+      was published; confirm the figures with the supplier before launch.
+      The divider cycle alarm and fleet overview remain ELBA's own offering.
+      The photo (`07-74a78715.jpg`) is the Groeneveld-BEKA settings app.
+    - **The drawing is simplified**: 12 points on a machine that has more (the
+      page says so), svingkrans on the main divider, no quick coupler or
+      tiltrotator. A FAQ on tiltrotator/hurtigkobling lubrication would suit
+      Norwegian buyers if ELBA does it.
+    - The home/`/tjenester` Anlegg card text changed from "Presis kontinuerlig
+      smøring til din maskin" (live copy, but the system doses at intervals)
+      to "Sentralsmøring for anleggsmaskiner"; the ExperienceSection stats
+      now read "30 år" / "2000+" (also "30 år" on `/brannslukking`). `npm run
+      verify` will report these until deployed, as in 17.
+
 ---
 
 ## Deviations from live (approved)
@@ -256,6 +337,86 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     straight to a tab, and `/produkter` catalog rows are found by their
     sub-type. Each category page's own search box searches that category
     (`Søk i <Kategori>`).
+
+11. **Fire suppression: Protega Solutions (2026-10-16).** ELBA now sells and
+    installs Protega's automatic fire suppression, so the site gains a new
+    service, which never existed on live: `/brannslukking` (in `ROUTES`, the
+    sitemap and the search palette), a third entry in the Tjenester panel and
+    a third "Våre tjenester" card (the grid is now three across from `lg`), a
+    "Nyhet" pill in the home hero styled like its e-mail/phone pills, and a
+    red Protega tile on `/` (directly below Produkter, which stays first under
+    the hero), `/anlegg` and `/industri`
+    (`components/brannslukking/ProtegaBand.tsx`).
+    **It is in ELBA's brand, not Protega's** (Hlynur, 2026-10-16): red, white
+    and black per the brand folder's Logo Cheatsheet, the site's existing
+    cream/`surface` tokens, no Protega gold, hexagon or logo — Protega is
+    named in text as the manufacturer only. The page is built from the
+    existing components: `PageHero`, `FeatureTileGrid` (the three audiences,
+    laid out as `/anlegg`'s intro), `StatsSection`, `FeatureCard`,
+    `IconCardGrid`, `CheckList`, `StepCard` (new `tone="white"` for cream
+    sections), `ExperienceSection`, `PhotoCollage`, `Faq`, `ContactCta`. New
+    pieces are limited to what had no equivalent: `SegmentGrid` (FeatureCard
+    style with live's overlapping red 55px badge), `HeatScale`,
+    `ComparisonTable` (dressed as `SpecTable`) and `SuppressionDemo`, an
+    animated direct/indirect drawing (a client component that only runs on
+    screen and holds one still frame under `prefers-reduced-motion`), plus
+    sparks drifting through the hero (`PageHero` gained a `decoration` slot
+    for them). Icons are the ELBA brand set ("Graphics/Icons/SVG",
+    incl. the Extinguisher icon) in `public/images/icons/brand/` and
+    `segments/anlegg.svg`, painted by the new shared `components/BrandIcon.tsx`
+    (which `IndustryStrip` now uses too). The nav itself is unchanged (five
+    items), and so is the footer.
+
+12. **`/anlegg` rewritten around a lubrication demo (2026-10-18).** Hlynur
+    asked for the lubrication page to be rewritten with an animation in the
+    spirit of `/brannslukking`'s suppression demo, drawn on BEKA EP-1 and
+    MX-F parts on an excavator.
+    - `components/sentralsmoring/LubricationDemo.tsx` plays one working day
+      (07–15) in about a minute. The excavator's geometry is in
+      `lib/gravemaskin.ts`: a 50-tonne class machine at CAT 350 proportions
+      (6.9 m reach boom, 3.35 m stick, 5.4 m track) with a large GP bucket
+      modelled on a Cat GP bucket (raked mouth, long floor, teeth ahead of
+      the top lip, tip radius about 2 m), laid out in metres and solved as a
+      linkage. `Machine.tsx` draws it; the upper structure is one plain
+      rectangular body with panel lines and handrails. Neutral grey, branded
+      lightly in ELBA red: a small wordmark on the counterweight (cropped from
+      `public/logos/elba-logo.svg`), a thin stripe along the body and a
+      pinstripe along the boom; no machine maker's livery.
+    - The dig cycle (`lib/smoremodell.ts` `DIG_KEYS`) is planned as an
+      operator digs: cut in at the far end, drag the stick in while the
+      bucket curls, lift out curled with the stick pulled in, carry out to
+      the spoil heap and open the bucket there; soil is drawn in the bucket
+      and falls on the heap once the mouth tips past `SPILL`. The cut is
+      planned by the tooth tip (ramp down at the far end, along the floor, up
+      the near wall) and the trench (`TRENCH`) is that tooth path; the rest of
+      the bucket rides inside the cut. `tests/gravemaskin.test.ts`
+      checks that the bucket never passes through the stick or the ground,
+      rests on its heel for greasing, empties only over the heap, and that
+      the trench still matches the cut — change the keys and the trench
+      together.
+    - "Sentralsmøring": after each pause the pump runs, and while it runs the
+      main divider on the upper frame (five points, three outlets combined
+      into the feed up the boom) and the secondary divider on the boom (seven
+      points, two outlets combined for the bucket pin) both cycle; lines run
+      along the boom flanges and cross every joint at its pivot.
+      "Manuell smøring": parked with the bucket flat in front of the tracks,
+      one round with the gun, overflow on the machine, film thinning.
+    - Under the drawing: an illustrative chart and the bucket pin in section
+      (not to scale; the pin bears on its lower side in both modes).
+    - `components/sentralsmoring/DividerDemo.tsx` is a schematic cutaway of a
+      progressive divider: each piston's groove joins the inlet to the
+      channel that drives the next piston (A→B→C→A), outlets 1–6, indicator
+      pin on A, gauge and relief valve on the pump; "Tett utløp" stalls the
+      block.
+    - All three demos (incl. `/brannslukking`) share `components/demo/Demo.tsx`
+      (status line, toggle, play control, steps, on-screen clock, phone
+      scaling). They run only on screen, can be paused, hold one still frame
+      under `prefers-reduced-motion`, and the status text changes per phase
+      (tested to stay at least a second). Illustration colours are in
+      `lib/illustrasjon.ts`; the grease amber is the one non-brand hue (also
+      `--color-grease`), and red is kept for ELBA's curve and for faults.
+    - `FeatureTileGrid` tile headings are now H3 (were H1, as on live) so each
+      page has one H1; `ExperienceSection` stat values are no longer H2.
 
 Two small additions of our own, for accessibility: a "Gå til innhold" skip
 link, and `sr-only` labels on the contact-form fields. Both show up under
