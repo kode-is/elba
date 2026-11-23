@@ -100,6 +100,8 @@ export const siteJsonLd = {
         "Overvåking av smøreanlegg",
         "Smøring av anleggsmaskiner",
         "Industriell smøring",
+        "Automatisk brannslukking for anleggsmaskiner og industri",
+        "Protega Solutions brannslukkingsanlegg",
         "Central lubrication systems",
         "Automatic lubrication systems",
       ],
