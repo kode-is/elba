@@ -7,8 +7,8 @@ describe("lib/routes ROUTES", () => {
     expect(ROUTES).toEqual(SCRIPT_ROUTES);
   });
 
-  it("has 26 entries including /404", () => {
-    expect(ROUTES).toHaveLength(26);
+  it("has 27 entries including /404", () => {
+    expect(ROUTES).toHaveLength(27);
     expect(ROUTES).toContain("/404");
   });
 

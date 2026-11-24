@@ -13,10 +13,10 @@ describe("site navigation", () => {
     expect(servicesMenu.description).toBe("Utforsk løsninger tilpasset din bransje og bruk");
     expect(servicesMenu.columns.flat().map((l) => l.href)).toEqual(["/anlegg", "/industri"]);
   });
-  it("footer Selskapet column links to the six pages, Artikler fixed", () => {
+  it("footer Selskapet column links to the seven pages, Artikler fixed", () => {
     const links = footerColumns[0].links;
     expect(footerColumns[0].heading).toBe("Selskapet");
-    expect(links.map((l) => l.text)).toEqual(["Hjem", "Om oss", "Artikler", "Tjenester", "Produkter", "Etikk og ansvar"]);
+    expect(links.map((l) => l.text)).toEqual(["Hjem", "Om oss", "Artikler", "Tjenester", "Produkter", "Etikk og ansvar", "Jobb hos oss"]);
     expect(links.find((l) => l.text === "Artikler")?.href).toBe("/artikler");
     for (const l of links) expect(ROUTES).toContain(l.href);
   });

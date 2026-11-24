@@ -72,6 +72,7 @@ ${articles.join("\n")}
 ${link("/om-oss", "Om ELBA", PAGE_META["/om-oss"].description)}
 ${link("/kontakt-oss", "Kontakt", PAGE_META["/kontakt-oss"].description)}
 ${link("/etikk-og-ansvar", "Etikk og ansvar", PAGE_META["/etikk-og-ansvar"].description)}
+${link("/jobb-hos-oss", "Jobb hos oss", PAGE_META["/jobb-hos-oss"].description)}
 `;
 
   return new Response(body, { headers: { "Content-Type": "text/plain; charset=utf-8" } });

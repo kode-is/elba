@@ -42,7 +42,7 @@ npm run verify -- / /kontakt-oss        # only the listed routes
 
 Output per route is `OK`, or a diff of `missing` (text present live but not locally)
 and `extra` (text present locally but not live). The full per-route diff is written
-to `docs/verify-report.md` (gitignored). `missing=0` on all 26 routes is the bar;
+to `docs/verify-report.md` (gitignored). `missing=0` on all 27 routes is the bar;
 the `extra` lines are the approved additions listed in `docs/handover.md`.
 
 ## Measuring typography and colour against live

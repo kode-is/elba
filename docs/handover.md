@@ -171,6 +171,24 @@ search palette (deviations 6-9 below; spec `docs/superpowers/specs/2026-09-18-pr
     so it is reproduced faithfully; Elba presumably has not finished filling
     those two in.
 
+15. **`/jobb-hos-oss` — recruitment page for montører (added 2026-11-24).**
+    New page, not on the Framer original; linked from the footer, the search
+    palette, the sitemap and `/llms.txt`. `elba.no/jobb` redirects (307) to it
+    and keeps the query string, so the planned QR code on the Vei og Anlegg
+    stand (April 2027) can point at `https://www.elba.no/jobb?kilde=vei-og-anlegg`.
+    The application form (name + phone required, e-mail and a free-text "Litt
+    om deg" optional, no CV) sends through Resend to the same `CONTACT_TO`
+    inbox as the contact form, subject `Søknad fra elba.no – <navn>`.
+    **Review before promoting it (Hlynur/Ronny):** the copy is ours. In
+    particular the "Hvem vi ser etter" list (fagbrev a plus not a must,
+    førerkort klasse B) and "Du starter ikke alene" (new hires go out with an
+    experienced montør from week one) — keep or change them to match how ELBA
+    actually hires. No pay, benefits or contract terms are stated on purpose.
+    The hero photo (`/images/home/06-d6adc654.jpeg`) is only 800 px wide; a
+    larger original from the Drive photo album (item 7) would sharpen it.
+    `npm run verify` will report this route as failing until it is deployed,
+    since production has no such page to compare against yet.
+
 ---
 
 ## Deviations from live (approved)

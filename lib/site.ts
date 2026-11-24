@@ -72,6 +72,7 @@ export const footerColumns = [
       { text: "Tjenester", href: "/tjenester" },
       { text: "Produkter", href: "/produkter" },
       { text: "Etikk og ansvar", href: "/etikk-og-ansvar" },
+      { text: "Jobb hos oss", href: "/jobb-hos-oss" },
     ],
   },
 ] as const;

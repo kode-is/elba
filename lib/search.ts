@@ -48,6 +48,7 @@ const PAGES: { title: string; href: string; keywords: string }[] = [
   { title: "Produkter", href: "/produkter", keywords: "katalog sortiment deler varer art.nr. søk" },
   { title: "Artikler", href: "/artikler", keywords: "nyheter fagstoff blogg" },
   { title: "Etikk og ansvar", href: "/etikk-og-ansvar", keywords: "code of conduct miljø bærekraft retningslinjer" },
+  { title: "Jobb hos oss", href: "/jobb-hos-oss", keywords: "jobb stilling ledig karriere montør mekaniker tekniker søknad ansettelse rekruttering" },
   { title: "Kontakt oss", href: "/kontakt-oss", keywords: "telefon e-post adresse forespørsel tilbud skjema" },
 ];
 

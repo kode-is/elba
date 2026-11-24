@@ -52,6 +52,12 @@ export const PAGE_META = {
       "ELBAs etiske retningslinjer, varsling, miljø og leverandørkrav – basert på FNs Global Compact og ILOs kjernekonvensjoner.",
     path: "/etikk-og-ansvar",
   },
+  "/jobb-hos-oss": {
+    title: "Jobb hos oss – montør i sentralsmøring | ELBA",
+    description:
+      "Bli montør i ELBA: montering av sentralsmøreanlegg på anleggsmaskiner og service i industrien, med over 200 montasjer i året. Fagbrev er et pluss, ikke et krav – søk på to minutter.",
+    path: "/jobb-hos-oss",
+  },
   "/kontakt-oss": {
     title: "Kontakt ELBA – sentralsmøring i Vestfossen",
     description:
